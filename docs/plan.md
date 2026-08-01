@@ -115,11 +115,17 @@ ai-digest/
 
 **Verify:** `make sync && make test` passes (trivially, with no tests yet).
 
-## Step 2 — Source registry and schema
+## Step 2 — Source registry and schema — **done**
 
-The structural work. Seven changes: three driven by the source list, two by
-dropping retrieval, and two on the summarizer — a prompt still written for the
-old vendors (2f) and longer summaries for firewall-blocked companies (2g).
+Completed 2026-08-01. The structural work. Seven changes: three driven by the
+source list, two by dropping retrieval, and two on the summarizer — a prompt
+still written for the old vendors (2f) and longer summaries for firewall-blocked
+companies (2g).
+
+Landed as 2e → 2a → 2b → 2c → 2f → 2g, one commit each; 2e moved first because
+the registry declares categories from the widened set, and 2d was already done
+in Step 1. The suite is 52 tests, all offline. Still stubbed for Step 5:
+`_build_scrapers()` returns `[]`, so every stage is a no-op until scrapers exist.
 
 ### 2a. `company` becomes a registry, not a `Literal` — **done**
 
@@ -279,7 +285,7 @@ summary kept model, benchmark and algorithm names exact and preserved the post's
 hedges; the news summary opened "TechCrunch reports that…" rather than asserting
 the claim.
 
-### 2g. Longer summaries for firewall-blocked companies
+### 2g. Longer summaries for firewall-blocked companies — **done**
 
 Some of these sites are blocked by a work firewall, so for them the summary is
 not a preview of the article — it is the only thing the reader will ever see. A
@@ -324,6 +330,13 @@ noise against the ~$0.16/month in Step 6.
 one outside it does not, and that `LONG_SUMMARY_COMPANIES=a,b` parses to
 `["a", "b"]` rather than raising. Both run offline — no LLM call needed, since
 `_length_guidance()` is a pure function.
+
+Built as specified (`summarizer_content_chars_long` defaults to 30000, 2x). The
+long branch also states the reason in the prompt — *"the reader may not be able
+to open the original, so the summary must stand on its own"* — since the bullet
+count alone doesn't tell the model the summary is a replacement, not a preview.
+Confirmed on the live Anthropic page from 2f: same article, 4 bullets before and
+10 self-contained ones after; a TechCrunch item was unaffected.
 
 **Verify (Step 2 overall):** unit tests for registry invariants (source keys
 unique, every `Source.company` present in `COMPANIES`, every `Company.sources`

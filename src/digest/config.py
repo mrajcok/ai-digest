@@ -1,7 +1,9 @@
 import logging
 import logging.handlers
+from typing import Annotated
 
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic import field_validator
+from pydantic_settings import BaseSettings, NoDecode, SettingsConfigDict
 
 
 class Settings(BaseSettings):
@@ -34,10 +36,29 @@ class Settings(BaseSettings):
     max_api_retries: int = 5
     summarizer_content_chars: int = 15000
 
+    # Companies whose sites are blocked by a work firewall: the summary is the only
+    # thing the reader will ever see, so it gets a longer, self-contained treatment
+    # built from a bigger slice of the article. Values are Company.key from sources.py
+    # — a company key covers all of its feeds.
+    long_summary_companies: Annotated[list[str], NoDecode] = ["anthropic", "openai", "mistral"]
+    summarizer_content_chars_long: int = 30000
+
     # Discord run-completion notification — one-way webhook only, no bot
     discord_notify: bool = True
     discord_notify_method: str = "webhook"  # only "webhook" is supported
     discord_webhook_url: str = ""
+
+    @field_validator("long_summary_companies", mode="before")
+    @classmethod
+    def _split_csv(cls, v: str | list[str]) -> list[str]:
+        """Parse `a,b,c` from env.
+
+        NoDecode above turns off pydantic-settings' default JSON decoding for list
+        fields, which would reject a bare `LONG_SUMMARY_COMPANIES=anthropic,openai`.
+        Every other value in .env.example is a plain scalar, so CSV is the consistent
+        choice over requiring JSON.
+        """
+        return [s.strip().lower() for s in v.split(",") if s.strip()] if isinstance(v, str) else v
 
 
 settings = Settings()  # type: ignore[call-arg]

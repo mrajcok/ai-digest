@@ -80,13 +80,31 @@ def _bullet_guidance(n: int, what: str) -> str:
     )
 
 
-def _length_guidance(char_count: int, category: str = "") -> str:
+def _length_guidance(char_count: int, category: str = "", long: bool = False) -> str:
     """Release notes get roughly double the summary length of blog/press/product content.
 
     Release notes are inherently an itemized list of discrete changes, so — unlike
     blog/press/product — they should default to bullets well before the 4000-char
     mark that triggers bullets for prose content.
+
+    `long` is set for companies whose sites a reader may not be able to open at all
+    (settings.long_summary_companies). For those the summary replaces the article
+    rather than previewing it, so it roughly doubles and says so explicitly.
     """
+    if long:
+        standalone = (
+            " The reader may not be able to open the original, so the summary must "
+            "stand on its own: include the specifics rather than gesturing at them."
+        )
+        if char_count < 300:
+            return "2-3 sentences." + standalone
+        if char_count < 800:
+            return _bullet_guidance(4, "points") + standalone
+        if char_count < 2000:
+            return _bullet_guidance(6, "technical details") + standalone
+        if char_count < 4000:
+            return _bullet_guidance(8, "technical details") + standalone
+        return _bullet_guidance(10, "technical details") + standalone
     if category == "release_notes":
         if char_count < 300:
             return "One sentence."
@@ -118,7 +136,15 @@ class Summarizer:
         self._chain = _PROMPT | llm | StrOutputParser()
 
     def summarize(self, page: ScrapedPage) -> str:
-        content = page.raw_text[:settings.summarizer_content_chars]
+        # A longer summary built from the same truncated input would just pad, so the
+        # input budget rises with the output length — see docs/plan.md Step 2g.
+        long = page.company in settings.long_summary_companies
+        budget = settings.summarizer_content_chars_long if long else settings.summarizer_content_chars
+        content = page.raw_text[:budget]
+        if long:
+            logger.debug(
+                "%s: long summary (%d of %d chars sent)", page.company, len(content), len(page.raw_text)
+            )
         inputs = {
             # The display label, not the key — "Ars Technica" reads better than
             # "arstechnica" in the prompt, and matters for press attribution.
@@ -126,7 +152,7 @@ class Summarizer:
             "category": page.category,
             "title": page.title,
             "content": content,
-            "length_guidance": _length_guidance(len(page.raw_text), page.category),
+            "length_guidance": _length_guidance(len(page.raw_text), page.category, long=long),
             "category_instruction": _CATEGORY_INSTRUCTIONS.get(
                 page.category,
                 "Focus on what changed or was announced and why it matters.",

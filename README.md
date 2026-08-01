@@ -128,6 +128,8 @@ All configuration is via environment variables (`.env` file locally, system env 
 | `OPENROUTER_SUMMARIZATION_MODEL` | LLM for summaries (default: `google/gemma-3-27b-it`) |
 | `OPENROUTER_STAGE_SUMMARIZATION_MODEL` | LLM for `--stage summarize` (defaults to `OPENROUTER_SUMMARIZATION_MODEL`) |
 | `SUMMARIZER_CONTENT_CHARS` | Chars of raw text sent to the summarization LLM (default: `15000`) |
+| `LONG_SUMMARY_COMPANIES` | Comma-separated company keys whose sites are firewall-blocked; these get longer, self-contained summaries (default: `anthropic,openai,mistral`) |
+| `SUMMARIZER_CONTENT_CHARS_LONG` | Chars of raw text sent for those companies (default: `30000`) |
 | `OLLAMA_BASE_URL` | Local Ollama server; when set, overrides OpenRouter for summarization (default: unset) |
 | `OLLAMA_SUMMARIZATION_MODEL` | Ollama model for summaries; used only when `OLLAMA_BASE_URL` is set |
 | `OLLAMA_STAGE_SUMMARIZATION_MODEL` | Ollama model for `--stage summarize` (defaults to `OLLAMA_SUMMARIZATION_MODEL`) |
