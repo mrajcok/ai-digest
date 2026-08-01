@@ -30,9 +30,8 @@ Run this from your project's root directory (a git repo). Assumes:
 
 Each fresh Claude session reads the plan file itself and decides which
 undone step to work on next — this script doesn't track that. Sessions run
-on AUTOPILOT_MODEL (sonnet by default) at AUTOPILOT_EFFORT (unset by
-default, so your own Claude Code effortLevel applies), always with
---dangerously-skip-permissions, since it runs unattended with no one
+on AUTOPILOT_MODEL at AUTOPILOT_EFFORT (sonnet / medium by default), always
+with --dangerously-skip-permissions, since it runs unattended with no one
 available to approve tool calls.
 
 Each step is done on its own branch, created by the Claude session itself
@@ -131,14 +130,13 @@ Environment variables:
                         fails the first step, which stops the run and mails
                         you the error.
   AUTOPILOT_EFFORT      Reasoning effort for each session — low, medium,
-                        high, xhigh or max. Empty by default, which means
-                        --effort is not passed at all and each session
-                        reasons at whatever effortLevel your Claude Code
-                        settings specify, exactly as an interactive session
-                        would. Set it to override that for autopilot only.
-                        This is the main lever on how many steps fit in a
-                        usage window: higher effort buys deeper reasoning per
-                        step and fewer steps per window.
+                        high, xhigh or max (default: medium). Passed straight
+                        to `claude --effort`. This is the main lever on how
+                        many steps fit in a usage window: higher effort buys
+                        deeper reasoning per step and fewer steps per window.
+                        Set it to the empty string to pass no --effort at
+                        all, so each session reasons at whatever effortLevel
+                        your Claude Code settings specify.
   AUTOPILOT_FALLBACK_MODEL
                         Comma-separated models to fall back to when the
                         primary is overloaded (default: none). Passed to
@@ -204,10 +202,9 @@ NOTIFY_FILE="autopilot_notify.py"
 # `git add -A` below and committed.
 LOCK_FILE="${TMPDIR:-/tmp}/autopilot-$(printf '%s' "$PWD" | cksum | cut -d' ' -f1).lock"
 AUTOPILOT_MODEL="${AUTOPILOT_MODEL:-sonnet}"
-# Empty means "don't pass --effort at all", so a step's session reasons exactly
-# as an interactive one would, at whatever effortLevel your Claude Code settings
-# specify. Set it to override that for autopilot runs only.
-AUTOPILOT_EFFORT="${AUTOPILOT_EFFORT:-}"
+# Set explicitly to empty to pass no --effort at all, letting a step's session
+# reason at whatever effortLevel your Claude Code settings specify.
+AUTOPILOT_EFFORT="${AUTOPILOT_EFFORT-medium}"
 AUTOPILOT_FALLBACK_MODEL="${AUTOPILOT_FALLBACK_MODEL:-}"
 AUTOPILOT_MAX_BUDGET_USD="${AUTOPILOT_MAX_BUDGET_USD:-}"
 MAX_STEPS="${MAX_STEPS:-1}"   # safety cap so a bad run can't run forever; increase once we prove out this script and the skill
