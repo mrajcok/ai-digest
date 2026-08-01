@@ -1,14 +1,13 @@
 ---
 name: plan-step
-description: Implements the next unfinished step in this project's plan file, marking it done when complete. Invoked by the overnight autopilot script — not meant to trigger automatically during normal interactive work.
+description: Implements the next unfinished step in this project's plan file, marking it done when complete. Invoked by the autopilot script — not meant to trigger automatically during normal interactive work.
 disable-model-invocation: true
 ---
 
 `$ARGUMENTS` is the path to this project's plan file.
 
-You are running unattended overnight. Nobody can answer questions, so make
-reasonable, conservative decisions and keep going — unless a rule below tells
-you to stop.
+You are running unattended. Nobody can answer questions, so make reasonable,
+conservative decisions and keep going — unless a rule below tells you to stop.
 
 Network calls, paid API calls and publishing are allowed where the step needs
 them.
@@ -39,20 +38,22 @@ Run `date` for real; don't write a timestamp from memory. The name must start
 with `autopilot/`.
 
 **3. Report the branch.** Confirm the checkout worked
-(`git branch --show-current`), then print `AUTOPILOT_BRANCH=<branch-name>`. If
-it failed, stop per Rule 4 — without printing a branch line and without having
-changed any file.
+(`git branch --show-current`), then print `AUTOPILOT_BRANCH=<branch-name>`
+alone on its line, with nothing after it. If it failed, stop per Rule 4 —
+without printing a branch line and without having changed any file.
 
 **4. Implement exactly that one step.** Not the next one, not a neighboring
 sub-step, and nothing beyond what the step's text describes.
 
-**5. Verify.** Run `./run_tests.sh` and make it pass — `make test`, `make lint`
-(which must be clean) and `shellcheck`.
+**5. Verify.** Run `./run_tests.sh` once, after your edits are complete, and
+make it pass — `make test`, `make lint` (which must be clean) and `shellcheck`.
+Fix and re-run as needed; don't run it speculatively between edits.
 
 **6. Mark it done.** Append `— **done**` to that step's heading, matching how
 other finished headings in the file are written — including a `Completed
 <date>.` note if they carry one, dated from `date -u +%Y-%m-%d`. Touch no
-other step's text or status.
+other step's text or status, and never remove a `— **done**` that is already
+there.
 
 **7. Write the summary.** Add an `Implementation Summary` subsection one
 heading level deeper than the step (`###` under `## Step N`, `####` under
@@ -74,11 +75,13 @@ resolve entries already in it.
 1. **One step per session**, even if a neighboring one looks related.
 
 2. **No git beyond the one `git checkout -b`.** No `add`, `commit`, `merge`,
-   `push`, `stash`, `reset`; no switching branches again. This constrains your
-   own git commands, not the project's code.
+   `push`, `stash`, `reset`; no switching branches again. Read-only git
+   (`status`, `diff`, `log`, `show`) is fine. This constrains your own git
+   commands, not the project's code.
 
-3. **Never edit `autopilot.sh` or `.claude/skills/plan-step/SKILL.md`.** If a
-   step calls for it, stop per Rule 4.
+3. **Never edit `autopilot.sh`, `autopilot_notify.py` or
+   `.claude/skills/plan-step/SKILL.md`.** If a step calls for it, stop per
+   Rule 4.
 
 4. **Stop when genuinely blocked** — the step is ambiguous in a way that
    changes the outcome, conflicts with existing code, or depends on something
@@ -90,11 +93,25 @@ resolve entries already in it.
    mark the step done and don't write an Implementation Summary. A bullet in
    `## Open items` describing the blocker is welcome.
 
-5. **Narrate plainly.** Say which step you picked (and why, if it wasn't
-   simply the next one), what you're doing, and what you did — files touched,
-   assumptions made, anything a reviewer should look at twice. Your extended
-   thinking and tool output are stripped from the log; this narration is all
-   that survives.
+5. **Narrate plainly and briefly.** Say which step you picked (and why, if it
+   wasn't simply the next one), what you did — files touched, assumptions
+   made, anything a reviewer should look at twice. Facts only: no restating
+   the plan's text, no progress commentary, no previewing what you're about to
+   do. Your extended thinking and tool output are stripped from the log; this
+   narration is all that survives.
+
+## Token budget
+
+Context is the run's scarcest resource — spending less of it here means more
+steps complete before the usage window closes.
+
+- Read only what the step needs. Prefer `grep`/`rg` with a pattern, or
+  `sed -n 'A,Bp'`, over reading a large file whole.
+- Never re-read a file you already read this session.
+- Don't spawn subagents.
+- Prefix commands with `rtk` where this project documents a filter for them
+  (see CLAUDE.md) — `rtk test`, `rtk ruff`, `rtk git`, `rtk grep`.
+- Don't paste file contents, diffs, or command output into your narration.
 
 ## Sentinels
 
@@ -106,4 +123,7 @@ resolve entries already in it.
 
 Each is matched as a whole line. Print one alone on its own line, exactly, with
 no prose, quotes, or backticks around it — and only when you mean it.
-Mentioning one inside a sentence is safe.
+
+Never put one on a line by itself in any other situation, including inside a
+code block, a quote, or an example of what you did. Mentioning one inside a
+sentence is safe.

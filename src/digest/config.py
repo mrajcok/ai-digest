@@ -11,6 +11,13 @@ class Settings(BaseSettings):
         env_file=".env",
         env_file_encoding="utf-8",
         case_sensitive=False,
+        # .env is shared with tooling that isn't the pipeline — autopilot's
+        # EMAIL_*/SMTP_* settings live there too. Without this, pydantic's
+        # default of forbidding undeclared keys makes any such entry a hard
+        # startup failure. Trade-off: a misspelled digest setting is now
+        # ignored rather than reported, so check the README config table when
+        # a setting doesn't seem to take effect.
+        extra="ignore",
     )
 
     # OpenRouter is the only LLM backend — there is no local-model path.

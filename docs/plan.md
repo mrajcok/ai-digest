@@ -46,17 +46,6 @@ Left stubbed with `TODO(Step 2a)` markers: `COMPANIES` in
 `publisher/github_pages.py` is a hardcoded eight-key list, `--site` reads its
 choices from it, and `_build_scrapers()` returns `[]` and logs a warning.
 
-### Implementation Summary
-
-`pyproject.toml` (name `ai-digest`, `sqlite-vec` and the `openai` SDK already
-removed from dependencies), `Makefile` (`deploy-mcp` target already removed),
-`.env.example`, `.gitignore`, `.python-version`, `LICENSE`, `README.md`,
-`INSTALL.md`, `CLAUDE.md`, `.mcp.json`.
-
-Package name stays **`digest`** (`[project.scripts] digest = "digest.main:main"`).
-No rename is needed — the only reason to rename was MCP-server coexistence on
-the VPS, and there is no MCP server here. The two projects have separate venvs.
-
 ### Copied from `product-update-digest`
 
 | Path | Status |
@@ -114,6 +103,17 @@ ai-digest/
 ```
 
 **Verify:** `make sync && make test` passes (trivially, with no tests yet).
+
+### Implementation Summary
+
+Created or updated: `pyproject.toml` (name `ai-digest`, `sqlite-vec` and the
+`openai` SDK already removed from dependencies), `Makefile` (`deploy-mcp`
+target already removed), `.env.example`, `.gitignore`, `.python-version`,
+`LICENSE`, `README.md`, `INSTALL.md`, `CLAUDE.md`, `.mcp.json`.
+
+Package name stays **`digest`** (`[project.scripts] digest = "digest.main:main"`).
+No rename is needed — the only reason to rename was MCP-server coexistence on
+the VPS, and there is no MCP server here. The two projects have separate venvs.
 
 ## Step 2 — Source registry and schema — **done**
 
@@ -535,7 +535,7 @@ Numbered `7a` rather than `8` to avoid renumbering Steps 8–10, which existing
 commits and notes already reference. It depends on Step 7 (the index template)
 and Step 6.2 (the `vendor`/`press` split), so it lands after both.
 
-### Scope — vendor only
+#### Scope — vendor only
 
 Input is every article from companies whose `Company.group == "vendor"`
 (`companies_in_group("vendor")` from Step 2a). Press is excluded because it is
@@ -544,7 +544,7 @@ recap with the labs as a footnote. Make it `overview_include_press: bool = False
 rather than hardcoding the exclusion, so the choice is reversible without a code
 change.
 
-### Input is the summaries, and only the summaries
+#### Input is the summaries, and only the summaries
 
 The day's `ArticleRecord.summary` values are the entire input. `raw_text` is
 never read here — this step is strictly a summary of summaries, so it does not
@@ -560,7 +560,7 @@ call, with the same `--stage` override. Condensing text that is already condense
 is not a harder task than writing those summaries was, so there is nothing here
 to pay more for.
 
-### "The day's" articles means first-seen, not published
+#### "The day's" articles means first-seen, not published
 
 Select on `date(first_scraped_at) == today` (UTC), not `published_date`: a
 backfilled three-day-old Anthropic post is still new *to this digest* on the day
@@ -568,7 +568,7 @@ it first appears, and that is what the reader wants summarized. Needs one new
 query in `storage/db.py` — `articles_first_seen_on(day, companies)`, returning
 `ok` records with a non-empty summary.
 
-### Persist it — a new table, not a re-computation
+#### Persist it — a new table, not a re-computation
 
 ```sql
 CREATE TABLE IF NOT EXISTS daily_overview (
@@ -589,7 +589,7 @@ the template something to fall back on (below), and makes a future
 `/overview/2026-08-01.html` archive page a template change rather than a schema
 change.
 
-### Pipeline placement
+#### Pipeline placement
 
 Generated in the full run **after** summarization and **before** publish, so the
 overview covers the articles that same run just wrote. Add a matching dry-run
@@ -598,7 +598,7 @@ without pushing, bringing the stage list to four: `scrape`, `summarize`,
 `overview`, `render`. Guard it the same way as `--stage summarize`: it is the
 other stage that spends money.
 
-### Rendering
+#### Rendering
 
 `index.html.j2` gets a block above the article cards, before the vendor section:
 the heading ("Today in AI"), the date, the article count and a "vendor sources
@@ -613,7 +613,7 @@ too:
    today's.
 3. **None exists** — omit the block entirely. No empty box, no placeholder.
 
-### Prompt
+#### Prompt
 
 A second template in `summarizer/__init__.py` (e.g. `summarize_day()`), reusing
 the AI-analyst system prompt from 2f. Instructions worth stating explicitly:
@@ -631,7 +631,7 @@ the AI-analyst system prompt from 2f. Instructions worth stating explicitly:
 - Say so plainly when it was a quiet day rather than inflating three minor posts
   into 500 words. The target is a ceiling, not a quota.
 
-### Edge cases
+#### Edge cases
 
 - **Zero vendor articles** — skip the LLM call entirely, write no row, let the
   template fall back to case 2. A cron run on a quiet Sunday should cost nothing.
@@ -642,7 +642,7 @@ the AI-analyst system prompt from 2f. Instructions worth stating explicitly:
   N records (`overview_max_articles: int = 40`) so a backfill can't produce a
   60k-char prompt.
 
-### Not in scope
+#### Not in scope
 
 The Discord notification stays counts-only (Step 8). Posting the overview text
 there is a reasonable follow-up, but it is a separate decision about how noisy

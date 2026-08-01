@@ -62,6 +62,10 @@ Sources are fixed in [`docs/sources.md`](docs/sources.md); the build plan is
 - Never commit `.env`. `data/` and `logs/` are gitignored; the SQLite DB lives
   outside the repo in production (`SQLITE_DB_PATH`).
 
+- "Commit and push" means exactly that: one commit with a one-line message, one
+  push, one sentence back. No multi-paragraph commit bodies, no splitting the
+  work across commits, no summary of what was committed.
+
 - Never let one bad page abort a run. Scrapers catch per-URL exceptions, log,
   and continue — see `_safe_scrape` / `run` in `scrapers/base.py`.
 
