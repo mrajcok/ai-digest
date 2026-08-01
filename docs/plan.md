@@ -312,11 +312,17 @@ scalar, so CSV is the consistent choice over requiring JSON. Values are company
 keys (`Company.key` from 2a), not source keys — the distinction matters for
 Google, where one key covers both DeepMind and the AI blog.
 
-**Behavior.** `_length_guidance()` takes a `long: bool` and roughly doubles its
-output when set, in the same shape the `release_notes` branch already uses (a
-lead sentence plus a bullet list, with higher bullet counts and a lower
-character threshold for switching to bullets). `Summarizer.summarize()` computes
-`long = page.company in settings.long_summary_companies`.
+**Behavior.** `_length_guidance()` takes a `long: bool`. `Summarizer.summarize()`
+computes `long = page.company in settings.long_summary_companies`.
+
+**Revised 2026-08-01 (user):** the long branch is *not* a bigger bullet list. It
+targets **~1000 characters of prose** — `long_summary_target_chars`, a new
+setting — because these summaries are read as the article, and a bullet list
+reads as notes about an article. Bullets are permitted only where the source is
+genuinely an enumeration. The guidance also forbids "consult the original for
+details", which is worthless when the original is blocked. Thin articles aren't
+padded to the full target: under 500 chars of source targets a quarter of it,
+under 2000 a half.
 
 Also raise the input budget for these companies, not just the output length —
 a longer summary built from the same truncated `summarizer_content_chars` just
@@ -333,10 +339,13 @@ one outside it does not, and that `LONG_SUMMARY_COMPANIES=a,b` parses to
 
 Built as specified (`summarizer_content_chars_long` defaults to 30000, 2x). The
 long branch also states the reason in the prompt — *"the reader may not be able
-to open the original, so the summary must stand on its own"* — since the bullet
-count alone doesn't tell the model the summary is a replacement, not a preview.
-Confirmed on the live Anthropic page from 2f: same article, 4 bullets before and
-10 self-contained ones after; a TechCrunch item was unaffected.
+to open the original, so the summary must stand on its own"* — since a length
+target alone doesn't tell the model the summary is a replacement, not a preview.
+
+Confirmed on the live Anthropic page from 2f: 24,905 chars of source produced a
+1,236-char prose summary in two paragraphs, keeping the model, benchmark and
+algorithm names, the cost and speedup figures, and the "does not affect
+production systems" caveat.
 
 **Verify (Step 2 overall):** unit tests for registry invariants (source keys
 unique, every `Source.company` present in `COMPANIES`, every `Company.sources`

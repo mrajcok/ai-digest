@@ -42,6 +42,7 @@ class Settings(BaseSettings):
     # — a company key covers all of its feeds.
     long_summary_companies: Annotated[list[str], NoDecode] = ["anthropic", "openai", "mistral"]
     summarizer_content_chars_long: int = 30000
+    long_summary_target_chars: int = 1000  # target summary length, in output characters
 
     # Discord run-completion notification — one-way webhook only, no bot
     discord_notify: bool = True

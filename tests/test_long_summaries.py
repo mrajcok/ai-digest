@@ -65,18 +65,38 @@ def test_long_guidance_asks_for_a_standalone_summary() -> None:
     assert "stand on its own" not in _length_guidance(5000)
 
 
-def test_long_guidance_switches_to_bullets_sooner() -> None:
-    assert "bullet points" in _length_guidance(600, long=True)
-    assert "bullet points" not in _length_guidance(600)
+def test_long_guidance_targets_characters_not_bullets() -> None:
+    """A blocked-site summary is read as the article, so it is prose of a given length."""
+    guidance = _length_guidance(9000, long=True)
+    assert "roughly 1000 characters" in guidance
+    assert "flowing prose" in guidance
+    assert "bullet point" not in guidance
+    # The short path still leads with bullets past 4000 chars.
+    assert "bullet points" in _length_guidance(9000)
 
 
-def test_long_guidance_raises_the_bullet_count() -> None:
-    assert "up to 10 bullet points" in _length_guidance(9000, long=True)
-    assert "up to 4 bullet points" in _length_guidance(9000)
+def test_long_guidance_allows_bullets_only_for_enumerations() -> None:
+    guidance = _length_guidance(9000, long=True)
+    assert "Do not use a bullet list" in guidance
+    assert "unless the source itself is an enumeration" in guidance
 
 
-def test_short_content_still_short_when_long() -> None:
-    assert _length_guidance(100, long=True).startswith("2-3 sentences.")
+def test_long_guidance_does_not_defer_to_the_original() -> None:
+    """'See the original for details' is useless when the original is blocked."""
+    assert "do not tell the reader to consult the original" in _length_guidance(9000, long=True)
+
+
+def test_target_is_configurable(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(settings, "long_summary_target_chars", 2400)
+    assert "roughly 2400 characters" in _length_guidance(9000, long=True)
+    assert "about 400 words" in _length_guidance(9000, long=True)
+
+
+def test_thin_articles_are_not_padded_to_the_full_target() -> None:
+    """Scaled down rather than inflating 300 chars of source into 1000 of summary."""
+    assert "roughly 250 characters" in _length_guidance(300, long=True)
+    assert "roughly 500 characters" in _length_guidance(1500, long=True)
+    assert "roughly 1000 characters" in _length_guidance(5000, long=True)
 
 
 # --- selection + input budget ---------------------------------------------

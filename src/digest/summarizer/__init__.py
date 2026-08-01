@@ -80,6 +80,24 @@ def _bullet_guidance(n: int, what: str) -> str:
     )
 
 
+def _standalone_guidance(target_chars: int) -> str:
+    """Prose guidance for a summary that has to replace the article, not preview it.
+
+    Deliberately not a bullet count: these are read as the article itself, so the
+    target is a length in characters and the default shape is prose. Bullets are
+    allowed only where the source is genuinely an enumeration.
+    """
+    return (
+        f"Write roughly {target_chars} characters — about {target_chars // 6} words — "
+        "as flowing prose in two or three short paragraphs. Do not use a bullet list "
+        "unless the source itself is an enumeration of discrete items, and even then "
+        "keep prose around it. The reader may not be able to open the original, so the "
+        "summary must stand on its own: give the specifics — names, numbers, methods, "
+        "and caveats — rather than gesturing at them, and do not tell the reader to "
+        "consult the original for details."
+    )
+
+
 def _length_guidance(char_count: int, category: str = "", long: bool = False) -> str:
     """Release notes get roughly double the summary length of blog/press/product content.
 
@@ -88,23 +106,17 @@ def _length_guidance(char_count: int, category: str = "", long: bool = False) ->
     mark that triggers bullets for prose content.
 
     `long` is set for companies whose sites a reader may not be able to open at all
-    (settings.long_summary_companies). For those the summary replaces the article
-    rather than previewing it, so it roughly doubles and says so explicitly.
+    (settings.long_summary_companies). Those get a character target instead of a
+    bullet count — see `_standalone_guidance`. A thin article is not padded to the
+    full target; only the two lower rungs are scaled down.
     """
     if long:
-        standalone = (
-            " The reader may not be able to open the original, so the summary must "
-            "stand on its own: include the specifics rather than gesturing at them."
-        )
-        if char_count < 300:
-            return "2-3 sentences." + standalone
-        if char_count < 800:
-            return _bullet_guidance(4, "points") + standalone
+        target = settings.long_summary_target_chars
+        if char_count < 500:
+            return _standalone_guidance(target // 4)
         if char_count < 2000:
-            return _bullet_guidance(6, "technical details") + standalone
-        if char_count < 4000:
-            return _bullet_guidance(8, "technical details") + standalone
-        return _bullet_guidance(10, "technical details") + standalone
+            return _standalone_guidance(target // 2)
+        return _standalone_guidance(target)
     if category == "release_notes":
         if char_count < 300:
             return "One sentence."
