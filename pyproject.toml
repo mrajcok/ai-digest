@@ -1,0 +1,72 @@
+[project]
+name = "ai-digest"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "langchain-core>=1.0,<2",
+    "langchain-openai>=1.0,<2",          # OpenRouter is OpenAI-compatible
+    "pydantic>=2.11,<3",
+    "pydantic-settings>=2.10,<3",
+    "python-dotenv>=1.1,<2",
+    "httpx>=0.28,<1",                     # primary HTTP client (sync + async, HTTP/2)
+    "beautifulsoup4>=4.13,<5",
+    "lxml>=6.0,<7",
+    "Jinja2>=3.1,<4",
+    "Markdown>=3.7,<4",                   # convert LLM markdown output to HTML in templates
+    "gitpython>=3.1,<4",
+    "tenacity>=9.0,<10",
+    "rich>=15.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8,<9",
+    "pytest-mock>=3.14,<4",
+    "respx>=0.22,<1",                     # mock httpx in tests
+    "ruff>=0.14,<0.15",                   # linter + formatter
+]
+
+[project.scripts]
+digest = "digest.main:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 120          # matches the existing style; ~18 lines in the ported code exceed it
+target-version = "py313"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+    "F",    # pyflakes — unused imports/vars, undefined names
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "I",    # isort — import ordering
+    "UP",   # pyupgrade — enforces `str | None` over Optional, etc.
+    "B",    # bugbear — mutable defaults, loop-variable binding
+    "C4",   # comprehensions
+    "SIM",  # simplify
+    "DTZ",  # datetimez — bans naive datetimes; this pipeline is UTC-only
+    "G",    # logging-format — enforces lazy %s logging (see CLAUDE.md conventions)
+    "LOG",  # logging misuse
+    "RUF",  # ruff-specific
+]
+
+[tool.ruff.lint.per-file-ignores]
+# Fixtures are verbatim captured HTML/XML wrapped in string literals.
+"tests/fixtures/*" = ["E501", "W291", "W293"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["digest"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
