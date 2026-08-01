@@ -442,7 +442,7 @@ Nothing changes today — OpenAI has no `include_categories` — but `sources.md
 and the registry comment were corrected, and Step 5 can now categorize OpenAI
 items off the tags via `categorize()` instead of flattening everything to `news`.
 
-## Step 4 — `SitemapScraper` base + Anthropic
+## Step 4 — `SitemapScraper` base + Anthropic — **done**
 
 Generalize `CriblScraper._discover_from_sitemap()` into `scrapers/sitemap.py`:
 fetch sitemap, parse `<url>` elements, filter by `lastmod` against the age
@@ -468,6 +468,38 @@ assuming JSON-LD is present.
 
 **Verify:** fixture-based test using a real saved `/news/` and `/research/`
 page; assert category mapping and that excluded prefixes drop.
+
+### Implementation Summary
+
+Completed 2026-08-01. `scrapers/sitemap.py` (`parse_sitemap` + `SitemapScraper`)
+and `scrapers/anthropic.py` landed, mirroring `feed.py`'s shape: a pure parser,
+a `*Meta` cache from `discover_urls()` consumed by `scrape_page()`/`pre_check()`.
+18 offline tests in `tests/test_sitemap_scraper.py`, suite now 107.
+
+- **The plan's own warning paid off.** A real `/news/` and a real `/research/`
+  page were fetched live (2026-08-01) to build the fixtures, and neither has
+  JSON-LD, an `article:published_time` meta tag, or a `<time datetime>` — the
+  date lives only in a client-rendered `publishedOn` field inside Next.js's
+  embedded JSON blob, which `extract_date()` does not parse. `og:title` does
+  work, so title extraction is unaffected. This is exactly why the sitemap's
+  `lastmod` is the date fallback, not a nice-to-have: `scrape_page()` falls
+  through to it on every real Anthropic page, not just as an edge case.
+  `tests/fixtures/sitemap/anthropic_{news,research}.html` are trimmed real
+  pages (full `<head>`, a real text excerpt in `<body>`) so the test exercises
+  this actual absence rather than asserting against a hand-built fixture that
+  happens to have no JSON-LD.
+- **Category mapping is a `category_map: ClassVar[dict[str, Category]]` on the
+  scraper class**, not a `Source` field — `Source` stays one default category
+  per source, and `AnthropicScraper.category_map` feeds `categorize()`'s
+  path-prefix lookup. A URL matching no prefix (e.g. `/careers`, if it weren't
+  excluded first) falls back to the source's `category`. `sources.py`'s
+  existing comment on the Anthropic entry already said mapping lives in the
+  scraper — no registry change needed.
+- **`exclude_patterns` matches the URL only** (sitemaps carry no title), unlike
+  `FeedScraper` which also checks the title.
+- `pre_check` compares `lastmod` (a `date`) against `last_scraped_at.date()` —
+  coarser than the feed's tz-aware datetime compare, since `lastmod` itself is
+  daily-granularity for the age cutoff's purposes.
 
 ## Step 5 — Company scrapers
 

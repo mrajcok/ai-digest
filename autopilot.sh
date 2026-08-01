@@ -491,15 +491,49 @@ cleanup() {
   rm -f "$LOCK_FILE"
   rm -rf "$SCRATCH_DIR"
 }
+
+# `timeout` (without --foreground, which we deliberately don't pass — see the
+# "readers die with the writer" note below) puts COMMAND in a process group
+# of its own specifically so it does NOT get TTY signals like Ctrl-C's
+# SIGINT. That's what lets `timeout` alone manage the kill on expiry, but it
+# also means Ctrl-C aimed at this script never reaches Claude or its
+# pipeline on its own. run_interruptible backgrounds the timeout-wrapped
+# command, records both its pid and its child's pgid, and `wait`s — a
+# trapped signal interrupts `wait` immediately, unlike a foreground command,
+# where bash defers the trap until the command returns. kill_running (called
+# from the traps below) then kills that recorded pgid directly.
+running_timeout_pid=""
+running_child_pgid=""
+
+run_interruptible() {
+  "$@" &
+  running_timeout_pid=$!
+  # The child hasn't been forked+exec'd the instant $! is captured; give it
+  # a moment to show up so kill_running has a pgid to target right away.
+  local _i
+  for _i in 1 2 3 4 5 6 7 8 9 10; do
+    running_child_pgid="$(pgrep -P "$running_timeout_pid" 2>/dev/null | head -n1)"
+    [[ -n "$running_child_pgid" ]] && break
+    sleep 0.1
+  done
+  wait "$running_timeout_pid"
+  local status=$?
+  running_timeout_pid=""
+  running_child_pgid=""
+  return "$status"
+}
+
+kill_running() {
+  [[ -n "$running_child_pgid" ]] && kill -TERM -- "-$running_child_pgid" 2>/dev/null
+  [[ -n "$running_timeout_pid" ]] && kill -TERM "$running_timeout_pid" 2>/dev/null
+}
+
 # EXIT alone doesn't fire on an untrapped SIGTERM/SIGHUP, which is exactly how
-# this script dies when a tmux session is killed. Caveat: bash defers a trap
-# until the running foreground command returns, and `timeout` runs Claude in
-# its own process group, so a signal aimed here may not be acted on until the
-# current session ends or hits STEP_TIMEOUT_SECONDS. The stale-lock takeover
-# above is the backstop for whatever slips through.
+# this script dies when a tmux session is killed. The stale-lock takeover
+# above is the backstop for whatever slips through kill_running.
 trap cleanup EXIT
-trap 'finish_reason="interrupted (Ctrl-C)"; send_run_email interrupted; cleanup; exit 130' INT
-trap 'finish_reason="terminated by signal"; send_run_email interrupted; cleanup; exit 143' TERM HUP
+trap 'finish_reason="interrupted (Ctrl-C)"; kill_running; send_run_email interrupted; cleanup; exit 130' INT
+trap 'finish_reason="terminated by signal"; kill_running; send_run_email interrupted; cleanup; exit 143' TERM HUP
 
 attempt_text="$SCRATCH_DIR/attempt.txt"
 attempt_raw="$SCRATCH_DIR/attempt.jsonl"
@@ -581,7 +615,7 @@ if [[ -x "./run_tests.sh" ]] && (( ! SKIP_BASELINE_TESTS )); then
   say "Checking that '$BASE_BRANCH' is green before starting (./run_tests.sh)..."
   baseline_log="$LOG_DIR/autopilot-baseline.log"
   : > "$baseline_log"
-  "${test_timeout[@]}" ./run_tests.sh >> "$baseline_log" 2>&1
+  run_interruptible "${test_timeout[@]}" ./run_tests.sh >> "$baseline_log" 2>&1
   baseline_exit=$?
   if (( baseline_exit != 0 )); then
     say "ERROR: ./run_tests.sh fails on '$BASE_BRANCH' before any step has run (exit $baseline_exit)."
@@ -677,7 +711,7 @@ while (( steps_run < MAX_STEPS )); do
   # figures out which undone step to work on.
   # shellcheck disable=SC2016  # $1..$9 are the inner shell's positional args,
   # passed after the script string below — expanding them here is exactly wrong.
-  "${step_timeout[@]}" bash -c '
+  run_interruptible "${step_timeout[@]}" bash -c '
     set -uo pipefail
     plan=$1; model=$2; effort=$3; out=$4; err=$5; raw=$6; filter=$7; status=$8
     shift 8
@@ -964,7 +998,7 @@ while (( steps_run < MAX_STEPS )); do
 
   if [[ -x "./run_tests.sh" ]]; then
     ap "Running tests..."
-    "${test_timeout[@]}" ./run_tests.sh >> "$step_log" 2>&1
+    run_interruptible "${test_timeout[@]}" ./run_tests.sh >> "$step_log" 2>&1
     test_exit=$?
     if (( test_exit == 124 || test_exit == 137 )); then
       stop "./run_tests.sh exceeded the ${TEST_TIMEOUT_SECONDS}s timeout on step $step_num and was killed. Stopping for review — leaving changes uncommitted."
