@@ -19,7 +19,7 @@ Sources are fixed in [`docs/sources.md`](docs/sources.md); the build plan is
 | Feed / sitemap parsing | `xml.etree.ElementTree` (stdlib) |
 | Storage | SQLite via stdlib `sqlite3` — dedup + operational metadata |
 | Models / config | `pydantic` v2 + `pydantic-settings` |
-| LLM | `langchain-core` + `langchain-openai` against OpenRouter |
+| LLM | `langchain-core` + `langchain-openai` against OpenRouter — **the only backend** |
 | Templating | `Jinja2` |
 | Publishing | `GitPython` → push to `gh-pages` |
 | Retries | `tenacity` |
@@ -40,6 +40,10 @@ Sources are fixed in [`docs/sources.md`](docs/sources.md); the build plan is
   is why xAI and Perplexity are excluded as sources; adding a browser is a
   scope decision, not a scraper fix.
 - `requests` — `httpx` is the one HTTP client.
+- **Ollama, LM Studio, or any local model server.** OpenRouter is the only LLM
+  backend. The ported code had an Ollama path (`OLLAMA_BASE_URL` and friends);
+  it was removed on 2026-08-01. `OPENROUTER_BASE_URL` exists for pointing at a
+  proxy, not for reintroducing a local backend.
 
 ## Rules
 

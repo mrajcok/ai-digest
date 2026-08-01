@@ -505,9 +505,9 @@ That keeps the call small: roughly 10 vendor articles × ~1000 chars ≈ 10k cha
 in Step 6.
 
 **No separate model.** It uses `openrouter_summarization_model` like every other
-call, with the same Ollama and `--stage` overrides. Condensing text that is
-already condensed is not a harder task than writing those summaries was, so
-there is nothing here to pay more for.
+call, with the same `--stage` override. Condensing text that is already condensed
+is not a harder task than writing those summaries was, so there is nothing here
+to pay more for.
 
 ### "The day's" articles means first-seen, not published
 

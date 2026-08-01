@@ -13,14 +13,11 @@ class Settings(BaseSettings):
         case_sensitive=False,
     )
 
+    # OpenRouter is the only LLM backend — there is no local-model path.
     openrouter_api_key: str = "dummy"
+    openrouter_base_url: str = "https://openrouter.ai/api/v1"
     openrouter_summarization_model: str = "google/gemma-3-27b-it"
     openrouter_stage_summarization_model: str = ""  # falls back to openrouter_summarization_model
-
-    # Ollama local server (overrides OpenRouter for summarization when set)
-    ollama_base_url: str = ""
-    ollama_summarization_model: str = ""
-    ollama_stage_summarization_model: str = ""  # falls back to ollama_summarization_model
 
     sqlite_db_path: str = "data/ai_digest.db"
 

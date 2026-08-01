@@ -137,13 +137,13 @@ def _length_guidance(char_count: int, category: str = "", long: bool = False) ->
 
 
 class Summarizer:
-    """LangChain chain that summarizes a ScrapedPage via OpenRouter or a local LM Studio server."""
+    """LangChain chain that summarizes a ScrapedPage via OpenRouter."""
 
-    def __init__(self, model: str | None = None, base_url: str | None = None, api_key: str | None = None) -> None:
+    def __init__(self, model: str | None = None) -> None:
         llm = ChatOpenAI(
             model=model or settings.openrouter_summarization_model,
-            api_key=SecretStr(api_key or settings.openrouter_api_key),
-            base_url=base_url or "https://openrouter.ai/api/v1",
+            api_key=SecretStr(settings.openrouter_api_key),
+            base_url=settings.openrouter_base_url,
         )
         self._chain = _PROMPT | llm | StrOutputParser()
 

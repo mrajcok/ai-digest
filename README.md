@@ -15,7 +15,7 @@ A daily cron job that scrapes news and blog posts from sites mentioned in [docs/
 
 - Python 3.13
 - [uv](https://docs.astral.sh/uv/) — fast Python package manager
-- [OpenRouter](https://openrouter.ai) API key or local Ollama server for LLM calls
+- [OpenRouter](https://openrouter.ai) API key — the only LLM backend
 - GitHub personal access token with `repo` scope (for pushing to GitHub Pages)
 
 
@@ -125,15 +125,13 @@ All configuration is via environment variables (`.env` file locally, system env 
 | Variable | Description |
 |---|---|
 | `OPENROUTER_API_KEY` | OpenRouter API key |
+| `OPENROUTER_BASE_URL` | OpenRouter API base URL (default: `https://openrouter.ai/api/v1`) |
 | `OPENROUTER_SUMMARIZATION_MODEL` | LLM for summaries (default: `google/gemma-3-27b-it`) |
 | `OPENROUTER_STAGE_SUMMARIZATION_MODEL` | LLM for `--stage summarize` (defaults to `OPENROUTER_SUMMARIZATION_MODEL`) |
 | `SUMMARIZER_CONTENT_CHARS` | Chars of raw text sent to the summarization LLM (default: `15000`) |
 | `LONG_SUMMARY_COMPANIES` | Comma-separated company keys whose sites are firewall-blocked; these get longer, self-contained summaries (default: `anthropic,openai,mistral`) |
 | `SUMMARIZER_CONTENT_CHARS_LONG` | Chars of raw text sent for those companies (default: `30000`) |
 | `LONG_SUMMARY_TARGET_CHARS` | Target summary length for those companies, in output characters — prose, not bullets (default: `1000`) |
-| `OLLAMA_BASE_URL` | Local Ollama server; when set, overrides OpenRouter for summarization (default: unset) |
-| `OLLAMA_SUMMARIZATION_MODEL` | Ollama model for summaries; used only when `OLLAMA_BASE_URL` is set |
-| `OLLAMA_STAGE_SUMMARIZATION_MODEL` | Ollama model for `--stage summarize` (defaults to `OLLAMA_SUMMARIZATION_MODEL`) |
 | `SQLITE_DB_PATH` | Path to SQLite database (default: `data/ai_digest.db`, inside the project; `data/` is gitignored) |
 | `GITHUB_TOKEN` | GitHub PAT for pushing to gh-pages |
 | `GITHUB_REPO` | Target GitHub repo for Pages (e.g., `username/ai-digest`) |

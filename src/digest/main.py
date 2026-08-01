@@ -24,32 +24,6 @@ _DRY_RUN_DIR = Path("data/dry-run")
 # Model availability checks
 # ---------------------------------------------------------------------------
 
-def _assert_ollama_available(model: str) -> None:
-    """Exit with a clear error if Ollama is not reachable or the model is not available."""
-    base_url = settings.ollama_base_url.rstrip("/")
-    try:
-        resp = httpx.get(f"{base_url}/models", timeout=5.0)
-    except Exception as exc:
-        logger.error(
-            "Cannot reach Ollama at %s: %s\n"
-            "Ensure Ollama is running (ollama serve) on port 11434 by default.",
-            base_url, exc,
-        )
-        sys.exit(1)
-
-    if not resp.is_success:
-        logger.error("Ollama server at %s returned HTTP %d.", base_url, resp.status_code)
-        sys.exit(1)
-
-    available = [m["id"] for m in resp.json().get("data", [])]
-    if available and model not in available:
-        logger.error(
-            "Model %r not found in Ollama.\nAvailable model(s): %s\nRun: ollama pull %s",
-            model, ", ".join(available), model,
-        )
-        sys.exit(1)
-
-
 def _assert_model_available(model_id: str) -> None:
     """Exit with a clear error if model_id is not usable on OpenRouter."""
     if settings.openrouter_api_key == "dummy":
@@ -89,13 +63,6 @@ def _assert_model_available(model_id: str) -> None:
 
 
 def _make_summarizer(stage: bool) -> Summarizer:
-    if settings.ollama_base_url:
-        model = (
-            settings.ollama_stage_summarization_model or settings.ollama_summarization_model
-            if stage
-            else settings.ollama_summarization_model
-        )
-        return Summarizer(model=model, base_url=settings.ollama_base_url, api_key="ollama")
     stage_model = settings.openrouter_stage_summarization_model or settings.openrouter_summarization_model
     return Summarizer(model=stage_model if stage else None)
 
@@ -165,14 +132,9 @@ def _run_scrape(args: argparse.Namespace, db: ArticleDB) -> None:
 
 
 def _run_summarize(args: argparse.Namespace, db: ArticleDB) -> None:
-    if settings.ollama_base_url:
-        model = settings.ollama_stage_summarization_model or settings.ollama_summarization_model
-        backend = f"ollama ({model})"
-        _assert_ollama_available(model)
-    else:
-        model = settings.openrouter_stage_summarization_model or settings.openrouter_summarization_model
-        backend = f"openrouter ({model})"
-        _assert_model_available(model)
+    model = settings.openrouter_stage_summarization_model or settings.openrouter_summarization_model
+    backend = f"openrouter ({model})"
+    _assert_model_available(model)
 
     limit = args.limit or 1
     scrapers = _build_scrapers(args.site)
@@ -232,10 +194,7 @@ def _run_publish(args: argparse.Namespace, db: ArticleDB) -> None:
 
 
 def _run_full_pipeline(args: argparse.Namespace, db: ArticleDB) -> None:
-    if settings.ollama_base_url:
-        _assert_ollama_available(settings.ollama_summarization_model)
-    else:
-        _assert_model_available(settings.openrouter_summarization_model)
+    _assert_model_available(settings.openrouter_summarization_model)
 
     scrapers = _build_scrapers(args.site)
     summarizer = _make_summarizer(stage=False)
