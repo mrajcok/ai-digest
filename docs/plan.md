@@ -209,7 +209,7 @@ The empty `data/ai_digest.db` left over from Step 1 was deleted and recreated
 rather than migrated — `CREATE TABLE IF NOT EXISTS` would not have added the
 column to it.
 
-### 2d. `config.py` — remove retrieval settings — **done in Step 1**
+### 2d. `config.py` — remove retrieval settings — **done**
 
 Deleted: `openrouter_embedding_model`, `embedding_dimensions`,
 `openrouter_rag_model`, `ollama_rag_model`, `max_source_text_chars`,
@@ -243,7 +243,7 @@ categories that have to exist first. `Category` is now declared once in
 re-exports it and `main.py`'s `--category` choices read from it, so the Literal
 no longer appears in four places.
 
-### 2f. Rewrite the summarizer prompt
+### 2f. Rewrite the summarizer prompt — **done**
 
 `summarizer/__init__.py` was ported verbatim in Step 1, so its system prompt
 still reads *"a product intelligence analyst tracking two data-infrastructure
@@ -525,7 +525,7 @@ Cost: ~26 articles/day at `google/gemma-3-27b-it` rates is ~$0.005/day, about
 local review before anything is pushed. Confirm the source badges and the
 vendor/press split there.
 
-## Step 7a — Daily overview ("summary of summaries")
+### 7a. — Daily overview ("summary of summaries")
 
 A single ~500-word synthesis of the day's **non-press** articles, rendered at the
 top of `index.html`. It answers "what actually happened in AI today?" without
@@ -711,7 +711,13 @@ All ten were reachable on 2026-07-31.
 Everything stays offline — `respx` for HTTP, in-memory SQLite. With sqlite-vec
 gone the suite has one less native dependency.
 
-## Step 10 — Deployment
+## Step 10 — Review
+
+Use Opus to review the code and notes.
+Fix any bugs found.
+Update any out-of-date information in `INSTALL.md` and `README.md`. 
+
+## Step 11 — Deployment
 
 `INSTALL.md` is already adapted and is nearly correct. Remaining work:
 
