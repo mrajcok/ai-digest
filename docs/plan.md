@@ -121,7 +121,7 @@ The structural work. Seven changes: three driven by the source list, two by
 dropping retrieval, and two on the summarizer — a prompt still written for the
 old vendors (2f) and longer summaries for firewall-blocked companies (2g).
 
-### 2a. `company` becomes a registry, not a `Literal`
+### 2a. `company` becomes a registry, not a `Literal` — **done**
 
 `storage/models.py` currently pins `company: Literal["cribl", "ocient", "xsiam"]`
 in each model. With eight companies — two of which have multiple feeds — that
@@ -155,6 +155,17 @@ COMPANIES: dict[str, Company] = {...}   # single source of truth
 
 `main.py`, `publisher/github_pages.py` (which hardcodes `COMPANIES = [...]`),
 and the `--site` argparse `choices` all read from this registry.
+
+As built, `sources.py` also exposes `SOURCES` (flat, keyed by source key), the
+`company_keys()` / `sources_for()` / `companies_in_group()` / `company_label()` /
+`source_label()` helpers, and a `_validate()` that runs at import so a malformed
+registry fails immediately instead of silently dropping a company page.
+
+Two live-probe findings landed with it (both recorded in `sources.md`): the Azure
+allowlist is seeded from the real feed rather than guessed, and **a `<category>`
+allowlist cannot filter the press feeds** — every TechCrunch and Ars item carries
+the `AI` tag, including the off-topic ones, so the press allowlist is only a
+sanity gate and `daily_cap` does the real work.
 
 ### 2b. `storage/models.py` — add `source`, drop `ProductUpdate`
 

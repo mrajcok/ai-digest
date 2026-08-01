@@ -9,7 +9,8 @@ import httpx
 
 from digest.config import settings, setup_logging
 from digest.notifier import post_discord_summary
-from digest.publisher.github_pages import COMPANIES, GitHubPagesPublisher
+from digest.publisher.github_pages import GitHubPagesPublisher
+from digest.sources import company_keys
 from digest.storage.db import ArticleDB
 from digest.storage.models import CATEGORIES, ArticleRecord, ScrapedPage, normalize_url
 from digest.summarizer import Summarizer
@@ -105,8 +106,8 @@ def _make_summarizer(stage: bool) -> Summarizer:
 
 def _build_scrapers(site: str | None) -> list:
     # TODO(Step 5): instantiate the per-company scrapers from the sources.py
-    # registry (Step 2a). No scrapers exist yet, so every stage is a no-op.
-    logger.warning("No scrapers registered yet — see docs/plan.md Steps 2a and 5")
+    # registry. No scrapers exist yet, so every stage is a no-op.
+    logger.warning("No scrapers registered yet — see docs/plan.md Step 5")
     return []
 
 
@@ -347,7 +348,7 @@ def _parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--site",
-        choices=COMPANIES,  # TODO(Step 2a): source these from the sources.py registry
+        choices=company_keys(),
         help="Run only one scraper (default: all)",
     )
     parser.add_argument(

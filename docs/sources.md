@@ -57,6 +57,11 @@ so there is no AI-scoped Azure feed. The main Azure feed carries 39 distinct
 Azure OpenAI, Copilot, etc.). This is the only source in the list requiring
 non-trivial filtering logic.
 
+The allowlist now lives in `sources.py` as `_AZURE_AI_CATEGORIES`, seeded from
+the live feed on 2026-08-01 — 6 of 10 items tagged `AI + machine learning`, and
+the remainder split across `Management and governance`, `Databases`, `Internet
+of things` and similar non-AI values. Values must match the feed text exactly.
+
 `news.microsoft.com/source/topics/ai/feed/` is topic-scoped and needs none, but
 is low volume and PR-flavored.
 
@@ -77,8 +82,17 @@ distinct group in the UI:
   source combined. Without a cap it will dominate the index page.
 - **Off-topic bleed.** Both category feeds include tangential items (e.g.
   TechCrunch's "India is starting to pay for apps", Ars's Reddit/DMCA piece).
-  Both expose useful `<category>` tags (`AI`, `AI agents`, `Anthropic`,
-  `Claude`, `ChatGPT`, `Artificial Intelligence`) — filter on these.
+  Both expose `<category>` tags (`AI`, `AI agents`, `Anthropic`, `Claude`,
+  `ChatGPT`, `Artificial Intelligence`).
+
+  **Re-probed 2026-08-01: a `<category>` allowlist cannot filter these feeds.**
+  All 20 TechCrunch items and all 20 Ars items carried the `AI` tag, including
+  the two off-topic examples above — the tag is applied by the category feed
+  itself, so an allowlist keeps everything. The allowlist in `sources.py` is
+  therefore a sanity gate (it catches a feed that stops being AI-scoped), not a
+  volume control. Volume is handled by `daily_cap`, off-topic bleed by
+  `exclude_patterns`, and neither can be tuned without watching real output —
+  see plan Step 5/6.
 - **Content extraction.** Ars includes full `content:encoded`, so the article
   body can be taken straight from the feed with no second HTTP fetch.
   TechCrunch does **not** — its items are summary-only and require fetching the

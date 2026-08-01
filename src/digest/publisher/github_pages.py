@@ -12,17 +12,15 @@ from git import Repo
 from jinja2 import Environment, FileSystemLoader
 from markupsafe import Markup
 
+from digest.sources import company_keys
 from digest.storage.db import ArticleDB
 from digest.storage.models import ArticleRecord, ScrapedPage
 
 logger = logging.getLogger(__name__)
 
 TEMPLATES_DIR = Path(__file__).parent / "templates"
-# TODO(Step 2a): replace with the sources.py registry — see docs/plan.md.
-COMPANIES = [
-    "anthropic", "openai", "google", "microsoft", "aws", "mistral",
-    "techcrunch", "arstechnica",
-]
+# Company keys, in registry order — one section on the index, one page each.
+COMPANIES = company_keys()
 
 
 def _fix_inline_bullets(text: str) -> str:
