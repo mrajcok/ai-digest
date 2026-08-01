@@ -9,8 +9,8 @@ test:
 lint:
 	uv run ruff check .
 
-# Shell scripts only (autopilot.sh, run_tests.sh). Kept out of `lint` so that
-# target stays exactly `ruff check .` and doesn't need shellcheck installed.
+# Shell scripts only (run_tests.sh). Kept out of `lint` so that target stays
+# exactly `ruff check .` and doesn't need shellcheck installed.
 lint-sh:
 	git ls-files --cached --others --exclude-standard '*.sh' | xargs -r shellcheck
 
