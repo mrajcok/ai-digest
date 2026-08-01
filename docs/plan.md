@@ -493,16 +493,21 @@ recap with the labs as a footnote. Make it `overview_include_press: bool = False
 rather than hardcoding the exclusion, so the choice is reversible without a code
 change.
 
-### Input is the summaries, not the articles
+### Input is the summaries, and only the summaries
 
-The day's `ArticleRecord.summary` values are the input — they are already written
-for this audience, and re-reading raw article text would cost 10-30x more for a
-worse result. Roughly 10 vendor articles × ~1000 chars ≈ 10k chars ≈ 3k tokens,
-so the call is ~$0.0005/day even before considering that a **stronger model is
-affordable here**: one call/day justifies `OPENROUTER_OVERVIEW_MODEL` (default
-`""` → falls back to `openrouter_summarization_model`). Synthesis across a dozen
-items is a harder task than summarizing one page, and this is the one place in
-the pipeline where paying for it costs cents per month.
+The day's `ArticleRecord.summary` values are the entire input. `raw_text` is
+never read here — this step is strictly a summary of summaries, so it does not
+re-fetch, re-truncate, or re-reason over article bodies, and
+`summarizer_content_chars` is irrelevant to it.
+
+That keeps the call small: roughly 10 vendor articles × ~1000 chars ≈ 10k chars
+≈ 3k tokens in, ~700 out, so about **$0.0005/day** — noise against the ~$0.16/mo
+in Step 6.
+
+**No separate model.** It uses `openrouter_summarization_model` like every other
+call, with the same Ollama and `--stage` overrides. Condensing text that is
+already condensed is not a harder task than writing those summaries was, so
+there is nothing here to pay more for.
 
 ### "The day's" articles means first-seen, not published
 
