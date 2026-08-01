@@ -52,7 +52,7 @@ the VPS, and there is no MCP server here. The two projects have separate venvs.
 | `src/digest/scrapers/base.py` | copy as-is; it has no vector coupling |
 | `src/digest/storage/models.py` | drop `ProductUpdate` — Step 2b |
 | `src/digest/storage/db.py` | add `source` column — Step 2c |
-| `src/digest/summarizer/__init__.py` | copy as-is |
+| `src/digest/summarizer/__init__.py` | copy as-is; prompt rewritten in Step 2f |
 | `src/digest/publisher/` | incl. `templates/` — Step 7 |
 | `tests/` | minus vendor + vector tests |
 | `data/`, `logs/` | `.gitkeep` only |
@@ -177,8 +177,39 @@ Current: `blog | press_release | product | release_notes`. AI sources need
 
 `blog | research | engineering | news | press_release | product | release_notes`
 
+### 2f. Rewrite the summarizer prompt
+
+`summarizer/__init__.py` was ported verbatim in Step 1, so its system prompt
+still reads *"a product intelligence analyst tracking two data-infrastructure
+companies (Cribl and Ocient)"*. Left alone, every summary this pipeline produces
+is written for the wrong domain. Three changes:
+
+1. **System prompt** — replace the Cribl/Ocient persona with an AI-industry one:
+   an analyst tracking AI labs and AI press coverage for software engineers and
+   architects. Keep the existing output contract verbatim (markdown only, no
+   commentary, note when content was too long to summarize fully).
+2. **`_CATEGORY_INSTRUCTIONS`** — add the three categories from 2e. The dict is
+   keyed by category and falls back to a generic instruction, so a missing key
+   fails silently rather than loudly:
+   - `research` — the claim or result, the method in one clause, and what is new
+     versus prior work. Preserve model, benchmark, and dataset names exactly.
+   - `engineering` — the system or technique described, the problem it solves,
+     and any concrete numbers (latency, cost, scale).
+   - `news` — what was announced, by whom, and the stated impact. For press
+     sources, attribute claims to the outlet rather than asserting them.
+3. **Drop `release_notes`** from `_CATEGORY_INSTRUCTIONS` and from the
+   `release_notes` branch of `_length_guidance()` only if 2e drops the category.
+   The plan keeps it in the Literal, so leave both in place — no AI source emits
+   it today, but nothing breaks by keeping it.
+
+Prompt wording is not a mechanical port; write it fresh against the category
+list 2e settles on, then eyeball the output of `--stage summarize --limit 1`
+against a real Anthropic research page and a TechCrunch item before moving on.
+
 **Verify:** unit tests for registry invariants (source keys unique, every
-`Source.company` present in `COMPANIES`, every `Company.sources` non-empty).
+`Source.company` present in `COMPANIES`, every `Company.sources` non-empty), and
+that `_CATEGORY_INSTRUCTIONS` has an entry for every category in the Literal —
+that test is what stops a future category from silently taking the fallback.
 
 ## Step 3 — `FeedScraper` base class
 

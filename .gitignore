@@ -16,8 +16,9 @@ build/
 # Logs
 logs/*.log
 
-# Runtime data (database, dry-run output)
-data/
+# Runtime data (database, dry-run output) — the dir itself is tracked via .gitkeep
+data/*
+!data/.gitkeep
 
 # Testing
 .pytest_cache/
