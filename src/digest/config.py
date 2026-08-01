@@ -20,7 +20,7 @@ class Settings(BaseSettings):
     ollama_summarization_model: str = ""
     ollama_stage_summarization_model: str = ""  # falls back to ollama_summarization_model
 
-    sqlite_db_path: str = "data/product_updates.db"
+    sqlite_db_path: str = "data/ai_digest.db"
 
     github_token: str = "dummy"
     github_repo: str = "dummy/dummy"
@@ -32,7 +32,7 @@ class Settings(BaseSettings):
     index_per_company: int = 3
     company_page_limit: int = 30  # max articles shown on each company page
     max_api_retries: int = 5
-    summarizer_content_chars: int
+    summarizer_content_chars: int = 15000
 
     # Discord run-completion notification — one-way webhook only, no bot
     discord_notify: bool = True

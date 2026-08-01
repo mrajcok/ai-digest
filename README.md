@@ -128,22 +128,29 @@ All configuration is via environment variables (`.env` file locally, system env 
 | `OPENROUTER_SUMMARIZATION_MODEL` | LLM for summaries (default: `google/gemma-3-27b-it`) |
 | `OPENROUTER_STAGE_SUMMARIZATION_MODEL` | LLM for `--stage summarize` (defaults to `OPENROUTER_SUMMARIZATION_MODEL`) |
 | `SUMMARIZER_CONTENT_CHARS` | Chars of raw text sent to the summarization LLM (default: `15000`) |
-| `SQLITE_DB_PATH` | Path to SQLite database (default: `data/ai_updates.db`) |
+| `OLLAMA_BASE_URL` | Local Ollama server; when set, overrides OpenRouter for summarization (default: unset) |
+| `OLLAMA_SUMMARIZATION_MODEL` | Ollama model for summaries; used only when `OLLAMA_BASE_URL` is set |
+| `OLLAMA_STAGE_SUMMARIZATION_MODEL` | Ollama model for `--stage summarize` (defaults to `OLLAMA_SUMMARIZATION_MODEL`) |
+| `SQLITE_DB_PATH` | Path to SQLite database (default: `data/ai_digest.db`, inside the project; `data/` is gitignored) |
 | `GITHUB_TOKEN` | GitHub PAT for pushing to gh-pages |
-| `GITHUB_REPO` | Target GitHub repo for Pages (e.g., `username/ai-updates`) |
+| `GITHUB_REPO` | Target GitHub repo for Pages (e.g., `username/ai-digest`) |
 | `GITHUB_PAGES_BRANCH` | Branch to publish to (default: `gh-pages`) |
-| `MAX_ARTICLE_AGE_DAYS` | How far back to index articles (default: `2`) |
-| `COMPANY_PAGE_LIMIT` | Max articles shown on each company page on GitHub Pages (default: `90`) |
+| `LOG_LEVEL` | Root log level (default: `INFO`) |
+| `MAX_ARTICLE_AGE_DAYS` | How far back to index articles (code default: `30`; `.env.example` ships `2` for daily runs) |
+| `INDEX_PER_COMPANY` | Articles per company shown on the index page (default: `3`) |
+| `INDEX_PAGE_LIMIT` | Unused; kept for backward compatibility (default: `10`) |
+| `COMPANY_PAGE_LIMIT` | Max articles shown on each company page on GitHub Pages (default: `30`) |
 | `MAX_API_RETRIES` | Max retry attempts for LLM API calls (default: `5`) |
 | `DISCORD_NOTIFY` | Post a per-company summary to Discord after each run (default: `true`; set `false` to disable) |
-| `DISCORD_NOTIFY_METHOD` | `webhook` (default) or `hermes` |
+| `DISCORD_NOTIFY_METHOD` | Only `webhook` is supported (default: `webhook`) |
 | `DISCORD_WEBHOOK_URL` | Discord webhook URL; required when `DISCORD_NOTIFY_METHOD=webhook` |
 
 ### Discord run-completion notification
 
 After each daily run the digest posts a per-company summary to Discord (**on by default**).
 
-**Method: webhook** — create a webhook in your Discord channel settings and set `DISCORD_WEBHOOK_URL`. No hermes dependency.
+Create a webhook in your Discord channel settings and set `DISCORD_WEBHOOK_URL`. This is a
+one-way notification — there is no bot and nothing to ask questions of.
 
 The message looks like:
 

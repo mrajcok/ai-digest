@@ -29,7 +29,22 @@ The dropped-retrieval decision reinforces this. Generalizing
 store itself optional throughout that codebase, which is a larger and riskier
 refactor than the fork it would avoid.
 
-## Step 1 — Bootstrap (partially done)
+## Step 1 — Bootstrap — **done**
+
+Completed 2026-07-31. The tree imports, `make lint` is clean, and `make test`
+passes. Two decisions shaped how it was done:
+
+- **Copy + strip, not verbatim copy.** Files were ported with every reference to
+  non-ported retrieval code removed in the same pass, because a verbatim copy
+  could not import at all — `main.py` referenced `VecClient`, and `config.py`
+  declared `max_source_text_chars: int` with no default, so `Settings()` raised
+  at import. This pulled forward parts of Steps 2b, 2c, 2d and all of Step 8.
+- **Tests deferred to Step 9.** Only `tests/test_smoke.py` ships, and only
+  because `pytest` exits 5 on an empty suite, which would fail `make test`.
+
+Left stubbed with `TODO(Step 2a)` markers: `COMPANIES` in
+`publisher/github_pages.py` is a hardcoded eight-key list, `--site` reads its
+choices from it, and `_build_scrapers()` returns `[]` and logs a warning.
 
 ### Already copied and adapted
 
@@ -42,20 +57,26 @@ Package name stays **`digest`** (`[project.scripts] digest = "digest.main:main"`
 No rename is needed — the only reason to rename was MCP-server coexistence on
 the VPS, and there is no MCP server here. The two projects have separate venvs.
 
-### Still to copy from `product-update-digest`
+### Copied from `product-update-digest`
 
-| Path | Notes |
+| Path | Status |
 |---|---|
-| `src/digest/config.py` | strip retrieval settings — Step 2d |
-| `src/digest/main.py` | strip the `vector` stage — Step 8 |
-| `src/digest/notifier.py` | webhook only — Step 8 |
-| `src/digest/scrapers/base.py` | copy as-is; it has no vector coupling |
-| `src/digest/storage/models.py` | drop `ProductUpdate` — Step 2b |
-| `src/digest/storage/db.py` | add `source` column — Step 2c |
-| `src/digest/summarizer/__init__.py` | copy as-is; prompt rewritten in Step 2f |
-| `src/digest/publisher/` | incl. `templates/` — Step 7 |
-| `tests/` | minus vendor + vector tests |
-| `data/`, `logs/` | `.gitkeep` only |
+| `src/digest/config.py` | ✅ retrieval + hermes settings stripped (Step 2d) |
+| `src/digest/main.py` | ✅ `vector` stage stripped (Step 8) |
+| `src/digest/notifier.py` | ✅ webhook only (Step 8) |
+| `src/digest/scrapers/base.py` | ✅ as-is; only the User-Agent string changed |
+| `src/digest/storage/models.py` | ✅ `ProductUpdate`, `vec_id_for`, `vec_id` dropped (Step 2b); `source` column still to add |
+| `src/digest/storage/db.py` | ✅ `vec_id` column + `chroma_id` migration dropped; `source` column still to add (Step 2c) |
+| `src/digest/summarizer/__init__.py` | ✅ as-is; prompt rewritten in Step 2f |
+| `src/digest/publisher/` | ✅ incl. `templates/`, minus `vector_preview.html.j2`; templates still Cribl/Ocient-branded until Step 7 |
+| `tests/` | ⏸ deferred to Step 9; only `test_smoke.py` exists |
+| `data/`, `logs/` | ✅ `.gitkeep` only, with a `!data/.gitkeep` negation |
+
+Also cleaned up here, since Step 10 lists them as Step 1 items: the stale hermes
+references in `README.md`, the DB filename (four different spellings across
+`config.py`, `.env.example`, `README.md` and `INSTALL.md`), and the README
+config table, which was missing six settings and had a wrong
+`COMPANY_PAGE_LIMIT` default. `INSTALL.md` lost its `/opt/digest` group setup.
 
 ### Deliberately NOT copied
 
@@ -158,17 +179,25 @@ Add a `source` column: `CREATE TABLE`, `INSERT`, `SELECT`, and the row→model
 mapping. Drop `vec_id` from all four. Greenfield DB, so **no migration** — get
 the schema right once.
 
-### 2d. `config.py` — remove retrieval settings
+### 2d. `config.py` — remove retrieval settings — **done in Step 1**
 
-Delete: `openrouter_embedding_model`, `embedding_dimensions`,
+Deleted: `openrouter_embedding_model`, `embedding_dimensions`,
 `openrouter_rag_model`, `ollama_rag_model`, `max_source_text_chars`,
 `search_score_threshold`, `rag_chunk_size_chars`, `rag_chunk_overlap_chars`.
 
-Keep `summarizer_content_chars` — that one feeds the summarizer, not embeddings.
+Kept `summarizer_content_chars` — that one feeds the summarizer, not embeddings.
 
-Change: `sqlite_db_path` → `/opt/digest/ai_digest.db`, `github_repo` → the new
-Pages repo, `discord_notify_method` default → `webhook` (matching the copied
-`.env.example`; the `hermes` method is removed entirely — see Step 8).
+Changed: `sqlite_db_path` → `data/ai_digest.db`, `discord_notify_method` default
+→ `webhook` (the `hermes` method is removed entirely — see Step 8).
+
+The DB lives **inside the project**, not in `/opt/digest`. That shared setgid
+directory existed in `product-update-digest` only so the `hermes` account could
+read the DB; with no second account there is nothing to share, so the whole tree
+stays mode 700 under one user. `data/` is gitignored and `ArticleDB` creates it
+on first run. The cron log moves to `logs/last_run.log` for the same reason.
+
+Still open: `github_repo` default is `dummy/dummy` — harmless, since `.env` sets
+it, but change it if a real default is ever wanted.
 
 ### 2e. Widen the `category` Literal
 
@@ -435,7 +464,11 @@ gone the suite has one less native dependency.
 
 `INSTALL.md` is already adapted and is nearly correct. Remaining work:
 
-1. Apply the Step 1 cleanup items (Hermes reference, DB filename consistency).
+1. ~~Apply the Step 1 cleanup items (Hermes reference, DB filename
+   consistency).~~ **Done in Step 1.** `INSTALL.md` also dropped the
+   `/opt/digest` group setup — the DB is now `data/ai_digest.db` inside the
+   project and the cron log is `logs/last_run.log`, so the install is a single
+   mode-700 tree with no `sudo` steps beyond installing `uv`.
 2. Create the GitHub Pages repo, initialize the `gh-pages` orphan branch
    (INSTALL.md Step 7 covers this).
 3. Backfill: `uv run digest --since <30d ago>` — the one run where press
