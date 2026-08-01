@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>The Verge - AI</title>
+  <updated>2026-07-31T20:00:00-04:00</updated>
+  <link rel="self" href="https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"/>
+  <entry>
+    <title>A lab publishes its agent evaluation suite</title>
+    <link rel="related" href="https://example.com/not-the-article"/>
+    <link rel="alternate" type="text/html" href="https://www.theverge.com/ai/2026/07/31/agent-eval-suite"/>
+    <published>2026-07-31T14:22:00-04:00</published>
+    <updated>2026-07-31T15:00:00-04:00</updated>
+    <category term="AI"/>
+    <category term="Artificial Intelligence"/>
+    <content type="html">&lt;p&gt;The suite covers tool use, long-horizon planning and refusal behavior.&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>An entry with only an updated timestamp</title>
+    <link href="https://www.theverge.com/ai/2026/07/29/updated-only"/>
+    <updated>2026-07-29T09:00:00Z</updated>
+    <summary type="html">&lt;p&gt;Summary only.&lt;/p&gt;</summary>
+  </entry>
+</feed>

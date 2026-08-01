@@ -138,6 +138,7 @@ All configuration is via environment variables (`.env` file locally, system env 
 | `GITHUB_PAGES_BRANCH` | Branch to publish to (default: `gh-pages`) |
 | `LOG_LEVEL` | Root log level (default: `INFO`) |
 | `MAX_ARTICLE_AGE_DAYS` | How far back to index articles (code default: `30`; `.env.example` ships `2` for daily runs) |
+| `FEED_MAX_PAGES` | Max `?paged=N` pages walked per feed; only reached during a `--since` backfill (default: `10`) |
 | `INDEX_PER_COMPANY` | Articles per company shown on the index page (default: `3`) |
 | `INDEX_PAGE_LIMIT` | Unused; kept for backward compatibility (default: `10`) |
 | `COMPANY_PAGE_LIMIT` | Max articles shown on each company page on GitHub Pages (default: `30`) |

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<channel>
+  <title>Microsoft Azure Blog</title>
+  <link>https://azure.microsoft.com/en-us/blog/</link>
+  <item>
+    <title>Announcing new models in Azure AI Foundry</title>
+    <link>https://azure.microsoft.com/en-us/blog/announcing-new-models-in-foundry/</link>
+    <pubDate>Wed, 30 Jul 2026 16:00:00 Z</pubDate>
+    <category>AI + machine learning</category>
+    <category>Azure AI Foundry</category>
+    <description><![CDATA[New models are available.]]></description>
+  </item>
+  <item>
+    <title>Azure Cosmos DB adds a new consistency tier</title>
+    <link>https://azure.microsoft.com/en-us/blog/cosmos-db-consistency-tier/</link>
+    <pubDate>Tue, 29 Jul 2026 16:00:00 Z</pubDate>
+    <category>Databases</category>
+    <category>Management and governance</category>
+    <description><![CDATA[Not an AI post.]]></description>
+  </item>
+  <item>
+    <title>A post with no category at all</title>
+    <link>https://azure.microsoft.com/en-us/blog/untagged-post/</link>
+    <pubDate>Mon, 28 Jul 2026 16:00:00 Z</pubDate>
+    <description><![CDATA[No category elements.]]></description>
+  </item>
+</channel>
+</rss>

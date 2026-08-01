@@ -353,7 +353,10 @@ non-empty), and that `_CATEGORY_INSTRUCTIONS` has an entry for every category in
 the Literal — that test is what stops a future category from silently taking the
 fallback.
 
-## Step 3 — `FeedScraper` base class
+## Step 3 — `FeedScraper` base class — **done**
+
+Completed 2026-08-01. `scrapers/feed.py` is ~330 lines and covers all nine feed
+sources; 33 offline tests in `tests/test_feed_scraper.py`, suite now 87.
 
 Eight of the ten sources are RSS. `scrapers/feed.py` handles all of them; only
 Anthropic needs a sitemap.
@@ -391,6 +394,53 @@ URL on every run.
 `content:encoded` present/absent, pagination, and malformed XML that must not
 raise.
 
+### As built
+
+Everything above landed as specified. What the plan didn't say:
+
+- **`parse_feed()` is a module-level pure function**, not a method, so the six
+  parser tests need no scraper, no HTTP and no registry entry. It walks
+  `root.iter()` for `item`/`entry` and reads children by local name, so RSS 2.0,
+  RSS 1.0/RDF and Atom all land in one `FeedEntry` without dialect branching.
+- **`description`/`summary` are deliberately not treated as content.** Only
+  `content:encoded` and Atom `<content>` populate `content_html`. TechCrunch's
+  `description` is a truncated excerpt, and accepting it would have meant
+  silently summarizing a teaser had anyone ever set `content_in_feed=True` on it.
+  A `content_in_feed` source whose item lacks `content:encoded` falls back to
+  fetching the page.
+- **Pagination needs two stop conditions, not one.** Besides "the cutoff is
+  covered", a feed that ignores `?paged=N` and re-serves page 1 would otherwise
+  walk to the cap on every run. Repeated URLs are detected and stop the loop.
+  The cap itself is a new setting, `feed_max_pages` (default 10).
+- **`pre_check` returns `None`, not `True`, when the feed date is newer.** The
+  plan only specified the `False` case. A bumped `pubDate` is not proof the body
+  changed, so it falls through to the content-hash compare — which still avoids
+  the HEAD request, the point of the override.
+- **`_extract_title`/`_extract_date` moved to `BaseScraper`** as
+  `extract_title`/`extract_date`, beside the existing `extract_text`, rather than
+  being copied into `feed.py`. Step 4 reuses them instead of re-porting Cribl's.
+  The JSON-LD branch also now handles a top-level array, which Cribl's did not.
+- **`categorize(source, entry)` is an overridable hook**, defaulting to
+  `source.category`. Nothing uses it yet; it exists because the live probe found
+  OpenAI's tags are usable (below).
+- `FeedScraper` exposes `sources`/`exclusions` as properties derived from the
+  registry, which is what `main._scraper_infos()` and the index template read.
+  It raises at construction for a company with no feed sources, so pointing it at
+  Anthropic fails loudly rather than scraping nothing.
+
+**Live probe, 2026-08-01.** All nine feeds were run through `parse_feed()`: every
+one returned 200 and parsed, with a date on 100% of entries. `content:encoded` is
+present on Ars (20/20), AWS, Azure and MS Source; absent on TechCrunch, OpenAI,
+DeepMind, Google AI and Mistral. DeepMind and Mistral carry no `<category>`
+elements, as `sources.md` said.
+
+One correction fell out of it: **OpenAI's `<category>` elements are not empty.**
+The 2026-07-31 probe that recorded all 958 as blank was mishandling CDATA. They
+carry 20 real terms (`Research` 194, `Product` 145, `Engineering` 17, …).
+Nothing changes today — OpenAI has no `include_categories` — but `sources.md`
+and the registry comment were corrected, and Step 5 can now categorize OpenAI
+items off the tags via `categorize()` instead of flattening everything to `news`.
+
 ## Step 4 — `SitemapScraper` base + Anthropic
 
 Generalize `CriblScraper._discover_from_sitemap()` into `scrapers/sitemap.py`:
@@ -426,7 +476,7 @@ articles/day**, so most of the work is the two filtered sources.
 | Module | Company | Sources | Work required |
 |---|---|---|---|
 | `anthropic.py` | `anthropic` | sitemap | Step 4 |
-| `openai.py` | `openai` | `news/rss.xml` | Trivial. **Ignore `<category>` — all 958 tags are empty.** |
+| `openai.py` | `openai` | `news/rss.xml` | Trivial — no filtering. Optionally override `categorize()` to map the feed's real tags (`Research`, `Engineering`, `Product`) onto categories; see the Step 3 correction. |
 | `google.py` | `google` | blog.google AI + DeepMind | Trivial; both topic-scoped. DeepMind has no `<category>` elements — categorize by source. |
 | `microsoft.py` | `microsoft` | Source AI + Azure blog | **Azure needs a category allowlist** — there is no AI-scoped Azure feed (the topic feed 404s). Allowlist against the 39 `<category>` values. |
 | `aws.py` | `aws` | ML blog | Trivial; fully AI-scoped. |

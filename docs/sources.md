@@ -36,10 +36,25 @@ scraper in `product-update-digest`.
 Suggested category mapping: `/news/` → `news`, `/research/` → `research`,
 `/engineering/` → `engineering`. Exclude `/legal/`, `/careers/`, `/events/`.
 
-### OpenAI — ignore the category tags
-`openai.com/blog/rss.xml` redirects to the same feed. The feed contains 958
-`<category>` elements but **every one is empty** — do not attempt to filter or
-classify on them. The whole feed is AI by definition. `pubDate` is reliable.
+### OpenAI — the category tags are usable after all
+`openai.com/blog/rss.xml` redirects to the same feed. `pubDate` is reliable.
+
+**Corrected 2026-08-01.** The 2026-07-31 probe recorded all 958 `<category>`
+elements as empty; that was a CDATA-handling artifact of the probe, not the
+feed. Re-read through `parse_feed()`, all 958 carry real values across 20
+distinct terms:
+
+```
+Company 196 · Research 194 · Product 145 · Global Affairs 102 · Story 66
+Safety & Alignment 61 · Safety 47 · OpenAI Academy 30 · Publication 29
+Security 21 · Engineering 17 · API 14 · … (AI Adoption, Release, Startup, …)
+```
+
+No **filtering** is needed — the whole feed is AI by definition — but the tags
+are good enough to **categorize** on: `Research`/`Publication` → `research`,
+`Engineering`/`API` → `engineering`, `Product`/`Release` → `product`, everything
+else → `news`. `FeedScraper.categorize()` is the hook for that; wiring it up is
+Step 5's call.
 
 ### Google — two sources, no filtering
 `blog.google/technology/ai/rss/` is already topic-scoped, which resolves the

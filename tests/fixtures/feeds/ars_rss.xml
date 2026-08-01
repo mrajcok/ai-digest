@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<channel>
+  <title>AI &#8211; Ars Technica</title>
+  <link>https://arstechnica.com/ai/</link>
+  <item>
+    <title>A study of long-context retrieval failures</title>
+    <link>https://arstechnica.com/ai/2026/07/long-context-retrieval-failures/</link>
+    <pubDate>Thu, 30 Jul 2026 18:30:00 +0000</pubDate>
+    <category><![CDATA[AI]]></category>
+    <description><![CDATA[<p>Short excerpt.</p>]]></description>
+    <content:encoded><![CDATA[<div><p>Researchers measured retrieval accuracy across context windows of 8k, 128k and 1M tokens, and found a consistent drop past the 128k mark on multi-hop questions.</p><p>The full article body arrives in the feed, so no second HTTP request is needed to summarize it. That is the whole reason content_in_feed exists for this source.</p></div>]]></content:encoded>
+  </item>
+  <item>
+    <title>An item whose content:encoded is missing</title>
+    <link>https://arstechnica.com/ai/2026/07/no-encoded-content/</link>
+    <pubDate>Wed, 29 Jul 2026 18:30:00 +0000</pubDate>
+    <category><![CDATA[AI]]></category>
+    <description><![CDATA[<p>Excerpt only — the scraper must fall back to fetching the page.</p>]]></description>
+  </item>
+</channel>
+</rss>

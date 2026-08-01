@@ -105,7 +105,9 @@ COMPANIES: dict[str, Company] = {
         label="OpenAI",
         group="vendor",
         sources=(
-            # The feed's 958 <category> elements are all empty — never filter on them.
+            # No filtering: the whole feed is AI by definition. Its <category> tags
+            # are real though (Research, Engineering, Product, …) — see sources.md;
+            # they are a categorize() input for Step 5, not an allowlist.
             Source(
                 key="openai-news",
                 company="openai",

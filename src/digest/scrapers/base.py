@@ -1,3 +1,4 @@
+import json
 import logging
 import time
 from abc import ABC, abstractmethod
@@ -191,6 +192,43 @@ class BaseScraper(ABC):
         for tag in soup(["script", "style", "nav", "footer", "header"]):
             tag.decompose()
         return soup.get_text(separator=" ", strip=True)
+
+    @staticmethod
+    def extract_title(soup: BeautifulSoup) -> str:
+        """og:title → h1 → <title>. Shared by the feed and sitemap scrapers."""
+        og = soup.find("meta", property="og:title")
+        if og and og.get("content"):
+            return str(og["content"]).strip()
+        h1 = soup.find("h1")
+        if h1:
+            return h1.get_text(strip=True)
+        title_tag = soup.find("title")
+        return title_tag.get_text(strip=True) if title_tag else ""
+
+    @staticmethod
+    def extract_date(soup: BeautifulSoup) -> str | None:
+        """JSON-LD datePublished → article:published_time → <time datetime>, as YYYY-MM-DD."""
+        # JSON-LD is the most reliable source on modern SSR/SPA article pages.
+        for script in soup.find_all("script", type="application/ld+json"):
+            try:
+                data = json.loads(script.string or "")
+            except (json.JSONDecodeError, AttributeError):
+                continue
+            for candidate in data if isinstance(data, list) else [data]:
+                if not isinstance(candidate, dict):
+                    continue
+                for key in ("datePublished", "dateCreated"):
+                    val = candidate.get(key)
+                    if val:
+                        return str(val)[:10]
+        for prop in ("article:published_time", "og:article:published_time"):
+            meta = soup.find("meta", property=prop)
+            if meta and meta.get("content"):
+                return str(meta["content"])[:10]
+        time_tag = soup.find("time", attrs={"datetime": True})
+        if time_tag:
+            return str(time_tag["datetime"])[:10]
+        return None
 
     def close(self) -> None:
         self.client.close()

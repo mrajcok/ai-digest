@@ -33,6 +33,10 @@ class Settings(BaseSettings):
     max_api_retries: int = 5
     summarizer_content_chars: int = 15000
 
+    # Feed pagination (?paged=N) — only reached during backfill, since a normal run's
+    # cutoff is covered by page 1. Caps how far a --since backfill will walk a feed.
+    feed_max_pages: int = 10
+
     # Companies whose sites are blocked by a work firewall: the summary is the only
     # thing the reader will ever see, so it gets a longer, self-contained treatment
     # built from a bigger slice of the article. Values are Company.key from sources.py
