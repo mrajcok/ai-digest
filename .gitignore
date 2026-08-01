@@ -13,10 +13,11 @@ build/
 # Virtual environment (project-local)
 .venv/
 
-# Logs — .jsonl/.err are autopilot's raw Claude stream and stderr; never commit them
-logs/*.log
-logs/*.jsonl
-logs/*.err
+# Logs — everything in here, so anything autopilot or a step drops in
+# (filtered output, raw Claude stream, stderr) stays out of `git add -A`.
+# The dir itself is tracked via .gitkeep, same as data/.
+logs/*
+!logs/.gitkeep
 
 # Runtime data (database, dry-run output) — the dir itself is tracked via .gitkeep
 data/*

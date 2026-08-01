@@ -46,7 +46,7 @@ Left stubbed with `TODO(Step 2a)` markers: `COMPANIES` in
 `publisher/github_pages.py` is a hardcoded eight-key list, `--site` reads its
 choices from it, and `_build_scrapers()` returns `[]` and logs a warning.
 
-### Already copied and adapted
+### Implementation Summary
 
 `pyproject.toml` (name `ai-digest`, `sqlite-vec` and the `openai` SDK already
 removed from dependencies), `Makefile` (`deploy-mcp` target already removed),
@@ -272,7 +272,8 @@ Prompt wording is not a mechanical port; write it fresh against the category
 list 2e settles on, then eyeball the output of `--stage summarize --limit 1`
 against a real Anthropic research page and a TechCrunch item before moving on.
 
-**Done.** `release_notes` was rewritten rather than left alone — its wording was
+#### Implementation Summary
+`release_notes` was rewritten rather than left alone — its wording was
 Ocient-docs-specific (SQL statement names, "the vendor's docs site"), which is
 as wrong for this domain as the system prompt was. The prompt is also now handed
 `company_label()` rather than the raw key, so it sees "Ars Technica", not
@@ -394,7 +395,7 @@ URL on every run.
 `content:encoded` present/absent, pagination, and malformed XML that must not
 raise.
 
-### As built
+### Implementation Summary
 
 Everything above landed as specified. What the plan didn't say:
 

@@ -72,6 +72,7 @@ Write tests for your changes, then:
 ```bash
 make test        # uv run pytest
 make lint        # uv run ruff check .   — must be clean before committing
+make lint-sh     # shellcheck on every tracked/new *.sh — must also be clean
 make fix         # ruff check --fix      — auto-fixes imports, sorting, simple rules
 ```
 

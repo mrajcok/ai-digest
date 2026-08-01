@@ -1,4 +1,4 @@
-.PHONY: sync test lint fix format clean
+.PHONY: sync test lint lint-sh fix format clean
 
 sync:
 	uv sync --extra dev
@@ -8,6 +8,11 @@ test:
 
 lint:
 	uv run ruff check .
+
+# Shell scripts only (autopilot.sh, run_tests.sh). Kept out of `lint` so that
+# target stays exactly `ruff check .` and doesn't need shellcheck installed.
+lint-sh:
+	git ls-files --cached --others --exclude-standard '*.sh' | xargs -r shellcheck
 
 fix:
 	uv run ruff check --fix .

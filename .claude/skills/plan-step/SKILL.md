@@ -6,143 +6,103 @@ disable-model-invocation: true
 
 `$ARGUMENTS` is the path to this project's plan file.
 
-You are running unattended, with no one available to answer questions.
-Make reasonable, conservative decisions and keep going rather than stalling —
-but see rule 4 for when to stop instead of guessing.
+You are running unattended overnight. Nobody can answer questions, so make
+reasonable, conservative decisions and keep going — unless a rule below tells
+you to stop.
+
+## Workflow
+
+Do these in order.
+
+**1. Pick the step.** Read the plan file. Steps are headings numbered
+`## Step N` or `### Na.`; a finished one ends in `— **done**`. Nothing else in
+the file is a step. Take the first step that isn't done — but read the
+surrounding prose first: if it gives an ordering or dependency reason ("2e
+moved first because..."), follow that over document order.
+
+If every step is done, print `NO_PENDING_STEPS`, change nothing, and stop.
+
+**2. Branch.** Before editing anything:
+
+```bash
+git checkout -b "autopilot/$(date -u +%Y%m%d-%H%M%S)-<short-step-slug>"
+```
+
+Run `date` for real; don't write a timestamp from memory. The name must start
+with `autopilot/`.
+
+**3. Report the branch.** Confirm the checkout worked
+(`git branch --show-current`), then print `AUTOPILOT_BRANCH=<branch-name>`. If
+it failed, stop per Rule 5 — without printing a branch line.
+
+**4. Implement exactly that one step.** Not the next one, not a neighboring
+sub-step, and nothing beyond what the step's text describes.
+
+**5. Verify.** Run the project's checks and make them pass. `./run_tests.sh`
+is best — it runs `make test`, `make lint` (which must be clean) and
+`shellcheck`, and is the same gate applied after this session ends.
+
+**6. Mark it done.** Append `— **done**` to that step's heading, matching how
+other finished headings in the file are written — including a `Completed
+<date>.` note if they carry one, dated from `date -u +%Y-%m-%d`. Touch no
+other step's text or status.
+
+**7. Write the summary.** Add an `Implementation Summary` subsection one
+heading level deeper than the step (`###` under `## Step N`, `####` under
+`### Na.`), at the very end of that step's content — after its last sub-step,
+before the next step's heading. A few sentences or short bullets:
+
+- what changed (files, behavior), especially where you diverged from a
+  literal reading of the step
+- non-obvious decisions, and why
+- issues you found and fixed along the way
+
+Anything you found but left alone because fixing it would exceed this step's
+scope goes in the plan's `## Open items` section instead, as a dated bullet
+naming the step that surfaced it. Only add to that section; never edit or
+resolve entries already in it.
 
 ## Rules
 
-1. **Pick the step**: Read the plan file at `$ARGUMENTS`. It documents many
-   steps, marked done by a `— **done**` suffix on the heading once finished
-   (both `## Step N — ...` headings and lettered sub-steps like
-   `### Na. ...`). Find the next step or sub-step that is **not** marked
-   done. Usually that's the first undone one in document order, but read the
-   surrounding prose carefully first — some steps explain a dependency or
-   ordering reason (e.g. "2e moved first because...") that means a
-   later-numbered sub-step should actually go before an earlier-numbered
-   one. Match that reasoning rather than blindly going top-to-bottom. Ignore
-   non-step headings (decisions, "already copied" notes, target-layout
-   listings) — only headings that are actual numbered steps or sub-steps
-   count.
+1. **One step per session**, even if a neighboring one looks related.
 
-   If every step in the file is already marked done, print exactly the line
-   `NO_PENDING_STEPS`, make no changes, and stop.
+2. **No git beyond the one `git checkout -b`.** No `add`, `commit`, `merge`,
+   `push`, `stash`, `reset`; no switching branches again. Staging, committing,
+   merging and cleanup all happen after this session ends.
 
-   Otherwise, before making any other change, create and check out a branch
-   for this step: `git checkout -b <branch-name>`. The branch name must
-   start with `autopilot/` — autopilot relies on that prefix to recognize
-   an abandoned step branch and refuse to treat it as a base branch. Use
-   `autopilot/$(date -u +%Y%m%d-%H%M%S)-<short-slug-of-the-step>`, actually
-   running `date` rather than writing a timestamp from memory; the
-   timestamp keeps a blocked branch from an earlier run (rule 4) from
-   colliding with a new attempt.
+3. **Nothing leaves this machine, nothing costs money.** Never push a branch,
+   never publish to `gh-pages`, never fire the Discord webhook at a live
+   target, never run a pipeline stage that calls a paid LLM. Offline tests and
+   read-only fetches (probing a feed you're writing a scraper for) are fine.
 
-   Confirm the checkout actually succeeded (`git branch --show-current`)
-   before going further. If it failed for any reason, stop immediately per
-   rule 4 — do **not** start editing files on the base branch. Autopilot
-   verifies this too and will refuse to commit if the repo isn't on the
-   branch you report.
+4. **Never edit `autopilot.sh` or `.claude/skills/plan-step/SKILL.md`.** If a
+   step calls for it, stop per Rule 5.
 
-   Once it succeeds, print exactly one line, with nothing else on it:
-   `AUTOPILOT_BRANCH=<branch-name>`. This is the only way autopilot learns
-   which branch to merge afterward — if it's missing, the run stops for
-   human review.
+5. **Stop when genuinely blocked** — the step is ambiguous in a way that
+   changes the outcome, conflicts with existing code, or depends on something
+   missing (a credential, a library decision, a prior step that wasn't
+   actually done). Explain what's blocking you and what you'd need, print
+   `HUMAN_REVIEW_REQUIRED`, and stop.
 
-   Implement exactly what the chosen step describes. Don't start on any
-   other step, and don't expand or reinterpret its scope beyond what it
-   says. Do one step (or one sub-step) per session, even if a neighboring
-   one looks related — each session, and its branch, covers exactly one.
+   Leave the changes you've already made in place; don't revert them. Don't
+   mark the step done and don't write an Implementation Summary, since it
+   didn't succeed — but a bullet in `## Open items` describing the blocker is
+   welcome.
 
-   **The three sentinel lines** (`NO_PENDING_STEPS`,
-   `AUTOPILOT_BRANCH=<name>`, `HUMAN_REVIEW_REQUIRED`) are matched as whole
-   lines. Each must appear alone on its own line, exactly, with no
-   surrounding prose, quotes, or backticks. You may discuss them in your
-   narration — a mention inside a sentence won't be mistaken for the real
-   thing — but only emit one as a bare line when you actually mean it.
+6. **Narrate plainly.** Say which step you picked (and why, if it wasn't
+   simply the next one), what you're doing, and what you did — files touched,
+   assumptions made, anything a reviewer should look at twice. Extended
+   thinking and tool output are stripped from the log; this narration is the
+   only record of your work.
 
-2. **Tests**: Run this project's checks before you finish and make sure
-   they pass, fixing any failures your changes introduced. Prefer the
-   commands the project documents (in this repo, CLAUDE.md specifies
-   `make test` and `make lint`, and requires lint to be clean before
-   anything is committed). If the repo has a `./run_tests.sh`, that is the
-   same gate autopilot will run after you finish, so running it yourself
-   first is the surest way to know your step will actually land.
+## Sentinels
 
-3. **No further git**: Other than the one `git checkout -b` from rule 1,
-   do not run `git add`, `git commit`, `git merge`, or switch branches
-   again. The autopilot script handles staging, committing, merging your
-   branch back into the base branch, and deleting it, after this session
-   ends — based on whether the working tree has changes and (if present)
-   whether tests pass.
+| Line | Meaning |
+|---|---|
+| `NO_PENDING_STEPS` | every step in the file is already done |
+| `AUTOPILOT_BRANCH=<name>` | the branch you created for this step |
+| `HUMAN_REVIEW_REQUIRED` | blocked; stopping |
 
-4. **When you're genuinely blocked**: if the step is ambiguous in a way that
-   materially changes the outcome, conflicts with existing code, or depends
-   on something missing (a credential, a library decision, a prior step that
-   wasn't actually done), stop rather than guessing. Don't revert whatever
-   changes you've made so far — they may be unrelated to what's blocking
-   you and still worth keeping for a human to pick up from. Just don't mark
-   the step done or write an Implementation Summary for it, since it didn't
-   succeed; a bullet in `## Unresolved Issues` (rule 6) noting the blocker
-   is fine and encouraged.
-
-   Clearly explain what's blocking you and what you'd need to proceed, then
-   print exactly the line `HUMAN_REVIEW_REQUIRED` and stop. Autopilot
-   doesn't infer this from your exit code or from whether the working tree
-   changed — whatever files you touched stay uncommitted, on your step
-   branch, either way — this line is the only signal it watches for to halt
-   the run without testing, merging, or committing anything.
-
-   If you already created and reported a branch (rule 1), you're done; the
-   branch is left checked out for a human to inspect. If you got blocked
-   *before* that — you couldn't determine which step to work on, or the
-   `git checkout -b` itself failed — just print `HUMAN_REVIEW_REQUIRED`
-   without a branch line. Don't invent an `AUTOPILOT_BRANCH=` value for a
-   branch that doesn't exist; autopilot checks that the repo is actually on
-   the branch you name and will stop anyway, with a more confusing message
-   than the real reason you're reporting.
-
-5. **Mark it done**: Once the step is fully implemented and tests pass, edit
-   the plan file to mark that step's heading done — follow the exact
-   convention already used elsewhere in the file (append `— **done**` to
-   the heading; if nearby completed steps also add a short "Completed
-   <date>." note, do the same, using today's UTC date via
-   `date -u +%Y-%m-%d`). Only touch the heading/note for the step you just
-   completed — don't edit any other step's text, status, or checklists.
-
-6. **Write an implementation summary**: Add a subsection titled
-   `Implementation Summary`, one heading level deeper than the step it
-   belongs to (`####` under a `## Step N`, `#####` under a `### Na.`).
-
-   Place it at the *end* of that step's own content — after the step's
-   prose, and after its last sub-step if it has any, but before the next
-   step's heading. Putting it immediately under a parent `## Step N` that
-   has `### Na.` sub-steps would wedge it above those sub-steps and read as
-   if it summarized the whole step before any of them ran.
-
-   In it, briefly document:
-   - what was actually changed (files/behavior), especially anywhere the
-     implementation diverged from a literal reading of the step
-   - any non-obvious decisions you made and why (the kind of judgment call
-     rule 1's "make reasonable, conservative decisions" covers)
-   - any issues you found *and fixed* along the way, even if unrelated to
-     the step's literal text
-   Keep it tight — a few sentences or a short bullet list, not an essay.
-
-   If you found an issue that's out of scope for this step (fixing it would
-   mean expanding beyond what the step describes, violating rule 1) and so
-   you left it unresolved, don't silently drop it: append an entry for it to
-   an `## Unresolved Issues` section at the very end of the plan file.
-   Create that section (as the last section in the file) if it doesn't
-   exist yet. Each entry should be a short bullet naming which step surfaced
-   it, the date, and what the issue is — enough for a future step or a human
-   to pick up. Never delete or resolve other steps' entries in this section
-   yourself; only add to it.
-
-7. **Narrate plainly**: briefly say which step you picked and why (if it
-   wasn't simply the next one in document order), what you're about to do,
-   and summarize what you did at the end — files touched, any assumptions
-   you made, and anything worth a second look by a human reviewer. This
-   narration is what ends up in the log (the log strips out extended
-   thinking and tool diffs, keeping only your plain-text output), so it's
-   the primary way your work gets reviewed. A step that finishes silently is
-   a step nobody can audit later.
+Each is matched as a whole line. Print one alone on its own line, exactly, with
+no prose, quotes, or backticks around it — and only when you mean it.
+Mentioning one inside a sentence is safe.

@@ -16,6 +16,9 @@ plan_file, if given, overrides the PLAN_FILE environment variable and the
 default location.
 
 Run this from your project's root directory (a git repo). Assumes:
+  - a clean working tree — anything uncommitted when the run starts would be
+    swept into the first step's commit by `git add -A`, so the run refuses
+    to start
   - a single plan file (default docs/plan.md) documents every step, with
     each finished step/sub-step heading marked "— **done**"
   - a ./run_tests.sh that exits non-zero if the project is broken; it is
@@ -24,34 +27,44 @@ Run this from your project's root directory (a git repo). Assumes:
   - .claude/skills/plan-step/SKILL.md exists in this project
 
 Each fresh Claude session reads the plan file itself and decides which
-undone step to work on next — this script doesn't track that. It always
-runs Claude with --dangerously-skip-permissions, since it's meant to run
-unattended overnight with no one available to approve tool calls.
+undone step to work on next — this script doesn't track that. Sessions run
+on AUTOPILOT_MODEL at AUTOPILOT_EFFORT (sonnet / high by default), always
+with --dangerously-skip-permissions, since it's meant to run unattended
+overnight with no one available to approve tool calls.
 
 Each step is done on its own branch, created by the Claude session itself
 (it reports the name back via an AUTOPILOT_BRANCH=<name> line — if that's
 missing, the run stops for human review). On success this script commits on
 that branch, merges it into whichever branch was checked out when the run
-started, and deletes it. On a blocked step or a test failure, the branch is
-left checked out, uncommitted, for you to inspect — so the next run refuses
-to start from an autopilot/* branch rather than treating it as the base.
+started, and deletes it. Nothing is ever pushed; you review and push in the
+morning. On a blocked step or a test failure, the branch is left checked
+out, uncommitted, for you to inspect — so the next run refuses to start
+from an autopilot/* branch rather than treating it as the base.
+
+A step is only committed if the session also marked its heading "— **done**"
+in the plan file. Without that check a session that finished the work but
+forgot the marker would be committed and merged, and then the next session
+would read the same unmarked plan and redo the same step — repeatedly, all
+night.
 
 Logs: each step's filtered Claude output plus this script's own messages
 (prefixed "AP:") go to logs/autopilot-step-<n>.log; the raw JSON stream
 (used for usage-limit detection) goes to logs/autopilot-step-<n>.raw.jsonl
 and Claude's stderr to logs/autopilot-step-<n>.err. <n> is the next unused
-number, so no earlier log is ever overwritten.
+number, so no earlier log is ever overwritten. The logs directory should be
+gitignored; the run warns if it isn't.
 
-Usage limits: if a step fails before creating its branch, this script
-checks the raw output for a rate_limit_event with status "rejected" — an
-undocumented but observed part of the stream-json output that includes the
-exact resetsAt time — and sleeps until then before retrying. That wait is
-capped at MAX_LIMIT_SLEEP_SECONDS so a seven-day limit can't park the run
-for days. If the event isn't found but the output still looks limit-related,
-it falls back to a blind LIMIT_RETRY_WAIT_SECONDS sleep. Either way it
-retries up to MAX_LIMIT_RETRIES times before giving up. If the limit is hit
-*after* a branch was created, this script does not guess: it stops for
-review rather than risk abandoning partial work.
+Usage limits: if a step ends without creating a branch and without reporting
+a verdict, this script checks the raw output for a rate_limit_event with
+status "rejected" — an undocumented but observed part of the stream-json
+output that includes the exact resetsAt time — and sleeps until then before
+retrying. That wait is capped at MAX_LIMIT_SLEEP_SECONDS, and is refused
+outright if it would run past the MAX_RUN_SECONDS budget. If the event isn't
+found but the session's stderr or its final result message still looks
+limit-related, it falls back to a blind LIMIT_RETRY_WAIT_SECONDS sleep.
+Either way it retries up to MAX_LIMIT_RETRIES times before giving up. If a
+branch was created, this script does not guess: it stops for review rather
+than risk abandoning partial work.
 
 Run it inside tmux so it survives your SSH session ending:
   tmux new -s autopilot
@@ -63,8 +76,26 @@ Environment variables:
                         Prompted for interactively if it doesn't exist.
                         Overridden by plan_file if given on the command
                         line.
+  AUTOPILOT_MODEL       Model each step's session runs on (default: sonnet).
+                        An alias ('sonnet', 'opus', 'fable') or a full name
+                        like 'claude-sonnet-5'. Passed straight to
+                        `claude --model`.
+  AUTOPILOT_EFFORT      Reasoning effort for each session — low, medium,
+                        high, xhigh or max (default: high). Passed straight
+                        to `claude --effort`. Both are checked at startup,
+                        so a typo fails immediately rather than at 3am.
   MAX_STEPS             Safety cap on steps completed per run of this
                         script (default: 30).
+  MAX_RUN_SECONDS       Wall-clock budget for the whole run (default:
+                        43200, i.e. 12h). No new step is started once it is
+                        spent, and no usage-limit sleep is allowed to run
+                        past it. Set to 0 to disable.
+  STEP_TIMEOUT_SECONDS  Kill a single Claude session that runs this long
+                        (default: 3600, i.e. 1h) and stop for review. A
+                        wedged session would otherwise park the run until
+                        morning.
+  TEST_TIMEOUT_SECONDS  Same, for one ./run_tests.sh invocation (default:
+                        1800, i.e. 30m).
   MAX_LIMIT_RETRIES     Consecutive suspected usage-limit hits to tolerate
                         on one step before giving up (default: 12).
   LIMIT_RETRY_WAIT_SECONDS
@@ -75,8 +106,8 @@ Environment variables:
                         that time instead.
   MAX_LIMIT_SLEEP_SECONDS
                         Upper bound on any single usage-limit sleep
-                        (default: 21600, i.e. 6h). Keeps a seven-day limit
-                        from silently parking the run.
+                        (default: 21600, i.e. 6h). MAX_RUN_SECONDS is what
+                        bounds them in aggregate.
 EOF
 }
 
@@ -95,23 +126,82 @@ SKILL_FILE=".claude/skills/plan-step/SKILL.md"
 # Kept outside the repo: a lock file inside it would be swept up by the
 # `git add -A` below and committed.
 LOCK_FILE="${TMPDIR:-/tmp}/autopilot-$(printf '%s' "$PWD" | cksum | cut -d' ' -f1).lock"
+AUTOPILOT_MODEL="${AUTOPILOT_MODEL:-sonnet}"
+AUTOPILOT_EFFORT="${AUTOPILOT_EFFORT:-high}"
 MAX_STEPS="${MAX_STEPS:-30}"   # safety cap so a bad run can't run forever
+MAX_RUN_SECONDS="${MAX_RUN_SECONDS:-43200}"                     # 12h
+STEP_TIMEOUT_SECONDS="${STEP_TIMEOUT_SECONDS:-3600}"            # 1h
+TEST_TIMEOUT_SECONDS="${TEST_TIMEOUT_SECONDS:-1800}"            # 30m
 MAX_LIMIT_RETRIES="${MAX_LIMIT_RETRIES:-12}"
 LIMIT_RETRY_WAIT_SECONDS="${LIMIT_RETRY_WAIT_SECONDS:-1800}"    # 30m
 MAX_LIMIT_SLEEP_SECONDS="${MAX_LIMIT_SLEEP_SECONDS:-21600}"     # 6h
 
+# Only ever matched against Claude's stderr and its final result message —
+# never against the model's own narration, which in a project like this one
+# routinely discusses rate limiting and would otherwise self-trigger.
+LIMIT_TEXT_RE='usage limit|rate limit|quota exceeded|too many requests|resets at'
+
 # top-level messages (not tied to a specific step) just print to the terminal
 say() { echo "AP: $(date '+%Y-%m-%d %H:%M:%S') | $*"; }
+
+# GNU date wants -d @<epoch>, BSD/macOS date wants -r <epoch>.
+fmt_epoch() {
+  date -d "@$1" '+%Y-%m-%d %H:%M:%S %Z' 2>/dev/null \
+    || date -r "$1" '+%Y-%m-%d %H:%M:%S %Z' 2>/dev/null \
+    || echo "epoch $1"
+}
 
 if [[ -z "${TMUX:-}" ]]; then
   say "WARNING: not running inside tmux. If this shell dies (e.g. your SSH session drops), the run stops with it."
   say "Consider: tmux new -s autopilot   — then re-run this script inside that session."
 fi
 
+if ! command -v claude >/dev/null 2>&1; then
+  say "ERROR: 'claude' is not on PATH. Install Claude Code, or start the shell that has it, then re-run."
+  exit 1
+fi
+
+case "$AUTOPILOT_EFFORT" in
+  low|medium|high|xhigh|max) ;;
+  *)
+    say "ERROR: AUTOPILOT_EFFORT must be one of low, medium, high, xhigh, max (got '$AUTOPILOT_EFFORT')."
+    exit 1
+    ;;
+esac
+
+# Checked once here rather than discovered when step 1 dies with "unknown
+# option" three hours into the night.
+claude_help="$(claude --help 2>&1)"
+for flag in --model --effort; do
+  if ! grep -q -- "$flag " <<<"$claude_help"; then
+    say "ERROR: this Claude Code ($(claude --version 2>/dev/null)) has no '$flag' option. Upgrade it, or edit the invocation below."
+    exit 1
+  fi
+done
+
 if ! command -v jq >/dev/null 2>&1; then
   say "ERROR: jq is required (used to filter Claude's output down to plain text, dropping thinking/tool detail)."
   say "Install it, e.g. 'apt install jq' or 'brew install jq', then re-run."
   exit 1
+fi
+
+# A hung session or a hung test suite would otherwise silently consume the
+# whole night, so both children are wrapped in timeout when it's available.
+TIMEOUT_BIN=""
+for candidate in timeout gtimeout; do
+  if command -v "$candidate" >/dev/null 2>&1; then
+    TIMEOUT_BIN="$candidate"
+    break
+  fi
+done
+if [[ -z "$TIMEOUT_BIN" ]]; then
+  say "WARNING: no 'timeout' (or 'gtimeout') on PATH — a wedged Claude session or test run can park this script indefinitely."
+  say "On macOS: brew install coreutils."
+  step_timeout=()
+  test_timeout=()
+else
+  step_timeout=("$TIMEOUT_BIN" -k 30 "$STEP_TIMEOUT_SECONDS")
+  test_timeout=("$TIMEOUT_BIN" -k 30 "$TEST_TIMEOUT_SECONDS")
 fi
 
 if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
@@ -139,6 +229,25 @@ if [[ "$BASE_BRANCH" == autopilot/* ]]; then
   exit 1
 fi
 
+# A merge this script failed to complete leaves conflict markers on the base
+# branch — which is *not* an autopilot/* branch, so the guard above misses
+# it. Starting a new run there would `git add -A` those markers into a step
+# commit.
+if git rev-parse -q --verify MERGE_HEAD >/dev/null 2>&1; then
+  say "ERROR: a merge is in progress on '$BASE_BRANCH' — a previous run's merge probably conflicted."
+  say "Resolve or abort it ('git merge --abort'), then re-run."
+  exit 1
+fi
+
+# Every step is committed with `git add -A`, so anything already dirty would
+# ride along into the first step's commit and get merged into the base branch.
+if [[ -n "$(git status --porcelain)" ]]; then
+  say "ERROR: the working tree isn't clean. Autopilot commits with 'git add -A', so uncommitted work would be swept into a step's commit."
+  say "Commit, stash, or discard your changes, then re-run. Current status:"
+  git status --short
+  exit 1
+fi
+
 if [[ ! -f "$PLAN_FILE" ]]; then
   say "Plan file '$PLAN_FILE' not found."
   read -r -p "AP: Enter the plan file's path, relative to the project root: " PLAN_FILE
@@ -152,17 +261,56 @@ if [[ ! -x "./run_tests.sh" ]]; then
   say "WARNING: no executable ./run_tests.sh — nothing will verify a step before it is committed and merged."
 fi
 
-# Refuse to run two autopilots against the same working tree.
+# Refuse to run two autopilots against the same working tree. A lock left by
+# a killed run (tmux kill-session sends SIGHUP) is taken over rather than
+# blocking the next night entirely.
 if ! ( set -o noclobber; echo "$$" > "$LOCK_FILE" ) 2>/dev/null; then
-  say "ERROR: $LOCK_FILE exists (pid $(cat "$LOCK_FILE" 2>/dev/null)). Another autopilot may be running."
-  say "If not, remove it: rm $LOCK_FILE"
-  exit 1
+  lock_pid="$(cat "$LOCK_FILE" 2>/dev/null)"
+  if [[ "$lock_pid" =~ ^[0-9]+$ ]] && kill -0 "$lock_pid" 2>/dev/null; then
+    say "ERROR: another autopilot (pid $lock_pid) is already running against this working tree."
+    say "If that's wrong, remove the lock: rm $LOCK_FILE"
+    exit 1
+  fi
+  say "WARNING: stale lock $LOCK_FILE (pid ${lock_pid:-unknown} is not running). Taking it over."
+  echo "$$" > "$LOCK_FILE"
 fi
-trap 'rm -f "$LOCK_FILE"' EXIT
+
+SCRATCH_DIR="$(mktemp -d)"
+cleanup() {
+  rm -f "$LOCK_FILE"
+  rm -rf "$SCRATCH_DIR"
+}
+# EXIT alone doesn't fire on an untrapped SIGTERM/SIGHUP, which is exactly how
+# this script dies when a tmux session is killed. Caveat: bash defers a trap
+# until the running foreground command returns, and `timeout` runs Claude in
+# its own process group, so a signal aimed here may not be acted on until the
+# current session ends or hits STEP_TIMEOUT_SECONDS. The stale-lock takeover
+# above is the backstop for whatever slips through.
+trap cleanup EXIT
+trap 'cleanup; exit 130' INT
+trap 'cleanup; exit 143' TERM HUP
+
+attempt_text="$SCRATCH_DIR/attempt.txt"
+attempt_raw="$SCRATCH_DIR/attempt.jsonl"
+attempt_err="$SCRATCH_DIR/attempt.err"
 
 mkdir -p "$LOG_DIR"
 
+# Probed with a filename rather than the bare directory: check-ignore reports
+# a directory as un-ignored when it holds a tracked file (logs/.gitkeep).
+if ! git check-ignore -q "$LOG_DIR/autopilot-probe.log" 2>/dev/null; then
+  say "WARNING: '$LOG_DIR/' is not gitignored — 'git add -A' will commit this run's logs along with each step."
+  say "Add '$LOG_DIR/' to .gitignore."
+fi
+
+RUN_START=$(date +%s)
+run_deadline=$(( RUN_START + MAX_RUN_SECONDS ))
+
 say "=== Autopilot run starting on '$PLAN_FILE' (max $MAX_STEPS steps this run, base branch '$BASE_BRANCH') ==="
+say "Model: $AUTOPILOT_MODEL, effort: $AUTOPILOT_EFFORT."
+if (( MAX_RUN_SECONDS > 0 )); then
+  say "Run budget: ${MAX_RUN_SECONDS}s — no new step will start after $(fmt_epoch "$run_deadline")."
+fi
 
 steps_run=0
 retry_pending=0
@@ -172,6 +320,11 @@ raw_log=""
 err_log=""
 
 while (( steps_run < MAX_STEPS )); do
+  if (( MAX_RUN_SECONDS > 0 )) && (( $(date +%s) >= run_deadline )); then
+    say "Reached the ${MAX_RUN_SECONDS}s run budget. Not starting another step."
+    break
+  fi
+
   current_branch="$(git branch --show-current)"
   if [[ "$current_branch" != "$BASE_BRANCH" ]]; then
     say "ERROR: expected to be on '$BASE_BRANCH' at the start of a step but am on '$current_branch'. Stopping."
@@ -200,29 +353,34 @@ while (( steps_run < MAX_STEPS )); do
   ap() { echo "AP: $(date '+%H:%M:%S') $*" | tee -a "$step_log"; }
 
   if (( is_retry )); then
-    ap "Retrying step $step_num after a usage-limit wait (attempt $((limit_hits + 1))/$MAX_LIMIT_RETRIES)"
+    ap "Retrying step $step_num after a usage-limit wait ($limit_hits of $MAX_LIMIT_RETRIES tolerated hits so far)"
   else
     ap "Starting step $step_num (session will pick the next undone step from $PLAN_FILE and branch off $BASE_BRANCH)"
   fi
   say "Starting step $step_num (log: $step_log)"
 
-  # Each attempt writes to its own scratch files, so the sentinel checks
-  # below only ever see *this* attempt's output — a stale sentinel from a
-  # previous usage-limit attempt must not be matched. The scratch files are
-  # appended to the cumulative logs afterward for auditing.
-  attempt_text=$(mktemp)
-  attempt_raw=$(mktemp)
+  # Each attempt writes to its own scratch files — stdout, raw stream *and*
+  # stderr — so the checks below only ever see *this* attempt's output. A
+  # stale limit message from a previous attempt lingering in a cumulative
+  # file would otherwise re-trigger the retry logic on every later attempt.
+  # The scratch files are appended to the cumulative logs afterward for
+  # auditing. stderr gets its own file rather than sharing stdout's: two
+  # processes appending concurrently can interleave mid-line and corrupt the
+  # JSON that usage-limit detection parses.
+  : > "$attempt_text"
+  : > "$attempt_raw"
+  : > "$attempt_err"
 
   # The skill reads the plan file path via \$ARGUMENTS and figures out which
-  # undone step to work on. stderr gets its own file: it and stdout used to
-  # share one, and two processes appending concurrently can interleave
-  # mid-line and corrupt the JSON that usage-limit detection parses.
-  claude -p "/plan-step \"${PLAN_FILE}\"" \
+  # undone step to work on.
+  "${step_timeout[@]}" claude -p "/plan-step \"${PLAN_FILE}\"" \
+    --model "$AUTOPILOT_MODEL" \
+    --effort "$AUTOPILOT_EFFORT" \
     --dangerously-skip-permissions \
     --output-format stream-json \
     --verbose \
     --include-partial-messages \
-    2>>"$err_log" \
+    2>>"$attempt_err" \
     | tee -a "$attempt_raw" \
     | jq -rj 'select(.type == "stream_event" and .event.delta.type? == "text_delta") | .event.delta.text' \
     >> "$attempt_text"
@@ -231,56 +389,82 @@ while (( steps_run < MAX_STEPS )); do
 
   cat "$attempt_text" >> "$step_log"
   cat "$attempt_raw"  >> "$raw_log"
+  cat "$attempt_err"  >> "$err_log"
+
+  # Sentinels are matched as whole lines: the model discusses them by name
+  # ("I am not printing NO_PENDING_STEPS because ..."), so a substring match
+  # would produce false positives. Surrounding whitespace is tolerated —
+  # a single trailing space shouldn't cost a night's work.
+  saw_no_pending=0
+  saw_review=0
+  grep -qE '^[[:space:]]*NO_PENDING_STEPS[[:space:]]*$'      "$attempt_text" && saw_no_pending=1
+  grep -qE '^[[:space:]]*HUMAN_REVIEW_REQUIRED[[:space:]]*$' "$attempt_text" && saw_review=1
+  branch_name=$(sed -n 's/^[[:space:]]*AUTOPILOT_BRANCH=//p' "$attempt_text" | tail -n1 | tr -d '[:space:]')
 
   # Usage/rate-limit detection. Claude emits a structured
   # {"type":"rate_limit_event","rate_limit_info":{"status":...,"resetsAt":
   # <unix epoch>,"rateLimitType":...}} line on every request in the
   # stream-json output — confirmed by inspecting actual output, not
   # documented, so treat as liable to change. status "rejected" means that
-  # request was hard-blocked; resetsAt says when to retry. Only retried when
-  # no branch was created yet, so we never risk silently abandoning partial
-  # work from a step that got further before failing.
+  # request was hard-blocked; resetsAt says when to retry.
+  #
+  # The precondition is that the session accomplished nothing: no branch, no
+  # verdict sentinel, still on the base branch. That means retrying is safe —
+  # there's no partial work to abandon. Deliberately *not* gated on a
+  # non-zero exit code: `claude -p` doesn't reliably exit non-zero when a
+  # request is refused.
   usage_limit_hit=0
   limit_wait_seconds=0
   limit_wait_desc=""
-  if [[ $claude_exit -ne 0 ]] && [[ "$(git branch --show-current)" == "$BASE_BRANCH" ]]; then
-    rl_event=$(grep '"type":"rate_limit_event"' "$attempt_raw" | tail -n1)
-    rl_status=$(jq -r '.rate_limit_info.status // empty'        <<<"$rl_event" 2>/dev/null)
-    rl_resets_at=$(jq -r '.rate_limit_info.resetsAt // empty'   <<<"$rl_event" 2>/dev/null)
-    rl_type=$(jq -r '.rate_limit_info.rateLimitType // empty'   <<<"$rl_event" 2>/dev/null)
+  if (( ! saw_no_pending )) && (( ! saw_review )) && [[ -z "$branch_name" ]] \
+     && [[ "$(git branch --show-current)" == "$BASE_BRANCH" ]]; then
+    # Parsed with jq rather than grepped: a whitespace change in the stream's
+    # JSON formatting would silently disable a grep for '"type":"..."'.
+    rl_info=$(jq -r 'select(.type == "rate_limit_event")
+                     | .rate_limit_info
+                     | select(.status == "rejected")
+                     | "\(.resetsAt // "") \(.rateLimitType // "unknown")"' \
+                  "$attempt_raw" 2>/dev/null | tail -n1)
+    rl_resets_at="${rl_info%% *}"
+    rl_type="${rl_info##* }"
 
-    if [[ "$rl_status" == "rejected" && "$rl_resets_at" =~ ^[0-9]+$ ]]; then
+    if [[ "$rl_resets_at" =~ ^[0-9]+$ ]]; then
       usage_limit_hit=1
       limit_wait_seconds=$(( rl_resets_at - $(date +%s) + 15 ))
-      limit_wait_desc="until the reported ${rl_type:-unknown} reset time ($(date -d "@$rl_resets_at" '+%Y-%m-%d %H:%M:%S %Z'))"
+      limit_wait_desc="until the reported ${rl_type:-unknown} reset time ($(fmt_epoch "$rl_resets_at"))"
       if (( limit_wait_seconds > MAX_LIMIT_SLEEP_SECONDS )); then
         limit_wait_desc="$limit_wait_desc, capped at ${MAX_LIMIT_SLEEP_SECONDS}s"
         limit_wait_seconds=$MAX_LIMIT_SLEEP_SECONDS
       fi
       (( limit_wait_seconds < 60 )) && limit_wait_seconds=60
-    elif grep -qiE 'usage limit|session limit|rate limit|quota exceeded|resets at|"error":"(rate_limit|billing_error)"' "$attempt_raw" "$err_log"; then
-      usage_limit_hit=1
-      limit_wait_seconds=$LIMIT_RETRY_WAIT_SECONDS
-      limit_wait_desc="a blind ${LIMIT_RETRY_WAIT_SECONDS}s wait (no exact reset time reported)"
+    else
+      # Fallback: the CLI's own stderr, plus the text of the final result
+      # message. Both are the harness talking, not the model.
+      result_text=$(jq -r 'select(.type == "result")
+                           | [.result?, .error?]
+                           | map(select(. != null) | tostring)
+                           | join(" ")' "$attempt_raw" 2>/dev/null)
+      if grep -qiE "$LIMIT_TEXT_RE" <<<"$result_text" \
+         || grep -qiE "$LIMIT_TEXT_RE" "$attempt_err"; then
+        usage_limit_hit=1
+        limit_wait_seconds=$LIMIT_RETRY_WAIT_SECONDS
+        limit_wait_desc="a blind ${LIMIT_RETRY_WAIT_SECONDS}s wait (no exact reset time reported)"
+      fi
     fi
   fi
-
-  # Sentinels are matched as whole lines: the model discusses them by name
-  # ("I am not printing NO_PENDING_STEPS because ..."), so a substring match
-  # would produce false positives.
-  saw_no_pending=0
-  saw_review=0
-  grep -qxF 'NO_PENDING_STEPS'      "$attempt_text" && saw_no_pending=1
-  grep -qxF 'HUMAN_REVIEW_REQUIRED' "$attempt_text" && saw_review=1
-  branch_name=$(sed -n 's/^AUTOPILOT_BRANCH=//p' "$attempt_text" | tail -n1)
-
-  rm -f "$attempt_text" "$attempt_raw"
 
   if (( usage_limit_hit )); then
     limit_hits=$((limit_hits + 1))
     if (( limit_hits > MAX_LIMIT_RETRIES )); then
       ap "Hit a usage limit $limit_hits times in a row on step $step_num. Giving up — stopping for review."
       break
+    fi
+    if (( MAX_RUN_SECONDS > 0 )); then
+      remaining=$(( run_deadline - $(date +%s) ))
+      if (( limit_wait_seconds >= remaining )); then
+        ap "Usage limit on step $step_num would need a ${limit_wait_seconds}s wait, but only ${remaining}s of the ${MAX_RUN_SECONDS}s run budget remain. Stopping."
+        break
+      fi
     fi
     ap "Claude hit a usage/rate limit before starting work on step $step_num (attempt $limit_hits/$MAX_LIMIT_RETRIES). Sleeping ${limit_wait_seconds}s ($limit_wait_desc) before retrying."
     say "Usage limit; sleeping ${limit_wait_seconds}s before retrying step $step_num."
@@ -290,6 +474,12 @@ while (( steps_run < MAX_STEPS )); do
   fi
   limit_hits=0
 
+  # 124 is timeout's own exit code; 137 is a SIGKILL from its -k grace period.
+  if (( claude_exit == 124 || claude_exit == 137 )); then
+    ap "Claude exceeded the ${STEP_TIMEOUT_SECONDS}s step timeout on step $step_num and was killed. Stopping for review."
+    break
+  fi
+
   if [[ $claude_exit -ne 0 ]]; then
     ap "Claude exited with code $claude_exit on step $step_num. Stopping for review (stderr: $err_log)."
     break
@@ -297,13 +487,19 @@ while (( steps_run < MAX_STEPS )); do
 
   if (( saw_no_pending )); then
     ap "No pending steps remain in $PLAN_FILE. Done for the night."
-    rm -f "$step_log" "$raw_log" "$err_log"
+    # Kept, not deleted: if that verdict is wrong (a misread heading, a
+    # truncated file), this log is the only record of the reasoning. Renamed
+    # so it isn't mistaken for a step that ran, and so the number stays free.
+    for f in "$step_log" "$raw_log" "$err_log"; do
+      [[ -e "$f" ]] && mv "$f" "$f.nopending"
+    done
     break
   fi
 
   # Checked before the branch-name check: a session blocked before it could
   # pick a step has no branch to report, and the real blocker is the more
-  # useful thing to surface.
+  # useful thing to surface. A blocked step always ends the run — the branch
+  # is left checked out, which also stops the next run from starting.
   if (( saw_review )); then
     ap "Claude flagged step $step_num as blocked and needs human review. Leaving ${branch_name:-the current branch} checked out with any changes uncommitted."
     break
@@ -331,7 +527,13 @@ while (( steps_run < MAX_STEPS )); do
 
   if [[ -x "./run_tests.sh" ]]; then
     ap "Running tests..."
-    if ! ./run_tests.sh >> "$step_log" 2>&1; then
+    "${test_timeout[@]}" ./run_tests.sh >> "$step_log" 2>&1
+    test_exit=$?
+    if (( test_exit == 124 || test_exit == 137 )); then
+      ap "./run_tests.sh exceeded the ${TEST_TIMEOUT_SECONDS}s timeout on step $step_num and was killed. Stopping for review — leaving changes uncommitted."
+      break
+    fi
+    if (( test_exit != 0 )); then
       ap "Tests failed after step $step_num on branch '$branch_name'. Stopping for review — leaving changes uncommitted."
       break
     fi
@@ -339,16 +541,27 @@ while (( steps_run < MAX_STEPS )); do
     ap "WARNING: no ./run_tests.sh — committing step $step_num unverified."
   fi
 
+  # The plan file is the only record of which steps are finished, so a
+  # session that did the work but didn't mark the heading would be redone,
+  # identically, by every session after it. `git diff HEAD` so a heading the
+  # session staged (it shouldn't) still counts.
+  done_headings=$(git diff HEAD -- "$PLAN_FILE" | grep -E '^\+#+ .*\*\*done\*\*')
+  if [[ -z "$done_headings" ]]; then
+    ap "Step $step_num didn't mark any heading '**done**' in $PLAN_FILE. Stopping for review — committing this would let the next session redo the same step."
+    ap "The work is on branch '$branch_name', uncommitted, and tests passed; mark the heading and merge by hand if it's good."
+    break
+  fi
+
   # Name the commit after the heading the skill just marked done. Prefer the
   # most specific one: a session finishing sub-step 2h may also mark its
   # parent Step 2 done, and "2h" is the more accurate label for this commit.
-  step_name=$(git diff -- "$PLAN_FILE" \
-    | grep -E '^\+#+ .*\*\*done\*\*' \
+  step_name=$(printf '%s\n' "$done_headings" \
     | sed -E 's/^\+//' \
     | awk '{ print gsub(/#/,"#"), $0 }' \
     | sort -rn \
     | head -n1 \
-    | sed -E 's/^[0-9]+ #+ //')
+    | sed -E 's/^[0-9]+ #+ //' \
+    | sed -E 's/[[:space:]]*(—|–|--|-)?[[:space:]]*\*\*done\*\*.*$//')
   step_name="${step_name:-step $step_num}"
 
   git add -A
@@ -370,4 +583,4 @@ while (( steps_run < MAX_STEPS )); do
   say "Finished step $step_num: $step_name"
 done
 
-say "=== Autopilot run finished. $steps_run step(s) completed this run. ==="
+say "=== Autopilot run finished. $steps_run step(s) completed this run. Nothing was pushed. ==="
