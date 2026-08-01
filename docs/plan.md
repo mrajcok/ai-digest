@@ -474,6 +474,130 @@ Cost: ~26 articles/day at `google/gemma-3-27b-it` rates is ~$0.005/day, about
 local review before anything is pushed. Confirm the source badges and the
 vendor/press split there.
 
+## Step 7a — Daily overview ("summary of summaries")
+
+A single ~500-word synthesis of the day's **non-press** articles, rendered at the
+top of `index.html`. It answers "what actually happened in AI today?" without
+making the reader assemble it from a dozen cards.
+
+Numbered `7a` rather than `8` to avoid renumbering Steps 8–10, which existing
+commits and notes already reference. It depends on Step 7 (the index template)
+and Step 6.2 (the `vendor`/`press` split), so it lands after both.
+
+### Scope — vendor only
+
+Input is every article from companies whose `Company.group == "vendor"`
+(`companies_in_group("vendor")` from Step 2a). Press is excluded because it is
+~20 of the ~26 articles/day: include it and the overview becomes a TechCrunch
+recap with the labs as a footnote. Make it `overview_include_press: bool = False`
+rather than hardcoding the exclusion, so the choice is reversible without a code
+change.
+
+### Input is the summaries, not the articles
+
+The day's `ArticleRecord.summary` values are the input — they are already written
+for this audience, and re-reading raw article text would cost 10-30x more for a
+worse result. Roughly 10 vendor articles × ~1000 chars ≈ 10k chars ≈ 3k tokens,
+so the call is ~$0.0005/day even before considering that a **stronger model is
+affordable here**: one call/day justifies `OPENROUTER_OVERVIEW_MODEL` (default
+`""` → falls back to `openrouter_summarization_model`). Synthesis across a dozen
+items is a harder task than summarizing one page, and this is the one place in
+the pipeline where paying for it costs cents per month.
+
+### "The day's" articles means first-seen, not published
+
+Select on `date(first_scraped_at) == today` (UTC), not `published_date`: a
+backfilled three-day-old Anthropic post is still new *to this digest* on the day
+it first appears, and that is what the reader wants summarized. Needs one new
+query in `storage/db.py` — `articles_first_seen_on(day, companies)`, returning
+`ok` records with a non-empty summary.
+
+### Persist it — a new table, not a re-computation
+
+```sql
+CREATE TABLE IF NOT EXISTS daily_overview (
+    day            TEXT PRIMARY KEY,   -- YYYY-MM-DD, UTC
+    text           TEXT NOT NULL,
+    article_count  INTEGER NOT NULL,
+    source_hash    TEXT NOT NULL,      -- sha256 of the sorted normalized_urls
+    model          TEXT NOT NULL,
+    generated_at   TEXT NOT NULL
+);
+```
+
+`source_hash` is the dedup key, in the same spirit as `content_hash`: regenerate
+only when the day's article set actually changed. Without it, every `--publish`,
+every cron retry, and every manual re-render bills another call and silently
+changes the text under a reader who already read it. Keeping history also gives
+the template something to fall back on (below), and makes a future
+`/overview/2026-08-01.html` archive page a template change rather than a schema
+change.
+
+### Pipeline placement
+
+Generated in the full run **after** summarization and **before** publish, so the
+overview covers the articles that same run just wrote. Add a matching dry-run
+stage — `--stage overview` — which generates from the DB and writes the preview
+without pushing, bringing the stage list to four: `scrape`, `summarize`,
+`overview`, `render`. Guard it the same way as `--stage summarize`: it is the
+other stage that spends money.
+
+### Rendering
+
+`index.html.j2` gets a block above the article cards, before the vendor section:
+the heading ("Today in AI"), the date, the article count and a "vendor sources
+only" note, then the text through the existing `markdown` filter.
+
+Three cases the template must handle, because a daily page is read on quiet days
+too:
+
+1. **Today's overview exists** — render it.
+2. **It doesn't, but an older one does** — render the most recent, labelled with
+   its own date ("Overview for 2026-07-31"). Never present a stale overview as
+   today's.
+3. **None exists** — omit the block entirely. No empty box, no placeholder.
+
+### Prompt
+
+A second template in `summarizer/__init__.py` (e.g. `summarize_day()`), reusing
+the AI-analyst system prompt from 2f. Instructions worth stating explicitly:
+
+- Target `overview_target_words: int = 500`, as prose in three to five
+  paragraphs. **No bullet list and no per-company headings** — the cards below
+  are already the itemized view; this is the part that reads like a person wrote
+  it.
+- **Organize by theme, not by company.** Two labs shipping competing agent
+  features on the same day is the story; two paragraphs that each start "OpenAI
+  announced…" is not.
+- Lead with the single most consequential item of the day.
+- Keep model names, version numbers and figures exact; don't introduce claims
+  absent from the summaries.
+- Say so plainly when it was a quiet day rather than inflating three minor posts
+  into 500 words. The target is a ceiling, not a quota.
+
+### Edge cases
+
+- **Zero vendor articles** — skip the LLM call entirely, write no row, let the
+  template fall back to case 2. A cron run on a quiet Sunday should cost nothing.
+- **One or two articles** — still generate; the "quiet day" instruction handles
+  the length.
+- **A backfill run** (`--since 30d`) — this would generate one overview for the
+  backfill day covering hundreds of articles. Cap the input at the most recent
+  N records (`overview_max_articles: int = 40`) so a backfill can't produce a
+  60k-char prompt.
+
+### Not in scope
+
+The Discord notification stays counts-only (Step 8). Posting the overview text
+there is a reasonable follow-up, but it is a separate decision about how noisy
+that webhook should be.
+
+**Verify:** offline tests with a stubbed chain — press companies excluded from
+the input; selection is by `first_scraped_at`, not `published_date`; an unchanged
+`source_hash` does **not** re-call the LLM; the template renders each of the
+three cases. Then `--stage overview` against a real day's summaries to eyeball
+the prose before it goes on the front page.
+
 ## Step 8 — Pipeline stages, notifier
 
 ### Stages drop from four to three
@@ -485,6 +609,9 @@ vendor/press split there.
 | `scrape` | Fetch pages, cache text in SQLite, write `data/dry-run/` preview |
 | `summarize` | Call the LLM on cached articles, write summary preview |
 | `render` | Render the full site from the DB to `data/dry-run/` |
+
+Step 7a adds a fourth, `overview` — the count returns to four, but the dropped
+stage and the added one are unrelated.
 
 Remove from `main.py`: the `VecClient` import and all its call sites, the
 `--stage vector` branch and its `data/dry-run/vec_test.db` temp store, and
@@ -517,6 +644,9 @@ Port the existing suite minus the vendor scraper tests and every vector/RAG test
 - `test_feed_scraper.py` — RSS/Atom/`content:encoded`/pagination/malformed XML.
 - `test_filters.py` — category allowlists drop known off-topic items.
 - `test_daily_cap.py` — cap applied newest-first.
+- `test_overview.py` — Step 7a: press excluded, day selected by
+  `first_scraped_at`, unchanged `source_hash` skips the LLM call, and the three
+  template cases.
 - One fixture-based test per company scraper.
 
 Fixtures: save real responses from all ten sources **now**, before they drift.
