@@ -96,8 +96,9 @@ ai-digest/
 
 ## Step 2 — Source registry and schema
 
-The structural work. Five changes: three driven by the source list, two by
-dropping retrieval.
+The structural work. Seven changes: three driven by the source list, two by
+dropping retrieval, and two on the summarizer — a prompt still written for the
+old vendors (2f) and longer summaries for firewall-blocked companies (2g).
 
 ### 2a. `company` becomes a registry, not a `Literal`
 
@@ -206,10 +207,57 @@ Prompt wording is not a mechanical port; write it fresh against the category
 list 2e settles on, then eyeball the output of `--stage summarize --limit 1`
 against a real Anthropic research page and a TechCrunch item before moving on.
 
-**Verify:** unit tests for registry invariants (source keys unique, every
-`Source.company` present in `COMPANIES`, every `Company.sources` non-empty), and
-that `_CATEGORY_INSTRUCTIONS` has an entry for every category in the Literal —
-that test is what stops a future category from silently taking the fallback.
+### 2g. Longer summaries for firewall-blocked companies
+
+Some of these sites are blocked by a work firewall, so for them the summary is
+not a preview of the article — it is the only thing the reader will ever see. A
+2-3 sentence summary that says "the post explains the new approach" is useless
+when you cannot click through. Those companies get substantially longer,
+more self-contained summaries.
+
+**Config.** A new setting in `config.py`, defaulting to the three known-blocked
+companies:
+
+```python
+long_summary_companies: Annotated[list[str], NoDecode] = ["anthropic", "openai", "mistral"]
+
+@field_validator("long_summary_companies", mode="before")
+@classmethod
+def _split_csv(cls, v: str | list[str]) -> list[str]:
+    return [s.strip().lower() for s in v.split(",") if s.strip()] if isinstance(v, str) else v
+```
+
+The `NoDecode` + validator is load-bearing: pydantic-settings JSON-decodes
+`list` fields from env by default, so a bare `LONG_SUMMARY_COMPANIES=anthropic,openai`
+raises a parse error without it. Every other value in `.env.example` is a plain
+scalar, so CSV is the consistent choice over requiring JSON. Values are company
+keys (`Company.key` from 2a), not source keys — the distinction matters for
+Google, where one key covers both DeepMind and the AI blog.
+
+**Behavior.** `_length_guidance()` takes a `long: bool` and roughly doubles its
+output when set, in the same shape the `release_notes` branch already uses (a
+lead sentence plus a bullet list, with higher bullet counts and a lower
+character threshold for switching to bullets). `Summarizer.summarize()` computes
+`long = page.company in settings.long_summary_companies`.
+
+Also raise the input budget for these companies, not just the output length —
+a longer summary built from the same truncated `summarizer_content_chars` just
+pads. Add `summarizer_content_chars_long` (suggest 2x) and select on the same
+flag.
+
+**Cost.** These three are ~3 articles/day combined, so doubling their output is
+noise against the ~$0.16/month in Step 6.
+
+**Verify:** unit tests that a company in the list gets the longer guidance and
+one outside it does not, and that `LONG_SUMMARY_COMPANIES=a,b` parses to
+`["a", "b"]` rather than raising. Both run offline — no LLM call needed, since
+`_length_guidance()` is a pure function.
+
+**Verify (Step 2 overall):** unit tests for registry invariants (source keys
+unique, every `Source.company` present in `COMPANIES`, every `Company.sources`
+non-empty), and that `_CATEGORY_INSTRUCTIONS` has an entry for every category in
+the Literal — that test is what stops a future category from silently taking the
+fallback.
 
 ## Step 3 — `FeedScraper` base class
 
