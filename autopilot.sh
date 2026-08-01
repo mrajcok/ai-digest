@@ -422,6 +422,8 @@ limit_hits=0
 step_log=""
 raw_log=""
 err_log=""
+step_num=0
+step_num_confirmed=0
 finish_reason=""
 stopped_for_review=0
 email_sent=0
@@ -656,14 +658,19 @@ while (( steps_run < MAX_STEPS )); do
   grep -E "$DONE_HEADING_RE" "$PLAN_FILE" | sort > "$done_before"
   done_before_count=$(grep -cE "$DONE_HEADING_RE" "$PLAN_FILE")
 
-  # On a fresh step, claim the next unused log number so no earlier log —
-  # including a failed step's, which is the one you most want to keep — is
-  # ever overwritten. A usage-limit retry keeps appending to its own logs.
+  # The real step number isn't known until the skill reports it via the
+  # AUTOPILOT_STEP sentinel (parsed below, after the attempt runs) — plan
+  # headings don't map 1:1 onto done_before_count, since sub-steps like 2a-2g
+  # each get their own '**done**' marker. Until then, claim a provisional,
+  # unused log number so no earlier log — including a failed step's, which is
+  # the one you most want to keep — is ever overwritten. A usage-limit retry
+  # keeps appending to its own (by then possibly-renamed) logs.
   if (( ! retry_pending )); then
     step_num=$(( done_before_count + 1 ))
     while [[ -e "$LOG_DIR/autopilot-step-${step_num}.log" ]]; do
       step_num=$((step_num + 1))
     done
+    step_num_confirmed=0
     step_log="$LOG_DIR/autopilot-step-${step_num}.log"
     raw_log="$LOG_DIR/autopilot-step-${step_num}.raw.jsonl"
     err_log="$LOG_DIR/autopilot-step-${step_num}.err"
@@ -677,9 +684,9 @@ while (( steps_run < MAX_STEPS )); do
   if (( is_retry )); then
     ap "Retrying step $step_num after a usage-limit wait ($limit_hits of $MAX_LIMIT_RETRIES tolerated hits so far)"
   else
-    ap "Starting step $step_num (session will pick the next undone step from $PLAN_FILE and branch off $BASE_BRANCH)"
+    ap "Starting the next step (session will pick the next undone step from $PLAN_FILE and branch off $BASE_BRANCH)"
   fi
-  say "Starting step $step_num (log: $step_log)"
+  say "Starting attempt (log: $step_log)"
 
   # Each attempt writes to its own scratch files — stdout, raw stream *and*
   # stderr — so the checks below only ever see *this* attempt's output. A
@@ -772,6 +779,36 @@ while (( steps_run < MAX_STEPS )); do
   # mismatch the checked-out branch and stop a step that had in fact succeeded.
   branch_name=$(sed -nE 's|^[[:space:]]*AUTOPILOT_BRANCH=([A-Za-z0-9._/-]+).*|\1|p' \
                   "$attempt_text" | tail -n1)
+
+  # The provisional step_num above is just an unused-log-slot counter, not
+  # the plan's actual step number (see the comment where it's assigned).
+  # AUTOPILOT_STEP=<N> is the skill's ground truth for which heading it
+  # picked; once it's seen, rename this step's logs to match so
+  # autopilot-step-N.log lines up with '## Step N' in the plan file.
+  if (( ! step_num_confirmed )); then
+    reported_step=$(sed -nE 's|^[[:space:]]*AUTOPILOT_STEP=([0-9]+)[[:space:]]*$|\1|p' \
+                      "$attempt_text" | tail -n1)
+    if [[ -n "$reported_step" ]]; then
+      real_num=$reported_step
+      while [[ -e "$LOG_DIR/autopilot-step-${real_num}.log" ]] \
+            && [[ "$LOG_DIR/autopilot-step-${real_num}.log" != "$step_log" ]]; do
+        real_num=$((real_num + 1))
+      done
+      if (( real_num != step_num )); then
+        real_log="$LOG_DIR/autopilot-step-${real_num}.log"
+        real_raw="$LOG_DIR/autopilot-step-${real_num}.raw.jsonl"
+        real_err="$LOG_DIR/autopilot-step-${real_num}.err"
+        mv -f "$step_log" "$real_log"
+        mv -f "$raw_log" "$real_raw"
+        mv -f "$err_log" "$real_err"
+        step_log="$real_log"
+        raw_log="$real_raw"
+        err_log="$real_err"
+        step_num=$real_num
+      fi
+      step_num_confirmed=1
+    fi
+  fi
 
   # The skill branches before doing any work, so the most common way to be
   # rate-limited is *after* a branch exists — which used to disqualify the

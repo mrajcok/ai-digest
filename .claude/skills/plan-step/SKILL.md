@@ -28,6 +28,9 @@ moved first because..."), follow that over document order.
 
 If every step is done, print `NO_PENDING_STEPS`, change nothing, and stop.
 
+Print `AUTOPILOT_STEP=<N>` alone on its line, where `<N>` is the number from
+the heading (`## Step N` or `### Na.` — either way just `N`, no letter).
+
 **2. Branch.** Before editing anything:
 
 ```bash
@@ -51,7 +54,7 @@ Fix and re-run as needed; don't run it speculatively between edits.
 
 **6. Mark it done.** Append `— **done**` to that step's heading, matching how
 other finished headings in the file are written — including a `Completed
-<date>.` note if they carry one, dated from `date -u +%Y-%m-%d`. Touch no
+<date> <time>.` note if they carry one, dated from `date -u +%Y-%m-%d %H:%M:%S`. Touch no
 other step's text or status, and never remove a `— **done**` that is already
 there.
 
@@ -118,6 +121,7 @@ steps complete before the usage window closes.
 | Line | Meaning |
 |---|---|
 | `NO_PENDING_STEPS` | every step in the file is already done |
+| `AUTOPILOT_STEP=<N>` | the step heading number you picked |
 | `AUTOPILOT_BRANCH=<name>` | the branch you created for this step |
 | `HUMAN_REVIEW_REQUIRED` | blocked; stopping |
 
