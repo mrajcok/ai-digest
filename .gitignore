@@ -13,8 +13,10 @@ build/
 # Virtual environment (project-local)
 .venv/
 
-# Logs
+# Logs — .jsonl/.err are autopilot's raw Claude stream and stderr; never commit them
 logs/*.log
+logs/*.jsonl
+logs/*.err
 
 # Runtime data (database, dry-run output) — the dir itself is tracked via .gitkeep
 data/*

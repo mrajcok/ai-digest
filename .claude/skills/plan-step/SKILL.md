@@ -29,24 +29,44 @@ but see rule 4 for when to stop instead of guessing.
    `NO_PENDING_STEPS`, make no changes, and stop.
 
    Otherwise, before making any other change, create and check out a branch
-   for this step: `git checkout -b <branch-name>`. Name it something
-   descriptive and collision-proof, e.g.
-   `autopilot/$(date -u +%Y%m%d-%H%M%S)-<short-slug-of-the-step>`  — the
-   timestamp matters because a blocked/abandoned branch from an earlier run
-   is left in place (rule 4) and must never collide with a new attempt.
-   Then print exactly one line: `AUTOPILOT_BRANCH=<branch-name>` (the exact
-   name you just created, nothing else on the line). This is the only way
-   autopilot learns which branch to merge afterward — if it's missing, the
-   whole run stops for human review, so print it even if you end up blocked
-   (rule 4) partway through.
+   for this step: `git checkout -b <branch-name>`. The branch name must
+   start with `autopilot/` — autopilot relies on that prefix to recognize
+   an abandoned step branch and refuse to treat it as a base branch. Use
+   `autopilot/$(date -u +%Y%m%d-%H%M%S)-<short-slug-of-the-step>`, actually
+   running `date` rather than writing a timestamp from memory; the
+   timestamp keeps a blocked branch from an earlier run (rule 4) from
+   colliding with a new attempt.
+
+   Confirm the checkout actually succeeded (`git branch --show-current`)
+   before going further. If it failed for any reason, stop immediately per
+   rule 4 — do **not** start editing files on the base branch. Autopilot
+   verifies this too and will refuse to commit if the repo isn't on the
+   branch you report.
+
+   Once it succeeds, print exactly one line, with nothing else on it:
+   `AUTOPILOT_BRANCH=<branch-name>`. This is the only way autopilot learns
+   which branch to merge afterward — if it's missing, the run stops for
+   human review.
 
    Implement exactly what the chosen step describes. Don't start on any
    other step, and don't expand or reinterpret its scope beyond what it
    says. Do one step (or one sub-step) per session, even if a neighboring
    one looks related — each session, and its branch, covers exactly one.
 
-2. **Tests**: If the project has a test suite, run it before you finish and
-   make sure it passes. Fix failures your changes introduced.
+   **The three sentinel lines** (`NO_PENDING_STEPS`,
+   `AUTOPILOT_BRANCH=<name>`, `HUMAN_REVIEW_REQUIRED`) are matched as whole
+   lines. Each must appear alone on its own line, exactly, with no
+   surrounding prose, quotes, or backticks. You may discuss them in your
+   narration — a mention inside a sentence won't be mistaken for the real
+   thing — but only emit one as a bare line when you actually mean it.
+
+2. **Tests**: Run this project's checks before you finish and make sure
+   they pass, fixing any failures your changes introduced. Prefer the
+   commands the project documents (in this repo, CLAUDE.md specifies
+   `make test` and `make lint`, and requires lint to be clean before
+   anything is committed). If the repo has a `./run_tests.sh`, that is the
+   same gate autopilot will run after you finish, so running it yourself
+   first is the surest way to know your step will actually land.
 
 3. **No further git**: Other than the one `git checkout -b` from rule 1,
    do not run `git add`, `git commit`, `git merge`, or switch branches
@@ -70,9 +90,16 @@ but see rule 4 for when to stop instead of guessing.
    doesn't infer this from your exit code or from whether the working tree
    changed — whatever files you touched stay uncommitted, on your step
    branch, either way — this line is the only signal it watches for to halt
-   the run without testing, merging, or committing anything. Make sure
-   you've already printed `AUTOPILOT_BRANCH=<name>` (rule 1) even in this
-   case, so a human knows which branch to go look at.
+   the run without testing, merging, or committing anything.
+
+   If you already created and reported a branch (rule 1), you're done; the
+   branch is left checked out for a human to inspect. If you got blocked
+   *before* that — you couldn't determine which step to work on, or the
+   `git checkout -b` itself failed — just print `HUMAN_REVIEW_REQUIRED`
+   without a branch line. Don't invent an `AUTOPILOT_BRANCH=` value for a
+   branch that doesn't exist; autopilot checks that the repo is actually on
+   the branch you name and will stop anyway, with a more confusing message
+   than the real reason you're reporting.
 
 5. **Mark it done**: Once the step is fully implemented and tests pass, edit
    the plan file to mark that step's heading done — follow the exact
@@ -82,11 +109,17 @@ but see rule 4 for when to stop instead of guessing.
    `date -u +%Y-%m-%d`). Only touch the heading/note for the step you just
    completed — don't edit any other step's text, status, or checklists.
 
-6. **Write an implementation summary**: Immediately after the heading/note
-   from rule 5 (and anything else already there), before the next heading,
-   add a subsection titled `Implementation Summary` (one heading level
-   deeper than the step, e.g. `####` under a `## Step N` or `#####` under a
-   `### Na.`). In it, briefly document:
+6. **Write an implementation summary**: Add a subsection titled
+   `Implementation Summary`, one heading level deeper than the step it
+   belongs to (`####` under a `## Step N`, `#####` under a `### Na.`).
+
+   Place it at the *end* of that step's own content — after the step's
+   prose, and after its last sub-step if it has any, but before the next
+   step's heading. Putting it immediately under a parent `## Step N` that
+   has `### Na.` sub-steps would wedge it above those sub-steps and read as
+   if it summarized the whole step before any of them ran.
+
+   In it, briefly document:
    - what was actually changed (files/behavior), especially anywhere the
      implementation diverged from a literal reading of the step
    - any non-obvious decisions you made and why (the kind of judgment call
