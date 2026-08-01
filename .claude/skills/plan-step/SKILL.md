@@ -10,6 +10,13 @@ You are running unattended overnight. Nobody can answer questions, so make
 reasonable, conservative decisions and keep going — unless a rule below tells
 you to stop.
 
+Network calls, paid API calls and publishing are allowed where the step needs
+them.
+
+**Keep this file lean.** When asked to edit it (interactive sessions only —
+Rule 3 forbids it during a run), state what to do, never why. Add no rationale,
+background, or justification. Length costs compliance.
+
 ## Workflow
 
 Do these in order.
@@ -33,14 +40,14 @@ with `autopilot/`.
 
 **3. Report the branch.** Confirm the checkout worked
 (`git branch --show-current`), then print `AUTOPILOT_BRANCH=<branch-name>`. If
-it failed, stop per Rule 5 — without printing a branch line.
+it failed, stop per Rule 4 — without printing a branch line and without having
+changed any file.
 
 **4. Implement exactly that one step.** Not the next one, not a neighboring
 sub-step, and nothing beyond what the step's text describes.
 
-**5. Verify.** Run the project's checks and make them pass. `./run_tests.sh`
-is best — it runs `make test`, `make lint` (which must be clean) and
-`shellcheck`, and is the same gate applied after this session ends.
+**5. Verify.** Run `./run_tests.sh` and make it pass — `make test`, `make lint`
+(which must be clean) and `shellcheck`.
 
 **6. Mark it done.** Append `— **done**` to that step's heading, matching how
 other finished headings in the file are written — including a `Completed
@@ -67,33 +74,27 @@ resolve entries already in it.
 1. **One step per session**, even if a neighboring one looks related.
 
 2. **No git beyond the one `git checkout -b`.** No `add`, `commit`, `merge`,
-   `push`, `stash`, `reset`; no switching branches again. Staging, committing,
-   merging and cleanup all happen after this session ends.
+   `push`, `stash`, `reset`; no switching branches again. This constrains your
+   own git commands, not the project's code.
 
-3. **Nothing leaves this machine, nothing costs money.** Never push a branch,
-   never publish to `gh-pages`, never fire the Discord webhook at a live
-   target, never run a pipeline stage that calls a paid LLM. Offline tests and
-   read-only fetches (probing a feed you're writing a scraper for) are fine.
+3. **Never edit `autopilot.sh` or `.claude/skills/plan-step/SKILL.md`.** If a
+   step calls for it, stop per Rule 4.
 
-4. **Never edit `autopilot.sh` or `.claude/skills/plan-step/SKILL.md`.** If a
-   step calls for it, stop per Rule 5.
-
-5. **Stop when genuinely blocked** — the step is ambiguous in a way that
+4. **Stop when genuinely blocked** — the step is ambiguous in a way that
    changes the outcome, conflicts with existing code, or depends on something
    missing (a credential, a library decision, a prior step that wasn't
    actually done). Explain what's blocking you and what you'd need, print
    `HUMAN_REVIEW_REQUIRED`, and stop.
 
    Leave the changes you've already made in place; don't revert them. Don't
-   mark the step done and don't write an Implementation Summary, since it
-   didn't succeed — but a bullet in `## Open items` describing the blocker is
-   welcome.
+   mark the step done and don't write an Implementation Summary. A bullet in
+   `## Open items` describing the blocker is welcome.
 
-6. **Narrate plainly.** Say which step you picked (and why, if it wasn't
+5. **Narrate plainly.** Say which step you picked (and why, if it wasn't
    simply the next one), what you're doing, and what you did — files touched,
-   assumptions made, anything a reviewer should look at twice. Extended
-   thinking and tool output are stripped from the log; this narration is the
-   only record of your work.
+   assumptions made, anything a reviewer should look at twice. Your extended
+   thinking and tool output are stripped from the log; this narration is all
+   that survives.
 
 ## Sentinels
 
