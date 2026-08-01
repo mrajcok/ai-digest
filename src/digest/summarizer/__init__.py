@@ -7,12 +7,30 @@ from pydantic import SecretStr
 from tenacity import Retrying, before_sleep_log, stop_after_attempt, wait_exponential
 
 from digest.config import settings
+from digest.sources import company_label
 from digest.storage.models import ScrapedPage
 
 logger = logging.getLogger(__name__)
 
+# One entry per category in storage.models.CATEGORIES. A missing key silently
+# takes the generic fallback in summarize(), so tests assert full coverage.
 _CATEGORY_INSTRUCTIONS: dict[str, str] = {
     "blog": "Focus on the technical insight or capability being introduced.",
+    "research": (
+        "Lead with the claim or result, give the method in one clause, and say what is "
+        "new relative to prior work. Preserve model, benchmark, and dataset names exactly, "
+        "along with any reported numbers. Do not overstate a result the paper hedges."
+    ),
+    "engineering": (
+        "Focus on the system or technique described, the problem it solves, and any "
+        "concrete numbers — latency, throughput, cost, or scale. Name the components "
+        "and tools involved exactly."
+    ),
+    "news": (
+        "Focus on what was announced, by whom, and the stated impact. Attribute claims to "
+        "the outlet or the announcing organization rather than asserting them as fact, and "
+        "keep figures (funding amounts, model names, dates) exact."
+    ),
     "press_release": (
         "Focus on what was announced, with whom, and the stated "
         "business or technical impact."
@@ -23,21 +41,18 @@ _CATEGORY_INSTRUCTIONS: dict[str, str] = {
     ),
     "release_notes": (
         "Focus on what changed in this release: new features, behavior changes, "
-        "deprecations, and version-compatibility notes. Preserve exact SQL statement "
-        "names, function names, and system/catalog object names. The content below is "
-        "raw Markdown from the vendor's docs site, already organized into its own bullet "
-        "points and bold subheadings (e.g. Release Highlights, Features, Version "
-        "Compatibility) — do not describe that structure or refer to its section names. "
-        "Instead extract the individual changes into your own fresh bullet list, one "
-        "bullet per distinct change."
+        "deprecations, and version-compatibility notes. Preserve exact model, API, "
+        "and feature names. Extract the individual changes into your own bullet list, "
+        "one bullet per distinct change, rather than describing how the source document "
+        "is organized or referring to its section headings."
     ),
 }
 
 _PROMPT = ChatPromptTemplate.from_messages([
     (
         "system",
-        "You are a product intelligence analyst tracking two data-infrastructure "
-        "companies (Cribl and Ocient) for a team of software engineers and architects. "
+        "You are an industry analyst tracking the major AI labs and the press that covers "
+        "them, for a team of software engineers and architects. "
         "Write summaries that help a reader decide whether the item is relevant to them. "
         "Output only the summary text in markdown, without any commentary or explanation. "
         "If the content is too long to summarize effectively, produce a concise summary of the most "
@@ -48,10 +63,10 @@ _PROMPT = ChatPromptTemplate.from_messages([
         "Write a summary of the following {category} from {company}.\n"
         "{length_guidance}\n\n"
         "{category_instruction}\n\n"
-        "Always include: specific product or feature names, version numbers if present, "
-        "and the core technical claim or announcement.\n"
-        "Never include: generic marketing phrases, \"click here\" calls to action, or "
-        "repetition of the article title.\n\n"
+        "Always include: specific model, product, or feature names, version numbers if "
+        "present, and the core technical claim or announcement.\n"
+        "Never include: generic marketing phrases, \"click here\" calls to action, "
+        "speculation beyond what the content states, or repetition of the article title.\n\n"
         "Title: {title}\n\n"
         "Content:\n{content}",
     ),
@@ -105,7 +120,9 @@ class Summarizer:
     def summarize(self, page: ScrapedPage) -> str:
         content = page.raw_text[:settings.summarizer_content_chars]
         inputs = {
-            "company": page.company,
+            # The display label, not the key — "Ars Technica" reads better than
+            # "arstechnica" in the prompt, and matters for press attribution.
+            "company": company_label(page.company),
             "category": page.category,
             "title": page.title,
             "content": content,

@@ -266,6 +266,19 @@ Prompt wording is not a mechanical port; write it fresh against the category
 list 2e settles on, then eyeball the output of `--stage summarize --limit 1`
 against a real Anthropic research page and a TechCrunch item before moving on.
 
+**Done.** `release_notes` was rewritten rather than left alone — its wording was
+Ocient-docs-specific (SQL statement names, "the vendor's docs site"), which is
+as wrong for this domain as the system prompt was. The prompt is also now handed
+`company_label()` rather than the raw key, so it sees "Ars Technica", not
+"arstechnica" — that matters for the `news` attribution instruction.
+
+Verified against live pages (no scrapers yet, so via a throwaway harness rather
+than `--stage summarize`): Anthropic's `/research/discovering-cryptographic-
+weaknesses` and a TechCrunch item, both on `google/gemma-3-27b-it`. The research
+summary kept model, benchmark and algorithm names exact and preserved the post's
+hedges; the news summary opened "TechCrunch reports that…" rather than asserting
+the claim.
+
 ### 2g. Longer summaries for firewall-blocked companies
 
 Some of these sites are blocked by a work firewall, so for them the summary is
