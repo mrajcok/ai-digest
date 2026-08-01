@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS scraped_articles (
     url               TEXT NOT NULL UNIQUE,
     normalized_url    TEXT NOT NULL UNIQUE,
     company           TEXT NOT NULL,
+    source            TEXT NOT NULL DEFAULT '',
     category          TEXT NOT NULL,
     title             TEXT,
     first_scraped_at  TEXT NOT NULL,
@@ -23,6 +24,7 @@ CREATE TABLE IF NOT EXISTS scraped_articles (
     status            TEXT NOT NULL DEFAULT 'ok'
 );
 CREATE INDEX IF NOT EXISTS idx_company       ON scraped_articles(company);
+CREATE INDEX IF NOT EXISTS idx_source        ON scraped_articles(source);
 CREATE INDEX IF NOT EXISTS idx_last_scraped  ON scraped_articles(last_scraped_at);
 CREATE TABLE IF NOT EXISTS article_text (
     normalized_url  TEXT PRIMARY KEY,
@@ -34,15 +36,16 @@ CREATE TABLE IF NOT EXISTS article_text (
 
 _UPSERT_SQL = """
 INSERT INTO scraped_articles
-    (url, normalized_url, company, category, title,
+    (url, normalized_url, company, source, category, title,
      first_scraped_at, last_scraped_at, content_hash,
      published_date, summary, status)
 VALUES
-    (:url, :normalized_url, :company, :category, :title,
+    (:url, :normalized_url, :company, :source, :category, :title,
      :first_scraped_at, :last_scraped_at, :content_hash,
      :published_date, :summary, :status)
 ON CONFLICT(normalized_url) DO UPDATE SET
     url             = excluded.url,
+    source          = excluded.source,
     title           = excluded.title,
     last_scraped_at = excluded.last_scraped_at,
     content_hash    = excluded.content_hash,
@@ -58,6 +61,7 @@ def _row_to_record(row: sqlite3.Row) -> ArticleRecord:
         url=row["url"],
         normalized_url=row["normalized_url"],
         company=row["company"],
+        source=row["source"] or "",
         category=row["category"],
         title=row["title"] or "",
         first_scraped_at=row["first_scraped_at"],

@@ -191,11 +191,17 @@ group by source.
 **Keep** `normalize_url()` and the `content_hash` logic — both belong to
 deduplication, not retrieval.
 
-### 2c. `storage/db.py` — one new column
+### 2c. `storage/db.py` — one new column — **done**
 
 Add a `source` column: `CREATE TABLE`, `INSERT`, `SELECT`, and the row→model
 mapping. Drop `vec_id` from all four. Greenfield DB, so **no migration** — get
 the schema right once.
+
+Also added `idx_source`, and `source` to the upsert's `DO UPDATE SET` so a
+corrected source key overwrites on re-scrape (`first_scraped_at` still doesn't).
+The empty `data/ai_digest.db` left over from Step 1 was deleted and recreated
+rather than migrated — `CREATE TABLE IF NOT EXISTS` would not have added the
+column to it.
 
 ### 2d. `config.py` — remove retrieval settings — **done in Step 1**
 
