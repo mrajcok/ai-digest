@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 #
-# run_tests.sh — the verification gate autopilot.sh runs before it commits
-# and merges a step. Exits non-zero if anything fails, which makes autopilot
-# stop for review and leave the step's changes uncommitted.
+# run_tests.sh — the verification gate that should be run before a commit
+# and merge step. Exits non-zero if anything fails.
 #
 # CLAUDE.md requires `make lint` to be clean before committing, so lint is a
 # gate here, not just tests.

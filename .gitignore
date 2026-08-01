@@ -1,6 +1,5 @@
 # Environment
 .env
-.autopilot.env
 
 # Python
 __pycache__/
@@ -14,7 +13,7 @@ build/
 # Virtual environment (project-local)
 .venv/
 
-# Logs — everything in here, so anything autopilot or a step drops in
+# Logs — everything in here, so anything a step drops in
 # (filtered output, raw Claude stream, stderr) stays out of `git add -A`.
 # The dir itself is tracked via .gitkeep, same as data/.
 logs/*
