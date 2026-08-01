@@ -199,13 +199,19 @@ on first run. The cron log moves to `logs/last_run.log` for the same reason.
 Still open: `github_repo` default is `dummy/dummy` — harmless, since `.env` sets
 it, but change it if a real default is ever wanted.
 
-### 2e. Widen the `category` Literal
+### 2e. Widen the `category` Literal — **done**
 
 Current: `blog | press_release | product | release_notes`. AI sources need
 `research` (Anthropic, DeepMind), `engineering` (Anthropic), and `news`
 (OpenAI, press). Final set:
 
 `blog | research | engineering | news | press_release | product | release_notes`
+
+Landed **before 2a**, because the 2a registry declares `research`/`news`
+categories that have to exist first. `Category` is now declared once in
+`storage/models.py` (with a `CATEGORIES` tuple beside it); `scrapers/base.py`
+re-exports it and `main.py`'s `--category` choices read from it, so the Literal
+no longer appears in four places.
 
 ### 2f. Rewrite the summarizer prompt
 

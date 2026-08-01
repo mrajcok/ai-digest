@@ -3,16 +3,15 @@ import time
 from abc import ABC, abstractmethod
 from datetime import UTC, date, datetime, timedelta
 from email.utils import parsedate_to_datetime
-from typing import Literal
 
 import httpx
 from bs4 import BeautifulSoup
 
 from digest.config import settings
 from digest.storage.db import ArticleDB
-from digest.storage.models import ArticleRecord, ScrapedPage
+from digest.storage.models import ArticleRecord, Category, ScrapedPage
 
-Category = Literal["blog", "press_release", "product", "release_notes"]
+__all__ = ["BaseScraper", "Category"]
 
 logger = logging.getLogger(__name__)
 

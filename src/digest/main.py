@@ -11,7 +11,7 @@ from digest.config import settings, setup_logging
 from digest.notifier import post_discord_summary
 from digest.publisher.github_pages import COMPANIES, GitHubPagesPublisher
 from digest.storage.db import ArticleDB
-from digest.storage.models import ArticleRecord, ScrapedPage, normalize_url
+from digest.storage.models import CATEGORIES, ArticleRecord, ScrapedPage, normalize_url
 from digest.summarizer import Summarizer
 
 logger = logging.getLogger(__name__)
@@ -359,7 +359,7 @@ def _parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--category",
-        choices=["blog", "press_release", "product", "release_notes"],
+        choices=list(CATEGORIES),
         help="Filter to one article category (default: all)",
     )
     return parser.parse_args()

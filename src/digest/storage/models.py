@@ -1,9 +1,17 @@
 import hashlib
 from datetime import UTC, datetime
-from typing import Literal
+from typing import Literal, get_args
 from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
 
 from pydantic import BaseModel, model_validator
+
+# The canonical category set. `research` and `engineering` come from Anthropic and
+# DeepMind, `news` from OpenAI and the press feeds. `release_notes` is kept even
+# though no AI source emits it today — see docs/plan.md Step 2e.
+Category = Literal[
+    "blog", "research", "engineering", "news", "press_release", "product", "release_notes"
+]
+CATEGORIES: tuple[str, ...] = get_args(Category)
 
 
 def normalize_url(url: str) -> str:
@@ -21,7 +29,7 @@ class ScrapedPage(BaseModel):
 
     url: str
     company: Literal["cribl", "ocient", "xsiam"]
-    category: Literal["blog", "press_release", "product", "release_notes"]
+    category: Category
     title: str
     raw_text: str
     scraped_at: datetime = None  # type: ignore[assignment]
@@ -44,7 +52,7 @@ class ArticleRecord(BaseModel):
     url: str
     normalized_url: str
     company: Literal["cribl", "ocient", "xsiam"]
-    category: Literal["blog", "press_release", "product", "release_notes"]
+    category: Category
     title: str
     first_scraped_at: str  # ISO 8601
     last_scraped_at: str   # ISO 8601
