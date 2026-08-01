@@ -19,7 +19,8 @@ def test_models_accept_every_category() -> None:
     for category in CATEGORIES:
         page = ScrapedPage(
             url=f"https://example.com/{category}",
-            company="cribl",  # TODO(Step 2b): becomes a registry key
+            company="anthropic",
+            source="anthropic-sitemap",
             category=category,  # type: ignore[arg-type]
             title="T",
             raw_text="body",

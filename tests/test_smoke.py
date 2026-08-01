@@ -55,8 +55,9 @@ def test_db_round_trip(db: ArticleDB) -> None:
     """A ScrapedPage survives upsert → get_by_url with the vec_id column removed."""
     page = ScrapedPage(
         url="https://www.anthropic.com/news/test-post/",
-        company="cribl",  # TODO(Step 2a): becomes a registry key once the Literal is replaced
-        category="blog",
+        company="anthropic",
+        source="anthropic-sitemap",
+        category="news",
         title="Test Post",
         raw_text="A test article body.",
     )

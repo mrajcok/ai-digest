@@ -184,7 +184,7 @@ def _run_summarize(args: argparse.Namespace, db: ArticleDB) -> None:
         if cached:
             pages = [
                 ScrapedPage(
-                    url=a.url, company=a.company, category=a.category,
+                    url=a.url, company=a.company, source=a.source, category=a.category,
                     title=a.title, raw_text=db.get_text(a.normalized_url) or "",
                     published_date=a.published_date,
                 )

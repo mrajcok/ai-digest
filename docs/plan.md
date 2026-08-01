@@ -167,7 +167,14 @@ allowlist cannot filter the press feeds** — every TechCrunch and Ars item carr
 the `AI` tag, including the off-topic ones, so the press allowlist is only a
 sanity gate and `daily_cap` does the real work.
 
-### 2b. `storage/models.py` — add `source`, drop `ProductUpdate`
+### 2b. `storage/models.py` — add `source`, drop `ProductUpdate` — **done**
+
+Built as specified, with one deviation: `source` defaults to `""` rather than
+being required, so this change lands green on its own — `db.py` does not persist
+the column until 2c. Step 5's scrapers always set it. `company` dropped its
+`Literal["cribl", "ocient", "xsiam"]` for a plain `str`; validating it against
+the registry would make `models` import `sources`, which imports `models`.
+
 
 **Add** `source: str` (the `Source.key`) to `ScrapedPage` and `ArticleRecord`.
 This is what makes "one company, many sources" work: a DeepMind article carries

@@ -28,7 +28,8 @@ class ScrapedPage(BaseModel):
     """Transient in-memory representation of a freshly scraped page."""
 
     url: str
-    company: Literal["cribl", "ocient", "xsiam"]
+    company: str          # Company.key from sources.py
+    source: str = ""      # Source.key — "google-deepmind" vs "google-ai-blog"
     category: Category
     title: str
     raw_text: str
@@ -51,7 +52,8 @@ class ArticleRecord(BaseModel):
 
     url: str
     normalized_url: str
-    company: Literal["cribl", "ocient", "xsiam"]
+    company: str          # Company.key from sources.py
+    source: str = ""      # Source.key — lets a company page badge or group by feed
     category: Category
     title: str
     first_scraped_at: str  # ISO 8601
@@ -73,6 +75,7 @@ class ArticleRecord(BaseModel):
             url=page.url,
             normalized_url=normalize_url(page.url),
             company=page.company,
+            source=page.source,
             category=page.category,
             title=page.title,
             first_scraped_at=first_scraped_at or now,
