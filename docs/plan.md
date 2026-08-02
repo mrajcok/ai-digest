@@ -871,7 +871,7 @@ complete**` instead of the plan's `**Daily AI digest complete**` — fixed in
 partial-failure count, `discord_notify=False` skip, unsupported-method skip)
 since no notifier test previously existed.
 
-## Step 9 — Tests
+## Step 9 — Tests — **done**
 
 Port the existing suite minus the vendor scraper tests and every vector/RAG test
 (`test_vec_client.py`, search/RAG tool tests), plus:
@@ -890,6 +890,35 @@ All ten were reachable on 2026-07-31.
 
 Everything stays offline — `respx` for HTTP, in-memory SQLite. With sqlite-vec
 gone the suite has one less native dependency.
+
+### Implementation Summary
+
+Completed 2026-08-02 02:00:22. Most of this step had already landed
+incrementally during Steps 2–8: `test_sources.py`, `test_feed_scraper.py`,
+`test_company_scrapers.py`, `test_daily_overview.py`, and the rest of the
+13-file suite already existed and covered every named bullet. The category
+allowlist and daily-cap cases live inside `test_feed_scraper.py`
+(`test_include_categories_drops_untagged_and_off_topic`,
+`test_exclude_patterns_match_url_or_title`, `test_daily_cap_keeps_the_newest`)
+rather than in separate `test_filters.py` / `test_daily_cap.py` files — that
+mechanism is generic to `FeedScraper`, not per-company, and
+`test_company_scrapers.py`'s docstring already documents the split, so no
+near-duplicate files were added.
+
+The one real gap was the fixture-capture bullet: no saved fixtures existed yet
+for the nine feed sources (only synthetic inline XML), and the plan calls for
+capturing them **now**. Fetched real responses from all nine feed URLs today
+(2026-08-01/02) — all reachable — trimmed each to its first 5 `<item>`s to
+keep the repo diff reasonable, and saved them under
+`tests/fixtures/live_feeds/`. The tenth source, Anthropic's sitemap, already
+had a real 2026-08-01 capture from Step 4 in `tests/fixtures/sitemap/`, so
+nothing new was needed there. Added `tests/test_live_feed_fixtures.py`, one
+parametrized test per company scraper (`OpenAI`, `Google`, `Microsoft`, `AWS`,
+`Mistral`, `TechCrunch`, `ArsTechnica`) that runs `discover_urls()` against
+the real capture and asserts at least one well-formed `https://` URL comes
+out — a regression check against feed-shape drift that the hand-built
+fixtures in `test_company_scrapers.py` can't catch. All 151 tests pass;
+`make lint` and `make lint-sh` are clean.
 
 ## Step 10 — Review
 

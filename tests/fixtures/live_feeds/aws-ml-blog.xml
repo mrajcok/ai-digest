@@ -1,0 +1,1002 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" version="2.0">
+
+<channel>
+	<title>Artificial Intelligence</title>
+	<atom:link href="https://aws.amazon.com/blogs/machine-learning/feed/" rel="self" type="application/rss+xml"/>
+	<link>https://aws.amazon.com/blogs/machine-learning/</link>
+	<description>Official Machine Learning Blog of Amazon Web Services</description>
+	<lastBuildDate>Fri, 31 Jul 2026 21:16:56 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	
+	<item>
+		<title>Announcing the Agentic Catalog Experience in Amazon Quick</title>
+		<link>https://aws.amazon.com/blogs/machine-learning/announcing-the-agentic-catalog-experience-in-amazon-quick/</link>
+		
+		<dc:creator><![CDATA[Srikanth Baheti]]></dc:creator>
+		<pubDate>Fri, 31 Jul 2026 19:53:04 +0000</pubDate>
+				<category><![CDATA[Amazon Quick Suite]]></category>
+		<category><![CDATA[Announcements]]></category>
+		<category><![CDATA[Foundational (100)]]></category>
+		<guid isPermaLink="false">7566a36ce07e1d565d3c4c626b0957bbfa8d654a</guid>
+
+					<description>Amazon Quick introduces the Agentic Catalog Experience, an AI-powered workflow for data curators to discover upstream catalog assets in natural language and auto-create Datasets and Topics with inherited semantics. Now in preview for AWS Glue Data Catalog and Databricks Unity Catalog.</description>
+										<content:encoded>&lt;p&gt;As organizations embrace AI-powered analytics, the value of a natural language (Text2SQL) answer is only as good as the business context behind it. We’re entering a phase where semantic richness (table and column descriptions, and relationships) must flow directly from where it’s authored in upstream data catalogs and semantic tools into the AI products that serve end users. Products like Amazon Quick can no longer operate in isolation. They need to natively consume and reason over the definitions, relationships, and governance metadata that data teams curate in systems like AWS Glue Data Catalog and Databricks Unity Catalog. This shift from siloed metadata to connected, catalog-aware AI is what enables intelligent analytics at scale.&lt;/p&gt; 
+&lt;h2 id="the-challenge-bridging-the-last-mile"&gt;The challenge: Bridging the last mile&lt;/h2&gt; 
+&lt;h3 id="the-investment-is-done"&gt;The investment is done&lt;/h3&gt; 
+&lt;p&gt;Enterprise data teams have done the hard work. They have invested heavily in upstream catalog platforms such as AWS Glue, Databricks Unity Catalog, Snowflake Horizon, Collibra, and dbt. On these platforms, they meticulously define table descriptions, column semantics, primary and foreign key relationships, glossary terms, and metric definitions.&lt;/p&gt; 
+&lt;p&gt;Yet when it comes to enabling end users (such as sales managers, marketing directors, and finance leads) for production-ready AI and trusted dashboards, a significant gap remains.&lt;/p&gt; 
+&lt;h3 id="three-compounding-challenges"&gt;Three compounding challenges&lt;/h3&gt; 
+&lt;p&gt;When data curators (business intelligence engineers, analytics leads, and senior analysts) need to enable their business users in Amazon Quick, they face three compounding challenges:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Limited discoverability&lt;/strong&gt;: With thousands of tables in enterprise catalogs, discovering the right upstream assets that are curated and approved for reporting is a needle-in-a-haystack problem. There’s no way to describe what you need and have the system find it.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Semantic fragmentation and manual recreation&lt;/strong&gt;: Rich metadata that already exists upstream (business descriptions on tables and columns, and primary and foreign key relationships) does not flow through. Curators must recreate assets from scratch, redefine descriptions, and reconcile definitions manually. Does “revenue” mean gross or net? Does “active customer” mean a purchase within 30 days or 90 days? These definitions exist upstream but require manual re-entry.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Time to insight in weeks, not hours&lt;/strong&gt;: The combination of manual discovery and manual recreation means that the time from data to actionable insights stretches from hours to weeks. Worse, when upstream definitions change, manually created semantics in Quick Datasets become stale, causing semantic drift that erodes trust in AI answers and dashboards over time.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h3 id="the-gap"&gt;The gap&lt;/h3&gt; 
+&lt;p&gt;The problem isn’t upstream. The metadata exists. The governance is defined. The relationships are mapped.&lt;/p&gt; 
+&lt;p&gt;The problem is the last mile: translating that rich catalog context into a curated, consumable experience that delivers grounded AI answers and deterministic dashboards end users can trust.&lt;/p&gt; 
+&lt;h2 id="introducing-the-agentic-catalog-experience-in-amazon-quick"&gt;Introducing the Agentic Catalog Experience in Amazon Quick&lt;/h2&gt; 
+&lt;p&gt;Today, we’re announcing the Agentic Catalog Experience in Amazon Quick, an AI-powered workflow that helps data curators rapidly define their context boundary, inherit upstream semantics, and enable end users for grounded Q&amp;amp;A and trusted dashboards at scale.&lt;/p&gt; 
+&lt;p&gt;At the heart of this experience is the Quick Agent, scoped to discovery, creation, and inheritance tasks within the catalog context. It uses the semantic context from the catalog connection to summarize the entire catalog at a glance, engage the customer in natural language conversation, surface the most relevant tables and relationships based on the customer’s use case, and assess metadata readiness. Then, with a single conversational confirmation, it auto-creates Catalog-Generated Datasets and Topics with targeted metadata inherited from the upstream catalog.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;No manual configuration. No context-switching. No weeks of setup.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img class="size-full wp-image-136414 alignnone" src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/31/AgenticCatalogExperience.png" alt="" width="925" height="1257"&gt;&lt;/p&gt; 
+&lt;h2 id="how-it-works"&gt;How it works&lt;/h2&gt; 
+&lt;h3 id="natural-language-asset-discovery"&gt;Natural language asset discovery&lt;/h3&gt; 
+&lt;p&gt;Instead of scrolling through thousands of tables to find the right ones, curators use natural language. With the Agentic Catalog Experience, curators describe what they need:&lt;/p&gt; 
+&lt;blockquote&gt;
+ &lt;p&gt;Curator: “I’m a Senior Analyst on the Finance team. I need tables for quarterly revenue reporting and cost analysis.”&lt;/p&gt;
+&lt;/blockquote&gt; 
+&lt;p&gt;The Quick Agent searches across your entire catalog to surface the most relevant tables instantly, using all available metadata including business descriptions, tags, Gold/Silver/Bronze classifications, quality scores, table health scores, and glossary terms. No more manual browsing. No more guessing.&lt;/p&gt; 
+&lt;h3 id="bulk-agentic-dataset-creation"&gt;Bulk agentic dataset creation&lt;/h3&gt; 
+&lt;p&gt;After the curator selects their tables, the Quick Agent creates catalog representations (Datasets) at scale in a single guided workflow. Your upstream catalog remains the source of truth because the default creation path is Direct Query. Datasets with inherited semantics are flagged with a clear “Semantics Inherited” badge, and their metadata is read-only. Authors can refresh inherited metadata on demand by choosing the sync button to stay aligned with their catalog.&lt;/p&gt; 
+&lt;blockquote&gt;
+ &lt;p&gt;Quick Agent: “Creating 6 Catalog-Generated Datasets now: &lt;code&gt;revenue_by_region&lt;/code&gt; created (DirectQuery, read-only metadata), &lt;code&gt;cost_centers&lt;/code&gt; created, and &lt;code&gt;gl_transactions&lt;/code&gt; created.”&lt;/p&gt;
+&lt;/blockquote&gt; 
+&lt;h3 id="semantic-and-relationship-inheritance"&gt;Semantic and relationship inheritance&lt;/h3&gt; 
+&lt;p&gt;The Quick Agent carries forward targeted metadata from your catalog into the assets it creates. Today, inheritance is deliberately focused on two key areas to avoid noise and keep Datasets clean:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Table and column definitions to Datasets&lt;/strong&gt;: Business descriptions and column definitions are inherited directly into the created Datasets, so that curators and end users have the semantic context they need.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Primary and foreign key relationships to Topics&lt;/strong&gt;: The Agent detects relationships and uses them to suggest and create multi-dataset constructs (Topics) with star and snowflake schema joins preconfigured.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: While all available metadata (Gold/Silver classifications, quality scores, tags, and health scores) is used during discovery to find the right tables, inheritance into Datasets is intentionally scoped to table and column definitions today. We plan to add more metadata types to Datasets over time.&lt;/p&gt; 
+&lt;blockquote&gt;
+ &lt;p&gt;Quick Agent: “I detected 3 relationships between these tables and created a Topic called ‘Finance Revenue Model’ with the star schema joins preconfigured. Table and column definitions have been inherited from the upstream catalog.”&lt;/p&gt;
+&lt;/blockquote&gt; 
+&lt;h3 id="immediate-consumption"&gt;Immediate consumption&lt;/h3&gt; 
+&lt;p&gt;The curated Datasets and Topics are ready for use immediately:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Ask questions&lt;/strong&gt;: Start a Q&amp;amp;A conversation with your new Datasets. The AI agent uses inherited business descriptions, glossary terms, and quality scores to deliver grounded answers.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Create dashboards&lt;/strong&gt;: Build deterministic visualizations with full semantic context already in place.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Share with end users&lt;/strong&gt;: Add Datasets to a Space and share them with business users for self-service Q&amp;amp;A.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;After creation, the metadata tied to these Datasets and Topics feeds into the Amazon Quick semantic store, which powers re-ranking and unified context for AI-powered Q&amp;amp;A. Getting from catalog connection to the first business question takes minutes, not weeks.&lt;/p&gt; 
+&lt;h2 id="architecture-consumer-not-catalog"&gt;Architecture: Consumer, not catalog&lt;/h2&gt; 
+&lt;p&gt;A key design principle underpins this experience: Amazon Quick is a consumer of upstream catalog metadata, not a dedicated catalog itself. This means:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;No data duplication&lt;/strong&gt;: Catalog-Generated Datasets use DirectQuery. No data is copied or moved.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Metadata consumed for context&lt;/strong&gt;: Inherited semantics are read-only in Amazon Quick and flow into the semantic store to power re-ranking and AI answer grounding. Your upstream catalog remains the authoritative source.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Manual semantic sync&lt;/strong&gt;: Authors can refresh inherited metadata on demand by choosing the sync button. Scheduled automatic sync is on the roadmap.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Extensibility with transparency&lt;/strong&gt;: Catalog-Generated Datasets show inherited semantics as read-only (marked as catalog representations). If an Author chooses to edit a Dataset, Amazon Quick provides a clear notification that editing creates a custom Dataset and that semantic sync no longer applies. This gives Authors full control while preserving catalog integrity by default.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h3 id="supported-catalogs-today"&gt;Supported catalogs today&lt;/h3&gt; 
+&lt;table border="1px" width="100%" cellpadding="10px"&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Catalog platform&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Authentication&lt;/strong&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;AWS Glue Data Catalog&lt;/td&gt; 
+   &lt;td&gt;AWS Identity and Access Management (IAM) Role ARN&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Databricks Unity Catalog&lt;/td&gt; 
+   &lt;td&gt;OAuth 2.0 / Personal Access Token&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;Support for additional catalog platforms is coming soon.&lt;/p&gt; 
+&lt;h3 id="what-gets-inherited"&gt;What gets inherited&lt;/h3&gt; 
+&lt;p&gt;Metadata inheritance is intentionally focused to keep Datasets clean and production-ready:&lt;/p&gt; 
+&lt;h4 id="into-datasets-table-and-column-definitions"&gt;Into Datasets (table and column definitions)&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Table business and technical descriptions.&lt;/li&gt; 
+ &lt;li&gt;Column descriptions and display names.&lt;/li&gt; 
+ &lt;li&gt;Data types and nullability.&lt;/li&gt; 
+ &lt;li&gt;Glossary terms and synonyms.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4 id="into-topics-relationships"&gt;Into Topics (relationships)&lt;/h4&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Primary and foreign key relationships.&lt;/li&gt; 
+ &lt;li&gt;Relationship definitions and cardinality.&lt;/li&gt; 
+ &lt;li&gt;Star and snowflake schema models.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2 id="the-end-user-experience"&gt;The end-user experience&lt;/h2&gt; 
+&lt;p&gt;Here’s what this means for the business users downstream:&lt;/p&gt; 
+&lt;blockquote&gt;
+ &lt;p&gt;A sales manager asks: “What were our Q4 sales by region?”&lt;/p&gt;
+&lt;/blockquote&gt; 
+&lt;p&gt;Behind the scenes, the AI agent:&lt;/p&gt; 
+&lt;ol type="1"&gt; 
+ &lt;li&gt;Searches Catalog-Generated Datasets using business descriptions and glossary terms.&lt;/li&gt; 
+ &lt;li&gt;Identifies the &lt;code&gt;sales.revenue_by_product&lt;/code&gt; table (Gold, 98 percent quality).&lt;/li&gt; 
+ &lt;li&gt;Applies preconfigured joins from the Topic to combine relevant dimensions.&lt;/li&gt; 
+ &lt;li&gt;Respects personally identifiable information (PII) masking rules from catalog metadata.&lt;/li&gt; 
+ &lt;li&gt;Returns a grounded, trusted answer in seconds.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;No manual dataset configuration required. The curator defined the context boundary once with the Quick Agent, and every end user benefits immediately.&lt;/p&gt; 
+&lt;h3 id="unified-enterprise-context"&gt;Unified enterprise context&lt;/h3&gt; 
+&lt;p&gt;The Agentic Catalog Experience doesn’t exist in isolation. Combined with the broader platform capabilities of Amazon Quick (including integration with Slack, Outlook, documents, and knowledge bases), end users get the full enterprise context:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Structured data&lt;/strong&gt; from catalogs through Catalog-Generated Datasets.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Unstructured context&lt;/strong&gt; from documents, email messages, and conversations.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Business rules&lt;/strong&gt; from glossary terms and metric definitions.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;This unified context enables production-ready AI answers, grounded in your organization’s specific data and semantics.&lt;/p&gt; 
+&lt;h3 id="connecting-to-aws-glue-data-catalog"&gt;Connecting to AWS Glue Data Catalog&lt;/h3&gt; 
+&lt;p&gt;To get started with the Agentic Catalog Experience, create a data source connection to your AWS Glue Data Catalog in Amazon Quick. After you establish the connection, the Quick Agent guides you through discovery, schema exploration, and Topic creation in a single conversational workflow. In this walkthrough, we connect to a Glue Data Catalog and build a Financial Analytics Topic.&lt;/p&gt; 
+&lt;p&gt;In Amazon Quick, create a new data source. From the list of connection types, select &lt;strong&gt;Glue Data Catalog&lt;/strong&gt; (available in preview), and then choose &lt;strong&gt;Next&lt;/strong&gt;. This connection is for the metadata. With it, Amazon Quick can consume the table and column definitions and the relationships your teams have already curated in AWS Glue.&lt;/p&gt; 
+&lt;div style="width: 810px" class="wp-caption alignnone"&gt;
+ &lt;img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/31/ML-21554-1.png" alt="Amazon Quick new data source page with Glue Data Catalog selected from the connection types" width="800"&gt;
+ &lt;p class="wp-caption-text"&gt;&lt;br&gt;Figure 1: Selecting the Glue Data Catalog connection type in Amazon Quick&lt;/p&gt;
+&lt;/div&gt; 
+&lt;p&gt;A Glue Data Catalog connection works together with an Amazon Athena connection. Glue provides the metadata, and Athena provides the query path to the data itself in Amazon Simple Storage Service (Amazon S3). Create the Athena data source as well, so that Amazon Quick can run queries against the underlying data. After you create both, the Data sources page shows the two entries side by side: the Glue Data Catalog source for the metadata and the Athena source for the data.&lt;/p&gt; 
+&lt;div style="width: 810px" class="wp-caption alignnone"&gt;
+ &lt;img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/31/ML-21554-2.png" alt="Amazon Quick Data sources page showing the Glue Data Catalog and Amazon Athena connections side by side" width="800"&gt;
+ &lt;p class="wp-caption-text"&gt;&lt;br&gt;Figure 2: The Glue Data Catalog and Athena data sources listed together&lt;/p&gt;
+&lt;/div&gt; 
+&lt;p&gt;Open the GDC-Demo data source detail page. Under &lt;strong&gt;Data connections&lt;/strong&gt;, you can see the linked Athena data source that Amazon Quick uses to query the data. Choose &lt;strong&gt;Explore data&lt;/strong&gt; to launch the Quick Agent scoped to this data source.&lt;/p&gt; 
+&lt;div style="width: 810px" class="wp-caption alignnone"&gt;
+ &lt;img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/31/ML-21554-3.png" alt="GDC-Demo data source detail page with the linked Athena connection and the Explore data option" width="800"&gt;
+ &lt;p class="wp-caption-text"&gt;&lt;br&gt;Figure 3: Launching the Quick Agent from the data source detail page&lt;/p&gt;
+&lt;/div&gt; 
+&lt;p&gt;The Quick Agent panel opens on the right side of the screen, automatically scoped to the Glue Data Catalog data source. The “Specific data” mode is selected, with “GDC-Demo” pinned as the context boundary. As a result, the Agent surfaces only metadata from this specific catalog connection.&lt;/p&gt; 
+&lt;div style="width: 810px" class="wp-caption alignnone"&gt;
+ &lt;img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/31/ML-21554-4.png" alt="Quick Agent panel scoped to the GDC-Demo Glue Data Catalog data source in Specific data mode" width="800"&gt;
+ &lt;p class="wp-caption-text"&gt;&lt;br&gt;Figure 4: The Quick Agent scoped to a specific catalog connection&lt;/p&gt;
+&lt;/div&gt; 
+&lt;p&gt;Ask the Agent to explore your catalog. The Agent summarizes the available catalogs and databases at a glance, so you can quickly see what is curated in your Glue Data Catalog. For this post, we use the “fa-demo” database as our example, a Finance Analytics Demo star schema for banking analytics. This walkthrough illustrates how the feature works and is not an exact scenario, so you can apply the same steps to your own catalog.&lt;/p&gt; 
+&lt;div style="width: 810px" class="wp-caption alignnone"&gt;
+ &lt;img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/31/ML-21554-5.png" alt="Quick Agent summarizing the catalogs and databases available in the Glue Data Catalog" width="800"&gt;
+ &lt;p class="wp-caption-text"&gt;&lt;br&gt;Figure 5: The Agent summarizing available catalogs and databases&lt;/p&gt;
+&lt;/div&gt; 
+&lt;p&gt;Ask the Agent to explore the fa-demo database. The Agent identifies a classic star schema with 7 tables: 2 fact tables (&lt;code&gt;fact_transactions&lt;/code&gt; and &lt;code&gt;fact_loans&lt;/code&gt;) and 5 dimension tables (&lt;code&gt;dim_account&lt;/code&gt;, &lt;code&gt;dim_date_transactions&lt;/code&gt;, &lt;code&gt;dim_date_loans&lt;/code&gt;, &lt;code&gt;dim_merchant&lt;/code&gt;, and &lt;code&gt;dim_txn_category&lt;/code&gt;). All are stored as external tables in Amazon S3. The Agent recognizes the schema as covering customer account transactions and loan portfolios, with supporting dimensions for merchants, transaction categories, and date hierarchies.&lt;/p&gt; 
+&lt;div style="width: 810px" class="wp-caption alignnone"&gt;
+ &lt;img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/31/ML-21554-6.png" alt="Quick Agent describing the fa-demo star schema with two fact tables and five dimension tables" width="800"&gt;
+ &lt;p class="wp-caption-text"&gt;&lt;br&gt;Figure 6: The Agent identifying the fact and dimension tables in the fa-demo database&lt;/p&gt;
+&lt;/div&gt; 
+&lt;p&gt;Ask the Agent to create a star schema diagram for fa-demo. The Agent analyzes the tables, identifies the primary and foreign key relationships, and presents a complete logical data model with a schema summary. It highlights that &lt;code&gt;dim_account&lt;/code&gt; is the shared conformed dimension connecting both fact tables. Choose &lt;strong&gt;Create datasets &amp;amp; Topic&lt;/strong&gt; to let the Agent build everything automatically.&lt;/p&gt; 
+&lt;div style="width: 810px" class="wp-caption alignnone"&gt;
+ &lt;img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/31/ML-21554-7.png" alt="Star schema diagram generated by the Quick Agent showing dim_account connecting both fact tables" width="800"&gt;
+ &lt;p class="wp-caption-text"&gt;&lt;br&gt;Figure 7: The generated logical data model for the fa-demo schema&lt;/p&gt;
+&lt;/div&gt; 
+&lt;p&gt;The Agent creates a fully configured Topic with all Datasets and relationships in place. In this example, it creates the “Financial Analytics” Topic with all seven Datasets from the fa-demo database and 6 preconfigured star schema joins. Each Dataset carries its inherited business description, and the join relationships between the fact and dimension tables are validated automatically. The Topic is immediately ready for natural language Q&amp;amp;A, so you can ask questions like “What is the total transaction amount by merchant category?” or “Show me delinquent loans by risk rating.”&lt;/p&gt; 
+&lt;div style="width: 810px" class="wp-caption alignnone"&gt;
+ &lt;img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/31/ML-21554-8.png" alt="Quick Agent showing the Financial Analytics Topic with seven Datasets and six preconfigured joins" width="800"&gt;
+ &lt;p class="wp-caption-text"&gt;&lt;br&gt;Figure 8: The fully configured Financial Analytics Topic&lt;/p&gt;
+&lt;/div&gt; 
+&lt;p&gt;Now, let’s see how the Financial Analytics Topic created from the Glue Data Catalog works in action. With the Topic pinned as context, end users can ask questions in plain language and get grounded answers instantly. For example, a user can ask “Total transaction amount by merchant category” and the Agent returns a ranked breakdown with key highlights. The user can then follow up with “Delinquent loans by risk rating” to see a risk-level summary with insights. Because the Datasets and relationships were inherited from the catalog, every answer is backed by the trusted schema, joins, and business definitions defined upstream. This is the power of the Agentic Catalog Experience: curators define the context boundary once, and every end user can explore the data conversationally from there.&lt;/p&gt; 
+&lt;div style="width: 810px" class="wp-caption alignnone"&gt;
+ &lt;img src="https://d2908q01vomqb2.cloudfront.net/artifacts/DBSBlogs/ML-21554/ML-21554-9.gif" alt="Animation of a user asking questions and the Quick Agent returning ranked answers from the Financial Analytics Topic" width="800"&gt;
+ &lt;p class="wp-caption-text"&gt;&lt;br&gt;Figure 9: Asking natural language questions against the Financial Analytics Topic&lt;/p&gt;
+&lt;/div&gt; 
+&lt;h3 id="connecting-to-databricks-unity-catalog"&gt;Connecting to Databricks Unity Catalog&lt;/h3&gt; 
+&lt;p&gt;The same experience works with Databricks Unity Catalog. Here is a quick example that shows the full flow, from configuring the connection to creating Datasets and a Topic.&lt;/p&gt; 
+&lt;p&gt;Create a Databricks Unity Catalog data source, and then choose &lt;strong&gt;Explore data&lt;/strong&gt; to launch the Quick Agent. The Agent summarizes the catalog, and with a single confirmation it creates the Datasets and a Topic with the star schema joins already configured.&lt;/p&gt; 
+&lt;div style="width: 810px" class="wp-caption alignnone"&gt;
+ &lt;img src="https://d2908q01vomqb2.cloudfront.net/artifacts/DBSBlogs/ML-21554/ML-21554-10.gif" alt="Animation of creating Databricks Unity Catalog Datasets and a Topic through the Quick Agent" width="800"&gt;
+ &lt;p class="wp-caption-text"&gt;&lt;br&gt;Figure 10: Creating Datasets and a Topic from Databricks Unity Catalog&lt;/p&gt;
+&lt;/div&gt; 
+&lt;p&gt;After the Topic is ready, end users can ask complex questions that span multiple related tables. In this example, the Agent answers “Top 5 brands by revenue per region” by joining across the Topic relationships, and returns a grounded, visual result.&lt;/p&gt; 
+&lt;div style="width: 810px" class="wp-caption alignnone"&gt;
+ &lt;img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/31/ML-21554-11.gif" alt="Animation of the Quick Agent answering a multi-table question about top brands by revenue per region" width="800"&gt;
+ &lt;p class="wp-caption-text"&gt;&lt;br&gt;Figure 11: Answering a multi-table question across Topic relationships&lt;/p&gt;
+&lt;/div&gt; 
+&lt;h2 id="the-result"&gt;The result&lt;/h2&gt; 
+&lt;p&gt;Curators deliver trusted data, full enterprise context, and production-ready AI answers and dashboards in a fraction of the time. End users get grounded answers they can trust, backed by Gold-standard data with full semantic lineage.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;From weeks of manual configuration to minutes of guided conversation.&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;That’s the Agentic Catalog Experience in Amazon Quick.&lt;/em&gt;&lt;/p&gt; 
+&lt;hr&gt; 
+&lt;h2&gt;About the authors&lt;/h2&gt; 
+&lt;footer&gt; 
+ &lt;div class="blog-author-box"&gt; 
+  &lt;div class="blog-author-image"&gt; 
+   &lt;p&gt;&lt;img loading="lazy" class="alignleft size-full" src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/31/ML-21554-12.png" alt="Srikanth Baheti" width="100" height="100"&gt;&lt;/p&gt; 
+  &lt;/div&gt; 
+  &lt;h3 class="lb-h4"&gt;Srikanth Baheti&lt;/h3&gt; 
+  &lt;p&gt;Srikanth is a Senior Manager for Amazon QuickSight. He started his career as a consultant and worked for multiple private and government organizations. Later he worked for PerkinElmer Health and Sciences &amp;amp; eResearch Technology Inc, where he was responsible for designing and developing high traffic web applications and highly scalable and maintainable data pipelines for reporting platforms using AWS services and serverless computing.&lt;/p&gt; 
+ &lt;/div&gt; 
+ &lt;div class="blog-author-box"&gt; 
+  &lt;div class="blog-author-image"&gt; 
+   &lt;p&gt;&lt;img loading="lazy" class="alignleft size-full" src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/31/ML-21554-13.png" alt="Vignessh Baskaran" width="100" height="100"&gt;&lt;/p&gt; 
+  &lt;/div&gt; 
+  &lt;h3 class="lb-h4"&gt;Vignessh Baskaran&lt;/h3&gt; 
+  &lt;p&gt;Vignessh is a Sr.&amp;nbsp;Technical Product Manager in Amazon Quick, where he owns AI-powered data products for connectivity, catalog &amp;amp; semantics, and data preparation. He has over a decade of experience in developing large-scale data and analytics solutions. Outside of work, he enjoys watching Cricket, playing Racquetball and exploring different cuisines in Seattle.&lt;/p&gt; 
+ &lt;/div&gt; 
+ &lt;div class="blog-author-box"&gt; 
+  &lt;div class="blog-author-image"&gt; 
+   &lt;p&gt;&lt;img loading="lazy" class="alignleft size-full" src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/31/ML-21554-14.png" alt="Ashok Dasineni" width="100" height="100"&gt;&lt;/p&gt; 
+  &lt;/div&gt; 
+  &lt;h3 class="lb-h4"&gt;Ashok Dasineni&lt;/h3&gt; 
+  &lt;p&gt;Ashok is a Solutions Architect for Amazon Quick Suite. Before joining AWS, Ashok worked with clients and organizations in the banking and financial domain, focusing on fraud research and prevention. He designed and implemented innovative solutions to improve business process, reduce cost, and increase revenue, helping companies around the world achieve their highest potential through data.&lt;/p&gt; 
+ &lt;/div&gt; 
+ &lt;div class="blog-author-box"&gt; 
+  &lt;div class="blog-author-image"&gt; 
+   &lt;p&gt;&lt;img loading="lazy" class="alignleft size-full" src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/31/ML-21554-15.png" alt="Salim Khan" width="100" height="100"&gt;&lt;/p&gt; 
+  &lt;/div&gt; 
+  &lt;h3 class="lb-h4"&gt;Salim Khan&lt;/h3&gt; 
+  &lt;p&gt;Salim is a Senior Worldwide Generative AI Solutions Architect for Amazon Quick at AWS. He has over 16 years of experience implementing enterprise business intelligence solutions. At AWS, Salim works with customers globally to design and implement AI-powered BI and generative AI capabilities on Amazon Quick. Prior to AWS, he worked as a BI consultant across industry verticals including Automotive, Healthcare, Entertainment, Consumer, Publishing, and Financial Services, delivering business intelligence, data warehousing, data integration, and master data management solutions.&lt;/p&gt; 
+ &lt;/div&gt; 
+&lt;/footer&gt;</content:encoded>
+					
+		
+		
+			</item><item>
+		<title>Optimizing production agents with Amazon Bedrock AgentCore Observability</title>
+		<link>https://aws.amazon.com/blogs/machine-learning/optimizing-production-agents-with-amazon-bedrock-agentcore-observability/</link>
+		
+		<dc:creator><![CDATA[Joshua Lacy]]></dc:creator>
+		<pubDate>Fri, 31 Jul 2026 15:33:11 +0000</pubDate>
+				<category><![CDATA[Advanced (300)]]></category>
+		<category><![CDATA[Amazon Bedrock AgentCore]]></category>
+		<category><![CDATA[Technical How-to]]></category>
+		<guid isPermaLink="false">64799e5f6577ed834ae5241ca5bcee136c4fc073</guid>
+
+					<description>As your AI agents move from prototype to production, the challenge shifts from getting them to work to keeping them fast and efficient. Learn how to use Amazon Bedrock AgentCore Observability and Amazon CloudWatch to find performance bottlenecks and diagnose memory issues in long-running agent sessions.</description>
+										<content:encoded>&lt;p&gt;As your AI agents move from prototype to production, the challenges shift from getting them to work to keeping them fast and efficient. In &lt;a href="https://aws.amazon.com/blogs/machine-learning/debugging-production-agents-with-amazon-bedrock-agentcore-observability/" target="_blank" rel="noopener"&gt;Part 1&lt;/a&gt; of this series, we walked through debugging two common agent failures: infinite loops and tool invocation errors. Those scenarios dealt with agents that were broken. In this post, we tackle a different challenge: agents that work correctly but perform poorly. Slow response times and unbounded memory growth are the most common operational issues that surface after you resolve the initial debugging problems. They don’t trigger error alerts, but they erode user trust and increase costs over time.&lt;/p&gt; 
+&lt;p&gt;Using &lt;a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability.html" target="_blank" rel="noopener"&gt;AgentCore Observability&lt;/a&gt;, a capability of Amazon Bedrock AgentCore, and &lt;a href="https://aws.amazon.com/cloudwatch/" target="_blank" rel="noopener"&gt;Amazon CloudWatch&lt;/a&gt;, you will learn how to identify performance bottlenecks across your agent’s execution path and diagnose memory issues in long-running sessions. You will also implement monitoring practices that catch degradation before users notice it. For additional information and best practices, review &lt;a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations.html" target="_blank" rel="noopener"&gt;AgentCore Evaluations&lt;/a&gt;, a capability of Amazon Bedrock AgentCore, and &lt;a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/insights.html" target="_blank" rel="noopener"&gt;AgentCore Insights&lt;/a&gt;.&lt;/p&gt; 
+&lt;h1&gt;Prerequisites&lt;/h1&gt; 
+&lt;p&gt;You need an AWS account with Amazon Bedrock AgentCore access, CloudWatch Transaction Search enabled, and a deployed agent. See Part 1 for full setup details.&lt;/p&gt; 
+&lt;h2 id="scenario-3-performance-bottlenecks"&gt;Scenario 3: Performance bottlenecks&lt;/h2&gt; 
+&lt;p&gt;Agents experience performance bottlenecks when they work correctly but respond too slowly. You expect sub-second responses but experience multi-second delays. Agents complete tasks successfully, but the latency makes them impractical for interactive use cases. This scenario is particularly challenging because &lt;em&gt;slow&lt;/em&gt; is subjective. What’s acceptable for a batch processing agent is unacceptable for a customer service chatbot. You must establish performance budgets for your specific use case, then systematically identify which components violate those budgets.&lt;/p&gt; 
+&lt;h3 id="symptoms-to-watch-for"&gt;Symptoms to watch for&lt;/h3&gt; 
+&lt;p&gt;Performance degradation often manifests gradually. Agents might start with acceptable 2-second response times, but as you add features, integrate more tools, or accumulate more memory, latency creeps to 5 seconds, then 10, then becomes unusable. P95 response times exceed your thresholds, users abandon sessions, but error rates stay low. The agent works correctly but responds too slowly.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/30/ML-20467-1.png" alt="CloudWatch session view showing three agent invocations with high 7.5-8.2 second span latency" width="800"&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;Figure 1 — Session details showing multiple traces with consistently high latency. The three invocations took 7.5-8.2 seconds (average span latency), demonstrating a systemic performance bottleneck rather than occasional slowness. This pattern indicates the agent’s architecture needs optimization.&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;To find bottlenecks, start by identifying high-latency requests. Query CloudWatch for agent invocations that exceed your performance budget:&lt;/p&gt; 
+&lt;div class="hide-language"&gt; 
+ &lt;pre&gt;&lt;code class="language-plaintext"&gt;fields @timestamp, RequestId, Latency
+| filter Operation like /InvokeAgent/
+| filter Latency &amp;gt; 3000
+| sort Latency desc
+| limit 50&lt;/code&gt;&lt;/pre&gt; 
+&lt;/div&gt; 
+&lt;p&gt;This query returns agent invocations that took longer than 3 seconds (adjust the threshold based on your requirements), sorted by latency. Pick a representative high-latency request and note its &lt;code&gt;RequestId&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;Next, analyze the request timeline to understand where time is spent:&lt;/p&gt; 
+&lt;div class="hide-language"&gt; 
+ &lt;pre&gt;&lt;code class="language-plaintext"&gt;fields @timestamp, Operation, Duration, SpanName
+| filter RequestId = "&amp;lt;RequestId&amp;gt;"
+| sort @timestamp asc&lt;/code&gt;&lt;/pre&gt; 
+&lt;/div&gt; 
+&lt;p&gt;The query shows you the sequence of operations within the request and how long each took. Look for operations that consume disproportionate time. Common culprits include memory retrieval operations, tool invocations, token generation, and sequential operations that could run in parallel.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/30/ML-20467-2.png" alt="OpenTelemetry trace timeline with 17 spans across three sequential tool-execution cycles" width="800"&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;Figure 2 — OpenTelemetry trace timeline showing 17 spans across three sequential execute_event_loop_cycle operations. The tools (customer_lookup, order_history) execute one after another rather than in parallel, with each cycle waiting for the previous one to complete. This sequential pattern compounds latency across each tool invocation.&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;Check memory retrieval latency specifically:&lt;/p&gt; 
+&lt;div class="hide-language"&gt; 
+ &lt;pre&gt;&lt;code class="language-plaintext"&gt;fields @timestamp, MemoryRetrievalLatency, MemoryNamespace
+| filter RequestId = "&amp;lt;RequestId&amp;gt;"
+| stats avg(MemoryRetrievalLatency), max(MemoryRetrievalLatency) by MemoryNamespace&lt;/code&gt;&lt;/pre&gt; 
+&lt;/div&gt; 
+&lt;p&gt;Memory retrieval should complete in under 200 milliseconds, representing the point where users begin perceiving noticeable delays in interactive applications. Higher latency suggests inefficient memory organization.&lt;/p&gt; 
+&lt;p&gt;Examine tool invocation latency to identify slow integrations:&lt;/p&gt; 
+&lt;div class="hide-language"&gt; 
+ &lt;pre&gt;&lt;code class="language-plaintext"&gt;fields @timestamp, ToolName, ToolLatency
+| filter RequestId = "&amp;lt;RequestId&amp;gt;"
+| sort ToolLatency desc&lt;/code&gt;&lt;/pre&gt; 
+&lt;/div&gt; 
+&lt;p&gt;The query identifies which tools contribute most to overall latency. A single slow tool can bottleneck the entire agent workflow.&lt;/p&gt; 
+&lt;h3 id="root-cause-analysis"&gt;Root cause analysis&lt;/h3&gt; 
+&lt;p&gt;Performance bottlenecks typically stem from three root causes. &lt;em&gt;Slow tool execution&lt;/em&gt; occurs when external tools take seconds to respond because of poor optimization, overload, or network issues. Latencies compound with sequential calls, so a 2-second tool called three times becomes a 6-second bottleneck. &lt;em&gt;Excessive token generation&lt;/em&gt; is a factor because foundation models (FMs) produce tokens sequentially, meaning a 500-token response takes 5x longer than a 100-token one, impacting both latency and cost. Finally, &lt;em&gt;sequential processing&lt;/em&gt;, performing independent operations one at a time instead of in parallel, increases both cost and compute times.&lt;/p&gt; 
+&lt;h3 id="the-fix"&gt;The fix&lt;/h3&gt; 
+&lt;p&gt;For slow tool execution, implement caching, connection pooling, and proper database indexing to reduce response times. Set timeout limits and consider faster tool alternatives. If a tool consistently lags, profile it independently. The issue might be network latency, cold starts, or resource contention rather than the tool’s logic itself.&lt;/p&gt; 
+&lt;p&gt;For memory retrieval, replace single large namespaces with topic-specific partitions, such as preferences, history, and domain knowledge, to reduce search space. Summarize old conversations into compact entries rather than storing them verbatim, and set size limits per namespace, such as 100 preferences, 50 recent messages, or 500 domain facts.&lt;/p&gt; 
+&lt;p&gt;For token generation, optimize prompts to encourage brief, direct answers of 2–3 sentences unless more detail is requested. Add explicit length constraints and monitor token usage with alerts for unexpectedly long responses.&lt;/p&gt; 
+&lt;p&gt;For sequential processing, run independent tool calls in parallel. Sequential calls totaling 4.5s (2s + 1.5s + 1s) drop to only 2s when parallelized, often cutting latency by 50 percent or more with minimal effort. To verify your optimizations, re-run the latency query from the identifying bottlenecks section. Confirm that P95 response times now fall within your performance budget and that the trace timeline shows parallel execution where expected.&lt;/p&gt; 
+&lt;h2 id="scenario-4-memory-issues-in-long-running-sessions"&gt;Scenario 4: Memory issues in long-running sessions&lt;/h2&gt; 
+&lt;p&gt;Agents experience memory issues in long-running sessions when they maintain sessions where memory usage grows unbounded. Agents accumulate context, and eventually, agents hit token limits, lose important context, or exhaust available memory. Sessions fail unexpectedly, and you lose conversation state. This scenario is particularly problematic for agents that support extended workflows, such as customer service sessions, research assistants, or monitoring agents. Without proper memory management, these use cases become impractical.&lt;/p&gt; 
+&lt;h3 id="symptoms-to-watch-for-1"&gt;Symptoms to watch for&lt;/h3&gt; 
+&lt;p&gt;When abnormally long agent sessions exist, token usage grows linearly with session duration. Memory retrieval latency increases over time as memory stores grow. Sessions terminate unexpectedly with out-of-memory errors or context window exceeded errors.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/30/ML-20467-3.png" alt="Session details showing 6 traces and 15.7K tokens, with token usage rising each invocation" width="800"&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;Figure 3 — Session details for the memorygrowth_Agent showing 6 traces, 15.7K total tokens consumed, and an average trace latency of 3,757 ms within a single session. Token usage grows with each successive invocation, demonstrating unbounded context accumulation. In production sessions spanning hours, this pattern leads to context window exhaustion and unexpected session failures.&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;To identify long-running sessions with high memory usage:&lt;/p&gt; 
+&lt;div class="hide-language"&gt; 
+ &lt;pre&gt;&lt;code class="language-plaintext"&gt;fields @timestamp, SessionId, SessionDuration, MemorySize, TokenUsage
+| filter SessionDuration &amp;gt; 3600
+| sort MemorySize desc
+| limit 20&lt;/code&gt;&lt;/pre&gt; 
+&lt;/div&gt; 
+&lt;p&gt;The query returns sessions lasting longer than one hour (3600 seconds), sorted by memory size. Pick a session with unusually high memory usage and note its &lt;code&gt;SessionId&lt;/code&gt;.&lt;/p&gt; 
+&lt;p&gt;Examine memory extraction patterns to verify consolidation is occurring:&lt;/p&gt; 
+&lt;div class="hide-language"&gt; 
+ &lt;pre&gt;&lt;code class="language-plaintext"&gt;fields @timestamp, MemoryExtractionStatus, MemoryExtractionLatency, MemoriesExtracted
+| filter SessionId = "&amp;lt;SessionId&amp;gt;"
+| sort @timestamp asc&lt;/code&gt;&lt;/pre&gt; 
+&lt;/div&gt; 
+&lt;p&gt;&lt;img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/30/ML-20467-4.png" alt="CloudWatch Logs Insights showing 209 memory log entries spiking around 18:20 without consolidation" width="800"&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;Figure 4 — CloudWatch Logs Insights showing 209 memory-related log entries concentrated around 18:20. The spike in memory operations indicates the agent storing information without consolidation. Each invocation adds new memory entries (through add_conversation_note and add_user_context tools) without pruning or summarizing old data, demonstrating the unbounded growth pattern.&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;Memory extraction should occur regularly throughout the session. If you see gaps where no extraction happens for extended periods, the agent isn’t consolidating memories properly.&lt;/p&gt; 
+&lt;p&gt;Check for memory extraction failures:&lt;/p&gt; 
+&lt;div class="hide-language"&gt; 
+ &lt;pre&gt;&lt;code class="language-plaintext"&gt;fields @timestamp, ErrorMessage, MemoryExtractionStatus
+| filter SessionId = "&amp;lt;SessionId&amp;gt;"
+| filter MemoryExtractionStatus = "Failed"&lt;/code&gt;&lt;/pre&gt; 
+&lt;/div&gt; 
+&lt;p&gt;Failed memory extraction stops agents from consolidating context, causing unbounded growth. Common failure reasons include token limits exceeded during summarization, invalid memory formats that can’t be processed, network timeouts when writing to memory storage, and permission errors that block memory updates.&lt;/p&gt; 
+&lt;p&gt;Analyze memory namespace organization:&lt;/p&gt; 
+&lt;div class="hide-language"&gt; 
+ &lt;pre&gt;&lt;code class="language-plaintext"&gt;fields @timestamp, MemoryNamespace, MemoryCount, MemorySize
+| filter SessionId = "&amp;lt;SessionId&amp;gt;"
+| stats sum(MemoryCount) as TotalMemories, sum(MemorySize) as TotalSize by MemoryNamespace
+| sort TotalSize desc&lt;/code&gt;&lt;/pre&gt; 
+&lt;/div&gt; 
+&lt;p&gt;Memories are distributed across namespaces. Poor namespace organization can lead to inefficient memory retrieval and consolidation. If you see a single namespace containing thousands of memories, that’s a red flag indicating your agent needs &lt;a href="https://aws.amazon.com/blogs/machine-learning/organizing-agents-memory-at-scale-namespace-design-patterns-in-agentcore-memory/" target="_blank" rel="noopener"&gt;better memory organization&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3 id="root-cause-analysis-1"&gt;Root cause analysis&lt;/h3&gt; 
+&lt;p&gt;Memory issues typically stem from misconfigured settings, filter on inbuilt datetime metadata of the record. For a deeper understanding of how AgentCore memory works, see &lt;a href="https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-agentcore-memory-building-context-aware-agents/" target="_blank" rel="noopener"&gt;AgentCore memory&lt;/a&gt;.&lt;/p&gt; 
+&lt;h3 id="the-fix-1"&gt;The fix&lt;/h3&gt; 
+&lt;p&gt;To resolve memory issues, verify your memory strategies include a consolidation configuration so AgentCore memory merges and summarizes records over time rather than accumulating them indefinitely. Organize records using namespace templates in your strategy definitions to make sure retrieval stays scoped to relevant context. Set &lt;code&gt;eventExpiryDuration&lt;/code&gt; to control how long raw events persist (between 7–365 days). For implementation details, see &lt;a href="https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-agentcore-memory-building-context-aware-agents/" target="_blank" rel="noopener"&gt;AgentCore memory implementation&lt;/a&gt;.&lt;/p&gt; 
+&lt;h1&gt;Production best practices&lt;/h1&gt; 
+&lt;p&gt;Having covered the four failure scenarios across both parts, we now turn to production best practices that stop these issues before they occur. The troubleshooting workflows we’ve covered help you respond when things go wrong, but a well-architected observability strategy helps you proactively catch issues. The integration of AgentCore with CloudWatch provides the foundation for this proactive approach, giving you real-time visibility into agent health and performance.&lt;/p&gt; 
+&lt;p&gt;Turn on comprehensive instrumentation for production agents, memory systems, and gateways. Configure CloudWatch logs, CloudWatch metrics, and OpenTelemetry traces.&lt;/p&gt; 
+&lt;p&gt;Configure CloudWatch alarms for critical metrics. Set thresholds for error rates (5 percent), 95th percentile (P95) latency (3 seconds), and token usage per session. Don’t wait for users to report problems. Let CloudWatch alert you when metrics exceed acceptable thresholds.&lt;/p&gt; 
+&lt;p&gt;Create operational dashboards. Build a primary dashboard showing total invocations (last 24 hours), error rate (current compared to baseline), P50/P95/P99 latency, token usage trends, and active sessions count. Create per-agent dashboards showing agent-specific invocation patterns, tool usage breakdown, memory consumption trends, error types distribution, and cost per session. Review these dashboards daily to spot trends before they become problems.&lt;/p&gt; 
+&lt;p&gt;Invest in observability infrastructure before you need it. Build monitoring into your development process from day one. Share dashboards with product managers and stakeholders so everyone understands agent performance. When someone diagnoses a tricky production issue, share the approach with the team to build institutional knowledge about common failure patterns.&lt;/p&gt; 
+&lt;p&gt;To monitor tool accuracy at scale, you can use Amazon Bedrock &lt;a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluators.html" target="_blank" rel="noopener"&gt;AgentCore Evaluators&lt;/a&gt; to continuously and automatically assess agent behavior. Instead of manually reviewing traces after failures occur, Evaluators inspect agent sessions in real time, scoring them against predefined quality criteria. Amazon Bedrock &lt;a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/insights.html" target="_blank" rel="noopener"&gt;AgentCore Insights (preview)&lt;/a&gt; builds off Evaluators and provides triage analysis. Insights can provide failure analysis, user intent extraction, and execution summary.&lt;/p&gt; 
+&lt;h1&gt;Cleaning up&lt;/h1&gt; 
+&lt;p&gt;After testing the optimization techniques in this post, clean up resources to avoid unnecessary charges.&lt;/p&gt; 
+&lt;p&gt;For CloudWatch resources, delete test CloudWatch dashboards created during debugging, remove CloudWatch alarms set up for testing purposes, and consider archiving or deleting old CloudWatch log groups if no longer needed.&lt;/p&gt; 
+&lt;p&gt;For AgentCore resources, if you created test agents specifically for this tutorial, delete them through the &lt;a href="https://console.aws.amazon.com/bedrock/" target="_blank" rel="noopener"&gt;AgentCore console&lt;/a&gt;. Remove any test memory namespaces created during memory optimization testing. Delete any temporary tool integrations used for performance testing.&lt;/p&gt; 
+&lt;p&gt;For cost optimization, review your Amazon CloudWatch Logs retention settings and adjust based on your compliance requirements. Consider using CloudWatch Logs data protection to cut storage costs for older logs.&lt;/p&gt; 
+&lt;p&gt;To delete CloudWatch log groups:&lt;/p&gt; 
+&lt;div class="hide-language"&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;aws logs delete-log-group --log-group-name /aws/bedrock-agentcore/your-agent-name&lt;/code&gt;&lt;/pre&gt; 
+&lt;/div&gt; 
+&lt;p&gt;To remove CloudWatch alarms:&lt;/p&gt; 
+&lt;div class="hide-language"&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;aws cloudwatch delete-alarms --alarm-names your-alarm-name&lt;/code&gt;&lt;/pre&gt; 
+&lt;/div&gt; 
+&lt;h1&gt;Conclusion&lt;/h1&gt; 
+&lt;p&gt;Performance bottlenecks and memory issues represent the most common operational challenges for production agents beyond the debugging scenarios covered in Part 1. With systematic diagnosis using CloudWatch traces and metrics, you can identify whether latency stems from slow tools, inefficient memory retrieval, excessive token generation, or sequential processing. For long-running sessions, monitoring memory growth patterns and implementing consolidation strategies keeps agents stable over extended interactions.&lt;/p&gt; 
+&lt;h3 id="next-steps"&gt;Next steps&lt;/h3&gt; 
+&lt;p&gt;Ready to put these techniques into practice? Start by turning on AgentCore Observability for your production agents if you haven’t already. This one-time setup provides the foundation for everything we’ve covered. Set up CloudWatch alarms for critical metrics. Create troubleshooting runbooks for your specific agents and workflows, documenting the queries you run, the thresholds that indicate problems, and the fixes you implement.&lt;/p&gt; 
+&lt;p&gt;Practice debugging in non-production environments. Deliberately introduce failures and practice diagnosing them using the workflows we’ve covered. Build muscle memory for troubleshooting before you need it in production. Share this knowledge with your team to help confirm everyone who operates your agents understands these debugging techniques and knows how to use the observability features of AgentCore.&lt;/p&gt; 
+&lt;p&gt;Production agents often fail for preventable reasons. With the right observability tools, systematic troubleshooting approaches, and a culture that treats every issue as a chance to improve, you can catch problems early, resolve them quickly, and build agents that earn lasting trust.&lt;/p&gt; 
+&lt;h3 id="learn-more"&gt;Learn more&lt;/h3&gt; 
+&lt;p&gt;For more information about AgentCore and observability features, visit the &lt;a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability-configure.html" target="_blank" rel="noopener"&gt;AgentCore documentation&lt;/a&gt;. To get started with AgentCore, visit the &lt;a href="https://console.aws.amazon.com/bedrock/" target="_blank" rel="noopener"&gt;AgentCore console&lt;/a&gt;. For additional CloudWatch monitoring best practices, see the &lt;a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/" target="_blank" rel="noopener"&gt;CloudWatch User Guide&lt;/a&gt;.&lt;/p&gt; 
+&lt;hr&gt; 
+&lt;h2&gt;About the authors&lt;/h2&gt; 
+&lt;footer&gt; 
+ &lt;div class="blog-author-box"&gt; 
+  &lt;div class="blog-author-image"&gt; 
+   &lt;p&gt;&lt;img loading="lazy" class="alignleft size-full" src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/30/ML-20467-5.jpeg" alt="Joshua Lacy" width="100" height="100"&gt;&lt;/p&gt; 
+  &lt;/div&gt; 
+  &lt;h3 class="lb-h4"&gt;Joshua Lacy&lt;/h3&gt; 
+  &lt;p&gt;Joshua is a Solutions Architect at AWS in the Commercial Sector, supporting ISV customers. He has a passion for helping builders integrate AI into production applications and designing architectures that scale securely across multi-tenant environments. He specializes in agentic AI, Amazon Bedrock AgentCore, and generative AI application development.&lt;/p&gt; 
+ &lt;/div&gt; 
+ &lt;div class="blog-author-box"&gt; 
+  &lt;div class="blog-author-image"&gt; 
+   &lt;p&gt;&lt;img loading="lazy" class="alignleft size-full" src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/30/ML-20467-6.png" alt="Jenny Shen" width="100" height="100"&gt;&lt;/p&gt; 
+  &lt;/div&gt; 
+  &lt;h3 class="lb-h4"&gt;Jenny Shen&lt;/h3&gt; 
+  &lt;p&gt;Jenny is a Solutions Architect at AWS in the Telecom, Media and Entertainment space. She has a passion for helping customers build production-ready systems and finding ways to simplify how teams operate their cloud workloads. She specializes in CloudOps and AI/ML transformations.&lt;/p&gt; 
+ &lt;/div&gt; 
+&lt;/footer&gt;</content:encoded>
+					
+		
+		
+			</item><item>
+		<title>Deploying Kimi K3 on Amazon SageMaker HyperPod and Amazon EKS</title>
+		<link>https://aws.amazon.com/blogs/machine-learning/deploying-kimi-k3-on-amazon-sagemaker-hyperpod-and-amazon-eks/</link>
+					
+		
+		<dc:creator><![CDATA[Vivek Gangasani]]></dc:creator>
+		<pubDate>Thu, 30 Jul 2026 17:22:32 +0000</pubDate>
+				<category><![CDATA[Amazon Elastic Kubernetes Service]]></category>
+		<category><![CDATA[Amazon SageMaker Lakehouse]]></category>
+		<category><![CDATA[Announcements]]></category>
+		<guid isPermaLink="false">31e07eff62e76a2062e28f358c55660a2c45d6f3</guid>
+
+					<description>This post walks through deploying Kimi K3 on AWS using two approaches: Amazon SageMaker HyperPod, and&amp;nbsp; Amazon Elastic Kubernetes Service (Amazon EKS) cluster.</description>
+										<content:encoded>&lt;p&gt;Open weight models have become powerful enough to handle complex tasks such as multi-step agentic workflows, advanced reasoning, and long-horizon coding. However, as these models grow in capability, they also grow in size and hosting multi-trillion parameter architectures requires purpose-built infrastructure, high-end GPU compute, and optimized serving frameworks. On July 27, 2026, Moonshot AI released Kimi K3, a 2.8 trillion parameter Mixture of Experts (MoE) model that represents the &lt;a href="https://platform.kimi.ai/docs/guide/kimi-k3-quickstart" target="_blank" rel="noopener noreferrer"&gt;first open-weight system&lt;/a&gt; to reach the 3 trillion parameter class. Kimi K3 delivers &lt;a href="https://artificialanalysis.ai/models/kimi-k2" target="_blank" rel="noopener noreferrer"&gt;frontier-level intelligence&lt;/a&gt; while making its weights publicly available, so that organizations can self-host one of the most capable models in existence on their own infrastructure.&lt;/p&gt; 
+&lt;p&gt;This post walks through deploying Kimi K3 on AWS using two approaches: Amazon SageMaker HyperPod, and Amazon Elastic Kubernetes Service (Amazon EKS) cluster.&lt;/p&gt; 
+&lt;h1&gt;&lt;strong&gt;About Kimi K3&lt;/strong&gt;&lt;/h1&gt; 
+&lt;p&gt;Kimi K3 is built on a differentiated architecture featuring Kimi Delta Attention (KDA), Gated Multi Head Latent Attention (MLA), and a Stable LatentMoE framework. The model distributes its 2.8 trillion parameters across 896 specialist experts, activating only 16 per token. This means approximately 104 billion parameters are active during any single forward pass, yielding a &lt;a href="https://platform.kimi.ai/docs/guide/kimi-k3-quickstart" target="_blank" rel="noopener noreferrer"&gt;2.5x improvement&lt;/a&gt; in scaling efficiency over its predecessor, Kimi K2.&lt;/p&gt; 
+&lt;table class="styled-table" border="1px" cellpadding="10px"&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td style="padding: 10px;border: 1px solid #dddddd"&gt;&lt;strong&gt;Attribute&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td style="padding: 10px;border: 1px solid #dddddd"&gt;&lt;strong&gt;Value&lt;/strong&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td style="padding: 10px;border: 1px solid #dddddd"&gt;Total Parameters&lt;/td&gt; 
+   &lt;td style="padding: 10px;border: 1px solid #dddddd"&gt;2.8 Trillion&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td style="padding: 10px;border: 1px solid #dddddd"&gt;Active Parameters per Token&lt;/td&gt; 
+   &lt;td style="padding: 10px;border: 1px solid #dddddd"&gt;104 Billion&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td style="padding: 10px;border: 1px solid #dddddd"&gt;Architecture&lt;/td&gt; 
+   &lt;td style="padding: 10px;border: 1px solid #dddddd"&gt;Mixture of Experts (MoE)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td style="padding: 10px;border: 1px solid #dddddd"&gt;Expert Count&lt;/td&gt; 
+   &lt;td style="padding: 10px;border: 1px solid #dddddd"&gt;896 (16 activated per token)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td style="padding: 10px;border: 1px solid #dddddd"&gt;Context Window&lt;/td&gt; 
+   &lt;td style="padding: 10px;border: 1px solid #dddddd"&gt;1 Million Tokens&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td style="padding: 10px;border: 1px solid #dddddd"&gt;Modality&lt;/td&gt; 
+   &lt;td style="padding: 10px;border: 1px solid #dddddd"&gt;Native Multimodal (Text + Vision)&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td style="padding: 10px;border: 1px solid #dddddd"&gt;Release Date&lt;/td&gt; 
+   &lt;td style="padding: 10px;border: 1px solid #dddddd"&gt;July 27, 2026&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;Kimi K3 excels at long-horizon coding tasks, agentic workflows, and complex reasoning. It supports native tool calling, structured output, and an always-on thinking mode for multi-step problem solving.&lt;/p&gt; 
+&lt;h1&gt;&lt;strong&gt;Model availability and format&lt;/strong&gt;&lt;/h1&gt; 
+&lt;p&gt;The open weights for Kimi K3 are available on Hugging Face under the model identifier moonshotai/Kimi-K3. The weights are distributed in &lt;strong&gt;MXFP4&lt;/strong&gt; (Microscaling Floating Point 4-bit) format, which provides an effective balance between model quality and memory efficiency for large-scale inference deployments.&lt;/p&gt; 
+&lt;p&gt;Given the model’s architecture and size, serving Kimi K3 requires a vLLM day-0 inference container for Kimi K3. At the time of writing, vllm commits for Kimi K3 are in &lt;code&gt;vllm/vllm-openai:kimi-k3&lt;/code&gt;. We expect these to be merged to the main vllm container in the upcoming releases. vLLM provides native support for MoE architectures, tensor parallelism, and the MXFP4 quantization format, making it the recommended serving engine for this model.&lt;/p&gt; 
+&lt;h1&gt;&lt;strong&gt;Infrastructure requirements&lt;/strong&gt;&lt;/h1&gt; 
+&lt;p&gt;Deploying a model of this scale requires substantial GPU compute. Kimi K3 requires a &lt;strong&gt;p6-b300&lt;/strong&gt; instance (&lt;code&gt;ml.p6-b300.48xlarge&lt;/code&gt;), which provides 8 NVIDIA B300 Blackwell Ultra GPUs with high-bandwidth interconnects necessary for efficient tensor-parallel inference across the full expert pool.&lt;/p&gt; 
+&lt;p&gt;AWS offers two primary mechanisms to procure this capacity:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;strong&gt;Flexible Training Plans (for SageMaker HyperPod): &lt;/strong&gt;Provide committed capacity reservations that can be allocated to your HyperPod cluster, so that GPU resources are available for sustained inference workloads.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Capacity Blocks:&lt;/strong&gt; Allow you to reserve EC2 GPU instances for a defined period, providing guaranteed access to p6-b300 capacity without long-term commitments. &lt;strong&gt;Amazon EKS &lt;/strong&gt;workloads consume these reservations by targeting the reserved capacity.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h1&gt;&lt;strong&gt;Option 1: Deploying on Amazon SageMaker HyperPod&lt;/strong&gt;&lt;/h1&gt; 
+&lt;p&gt;Amazon SageMaker HyperPod with the Inference Operator provides the simplest path to deploying Kimi K3. The Inference Operator is installed automatically as part of cluster creation, and it abstracts away the complexity of container orchestration, model loading, and endpoint management.&lt;/p&gt; 
+&lt;h2&gt;&lt;strong&gt;Prerequisites&lt;/strong&gt;&lt;/h2&gt; 
+&lt;p&gt;Before deploying the model, complete the following two prerequisite steps to set up your infrastructure.&lt;/p&gt; 
+&lt;h3&gt;&lt;strong&gt;Step 1: Create a SageMaker HyperPod cluster with EKS orchestration&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;Before deploying the model, you must provision a HyperPod cluster. Navigate to the Amazon SageMaker AI console and follow the cluster creation workflow:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Open the SageMaker AI console and select &lt;strong&gt;HyperPod Clusters &amp;gt; Cluster Management &amp;gt; Create HyperPod cluster&lt;/strong&gt;.&lt;/li&gt; 
+ &lt;li&gt;Choose &lt;strong&gt;Orchestrated by Amazon EKS&lt;/strong&gt; from the list.&lt;/li&gt; 
+ &lt;li&gt;Select &lt;strong&gt;Quick setup&lt;/strong&gt; to provision a cluster with default networking, storage, and IAM resources, or choose &lt;strong&gt;Custom setup&lt;/strong&gt; to integrate with existing VPC, subnets, and security groups.&lt;/li&gt; 
+ &lt;li&gt;Under &lt;strong&gt;Orchestration&lt;/strong&gt;, either create a new EKS cluster or attach an existing one. Verify that the &lt;strong&gt;Use default Helm charts and add-ons&lt;/strong&gt; option is selected so that the Inference Operator and other required operators are installed automatically.&lt;/li&gt; 
+ &lt;li&gt;Under &lt;strong&gt;Instance groups&lt;/strong&gt;, add a worker group configured with the &lt;code&gt;ml.p6-b300.48xlarge&lt;/code&gt; instance type.&lt;/li&gt; 
+ &lt;li&gt;Review the configuration and choose &lt;strong&gt;Submit&lt;/strong&gt; to begin provisioning.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;For the complete walkthrough, refer to the &lt;a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-eks-operate-console-ui-create-cluster.html" target="_blank" rel="noopener noreferrer"&gt;Creating a SageMaker HyperPod cluster with Amazon EKS orchestration&lt;/a&gt; documentation.&lt;/p&gt; 
+&lt;h3&gt;&lt;strong&gt;Step 2: Procure capacity using a Flexible Training Plan&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;The &lt;code&gt;ml.p6-b300.48xlarge&lt;/code&gt; instance type requires reserved capacity. A Flexible Training Plan provides a committed capacity reservation for your Blackwell GPU nodes, guaranteeing that p6-b300 instances are available to your cluster without contention from the general on-demand pool. Go to SageMaker Console, select a FTP block based on your timeline and instance count. To create or attach a training plan:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;In the instance group configuration, choose &lt;strong&gt;Training plan&lt;/strong&gt; as the capacity source.&lt;/li&gt; 
+ &lt;li&gt;Select an existing plan that covers &lt;code&gt;ml.p6-b300.48xlarge&lt;/code&gt; capacity, or create a new reservation specifying the instance count and duration that you want.&lt;/li&gt; 
+ &lt;li&gt;Set the &lt;strong&gt;Target Availability Zone&lt;/strong&gt; to match the zone where your training plan capacity is allocated.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;Once the cluster reaches an Active state with healthy p6-b300 nodes, you are ready to deploy the model.&lt;/p&gt; 
+&lt;h2&gt;&lt;strong&gt;Deploying the model&lt;/strong&gt;&lt;/h2&gt; 
+&lt;p&gt;To deploy Kimi K3 on HyperPod, apply the following &lt;code&gt;InferenceEndpointConfig&lt;/code&gt; manifest to your cluster:&lt;/p&gt; 
+&lt;div class="hide-language"&gt; 
+ &lt;pre&gt;&lt;code class="lang-code"&gt;apiVersion: inference.sagemaker.aws.amazon.com/v1
+kind: InferenceEndpointConfig
+metadata:
+  name: kimik3
+spec:
+  modelName: Kimi-K3
+  instanceType: ml.p6-b300.48xlarge
+  invocationEndpoint: v1/chat/completions
+  replicas: 1
+  modelSourceConfig:
+    huggingFaceModel:
+      modelId: moonshotai/Kimi-K3
+    modelSourceType: huggingface
+  worker:
+    image: vllm/vllm-openai:kimi-k3
+    modelInvocationPort:
+      containerPort: 8000
+      name: http
+    modelVolumeMount:
+      mountPath: /opt/ml/model
+      name: model-weights
+    resources:
+      limits:
+        nvidia.com/gpu: 8
+      requests:
+        nvidia.com/gpu: 8
+    args:
+      - "--model"
+      - "moonshotai/Kimi-K3"
+      - "--trust-remote-code"
+      - "--load-format"
+      - "fastsafetensors"
+      - "--enable-prefix-caching"
+      - "--enable-auto-tool-choice"
+      - "--tool-call-parser"
+      - "kimi_k3"
+      - "--reasoning-parser"
+      - "kimi_k3"
+      - "--served-model-name"
+      - "Kimi-K3"
+      - "--moe-backend"
+      - "auto"
+      - "--tensor-parallel-size"
+      - "8"
+      - "--no-enable-flashinfer-autotune"
+    environmentVariables:
+      - name: "VLLM_ENABLE_K3_LATENT_MOE_TAIL_FUSION"
+        value: "1"&lt;/code&gt;&lt;/pre&gt; 
+&lt;/div&gt; 
+&lt;p&gt;This yaml is also provided in the &lt;a href="https://github.com/aws-samples/sagemaker-genai-hosting-examples/blob/main/SageMakerHyperpod/kimi-k3/kimi-k3.yaml" target="_blank" rel="noopener noreferrer"&gt;GitHub repository&lt;/a&gt;. Apply this configuration with:&lt;code&gt;kubectl apply -f kimi-k3.yaml&lt;/code&gt;&lt;/p&gt; 
+&lt;p&gt;The Inference Operator handles model download from Hugging Face, container scheduling, health checks, and endpoint readiness. Once the endpoint transitions to a ready state, it exposes an OpenAI compatible API at the configured invocation path.&lt;/p&gt; 
+&lt;h1&gt;&lt;strong&gt;Option 2: Deploying on Amazon EKS&lt;/strong&gt;&lt;/h1&gt; 
+&lt;p&gt;For teams that prefer to manage their own Kubernetes infrastructure, you can deploy Kimi K3 on a standalone Amazon EKS cluster and procure GPU capacity through &lt;strong&gt;EC2 Capacity Blocks&lt;/strong&gt;, which allow you to reserve p6-b300 instances for a defined duration without long-term commitments.&lt;/p&gt; 
+&lt;h2&gt;&lt;strong&gt;Key deployment steps&lt;/strong&gt;&lt;/h2&gt; 
+&lt;p&gt;The &lt;a href="https://github.com/awslabs/ai-on-eks-charts/blob/main/charts/inference-charts/values-kimi-k3-vllm-b300.yaml" target="_blank" rel="noopener noreferrer"&gt;AI on EKS&lt;/a&gt; project provides an inference-ready cluster recipe that automates the end-to-end provisioning. At a high level, the deployment involves the following stages:&lt;/p&gt; 
+&lt;h3&gt;&lt;strong&gt;1. Provision the EKS cluster&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;Use the provided Terraform modules to create a GPU-optimized EKS cluster. This includes VPC networking, managed node groups, and the necessary IAM roles and policies for GPU workloads.&lt;/p&gt; 
+&lt;h3&gt;&lt;strong&gt;2. Reserve GPU capacity with Capacity Blocks&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;Create a Capacity Block reservation for &lt;code&gt;p6-b300.48xlarge&lt;/code&gt; instances in your target Availability Zone. Capacity Blocks guarantee that the requested GPU nodes will be available for the reserved time window. Once the reservation becomes active, the instances join your EKS cluster as worker nodes.&lt;/p&gt; 
+&lt;h3&gt;&lt;strong&gt;3. Install GPU drivers and device plugin&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;The recipe installs the NVIDIA device plugin and GPU drivers on the node group, so that Kubernetes can discover and schedule against the available GPUs.&lt;/p&gt; 
+&lt;h3&gt;&lt;strong&gt;4. Deploy the vLLM inference server&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;A Helm chart or Kubernetes manifest deploys the vLLM container with Kimi K3 specific arguments, including tensor-parallel size of 8, the MXFP4 load format, MoE backend configuration. The model identifier points to the Hugging Face repository, or as an alternative, you can sync the model weights to Amazon Simple Storage Service (Amazon S3) for faster model loading. The serving arguments mirror those shown in the HyperPod configuration above.&lt;/p&gt; 
+&lt;h3&gt;&lt;strong&gt;5. Expose the inference endpoint&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;A Kubernetes Service (type LoadBalancer or via an Ingress controller) exposes the vLLM server on port 8000, providing the OpenAI compatible &lt;code&gt;/v1/chat/completions&lt;/code&gt; endpoint to your applications.&lt;/p&gt; 
+&lt;h3&gt;&lt;strong&gt;6. Validate&lt;/strong&gt;&lt;/h3&gt; 
+&lt;p&gt;Confirm the deployment by sending a test request to the endpoint and verifying a successful model response.&lt;/p&gt; 
+&lt;p&gt;For the full deployment walkthrough, including Terraform modules, Helm values, and step-by-step instructions, refer to the &lt;a href="https://github.com/awslabs/ai-on-eks/tree/main/infra/solutions/inference-ready-cluster/recipes/kimi-k3" target="_blank" rel="noopener noreferrer"&gt;AI on EKS Kimi K3 recipe&lt;/a&gt;.&lt;/p&gt; 
+&lt;h1&gt;&lt;strong&gt;Invoking the endpoint&lt;/strong&gt;&lt;/h1&gt; 
+&lt;p&gt;Once deployed, the Kimi K3 endpoint exposes an OpenAI compatible chat completions API. You can invoke it using the OpenAI Python SDK or a simple curl command.&lt;/p&gt; 
+&lt;h2&gt;&lt;strong&gt;Using the OpenAI Python SDK&lt;/strong&gt;&lt;/h2&gt; 
+&lt;div class="hide-language"&gt; 
+ &lt;pre&gt;&lt;code class="lang-powershell"&gt;from openai import OpenAI
+client = OpenAI(
+    base_url="http://&amp;lt;ENDPOINT_URL&amp;gt;:8000/v1",
+    api_key="not-needed"
+)&lt;/code&gt;&lt;/pre&gt; 
+&lt;/div&gt; 
+&lt;div class="hide-language"&gt; 
+ &lt;pre&gt;&lt;code class="lang-css"&gt;response = client.chat.completions.create(
+    model="Kimi-K3",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "Explain the benefits of mixture of experts architectures."}
+    ],
+    temperature=0.7,
+    max_tokens=1024
+)
+print(response.choices[0].message.content)&lt;/code&gt;&lt;/pre&gt; 
+&lt;/div&gt; 
+&lt;h2&gt;&lt;strong&gt;Using curl&lt;/strong&gt;&lt;/h2&gt; 
+&lt;div class="hide-language"&gt; 
+ &lt;pre&gt;&lt;code class="lang-css"&gt;curl -X POST http://&amp;lt;ENDPOINT_URL&amp;gt;:8000/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "Kimi-K3",
+    "messages": [
+      {"role": "system", "content": "You are a helpful assistant."},
+      {"role": "user", "content": "Explain the benefits of mixture of experts architectures."}
+    ],
+    "temperature": 0.7,
+    "max_tokens": 1024
+  }'&lt;/code&gt;&lt;/pre&gt; 
+&lt;/div&gt; 
+&lt;p&gt;Replace &lt;code&gt;&amp;lt;ENDPOINT_URL&amp;gt;&lt;/code&gt; with the service endpoint exposed by your HyperPod Inference Operator or EKS ingress configuration.&lt;/p&gt; 
+&lt;h1&gt;Clean up&lt;/h1&gt; 
+&lt;p&gt;To avoid ongoing charges, delete the resources you created during this walkthrough when you no longer need them.For SageMaker HyperPod deployments:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Delete the &lt;code&gt;InferenceEndpointConfig&lt;/code&gt; by running &lt;code&gt;kubectl delete -f kimi-k3.yaml&lt;/code&gt;.&lt;/li&gt; 
+ &lt;li&gt;In the SageMaker AI console, navigate to HyperPod Clusters, select your cluster, and choose Delete.&lt;/li&gt; 
+ &lt;li&gt;Release or cancel your Flexible Training Plan reservation if it is no longer needed.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;For Amazon EKS deployments:&lt;/p&gt; 
+&lt;ol start="4"&gt; 
+ &lt;li&gt;Delete the vLLM deployment and associated Kubernetes services.&lt;/li&gt; 
+ &lt;li&gt;Terminate the GPU node group or delete the EKS cluster using Terraform (&lt;code&gt;terraform destroy&lt;/code&gt;).&lt;/li&gt; 
+ &lt;li&gt;Release your Capacity Block reservation if it has not yet expired.&lt;/li&gt; 
+ &lt;li&gt;For pricing details on p6-b300 instances and Capacity Block reservations, refer to the Amazon EC2 pricing page.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;h1&gt;&lt;strong&gt;Conclusion&lt;/strong&gt;&lt;/h1&gt; 
+&lt;p&gt;Kimi K3 represents a new frontier in open-weight model capabilities, and AWS provides the infrastructure and managed services to deploy it at scale. Whether you choose the streamlined HyperPod Inference Operator path or the flexibility of a self-managed EKS cluster, the combination of p6-b300 GPU instances, vLLM serving, and MXFP4 quantized weights delivers a deployment with built-in health checks, auto-recovery, and endpoint readiness verification for the world’s largest open model.To get started, here are some links&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/aws-samples/sagemaker-genai-hosting-examples/blob/main/SageMakerHyperpod/kimi-k3/kimi-k3.yaml" target="_blank" rel="noopener noreferrer"&gt;SageMaker HyperPod Kimi K3 Example&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://github.com/awslabs/ai-on-eks/tree/main/infra/solutions/inference-ready-cluster/recipes/kimi-k3" target="_blank" rel="noopener noreferrer"&gt;AI on EKS Kimi K3 Recipe&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-eks-operate-console-ui-create-cluster.html" target="_blank" rel="noopener noreferrer"&gt;Creating a SageMaker HyperPod Cluster (AWS Documentation)&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://huggingface.co/moonshotai/Kimi-K3" target="_blank" rel="noopener noreferrer"&gt;Kimi K3 on Hugging Face&lt;/a&gt;&lt;/li&gt; 
+ &lt;li&gt;&lt;a href="https://docs.vllm.ai/" target="_blank" rel="noopener noreferrer"&gt;vLLM Documentation&lt;/a&gt;&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p style="clear: both"&gt;&lt;/p&gt; 
+&lt;hr style="width: 80%"&gt; 
+&lt;h2&gt;About the authors&lt;/h2&gt; 
+&lt;footer&gt; 
+ &lt;div class="blog-author-box"&gt; 
+  &lt;div class="blog-author-image"&gt; 
+   &lt;p&gt;&lt;img loading="lazy" class="alignnone size-full wp-image-136257" src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/30/image-2.jpeg" alt="" width="120" height="160"&gt;&lt;/p&gt; 
+  &lt;/div&gt; 
+  &lt;p&gt;Andrew Smith is a Sr. Cloud Support Engineer in the SageMaker, Vision &amp;amp; Other team at AWS, based in Sydney, Australia. He supports customers using many AI/ML services on AWS with expertise in working with Amazon SageMaker. Outside of work, he enjoys spending time with friends and family as well as learning about different technologies.&lt;/p&gt; 
+ &lt;/div&gt; 
+ &lt;div class="blog-author-box"&gt; 
+  &lt;div class="blog-author-image"&gt;
+   &lt;img loading="lazy" class="alignnone size-full wp-image-136258" src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/30/image-3.jpeg" alt="" width="120" height="160"&gt;
+  &lt;/div&gt; 
+  &lt;p&gt;Erez Zarum is a Senior Startups Solutions Architect at AWS. Erez is passionate about Containers and the AI/ML landscape, and his unique approach empowers Startups to accelerate AI/ML workloads on Amazon EKS.&lt;/p&gt; 
+ &lt;/div&gt; 
+ &lt;div class="blog-author-box"&gt; 
+  &lt;div class="blog-author-image"&gt; 
+   &lt;p&gt;&lt;img loading="lazy" class="alignnone size-full wp-image-136256" src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/30/image-1-4.jpeg" alt="" width="120" height="160"&gt;&lt;/p&gt; 
+  &lt;/div&gt; 
+  &lt;p&gt;&lt;a href="https://www.linkedin.com/in/vivekgangasani/"&gt;Vivek Gangasani&lt;/a&gt;&amp;nbsp;is a Worldwide Leader for Solutions Architecture, SageMaker Inference. He leads Solution Architecture, Technical Go-to-Market (GTM) and Outbound Product strategy for SageMaker Inference. He also helps enterprises and startups deploy and optimize&amp;nbsp; a GenAI models and build AI workflows with SageMaker and GPUs. Currently, he is focused on developing strategies and content for optimizing inference performance and use-cases such as Agentic workflows, RAG etc. In his free time, Vivek enjoys hiking, watching movies, and trying different cuisines&lt;/p&gt; 
+ &lt;/div&gt; 
+&lt;/footer&gt;</content:encoded>
+					
+					
+			
+		
+		
+			</item><item>
+		<title>How Yahoo enhances search retargeting using Amazon Bedrock</title>
+		<link>https://aws.amazon.com/blogs/machine-learning/how-yahoo-enhances-search-retargeting-using-amazon-bedrock/</link>
+		
+		<dc:creator><![CDATA[Jessica Young]]></dc:creator>
+		<pubDate>Thu, 30 Jul 2026 16:40:36 +0000</pubDate>
+				<category><![CDATA[Amazon Bedrock]]></category>
+		<category><![CDATA[Customer Solutions]]></category>
+		<guid isPermaLink="false">09bd7931863bd59f564c816598e73d7e7a962684</guid>
+
+					<description>In this post, we demonstrate how Yahoo implemented Amazon Bedrock to enhance their Search Retargeting (SRT) capabilities in the Yahoo DSP ad tech suite. SRT is a core audience targeting solution that helps advertisers reach users based on their historical search behavior, bridging search intent with display, video, and native advertising. Beyond targeting keywords entered on Yahoo Search, SRT uses AI to identify and engage users who demonstrate intent through search activity both on Yahoo and across integrated partner systems.</description>
+										<content:encoded>&lt;p&gt;Connecting user search intent with relevant ad experiences across channels is a longstanding challenge in digital advertising. Advertisers need sophisticated ways to reach audiences based on their demonstrated interests and behaviors, particularly their search activity, which is one of the strongest signals of user intent. Traditional keyword expansion approaches often struggle with outdated vocabulary, limited semantic understanding, and inability to capture the nuanced meaning behind search queries.&lt;/p&gt; 
+&lt;p&gt;The &lt;a href="https://www.yahooinc.com/" target="_blank" rel="noopener"&gt;Yahoo&lt;/a&gt; omnichannel Demand-Side Platform (DSP) addresses these challenges by providing advertisers with advanced technology, premium supply access, vast scale, and trusted consumer relationships. A DSP lets advertisers purchase ad inventory across multiple exchanges and channels through a single interface. Yahoo DSP enhances this capability with sophisticated audience targeting powered by advertiser-defined rules, machine learning (ML), and generative AI.&lt;/p&gt; 
+&lt;p&gt;At the heart of this targeting is the concept of an audience segment: a group of users who share specific interests, demographics, or behaviors and can be targeted collectively in advertising campaigns. These segments are passed to targeting systems for ad serving, making sure that users are matched with the most relevant advertiser campaigns.&lt;/p&gt; 
+&lt;p&gt;In this post, we demonstrate how Yahoo implemented &lt;a href="https://aws.amazon.com/bedrock/" target="_blank" rel="noopener"&gt;Amazon Bedrock&lt;/a&gt; to enhance their Search Retargeting (SRT) capabilities in the Yahoo DSP ad tech suite. SRT is a core audience targeting solution that helps advertisers reach users based on their historical search behavior, bridging search intent with display, video, and native advertising. Beyond targeting keywords entered on Yahoo Search, SRT uses AI to identify and engage users who demonstrate intent through search activity both on Yahoo and across integrated partner systems.&lt;/p&gt; 
+&lt;h2&gt;Business challenges&lt;/h2&gt; 
+&lt;p&gt;Previously, the Yahoo SRT architecture used the Word2Vec embedding model combined with locality-sensitive hashing (LSH) to expand advertiser keywords. This multi-step process involved canonicalizing keywords, generating embeddings, indexing them, performing LSH searches, filtering sensitive terms, and ranking the results.&lt;/p&gt; 
+&lt;p&gt;However, the Word2Vec + LSH approach had several limitations:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Outdated vocabulary&lt;/strong&gt;: It didn’t always reflect current terms.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Phrase-based searches&lt;/strong&gt;: It focused on phrases rather than specific entities.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Syntactic similarity&lt;/strong&gt;: Expansion relied on syntactic rather than semantic meaning.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Zero expansion&lt;/strong&gt;: In some cases, it failed to generate any new keywords.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;We addressed these challenges by deploying generative AI–powered SRT keyword expansion using Amazon Bedrock and large language models (LLMs). This enhancement generates more relevant, semantically rich keyword expansions, helping advertisers reach larger and more precise audiences.&lt;/p&gt; 
+&lt;h2&gt;Solution overview&lt;/h2&gt; 
+&lt;p&gt;Before introducing the solution, it’s useful to review the legacy SRT workflow, illustrated in the following diagram. Advertisers begin by defining each segment through a set of target keywords. This metadata is stored in a SQL database. The backend system then performs keyword expansion, generating semantically related terms to increase audience reach and improve advertiser outcomes. Both the original and expanded keyword sets are persisted in an &lt;a href="https://aws.amazon.com/opensearch-service/" target="_blank" rel="noopener"&gt;Amazon OpenSearch Service&lt;/a&gt; cluster. Another workflow called Batch Scoring evaluates Yahoo users’ search histories against this segment metadata to determine segment membership.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/05/27/ML-18912-1.png" alt="Legacy SRT architecture diagram showing keyword expansion using Word2Vec and locality-sensitive hashing, with results stored in Amazon OpenSearch Service and consumed by the Batch Scoring workflow." width="600"&gt;&lt;/p&gt; 
+&lt;h2&gt;Modernized with generative AI&lt;/h2&gt; 
+&lt;p&gt;Recognizing the limitations of the legacy approach, our goal was to refresh keyword expansion with a modern generative AI solution. Amazon Bedrock made this work possible. By offering serverless access to a broad selection of leading foundation models (FMs), Amazon Bedrock helped our teams experiment with multiple LLMs, including Amazon Nova, Meta Llama, and Anthropic’s Claude, without building custom infrastructure.&lt;/p&gt; 
+&lt;p&gt;In evaluating new approaches, we also factored in critical considerations for computational advertising, including:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Filtering of sensitive keywords.&lt;/li&gt; 
+ &lt;li&gt;Segment denylists.&lt;/li&gt; 
+ &lt;li&gt;User privacy preferences.&lt;/li&gt; 
+ &lt;li&gt;Policy compliance requirements.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;The following diagram illustrates the updated architecture using Amazon Bedrock and generative AI.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/05/27/ML-18912-2.png" alt="Updated SRT architecture diagram showing keyword expansion through Amazon Bedrock with a verification step that compares embeddings to filter low-similarity expansions before storing results in Amazon OpenSearch Service." width="600"&gt;&lt;/p&gt; 
+&lt;h2&gt;LLM selection and results&lt;/h2&gt; 
+&lt;p&gt;During the LLM selection and evaluation process, we prototyped and assessed several models using &lt;a href="https://aws.amazon.com/sagemaker/ai/studio/" target="_blank" rel="noopener"&gt;Amazon SageMaker Studio&lt;/a&gt;, including Amazon Titan, Meta Llama, and Anthropic’s Claude. Ultimately, Anthropic’s Claude 3.5 Sonnet v2 was selected as the most effective model for search keyword expansion, balancing both expansion ratio and semantic similarity.&lt;/p&gt; 
+&lt;p&gt;In the evaluation process, we observed hallucination behaviors from the LLMs. To reduce hallucinations and maintain quality, we introduced a verification step. Expanded keywords generated by the LLM are converted into embeddings and compared with the original set. Keywords falling below a similarity threshold are filtered out, making sure only the most relevant terms are retained. This validation step is central to maintaining accuracy and trust in the workflow.&lt;/p&gt; 
+&lt;p&gt;When deployed through Amazon Bedrock, Claude 3.5 Sonnet v2 demonstrated substantially superior expansion capabilities compared to the legacy LSH method, frequently generating hundreds or even thousands of keywords in cases where LSH produced none. The median broad expansion ratio improved fivefold, and the maximum expansion ratio doubled, even under strict similarity thresholds. See the following graph.&lt;/p&gt; 
+&lt;p&gt;Overall, generative AI–based keyword expansion increases the number of keywords retrieved and makes sure they are semantically relevant, significantly enhancing search user targeting.&lt;/p&gt; 
+&lt;p&gt;&lt;img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/05/27/ML-18912-3.png" alt="Line graph plotting LLM keyword expansion ratio against cosine similarity score, showing that the LLM-based approach maintains higher expansion ratios than LSH across all similarity thresholds." width="600"&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;LLM keyword expansion ratio vs.&amp;nbsp;cosine similarity score.&lt;/em&gt;&lt;/p&gt; 
+&lt;h3&gt;Guardrailing keyword expansion in generative AI workflows&lt;/h3&gt; 
+&lt;p&gt;When we first designed our SRT keyword expansion workflow, we focused solely on the expansion step, taking seed keywords and generating a broader set of related terms using generative AI models. This approach worked, but it also introduced challenges:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;In some cases, the model over-expanded, producing a large set of keywords.&lt;/li&gt; 
+ &lt;li&gt;Rare or ambiguous seed keywords sometimes resulted in unrelated or noisy expansions.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;This highlighted the need for a quality control mechanism. To address this, we introduced embedding generation and similarity scoring:&lt;/p&gt; 
+&lt;ol type="1"&gt; 
+ &lt;li&gt;Embedding and similarity check. 
+  &lt;ul&gt; 
+   &lt;li&gt;For each expanded keyword, we generate an embedding.&lt;/li&gt; 
+   &lt;li&gt;We then compute a similarity score against the original keyword’s embedding.&lt;/li&gt; 
+   &lt;li&gt;Only keywords above a defined similarity threshold are retained.&lt;/li&gt; 
+   &lt;li&gt;This makes sure that expanded keywords remain semantically aligned with the original intent.&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+ &lt;li&gt;Sensitive keyword guardrails. 
+  &lt;ul&gt; 
+   &lt;li&gt;In addition to semantic filtering, we also apply checks for sensitive keywords.&lt;/li&gt; 
+   &lt;li&gt;Filtering happens before inference (to avoid expansion of undesirable terms) and after inference (to remove sensitive expansions).&lt;/li&gt; 
+  &lt;/ul&gt; &lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;p&gt;By combining semantic similarity scoring with sensitive keyword filtering, we created a guardrailed keyword expansion pipeline. This approach preserves the breadth and creativity of generative AI–driven expansion while maintaining relevance, quality, and compliance.&lt;/p&gt; 
+&lt;h2&gt;Business value and impact&lt;/h2&gt; 
+&lt;p&gt;This generative AI–based enhanced keyword expansion capability launched in production in Q1 2025.&lt;/p&gt; 
+&lt;h3&gt;Value to advertisers&lt;/h3&gt; 
+&lt;p&gt;Advertisers benefit from significantly broader and more precise audience reach. The LLM-powered expansion logic increases the pool of candidate keywords while filtering for quality, leading to campaigns that align more closely with user intent. This translates into higher relevancy, stronger engagement, and improved conversion rates.&lt;/p&gt; 
+&lt;h3&gt;Value to Yahoo DSP&lt;/h3&gt; 
+&lt;p&gt;From a system perspective, the new system delivers substantial scale improvements:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Up to 600 times increase in keyword expansion rates.&lt;/li&gt; 
+ &lt;li&gt;Up to 5 times growth in addressable audience reach.&lt;/li&gt; 
+ &lt;li&gt;Gains in campaign performance and conversions.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;By modernizing keyword expansion with LLMs, Yahoo DSP is better positioned to drive value for advertisers while strengthening its competitive edge in the programmatic environment.&lt;/p&gt; 
+&lt;h2&gt;Why Amazon Bedrock&lt;/h2&gt; 
+&lt;p&gt;Amazon Bedrock provided serverless access to multiple leading FMs, including Amazon Nova, Meta Llama, and Anthropic’s Claude, without requiring the Yahoo team to build or manage complex infrastructure. This capability helped us experiment rapidly, scale our workloads, and deploy flexibly.&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;strong&gt;Breadth of models&lt;/strong&gt; – Amazon Bedrock helped us experiment quickly with multiple leading FMs.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;No infrastructure management&lt;/strong&gt; – Amazon Bedrock provides serverless access to LLMs, removing the need for model hosting, scaling, or patching.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Flexible inference options&lt;/strong&gt; – Amazon Bedrock provides both batch and real-time inference options for quick and flexible prototyping and decision making.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Straightforward model upgrades with Amazon Bedrock&lt;/strong&gt; – Switching to a newer or more advanced model version is a configuration change. Amazon Bedrock’s architecture abstracts away the underlying infrastructure and compatibility challenges, so teams can adopt updated models with minimal effort.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;Conclusion&lt;/h2&gt; 
+&lt;p&gt;In this post, we highlighted how SRT serves as a core product offering on Yahoo DSP and how we transformed keyword expansion using generative AI. By using Amazon Bedrock, our teams gained serverless access to multiple leading LLMs without the overhead of managing infrastructure. This capability helped us expand advertisers’ original keywords into semantically rich, high-quality sets, increasing both the size and precision of the targeting audience.&lt;/p&gt; 
+&lt;p&gt;Replacing the legacy Word2Vec and LSH workflow with Amazon Bedrock–powered LLMs delivered more accurate, contextually relevant keyword expansions. The new approach drives stronger campaign performance, higher conversion rates, and greater operational flexibility. Amazon Bedrock made this transformation possible, helping Yahoo DSP scale faster and more efficiently in AI-driven advertising.&lt;/p&gt; 
+&lt;p&gt;To learn more, see the &lt;a href="https://aws.amazon.com/bedrock/" target="_blank" rel="noopener"&gt;Amazon Bedrock detail page&lt;/a&gt; and the &lt;a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html" target="_blank" rel="noopener"&gt;Amazon Bedrock User Guide&lt;/a&gt;. To start building, open the &lt;a href="https://console.aws.amazon.com/bedrock/" target="_blank" rel="noopener"&gt;Amazon Bedrock console&lt;/a&gt;.&lt;/p&gt; 
+&lt;hr&gt; 
+&lt;h2&gt;About the authors&lt;/h2&gt; 
+&lt;footer&gt; 
+ &lt;div class="blog-author-box"&gt; 
+  &lt;div class="blog-author-image"&gt; 
+   &lt;p&gt;&lt;img loading="lazy" class="alignleft size-full" src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/05/27/ML-18912-4.png" alt="Jessica Young" width="100" height="100"&gt;&lt;/p&gt; 
+  &lt;/div&gt; 
+  &lt;h3 class="lb-h4"&gt;Jessica Young&lt;/h3&gt; 
+  &lt;p&gt;Jessica is a Director of Software Engineering at Yahoo, where she leads engineering teams building AI/ML solutions on large-scale distributed systems. She brings extensive hands-on experience building production AI/ML systems, with deep expertise in natural language processing, recommendation engines, and Big Data ecosystems. She is equally passionate about understanding machines and understanding people, driven by a deep curiosity for emerging technologies while remaining committed to fostering a people-first culture that values individuals not merely as resources, but as human beings.&lt;/p&gt; 
+ &lt;/div&gt; 
+ &lt;div class="blog-author-box"&gt; 
+  &lt;div class="blog-author-image"&gt; 
+   &lt;p&gt;&lt;img loading="lazy" class="alignleft size-full" src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/05/27/ML-18912-5.jpg" alt="Sujyothi Adiga" width="100" height="100"&gt;&lt;/p&gt; 
+  &lt;/div&gt; 
+  &lt;h3 class="lb-h4"&gt;Sujyothi Adiga&lt;/h3&gt; 
+  &lt;p&gt;Sujyothi is a Principal Software Development Engineer at Yahoo, with engineering experience across Yahoo Small Business, Search, and Yahoo Ads. She builds machine learning and AI-driven solutions for contextual and audience-based ad targeting systems, focusing on large-scale content understanding. Her work spans generative AI, model distillation, and distributed data pipelines using AWS services, including Amazon EMR, Amazon Bedrock, and Amazon SageMaker. She has helped architect end-to-end contextual targeting solutions for Yahoo Ads and has contributed to patent filings and peer-reviewed machine learning research in multilingual content classification.&lt;/p&gt; 
+ &lt;/div&gt; 
+ &lt;div class="blog-author-box"&gt; 
+  &lt;div class="blog-author-image"&gt; 
+   &lt;p&gt;&lt;img loading="lazy" class="alignleft size-full" src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/05/27/ML-18912-6.png" alt="Jonathan Ji" width="100" height="100"&gt;&lt;/p&gt; 
+  &lt;/div&gt; 
+  &lt;h3 class="lb-h4"&gt;Jonathan Ji&lt;/h3&gt; 
+  &lt;p&gt;Jonathan is a Principal Software Engineer at Yahoo DSP, where he leads teams that design, research, and build agentic AI assistant and search products. He partners closely with product, science, and engineering leaders to take generative AI from prototype to production. At Yahoo, he has developed innovative products and services powered by generative AI agents, large language models, MCP tools, text and image search, machine learning, sketch estimation, and large-scale processing and distributed query platforms.&lt;/p&gt; 
+ &lt;/div&gt; 
+ &lt;div class="blog-author-box"&gt; 
+  &lt;div class="blog-author-image"&gt; 
+   &lt;p&gt;&lt;img loading="lazy" class="alignleft size-full" src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/05/27/ML-18912-7.jpeg" alt="Daniel Li" width="100" height="100"&gt;&lt;/p&gt; 
+  &lt;/div&gt; 
+  &lt;h3 class="lb-h4"&gt;Daniel Li&lt;/h3&gt; 
+  &lt;p&gt;Daniel is a Senior Solutions Architect at Amazon Web Services, where he partners with strategic customers to design scalable cloud, data, and generative AI solutions. With over 20 years of experience spanning engineering and enterprise strategy, Daniel has led major cloud migration, modernization, and AI/ML initiatives, helping customers translate business goals into pragmatic technology roadmaps and accelerate their adoption of generative AI on AWS.&lt;/p&gt; 
+ &lt;/div&gt; 
+&lt;/footer&gt;</content:encoded>
+					
+		
+		
+			</item><item>
+		<title>Inference meta-monitoring for Amazon SageMaker AI endpoints with Amazon Quick</title>
+		<link>https://aws.amazon.com/blogs/machine-learning/inference-meta-monitoring-for-amazon-sagemaker-ai-endpoints-with-amazon-quick/</link>
+		
+		<dc:creator><![CDATA[Sunita Koppar]]></dc:creator>
+		<pubDate>Thu, 30 Jul 2026 16:10:10 +0000</pubDate>
+				<category><![CDATA[Amazon Quick Suite]]></category>
+		<category><![CDATA[Amazon SageMaker AI]]></category>
+		<category><![CDATA[Expert (400)]]></category>
+		<category><![CDATA[Technical How-to]]></category>
+		<guid isPermaLink="false">e329877910caa8a8a6577b573d4dcb21b658fe0b</guid>
+
+					<description>Learn how to build an inference meta-monitoring system for Amazon SageMaker AI endpoints using Amazon Quick. This governance layer sits above production ML inference pipelines to continuously track prediction and data quality, detect drift, integrate delayed ground truth, and surface automated performance dashboards.</description>
+										<content:encoded>&lt;p&gt;Without the ability to track machine learning (ML) model prediction quality, organizations only realize they have issues when their customers complain or when they conduct spot checks, which jeopardizes customer trust. This post introduces inference meta-monitoring for Amazon SageMaker AI endpoints. It provides a governance layer that sits above production ML inference pipelines to continuously track prediction and data quality metrics and visualize trends. You will learn how to design and implement an inference meta-monitoring system specifically for predictive models, using Amazon Quick and optionally with Amazon SageMaker AI MLflow App. The system includes drift detection, delayed ground truth data integration, and automated performance dashboards.&lt;/p&gt; 
+&lt;h2 id="the-inference-monitoring-gap"&gt;The inference monitoring gap&lt;/h2&gt; 
+&lt;p&gt;Developing predictive ML models is often a resource-intensive process. You invest months building training pipelines to drive strong validation accuracy for use cases such as fraud detection, credit scoring or demand forecasting. The performance of the models you deploy might silently degrade, and your teams might notice it only weeks later. Fraud case handlers start to see false positives spiking, and loan officers start to see more applications that should have been previously flagged. Corporate resource planners find themselves with excess inventory because of overestimated demand forecasts.&lt;/p&gt; 
+&lt;p&gt;ML teams therefore need a system that provides them with continuous feedback on the performance of their models in production. The system should immediately alert them whenever model quality or data drift is detected. Teams can then take action early so that model performance remains consistent over time, and customer trust remains high.&lt;/p&gt; 
+&lt;h2 id="solution-overview"&gt;Solution overview&lt;/h2&gt; 
+&lt;p&gt;This inference meta-monitoring solution combines AWS managed services (&lt;a href="https://aws.amazon.com/sagemaker/ai/" target="_blank" rel="noopener"&gt;Amazon SageMaker AI&lt;/a&gt;, &lt;a href="https://aws.amazon.com/athena/" target="_blank" rel="noopener"&gt;Amazon Athena&lt;/a&gt;, &lt;a href="https://aws.amazon.com/pm/lambda/" target="_blank" rel="noopener"&gt;AWS Lambda&lt;/a&gt;, &lt;a href="https://aws.amazon.com/eventbridge/" target="_blank" rel="noopener"&gt;Amazon EventBridge&lt;/a&gt;, &lt;a href="https://docs.aws.amazon.com/quick/latest/userguide/what-is.html" target="_blank" rel="noopener"&gt;Amazon Quick&lt;/a&gt;) with open source ML tools (SageMaker AI MLflow Apps, Evidently AI).&lt;/p&gt; 
+&lt;h2 id="prerequisites"&gt;Prerequisites&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;&lt;a href="https://signin.aws.amazon.com/signup?request_type=register" target="_blank" rel="noopener"&gt;AWS account&lt;/a&gt;.&lt;/li&gt; 
+ &lt;li&gt;Use the &lt;a href="https://github.com/aws-samples/sample-mlops-bestpractices/blob/main/sagemaker-automated-drift-and-trend-monitoring/cloudformation/sagemaker-mlflow-setup.yaml" target="_blank" rel="noopener"&gt;CloudFormation template&lt;/a&gt; provided in the repo to create the virtual private cloud (VPC), subnets, SageMaker AI domain, user profile, and JupyterLab space. The template also clones the git repo and updates the &lt;code&gt;.env&lt;/code&gt; with the actual values.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2 id="setup"&gt;Setup&lt;/h2&gt; 
+&lt;p&gt;The CloudFormation template automates the entire setup. If you intend to use your existing domains, you can clone the repository, update the env values and run the notebooks in sequence.&lt;/p&gt; 
+&lt;h3 id="environment-setup"&gt;Environment setup&lt;/h3&gt; 
+&lt;p&gt;Running the CloudFormation setup creates and initializes the variables.&lt;/p&gt; 
+&lt;p&gt;&lt;a href="https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=fraud-detection-monitoring&amp;amp;templateURL=https://frpaolo-public-blogs.s3.amazonaws.com/sagemaker-mlflow-setup.yaml" target="_blank" rel="noopener"&gt;&lt;img loading="lazy" class="alignnone wp-image-56268 size-full" src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2023/05/21/ML-14328-cloudformation-launch-stack.png" alt="Launch CloudFormation stack" width="144" height="27"&gt;&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;If you intend to use your own SageMaker AI domain, copy over the &lt;a href="https://github.com/aws-samples/sample-mlops-bestpractices/blob/main/sagemaker-automated-drift-and-trend-monitoring/.env.example" target="_blank" rel="noopener"&gt;.env.example&lt;/a&gt; to &lt;code&gt;.env&lt;/code&gt; and update the file with your specific environment variables. The settings in &lt;code&gt;.env&lt;/code&gt; override all other defaults and settings in &lt;code&gt;config.yaml&lt;/code&gt;.&lt;/p&gt; 
+&lt;div class="hide-language"&gt; 
+ &lt;pre&gt;&lt;code class="language-bash"&gt;git clone --branch v2.0.0 https://github.com/aws-samples/sample-mlops-bestpractices.git
+cd sagemaker-automated-drift-and-trend-monitoring
+cp .env.example .env&lt;/code&gt;&lt;/pre&gt; 
+&lt;/div&gt; 
+&lt;h2 id="architecture"&gt;Architecture&lt;/h2&gt; 
+&lt;p&gt;The system implements integrated training, inference, and monitoring pipelines, unified through a central Athena Iceberg table, Amazon Quick and SageMaker AI MLflow Apps.&lt;/p&gt; 
+&lt;div style="width: 810px" class="wp-caption alignnone"&gt;
+ &lt;img loading="lazy" src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/28/ML-20850-2.png" alt="End-to-end MLOps architecture on AWS spanning training, deployment, inference monitoring, and governance stages, built on SageMaker AI, Athena, Lambda, EventBridge, and Amazon Quick" width="800" height="977"&gt;
+ &lt;p class="wp-caption-text"&gt;Figure 1: End-to-end MLOps architecture built on AWS managed services&lt;/p&gt;
+&lt;/div&gt; 
+&lt;h3 id="training-1_training_pipeline.ipynb"&gt;Training (&lt;a href="https://github.com/aws-samples/sample-mlops-bestpractices/blob/main/sagemaker-automated-drift-and-trend-monitoring/notebooks/1_training_pipeline.ipynb" target="_blank" rel="noopener"&gt;1_training_pipeline.ipynb&lt;/a&gt;)&lt;/h3&gt; 
+&lt;p&gt;The training pipeline includes experiment tracking in MLflow. As shown in Figure 2, it sets up the end-to-end model training.&lt;/p&gt; 
+&lt;p&gt;1. &lt;strong&gt;Download Kaggle dataset:&lt;/strong&gt; &lt;a href="https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud" target="_blank" rel="noopener"&gt;Credit card fraud dataset&lt;/a&gt; is downloaded from Kaggle.&lt;/p&gt; 
+&lt;p&gt;2. &lt;strong&gt;Data ingestion:&lt;/strong&gt; S3 data is loaded into the training data. The architecture uses five Athena Iceberg tables to form the central data lake. The training_data table stores the 80% slice the model is fit on. The evaluation_data table is the frozen 20% held-out slice the model is scored on. evaluation_data is the drift-monitoring baseline, not training_data, because the held-out slice is what every registered model’s metrics are measured against. Both tables are populated from the same predictions CSV by a single seed step that applies a deterministic hash split on transaction_id, so the row partition is stable across pipeline runs.&lt;/p&gt; 
+&lt;p&gt;The SeedAthenaTrainingData step (see Figure 2) idempotently loads the predictions CSV from Amazon S3 into the training_data (80%) and evaluation_data (20%) Iceberg tables using a deterministic hash split on transaction_id. Re-runs produce identical row partitions, so the evaluation slice is stable across model versions and usable as a frozen drift baseline. Alternatively, you can replace the training data with your own. For further details, refer to &lt;a href="https://github.com/aws-samples/sample-mlops-bestpractices/tree/main/sagemaker-automated-drift-and-trend-monitoring#bring-your-own-dataset" target="_blank" rel="noopener"&gt;Bring your own dataset&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;3. &lt;strong&gt;Training:&lt;/strong&gt; The training and evaluation steps run and log metrics and artifacts to a SageMaker AI MLflow App.&lt;/p&gt; 
+&lt;div style="width: 810px" class="wp-caption alignnone"&gt;
+ &lt;img loading="lazy" src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/28/ML-20850-3.png" alt="SageMaker AI training pipeline execution graph showing seed, preprocessing, XGBoost training, evaluation, and register-model steps" width="800" height="1464"&gt;
+ &lt;p class="wp-caption-text"&gt;Figure 2: Training pipeline execution&lt;/p&gt;
+&lt;/div&gt; 
+&lt;h3 id="model-deployment-2_deployment.ipynb"&gt;Model deployment (&lt;a href="https://github.com/aws-samples/sample-mlops-bestpractices/blob/main/sagemaker-automated-drift-and-trend-monitoring/notebooks/2_deployment.ipynb" target="_blank" rel="noopener"&gt;2_deployment.ipynb&lt;/a&gt;)&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;4. Deployment:&lt;/strong&gt; A custom handler is deployed to a SageMaker AI inference endpoint.&lt;/p&gt; 
+&lt;p&gt;The inference handler writes all the inferences to Amazon Simple Queue Service (Amazon SQS), which are then processed by an inference-logger Lambda function. The inference-logger Lambda function batches up to 10 predictions, or the number of predictions that arrive within 30 seconds, whichever comes first, and writes into Athena Iceberg tables. All the notebooks also include convenience scripts for role creation and infrastructure creation.&lt;/p&gt; 
+&lt;h2 id="inference-monitoring-3_inference_monitoring.ipynb"&gt;Inference monitoring (3_inference_monitoring.ipynb)&lt;/h2&gt; 
+&lt;p&gt;&lt;strong&gt;5. Ground truth simulation:&lt;/strong&gt; Step 3.3 in &lt;a href="https://github.com/aws-samples/sample-mlops-bestpractices/blob/main/sagemaker-automated-drift-and-trend-monitoring/notebooks/3_inference_monitoring.ipynb" target="_blank" rel="noopener"&gt;3_inference_monitoring.ipynb&lt;/a&gt; invokes the deployed model with drifted input features. This infuses data drift. In real environments, this would be your typical business applications that send inference requests with drifted inputs over time. The ground truth simulation is step 4 in the notebook.&lt;/p&gt; 
+&lt;p&gt;Steps 3 and 4 of the solution are meant to be replaced by your business processes, which perform two steps before the data and model drift computations:&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;a. Step 3:&lt;/strong&gt; Your applications invoke the endpoint for inference. This triggers the inference endpoint to push the inference request into SQS -&amp;gt; Lambda -&amp;gt; Athena (inference_responses).&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;b. Step 4:&lt;/strong&gt; You generate ground truth data. This is the process of concluding if a prediction was right or wrong. In the example use case, it is determining if an inference request was a fraud or non-fraud. In this solution, the ground truth simulation randomly flips the actual field to be fraud/non-fraud, to infuse 15% inaccuracy in model performance. This induces model drift. In real-world scenarios, the actual fraud/non-fraud designation would be made when your fraud team investigates and confirms labels based on auto-approved transactions, customer-disputed chargebacks or a bank confirming fraud/non-fraud cases.&lt;/p&gt; 
+&lt;p&gt;NOTE: Steps 2, 3, and 4 in notebook 3 (generate drifted data, send predictions, apply ground truth) are not scheduled operations. They exist only for dev/test purposes. In production you would replace these with your own business processes: applications hitting the endpoint for inference (steps 2-3) and fraud-investigation feeds writing to ground_truth_updates (step 4). To try this solution end-to-end, trigger these three steps via the notebook cells or the CLI scripts provided in the repo.&lt;/p&gt; 
+&lt;p&gt;With steps 2 and 3, inference requests with data drift are already in inference_responses. Step 4 writes records into the ground_truth_updates table. Records with ground_truth = NULL are picked and new records are created in the ground_truth_updates table with actual labels. With this we can expect model drift upon computation.&lt;/p&gt; 
+&lt;p&gt;At any point you can validate the records through a query editor of your choice:&lt;/p&gt; 
+&lt;div style="width: 810px" class="wp-caption alignnone"&gt;
+ &lt;img loading="lazy" src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/28/ML-20850-4.png" alt="Athena query editor showing the generated inference and ground truth records" width="800" height="574"&gt;
+ &lt;p class="wp-caption-text"&gt;Figure 3: Query editor showing the generated records&lt;/p&gt;
+&lt;/div&gt; 
+&lt;div style="width: 810px" class="wp-caption alignnone"&gt;
+ &lt;img loading="lazy" src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/28/ML-20850-5.png" alt="Query results showing inference_responses records with ground truth values alongside the ground_truth_updates table" width="800" height="585"&gt;
+ &lt;p class="wp-caption-text"&gt;Figure 4: Records in the inference_responses table with ground truth updates and the ground_truth_updates table&lt;/p&gt;
+&lt;/div&gt; 
+&lt;p&gt;Records in the inference_responses table with ground_truth=NULL correspond to the entries for which ground truth hasn’t been applied.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;6. Merge ground truth with inference response:&lt;/strong&gt; Predictions and inference requests captured in the inference_responses table can be joined with ground_truth_updates on inference_id. The inference_responses table captures every prediction along with its features, confidence scores, and timestamps. The ground_truth_updates table holds asynchronous label confirmations that are merged back into inference records through step 4 in the &lt;a href="https://github.com/aws-samples/sample-mlops-bestpractices/blob/main/sagemaker-automated-drift-and-trend-monitoring/notebooks/3_inference_monitoring.ipynb" target="_blank" rel="noopener"&gt;notebook&lt;/a&gt;.&lt;/p&gt; 
+&lt;p&gt;Now that we have data to compute data and model drift, we can identify the baseline and current datasets for both categories of computations:&lt;/p&gt; 
+&lt;table border="1px" width="100%" cellpadding="10px"&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;&lt;strong&gt;Metric&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Component&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Source&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;ID&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Configuration&lt;/strong&gt;&lt;/td&gt; 
+   &lt;td&gt;&lt;strong&gt;Example&lt;/strong&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Data Drift&lt;/td&gt; 
+   &lt;td&gt;Baseline&lt;/td&gt; 
+   &lt;td&gt;training_data&lt;/td&gt; 
+   &lt;td&gt;Snapshot_id in iceberg_table also recorded in baseline.json&lt;/td&gt; 
+   &lt;td&gt;Automatic during preprocessing step&lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;If training data had &lt;code&gt;transaction_amount&lt;/code&gt; with mean=$50, but recent predictions&lt;/p&gt; &lt;p&gt;show mean=$500, KS test would flag this distribution shift.&lt;/p&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Current&lt;/td&gt; 
+   &lt;td&gt;Inference_responses for the lookback window&lt;/td&gt; 
+   &lt;td&gt;records where request_timestamp &amp;gt;= rolling time window&lt;/td&gt; 
+   &lt;td colspan="3"&gt; &lt;p&gt;Drift lambda env var:&lt;/p&gt; &lt;p&gt;DATA_DRIFT_LOOKBACK_DAYS: 1 # Query last 1 days of inferences&lt;/p&gt; &lt;p&gt;DATA_DRIFT_THRESHOLD: 0.2 # Alert if ≥20% features drifted&lt;/p&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Model drift&lt;/td&gt; 
+   &lt;td&gt;Baseline&lt;/td&gt; 
+   &lt;td&gt;Evaluation_data&lt;/td&gt; 
+   &lt;td&gt;Snapshot_id in iceberg_table and also recorded in baseline.json&lt;/td&gt; 
+   &lt;td&gt;Automatic during preprocessing step&lt;/td&gt; 
+   &lt;td&gt; &lt;p&gt;Lambda queries predictions from last 30 days that have ground truth labels,&lt;/p&gt; &lt;p&gt;calculates&lt;/p&gt; &lt;p&gt;Lambda queries predictions from last 30 days that have ground truth labels, calculates current ROC-AUC. If baseline was 0.92 and current is 0.85, ROC-AUC degradation = 0.07 (exceeds 0.05 threshold) → Alert!&lt;/p&gt; &lt;p&gt;0.05 threshold) → Alert!&lt;/p&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+  &lt;tr&gt; 
+   &lt;td&gt;Current&lt;/td&gt; 
+   &lt;td&gt;Inference_responses with&lt;/td&gt; 
+   &lt;td&gt;records where request_timestamp &amp;gt;= rolling time window&lt;/td&gt; 
+   &lt;td colspan="3"&gt; &lt;p&gt;Drift lambda env var:&lt;/p&gt; &lt;p&gt;MODEL_DRIFT_LOOKBACK_DAYS: 1 – set to 1 day in deploy_lambda_container.sh because the Lambda is on a daily schedule. Change this value based on how quickly ground truth arrives in your business processes. The config.yaml default is 30 days (for the notebook-driven flow, where a longer window is appropriate because ground truth is often delayed).&lt;/p&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; If you intend to have a shorter window for drift computations, follow the steps detailed in &lt;a href="https://github.com/aws-samples/sample-mlops-bestpractices/tree/main/sagemaker-automated-drift-and-trend-monitoring#configuring-shorter-drift-windows-minutes-instead-of-days" target="_blank" rel="noopener"&gt;Configuring Shorter Drift Windows (Minutes instead of days)&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;The monitoring_responses table stores outputs from the drift computations, including the ModelPackage ARN and Iceberg snapshot ID the run was computed against, so trends can be sliced per model version.&lt;/p&gt; 
+&lt;p&gt;Every registered model carries a frozen baseline.json artifact that records the metrics it earned on evaluation_data, the Iceberg snapshot ID of that exact data slice, and the code commit SHA that produced it. The drift Lambda dereferences these pointers on every run, so the monitoring system always compares production against the precise version of the data and code the deployed model came from, ensuring there is never a stale or wrong-version reference. The lineage mechanism is described in detail in the deep dive section that follows.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;7. Drift computation:&lt;/strong&gt; The drift Lambda function resolves the model currently served by the endpoint and loads its registered baseline.json. Two independent checks run on each invocation, each against its own frozen baseline. For data drift, the frozen training_data slice (pinned through training_snapshot_id in baseline.json) is the reference distribution the model was trained on. Recent inference_responses.input_features from the rolling window is the current distribution. Evidently’s DataDriftPreset compares the two, auto-selecting a statistical test per column. It uses the Kolmogorov-Smirnov or Chi-square (p-values) for smaller samples, and Wasserstein or Jensen-Shannon distances for n ≥ 1000. For model drift, the frozen evaluation_data slice (pinned through evaluation_snapshot_id) supplies the baseline (target, prediction) pairs the model was scored on at training time. Current inference rows joined with ground_truth_updates are compared to that baseline via Evidently’s ClassificationPreset, which tracks ROC-AUC, precision, recall, and F1 degradation. Both baselines are immutable per model version, so re-seeding the source tables later cannot retroactively change historical drift comparisons. Because Evidently emits raw scores whose drift direction depends on the chosen test (p-values: lower = drift. Distances: higher = drift), the solution also computes a normalized companion field, &lt;strong&gt;drift_magnitude&lt;/strong&gt;, so features can be compared and ranked test-agnostically. Follow the &lt;a href="https://github.com/aws-samples/sample-mlops-bestpractices/tree/main/sagemaker-automated-drift-and-trend-monitoring#the-drift-story-end-to-end-worked-example" target="_blank" rel="noopener"&gt;drift story&lt;/a&gt; for deeper insight into the metrics.&lt;/p&gt; 
+&lt;p&gt;NOTE: Two additional tables are created but not currently used. The ground_truth table holds confirmed labels (fraud/not fraud) and is reserved as a placeholder to update the baseline data for cases where the model has been retrained and you would like to add additional data to the baseline. The drifted_data table is created as a placeholder to contain drifted datasets if needed.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;8. Drift logging:&lt;/strong&gt; The drift monitor Lambda function uses Evidently to generate interactive charts which get logged to SageMaker AI MLflow App. You can also choose to use only Amazon Quick for all your analytics. This solution provides both MLflow with Evidently and Amazon Quick support to cater to both data scientists and governance personas.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;9. Monitoring automation:&lt;/strong&gt; The drift monitor Lambda function checks drift thresholds and triggers alarms if the thresholds are exceeded.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;10 – 11.&lt;/strong&gt; The drift monitor Lambda function also pushes the computations to Amazon SQS and the Lambda writer reads the results and writes the output to the monitoring_responses table. Since the solution uses &lt;a href="https://iceberg.apache.org/" target="_blank" rel="noopener"&gt;Apache Iceberg&lt;/a&gt; based Athena tables, updates are ACID-compliant.&lt;/p&gt; 
+&lt;h3 id="meta-monitoring-4_governance_dashboard.ipynb"&gt;Meta-monitoring (&lt;a href="https://github.com/aws-samples/sample-mlops-bestpractices/blob/main/sagemaker-automated-drift-and-trend-monitoring/notebooks/4_governance_dashboard.ipynb" target="_blank" rel="noopener"&gt;4_governance_dashboard.ipynb&lt;/a&gt;)&lt;/h3&gt; 
+&lt;p&gt;&lt;strong&gt;12. Governance dashboard:&lt;/strong&gt; The solution includes a pre-built Amazon Quick analysis with three sheets and 32 visuals querying the Athena monitoring_responses table. Model Drift Trends (11 visuals) shows ROC-AUC degradation, classification metrics, and run counts sliced by model version and training snapshot. Data Drift Trends (10 visuals) shows drifted_columns_share over time, drift-detected verdict rate, and correlation with inference volume. Feature Drift Trends (11 visuals) ranks features by drift_magnitude (test-agnostic “× past threshold” – 1.0 = at threshold, ≥3.0 = severe), with heatmaps of feature × time and feature × model version, and a repeat-offender chart. Two additional visuals split the raw drift_score by test family (p-value tests on one, distance tests on the other) so readers can audit the underlying statistic on its own scale, with sheet-scoped filter groups on drift_method to keep the axes honest. Severity color-coding uses categorical bands (Low &amp;lt;1.0 / Moderate ≥1.0 / Significant ≥3.0) computed from drift_magnitude in the Athena view, so a red cell means the same thing regardless of which underlying test produced it. Every sheet ends with a raw source-data table for lookup. The following sections show you how to extend the dashboards or build your own using natural language queries.&lt;/p&gt; 
+&lt;h2 id="deep-dive-into-inference-monitoring-and-meta-monitoring"&gt;Deep dive into inference monitoring and meta-monitoring&lt;/h2&gt; 
+&lt;p&gt;The following sections break down the inference monitoring and meta-monitoring components in more detail.&lt;/p&gt; 
+&lt;h3 id="inference-monitoring-with-sagemaker-ai-mlflow-apps-and-evidently-ai"&gt;Inference monitoring with SageMaker AI MLflow Apps and Evidently AI&lt;/h3&gt; 
+&lt;p&gt;This section examines the inference monitoring setup in more detail.&lt;/p&gt; 
+&lt;p&gt;The configuration file (&lt;a href="https://github.com/aws-samples/sample-mlops-bestpractices/blob/main/sagemaker-automated-drift-and-trend-monitoring/src/config/config.yaml" target="_blank" rel="noopener"&gt;config.yaml&lt;/a&gt;) has defaults with which the solution runs end to end.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;MLflow and Athena logging.&lt;/strong&gt; Monitoring outputs are co-located with training metrics in the SageMaker AI MLflow App. In addition, metrics are written to Amazon SQS which persists them into Athena for governance:&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;Metrics: drifted_columns_count, drifted_columns_share, per-feature drift_score_* (raw test statistic, where direction depends on which test Evidently picked), per-feature drift_magnitude_* (test-agnostic “× past threshold”, higher = more drift, used for ranking and thresholding), current_roc_auc, roc_auc_degradation_pct. The monitoring_responses.per_feature_drift_scores JSON column stores {score, magnitude, method, threshold} per feature so downstream dashboards can pick either view.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Artifacts:&lt;/strong&gt; Interactive Evidently HTML drift reports, classification reports, and JSON summaries.&lt;/li&gt; 
+ &lt;li&gt;&lt;strong&gt;Flags:&lt;/strong&gt; &lt;code&gt;data_drift_detected&lt;/code&gt; and &lt;code&gt;model_drift_detected&lt;/code&gt; booleans for automated decision-making.&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h4 id="reading-the-drift-numbers-drift_score-compared-to-drift_magnitude"&gt;&lt;strong&gt;Reading the drift numbers: drift_score compared to drift_magnitude&lt;/strong&gt;&lt;/h4&gt; 
+&lt;p&gt;Left to its defaults, Evidently auto-selects a drift test per column by type and sample size, so the raw drift_score on monitoring_responses.per_feature_drift_scores would mean opposite things across features in the same run: a KS-tested feature at 0.001 is severely&amp;nbsp; drifted (p-values: lower = drift), while a Wasserstein-tested feature at 0.001 is not drifted at all (distances: higher = drift). Worse, drift_magnitude for a p-value test is threshold / p_value, which is unbounded – at the 5k–10k sample sizes the daily Lambda pulls, KS is hypersensitive, so a trivial difference yields a near-zero p-value and an inflated magnitude.&lt;/p&gt; 
+&lt;p&gt;So, this solution pins one bounded distance metric for every column, Jensen-Shannon distance (range [0, 1], higher = more drift) for both numeric&amp;nbsp; and categorical features, flagged as drifted above DRIFT_THRESHOLD = 0.1, set via DataDriftPreset(num_method=…, cat_method=…, num_threshold=…,&amp;nbsp; cat_threshold=…) in &lt;a href="https://github.com/aws-samples/sample-mlops-bestpractices/blob/main/sagemaker-automated-drift-and-trend-monitoring/src/drift_monitoring/evidently_reports.py"&gt;evidently_reports.py&lt;/a&gt;. Jensen-Shannon gives every feature the same 0-to-1 “how different is today’s data from training data” score, so you can rank features against each other on one honest scale instead of comparing numbers that mean different things. Test choice is therefore deterministic rather than sample-size-dependent, drift direction is uniform, and the normalized companion field drift_magnitude = score / threshold is bounded to [0, 10]: 1.0 means “at threshold”, &amp;gt; 1.0 means “drifted”, and higher always means more drifted.&lt;/p&gt; 
+&lt;p&gt;Amazon Quick aggregates, &lt;a href="https://aws.amazon.com/sns/" target="_blank" rel="noopener"&gt;Amazon Simple Notification Service (Amazon SNS)&lt;/a&gt; alert text, and MLflow ranking all use magnitude. The raw score and the test method are retained for audit.&lt;/p&gt; 
+&lt;table style="border: 0;border-collapse: collapse;margin: 0 auto;width: 100%"&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td style="border: 0;padding: 0 4px;text-align: center;width: 50%"&gt;&lt;img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/28/ML-20850-6.png" alt="MLflow Evidently dataset drift report showing 28 of 29 columns drifted with a 0.966 drifted-columns share and per-column Wasserstein distance scores" width="390"&gt;&lt;/td&gt; 
+   &lt;td style="border: 0;padding: 0 4px;text-align: center;width: 50%"&gt;&lt;img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/28/ML-20850-7.png" alt="Evidently classification report comparing current and reference model accuracy, precision, recall, and F1 with confusion matrices" width="390"&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;em&gt;Figure 5: Interactive Evidently data drift and classification reports logged in the SageMaker AI MLflow App&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Alerting and dashboards.&lt;/strong&gt; When drift exceeds thresholds, Amazon SNS sends you alerts with direct links to the interactive Evidently reports in MLflow.&lt;/p&gt; 
+&lt;h3 id="amazon-quick-for-drift-trend-analysis"&gt;Amazon Quick for drift trend analysis&lt;/h3&gt; 
+&lt;p&gt;Amazon Quick reads from Athena tables which host the drift computations. Running through the &lt;a href="https://github.com/aws-samples/sample-mlops-bestpractices/blob/main/sagemaker-automated-drift-and-trend-monitoring/notebooks/4_governance_dashboard.ipynb" target="_blank" rel="noopener"&gt;4_governance_dashboard.ipynb&lt;/a&gt; notebook (or the scripts powering it) creates Quick analyses with 3 sheets and 32 pre-built visuals (Model Drift Trends 11, Data Drift Trends 10, Feature Drift Trends 11). Quick also provides calculated fields and natural-language query support for building additional visuals. The pre-built set is a starting point, not a ceiling. If you do not have Amazon Quick set up on your account, follow the README to enable Quick before proceeding with notebook 4.&lt;/p&gt; 
+&lt;p&gt;With Amazon Quick, you can build visuals through drag-and-drop and even through natural language. As shown in Figure 6, explore creating dashboards with prompts like:&lt;/p&gt; 
+&lt;p&gt;&lt;em&gt;“Show me a time series chart of the top 5 drifted features over the last 30 days with drift_magnitude on the y-axis, grouped by day. Include a horizontal reference line at magnitude = 1.0 (the drift threshold). Add a second chart below showing daily prediction volume. Highlight days where more than 3 features had magnitude &amp;gt; 1.0 in red.”&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;Or&lt;/p&gt; 
+&lt;p&gt;“&lt;em&gt;Create a sankey diagram showing how prediction bucket distributions shifted from the baseline week to last week. Show flows from training data buckets (very_low to very_high fraud probability) to current production buckets. Highlight any bucket that changed by more than 10 percentage points in red.&lt;/em&gt;”&lt;/p&gt; 
+&lt;div style="width: 810px" class="wp-caption alignnone"&gt;
+ &lt;img loading="lazy" src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/28/ML-20850-8.png" alt="Amazon Quick Build a visual panel interpreting a natural language prompt into a drifted-columns visual on the Feature Drift Analysis sheet" width="800" height="756"&gt;
+ &lt;p class="wp-caption-text"&gt;Figure 6: Generate Amazon Quick visuals with natural language&lt;/p&gt;
+&lt;/div&gt; 
+&lt;div style="width: 810px" class="wp-caption alignnone"&gt;
+ &lt;img loading="lazy" src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/28/ML-20850-10.png" alt="Amazon Quick bar chart showing drift severity distribution by feature, color-coded into Low, Moderate, and Significant bands" width="800" height="845"&gt;
+ &lt;p class="wp-caption-text"&gt;Figure 7: Drift severity distribution by feature. Each horizontal bar shows how many monitoring runs classified the feature as Low (&amp;lt; 1.0), Moderate (≥ 1.0), or Significant (≥ 3.0) drift – bands computed from drift_magnitude, not raw drift_score.&lt;/p&gt;
+&lt;/div&gt; 
+&lt;div style="width: 810px" class="wp-caption alignnone"&gt;
+ &lt;img loading="lazy" src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/28/ML-20850-11.png" alt="Amazon Quick line chart showing the share of drifted columns over time across daily monitoring runs" width="800" height="720"&gt;
+ &lt;p class="wp-caption-text"&gt;Figure 8: drifted_columns_share sits at 100% for eight straight days (Jul 10-17) before easing to ~90% on Jul 18. Every drift run flagged nearly every feature, well past the 20% alert threshold. The persistence, not the height, is the signal: this is sustained population-wide drift, not a one-day spike.&lt;/p&gt;
+&lt;/div&gt; 
+&lt;table style="border: 0;border-collapse: collapse;margin: 0 auto;width: 100%"&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td style="border: 0;padding: 0 4px;text-align: center;width: 50%"&gt;&lt;img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/28/ML-20850-12.png" alt="SHAP feature importance bar chart ranking features by mean absolute SHAP value, led by account_age_days and num_transactions_24h" width="390"&gt;&lt;/td&gt; 
+   &lt;td style="border: 0;padding: 0 4px;text-align: center;width: 50%"&gt;&lt;img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/28/ML-20850-13.png" alt="SHAP summary beeswarm plot showing per-feature impact on model output colored by feature value" width="390"&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;em&gt;Figure 9: Model drift – Accuracy line (green, ~0.85) stays flat over nine days; precision, recall, and F1 all overlap at 0.0 because the drifted inputs have driven every prediction to the majority class (non-fraud), so TP = FP = 0 structurally. This is exactly why the drift alarm in config.yaml gates on roc_auc_degradation, not accuracy. To the right, Current ROC-AUC (~0.48, light blue) sits flat and ~50 percentage points below the frozen baseline (~0.98, dark blue) across the entire 9-day window, close to random. &lt;/em&gt;&lt;/p&gt; 
+&lt;div style="width: 810px" class="wp-caption alignnone"&gt;
+ &lt;img loading="lazy" src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/28/ML-20850-9.png" alt="Amazon Quick bar chart ranking the top 15 drifted features by average drift magnitude, with a reference line at the drift threshold of 1.0" width="800" height="840"&gt;
+ &lt;p class="wp-caption-text"&gt;Figure 10: num_transactions_24h leads by a wide margin at ~11× the drift threshold (dashed red line at magnitude = 1.0), with customer_gender, distance_from_home_km, and velocity_score behind at ~5×, ~4×, and ~3× . Every one of the top 15 features sits above the drift line.&lt;/p&gt;
+&lt;/div&gt; 
+&lt;p&gt;Note on the demo screenshots. In these screenshots, the most-drifted feature also happens to be a high-SHAP-importance feature.&lt;/p&gt; 
+&lt;table style="border: 0;border-collapse: collapse;margin: 0 auto;width: 100%"&gt; 
+ &lt;tbody&gt; 
+  &lt;tr&gt; 
+   &lt;td style="border: 0;padding: 0 4px;text-align: center;width: 50%"&gt;&lt;img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/28/ML-20850-14.png" alt="Amazon Quick Model Drift Trends sheet showing model performance metrics over time for accuracy, precision, recall, and F1" width="390"&gt;&lt;/td&gt; 
+   &lt;td style="border: 0;padding: 0 4px;text-align: center;width: 50%"&gt;&lt;img src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/28/ML-20850-15.png" alt="Amazon Quick line chart comparing baseline and current ROC-AUC over time" width="390"&gt;&lt;/td&gt; 
+  &lt;/tr&gt; 
+ &lt;/tbody&gt; 
+&lt;/table&gt; 
+&lt;p&gt;&lt;em&gt;Figure 11: The bar chart shows account_age_days (0.37) and num_transactions_24h (0.29) as the model’s dominant features by mean absolute SHAP, while the beeswarm (right) reveals the direction: red-left / blue-right on account_age_days means older accounts push predictions away from fraud (inverse relationship, matching domain intuition), whereas num_transactions_24h shows a non-monotonic pattern with color mixed at both extremes.&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;This alignment is a property of the demo drift configuration (&lt;code&gt;config.yaml&lt;/code&gt; deliberately drifts a PCA component the model relies on), not something Quick discovered, because it only visualizes Evidently’s statistical distances and has no access to the model or SHAP. In real production drift, magnitude and SHAP importance are independent. The recommended pattern is to cross-reference both when prioritizing which drifted feature matters.&lt;/p&gt; 
+&lt;h3 id="choice-of-monitoring-visualizations"&gt;Choice of monitoring visualizations&lt;/h3&gt; 
+&lt;p&gt;This solution ships two independent monitoring backends, MLflow and Amazon Quick, on top of the same durable Amazon Athena tables. They are peer consumers rather than a stack, so using one does not require the other, and disabling one has no effect on the other. Every drift run writes its verdict, per-feature scores, and lineage references (model package ARN, training and evaluation snapshot IDs, monitoring run ID) directly to the monitoring_responses and inference_responses Iceberg tables.&lt;/p&gt; 
+&lt;p&gt;Amazon Quick reads from Athena (through AWS Lake Formation if enabled) regardless of whether MLflow is running.&lt;/p&gt; 
+&lt;h4&gt;&lt;strong&gt;Choose by workload&lt;/strong&gt;&lt;/h4&gt; 
+&lt;p&gt;For online endpoint monitoring with real-time or serverless inference for continuously arriving traffic, pick Amazon Quick. Athena-backed dashboards refresh on schedule, slice by model version, endpoint, training snapshot, or feature, and give stakeholder-facing views suitable for model-risk committees and executive reviews. For batch inference monitoring with scheduled transforms, offline scoring, or discrete jobs, pick MLflow or Quick, depending on team preference:&lt;/p&gt; 
+&lt;p&gt;MLflow provides per-run experiment tracking, hyperparameter and metric comparison across runs, and hosts the full interactive Evidently HTML reports as artifacts, which is a natural fit for discrete jobs where each batch is its own experiment.&lt;/p&gt; 
+&lt;p&gt;Amazon Quick still works here if you want a unified dashboard surface across both online and batch workloads. The two backends answer different questions well.&lt;/p&gt; 
+&lt;p&gt;MLflow answers &lt;em&gt;“what changed between this run and the last, and can I open the Evidently HTML to inspect column by column?”&lt;/em&gt;,&lt;/p&gt; 
+&lt;p&gt;while Quick answers “&lt;em&gt;what does the last 90 days of drift look like across every model version and endpoint, and can I share that dashboard with compliance?“&lt;/em&gt;&lt;/p&gt; 
+&lt;p&gt;Because both consume the same monitoring_responses table, choosing one does not preclude adding the other later, and neither is a prerequisite for the drift-detection pipeline itself. The daily drift Lambda persists its results to Athena unconditionally.&lt;/p&gt; 
+&lt;h2 id="cost"&gt;Cost&lt;/h2&gt; 
+&lt;p&gt;All compute scales to zero when idle. Serverless endpoints charge only for actual invocations (no baseline instance hours), Lambdas execute on-demand, Athena queries run only when triggered, and Amazon EventBridge incurs no cost between scheduled runs.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Cost optimization:&lt;/strong&gt; Iceberg table partitioning reduces Athena scan costs by 10-100x, because you can write queries that filter on the partition column, letting Athena skip partitions. Lambda batching (100 records/invocation) minimizes execution charges, and serverless endpoint auto scaling eliminates over-provisioning waste.&lt;/p&gt; 
+&lt;p&gt;The full solution including SageMaker AI MLflow Apps, SageMaker Serverless Inference, Lambda, Amazon EventBridge, Athena, S3, SQS, SNS, and Quick, costs approximately $60 per month depending on instance type and usage patterns. This figure is directional and will vary based on inference volume, data retention policies, and regional pricing. High-volume deployments scale linearly, with no upfront capacity planning or reserved instances required. The cost estimates are based on pricing as of this writing. For the latest prices, check out Amazon SageMaker AI pricing.&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;Important:&lt;/strong&gt; This solution creates billable AWS resources. Charges accrue until resources are deleted. Follow the cleanup steps in &lt;a href="https://github.com/aws-samples/sample-mlops-bestpractices/blob/main/sagemaker-automated-drift-and-trend-monitoring/notebooks/6_optional_cleanup.ipynb" target="_blank" rel="noopener"&gt;6_optional_cleanup.ipynb&lt;/a&gt; to make sure that all resources are removed when no longer needed.&lt;/p&gt; 
+&lt;h2 id="conclusion"&gt;Conclusion&lt;/h2&gt; 
+&lt;p&gt;Production ML systems require the same rigor for inference that we apply to training. Inference meta-monitoring transforms reactive incident response into proactive governance.&lt;/p&gt; 
+&lt;p&gt;This solution demonstrates that inference monitoring does not require additional managed monitoring-specific services. By combining Amazon SageMaker AI for model hosting, SageMaker AI MLflow Apps for unified experiment and monitoring tracking, Evidently AI for statistical drift analysis, and Amazon Quick for executive dashboards, you can build a comprehensive monitoring system that is cost-efficient and portable.&lt;/p&gt; 
+&lt;h2 id="next-steps"&gt;Next steps&lt;/h2&gt; 
+&lt;p&gt;To get started, clone the &lt;a href="https://github.com/aws-samples/sample-mlops-bestpractices" target="_blank" rel="noopener"&gt;sample MLOps best practices repository&lt;/a&gt; on the GitHub website.&lt;/p&gt; 
+&lt;p&gt;You can then extend it based on your own business needs. For example:&lt;/p&gt; 
+&lt;ol&gt; 
+ &lt;li&gt;Multi-model monitoring: Track multiple endpoints/models from a single monitoring infrastructure, comparing drift patterns across models.&lt;/li&gt; 
+ &lt;li&gt;Automated retraining triggers: Connect the drift alerts to a SageMaker Pipeline that automatically starts retraining when drift exceeds a sustained threshold (not just a single spike).&lt;/li&gt; 
+ &lt;li&gt;Custom drift metrics: Add domain-specific drift tests beyond Evidently’s default per-column tests and classification metrics, such as business KPIs like approval rate shifts, dollar-value impact of false positives, or population-stability metrics on business-critical segments. The drift_magnitude normalization (“× past threshold”) makes it easy to plug in a custom test alongside Evidently’s built-in tests. Because magnitude is universal, downstream ranking still works.&lt;/li&gt; 
+&lt;/ol&gt; 
+&lt;hr&gt; 
+&lt;h2&gt;About the authors&lt;/h2&gt; 
+&lt;footer&gt; 
+ &lt;div class="blog-author-box"&gt; 
+  &lt;div class="blog-author-image"&gt; 
+   &lt;p&gt;&lt;img loading="lazy" class="alignleft size-full" src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/28/ML-20850-16.jpeg" alt="Sunita Koppar" width="100" height="100"&gt;&lt;/p&gt; 
+  &lt;/div&gt; 
+  &lt;h3 class="lb-h4"&gt;Sunita Koppar&lt;/h3&gt; 
+  &lt;p&gt;Sunita is a Senior Specialist Solutions Architect in Generative AI and Machine Learning at AWS, where she partners with customers across diverse industries to design solutions, build proof-of-concepts, and drive measurable business outcomes. Beyond her professional role, she is deeply passionate about learning and teaching Sanskrit, actively engaging with student communities to help them upskill and grow.&lt;/p&gt; 
+ &lt;/div&gt; 
+ &lt;div class="blog-author-box"&gt; 
+  &lt;div class="blog-author-image"&gt; 
+   &lt;p&gt;&lt;img loading="lazy" class="alignleft size-full" src="https://d2908q01vomqb2.cloudfront.net/f1f836cb4ea6efb2a0b1b99f41ad8b103eff4b59/2026/07/28/ML-20850-17.jpeg" alt="Jonathan Kola" width="100" height="100"&gt;&lt;/p&gt; 
+  &lt;/div&gt; 
+  &lt;h3 class="lb-h4"&gt;Jonathan Kola&lt;/h3&gt; 
+  &lt;p&gt;Jonathan is a Senior Generative AI and Machine Learning Specialist Solutions Architect at AWS, where he works with customers across industries to design AI and ML applications leveraging AWS to solve their various business needs. Outside of this role, he enjoys pursuing a wide array of musical interests, from listening to, performing, and making music.&lt;/p&gt; 
+ &lt;/div&gt; 
+&lt;/footer&gt;</content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,1413 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Microsoft Azure Blog</title>
+	<atom:link href="https://azure.microsoft.com/en-us/blog/feed/" rel="self" type="application/rss+xml" />
+	<link>https://azure.microsoft.com/en-us/blog/</link>
+	<description>Get the latest Azure news, updates, and announcements from the Azure blog. From product updates to hot topics, hear from the Azure experts.</description>
+	<lastBuildDate>Wed, 29 Jul 2026 15:17:02 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.9.5</generator>
+
+<image>
+	<url>https://azure.microsoft.com/en-us/blog/wp-content/uploads/2024/06/microsoft_logo-150x150.webp</url>
+	<title>Microsoft Azure Blog</title>
+	<link>https://azure.microsoft.com/en-us/blog/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>What customers value most in Microsoft Databases—from reliability to AI readiness</title>
+		<link>https://azure.microsoft.com/en-us/blog/what-customers-value-most-in-microsoft-databases-from-reliability-to-ai-readiness/</link>
+					<comments>https://azure.microsoft.com/en-us/blog/what-customers-value-most-in-microsoft-databases-from-reliability-to-ai-readiness/#respond</comments>
+		
+		<dc:creator><![CDATA[Shireesh Thota]]></dc:creator>
+		<pubDate>Mon, 27 Jul 2026 15:00:00 +0000</pubDate>
+				<category><![CDATA[Databases]]></category>
+		<category><![CDATA[Hybrid + multicloud]]></category>
+		<category><![CDATA[Internet of things]]></category>
+		<category><![CDATA[Microsoft Fabric]]></category>
+		<category><![CDATA[PostgreSQL]]></category>
+		<category><![CDATA[SQL]]></category>
+		<guid isPermaLink="false">https://azure.microsoft.com/en-us/blog/?p=52984</guid>
+
+					<description><![CDATA[<p>Every day, customers trust Microsoft Databases to power their most critical applications, business processes, and AI-powered experiences.</p>
+<p>The post <a href="https://azure.microsoft.com/en-us/blog/what-customers-value-most-in-microsoft-databases-from-reliability-to-ai-readiness/">What customers value most in Microsoft Databases—from reliability to AI readiness</a> appeared first on <a href="https://azure.microsoft.com/en-us/blog">Microsoft Azure Blog</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<aside class="table-of-contents-block accordion wp-block-bloginabox-theme-table-of-contents" id="accordion-62ecaea2-0abf-4361-8fc0-bff3b4f7b1a9" data-bi-aN="table-of-contents">
+	<button class="btn btn-collapse" type="button" aria-expanded="true" aria-controls="accordion-collapse-62ecaea2-0abf-4361-8fc0-bff3b4f7b1a9">
+		<span class="table-of-contents-block__label">In this article</span>
+		<span class="table-of-contents-block__current" aria-hidden="true"></span>
+
+		<svg class="table-of-contents-block__arrow" aria-label="Toggle arrow" width="18" height="11" viewBox="0 0 18 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M15.7761 11L18 8.82043L9 0L0 8.82043L2.22394 11L9 4.35913L15.7761 11Z" fill="currentColor" />
+		</svg>
+	</button>
+	<div id="accordion-collapse-62ecaea2-0abf-4361-8fc0-bff3b4f7b1a9" class="table-of-contents-block__collapse-wrapper collapse show" data-parent="#accordion-62ecaea2-0abf-4361-8fc0-bff3b4f7b1a9">
+		<div class="table-of-contents-block__content">
+			<ol class="table-of-contents-block__list"><li class="table-of-contents-block__list-item"><a class="table-of-contents-block__list-item-link" href="#what-customers-consistently-value">What customers consistently value </a></li><li class="table-of-contents-block__list-item"><a class="table-of-contents-block__list-item-link" href="#turning-customer-feedback-into-innovation">Turning customer feedback into innovation </a></li><li class="table-of-contents-block__list-item"><a class="table-of-contents-block__list-item-link" href="#thank-you-to-our-customers-and-community">Thank you to our customers and community </a></li></ol>		</div>
+	</div>
+	<span class="table-of-contents-block__progress-bar"></span>
+</aside>
+
+
+
+<p class="wp-block-paragraph">Every day, customers trust Microsoft Databases to power their most critical applications, business processes, and AI-powered experiences. Continuous customer feedback provides valuable insights into how these technologies perform in production and where we should continue investing.</p>
+
+
+
+<p class="wp-block-paragraph">I’m honored to share that Microsoft Databases have received multiple 2026 PeerSpot Customer Choice / Tech Leader recognitions based on feedback from real practitioners using these technologies in production environments. </p>
+
+
+
+<p class="wp-block-paragraph">This year, <a href="https://customerchoiceawards.peerspot.com/awards/microsoft" target="_blank" rel="noreferrer noopener">PeerSpot recognized</a>:</p>
+
+
+
+<ul class="wp-block-list">
+<li class="wp-block-list-item"><strong>SQL Server</strong> as a Tech Leader in <strong>Database Management Systems (DBMS)</strong> (#1) and <strong>Relational Database Tools</strong> (#1) </li>
+
+
+
+<li class="wp-block-list-item"><strong>Azure SQL Database</strong> as a Tech Leader in <strong>Database as a Service (DBaaS)</strong> (#2)</li>
+
+
+
+<li class="wp-block-list-item"><strong>Azure Database for PostgreSQL</strong> as a Tech Leader in <strong>Open Source Databases</strong> (#1) </li>
+
+
+
+<li class="wp-block-list-item"><strong>Azure Cosmos DB</strong> as a Tech Leader in <strong>Managed NoSQL Databases</strong> (#1), <strong>NoSQL Databases</strong> (#1), and <strong>Vector Databases</strong> (#1) </li>
+</ul>
+
+
+
+<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-a89b3969 wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://customerchoiceawards.peerspot.com/awards/microsoft" target="_blank" rel="noopener noreferrer noreferrer noopener">Learn more about our PeerSpot awards</a></div>
+</div>
+
+
+
+<p class="wp-block-paragraph">Customer feedback across Microsoft Databases consistently highlights five themes: reliability, scalability, operational simplicity, developer productivity, and AI readiness. These are the same priorities shaping our investments across <a href="https://www.microsoft.com/en/sql-server" target="_blank" rel="noopener noreferrer">SQL Server</a>, <a href="https://azure.microsoft.com/en-us/products/azure-sql/database/" target="_blank" rel="noopener noreferrer">Azure SQL Database</a>, <a href="https://azure.microsoft.com/en-us/products/cosmos-db/" target="_blank" rel="noopener noreferrer">Azure Cosmos DB</a>, and <a href="https://azure.microsoft.com/en-us/products/postgresql/" target="_blank" rel="noopener noreferrer">Azure Database for PostgreSQL</a>. The PeerSpot recognition reinforces that customers see value not only in the performance of our databases today, but also in how they are helping organizations prepare for the next generation of AI-powered applications.</p>
+
+
+
+<h2 class="wp-block-heading" id="what-customers-consistently-value"><strong>What customers consistently value</strong> </h2>
+
+
+
+<h3 class="wp-block-heading" id="sql-server-trusted-reliability-for-mission-critical-workloads">SQL Server: Trusted reliability for mission-critical workloads </h3>
+
+
+
+<p class="wp-block-paragraph">For SQL Server customers, reliability, stability, and long-term data stewardship remain foundational requirements. Organizations continue to rely on SQL Server to support business-critical applications, analytics, and increasingly AI-enabled workflows. </p>
+
+
+
+<p class="wp-block-paragraph">Hemanth Reddy Vakiti, a data engineer at Cognizant,&nbsp;wrote that <a href="https://www.peerspot.com/products/sql-server-reviews?review_id=11107492" target="_blank" rel="noreferrer noopener"><strong>“The backup and recovery allow us to easily access previous 10 to 15 years of data”</strong></a>, citing SQL Server’s ability to handle large datasets and support secure role-based access.</p>
+
+
+
+<p class="wp-block-paragraph">Another SQL Server reviewer,&nbsp;Isseo Martinez&nbsp;from&nbsp;eGlobal,&nbsp;called out availability and stability, saying&nbsp;<a href="https://www.peerspot.com/products/sql-server-reviews?review_id=9505899" target="_blank" rel="noreferrer noopener"><strong>&#8220;We&nbsp;never have concerns about the database.”</strong></a> For&nbsp;many organizations, that confidence is the foundation for business-critical applications and long-term modernization strategies.&nbsp;</p>
+
+
+
+<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-a89b3969 wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://www.microsoft.com/en-us/sql-server/" target="_blank" rel="noopener noreferrer noreferrer noopener">Explore SQL Server 2025</a></div>
+</div>
+
+
+
+<h3 class="wp-block-heading" id="azure-sql-database-simplifying-modernization-with-cloud-scale-sql">Azure SQL Database: Simplifying modernization with cloud-scale SQL </h3>
+
+
+
+<p class="wp-block-paragraph">Customers regularly tell us they want the reliability and familiarity of SQL Server with the operational simplicity of a fully managed cloud service. Azure SQL Database helps organizations modernize applications, reduce infrastructure management, and scale with confidence. </p>
+
+
+
+<p class="wp-block-paragraph">Fredrick Weinshenk, a cloud engineer at healthcare IT firm Med Tech Solutions, wrote that <a href="https://www.peerspot.com/products/microsoft-azure-sql-database-reviews?review_id=7643726" target="_blank" rel="noreferrer noopener"><strong>“The ease of deployment and scalability are significant reasons we push our larger clients to Azure,”</strong></a> and described the platform as “reliable” and “solid.”</p>
+
+
+
+<p class="wp-block-paragraph">That feedback reflects a recurring need we hear from customers: modernize infrastructure, reduce operational burden, and retain the SQL skills, tools, and application patterns their teams already trust. </p>
+
+
+
+<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-a89b3969 wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://azure.microsoft.com/en-us/products/azure-sql/database/" target="_blank" rel="noopener noreferrer noreferrer noopener">Explore Azure SQL Database</a></div>
+</div>
+
+
+
+<h3 class="wp-block-heading" id="azure-database-for-postgresql-open-source-flexibility-with-enterprise-reliability">Azure Database for PostgreSQL: Open-source flexibility with enterprise reliability </h3>
+
+
+
+<p class="wp-block-paragraph">Customers choose Azure Database for PostgreSQL because it combines the innovation of the PostgreSQL ecosystem with the operational benefits of a managed service. </p>
+
+
+
+<p class="wp-block-paragraph">Wesley Haakman, a principal architect at IT service provider Intercept, using the service across hundreds of customer scenarios, shared that “[the] organization’s database uptime has improved” and highlighted the ease of integration with other Azure services.</p>
+
+
+
+<p class="wp-block-paragraph">Sathish Palanisamy, data engineer at a large transportation company, said <a href="https://www.peerspot.com/products/azure-database-for-postgresql-reviews?review_id=10068732" target="_blank" rel="noreferrer noopener"><strong>&#8220;We&#8217;ve used Azure Database for PostgreSQL for four years, benefiting from its performance, scalability, ease of integration, and support, especially during migration from Oracle, while also reducing costs and enabling faster, secure, AI-driven innovation in our airline operations.&#8221;</strong></a></p>
+
+
+
+<p class="wp-block-paragraph">These reviews highlight the value customers place on flexibility, modernization, and a clear path to AI-powered innovation.</p>
+
+
+
+<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-a89b3969 wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://azure.microsoft.com/en-us/products/postgresql/" target="_blank" rel="noopener noreferrer noreferrer noopener">Explore Azure Database for PostgreSQL</a></div>
+</div>
+
+
+
+<h3 class="wp-block-heading" id="azure-cosmos-db-global-scale-and-performance-for-modern-applications">Azure Cosmos DB: Global scale and performance for modern applications </h3>
+
+
+
+<p class="wp-block-paragraph">Customers building modern cloud-native and AI-powered applications consistently point to Azure Cosmos DB’s combination of low latency, elastic scalability, flexible data models, and search performance. </p>
+
+
+
+<p class="wp-block-paragraph">Kunal Mukerjee, former vice president of technology strategy at Docusign, said <a href="https://www.peerspot.com/product_reviews/microsoft-azure-cosmos-db-review-7643748-by-kunal-mukerjee?cop=p9665" target="_blank" rel="noreferrer noopener"><strong>“Cosmos DB has improved search result quality, throughput, and query latency. There are trade-offs to finding the sweet spot among all of these. Having a NoSQL solution that can do that in a 100 percent Azure shop is the best fit we could want.”</strong></a></p>
+
+
+
+<p class="wp-block-paragraph">Another customer, Yoni Nijs, CTO of Zero Friction, described using Azure Cosmos DB serverless for a highly unpredictable consumer portal and provisioned throughput with autoscale for a back-office application, noting that the configuration was <a href="https://www.peerspot.com/products/microsoft-azure-cosmos-db-reviews?review_id=7316875" target="_blank" rel="noreferrer noopener"><strong>“&#8230; very scalable and still cost-effective.”</strong></a></p>
+
+
+
+<p class="wp-block-paragraph">These are exactly the patterns&nbsp;AI&nbsp;applications demand:&nbsp;responsive global systems that can adapt to changing demand without sacrificing performance or cost efficiency.</p>
+
+
+
+<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-a89b3969 wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://azure.microsoft.com/en-us/products/cosmos-db/" target="_blank" rel="noopener noreferrer noreferrer noopener">Explore Azure Cosmos DB</a></div>
+</div>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+
+
+
+<p class="wp-block-paragraph">Taken together, these reviews reinforce a clear message: organizations want databases that are not only secure and scalable, but also ready for the next generation of intelligent applications. </p>
+
+
+
+<h2 class="wp-block-heading" id="turning-customer-feedback-into-innovation"><strong>Turning customer feedback into innovation</strong> </h2>
+
+
+
+<p class="wp-block-paragraph">The themes customers highlighted are the same themes guiding our investments across the Microsoft Databases portfolio. Our goal is not simply to add new features, but to help customers solve real challenges: modernizing existing applications, building AI-powered experiences, reducing operational complexity, and scaling with confidence.</p>
+
+
+
+<h3 class="wp-block-heading" id="sql-server">SQL Server</h3>
+
+
+
+<p class="wp-block-paragraph">Relational databases continue to power many of the world&#8217;s most critical applications. With SQL Server 2025, we&#8217;re helping customers extend those applications into the AI era without changing the platforms, skills, or tools they already trust. Native vector support, in-database embedding generation, semantic search, and retrieval-augmented generation (RAG) capabilities make it easier to build intelligent applications while keeping data secure, governed, and close to operational workloads. </p>
+
+
+
+<h3 class="wp-block-heading" id="azure-sql-database">Azure SQL Database</h3>
+
+
+
+<p class="wp-block-paragraph">With&nbsp;Azure SQL Database,&nbsp;customers get a&nbsp;fully&nbsp;managed&nbsp;cloud-native SQL solution for modernizing and building AI applications.&nbsp;Azure&nbsp;SQL Database Hyperscale helps applications scale with demand and grow as needs evolve, while automatic tuning and elastic resource management improve performance and cost efficiency.&nbsp;Customers&nbsp;can build AI-powered experiences on operational data with AI retrieval and secure agent connectivity,&nbsp;with&nbsp;integrations&nbsp;across&nbsp;key AI and analytics solutions like&nbsp;<a href="https://azure.microsoft.com/en-us/products/ai-foundry/" target="_blank" rel="noopener noreferrer">Microsoft&nbsp;Foundry</a>&nbsp;and&nbsp;<a href="https://www.microsoft.com/en-us/microsoft-fabric" target="_blank" rel="noopener noreferrer">Microsoft&nbsp;Fabric</a>.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">This helps&nbsp;their&nbsp;organization&nbsp;build a&nbsp;direct path from&nbsp;business-critical data&nbsp;to intelligent applications,&nbsp;without compromising the security, governance, and performance they expect from Microsoft&#8217;s SQL platforms.&nbsp;</p>
+
+
+
+<h3 class="wp-block-heading" id="azure-database-for-postgresql">Azure Database for PostgreSQL</h3>
+
+
+
+<p class="wp-block-paragraph">For PostgreSQL on Azure, our investments focus on helping customers modernize faster, accelerate AI development, and run mission-critical workloads with greater confidence. Highlights include the public preview of Azure HorizonDB, bringing AI-native capabilities such as integrated vector search, AI functions, AI pipelines, and model management to PostgreSQL; new migration and upgrade innovations including AI-assisted Oracle-to-PostgreSQL migration tooling; and performance improvements such as Premium SSD v2, cascading read replicas, and new high-performance infrastructure options for Azure Database for PostgreSQL. These innovations are helping organizations adopt AI capabilities while continuing to benefit from PostgreSQL&#8217;s open-source ecosystem. </p>
+
+
+
+<h3 class="wp-block-heading" id="azure-cosmos-db">Azure Cosmos DB</h3>
+
+
+
+<p class="wp-block-paragraph">For customers building AI-native applications, Azure Cosmos DB investments focus on helping developers move faster while simplifying operations at scale. Recent innovations include enhanced vector and hybrid search, semantic reranking, agent-focused development tools, Global Secondary Indexes, per-partition automatic failover, richer change feed capabilities, and improvements to local development through the Linux Emulator. Together, these investments help developers build responsive, AI-powered applications faster while maintaining performance, resilience, and operational efficiency. </p>
+
+
+
+<p class="wp-block-paragraph">Across the portfolio, our goal is consistent: help customers build applications faster, operate them more efficiently, and prepare for a future where AI is deeply integrated into every application experience. </p>
+
+
+
+<h2 class="wp-block-heading" id="thank-you-to-our-customers-and-community"><strong>Thank you to our customers and community</strong> </h2>
+
+
+
+<p class="wp-block-paragraph">These PeerSpot recognitions belong first and foremost to our customers and community. </p>
+
+
+
+<p class="wp-block-paragraph">Every review, product suggestion, support interaction, preview program discussion, and customer conversation helps shape the direction of Microsoft Databases. Your feedback helps other technology leaders make informed decisions, and it helps our teams build better products. </p>
+
+
+
+<p class="wp-block-paragraph">On behalf of everyone across the Microsoft Databases organization, thank you for your trust, your partnership, and your willingness to share your experiences. </p>
+
+
+
+<p class="wp-block-paragraph">I encourage you to read what your peers are saying, and, if Microsoft Databases are helping your organization innovate, consider sharing your own review.</p>
+
+
+
+<div class="is-style-inline-centered wp-block-bloginabox-theme-promotional">
+	
+<div class="promotional promotional--has-media promotional--media-right">
+	<div class="promotional__wrapper">
+		<div class="promotional__content-wrapper">
+			<div class="promotional__content">
+				
+
+<h3 class="wp-block-heading" id="microsoft-databases">Microsoft Databases</h3>
+
+
+
+<p class="wp-block-paragraph">Modernize or build AI-ready apps with intelligent cloud databases.</p>
+
+
+
+<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a data-bi-an="Global CTA" data-bi-ct="cta link" data-bi-id="cta-block" class="wp-block-button__link wp-element-button" href="https://azure.microsoft.com/en-us/products/category/databases/" target="_blank" rel="noopener noreferrer noreferrer noopener">Get started</a></div>
+</div>
+
+			</div>
+		</div>
+					<div class="promotional__media-wrapper">
+				<div class="promotional__media">
+											<img decoding="async" width="1920" height="1280" src="https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/10/CLO20b_Jean_Alain_casual_office_003.jpg" class="attachment-full size-full" alt="Two people sitting at desks and working at computers." loading="lazy" srcset="https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/10/CLO20b_Jean_Alain_casual_office_003.jpg 1920w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/10/CLO20b_Jean_Alain_casual_office_003-300x200.jpg 300w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/10/CLO20b_Jean_Alain_casual_office_003-1024x683.jpg 1024w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/10/CLO20b_Jean_Alain_casual_office_003-768x512.jpg 768w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/10/CLO20b_Jean_Alain_casual_office_003-1536x1024.jpg 1536w" sizes="auto, (max-width: 1920px) 100vw, 1920px" />									</div>
+			</div>
+			</div>
+</div>
+</div>
+<p>The post <a href="https://azure.microsoft.com/en-us/blog/what-customers-value-most-in-microsoft-databases-from-reliability-to-ai-readiness/">What customers value most in Microsoft Databases—from reliability to AI readiness</a> appeared first on <a href="https://azure.microsoft.com/en-us/blog">Microsoft Azure Blog</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://azure.microsoft.com/en-us/blog/what-customers-value-most-in-microsoft-databases-from-reliability-to-ai-readiness/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item><item>
+		<title>AT&#038;T and Microsoft scale trillion-token workloads with Microsoft Foundry and AMD</title>
+		<link>https://azure.microsoft.com/en-us/blog/att-and-microsoft-scale-trillion-token-workloads-with-microsoft-foundry-and-amd/</link>
+					<comments>https://azure.microsoft.com/en-us/blog/att-and-microsoft-scale-trillion-token-workloads-with-microsoft-foundry-and-amd/#respond</comments>
+		
+		<dc:creator><![CDATA[Steve Sweetman]]></dc:creator>
+		<pubDate>Thu, 23 Jul 2026 18:30:00 +0000</pubDate>
+				<category><![CDATA[AI + machine learning]]></category>
+		<category><![CDATA[AMD GPUs]]></category>
+		<category><![CDATA[AT&T]]></category>
+		<category><![CDATA[Foundry Managed Compute]]></category>
+		<category><![CDATA[Microsoft Foundry]]></category>
+		<category><![CDATA[Open Source models]]></category>
+		<category><![CDATA[OTel 2.0]]></category>
+		<guid isPermaLink="false">https://azure.microsoft.com/en-us/blog/?p=52857</guid>
+
+					<description><![CDATA[<p>AT&#38;T processed approximately one trillion tokens while developing OTel2.0 using Microsoft Foundry Managed Compute, open AI models, and AMD and NVIDIA GPU infrastructure. Discover how flexible model choice and scalable infrastructure are enabling production-scale telecom AI.</p>
+<p>The post <a href="https://azure.microsoft.com/en-us/blog/att-and-microsoft-scale-trillion-token-workloads-with-microsoft-foundry-and-amd/">AT&amp;T and Microsoft scale trillion-token workloads with Microsoft Foundry and AMD</a> appeared first on <a href="https://azure.microsoft.com/en-us/blog">Microsoft Azure Blog</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<h2 class="wp-block-heading" id="first-of-its-kind-telecom-ai-deployment">First-of-its-kind telecom AI deployment</h2>
+
+
+
+<p class="wp-block-paragraph">Telecommunications organizations are increasingly looking to AI to help teams navigate highly specialized domains, but generic models often lack the industry-specific knowledge needed to understand telecom networks, standards, and operations. To address that gap, AT&amp;T created their Open Telco (OTel) models, the next generation of telecom-focused AI designed to bring deeper telecommunications expertise into AI systems. Building OTel2.0 required more than training a large language model, it reflected a broader issue many organizations face: how to build domain-specific AI systems at scale while balancing cost, performance, and operational complexity. Cost management quickly became a key consideration. To continue advancing telecom-focused AI, AT&amp;T needed a platform capable of supporting OTel2.0 development at an entirely new scale.</p>
+
+
+
+<p class="wp-block-paragraph">Where teams previously had to own and manage deployments, infrastructure, and the associated operational overhead, <a href="https://learn.microsoft.com/en-us/azure/foundry/concepts/managed-compute-overview">Foundry Managed Compute</a> provided a more streamlined way to access dedicated graphics processing unit (GPU) capacity. This transformation requires more than powerful models; it requires the ability to scale without compromising cost, flexibility, or performance.</p>
+
+
+
+<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-a89b3969 wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://www.gsma.com/newsroom/press-release/gsma-launches-open-telco-ai-to-accelerate-development-of-telco%E2%80%91grade-ai/" target="_blank" rel="noopener noreferrer noreferrer noopener">Learn how OTel2.0 scales telecom AI<strong style="font-family: inherit;font-size: 15.008px;font-style: inherit;letter-spacing: 0.30016px;text-transform: inherit"></strong></a></div>
+</div>
+
+
+
+<p class="wp-block-paragraph">
+  Using <a href="https://devblogs.microsoft.com/foundry/announcing-foundry-managed-compute/">Microsoft Foundry Managed Compute</a>, AT&amp;T was able to experiment across multiple open models, optimize workloads across different GPU architectures, and process massive volumes of telecom data all within a unified platform. The result was an AI development environment capable of supporting trillions of tokens while giving teams the flexibility to iterate, optimize, and innovate faster.
+</p>
+
+
+
+<h2 class="wp-block-heading" id="model-choice-meets-infrastructure-flexibility">Model choice meets infrastructure flexibility </h2>
+
+
+
+<p class="wp-block-paragraph">Building OTel2.0 required flexibility across both models and infrastructure. Rather than standardizing on a single model, AT&amp;T adopted a multi open-model strategy. Open models were central to AT&amp;T’s approach because they provided the flexibility to work with approved telecom data, tailor the workflow for domain-specific model development, and support large-scale experimentation with greater control over cost and deployment strategy. Through <a href="https://azure.microsoft.com/en-us/products/ai-foundry" target="_blank" rel="noopener noreferrer">Microsoft Foundry</a>, the team deployed several models from the Hugging Face collection, including <a href="https://azure.microsoft.com/en-us/products/phi" target="_blank" rel="noopener noreferrer">Phi-4</a>, OSS-120B, and Gemma-4, to support different stages of development, from synthetic data generation and data preparation to reasoning-intensive workloads and broader model development efforts. Phi-4 played a significant role in this process, processing more than 700 billion tokens a month as part of the broader data preparation and training workflow for OTel2.0.</p>
+
+
+
+<blockquote class="wp-block-quote has-quote-default-font-size is-layout-flow wp-block-quote-is-layout-flow">
+<p class="wp-block-paragraph">Every company in the world needs to build its own AI, and that is only possible with open models and open source. AT&amp;T is championing this vision, building on open models like Phi-4 and Gemma, and giving OTel back to the community as a telecom AI foundation others can build upon. Microsoft Foundry makes this practical at scale, bringing the latest open models from the Hugging Face collection together with AMD and NVIDIA GPUs in one place, so teams can pick the right model and the right hardware, then deploy in hours instead of weeks.</p>
+<cite>—Jeff Boudier, Vice President of Product, Hugging Face</cite></blockquote>
+
+
+
+<p class="wp-block-paragraph"><a href="https://www.gsma.com/newsroom/press-release/gsma-launches-open-telco-ai-to-accelerate-development-of-telco%E2%80%91grade-ai/" target="_blank" rel="noreferrer noopener">Developing OTel2.0</a> also required infrastructure capable of operating at telecom scale. AT&amp;T used approximately <strong>530 GPUs</strong> through Microsoft Foundry Managed Compute spanning multiple GPU architectures including <strong>430 AMD Instinct™ MI300X GPUs</strong>. This heterogenous approach gave AT&amp;T more flexibility in how models were deployed and&nbsp;optimized as requirements evolved.</p>
+
+
+
+<figure class="wp-block-table aligncenter is-style-stripes"><table class="has-white-color has-electric-blue-400-background-color has-text-color has-background has-link-color has-fixed-layout"><thead><tr><th class="has-text-align-left" data-align="left">Model</th><th class="has-text-align-left" data-align="left">Example workload</th></tr></thead><tbody><tr><td class="has-text-align-left" data-align="left">Phi-4</td><td class="has-text-align-left" data-align="left">Around 700B tokens a month for <br>data preparation and synthetic <br>data generation</td></tr><tr><td class="has-text-align-left" data-align="left">OSS 120B</td><td class="has-text-align-left" data-align="left">Higher-reasoning workloads </td></tr><tr><td class="has-text-align-left" data-align="left">Gemma 4</td><td class="has-text-align-left" data-align="left">OTel2.0 development workflows</td></tr></tbody></table><figcaption class="wp-element-caption">Table 1:&nbsp;Explains what&nbsp;open source&nbsp;models were used and how</figcaption></figure>
+
+
+
+<p class="wp-block-paragraph">This flexibility illustrates a broader trend across AI development. Organizations increasingly need platforms that allow them to choose the right model for the job, optimize for cost and performance, and scale workloads without rebuilding operational environments. <a href="https://azure.microsoft.com/en-us/products/ai-foundry" target="_blank" rel="noopener noreferrer">Microsoft Foundry</a> brings model choice, infrastructure flexibility, governance, and operational scale together in a unified platform that supports those requirements.</p>
+
+
+
+<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-a89b3969 wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://azure.microsoft.com/en-us/products/ai-foundry" target="_blank" rel="noopener noreferrer">Start building with Microsoft Foundry</a></div>
+</div>
+
+
+
+<p class="wp-block-paragraph">Beyond flexibility and cost, deployment speed is a critical factor for many AI initiatives. As workloads expand and new models are evaluated, the ability to access GPU capacity quickly enables teams to move from experimentation to execution faster without lengthy provisioning cycles. With Foundry Managed Compute, AT&amp;T could deploy and scale models in days rather than waiting weeks for infrastructure to become available, helping accelerate development timelines and maintain momentum across OTel2.0 development.</p>
+
+
+
+<h2 class="wp-block-heading" id="optimizing-cost-without-limiting-innovation">Optimizing cost without limiting innovation  </h2>
+
+
+
+<p class="wp-block-paragraph">
+  As AI workloads grow, economics become as important as model performance. For AT&amp;T,  one of the primary objectives was to lower AI model consumption costs while continuing to drive meaningful business value through AI-powered innovation. By using open models on <a href="https://learn.microsoft.com/en-us/azure/foundry/concepts/managed-compute-overview">Microsoft Foundry Managed Compute</a>, AT&amp;T was able to support large-scale data preparation and model development using a different economic model built around dedicated GPU infrastructure and open-model flexibility.
+</p>
+
+
+
+<p class="wp-block-paragraph">The impact became clear at scale. In support of OTel2.0, AT&amp;T processed approximately 1T tokens, consisting of raw documents from GSMA supplemented by synthetic data generated. Generating the data using open-source models like Phi-4, served by Microsoft&#8217;s Foundry Managed Compute, saved tens of millions of dollars versus using frontier models. This allowed teams to invest in larger-scale experimentation and development while maintaining a focus on business value and operational efficiency.</p>
+
+
+
+<figure class="wp-block-table aligncenter is-style-stripes has-body-medium-font-size"><table class="has-white-color has-electric-blue-400-background-color has-text-color has-background has-link-color has-fixed-layout"><thead><tr><th>Metric</th><th class="has-text-align-left" data-align="left">Value</th></tr></thead><tbody><tr><td>OTel 1.0 Downloads</td><td class="has-text-align-left" data-align="left">Over 25M</td></tr><tr><td>GPUs Used Through Foundry Managed Compute</td><td class="has-text-align-left" data-align="left">About 530</td></tr><tr><td>Tokens Processed for OTel2.0</td><td class="has-text-align-left" data-align="left">About 1T</td></tr><tr><td>Tokens Trained for OTel2.0</td><td class="has-text-align-left" data-align="left">About&nbsp;400&nbsp;B</td></tr><tr><td>Models used to train OTel</td><td class="has-text-align-left" data-align="left">Phi-4, OSS 120B, Gemma 4</td></tr></tbody></table><figcaption class="wp-element-caption">Table 2: Quick facts about the OTel model family and metrics around what was used to build OTel2.0&nbsp;</figcaption></figure>
+
+
+
+<blockquote class="wp-block-quote has-quote-default-font-size is-layout-flow wp-block-quote-is-layout-flow">
+<p class="wp-block-paragraph">When you are processing hundreds of billions of tokens, infrastructure becomes part of the problem you solve. Foundry Managed Compute gave us access to GPU capacity at scale so our teams could focus on advancing OTel2.0 instead of managing infrastructure.</p>
+<cite>—Mark Austin, Vice President, Data Science and AI at AT&amp;T</cite></blockquote>
+
+
+
+<p class="wp-block-paragraph">
+  At this scale, infrastructure is no longer simply a <a id="post-52857-_Int_JNQm0EQ5"></a>deployment consideration. It <a id="post-52857-_Int_PdbJnM1r"></a>becomes a strategic component of AI development.
+</p>
+
+
+
+<h2 class="wp-block-heading" id="accelerating-the-next-wave-of-production-scale-ai">Accelerating the next wave of production-scale AI</h2>
+
+
+
+<p class="wp-block-paragraph">OTel 2.0 demonstrates how organizations can combine open models, scalable infrastructure, and domain expertise to build production-ready AI systems. By matching different models to different workloads and optimizing infrastructure for cost and performance, AT&amp;T was able to process trillions of tokens while maintaining operational efficiency.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">As organizations move from AI experimentation to production deployment, they increasingly need the flexibility to choose the right models, optimize infrastructure, and scale efficiently. <a href="https://azure.microsoft.com/en-us/products/ai-foundry" target="_blank" rel="noopener noreferrer">Microsoft Foundry</a> and <a href="https://learn.microsoft.com/en-us/azure/foundry/concepts/managed-compute-overview" target="_blank" rel="noopener noreferrer">Foundry Managed Compute</a> help support that transition by bringing those capabilities together in a unified platform.</p>
+
+
+
+<h3 class="wp-block-heading" id="learn-more">Learn more</h3>
+
+
+
+<ul class="wp-block-list">
+<li class="wp-block-list-item"><a href="https://blogs.microsoft.com/blog/2026/07/20/microsoft-expands-azure-ai-and-hpc-infrastructure-with-amd/" target="_blank" rel="noopener noreferrer">Read&nbsp;Scott&nbsp;Guthrie&#8217;s&nbsp;blog</a> about&nbsp;Azure AI and HPC infrastructure.</li>
+
+
+
+<li class="wp-block-list-item">Learn more about <a href="https://www.gsma.com/newsroom/press-release/gsma-launches-open-telco-ai-to-accelerate-development-of-telco%E2%80%91grade-ai/" target="_blank" rel="noreferrer noopener">OTel2.0</a>.</li>
+
+
+
+<li class="wp-block-list-item"><a href="https://ai.azure.com/catalog/models/farbodtavakkoli--otel-2.0-llm-31b-it?search=otel" target="_blank" rel="noopener noreferrer">OTel2.0 models</a> are now available.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph"><strong>Explore session topics from <a href="https://www.amd.com/en/corporate/events/advancing-ai.html" target="_blank" rel="noopener noreferrer">AMD’s Advancing AI</a></strong>:</p>
+
+
+
+<ul class="wp-block-list">
+<li class="wp-block-list-item"><a href="https://www.amd.com/en/corporate/events/advancing-ai/sessions-catalog/sovereign-ai-at-scale--enterprise-ready-ai-with-microsoft-and-amd.html" target="_blank" rel="noopener noreferrer">From GPUs to CPUs: Optimizing Every AI Workload with Azure and AMD</a></li>
+
+
+
+<li class="wp-block-list-item"><a href="https://www.amd.com/en/corporate/events/advancing-ai/sessions-catalog/whats-next-for-ai-infrastructure-in-the-cloud.html" target="_blank" rel="noopener noreferrer">What&#8217;s Next for AI Infrastructure in the Cloud?</a></li>
+</ul>
+
+
+
+<div class="is-style-inline-centered wp-block-bloginabox-theme-promotional">
+	
+<div class="promotional promotional--has-media promotional--media-left">
+	<div class="promotional__wrapper">
+		<div class="promotional__content-wrapper">
+			<div class="promotional__content">
+				
+
+<h2 class="wp-block-heading" id="powering-the-future-of-ai-on-azure">Powering the Future of AI on Azure</h2>
+
+
+
+<p class="wp-block-paragraph">Discover how Microsoft and AMD are expanding Azure AI and HPC infrastructure.</p>
+
+
+
+<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a data-bi-an="Global CTA" data-bi-ct="cta link" data-bi-id="cta-block" class="wp-block-button__link wp-element-button" href="https://blogs.microsoft.com/blog/2026/07/20/microsoft-expands-azure-ai-and-hpc-infrastructure-with-amd/" target="_blank" rel="noopener noreferrer">Read more</a></div>
+</div>
+
+			</div>
+		</div>
+					<div class="promotional__media-wrapper">
+				<div class="promotional__media">
+											<img decoding="async" width="1920" height="1242" src="https://azure.microsoft.com/en-us/blog/wp-content/uploads/2027/06/FY26AE-Azure-Composite-DeepBlue-006-H.jpg" class="attachment-full size-full" alt="Abstract shapes in blue and green and purple." loading="lazy" srcset="https://azure.microsoft.com/en-us/blog/wp-content/uploads/2027/06/FY26AE-Azure-Composite-DeepBlue-006-H.jpg 1920w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2027/06/FY26AE-Azure-Composite-DeepBlue-006-H-300x194.jpg 300w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2027/06/FY26AE-Azure-Composite-DeepBlue-006-H-1024x662.jpg 1024w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2027/06/FY26AE-Azure-Composite-DeepBlue-006-H-768x497.jpg 768w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2027/06/FY26AE-Azure-Composite-DeepBlue-006-H-1536x994.jpg 1536w" sizes="auto, (max-width: 1920px) 100vw, 1920px" />									</div>
+			</div>
+			</div>
+</div>
+</div>
+<p>The post <a href="https://azure.microsoft.com/en-us/blog/att-and-microsoft-scale-trillion-token-workloads-with-microsoft-foundry-and-amd/">AT&amp;T and Microsoft scale trillion-token workloads with Microsoft Foundry and AMD</a> appeared first on <a href="https://azure.microsoft.com/en-us/blog">Microsoft Azure Blog</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://azure.microsoft.com/en-us/blog/att-and-microsoft-scale-trillion-token-workloads-with-microsoft-foundry-and-amd/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item><item>
+		<title>Azure Databricks delivers proven business value</title>
+		<link>https://azure.microsoft.com/en-us/blog/azure-databricks-delivers-proven-business-value/</link>
+					<comments>https://azure.microsoft.com/en-us/blog/azure-databricks-delivers-proven-business-value/#respond</comments>
+		
+		<dc:creator><![CDATA[Jason Pereira and Anavi Nahar]]></dc:creator>
+		<pubDate>Wed, 15 Jul 2026 15:00:00 +0000</pubDate>
+				<category><![CDATA[AI + machine learning]]></category>
+		<category><![CDATA[Analytics]]></category>
+		<category><![CDATA[Azure]]></category>
+		<category><![CDATA[Azure Databricks]]></category>
+		<category><![CDATA[Azure Databricks Genie]]></category>
+		<category><![CDATA[M365 Copilot]]></category>
+		<category><![CDATA[Microsoft Copilot Cowork]]></category>
+		<category><![CDATA[Microsoft Teams]]></category>
+		<category><![CDATA[OneLake]]></category>
+		<category><![CDATA[Power BI]]></category>
+		<guid isPermaLink="false">https://azure.microsoft.com/en-us/blog/?p=52752</guid>
+
+					<description><![CDATA[<p>Microsoft Azure Databricks delivers the first-party advantage of Databricks on Microsoft—and for customers, that advantage shows up as real, measurable value. It is the same Databricks platform your teams already know, co-engineered with Microsoft and delivered as a native Azure service, so it fits naturally into the Microsoft tools, identity, and governance your organization already runs.</p>
+<p>The post <a href="https://azure.microsoft.com/en-us/blog/azure-databricks-delivers-proven-business-value/">Azure Databricks delivers proven business value</a> appeared first on <a href="https://azure.microsoft.com/en-us/blog">Microsoft Azure Blog</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<p class="has-body-large-font-size wp-block-paragraph"><a href="https://azure.microsoft.com/en-us/products/databricks/" target="_blank" rel="noopener noreferrer">Microsoft Azure Databricks</a> delivers the first-party advantage of Databricks on Microsoft—and for customers, that advantage shows up as real, measurable value. It is the same Databricks platform your teams already know, co-engineered with Microsoft and delivered as a native <a href="https://azure.microsoft.com/en-us" target="_blank" rel="noopener noreferrer">Azure service</a>, so it fits naturally into the Microsoft tools, identity, and governance your organization already runs.</p>
+
+
+
+<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-a89b3969 wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://azure.microsoft.com/en-us/products/databricks/" target="_blank" rel="noopener noreferrer">Discover Azure Databricks</a></div>
+</div>
+
+
+
+<p class="has-body-large-font-size wp-block-paragraph">
+  The advantage is built-in, not bolted on. Microsoft and Databricks co-engineer the service, share one integration roadmap across the Microsoft data and AI stack, and align go-to-market so you get one motion, one bill, and one support path. For technical teams, that means deeper native integration and stronger performance. For the business, it means lower cost, less risk, and faster time to value.
+</p>
+
+
+
+<p class="has-body-large-font-size wp-block-paragraph">The strategic partnership drives an accelerated integration roadmap and continuous optimization for improved performance; however, decision-makers constantly ask about what business value all of this translates to. To address this key question, Microsoft commissioned a <a href="https://tei.forrester.com/go/Microsoft/Databricks/?lang=en-us" target="_blank" rel="noreferrer noopener">Forrester Total Economic Impact™ study</a> of <a href="https://azure.microsoft.com/en-us/products/databricks/" target="_blank" rel="noreferrer noopener">Azure Databricks</a>. It found that a composite organization based on interviewed customers realized a three-year <strong>331% return on investment</strong>, <strong>$58.1 million in net present value</strong>, and recovered its investment in <strong>less than six months</strong>.</p>
+
+
+
+<div class="section wp-block-bloginabox-theme-section has-global-padding is-layout-constrained wp-block-bloginabox-theme-section-is-layout-constrained">
+	
+<div
+	class="section__background alignfull is-layout-constrained"
+	>
+
+				<div class="section-background-image-wrapper section-background-image-wrapper--light section-background-image-wrapper--desktop alignfull section--emerald-dusk" style="opacity: 100%">
+					</div>
+	
+				<div class="section-background-image-wrapper section-background-image-wrapper--dark section-background-image-wrapper--desktop alignfull" style="opacity: 100%">
+					</div>
+	
+		
+		</div>
+<div class="section__content alignfull is-layout-constrained">
+	
+
+<figure class="wp-block-table aligncenter has-body-large-font-size"><table class="has-white-color has-electric-blue-200-background-color has-text-color has-background has-link-color has-fixed-layout"><tbody><tr><td class="has-text-align-center" data-align="center"><strong>331%</strong><br>Return on investment&nbsp;</td><td class="has-text-align-center" data-align="center"><strong>$58.1M</strong><br>Net present value</td><td class="has-text-align-center" data-align="center"><strong>&lt; 6 months</strong><br>Payback period</td></tr></tbody></table></figure>
+
+</div>
+</div>
+
+
+
+<p class="has-text-align-center has-body-medium-font-size wp-block-paragraph"><em>Commissioned study conducted by Forrester Consulting on behalf of Microsoft, June 2026. Results are over three years and represent a composite organization based on interviewed customers and may not be typical; actual results will vary.</em>
+</p>
+
+
+
+<h2 class="wp-block-heading" id="what-the-study-found">What the study found</h2>
+
+
+
+<p class="has-body-large-font-size wp-block-paragraph">Forrester interviewed <a href="https://azure.microsoft.com/en-us/products/databricks/" target="_blank" rel="noreferrer noopener">Azure Databricks</a> customers and built a composite organization to model the impact: a $6 billion company in a regulated industry, running about 10 petabytes of data.</p>
+
+
+
+<p class="has-body-large-font-size wp-block-paragraph">
+  Before Azure Databricks, its data estate was fragmented and expensive. It was unreliable at scale and hard to govern. Afterward, the results were clear: $75.6 million in benefits against $17.5 million in cost over three years translating to $58.1 million in net present value.
+</p>
+
+
+
+<p class="wp-block-paragraph">
+  The value came from four places:
+</p>
+
+
+
+<ul class="wp-block-list">
+<li class="has-body-large-font-size wp-block-list-item"><strong>$39.0 million—data and analytics teams’ productivity</strong>. Teams handled more work without adding people, with measured gains of 15% to 25%. As a Vice President of data services at a healthcare organization put it: “<em>…we’re doing more work with the same size of the team</em>.”</li>
+
+
+
+<li class="has-body-large-font-size wp-block-list-item"><strong>$19.9 million—lower infrastructure costs</strong>. Elastic, pay-as-you-go compute replaced overprovisioned hardware.</li>
+
+
+
+<li class="has-body-large-font-size wp-block-list-item"><strong>$11.4 million—better data platform resiliency</strong>. Managed operations meant fewer outages and no custom disaster recovery to build.</li>
+
+
+
+<li class="has-body-large-font-size wp-block-list-item"><strong>$5.4 million—retired legacy software and redeployed DBAs</strong>.<strong>&nbsp;</strong>Consolidating databases and Extract, Load, Transform (ETL) tools eliminated third-party licenses, and managed operations freed database administrators for higher-value work.</li>
+</ul>
+
+
+
+<p class="has-body-large-font-size wp-block-paragraph">Forrester listed more benefits it didn’t put a price on: native Azure services integration, faster insights, wider access to data, and governance through Unity Catalog. That’s where the return starts.</p>
+
+
+
+<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-a89b3969 wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://tei.forrester.com/go/Microsoft/Databricks" target="_blank" rel="noopener noreferrer">Model your own numbers with the Azure Databricks ROI estimator</a></div>
+</div>
+
+
+
+<figure class="wp-block-image aligncenter size-large"><a href="https://tei.forrester.com/go/Microsoft/Databricks/?lang=en-us" target="_blank" rel=" noreferrer noopener"><img fetchpriority="high" decoding="async" width="791" height="1024" src="https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/07/TEI-of-ADB-infographic-791x1024.jpg" alt="The Total Economic Impact of Microsoft Azure Databricks infographic" class="wp-image-52760" srcset="https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/07/TEI-of-ADB-infographic-791x1024.jpg 791w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/07/TEI-of-ADB-infographic-232x300.jpg 232w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/07/TEI-of-ADB-infographic-768x994.jpg 768w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/07/TEI-of-ADB-infographic-1187x1536.jpg 1187w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/07/TEI-of-ADB-infographic-1583x2048.jpg 1583w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/07/TEI-of-ADB-infographic.jpg 1700w" sizes="(max-width: 791px) 100vw, 791px" /></a></figure>
+
+
+
+<h2 class="wp-block-heading" id="where-the-value-comes-from">Where the value comes from</h2>
+
+
+
+<p class="has-body-large-font-size wp-block-paragraph">Those returns come down to one thing. <a href="https://azure.microsoft.com/en-us/products/databricks/" target="_blank" rel="noreferrer noopener">Azure Databricks</a> is a true first-party Azure service, co-engineered by Microsoft and Databricks, it plugs into the tools your teams already use. That removes the extra data copies, tooling, and integration work that raise costs elsewhere.</p>
+
+
+
+<p class="has-body-large-font-size wp-block-paragraph">A great example is the <a href="https://learn.microsoft.com/en-us/azure/databricks/genie-one/" target="_blank" rel="noopener noreferrer">Azure Databricks Genie</a> integration with <a href="https://www.microsoft.com/en-us/microsoft-365-copilot/cowork" target="_blank" rel="noopener noreferrer">Microsoft Copilot Cowork</a>. You can add context of your business and build on that intelligence into the tools your teams already use with this integration. <a href="https://learn.microsoft.com/en-us/azure/databricks/genie-ui/genie" target="_blank" rel="noopener noreferrer">Genie</a> lets anyone question the lakehouse in plain language—now inside <a href="https://learn.microsoft.com/en-us/azure/databricks/integrations/msft-teams" target="_blank" rel="noopener noreferrer">Microsoft Teams</a>, <a href="https://learn.microsoft.com/en-us/azure/databricks/integrations/msft-m365-copilot" target="_blank" rel="noopener noreferrer">Microsoft 365 Copilot</a>, and more recently in <a href="https://techcommunity.microsoft.com/blog/azure-databricks/azure-databricks-at-databricks-data--ai-summit-2026-updates-and-new-announcement/4528388" target="_blank" rel="noopener noreferrer">Copilot Cowork</a>, where it grounds tasks in trusted data through Genie Ontology. Every answer is scoped by Unity Catalog to exactly what each user is permitted to see, so intelligence reaches the flow of work without loosening governance.</p>
+
+
+
+<p class="has-body-large-font-size wp-block-paragraph">
+  The same depth runs across the rest of the platform:
+</p>
+
+
+
+<ul class="wp-block-list">
+<li class="has-body-large-font-size wp-block-list-item"><strong>Identity and governance</strong>: <a href="https://techcommunity.microsoft.com/blog/azure-databricks/general-availability-automatic-identity-management-aim-for-entra-id-on-azure-dat/4452206" target="_blank" rel="noreferrer noopener">Automatic Identity Management for Entra ID</a> syncs users into <a href="https://azure.microsoft.com/en-us/products/databricks/" target="_blank" rel="noreferrer noopener">Azure Databricks</a>. Unity Catalog and <a href="https://www.microsoft.com/en-ie/security/business/microsoft-purview" target="_blank" rel="noreferrer noopener">Microsoft Purview</a> govern the rest.&nbsp;</li>
+
+
+
+<li class="has-body-large-font-size wp-block-list-item"><strong>Microsoft Power BI and Microsoft 365</strong>: <a href="https://www.microsoft.com/en-ie/power-platform/products/power-bi">Power BI</a> reads your data directly and now <a href="https://techcommunity.microsoft.com/blog/azure-databricks/closing-the-loop-interactive-write-back-from-power-bi-to-azure-databricks/4442999">writes back to it</a>. A new Excel add-in brings governed data into spreadsheets; a SharePoint connector streams files into Delta tables, and <a href="https://learn.microsoft.com/en-us/azure/databricks/ai-bi/admin/teams-subscriptions">Teams notifications</a> deliver alerts where teams work. <a href="https://learn.microsoft.com/en-us/azure/databricks/metric-views/">Metric views</a> keep business logic consistent across all of them.&nbsp;</li>
+
+
+
+<li class="has-body-large-font-size wp-block-list-item"><strong>AI and agents</strong>: Beyond chatting with your data, <a href="https://learn.microsoft.com/en-us/azure/databricks/genie-ui/genie" target="_blank" rel="noreferrer noopener">Genie</a> connects to <a href="https://techcommunity.microsoft.com/blog/azure-databricks/azure-databricks-genie-integration-with-copilot-studio-and-microsoft-foundry-is-/4471087" target="_blank" rel="noreferrer noopener">Copilot Studio and Microsoft Foundry</a>, and a single Model Context Protocol (MCP) connection lets <a href="https://techcommunity.microsoft.com/blog/analyticsonazure/building-ai-apps-and-agents-with-azure-databricks-copilot-studio-and-github-copi/4524065" target="_blank" rel="noreferrer noopener">Copilot Studio and GitHub Copilot agents</a> reason over an entire Azure Databricks workspace. <a href="https://techcommunity.microsoft.com/blog/azure-databricks/azure-databricks-lakebase-is-now-generally-available/4498779" target="_blank" rel="noreferrer noopener">Azure Database Lakebase</a> gives agents a serverless Postgres engine, and <a href="https://learn.microsoft.com/en-us/azure/databricks/admin/workspace/serverless-workspaces" target="_blank" rel="noreferrer noopener">serverless workspaces</a> get them started fast.&nbsp;</li>
+
+
+
+<li class="has-body-large-font-size wp-block-list-item"><strong>Microsoft OneLake</strong>: <a href="https://learn.microsoft.com/en-us/azure/databricks/query-federation/onelake" target="_blank" rel="noreferrer noopener">OneLake catalog federation</a> lets Azure Databricks query OneLake data directly, with no pipelines or copies. You can also <a href="https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Extending-interoperability-Azure-Databricks-can-now-store-Unity/ba-p/5199741" target="_blank" rel="noreferrer noopener">store Unity Catalog tables in OneLake</a>, alongside Azure Data Lake Storage.</li>
+
+
+
+<li class="has-body-large-font-size wp-block-list-item"><strong>Customer data</strong>: <a href="https://techcommunity.microsoft.com/blog/azure-databricks/azure-databricks-at-databricks-data--ai-summit-2026-updates-and-new-announcement/4528388">CustomerLake</a>, a new Agentic Customer Data platform, builds Customer 360 profiles and runs campaigns inside the lakehouse where the data and governance already live.&nbsp;</li>
+
+
+
+<li class="has-body-large-font-size wp-block-list-item"><strong>Enterprise systems</strong>: <a href="https://techcommunity.microsoft.com/blog/azure-databricks/sap-business-data-cloud-connect-with-azure-databricks-is-now-generally-available/4459490">SAP Business Data Cloud Connect</a> brings SAP data into the lakehouse. It’s the same model helping industries like <a href="https://www.microsoft.com/en-us/microsoft-cloud/blog/telecommunications/2026/02/24/microsoft-accelerates-telecom-return-on-intelligence-with-a-unified-trusted-ai-platform/" target="_blank" rel="noreferrer noopener">industries like telecom</a> turn AI into returns.&nbsp;</li>
+</ul>
+
+
+
+<p class="has-body-large-font-size wp-block-paragraph">
+  These are the integrations that Forrester valued but didn’t price separately however, they are critical factors driving productivity and cost benefits that were quantified.
+</p>
+
+
+
+<h2 class="wp-block-heading" id="backed-by-independent-benchmarks">Backed by independent benchmarks</h2>
+
+
+
+<p class="has-body-large-font-size wp-block-paragraph">Value also depends on speed, and that’s been tested. Principled Technologies, an independent firm, ran an industry-standard, TPC-DS-like <a href="https://www.principledtechnologies.com/clients/reports/Microsoft/Azure-Databricks-competitive-0725/" target="_blank" rel="noreferrer noopener">decision-support benchmark</a> on a 10-terabyte dataset. <a href="https://azure.microsoft.com/en-us/products/databricks/" target="_blank" rel="noreferrer noopener">Azure Databricks</a> completed a single query stream in up to 21.1% less time than Databricks on AWS (with autoscale disabled) and ran four concurrent query streams more than nine minutes faster.</p>
+
+
+
+<h2 class="wp-block-heading" id="what-it-means-for-you">What it means for you</h2>
+
+
+
+<p class="has-body-large-font-size wp-block-paragraph">Choosing a data and AI platform is a long-term decision, and with <a href="https://azure.microsoft.com/en-us/products/databricks/" target="_blank" rel="noreferrer noopener">Azure Databricks</a> the pieces reinforce each other. The integration drives the savings Forrester measured. The performance keeps those gains steady as usage grows. And it all rests on one foundation: a first-party partnership that puts Microsoft and Databricks engineering, roadmap, and support behind your data estate. The value isn’t a claim, it’s been measured: a three-year 331% return, with payback in under six months. It’s why so many teams choose to run their lakehouse on Azure Databricks.</p>
+
+
+
+<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-a89b3969 wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://azure.microsoft.com/en-us/products/databricks/" target="_blank" rel="noopener noreferrer"><strong>Get started with <span style="font-family: inherit;font-size: 15.008px;font-style: inherit;letter-spacing: 0.30016px;text-transform: inherit">Azure Databricks</span></strong></a></div>
+</div>
+
+
+
+<p class="has-body-large-font-size wp-block-paragraph"><strong>Explore further</strong>
+</p>
+
+
+
+<ul class="wp-block-list">
+<li class="has-body-large-font-size wp-block-list-item">The full <a href="https://tei.forrester.com/go/Microsoft/Databricks/?lang=en-us">Forrester TEI study</a>, plus the ROI calculator to model your own numbers.</li>
+
+
+
+<li class="has-body-large-font-size wp-block-list-item">The <a href="https://www.principledtechnologies.com/clients/reports/Microsoft/Azure-Databricks-competitive-0725/">Principled Technologies benchmark</a>.</li>
+
+
+
+<li class="has-body-large-font-size wp-block-list-item"><a href="https://techcommunity.microsoft.com/blog/azure-databricks/azure-databricks-at-databricks-data--ai-summit-2026-updates-and-new-announcement/4528388" target="_blank" rel="noreferrer noopener">Azure Databricks at Data + AI Summit 2026</a>, and how it <a href="https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Unlocking-Microsoft-OneLake-as-the-data-foundation-for-Azure/ba-p/5201876" target="_blank" rel="noreferrer noopener">uses OneLake as a shared data foundation</a>.</li>
+
+
+
+<li class="has-body-large-font-size wp-block-list-item">Build AI apps and agents with <a href="https://techcommunity.microsoft.com/blog/analyticsonazure/building-ai-apps-and-agents-with-azure-databricks-copilot-studio-and-github-copi/4524065" target="_blank" rel="noreferrer noopener">Azure Databricks, Copilot Studio, and GitHub Copilot</a>.</li>
+
+
+
+<li class="has-body-large-font-size wp-block-list-item">Stay current on the <a href="https://aka.ms/adbblog" target="_blank">Azure Databricks Tech Community blog</a> and the official <a href="https://aka.ms/adbreleasenotes" target="_blank">release notes</a>.</li>
+
+
+
+<li class="has-body-large-font-size wp-block-list-item">Related blog posts: <a href="https://azure.microsoft.com/en-us/blog/azure-databricks-differentiated-synergy/" target="_blank" rel="noreferrer noopener">Differentiated synergy</a> and <a href="https://azure.microsoft.com/en-us/blog/databricks-runs-best-on-azure/" target="_blank" rel="noreferrer noopener">Databricks runs best on Azure</a>.</li>
+
+
+
+<li class="has-body-large-font-size wp-block-list-item">For the full set of Databricks Data + AI Summit 2026 announcements, see <a href="https://techcommunity.microsoft.com/blog/azure-databricks/azure-databricks-at-databricks-data--ai-summit-2026-updates-and-new-announcement/4528388">Azure Databricks at Data + AI Summit 2026</a>.</li>
+
+
+
+<li class="has-body-large-font-size wp-block-list-item">Learn more about <a href="https://learn.microsoft.com/en-us/azure/databricks/introduction/">Azure Databricks</a></li>
+</ul>
+
+
+
+<div class="is-style-inline-centered wp-block-bloginabox-theme-promotional">
+	
+<div class="promotional promotional--has-media promotional--media-right">
+	<div class="promotional__wrapper">
+		<div class="promotional__content-wrapper">
+			<div class="promotional__content">
+				
+
+<h2 class="wp-block-heading" id="build-intelligent-solutions-with-azure-databricks">Build Intelligent Solutions with Azure Databricks</h2>
+
+
+
+<p class="wp-block-paragraph">Empower teams to develop AI-powered applications and gain deeper insights with a unified data and AI platform.</p>
+
+
+
+<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a data-bi-an="Global CTA" data-bi-ct="cta link" data-bi-id="cta-block" class="wp-block-button__link wp-element-button" href="https://azure.microsoft.com/en-us/products/databricks/" target="_blank" rel="noopener noreferrer">Learn More</a></div>
+</div>
+
+			</div>
+		</div>
+					<div class="promotional__media-wrapper">
+				<div class="promotional__media">
+											<img decoding="async" width="2560" height="1440" src="https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/07/Azure-AIPlatform-Light-1-scaled.jpg" class="attachment-full size-full" alt="3d shapes" loading="lazy" srcset="https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/07/Azure-AIPlatform-Light-1-scaled.jpg 2560w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/07/Azure-AIPlatform-Light-1-300x169.jpg 300w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/07/Azure-AIPlatform-Light-1-1024x576.jpg 1024w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/07/Azure-AIPlatform-Light-1-768x432.jpg 768w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/07/Azure-AIPlatform-Light-1-1536x864.jpg 1536w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/07/Azure-AIPlatform-Light-1-2048x1152.jpg 2048w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/07/Azure-AIPlatform-Light-1-809x455.jpg 809w" sizes="auto, (max-width: 2560px) 100vw, 2560px" />									</div>
+			</div>
+			</div>
+</div>
+</div>
+<p>The post <a href="https://azure.microsoft.com/en-us/blog/azure-databricks-delivers-proven-business-value/">Azure Databricks delivers proven business value</a> appeared first on <a href="https://azure.microsoft.com/en-us/blog">Microsoft Azure Blog</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://azure.microsoft.com/en-us/blog/azure-databricks-delivers-proven-business-value/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item><item>
+		<title>GPT-5.6 now available in Microsoft Foundry </title>
+		<link>https://azure.microsoft.com/en-us/blog/gpt-5-6-now-available-in-microsoft-foundry/</link>
+					<comments>https://azure.microsoft.com/en-us/blog/gpt-5-6-now-available-in-microsoft-foundry/#respond</comments>
+		
+		<dc:creator><![CDATA[Tina Schuchman]]></dc:creator>
+		<pubDate>Thu, 09 Jul 2026 17:00:00 +0000</pubDate>
+				<category><![CDATA[AI + machine learning]]></category>
+		<guid isPermaLink="false">https://azure.microsoft.com/en-us/blog/?p=52321</guid>
+
+					<description><![CDATA[<p>Introducing OpenAI's latest frontier model series, the Asia Pacific Data Zone, and product agent capabilities, all generally available in Microsoft Foundry.</p>
+<p>The post <a href="https://azure.microsoft.com/en-us/blog/gpt-5-6-now-available-in-microsoft-foundry/">GPT-5.6 now available in Microsoft Foundry </a> appeared first on <a href="https://azure.microsoft.com/en-us/blog">Microsoft Azure Blog</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<div class="wp-block-bloginabox-theme-post-alert" role="alert" aria-live="polite" data-bi-an="alert">
+	<div class="alert-content">
+		<strong>What&#8217;s new today</strong><br>GPT‑5.6 is generally available in Microsoft Foundry, alongside the Asia-Pacific Data Zone, and hosted agents in Foundry Agent Service. See <a href="#gpt-5-6-pricing-for-sol-terra-and-luna">GPT-5.6 pricing</a>.	</div>
+</div>
+
+
+
+<div class="section wp-block-bloginabox-theme-section has-global-padding is-layout-constrained wp-block-bloginabox-theme-section-is-layout-constrained">
+	
+<div
+	class="section__background alignfull is-layout-constrained"
+	>
+
+		
+		
+		
+		</div>
+<div class="section__content alignfull is-layout-constrained">
+	</div>
+</div>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+
+
+
+<p class="wp-block-paragraph">AI only creates value when it shows up in real systems—systems that are reliable, observable, and aligned to business outcomes. More than 100,000 organizations are already building on <a href="https://ai.azure.com/home" target="_blank" rel="noopener noreferrer">Microsoft Foundry</a>, and companies like <strong>Adobe, Telefónica, and Tata Consultancy Services</strong> are running agents in production today.</p>
+
+
+
+<p class="wp-block-paragraph">At Microsoft Build, we laid out a simple promise for the agentic era: developers should be able to build an agent where they already work, run it on infrastructure they can trust, and put it in front of the people who need it— without stitching together disconnected platforms. Today, that vision moves from roadmap to reality with three sets of updates <strong>now</strong> <strong>generally available</strong> in Microsoft Foundry:</p>
+
+
+
+<ul class="wp-block-list">
+<li class="wp-block-list-item"><strong>OpenAI’s latest frontier model series</strong>: GPT-5.6 Sol, GPT-5.6 Terra, and GPT-5.6—each tuned to a different workload, available in Standard Global and Standard Data Zones.</li>
+
+
+
+<li class="wp-block-list-item"><strong>Asia-Pacific Data Zone</strong>, giving APAC customers a regional option to run frontier OpenAI models while keeping data processing within the region.</li>
+
+
+
+<li class="wp-block-list-item"><strong>Production agents</strong> in Foundry Agent Service, with <strong>hosted agents</strong>, <strong>toolboxes</strong>, and <strong>publishing to Microsoft 365 Copilot and Microsoft Teams</strong>.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">Together, these capabilities bring frontier models, production agent runtime, enterprise-grade identity, security, and compliance controls, and distribution across Microsoft 365 into a single platform—helping organizations move from experimentation to production without assembling disconnected tools and services.</p>
+
+
+
+<h2 class="wp-block-heading" id="why-foundry-is-the-best-agent-platform">Why Foundry is the best agent platform</h2>
+
+
+
+<p class="wp-block-paragraph"><a href="https://ai.azure.com/home" target="_blank" rel="noopener noreferrer">Microsoft Foundry</a> is Microsoft&#8217;s end-to-end platform for building, running, governing, and distributing AI agents. Foundry brings together the capabilities organizations need to move agents into production across three pillars:</p>
+
+
+
+<ul class="wp-block-list">
+<li class="wp-block-list-item"><strong>Build</strong>: Open and flexible across models and frameworks.</li>
+
+
+
+<li class="wp-block-list-item"><strong>Generate</strong>: Connected to enterprise data, tools, and users.</li>
+
+
+
+<li class="wp-block-list-item"><strong>Govern</strong>: Secured, managed, and optimized for long-term value.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">These pillars come together in the latest Foundry updates, helping organizations build, run, and scale production agents on a single platform.</p>
+
+
+
+<figure class="wp-block-bloginabox-theme-ump-embed wp-block-msx-ump-embed" class="wp-block-bloginabox-theme-ump-embed">
+	<div class="wp-block-embed__wrapper">
+		<universal-media-player id="ump-6a6a2b6081b3b"></universal-media-player>
+		<script type="module">
+			const currentTheme =
+				localStorage.getItem('blogInABoxCurrentTheme') ||
+				(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+			// Modify player theme based on localStorage value.
+			let options = {"autoplay":false,"hideControls":null,"language":"en-us","loop":false,"partnerName":"cloud-blogs","poster":"https:\/\/cdn-dynmedia-1.microsoft.com\/is\/image\/microsoftcorp\/1117654-HostedAgent_tbmnl_en-us?wid=1280","title":"","sources":[{"src":"https:\/\/cdn-dynmedia-1.microsoft.com\/is\/content\/microsoftcorp\/1117654-HostedAgent-0x1080-6439k","type":"video\/mp4","quality":"HQ"},{"src":"https:\/\/cdn-dynmedia-1.microsoft.com\/is\/content\/microsoftcorp\/1117654-HostedAgent-0x720-3266k","type":"video\/mp4","quality":"HD"},{"src":"https:\/\/cdn-dynmedia-1.microsoft.com\/is\/content\/microsoftcorp\/1117654-HostedAgent-0x540-2160k","type":"video\/mp4","quality":"SD"},{"src":"https:\/\/cdn-dynmedia-1.microsoft.com\/is\/content\/microsoftcorp\/1117654-HostedAgent-0x360-958k","type":"video\/mp4","quality":"LO"}],"ccFiles":[{"url":"https:\/\/azure.microsoft.com\/en-us\/blog\/wp-json\/bloginabox\/v1\/get-captions?url=https%3A%2F%2Fwww.microsoft.com%2Fcontent%2Fdam%2Fmicrosoft%2Fbade%2Fvideos%2Fproducts-and-services%2Fen-us%2Fazure%2F1117654-hostedagent%2F1117654-HostedAgent_cc_en-us.ttml","locale":"en-us","ccType":"TTML"}],"downloadableFiles":[{"url":"https:\/\/cdn-dynmedia-1.microsoft.com\/is\/content\/microsoftcorp\/1117654-HostedAgent_transcript_en-us","locale":"en-us","mediaType":"transcript"}]};
+
+			if (currentTheme) {
+				options.playButtonTheme = currentTheme;
+			}
+
+			document.addEventListener('DOMContentLoaded', () => {
+				ump("ump-6a6a2b6081b3b", options);
+			});
+		</script>
+	</div>
+	</figure>
+
+
+
+<h2 class="wp-block-heading" id="build-with-any-framework-and-model-on-the-industry-s-end-to-end-ai-platform">Build with any framework and model on the industry’s end-to-end AI platform</h2>
+
+
+
+<p class="wp-block-paragraph">Agent development starts where developers already work—in GitHub Copilot and Microsoft Visual Studio (VS) Code—with the <a href="https://code.visualstudio.com/docs/intelligentapps/overview" target="_blank" rel="noopener noreferrer">Foundry Toolkit for VS Code</a> and the <a href="https://learn.microsoft.com/en-us/azure/foundry/how-to/develop/use-microsoft-foundry-skill?tabs=vscode%2Cfoundry-skill-alone" target="_blank" rel="noopener noreferrer">Foundry skill</a> handling deployment to Foundry. Whether teams build with <a href="https://github.com/microsoft/agent-framework" target="_blank" rel="noopener noreferrer">Microsoft Agent Framework</a>, <a href="https://docs.github.com/en/copilot/how-tos/copilot-sdk/getting-started" target="_blank" rel="noopener noreferrer">GitHub Copilot SDK</a> (generally available), or Claude Agent SDK, Foundry is the production destination—and it all starts with the right model.</p>
+
+
+
+<h3 class="wp-block-heading" id="start-with-the-right-model-for-the-right-job">Start with the right model for the right job</h3>
+
+
+
+<p class="wp-block-paragraph">An agent is only as capable as the model reasoning behind it. Microsoft Foundry gives organizations access to industry-leading frontier, open-source, and task-specific models through a single platform, allowing teams to choose the right model for every workload.</p>
+
+
+
+<p class="wp-block-paragraph">Today, we&#8217;re making OpenAI&#8217;s GPT-5.6 series generally available in Microsoft Foundry Models and Microsoft Foundry Agent Service:</p>
+
+
+
+<ul class="wp-block-list">
+<li class="wp-block-list-item"><strong>GPT-5.6 Sol</strong> delivers the most advanced reasoning capabilities yet, supporting extended reasoning, agentic workflows, and code-focused scenarios, for the most demanding enterprise workloads.</li>
+
+
+
+<li class="wp-block-list-item"><strong>GPT-5.6 Terra</strong> is a balanced model for everyday work, delivering performance competitive with GPT-5.5 at a lower cost, making it ideal for scaling intelligent applications across the enterprise.</li>
+
+
+
+<li class="wp-block-list-item"><strong>GPT-5.6 Luna</strong> is the fastest and most affordable model in the family, making it well suited to high-volume, latency-sensitive workloads.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">Together, the GPT-5.6 series gives organizations the flexibility to match model capability, cost, and performance requirements to specific business scenarios, rather than forcing every workload onto a single model.</p>
+
+
+
+<p class="wp-block-paragraph">Customers consistently tell us that access to new models matters as much as model quality. That’s why we are making <strong>GPT-5.6</strong>—the latest model—available through <strong>Global Standard and Global Priority Processing for all the existing 28 global regions, Data Zones Standard, and Global Provisioned from day one</strong>. This enables customers to adopt the latest frontier AI innovations where they have already built, deployed, and scaled their applications.</p>
+
+
+
+<h3 class="wp-block-heading" id="gpt-5-6-pricing-for-sol-terra-and-luna">GPT-5.6 pricing for Sol, Terra, and Luna</h3>
+
+
+
+<p class="wp-block-paragraph">The following table outlines GPT-5.6 pricing for Sol, Terra, and Luna in Microsoft Foundry. Use this pricing information to compare model options and plan deployment costs:</p>
+
+
+
+<figure class="wp-block-table alignleft is-style-regular has-h-5-font-size"><table class="has-fixed-layout"><tbody><tr><td class="has-text-align-center" data-align="center" rowspan="2">Model </td><td class="has-text-align-center" data-align="center" rowspan="2">Deployment </td><td class="has-text-align-center" data-align="center" colspan="2">Pricing (USD $/million tokens) </td></tr><tr><td class="has-text-align-center" data-align="center"><strong>Input</strong> </td><td class="has-text-align-center" data-align="center"><strong>Output</strong> </td></tr><tr><td class="has-text-align-center" data-align="center"><strong>GPT-5.6 Sol</strong> </td><td class="has-text-align-center" data-align="center">Standard Global </td><td class="has-text-align-center" data-align="center">5.00 </td><td class="has-text-align-center" data-align="center">30.00 </td></tr><tr><td class="has-text-align-center" data-align="center"><strong>GPT-5.6 Terra</strong> </td><td class="has-text-align-center" data-align="center">Standard Global </td><td class="has-text-align-center" data-align="center">2.50 </td><td class="has-text-align-center" data-align="center">15.00 </td></tr><tr><td class="has-text-align-center" data-align="center"><strong>GPT-5.6 Luna</strong> </td><td class="has-text-align-center" data-align="center">Standard Global </td><td class="has-text-align-center" data-align="center">1.00 </td><td class="has-text-align-center" data-align="center">6.00 </td></tr></tbody></table></figure>
+
+
+
+<h3 class="wp-block-heading" id="run-frontier-ai-where-your-business-operates">Run frontier AI where your business operates</h3>
+
+
+
+<p class="wp-block-paragraph">More models, in more regions, are only half of what platform expansion means. The other half is more places to run them compliantly. This is exactly what the Asia-Pacific Data Zone delivers. Today we&#8217;re also announcing the <strong>general availability of the Asia-Pacific (APAC) Data Zone for Microsoft Foundry</strong>, enabling APAC customers to run frontier OpenAI models while keeping data processing within the Asia-Pacific regions, with no separate environment to stitch together and no waiting for capability to catch up.</p>
+
+
+
+<p class="wp-block-paragraph">With Global, Data Zone, and Regional deployment options available in Foundry, organizations can align AI adoption with their sovereignty, compliance, performance, and scale requirements while maintaining a consistent development and operations experience across environments.</p>
+
+
+
+<blockquote class="wp-block-quote has-quote-default-font-size is-layout-flow wp-block-quote-is-layout-flow">
+<p class="wp-block-paragraph">As financial institutions adopt AI, responsible data handling becomes foundational to trust. Microsoft Foundry’s APAC Data Zone allows us to keep data processing regionally anchored while accessing advanced AI models at scale. This gives us the confidence to accelerate AI innovation responsibly and reinforces our ambition to be a leading AI-powered financial platform in Asia.</p>
+<cite>—Hongsoo Kim, Chief Data and AI Officer (CDAO), Viva Republica (Toss)</cite></blockquote>
+
+
+
+<h2 class="wp-block-heading" id="generate-impact-with-action-oriented-context-aware-agents">Generate impact with action-oriented, context aware agents</h2>
+
+
+
+<p class="wp-block-paragraph">A&nbsp;capable model is only the starting point.&nbsp;To put one to work&nbsp;in production,&nbsp;an agent&nbsp;also&nbsp;needs&nbsp;somewhere to run, knowledge of your business, governed access to its tools, memory that carries across interactions&nbsp;and acts on real-world events, and a path to the people who use it.&nbsp;Foundry provides each of&nbsp;these&nbsp;as a&nbsp;built-in&nbsp;capability,&nbsp;designed to&nbsp;work&nbsp;together.</p>
+
+
+
+<ul class="wp-block-list">
+<li class="wp-block-list-item"><strong>Where it lives: </strong><a href="https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/hosted-agents" target="_blank" rel="noreferrer noopener"><strong>Hosted agents</strong></a><strong>&nbsp;in Foundry Agent Service is now generally available,&nbsp;</strong>giving developers&nbsp;one production runtime for agents built with any framework&nbsp;and harness—Microsoft Agent Framework, GitHub Copilot SDK, LangGraph,&nbsp;OpenClaw,&nbsp;Hermes,&nbsp;and others. It&#8217;s enterprise-ready on day one:&nbsp;<strong>Network&nbsp;isolation&nbsp;with&nbsp;Microsoft Azure Virtual Network (VNet) integration</strong>&nbsp;keeps&nbsp;agent traffic inside your security boundary. For long-running workloads, the new&nbsp;<strong>resilient&nbsp;task support in hosted agents&nbsp;(</strong><a href="https://aka.ms/ResilientAgent/PrPr" target="_blank" rel="noreferrer noopener"><strong>private&nbsp;preview</strong></a><strong>)</strong>&nbsp;makes&nbsp;it&nbsp;easier to build agents that survive failures. The platform provides primitives to keep the sandbox running,&nbsp;your harness provides checkpointing, and together they allow an&nbsp;agent to resume when it restarts. The result: multi-turn conversations, reasoning loops, and human-in-the-loop approvals can pick up where they left off, without developers having to build their own recovery, retry, and state-management.</li>
+
+
+
+<li class="wp-block-list-item"><strong>How it talks: </strong><a href="https://learn.microsoft.com/en-us/azure/ai-services/speech-service/how-to-voice-live-hosted-agent-integration" target="_blank" rel="noreferrer noopener"><strong>Hosted agents with Voice Live</strong></a><strong> is now generally available.</strong> Developers can add&nbsp;real-time voice experiences to the agents they built with the frameworks they prefer, using the Azure VoiceLive SDK.&nbsp;</li>
+
+
+
+<li class="wp-block-list-item"><strong>What it knows</strong>: Foundry<strong>&nbsp;</strong>gives agents access to enterprise knowledge without&nbsp;requiring&nbsp;developers to&nbsp;build a&nbsp;complex&nbsp;retrieval pipeline from scratch. Microsoft IQ brings together <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/work-iq/" target="_blank" rel="noreferrer noopener"><strong>Work IQ</strong></a> for real-time awareness of your Microsoft 365 environment, <a href="https://learn.microsoft.com/en-us/fabric/iq/overview" target="_blank" rel="noreferrer noopener"><strong>Fabric IQ</strong></a> for your structured data, and <a href="https://www.microsoft.com/en-us/webiq" target="_blank" rel="noreferrer noopener"><strong>Web IQ</strong></a> for low-latency live web grounding—all unified behind <a href="https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/what-is-foundry-iq?tabs=portal" target="_blank" rel="noreferrer noopener"><strong>Foundry IQ</strong></a>, now generally available as the SLA-backed knowledge layer behind every Foundry agent.&nbsp;</li>
+
+
+
+<li class="wp-block-list-item"><strong>How it reaches its tools: </strong><a href="https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/tools/toolbox?pivots=python" target="_blank" rel="noreferrer noopener"><strong>Toolboxes in Foundry</strong></a><strong> is generally available. </strong>Instead of shipping every tool definition on every request, a toolbox dynamically selects the right tool for the job—giving agents governed, curated access while dramatically reducing the token overhead of large tool sets.&nbsp;</li>
+
+
+
+<li class="wp-block-list-item"><strong>How it&nbsp;remembers&nbsp;and&nbsp;responds to the world: </strong><a href="https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/what-is-memory?tabs=conversational-agent" target="_blank" rel="noreferrer noopener"><strong>Memory</strong></a><strong>&nbsp;and&nbsp;</strong><a href="https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/routines" target="_blank" rel="noreferrer noopener"><strong>routines</strong></a><strong>&nbsp;in Foundry Agent Service are in public preview.&nbsp;</strong>Memory (procedural, user, and session) lets agents carry context across interactions. Routines run any agent on a recurring schedule or timer so it acts without a user prompt;&nbsp;new event-based triggers, powered by the connector gateway, now let the same agent wake up the moment an upstream system signals a change—a ticket filed, a file landing in storage, a workflow completing.&nbsp;</li>
+
+
+
+<li class="wp-block-list-item"><strong>How it reaches users: </strong><a href="https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/publish-copilot" target="_blank" rel="noreferrer noopener"><strong>Publishing to Microsoft Teams and Microsoft 365 Copilot</strong></a><strong> is generally available next week.</strong>&nbsp;The agents your developers build land in the applications where&nbsp;hundreds&nbsp;of millions of people already do their work with identity, permissions, and policy flowing through automatically.&nbsp;And&nbsp;it works even for network-isolated agents: when a project runs behind a private endpoint, you publish through a <a href="https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/publish-copilot-virtual-network?view=foundry" target="_blank" rel="noreferrer noopener"><strong>documented flow</strong></a> rather than the one-click button. The agent stays on your private network while Microsoft&#8217;s channel adapters reach it through your own firewall and reverse proxy.</li>
+</ul>
+
+
+
+<h2 class="wp-block-heading" id="govern-and-optimize-the-full-ai-lifecycle-with-observability-and-controls">Govern&nbsp;and&nbsp;optimize&nbsp;the full AI lifecycle with observability and controls</h2>
+
+
+
+<p class="wp-block-paragraph">An agent you&nbsp;can&#8217;t&nbsp;see,&nbsp;improve, or secure is an agent you&nbsp;can&#8217;t&nbsp;put&nbsp;in production—so Foundry treats trust as a platform priority, not a developer responsibility. What&#8217;s&nbsp;new in this release closes the loop around everything that happens after you&nbsp;build: seeing what an agent did, making it better, and proving it&#8217;s worth running.</p>
+
+
+
+<ul class="wp-block-list">
+<li class="wp-block-list-item"><strong>How you see what it did—</strong><a href="https://learn.microsoft.com/en-us/azure/foundry/observability/quickstarts/quickstart-tracing-hosted-agent?tabs=azd" target="_blank" rel="noreferrer noopener"><strong>tracing</strong></a><strong>&nbsp;and&nbsp;</strong><a href="https://learn.microsoft.com/en-us/azure/foundry/observability/quickstarts/quickstart-evaluate-hosted-agent?tabs=azd" target="_blank" rel="noreferrer noopener"><strong>evaluation</strong></a><strong>&nbsp;for hosted agents, generally available. </strong>See exactly what an agent did, why, and where it went wrong, and evaluate behavior systematically before and after you ship.</li>
+
+
+
+<li class="wp-block-list-item"><strong>How it gets better and cheaper</strong>—<a href="https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/quickstart-optimize-hosted-agent" target="_blank" rel="noreferrer noopener"><strong>agent optimizer in Foundry Agent Service</strong></a>, in public preview. It tests your prompts, skills, models, and tools together and automatically&nbsp;identifies&nbsp;better configurations—often letting you hold quality while moving to a smaller, cheaper model.</li>
+
+
+
+<li class="wp-block-list-item"><strong>How you prove its value</strong>—<a href="https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-roi-for-agents-in-foundry/4531970" target="_blank" rel="noreferrer noopener"><strong>ROI for agents in Microsoft Foundry</strong></a>, in private preview. It connects an agent&#8217;s traces, business-value evaluations, and operating cost into a single view—surfacing KPIs like net value, total cost, and current ROI in the dashboard, so&nbsp;customers&nbsp;can see whether a production agent is creating more value than it costs to run, and drill into traces when it isn&#8217;t.&nbsp;</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">As agents scale from pilots to thousands of runs a day, Foundry gives teams the levers to keep spend predictable without leaving the platform.</p>
+
+
+
+<p class="wp-block-paragraph">That starts with choice.</p>
+
+
+
+<ul class="wp-block-list">
+<li class="wp-block-list-item"><strong>Choose how you deploy.</strong> Foundry offers Global, Data Zone, and Regional deployments,&nbsp;so you can align AI to your sovereignty, compliance, and performance requirements, running frontier models while keeping data processing in-region.</li>
+
+
+
+<li class="wp-block-list-item"><strong>Choose how you pay for&nbsp;model&nbsp;inference.</strong> A full spectrum of offers—Standard, Priority Processing, Provisioned Throughput, and Batch—lets you optimize for agility, latency, throughput, and cost on one platform.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">On top of that foundation,&nbsp;<a href="https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/model-router" target="_blank" rel="noopener noreferrer"><strong>model&nbsp;router</strong></a> matches each request to the right model, <a href="https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/prompt-caching" target="_blank" rel="noopener noreferrer"><strong>prompt&nbsp;caching</strong></a> cuts redundant computation,&nbsp;and <a href="https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/spillover-traffic-management?tabs=portal" target="_blank" rel="noopener noreferrer"><strong>PTU&nbsp;spillover</strong></a> and&nbsp;quota optimization preserve service continuity through usage spikes. For agents,&nbsp;<strong>toolboxes in Foundry</strong> send only the tools each request needs,&nbsp;and&nbsp;<strong>agent optimizer</strong>&nbsp;tunes prompts, skills, tools, and model choice against your own evaluators.</p>
+
+
+
+<p class="wp-block-paragraph">And spend is only half the equation.&nbsp;<strong>ROI for agents in Foundry</strong>&nbsp;connects business value, usage, and cost in one view—so teams can see whether a production agent is creating more value than it costs to run, and where cost is outpacing value.</p>
+
+
+
+<p class="wp-block-paragraph">For a hands-on walkthrough, watch our new&nbsp;<a href="https://www.youtube.com/watch?v=mB0IyELzjRg" target="_blank" rel="noreferrer noopener">Microsoft Mechanics episode</a>&nbsp;on token economics for agents.</p>
+
+
+
+<h2 class="wp-block-heading" id="in-production-what-teams-are-building-on-foundry">In production: What teams are&nbsp;building on Foundry&nbsp;&nbsp;</h2>
+
+
+
+<p class="wp-block-paragraph">The organizations&nbsp;building on&nbsp;Foundry&nbsp;aren&#8217;t&nbsp;experimenting; they&#8217;re&nbsp;shipping, from digital natives to the world&#8217;s largest enterprises.</p>
+
+
+
+<ul class="wp-block-list">
+<li class="wp-block-list-item"><strong>Adobe</strong>&nbsp;is building with GitHub, Foundry Agent Service, and Azure Functions, deploying agents&nbsp;for their applications and saving time and work getting to production.</li>
+
+
+
+<li class="wp-block-list-item"><strong>Telefónica</strong>&nbsp;has adopted Microsoft Foundry as the core of their corporate agentic platform, with the first wave of agents tackling network operations—a telco’s most complex, strategic domain—across Microsoft Agent Framework, hosted agents, AI Gateway, and&nbsp;Azure&nbsp;Logic Apps.</li>
+
+
+
+<li class="wp-block-list-item"><strong>Tata Consultancy Services</strong>&nbsp;is using agent optimizer in Foundry Agent Service to improve agent performance with a more structured approach to prompt tuning, helping teams reduce manual effort while measuring gains in task adherence and execution efficiency.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">The pattern is consistent: teams that once spent weeks integrating, securing, and deploying agents are now doing it in days, on infrastructure that meets their compliance bar, reaching users through tools they already trust.</p>
+
+
+
+<h2 class="wp-block-heading" id="get-started">Get started</h2>
+
+
+
+<p class="wp-block-paragraph">Everything&nbsp;in this post is live in&nbsp;<a href="https://ai.azure.com/" target="_blank" rel="noreferrer noopener">Microsoft Foundry</a>.</p>
+
+
+
+<p class="wp-block-paragraph">Follow the <a href="https://learn.microsoft.com/en-us/azure/foundry/" target="_blank" rel="noreferrer noopener">documentation</a> and Microsoft Learn courses. Developers can get started in minutes by following the <a href="https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/quickstart-hosted-agent?pivots=azd" target="_blank" rel="noreferrer noopener">Quickstart</a>, which walks through setting up, testing, and deploying a production-ready hosted&nbsp;agent&nbsp;end to end.</p>
+
+
+
+<p class="wp-block-paragraph">Check out <a href="https://github.com/microsoft/ai-agents-for-beginners" target="_blank" rel="noreferrer noopener">AI Agents for Beginners</a> for a 12-lesson curriculum, then go deeper with guided labs: <a href="https://microsoftlearning.github.io/mslearn-ai-agents/" target="_blank" rel="noreferrer noopener">Develop AI Agents in Azure</a>, <a href="https://github.com/microsoft/Hosted_Agents_Workshop_dotNET" target="_blank" rel="noreferrer noopener">Hosted Agents Workshop (.NET)</a>,&nbsp;the&nbsp;<a href="https://github.com/microsoft-foundry/Foundry_Toolkit_for_VSCode_Lab/" target="_blank" rel="noreferrer noopener">Foundry Toolkit for VS Code and hosted agents workshop</a>,&nbsp;and the <a href="https://github.com/microsoft/Learn-Microsoft-Agent-Framework-with-Foundry-ZavaShop-Supply-Chain-Workshop" target="_blank" rel="noreferrer noopener">ZavaShop Supply Chain Workshop</a>.&nbsp;To put your agents on a solid quality footing, read <a href="https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/evaluating-ai-agents-a-practical-guide-with-microsoft-foundry/4500224" target="_blank" rel="noreferrer noopener">Evaluating AI Agents: A Practical Guide with Microsoft Foundry</a>.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Watch:</strong> <a href="https://www.youtube.com/watch?v=iR7_57lJOz8" target="_blank" rel="noreferrer noopener">Foundry Agent Service + Microsoft Agent Framework Explained</a>—Jeff Hollan walks through how to operationalize AI agents from deployment to real-world impact.</p>
+
+
+
+<div class="is-style-inline wp-block-bloginabox-theme-promotional">
+	
+<div class="promotional promotional--has-media promotional--media-right">
+	<div class="promotional__wrapper">
+		<div class="promotional__content-wrapper">
+			<div class="promotional__content">
+				
+
+<h2 class="wp-block-heading" id="start-building-on-foundry">Start building on Foundry</h2>
+
+
+
+<p class="wp-block-paragraph">The end-to-end platform for building, running, governing, and distributing AI agents.</p>
+
+
+
+<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a data-bi-an="Global CTA" data-bi-ct="cta link" data-bi-id="cta-block" class="wp-block-button__link wp-element-button" href="https://ai.azure.com/home" target="_blank" rel="noopener noreferrer">Visit Foundry</a></div>
+</div>
+
+			</div>
+		</div>
+					<div class="promotional__media-wrapper">
+				<div class="promotional__media">
+											<img decoding="async" width="2560" height="1440" src="https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/06/Azure-Infrastructure-Dark-1-scaled.jpg" class="attachment-full size-full" alt="Blue abstract waves and multi-colored shapes." loading="lazy" srcset="https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/06/Azure-Infrastructure-Dark-1-scaled.jpg 2560w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/06/Azure-Infrastructure-Dark-1-300x169.jpg 300w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/06/Azure-Infrastructure-Dark-1-1024x576.jpg 1024w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/06/Azure-Infrastructure-Dark-1-768x432.jpg 768w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/06/Azure-Infrastructure-Dark-1-1536x864.jpg 1536w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/06/Azure-Infrastructure-Dark-1-2048x1152.jpg 2048w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/06/Azure-Infrastructure-Dark-1-809x455.jpg 809w" sizes="auto, (max-width: 2560px) 100vw, 2560px" />									</div>
+			</div>
+			</div>
+</div>
+</div>
+<p>The post <a href="https://azure.microsoft.com/en-us/blog/gpt-5-6-now-available-in-microsoft-foundry/">GPT-5.6 now available in Microsoft Foundry </a> appeared first on <a href="https://azure.microsoft.com/en-us/blog">Microsoft Azure Blog</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://azure.microsoft.com/en-us/blog/gpt-5-6-now-available-in-microsoft-foundry/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item><item>
+		<title>Built to bounce back: How Azure resiliency evolved</title>
+		<link>https://azure.microsoft.com/en-us/blog/built-to-bounce-back-how-azure-resiliency-evolved/</link>
+					<comments>https://azure.microsoft.com/en-us/blog/built-to-bounce-back-how-azure-resiliency-evolved/#respond</comments>
+		
+		<dc:creator><![CDATA[Rochak Mittal, Amit Ganguli, Surya Sripathi Raju and Molina Sharma]]></dc:creator>
+		<pubDate>Wed, 08 Jul 2026 16:00:00 +0000</pubDate>
+				<category><![CDATA[DevOps]]></category>
+		<category><![CDATA[Management and governance]]></category>
+		<category><![CDATA[Migration]]></category>
+		<category><![CDATA[Azure Chaos Studio]]></category>
+		<category><![CDATA[Azure Essentials]]></category>
+		<guid isPermaLink="false">https://azure.microsoft.com/en-us/blog/?p=52552</guid>
+
+					<description><![CDATA[<p>Cloud resiliency is about ensuring systems can adapt, recover, and keep functioning within real-world constraints.</p>
+<p>The post <a href="https://azure.microsoft.com/en-us/blog/built-to-bounce-back-how-azure-resiliency-evolved/">Built to bounce back: How Azure resiliency evolved</a> appeared first on <a href="https://azure.microsoft.com/en-us/blog">Microsoft Azure Blog</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[
+<aside class="table-of-contents-block accordion wp-block-bloginabox-theme-table-of-contents" id="accordion-507c5bb2-76b3-42b0-a862-223ebd7f186c" data-bi-aN="table-of-contents">
+	<button class="btn btn-collapse" type="button" aria-expanded="true" aria-controls="accordion-collapse-507c5bb2-76b3-42b0-a862-223ebd7f186c">
+		<span class="table-of-contents-block__label">In this article</span>
+		<span class="table-of-contents-block__current" aria-hidden="true"></span>
+
+		<svg class="table-of-contents-block__arrow" aria-label="Toggle arrow" width="18" height="11" viewBox="0 0 18 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M15.7761 11L18 8.82043L9 0L0 8.82043L2.22394 11L9 4.35913L15.7761 11Z" fill="currentColor" />
+		</svg>
+	</button>
+	<div id="accordion-collapse-507c5bb2-76b3-42b0-a862-223ebd7f186c" class="table-of-contents-block__collapse-wrapper collapse show" data-parent="#accordion-507c5bb2-76b3-42b0-a862-223ebd7f186c">
+		<div class="table-of-contents-block__content">
+			<ol class="table-of-contents-block__list"><li class="table-of-contents-block__list-item"><a class="table-of-contents-block__list-item-link" href="#resiliency-as-a-shared-responsibility-not-a-handoff">Resiliency as a shared responsibility, not a handoff</a></li><li class="table-of-contents-block__list-item"><a class="table-of-contents-block__list-item-link" href="#platform-foundations-that-reflect-reality-zones-regions-and-sovereignty">Platform foundations that reflect reality: zones, regions, and sovereignty</a></li><li class="table-of-contents-block__list-item"><a class="table-of-contents-block__list-item-link" href="#azure-features-and-capabilities-strengthen-resiliency-outcomes">Azure features and capabilities strengthen resiliency outcomes</a></li><li class="table-of-contents-block__list-item"><a class="table-of-contents-block__list-item-link" href="#bridging-intent-to-execution-through-experiences-on-azure">Bridging intent to execution through experiences on Azure</a></li><li class="table-of-contents-block__list-item"><a class="table-of-contents-block__list-item-link" href="#how-you-can-build-resilience-in-azure">How you can build Resilience in Azure</a></li><li class="table-of-contents-block__list-item"><a class="table-of-contents-block__list-item-link" href="#azure-essentials">Azure Essentials</a></li></ol>		</div>
+	</div>
+	<span class="table-of-contents-block__progress-bar"></span>
+</aside>
+
+
+
+<p class="wp-block-paragraph">Resiliency in the cloud is often described in terms of availability, such as how quickly a system fails over, how many replicas exist, or what a service-level agreement guarantees. But for most organizations today, especially those operating in regulated, sovereign, or geopolitically sensitive environments, resiliency is something far more fundamental. It is the ability to continue operating under pressure, protect what matters most, and recover safely when the unexpected happens.</p>
+
+
+
+<p class="wp-block-paragraph">A useful way to think about this is not a system problem, but a city problem. A modern city does not depend on a single power source, a single road, or a single control system. It is designed to withstand disruptions, whether from infrastructure failures, natural events, or security incidents. It has redundancy—but more importantly—it has governance, control, and recovery mechanisms that reflect local realities. <a href="https://azure.microsoft.com/en-us/solutions/resiliency" target="_blank" rel="noopener noreferrer">Cloud resiliency</a> operates in much the same way. It is not just about avoiding outages; it is about ensuring systems can adapt, recover, and keep functioning within real-world constraints.</p>
+
+
+
+<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-a89b3969 wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://azure.microsoft.com/en-us/solutions/resiliency" target="_blank" rel="noopener noreferrer">Get started with Resiliency in Azure</a></div>
+</div>
+
+
+
+<p class="wp-block-paragraph">On Azure, resiliency is not something Microsoft delivers <em>to</em> customers. It is something Microsoft builds <em>with</em> them. The platform provides deeply resilient infrastructure and increasingly intelligent capabilities, but resiliency outcomes only emerge when those are intentionally designed, aligned with sovereignty constraints, and continuously validated against real-world conditions. Last year, we explained how at its core, <a href="https://techcommunity.microsoft.com/blog/azuregovernanceandmanagementblog/improve-your-resiliency-posture-with-new-capabilities-and-intelligent-assistance/4469771" target="_blank" rel="noopener noreferrer">Azure approaches resiliency across three interconnected pillars</a>: <strong>infrastructure resiliency, data resiliency, and cyber recovery.</strong></p>
+
+
+
+<ul class="wp-block-list">
+<li class="wp-block-list-item"><strong>Infrastructure resiliency</strong>: ensuring applications remain available through failure conditions.</li>
+
+
+
+<li class="wp-block-list-item"><strong>Data resiliency</strong>: ensuring data remains protected, durable, and recoverable.</li>
+
+
+
+<li class="wp-block-list-item"><strong>Cyber recovery</strong>: ensuring organizations can recover safely from compromised states.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">Together, they ensure not only that systems remain available, but that they remain <strong>recoverable and trustworthy</strong>—even when failure modes are unpredictable. These pillars are operationalized through a lifecycle approach that helps organizations design, improve, and continuously validate their resiliency posture.</p>
+
+
+
+<p class="wp-block-paragraph">What differentiates Azure is how these elements come together. Azure provides not just <a href="https://azure.microsoft.com/en-us/solutions/resiliency" target="_blank" rel="noopener noreferrer">resilient infrastructure</a>, but a unified approach that spans platform capabilities, observability, validation, and intelligent remediation, allowing organizations to move from designing for resiliency to continuously operating and improving it.</p>
+
+
+
+<h2 class="wp-block-heading" id="resiliency-as-a-shared-responsibility-not-a-handoff">Resiliency as a shared responsibility, not a handoff</h2>
+
+
+
+<p class="wp-block-paragraph">In any city, infrastructure providers ensure that roads, utilities, and foundational systems are reliable. But how buildings are designed, how emergency plans are executed, and how critical services are protected; those remain the responsibility of the city and its operators.</p>
+
+
+
+<p class="wp-block-paragraph">Azure’s shared responsibility model follows the same principle. Microsoft is responsible for delivering a <strong>resilient cloud platform foundation like </strong>regions, physical datacenters, networking, isolation boundaries, and engineering systems that reduce blast radius and improve durability at scale. This includes capabilities such as Availability Zones, regional isolation, and services like <strong><a href="https://azure.microsoft.com/en-us/products/backup" target="_blank" rel="noopener noreferrer">Azure Backup</a> and <a href="https://azure.microsoft.com/en-us/products/site-recovery" target="_blank" rel="noopener noreferrer">Azure Site Recovery</a></strong>. Customers then build on Azure enabled experiences to configure the right capabilities and achieve their desired resiliency outcomes. This includes how applications are architected, how dependencies are managed, how recovery objectives are defined, and how backup and disaster recovery are configured and tested. In sovereign and regulated environments, this responsibility becomes even more critical where customers explicitly define where data resides, how it moves, and how recovery aligns with compliance and jurisdictional requirements.</p>
+
+
+
+<h2 class="wp-block-heading" id="platform-foundations-that-reflect-reality-zones-regions-and-sovereignty">Platform foundations that reflect reality: zones, regions, and sovereignty</h2>
+
+
+
+<p class="wp-block-paragraph">Modern <a href="https://azure.microsoft.com/en-us/solutions/resiliency" target="_blank" rel="noopener noreferrer">Azure resiliency</a> starts with a <strong>zone-first design approach</strong>, where applications are built to tolerate the loss of an entire Availability Zone. This significantly reduces the likelihood of localized infrastructure failures impacting application availability.</p>
+
+
+
+<p class="wp-block-paragraph">However, resilience does not stop at zones. Regions themselves are not uniform, and assuming uniformity is one of the most common causes of design fragility.</p>
+
+
+
+<ul class="wp-block-list">
+<li class="wp-block-list-item">Some Azure regions are <strong>paired</strong>, with predefined recovery regions aligned for disaster recovery.</li>
+
+
+
+<li class="wp-block-list-item">Others are <strong>non-paired</strong>, often due to sovereignty, regulatory, or geographic constraints.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">This distinction fundamentally shapes resiliency architecture.</p>
+
+
+
+<ul class="wp-block-list">
+<li class="wp-block-list-item"><strong>Paired region scenario (predictable recovery): </strong>Azure provides a spectrum of durability options from locally redundant storage (LRS) to zone redundant (ZRS) and geo‑redundant storage (GRS), enabling customers to align data protection strategies with their availability, compliance, and data sovereignty requirements. For example, a financial services application deployed in West Europe can leverage its paired region (North Europe) for disaster recovery. Using Azure Site Recovery (ASR), workloads are continuously replicated and orchestrated to enable application-level continuity during a regional disruption. 
+<ul class="wp-block-list">
+<li class="wp-block-list-item">The predefined region pairing offers predictable failover behavior, along with well-understood Recovery Point Objective (RPO) and Recovery Time Objective (RTO) trade-offs. However, modern Azure resiliency guidance has evolved beyond strict reliance on region pairs. As outlined in the <a href="https://techcommunity.microsoft.com/blog/reliability-and-resiliency-in-azure/modern-azure-resilience-with-mark-russinovich/4508967">Modern Azure Resilience with Mark Russinovich</a> blog, customers are increasingly adopting flexible multi-region architectures, including non-paired region strategies based on factors such as service availability, capacity, latency, and data residency requirements. These patterns emphasize that disaster recovery is no longer bound to predefined pairs, but instead is a design choice aligned to workload-specific needs.</li>
+</ul>
+</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">In such scenarios, Azure Site Recovery plays a critical role by providing consistent, application-aware replication and failover orchestration across any chosen region, paired or not. This allows customers to standardize their recovery strategy while retaining the flexibility to meet evolving business, regulatory, and scale considerations.</p>
+
+
+
+<ul class="wp-block-list">
+<li class="wp-block-list-item"><strong>Non-paired region scenario (sovereign constraint): </strong>a government workload operates in a sovereign region with no predefined pair. Cross-region recovery is restricted. The architecture prioritizes zonal high availability and restore-based recovery using backup to region of choice, ensuring data remains within jurisdictional boundaries. Recovery is slower but fully compliant.</li>
+
+
+
+<li class="wp-block-list-item"><strong>Asymmetric recovery scenario (regulated enterprise): </strong>a multinational enterprise deploys in a constrained geography where only subsets of data can leave the region. For example, Azure Site Recovery enables failover for critical services, while sensitive data relies on Azure Backup for in-boundary recovery. The result is an intentionally asymmetric resiliency model, balancing compliance with business continuity.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">The result is a shift from one-size-fits-all architectures to workload-driven resiliency design, where recovery strategies are intentionally aligned to business, regulatory, and operational constraints.</p>
+
+
+
+<h2 class="wp-block-heading" id="azure-features-and-capabilities-strengthen-resiliency-outcomes">Azure features and capabilities strengthen resiliency outcomes</h2>
+
+
+
+<p class="wp-block-paragraph"><a href="https://azure.microsoft.com/en-us/solutions/resiliency" target="_blank" rel="noopener noreferrer">Resiliency in Azure</a> is not delivered by a single service, but it is achieved through a <strong>set of capabilities and services</strong>. These capabilities work together to ensure applications remain available, data remains protected, and systems can recover even under infrastructure failures, regional disruptions, or cyber-attacks. It begins with <strong>zone-resilient foundations</strong> that reduce exposure to localized failures, and extends through <strong>autoscaling, load balancing, and health-aware traffic management</strong> that keeps applications responsive under stress. </p>
+
+
+
+<p class="wp-block-paragraph">For broader infrastructure or regional disruptions, <strong>Azure Site Recovery</strong> enables continuity through replication and failover orchestration. Equally important, <strong>Azure Backup</strong> addresses a different class of risk like corruption, accidental deletion, compliance retention, and cyber compromise by enabling recovery to a trusted point in time when failover is not enough. These capabilities are most effective when paired with <strong>strong observability and rehydration-friendly design</strong>, where systems can detect issues early, recover automatically, and rebuild quickly. The result is a more complete view of resiliency: not just maintaining uptime but sustaining trust and recoverability under real-world failure conditions.</p>
+
+
+
+<h2 class="wp-block-heading" id="bridging-intent-to-execution-through-experiences-on-azure">Bridging intent to execution through experiences on Azure</h2>
+
+
+
+<p class="wp-block-paragraph">Customers had tools but lacked a unified way to measure and improve their resiliency posture. Introduced at Microsoft Build 2026 and available in public preview, <a href="https://learn.microsoft.com/en-us/azure/resiliency/" target="_blank" rel="noopener noreferrer"><strong>Azure Infrastructure Resiliency Manager</strong></a> addresses this challenge. It provides an <strong>application-centric and resource-centric view of resiliency</strong>, bringing together <a href="https://azure.microsoft.com/en-us/solutions/resiliency" target="_blank" rel="noopener noreferrer">Resiliency in Azure</a>, <a href="https://azure.microsoft.com/en-us/products/advisor" target="_blank" rel="noopener noreferrer">Azure Advisor</a>, <a href="https://azure.microsoft.com/en-us/products/chaos-studio" target="_blank" rel="noopener noreferrer">Azure Chaos Studio</a>, and <a href="https://azure.microsoft.com/en-us/products/monitor" target="_blank" rel="noopener noreferrer">Azure Monitor</a> into a single, cohesive experience. </p>
+
+
+
+<p class="wp-block-paragraph">A key starting point is <strong>zonal resiliency posture</strong>. It helps customers understand whether their workloads are truly zone-resilient, identify hidden dependencies, and pinpoint gaps between intended architecture and actual deployment.</p>
+
+
+
+<p class="wp-block-paragraph">It introduces a lifecycle approach to resiliency:</p>
+
+
+
+<ul class="wp-block-list">
+<li class="wp-block-list-item"><strong>Start resilient</strong>: design workloads with the right foundational posture.</li>
+
+
+
+<li class="wp-block-list-item"><strong>Get resilient</strong>: identify and close gaps in existing systems.</li>
+
+
+
+<li class="wp-block-list-item"><strong>Stay resilient:</strong> continuously validate and improve through drills and monitoring.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">At the core of Azure Infrastructure Resiliency Manager is the <strong><a href="https://learn.microsoft.com/en-us/azure/copilot/resiliency-agent" target="_blank" rel="noopener noreferrer">Resiliency Agent</a></strong>, which brings intelligence and automation into the lifecycle. The agent evaluates workloads holistically and identifies risks, surfaces misconfigurations, and explains trade-offs across cost, availability, and compliance. But its role extends beyond analysis. This represents a shift from reactive guidance to proactive and increasingly autonomous resiliency management.</p>
+
+
+
+<p class="wp-block-paragraph">In addition to guiding remediation, the Resiliency Agent can generate <strong>Infrastructure-as-Code (IaC) templates</strong>, enabling teams to directly implement recommended changes in their deployment pipelines. This is a fundamental shift: resiliency moves from being <strong>advisory to executable</strong>. It becomes embedded in DevOps workflows; codified, repeatable, and consistently applied.</p>
+
+
+
+<p class="wp-block-paragraph">In addition to this, with the <strong>Azure Backup MCP Server</strong>, these capabilities become programmable. Organizations can integrate backup posture validation, recovery readiness checks, and policy-driven restore workflows into automated systems while maintaining full control within sovereignty boundaries.</p>
+
+
+
+<h2 class="wp-block-heading" id="how-you-can-build-resilience-in-azure">How you can build Resilience in Azure</h2>
+
+
+
+<p class="wp-block-paragraph">On Azure, this evolution reflects a shift from predefined constructs to intentional architectures, from fragmented tools to unified experiences, and from guidance to execution. As organizations navigate increasing complexity, regulatory constraints, and unpredictable failure modes, the path forward is clear: build resilience into the foundation, validate it continuously, and automate it wherever possible. With Azure’s platform capabilities, application-centric experiences, and intelligent agents, resiliency is not just achievable but operationalized to deliver with confidence.</p>
+
+
+
+<p class="wp-block-paragraph">Explore <a href="https://azure.microsoft.com/en-us/solutions/azure-essentials" target="_blank" rel="noopener noreferrer">Azure Essentials</a> to get started with a unified resiliency experience across your applications and infrastructure. Azure Essentials, Microsoft Unified, and <a href="https://azure.microsoft.com/en-us/solutions/azure-accelerate" target="_blank" rel="noreferrer noopener">Azure Accelerate</a> help organizations move from resiliency design to operational execution across every stage of the lifecycle.</p>
+
+
+
+<div class="is-style-inline wp-block-bloginabox-theme-promotional">
+	
+<div class="promotional promotional--has-media promotional--media-right">
+	<div class="promotional__wrapper">
+		<div class="promotional__content-wrapper">
+			<div class="promotional__content">
+				
+
+<h2 class="wp-block-heading" id="azure-essentials">Azure Essentials</h2>
+
+
+
+<p class="wp-block-paragraph">Create secure, resilient, and cost-efficient projects.</p>
+
+
+
+<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a data-bi-an="Global CTA" data-bi-ct="cta link" data-bi-id="cta-block" class="wp-block-button__link wp-element-button" href="https://azure.microsoft.com/en-us/solutions/azure-essentials" target="_blank" rel="noopener noreferrer">Get started</a></div>
+</div>
+
+			</div>
+		</div>
+					<div class="promotional__media-wrapper">
+				<div class="promotional__media">
+											<img decoding="async" width="2560" height="1707" src="https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/05/CLO24-Azure-Fintech-012-scaled.jpg" class="attachment-full size-full" alt="Person looking at and pointing to monitor." loading="lazy" srcset="https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/05/CLO24-Azure-Fintech-012-scaled.jpg 2560w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/05/CLO24-Azure-Fintech-012-300x200.jpg 300w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/05/CLO24-Azure-Fintech-012-1024x683.jpg 1024w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/05/CLO24-Azure-Fintech-012-768x512.jpg 768w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/05/CLO24-Azure-Fintech-012-1536x1024.jpg 1536w, https://azure.microsoft.com/en-us/blog/wp-content/uploads/2026/05/CLO24-Azure-Fintech-012-2048x1365.jpg 2048w" sizes="auto, (max-width: 2560px) 100vw, 2560px" />									</div>
+			</div>
+			</div>
+</div>
+</div>
+
+
+
+<h3 class="wp-block-heading" id="related-resources">Related resources</h3>
+
+
+
+<ul class="wp-block-list">
+<li class="wp-block-list-item"><a href="https://techcommunity.microsoft.com/blog/reliability-and-resiliency-in-azure/announcing-azure-infrastructure-resiliency-manager-public-preview/4523710?previewMessage=true">Announcing Azure Infrastructure Resiliency Manager Public Preview</a></li>
+
+
+
+<li class="wp-block-list-item"><a href="https://learn.microsoft.com/en-us/azure/resiliency/">Resiliency documentation</a></li>
+
+
+
+<li class="wp-block-list-item"><a href="https://techcommunity.microsoft.com/blog/reliability-and-resiliency-in-azure/modern-azure-resilience-with-mark-russinovich/4508967">Modern Azure Resilience with Mark Russinovich</a></li>
+
+
+
+<li class="wp-block-list-item"><a href="https://learn.microsoft.com/en-us/azure/reliability/overview-reliability-guidance">Reliability guides for Azure services</a></li>
+
+
+
+<li class="wp-block-list-item"><a href="https://azure.microsoft.com/en-us/solutions/resiliency" target="_blank" rel="noopener noreferrer">Cloud Resiliency</a></li>
+
+
+
+<li class="wp-block-list-item"><a href="https://azure.microsoft.com/en-us/blog/proving-application-resilience-on-azure-with-chaos-studio/" target="_blank" rel="noopener noreferrer">Proving application resilience on Azure with Chaos Studio</a></li>
+</ul>
+<p>The post <a href="https://azure.microsoft.com/en-us/blog/built-to-bounce-back-how-azure-resiliency-evolved/">Built to bounce back: How Azure resiliency evolved</a> appeared first on <a href="https://azure.microsoft.com/en-us/blog">Microsoft Azure Blog</a>.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>https://azure.microsoft.com/en-us/blog/built-to-bounce-back-how-azure-resiliency-evolved/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>
