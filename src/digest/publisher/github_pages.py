@@ -5,7 +5,6 @@ import shutil
 import tempfile
 from datetime import UTC, datetime
 from pathlib import Path
-from zoneinfo import ZoneInfo
 
 import markdown as md
 from git import Repo
@@ -179,7 +178,7 @@ class GitHubPagesPublisher:
             company_labels={c: COMPANY_REGISTRY[c].label for c in COMPANIES},
             index_per_company=settings.index_per_company,
             index_per_company_press=settings.index_per_company_press,
-            generated_at=datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d %I:%M %p %Z"),
+            generated_at=datetime.now(UTC).strftime("%Y-%m-%d %H:%M %Z"),
             scraper_infos=scraper_infos or [],
             overview=overview,
             overview_is_today=overview is not None and overview.day == today,
@@ -195,7 +194,7 @@ class GitHubPagesPublisher:
                 grouped=grouped,
                 article_count=len(records),
                 company_page_limit=settings.company_page_limit,
-                generated_at=datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d %I:%M %p %Z"),
+                generated_at=datetime.now(UTC).strftime("%Y-%m-%d %H:%M %Z"),
             )
 
         return files

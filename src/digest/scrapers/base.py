@@ -132,7 +132,10 @@ class BaseScraper(ABC):
     def _process_url(self, url: str, category: Category, db: ArticleDB) -> ScrapedPage | None:
         existing = db.get_by_url(url)
 
-        if existing is None:
+        if existing is None or not existing.summary:
+            # No record, or a scrape-only record (e.g. from `--stage scrape`)
+            # that was never summarized — always retry rather than letting
+            # pre_check's freshness check skip it forever.
             return self._safe_scrape(url, category)
 
         changed = self.pre_check(url, existing)
