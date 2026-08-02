@@ -171,6 +171,8 @@ class GitHubPagesPublisher:
         from digest.config import settings
         vendor_updates = [r for r in top_updates if COMPANY_REGISTRY[r.company].group == "vendor"]
         press_updates = [r for r in top_updates if COMPANY_REGISTRY[r.company].group == "press"]
+        today = datetime.now(UTC).date().isoformat()
+        overview = self._db.get_daily_overview(today) or self._db.latest_daily_overview()
         files["index.html"] = index_tmpl.render(
             vendor_updates=vendor_updates,
             press_updates=press_updates,
@@ -179,6 +181,8 @@ class GitHubPagesPublisher:
             index_per_company_press=settings.index_per_company_press,
             generated_at=datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d %I:%M %p %Z"),
             scraper_infos=scraper_infos or [],
+            overview=overview,
+            overview_is_today=overview is not None and overview.day == today,
         )
 
         company_tmpl = self._env.get_template("company_index.html.j2")

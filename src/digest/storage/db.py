@@ -3,7 +3,7 @@ import sqlite3
 from datetime import UTC, datetime
 from pathlib import Path
 
-from digest.storage.models import ArticleRecord, normalize_url
+from digest.storage.models import ArticleRecord, DailyOverview, normalize_url
 
 logger = logging.getLogger(__name__)
 
@@ -31,6 +31,14 @@ CREATE TABLE IF NOT EXISTS article_text (
     raw_text        TEXT NOT NULL,
     fetched_at      TEXT NOT NULL,
     FOREIGN KEY (normalized_url) REFERENCES scraped_articles(normalized_url) ON DELETE CASCADE
+);
+CREATE TABLE IF NOT EXISTS daily_overview (
+    day            TEXT PRIMARY KEY,
+    text           TEXT NOT NULL,
+    article_count  INTEGER NOT NULL,
+    source_hash    TEXT NOT NULL,
+    model          TEXT NOT NULL,
+    generated_at   TEXT NOT NULL
 );
 """
 
@@ -162,6 +170,66 @@ class ArticleDB:
             params,
         ).fetchall()
         return [_row_to_record(r) for r in rows]
+
+    def articles_first_seen_on(
+        self, day: str, companies: list[str], limit: int | None = None
+    ) -> list[ArticleRecord]:
+        """Return `ok` records with a summary whose first_scraped_at date is `day` (UTC).
+
+        `first_scraped_at`, not `published_date` — a backfilled old post is still new
+        to this digest on the day it first appears (docs/plan.md Step 7a).
+        """
+        if not companies:
+            return []
+        placeholders = ", ".join("?" for _ in companies)
+        params: list = [day, *companies]
+        limit_clause = ""
+        if limit is not None:
+            limit_clause = "LIMIT ?"
+            params.append(limit)
+        rows = self._conn.execute(
+            f"""SELECT * FROM scraped_articles
+               WHERE date(first_scraped_at) = ? AND company IN ({placeholders})
+                 AND status = 'ok' AND summary != ''
+               ORDER BY first_scraped_at DESC
+               {limit_clause}""",
+            params,
+        ).fetchall()
+        return [_row_to_record(r) for r in rows]
+
+    def get_daily_overview(self, day: str) -> DailyOverview | None:
+        row = self._conn.execute(
+            "SELECT * FROM daily_overview WHERE day = ?", (day,)
+        ).fetchone()
+        return DailyOverview(**dict(row)) if row else None
+
+    def latest_daily_overview(self, before_or_on: str | None = None) -> DailyOverview | None:
+        """Most recent overview, optionally restricted to `day <= before_or_on`."""
+        if before_or_on is not None:
+            row = self._conn.execute(
+                "SELECT * FROM daily_overview WHERE day <= ? ORDER BY day DESC LIMIT 1",
+                (before_or_on,),
+            ).fetchone()
+        else:
+            row = self._conn.execute(
+                "SELECT * FROM daily_overview ORDER BY day DESC LIMIT 1"
+            ).fetchone()
+        return DailyOverview(**dict(row)) if row else None
+
+    def upsert_daily_overview(self, overview: DailyOverview) -> None:
+        self._conn.execute(
+            """INSERT INTO daily_overview
+                (day, text, article_count, source_hash, model, generated_at)
+               VALUES (:day, :text, :article_count, :source_hash, :model, :generated_at)
+               ON CONFLICT(day) DO UPDATE SET
+                   text          = excluded.text,
+                   article_count = excluded.article_count,
+                   source_hash   = excluded.source_hash,
+                   model         = excluded.model,
+                   generated_at  = excluded.generated_at""",
+            overview.model_dump(),
+        )
+        self._conn.commit()
 
     def close(self) -> None:
         self._conn.close()

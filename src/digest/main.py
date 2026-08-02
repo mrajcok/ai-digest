@@ -17,9 +17,16 @@ from digest.scrapers.microsoft import MicrosoftScraper
 from digest.scrapers.mistral import MistralScraper
 from digest.scrapers.openai import OpenAIScraper
 from digest.scrapers.press import ArsTechnicaScraper, TechCrunchScraper
-from digest.sources import company_keys
+from digest.sources import companies_in_group, company_keys
 from digest.storage.db import ArticleDB
-from digest.storage.models import CATEGORIES, ArticleRecord, ScrapedPage, normalize_url
+from digest.storage.models import (
+    CATEGORIES,
+    ArticleRecord,
+    DailyOverview,
+    ScrapedPage,
+    daily_overview_source_hash,
+    normalize_url,
+)
 from digest.summarizer import Summarizer
 
 logger = logging.getLogger(__name__)
@@ -72,6 +79,52 @@ def _assert_model_available(model_id: str) -> None:
 def _make_summarizer(stage: bool) -> Summarizer:
     stage_model = settings.openrouter_stage_summarization_model or settings.openrouter_summarization_model
     return Summarizer(model=stage_model if stage else None)
+
+
+def _overview_company_keys() -> list[str]:
+    groups = ["vendor", "press"] if settings.overview_include_press else ["vendor"]
+    return [c.key for group in groups for c in companies_in_group(group)]
+
+
+def _generate_overview(db: ArticleDB, stage: bool) -> None:
+    """Generate and persist today's daily overview if the day's article set changed.
+
+    Skipped entirely (no LLM call, no row) when there are zero eligible articles —
+    a quiet-day run should cost nothing. See docs/plan.md Step 7a.
+    """
+    day = datetime.now(UTC).date().isoformat()
+    records = db.articles_first_seen_on(
+        day, _overview_company_keys(), limit=settings.overview_max_articles
+    )
+    if not records:
+        logger.info("[stage:overview] no eligible articles for %s — skipping", day)
+        return
+
+    source_hash = daily_overview_source_hash(records)
+    existing = db.get_daily_overview(day)
+    if existing and existing.source_hash == source_hash:
+        logger.info("[stage:overview] %s unchanged (%d articles) — skipping regeneration", day, len(records))
+        return
+
+    model = settings.openrouter_stage_summarization_model if stage else None
+    model = model or settings.openrouter_summarization_model
+    summarizer = Summarizer(model=model)
+    text = summarizer.summarize_day(records)
+    if not text:
+        logger.warning("[stage:overview] generation failed for %s — leaving prior overview in place", day)
+        return
+
+    db.upsert_daily_overview(
+        DailyOverview(
+            day=day,
+            text=text,
+            article_count=len(records),
+            source_hash=source_hash,
+            model=model,
+            generated_at=datetime.now(UTC).isoformat(),
+        )
+    )
+    logger.info("[stage:overview] generated overview for %s (%d articles)", day, len(records))
 
 
 # ---------------------------------------------------------------------------
@@ -199,6 +252,14 @@ def _run_summarize(args: argparse.Namespace, db: ArticleDB) -> None:
     publisher.render_summary_preview(records, _DRY_RUN_DIR, _scraper_infos(scrapers))
 
 
+def _run_overview(args: argparse.Namespace, db: ArticleDB) -> None:
+    _assert_model_available(settings.openrouter_stage_summarization_model or settings.openrouter_summarization_model)
+    _generate_overview(db, stage=True)
+    publisher = GitHubPagesPublisher(db)
+    publisher.render_from_db(_DRY_RUN_DIR, _scraper_infos(_build_scrapers(args.site)), limit=args.limit)
+    logger.info("[stage:overview] HTML written to %s — review, then run --publish", _DRY_RUN_DIR)
+
+
 def _run_render(args: argparse.Namespace, db: ArticleDB) -> None:
     publisher = GitHubPagesPublisher(db)
     publisher.render_from_db(_DRY_RUN_DIR, _scraper_infos(_build_scrapers(args.site)), limit=args.limit)
@@ -247,6 +308,8 @@ def _run_full_pipeline(args: argparse.Namespace, db: ArticleDB) -> None:
                 logger.debug("Processed %s", page.url)
             except Exception:
                 logger.exception("Failed to process %s — skipping", page.url)
+
+    _generate_overview(db, stage=False)
 
     if new_records:
         logger.info("Publishing %d updates to GitHub Pages", len(new_records))
@@ -309,11 +372,12 @@ def _parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--stage",
-        choices=["scrape", "summarize", "render"],
+        choices=["scrape", "summarize", "overview", "render"],
         help=(
             "Run one pipeline stage: "
             "scrape (fetch + cache, render preview), "
             "summarize (LLM summary from cache, render preview), "
+            "overview (generate today's daily overview from the DB, render preview), "
             "render (render full site from DB to data/dry-run/ for review)"
         ),
     )
@@ -369,6 +433,8 @@ def main() -> None:
             _run_scrape(args, db)
         elif args.stage == "summarize":
             _run_summarize(args, db)
+        elif args.stage == "overview":
+            _run_overview(args, db)
         elif args.stage == "render":
             _run_render(args, db)
         else:

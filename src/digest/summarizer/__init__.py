@@ -8,7 +8,7 @@ from tenacity import Retrying, before_sleep_log, stop_after_attempt, wait_expone
 
 from digest.config import settings
 from digest.sources import company_label
-from digest.storage.models import ScrapedPage
+from digest.storage.models import ArticleRecord, ScrapedPage
 
 logger = logging.getLogger(__name__)
 
@@ -69,6 +69,26 @@ _PROMPT = ChatPromptTemplate.from_messages([
         "speculation beyond what the content states, or repetition of the article title.\n\n"
         "Title: {title}\n\n"
         "Content:\n{content}",
+    ),
+])
+
+
+_OVERVIEW_PROMPT = ChatPromptTemplate.from_messages([
+    _PROMPT.messages[0],  # reuse the AI-analyst system prompt from 2f
+    (
+        "human",
+        "Write a single synthesis of today's AI news, in roughly {target_words} words, "
+        "as flowing prose in three to five paragraphs. Output only the synthesis text in "
+        "markdown, without any commentary or explanation.\n\n"
+        "Organize by theme, not by company: if two labs shipped competing features today, "
+        "that is one paragraph, not two paragraphs that each start with a company name. "
+        "Lead with the single most consequential item of the day. Keep model names, version "
+        "numbers, and figures exact, and do not introduce claims absent from the summaries "
+        "below. Do not use a bullet list or per-company headings — this reads like a person "
+        "wrote it, not an index of the items below.\n"
+        "If it was a quiet day, say so plainly rather than inflating a couple of minor posts "
+        "into the full word count — the target is a ceiling, not a quota.\n\n"
+        "Today's article summaries:\n{summaries}",
     ),
 ])
 
@@ -146,6 +166,7 @@ class Summarizer:
             base_url=settings.openrouter_base_url,
         )
         self._chain = _PROMPT | llm | StrOutputParser()
+        self._overview_chain = _OVERVIEW_PROMPT | llm | StrOutputParser()
 
     def summarize(self, page: ScrapedPage) -> str:
         # A longer summary built from the same truncated input would just pad, so the
@@ -185,4 +206,28 @@ class Summarizer:
                 settings.max_api_retries, exc,
             )
             return page.raw_text[:300]
+        raise AssertionError("unreachable")
+
+    def summarize_day(self, records: list[ArticleRecord]) -> str:
+        """Synthesize a day's article summaries into one overview — docs/plan.md Step 7a.
+
+        Input is `record.summary` only, never `raw_text` — this is strictly a summary
+        of summaries, so `summarizer_content_chars` does not apply here.
+        """
+        summaries = "\n\n".join(
+            f"- [{company_label(r.company)}] {r.title}: {r.summary}" for r in records
+        )
+        inputs = {"target_words": settings.overview_target_words, "summaries": summaries}
+        try:
+            for attempt in Retrying(
+                stop=stop_after_attempt(settings.max_api_retries),
+                wait=wait_exponential(multiplier=1, min=2, max=30),
+                before_sleep=before_sleep_log(logger, logging.WARNING),
+                reraise=True,
+            ):
+                with attempt:
+                    return self._overview_chain.invoke(inputs)
+        except Exception as exc:
+            logger.error("Daily overview generation failed after %d attempts (%s)", settings.max_api_retries, exc)
+            return ""
         raise AssertionError("unreachable")

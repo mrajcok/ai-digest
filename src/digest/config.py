@@ -39,6 +39,11 @@ class Settings(BaseSettings):
     max_api_retries: int = 5
     summarizer_content_chars: int = 15000
 
+    # Daily overview ("summary of summaries") — docs/plan.md Step 7a.
+    overview_include_press: bool = False
+    overview_target_words: int = 500
+    overview_max_articles: int = 40
+
     # Feed pagination (?paged=N) — only reached during backfill, since a normal run's
     # cutoff is covered by page 1. Caps how far a --since backfill will walk a feed.
     feed_max_pages: int = 10
