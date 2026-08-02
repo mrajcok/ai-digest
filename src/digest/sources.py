@@ -82,6 +82,13 @@ _AZURE_AI_CATEGORIES = (
 # Volume is handled by `daily_cap` (Step 6), off-topic bleed by exclude_patterns.
 _PRESS_AI_CATEGORIES = ("AI", "Artificial Intelligence", "AI agents", "LLMs", "generative ai")
 
+# Seeded from the two off-topic items the 2026-08-01 probe found slipping past the
+# category allowlist (docs/sources.md). Narrow on purpose — these are one-off
+# starting points, not a general filter, and need tuning against real output
+# (Step 5/6) as more slip through.
+_TECHCRUNCH_EXCLUDES = ("india-is-starting-to-pay-for-apps",)
+_ARSTECHNICA_EXCLUDES = ("dmca",)
+
 
 COMPANIES: dict[str, Company] = {
     "anthropic": Company(
@@ -211,6 +218,7 @@ COMPANIES: dict[str, Company] = {
                 category="news",
                 paginate=True,
                 include_categories=_PRESS_AI_CATEGORIES,
+                exclude_patterns=_TECHCRUNCH_EXCLUDES,
                 daily_cap=8,
             ),
         ),
@@ -231,6 +239,7 @@ COMPANIES: dict[str, Company] = {
                 content_in_feed=True,
                 paginate=True,
                 include_categories=_PRESS_AI_CATEGORIES,
+                exclude_patterns=_ARSTECHNICA_EXCLUDES,
                 daily_cap=5,
             ),
         ),
