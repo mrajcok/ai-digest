@@ -85,3 +85,20 @@ class ArticleRecord(BaseModel):
             summary=summary,
             status="ok",
         )
+
+
+def daily_overview_source_hash(records: list["ArticleRecord"]) -> str:
+    """Dedup key for a day's overview: regenerate only when the article set changed."""
+    joined = "\n".join(sorted(r.normalized_url for r in records))
+    return hashlib.sha256(joined.encode()).hexdigest()
+
+
+class DailyOverview(BaseModel):
+    """A single day's synthesis of that day's vendor summaries — docs/plan.md Step 7a."""
+
+    day: str  # YYYY-MM-DD, UTC
+    text: str
+    article_count: int
+    source_hash: str
+    model: str
+    generated_at: str  # ISO 8601

@@ -650,7 +650,9 @@ Anthropic's page has none), then added
 `::test_company_page_shows_source_badge_only_for_multi_source_companies` to
 cover it going forward.
 
-### 7a. — Daily overview ("summary of summaries")
+### 7a. — Daily overview ("summary of summaries") — **done**
+
+Completed 2026-08-02 01:55:45.
 
 A single ~500-word synthesis of the day's **non-press** articles, rendered at the
 top of `index.html`. It answers "what actually happened in AI today?" without
@@ -778,6 +780,47 @@ the input; selection is by `first_scraped_at`, not `published_date`; an unchange
 `source_hash` does **not** re-call the LLM; the template renders each of the
 three cases. Then `--stage overview` against a real day's summaries to eyeball
 the prose before it goes on the front page.
+
+#### Implementation Summary
+
+- `storage/db.py`: added the `daily_overview` table to `_SCHEMA`, plus
+  `articles_first_seen_on(day, companies, limit)` (filters on
+  `date(first_scraped_at)`, `status='ok'`, non-empty `summary`),
+  `get_daily_overview(day)`, `latest_daily_overview(before_or_on=None)`, and
+  `upsert_daily_overview()`.
+- `storage/models.py`: added `DailyOverview` and
+  `daily_overview_source_hash(records)` (sha256 of sorted `normalized_url`s).
+- `config.py` / `.env.example` / `README.md`: added `overview_include_press`
+  (default `False`), `overview_target_words` (500), `overview_max_articles`
+  (40).
+- `summarizer/__init__.py`: added `_OVERVIEW_PROMPT` (reuses the 2f system
+  message) and `Summarizer.summarize_day(records)`, built only from
+  `record.summary`/`title`/company label — never `raw_text`. Same retry
+  wrapper as `summarize()`; returns `""` on failure so the caller can skip
+  writing a row rather than fall back to garbage text.
+- `main.py`: added `_overview_company_keys()` (vendor only unless
+  `overview_include_press`), `_generate_overview(db, stage)` (day = UTC
+  today; skips entirely — no LLM call, no row — when zero eligible articles;
+  skips regeneration when `source_hash` is unchanged), `_run_overview` for
+  `--stage overview`, and a call to `_generate_overview(db, stage=False)` in
+  `_run_full_pipeline` after summarization and before `publish()`.
+- `publisher/github_pages.py`: `_render()` now looks up
+  `db.get_daily_overview(today) or db.latest_daily_overview()` and passes
+  `overview` + `overview_is_today` to `index.html.j2`.
+- `index.html.j2`: new `.overview` block above the vendor/press sections,
+  rendered only when `overview` is truthy; shows "Overview for `<day>`" in the
+  heading when it's a fallback to an older day. Omitted entirely otherwise
+  (case 3).
+- Tests: `tests/test_daily_overview.py` (18 cases) — DB queries, source-hash
+  stability/sensitivity, `_generate_overview` skip/write/dedup/regenerate
+  behavior with a stubbed `Summarizer`, and all three template-rendering
+  cases (today's overview, stale fallback labelled, none at all). Used the
+  real current date (`TODAY`/`YESTERDAY` constants) instead of mocking
+  `datetime`, since `_generate_overview` reads `datetime.now(UTC)` directly —
+  simpler and less brittle than patching the module's `datetime` symbol.
+- Not built: the `/overview/<day>.html` archive page mentioned as a possible
+  follow-up — out of scope for this step, and the `daily_overview` table
+  already retains full history if that's wanted later.
 
 ## Step 8 — Pipeline stages, notifier
 

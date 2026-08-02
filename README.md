@@ -144,6 +144,9 @@ All configuration is via environment variables (`.env` file locally, system env 
 | `INDEX_PAGE_LIMIT` | Unused; kept for backward compatibility (default: `10`) |
 | `COMPANY_PAGE_LIMIT` | Max articles shown on each company page on GitHub Pages (default: `30`) |
 | `MAX_API_RETRIES` | Max retry attempts for LLM API calls (default: `5`) |
+| `OVERVIEW_INCLUDE_PRESS` | Include press articles in the daily overview synthesis (default: `false`, vendor only) |
+| `OVERVIEW_TARGET_WORDS` | Target word count for the daily overview (default: `500`) |
+| `OVERVIEW_MAX_ARTICLES` | Max articles fed into the overview prompt; caps a `--since` backfill day (default: `40`) |
 | `DISCORD_NOTIFY` | Post a per-company summary to Discord after each run (default: `true`; set `false` to disable) |
 | `DISCORD_NOTIFY_METHOD` | Only `webhook` is supported (default: `webhook`) |
 | `DISCORD_WEBHOOK_URL` | Discord webhook URL; required when `DISCORD_NOTIFY_METHOD=webhook` |

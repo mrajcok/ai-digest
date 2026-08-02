@@ -87,6 +87,10 @@
     .card h2 a:hover { color: var(--link-hover); text-decoration: underline; }
     .summary { font-size: .9rem; line-height: 1.5; color: var(--text-2); }
     .generated-at { font-size: .82rem; color: var(--text-3); margin: -.5rem 0 1.5rem; }
+    .overview { border: 1px solid var(--border); border-radius: 6px; padding: 1.25rem 1.5rem; margin-bottom: 2rem; background: var(--surface); }
+    .overview-heading { margin: 0 0 .35rem; font-size: 1.1rem; }
+    .overview-meta { font-size: .82rem; color: var(--text-2); margin: 0 0 .75rem; }
+    .overview-text { font-size: .95rem; line-height: 1.6; color: var(--text); }
     .scraper-summary { margin-top: 2.5rem; border-top: 2px solid var(--border); padding-top: 1rem; }
     .scraper-summary h2 { font-size: 1rem; color: var(--text-2); margin-bottom: 1rem; }
     .scraper-block { margin-bottom: 1.25rem; }
@@ -131,6 +135,14 @@
     {% endif %}
   </div>
   {% endmacro %}
+
+  {% if overview %}
+  <section class="overview">
+    <h2 class="overview-heading">Today in AI{% if not overview_is_today %} — Overview for {{ overview.day }}{% endif %}</h2>
+    <p class="overview-meta">{{ overview.day }} · {{ overview.article_count }} vendor source{{ "s" if overview.article_count != 1 else "" }} · vendor sources only</p>
+    <div class="overview-text">{{ overview.text | markdown }}</div>
+  </section>
+  {% endif %}
 
   {% if not vendor_updates and not press_updates %}
   <p>No updates yet.</p>
