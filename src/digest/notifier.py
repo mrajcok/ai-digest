@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 def post_discord_summary(stats: dict[str, dict[str, int]]) -> None:
     if not settings.discord_notify:
         return
-    lines = ["**Daily digest complete**"]
+    lines = ["**Daily AI digest complete**"]
     total_found = 0
     total_processed = 0
     for company, counts in stats.items():
