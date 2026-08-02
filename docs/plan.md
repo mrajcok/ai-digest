@@ -822,7 +822,7 @@ the prose before it goes on the front page.
   follow-up — out of scope for this step, and the `daily_overview` table
   already retains full history if that's wanted later.
 
-## Step 8 — Pipeline stages, notifier
+## Step 8 — Pipeline stages, notifier — **done**
 
 ### Stages drop from four to three
 
@@ -858,6 +858,18 @@ Per-company counts come from the registry. Message shape:
 ```
 
 This is the **only** Discord integration. There is no bot to ask questions of.
+
+### Implementation Summary
+
+Completed 2026-08-02 01:57:15. The `VecClient`/`--stage vector` removal and the
+notifier's webhook-only cutover (dropping the `hermes` method,
+`discord_hermes_channel`, `discord_hermes_bin`) had already landed as part of
+Step 2d's cleanup — `main.py` and `notifier.py` had no vector or hermes code
+left to remove. The one gap: the webhook message header read `**Daily digest
+complete**` instead of the plan's `**Daily AI digest complete**` — fixed in
+`notifier.py`. Added `tests/test_notifier.py` (webhook message format,
+partial-failure count, `discord_notify=False` skip, unsupported-method skip)
+since no notifier test previously existed.
 
 ## Step 9 — Tests
 
