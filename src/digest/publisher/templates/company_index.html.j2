@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>{{ company | upper if company == 'xsiam' else company | capitalize }} News & Blog Posts</title>
+  <title>{{ company_label }} News & Blog Posts</title>
   <script>
     if (localStorage.getItem('theme') === 'light')
       document.documentElement.setAttribute('data-theme', 'light');
@@ -52,6 +52,7 @@
     h2.month { margin: 1.75rem 0 .75rem; font-size: 1rem; color: var(--month-color); text-transform: uppercase; letter-spacing: .05em; border-bottom: 1px solid var(--border-subtle); padding-bottom: .25rem; }
     .card { border: 1px solid var(--border); border-radius: 6px; padding: 1rem 1.25rem; margin-bottom: .75rem; background: var(--surface); }
     .meta { font-size: .85rem; color: var(--text-2); margin-bottom: .4rem; }
+    .meta .source { font-weight: 600; color: var(--text); }
     .card h3 { margin: .2rem 0 .5rem; font-size: 1rem; }
     .card h3 a { color: var(--link); text-decoration: none; }
     .card h3 a:hover { color: var(--link-hover); text-decoration: underline; }
@@ -78,10 +79,10 @@
       <span class="toggle-icon" id="theme-icon">☀</span>
     </label>
   </div>
-  <h1>{{ company | upper if company == 'xsiam' else company | capitalize }} News & Blog Posts</h1>
+  <h1>{{ company_label }} News & Blog Posts</h1>
   <p class="generated-at">Generated {{ generated_at }}</p>
   {% if article_count >= company_page_limit %}
-  <p class="index-hint">Showing the most recent {{ article_count }} articles — older articles are searchable in the vector database.</p>
+  <p class="index-hint">Showing the most recent {{ article_count }} articles.</p>
   {% endif %}
 
   {% for month_label, records in grouped %}
@@ -89,6 +90,7 @@
   {% for r in records %}
   <div class="card">
     <div class="meta">
+      {% if multi_source %}<span class="source">{{ r.source | source_label }}</span> · {% endif %}
       <span>{{ r.category | replace("_", " ") }}</span>
       {% if r.published_date %}<span> · {{ r.published_date }}</span>{% endif %}
     </div>

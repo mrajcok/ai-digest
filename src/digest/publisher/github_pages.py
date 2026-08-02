@@ -13,7 +13,7 @@ from jinja2 import Environment, FileSystemLoader
 from markupsafe import Markup
 
 from digest.sources import COMPANIES as COMPANY_REGISTRY
-from digest.sources import company_keys
+from digest.sources import company_keys, source_label
 from digest.storage.db import ArticleDB
 from digest.storage.models import ArticleRecord, ScrapedPage
 
@@ -78,6 +78,7 @@ class GitHubPagesPublisher:
         )
         self._env.filters["markdown"] = lambda text: Markup(md.markdown(_fix_inline_bullets(text or "")))
         self._env.filters["plaintitle"] = lambda text: html_module.unescape(re.sub(r"<[^>]+>", "", text or ""))
+        self._env.filters["source_label"] = source_label
 
     def publish(self, scraper_infos: list[dict] | None = None) -> None:
         all_records = self._db.get_all()
@@ -168,9 +169,14 @@ class GitHubPagesPublisher:
 
         index_tmpl = self._env.get_template("index.html.j2")
         from digest.config import settings
+        vendor_updates = [r for r in top_updates if COMPANY_REGISTRY[r.company].group == "vendor"]
+        press_updates = [r for r in top_updates if COMPANY_REGISTRY[r.company].group == "press"]
         files["index.html"] = index_tmpl.render(
-            updates=top_updates,
+            vendor_updates=vendor_updates,
+            press_updates=press_updates,
+            company_labels={c: COMPANY_REGISTRY[c].label for c in COMPANIES},
             index_per_company=settings.index_per_company,
+            index_per_company_press=settings.index_per_company_press,
             generated_at=datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d %I:%M %p %Z"),
             scraper_infos=scraper_infos or [],
         )
@@ -180,6 +186,8 @@ class GitHubPagesPublisher:
             grouped = _group_by_month(records)
             files[f"{company}/index.html"] = company_tmpl.render(
                 company=company,
+                company_label=COMPANY_REGISTRY[company].label,
+                multi_source=len(COMPANY_REGISTRY[company].sources) > 1,
                 grouped=grouped,
                 article_count=len(records),
                 company_page_limit=settings.company_page_limit,
