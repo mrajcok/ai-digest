@@ -47,7 +47,7 @@ def _assert_model_available(model_id: str) -> None:
     # has working providers (listed models can still have no active providers).
     try:
         resp = httpx.post(
-            "https://openrouter.ai/api/v1/chat/completions",
+            f"{settings.openrouter_base_url}/chat/completions",
             headers={"Authorization": f"Bearer {settings.openrouter_api_key}"},
             json={"model": model_id, "max_tokens": 1, "messages": [{"role": "user", "content": "hi"}]},
             timeout=15.0,
@@ -148,6 +148,11 @@ def _build_scrapers(site: str | None) -> list:
     return [_SCRAPER_CLASSES[key]() for key in keys]
 
 
+def _close_scrapers(scrapers: list) -> None:
+    for scraper in scrapers:
+        scraper.close()
+
+
 def _scraper_infos(scrapers: list) -> list[dict]:
     return [{"company": s.company, "sources": s.sources, "exclusions": s.exclusions} for s in scrapers]
 
@@ -199,6 +204,7 @@ def _run_scrape(args: argparse.Namespace, db: ArticleDB) -> None:
 
     publisher = GitHubPagesPublisher(db)
     publisher.render_scrape_preview(all_pages, _DRY_RUN_DIR, _scraper_infos(scrapers))
+    _close_scrapers(scrapers)
 
 
 def _run_summarize(args: argparse.Namespace, db: ArticleDB) -> None:
@@ -233,7 +239,11 @@ def _run_summarize(args: argparse.Namespace, db: ArticleDB) -> None:
         for i, page in enumerate(pages, 1):
             logger.info("[stage:summarize] [%d/%d] summarizing %s via %s", i, len(pages), page.url, backend)
             t0 = time.monotonic()
-            summary = summarizer.summarize(page)
+            try:
+                summary = summarizer.summarize(page)
+            except Exception:
+                logger.warning("[stage:summarize] %s: failed — skipping", page.url)
+                continue
             logger.info(
                 "[stage:summarize] [%d/%d] done in %.1fs — input %d chars, output %d chars",
                 i, len(pages), time.monotonic() - t0, len(page.raw_text), len(summary),
@@ -250,25 +260,32 @@ def _run_summarize(args: argparse.Namespace, db: ArticleDB) -> None:
 
     publisher = GitHubPagesPublisher(db)
     publisher.render_summary_preview(records, _DRY_RUN_DIR, _scraper_infos(scrapers))
+    _close_scrapers(scrapers)
 
 
 def _run_overview(args: argparse.Namespace, db: ArticleDB) -> None:
     _assert_model_available(settings.openrouter_stage_summarization_model or settings.openrouter_summarization_model)
     _generate_overview(db, stage=True)
+    scrapers = _build_scrapers(args.site)
     publisher = GitHubPagesPublisher(db)
-    publisher.render_from_db(_DRY_RUN_DIR, _scraper_infos(_build_scrapers(args.site)), limit=args.limit)
+    publisher.render_from_db(_DRY_RUN_DIR, _scraper_infos(scrapers), limit=args.limit)
+    _close_scrapers(scrapers)
     logger.info("[stage:overview] HTML written to %s — review, then run --publish", _DRY_RUN_DIR)
 
 
 def _run_render(args: argparse.Namespace, db: ArticleDB) -> None:
+    scrapers = _build_scrapers(args.site)
     publisher = GitHubPagesPublisher(db)
-    publisher.render_from_db(_DRY_RUN_DIR, _scraper_infos(_build_scrapers(args.site)), limit=args.limit)
+    publisher.render_from_db(_DRY_RUN_DIR, _scraper_infos(scrapers), limit=args.limit)
+    _close_scrapers(scrapers)
     logger.info("[stage:render] HTML written to %s — review, then run --publish", _DRY_RUN_DIR)
 
 
 def _run_publish(args: argparse.Namespace, db: ArticleDB) -> None:
+    scrapers = _build_scrapers(args.site)
     publisher = GitHubPagesPublisher(db)
-    publisher.publish(_scraper_infos(_build_scrapers(args.site)))
+    publisher.publish(_scraper_infos(scrapers))
+    _close_scrapers(scrapers)
 
 
 def _run_full_pipeline(args: argparse.Namespace, db: ArticleDB) -> None:
@@ -317,6 +334,7 @@ def _run_full_pipeline(args: argparse.Namespace, db: ArticleDB) -> None:
     else:
         logger.info("No new updates — skipping publish")
 
+    _close_scrapers(scrapers)
     post_discord_summary(stats)
 
 
@@ -421,7 +439,11 @@ def main() -> None:
         except ValueError:
             logger.error("--since must be YYYY-MM-DD, got: %s", args.since)
             sys.exit(1)
-        settings.max_article_age_days = (datetime.now(UTC).date() - since_date).days
+        age_days = (datetime.now(UTC).date() - since_date).days
+        if age_days < 0:
+            logger.error("--since date %s is in the future", args.since)
+            sys.exit(1)
+        settings.max_article_age_days = age_days
         logger.info("Cutoff overridden to %s (%d days)", since_date, settings.max_article_age_days)
 
     logger.info("Starting ai-digest (stage=%s, site=%s)", args.stage, args.site)

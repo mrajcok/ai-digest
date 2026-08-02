@@ -920,11 +920,52 @@ out — a regression check against feed-shape drift that the hand-built
 fixtures in `test_company_scrapers.py` can't catch. All 151 tests pass;
 `make lint` and `make lint-sh` are clean.
 
-## Step 10 — Review
+## Step 10 — Review — **done**
 
 Use Opus to review the code and notes.
 Fix any bugs found.
 Update any out-of-date information in `INSTALL.md` and `README.md`. 
+
+### Implementation Summary
+
+Completed 2026-08-02 02:09:29. An Opus subagent reviewed all of `src/digest/`
+against the conventions in `CLAUDE.md`. Fixed the verified bugs:
+
+- **`scrapers/base.py`** — `_process_url` now retries a URL unconditionally
+  whenever the existing DB record has an empty `summary` (e.g. left behind by
+  `--stage scrape` without a follow-up `--stage summarize`), instead of
+  letting `pre_check`'s freshness check skip it forever. Previously such a
+  record was permanently poisoned: `last_scraped_at` was set to "now" with no
+  summary, so it silently dropped out of the digest for good.
+- **`summarizer/__init__.py`** — `summarize()` now re-raises after retries are
+  exhausted instead of returning `raw_text[:300]` as a fake summary. That
+  fallback text was persisted with the article's real content hash, so
+  `should_process()` treated it as already-summarized and the article was
+  never retried after a transient OpenRouter outage. `main.py`'s
+  `_run_summarize` stage loop now wraps the call in try/except to skip a
+  failed page and continue (matching the pattern `_run_full_pipeline` already
+  used).
+- **`main.py`** — `_assert_model_available` now probes
+  `settings.openrouter_base_url` instead of a hardcoded OpenRouter URL, so
+  `OPENROUTER_BASE_URL` (documented for pointing at a proxy) is actually
+  honored by the preflight check.
+- **`main.py`** — the non-`--count` `--since` path now rejects a future date
+  the same way `_run_count` already did, instead of silently producing a
+  negative `max_article_age_days` and dropping every article.
+- **`main.py`** — every code path that builds scrapers now closes their
+  `httpx.Client`s (`_close_scrapers` helper), not just `_run_count`.
+- **`publisher/github_pages.py`** — the "Generated" timestamp used a
+  hardcoded `ZoneInfo("America/New_York")`, contradicting the "UTC-only end
+  to end" rule in `CLAUDE.md`; switched both call sites to `UTC`.
+
+Added regression tests: `tests/test_base_scraper.py` (empty-summary retry
+behavior) and a new case in `tests/test_summarizer.py` (exhausted-retry
+raises instead of returning fallback text). 154 tests pass, `make lint` and
+`make lint-sh` are clean.
+
+`INSTALL.md` and `README.md` were checked against the fixes above — neither
+referenced the old fallback/timezone/URL behavior, so no doc changes were
+needed.
 
 ## Step 11 — Deployment
 

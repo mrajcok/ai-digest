@@ -200,12 +200,12 @@ class Summarizer:
             ):
                 with attempt:
                     return self._chain.invoke(inputs)
-        except Exception as exc:
-            logger.error(
-                "Summarization failed after %d attempts (%s) — using raw text fallback",
-                settings.max_api_retries, exc,
+        except Exception:
+            logger.exception(
+                "Summarization failed after %d attempts for %s — leaving unprocessed for retry",
+                settings.max_api_retries, page.url,
             )
-            return page.raw_text[:300]
+            raise
         raise AssertionError("unreachable")
 
     def summarize_day(self, records: list[ArticleRecord]) -> str:
