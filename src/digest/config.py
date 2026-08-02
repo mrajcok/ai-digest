@@ -34,6 +34,7 @@ class Settings(BaseSettings):
     max_article_age_days: int = 30
     index_page_limit: int = 10  # kept for backward compat; no longer used for index page layout
     index_per_company: int = 3
+    index_per_company_press: int = 1  # lower cap for press companies (Step 6)
     company_page_limit: int = 30  # max articles shown on each company page
     max_api_retries: int = 5
     summarizer_content_chars: int = 15000

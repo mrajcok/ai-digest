@@ -553,7 +553,9 @@ dict. 12 new tests in `tests/test_company_scrapers.py`, suite now 119.
   `digest.main` and instantiating with `site=None` and `site="mistral"` both
   produce the expected scraper lists.
 
-## Step 6 — Volume control
+## Step 6 — Volume control — **done**
+
+Completed 2026-08-02 01:26:19.
 
 TechCrunch alone is ~15 articles/day, more than all seven vendor sources
 combined. Without this step the index page and the Discord notification are both
@@ -568,6 +570,32 @@ dominated by press coverage.
 
 Cost: ~26 articles/day at `google/gemma-3-27b-it` rates is ~$0.005/day, about
 **$0.16/month**. With embeddings dropped, summarization is the only API spend.
+
+### Implementation Summary
+
+Items 1 and 2 were already in place from Steps 3/5: `daily_cap` is enforced in
+`FeedScraper._discover_source` (newest-first, TechCrunch 8 / Ars 5), and
+`Company.group` (`vendor` | `press`) is set in the registry and covered by
+`test_sources.py::test_groups_split_vendor_and_press` and
+`test_press_sources_are_capped`. Only item 3 needed code: added
+`index_per_company_press` (default `1`) to `config.py`, and made
+`_top_per_company` in `publisher/github_pages.py` group-aware — it looks up
+each company's group in the registry and applies the press cap instead of the
+vendor cap. All four call sites (`publish`, `render_from_db`,
+`render_scrape_preview`, `render_summary_preview`) now pass both settings.
+
+- Fixing this required renaming the registry import to `COMPANY_REGISTRY`
+  (`from digest.sources import COMPANIES as COMPANY_REGISTRY`) —
+  `github_pages.py` already had a module-level `COMPANIES = company_keys()`
+  (a list of keys, used for rendering order), which would have silently
+  shadowed a same-named dict import.
+- The index template's "split vendor and press sections" rendering is
+  explicitly Step 7 work (Step 6.2 in the plan text), so `index.html.j2` is
+  untouched here; the press cap just lowers how many press articles land in
+  the (still single) `updates` list passed to it.
+- Added `tests/test_github_pages.py` (new file — no publisher tests existed
+  yet) covering the group-aware cap. Documented `INDEX_PER_COMPANY_PRESS` in
+  README's config table alongside the existing `INDEX_PER_COMPANY` entry.
 
 ## Step 7 — Publisher
 
