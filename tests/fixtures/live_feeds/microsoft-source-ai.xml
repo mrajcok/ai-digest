@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>AI - Source</title>
+	<atom:link href="https://news.microsoft.com/source/topics/ai/feed/" rel="self" type="application/rss+xml" />
+	<link>https://news.microsoft.com/source/topics/ai/</link>
+	<description></description>
+	<lastBuildDate>Wed, 29 Jul 2026 14:10:56 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.9.5</generator>
+
+<image>
+	<url>https://news.microsoft.com/source/wp-content/uploads/2022/10/cropped-Microsoft_logo.svg_-300x300-1-128x120.png</url>
+	<title>AI - Source</title>
+	<link>https://news.microsoft.com/source/topics/ai/</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Fantasy Premier League Companion gives managers a new tool for success</title>
+		<link>https://news.microsoft.com/source/emea/features/fantasy-premier-league-companion-gives-managers-a-new-tool-for-success/</link>
+		
+		<dc:creator><![CDATA[sbaynes]]></dc:creator>
+		<pubDate>Mon, 27 Jul 2026 14:56:09 +0000</pubDate>
+				<category><![CDATA[AI]]></category>
+		<guid isPermaLink="false">https://news.microsoft.com/source/?p=25284</guid>
+
+					<description><![CDATA[<p>The post <a href="https://news.microsoft.com/source/emea/features/fantasy-premier-league-companion-gives-managers-a-new-tool-for-success/">Fantasy Premier League Companion gives managers a new tool for success</a> appeared first on <a href="https://news.microsoft.com/source">Source</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<article id="single-25284" class="mssrc-posts font-- has--theme" data-clarity-region="article">
+	<div class="acf-innerblocks-container"></div>			<section class="post-tags">
+				<div class="post-tags__content wp-block-columns">
+					<div class="post-tags__header wp-block-column flex-basis-25 has-text-align-right">
+						<h4 class="sr-only">Tags: </h4>
+					</div>
+					<div class="post-tags__body wp-block-column flex-basis-60">
+						<ul class="post-tags__list"><li class="post-tags__item"><a href="https://news.microsoft.com/source/tag/ai/" class="kicker inline-block post__meta--tags">AI</a></li></ul>					</div>
+				</div>
+			</section>
+			</article><p>The post <a href="https://news.microsoft.com/source/emea/features/fantasy-premier-league-companion-gives-managers-a-new-tool-for-success/">Fantasy Premier League Companion gives managers a new tool for success</a> appeared first on <a href="https://news.microsoft.com/source">Source</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item><item>
+		<title>A new approach to AI data puts communities in charge</title>
+		<link>https://news.microsoft.com/signal/articles/a-new-approach-to-ai-data-puts-communities-in-charge/</link>
+		
+		<dc:creator><![CDATA[sbaynes]]></dc:creator>
+		<pubDate>Wed, 22 Jul 2026 15:12:02 +0000</pubDate>
+				<category><![CDATA[AI]]></category>
+		<category><![CDATA[Accessibility]]></category>
+		<category><![CDATA[Community partnerships]]></category>
+		<guid isPermaLink="false">https://news.microsoft.com/source/?p=25257</guid>
+
+					<description><![CDATA[<p>The post <a href="https://news.microsoft.com/signal/articles/a-new-approach-to-ai-data-puts-communities-in-charge/">A new approach to AI data puts communities in charge</a> appeared first on <a href="https://news.microsoft.com/source">Source</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<article id="single-25257" class="mssrc-posts font-- has--theme" data-clarity-region="article">
+	<div class="acf-innerblocks-container"></div>			<section class="post-tags">
+				<div class="post-tags__content wp-block-columns">
+					<div class="post-tags__header wp-block-column flex-basis-25 has-text-align-right">
+						<h4 class="sr-only">Tags: </h4>
+					</div>
+					<div class="post-tags__body wp-block-column flex-basis-60">
+						<ul class="post-tags__list"><li class="post-tags__item"><a href="https://news.microsoft.com/source/tag/accessibility/" class="kicker inline-block post__meta--tags">Accessibility</a></li><li class="post-tags__item"><a href="https://news.microsoft.com/source/tag/community-partnerships/" class="kicker inline-block post__meta--tags">Community partnerships</a></li></ul>					</div>
+				</div>
+			</section>
+			</article><p>The post <a href="https://news.microsoft.com/signal/articles/a-new-approach-to-ai-data-puts-communities-in-charge/">A new approach to AI data puts communities in charge</a> appeared first on <a href="https://news.microsoft.com/source">Source</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item><item>
+		<title>Microsoft expands Azure AI and HPC infrastructure with AMD</title>
+		<link>https://blogs.microsoft.com/blog/2026/07/20/microsoft-expands-azure-ai-and-hpc-infrastructure-with-amd/</link>
+		
+		<dc:creator><![CDATA[Vanessa Ho]]></dc:creator>
+		<pubDate>Mon, 20 Jul 2026 18:20:47 +0000</pubDate>
+				<category><![CDATA[AI]]></category>
+		<guid isPermaLink="false">https://news.microsoft.com/source/?p=25237</guid>
+
+					<description><![CDATA[<p>The post <a href="https://blogs.microsoft.com/blog/2026/07/20/microsoft-expands-azure-ai-and-hpc-infrastructure-with-amd/">Microsoft expands Azure AI and HPC infrastructure with AMD</a> appeared first on <a href="https://news.microsoft.com/source">Source</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<article id="single-25237" class="mssrc-posts font-- has--theme" data-clarity-region="article">
+	<div class="acf-innerblocks-container"></div>			<section class="post-tags">
+				<div class="post-tags__content wp-block-columns">
+					<div class="post-tags__header wp-block-column flex-basis-25 has-text-align-right">
+						<h4 class="sr-only">Tags: </h4>
+					</div>
+					<div class="post-tags__body wp-block-column flex-basis-60">
+						<ul class="post-tags__list"><li class="post-tags__item"><a href="https://news.microsoft.com/source/tag/ai/" class="kicker inline-block post__meta--tags">AI</a></li></ul>					</div>
+				</div>
+			</section>
+			</article><p>The post <a href="https://blogs.microsoft.com/blog/2026/07/20/microsoft-expands-azure-ai-and-hpc-infrastructure-with-amd/">Microsoft expands Azure AI and HPC infrastructure with AMD</a> appeared first on <a href="https://news.microsoft.com/source">Source</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item><item>
+		<title>New AI-powered library lets people meet Theodore Roosevelt in a whole new way </title>
+		<link>https://news.microsoft.com/signal/articles/ai-theodore-roosevelt-presidential-library/</link>
+		
+		<dc:creator><![CDATA[sbaynes]]></dc:creator>
+		<pubDate>Wed, 01 Jul 2026 15:35:36 +0000</pubDate>
+				<category><![CDATA[AI]]></category>
+		<guid isPermaLink="false">https://news.microsoft.com/source/?p=25171</guid>
+
+					<description><![CDATA[<p>The post <a href="https://news.microsoft.com/signal/articles/ai-theodore-roosevelt-presidential-library/">New AI-powered library lets people meet Theodore Roosevelt in a whole new way </a> appeared first on <a href="https://news.microsoft.com/source">Source</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<article id="single-25171" class="mssrc-posts font-- has--theme" data-clarity-region="article">
+	<div class="acf-innerblocks-container"></div>			<section class="post-tags">
+				<div class="post-tags__content wp-block-columns">
+					<div class="post-tags__header wp-block-column flex-basis-25 has-text-align-right">
+						<h4 class="sr-only">Tags: </h4>
+					</div>
+					<div class="post-tags__body wp-block-column flex-basis-60">
+						<ul class="post-tags__list"><li class="post-tags__item"><a href="https://news.microsoft.com/source/tag/ai/" class="kicker inline-block post__meta--tags">AI</a></li></ul>					</div>
+				</div>
+			</section>
+			</article><p>The post <a href="https://news.microsoft.com/signal/articles/ai-theodore-roosevelt-presidential-library/">New AI-powered library lets people meet Theodore Roosevelt in a whole new way </a> appeared first on <a href="https://news.microsoft.com/source">Source</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item><item>
+		<title>Why don’t cancer medicines work the same for everyone? </title>
+		<link>https://news.microsoft.com/signal/articles/why-dont-cancer-medicines-work-the-same-for-everyone-ex-vivo/</link>
+		
+		<dc:creator><![CDATA[sbaynes]]></dc:creator>
+		<pubDate>Tue, 09 Jun 2026 15:05:35 +0000</pubDate>
+				<category><![CDATA[AI]]></category>
+		<category><![CDATA[Health]]></category>
+		<guid isPermaLink="false">https://news.microsoft.com/source/?p=25073</guid>
+
+					<description><![CDATA[<p>The post <a href="https://news.microsoft.com/signal/articles/why-dont-cancer-medicines-work-the-same-for-everyone-ex-vivo/">Why don’t cancer medicines work the same for everyone? </a> appeared first on <a href="https://news.microsoft.com/source">Source</a>.</p>
+]]></description>
+										<content:encoded><![CDATA[<article id="single-25073" class="mssrc-posts font-- has--theme" data-clarity-region="article">
+	<div class="acf-innerblocks-container"></div>			<section class="post-tags">
+				<div class="post-tags__content wp-block-columns">
+					<div class="post-tags__header wp-block-column flex-basis-25 has-text-align-right">
+						<h4 class="sr-only">Tags: </h4>
+					</div>
+					<div class="post-tags__body wp-block-column flex-basis-60">
+						<ul class="post-tags__list"><li class="post-tags__item"><a href="https://news.microsoft.com/source/tag/health/" class="kicker inline-block post__meta--tags">Health</a></li></ul>					</div>
+				</div>
+			</section>
+			</article><p>The post <a href="https://news.microsoft.com/signal/articles/why-dont-cancer-medicines-work-the-same-for-everyone-ex-vivo/">Why don’t cancer medicines work the same for everyone? </a> appeared first on <a href="https://news.microsoft.com/source">Source</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>
