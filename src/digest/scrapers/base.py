@@ -1,5 +1,6 @@
 import json
 import logging
+import re
 import time
 from abc import ABC, abstractmethod
 from datetime import UTC, date, datetime, timedelta
@@ -17,6 +18,42 @@ __all__ = ["BaseScraper", "Category"]
 logger = logging.getLogger(__name__)
 
 _RETRY_STATUSES = {429, 500, 502, 503, 504}
+
+_MONTHS = {
+    "jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6,
+    "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12,
+}
+
+# "Mar 8, 2023" / "October 16, 2025" — the byline format sites render for humans.
+_VISIBLE_DATE_RE = re.compile(
+    r"(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+(\d{1,2}),\s*(20\d{2})",
+    re.IGNORECASE,
+)
+
+
+def _normalize_date(raw: str) -> str | None:
+    """Any date string we scrape → `YYYY-MM-DD`, or None if it is not a date.
+
+    Returning None rather than a mangled prefix matters: JSON-LD `datePublished`
+    is not always ISO 8601 (claude.com emits `"Oct 16, 2025"`), and truncating
+    that to 10 characters yields `"Oct 16, 20"` — a value no later parse can
+    reject. Callers fall through to their next date source instead.
+    """
+    raw = raw.strip()
+    if not raw:
+        return None
+    try:
+        return datetime.fromisoformat(raw.replace("Z", "+00:00")).date().isoformat()
+    except ValueError:
+        pass
+    match = _VISIBLE_DATE_RE.fullmatch(raw)
+    if match is None:
+        return None
+    month, day, year = match.groups()
+    try:
+        return date(int(year), _MONTHS[month.lower()], int(day)).isoformat()
+    except ValueError:
+        return None
 
 
 def _is_too_old(published_date: str | None, cutoff: date) -> bool:
@@ -210,7 +247,11 @@ class BaseScraper(ABC):
 
     @staticmethod
     def extract_date(soup: BeautifulSoup) -> str | None:
-        """JSON-LD datePublished → article:published_time → <time datetime>, as YYYY-MM-DD."""
+        """JSON-LD datePublished → article:published_time → <time datetime>, as YYYY-MM-DD.
+
+        A source that holds something unparseable is skipped, not returned — see
+        `_normalize_date`.
+        """
         # JSON-LD is the most reliable source on modern SSR/SPA article pages.
         for script in soup.find_all("script", type="application/ld+json"):
             try:
@@ -222,15 +263,32 @@ class BaseScraper(ABC):
                     continue
                 for key in ("datePublished", "dateCreated"):
                     val = candidate.get(key)
-                    if val:
-                        return str(val)[:10]
+                    if val and (normalized := _normalize_date(str(val))):
+                        return normalized
         for prop in ("article:published_time", "og:article:published_time"):
             meta = soup.find("meta", property=prop)
-            if meta and meta.get("content"):
-                return str(meta["content"])[:10]
+            if meta and meta.get("content") and (normalized := _normalize_date(str(meta["content"]))):
+                return normalized
         time_tag = soup.find("time", attrs={"datetime": True})
-        if time_tag:
-            return str(time_tag["datetime"])[:10]
+        if time_tag and (normalized := _normalize_date(str(time_tag["datetime"]))):
+            return normalized
+        return None
+
+    @staticmethod
+    def extract_visible_date(soup: BeautifulSoup) -> str | None:
+        """First text node that is *only* a `Mon D, YYYY` date, as YYYY-MM-DD.
+
+        The last resort for pages that render a byline date but expose no
+        machine-readable equivalent (every www.anthropic.com post). Requiring the
+        node to be nothing but the date is what makes this safe: prose such as
+        "applications close on January 20, 2025" is skipped, and article headers
+        precede body copy in document order, so the first hit is the byline.
+        """
+        for text in soup.find_all(string=_VISIBLE_DATE_RE):
+            if text.parent is not None and text.parent.name in ("script", "style"):
+                continue
+            if normalized := _normalize_date(str(text)):
+                return normalized
         return None
 
     def close(self) -> None:

@@ -185,18 +185,66 @@ As of 2026-05-30, evaluated by Claude Sonnet 4.6.
 
 ## Usage
 
+`uv run digest` with no arguments runs the full pipeline: scrape → summarize →
+generate the daily overview → publish to GitHub Pages.
+
+### All options
+
+| Option | Values | Description |
+|---|---|---|
+| `--count` | flag | Discover and count URLs only — no fetching of article pages, no DB writes, no LLM calls. Prints a per-company total with a category breakdown. |
+| `--stage` | `scrape`, `summarize`, `overview`, `render` | Run one pipeline stage and write preview HTML to `data/dry-run/` instead of publishing. See below. |
+| `--publish` | flag | Rebuild the whole site from the DB and push it to GitHub Pages. No scraping, no summarizing. |
+| `--site` | `anthropic`, `openai`, `google`, `microsoft`, `aws`, `mistral`, `techcrunch`, `arstechnica` | Restrict to one company (default: all). Keys come from `src/digest/sources.py`. |
+| `--since` | `YYYY-MM-DD` | Override the article age cutoff, replacing `MAX_ARTICLE_AGE_DAYS`. Works with every command. |
+| `--limit` | `N` | Max articles per company. Default `1` for `--stage scrape` and `--stage summarize`; all for `--stage render`/`overview`. Ignored by the full pipeline and `--count`. |
+| `--category` | `blog`, `research`, `engineering`, `news`, `press_release`, `product`, `release_notes` | Filter to one category. **Only honored by `--stage scrape` and `--stage summarize`** — the full pipeline, `--count`, `--render` and `--publish` ignore it. |
+
+`--count` short-circuits everything else, and `--publish` takes precedence over
+`--stage`.
+
+### Dry-run stages
+
+Each stage writes preview HTML to `data/dry-run/` and never pushes, so you can
+review the site before it goes live. They build on each other:
+
 ```bash
-uv run digest                   # full pipeline: scrape → summarize → publish
-uv run digest --site anthropic  # run only the Anthropic scraper (default: all)
-uv run digest --publish         # rebuild full site from DB and push to GitHub Pages
+uv run digest --count                       # 1. what would be discovered? no fetches at all
+uv run digest --stage scrape --limit 3      # 2. fetch + cache article text in the DB
+uv run digest --stage summarize --limit 1   # 3. LLM summaries from the cached text
+uv run digest --stage overview              # 4. regenerate today's "summary of summaries"
+uv run digest --stage render                # 5. full site preview from whatever is in the DB
+uv run digest --publish                     # 6. same render, pushed to gh-pages
+```
 
-# Count discoverable URLs without scraping or writing to the DB
-uv run digest --count                          # all companies, default 30-day window
-uv run digest --count --site openai            # one company
+`--stage summarize` and `--stage overview` call a real LLM and cost money — point
+`OPENROUTER_STAGE_SUMMARIZATION_MODEL` at a free-tier model while iterating.
+`--stage render` is free and hits no network: it is the fastest way to see what
+the published site would look like right now.
 
-# Override the article age cutoff for any command (overrides MAX_ARTICLE_AGE_DAYS)
-uv run digest --since 2026-01-01               # full pipeline back to Jan 1
-uv run digest --stage scrape --since 2026-01-01 --site microsoft   # backfill scrape
+### Examples
+
+```bash
+uv run digest --site anthropic                    # full pipeline, one company
+uv run digest --count --site openai               # discovery check, one company
+uv run digest --stage render --site anthropic     # preview just the Anthropic section
+uv run digest --stage scrape --limit 5 --category research   # scrape 5 research items per company
+
+# Backfill: --since widens the window for whatever command it accompanies
+uv run digest --since 2026-01-01                            # full pipeline back to Jan 1
+uv run digest --count --since 2026-01-01                    # how much would that pull in?
+uv run digest --stage scrape --since 2026-01-01 --site microsoft
+```
+
+### Logs
+
+`LOG_LEVEL=DEBUG` is what makes filtering decisions visible — every URL dropped
+by an age cutoff, an include/exclude pattern, or a category allowlist is logged
+at `DEBUG`, so a mis-tuned filter shows up as a log line rather than as silently
+missing articles.
+
+```bash
+LOG_LEVEL=DEBUG uv run digest --count --site anthropic
 ```
 
 ## Tests

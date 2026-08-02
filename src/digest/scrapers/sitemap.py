@@ -1,13 +1,24 @@
 """Sitemap scraper — docs/plan.md Step 4.
 
 Anthropic publishes no RSS feed, so it is scraped from `sitemap.xml` instead:
-a flat `<urlset>` of `<loc>`/`<lastmod>` pairs. `lastmod` is a genuine per-page
-timestamp (unlike Palo Alto's in the ported code, which reset daily), so it
-doubles as both the age-cutoff filter and a date fallback when the page itself
-has no extractable date.
+a flat `<urlset>` of `<loc>`/`<lastmod>` pairs.
+
+`lastmod` is a CMS *touch* timestamp, not a publication date — it mirrors the
+Sanity `_updatedAt` field, so a bulk migration restamps hundreds of old posts at
+once (on 2026-08-02, 30 articles going back to 2023 all read `2026-07-08`). It
+is therefore used only where being wrong in that direction is harmless:
+
+- as the discovery-time age filter, where it is an *upper* bound on the
+  publication date — too new never drops a genuinely new article, and the real
+  cutoff is re-applied in `BaseScraper.run()` against the extracted date;
+- in `pre_check()`, where a bumped `lastmod` is inconclusive and falls through
+  to the content-hash compare, so a restamp costs a fetch but not an LLM call;
+- as the `published_date` of last resort, with a warning, when the page itself
+  yields no date at all.
 
 Mirrors `scrapers/feed.py`'s shape: a pure `parse_sitemap()` for unit tests, a
 `*Meta` cache populated in `discover_urls()` and read by `scrape_page()`.
+
 """
 
 import logging
@@ -178,7 +189,12 @@ class SitemapScraper(BaseScraper):
         return kept
 
     def _keep(self, source: Source, entry: SitemapEntry, cutoff: date) -> bool:
-        """Apply the registry filters. Every drop is logged at DEBUG (CLAUDE.md)."""
+        """Apply the registry filters. Every drop is logged at DEBUG (CLAUDE.md).
+
+        The age check here is a cheap pre-filter only: `lastmod >= published`, so
+        dropping on it is safe, but keeping on it proves nothing. `run()` re-checks
+        the extracted date once the page has been fetched.
+        """
         if entry.lastmod is not None and entry.lastmod < cutoff:
             logger.debug(
                 "%s: %s older than cutoff %s (%s) %s",
@@ -187,6 +203,14 @@ class SitemapScraper(BaseScraper):
             return False
 
         haystack = entry.url.lower()
+
+        if source.include_patterns and not any(p.lower() in haystack for p in source.include_patterns):
+            logger.debug(
+                "%s: %s matched no include pattern %r — dropping %s",
+                self.company, source.key, source.include_patterns, entry.url,
+            )
+            return False
+
         for pattern in source.exclude_patterns:
             if pattern.lower() in haystack:
                 logger.debug(
@@ -211,9 +235,17 @@ class SitemapScraper(BaseScraper):
         soup = BeautifulSoup(html, "lxml")
         text = self.extract_text(html)
         title = self.extract_title(soup)
-        # The page rarely carries a machine-readable date (Anthropic's is
-        # client-rendered), so the sitemap's lastmod is the reliable fallback.
-        published_date = self.extract_date(soup) or (entry.lastmod.isoformat() if entry.lastmod else None)
+
+        published_date = self.extract_date(soup)
+        if published_date is None and entry.lastmod is not None:
+            # See the module docstring: lastmod tracks CMS edits, so this dates a
+            # 2023 post to whenever it was last migrated. Warn — a site that stops
+            # rendering its dates should be visible, not silently mis-dated.
+            logger.warning(
+                "%s: no date on the page, falling back to sitemap lastmod (%s) %s",
+                self.company, entry.lastmod, url,
+            )
+            published_date = entry.lastmod.isoformat()
 
         if len(text) < _THIN_CONTENT_CHARS:
             logger.warning("%s: thin content (%d chars) at %s", self.company, len(text), url)

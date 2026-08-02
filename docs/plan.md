@@ -127,7 +127,7 @@ the registry declares categories from the widened set, and 2d was already done
 in Step 1. The suite is 52 tests, all offline. Still stubbed for Step 5:
 `_build_scrapers()` returns `[]`, so every stage is a no-op until scrapers exist.
 
-### 2a. `company` becomes a registry, not a `Literal` — **done**
+### Step 2.1 - `company` becomes a registry, not a `Literal` — **done**
 
 `storage/models.py` currently pins `company: Literal["cribl", "ocient", "xsiam"]`
 in each model. With eight companies — two of which have multiple feeds — that
@@ -173,7 +173,7 @@ allowlist cannot filter the press feeds** — every TechCrunch and Ars item carr
 the `AI` tag, including the off-topic ones, so the press allowlist is only a
 sanity gate and `daily_cap` does the real work.
 
-### 2b. `storage/models.py` — add `source`, drop `ProductUpdate` — **done**
+### Step 2.2 - `storage/models.py` — add `source`, drop `ProductUpdate` — **done**
 
 Built as specified, with one deviation: `source` defaults to `""` rather than
 being required, so this change lands green on its own — `db.py` does not persist
@@ -197,7 +197,7 @@ group by source.
 **Keep** `normalize_url()` and the `content_hash` logic — both belong to
 deduplication, not retrieval.
 
-### 2c. `storage/db.py` — one new column — **done**
+### Step 2.3 - `storage/db.py` — one new column — **done**
 
 Add a `source` column: `CREATE TABLE`, `INSERT`, `SELECT`, and the row→model
 mapping. Drop `vec_id` from all four. Greenfield DB, so **no migration** — get
@@ -209,7 +209,7 @@ The empty `data/ai_digest.db` left over from Step 1 was deleted and recreated
 rather than migrated — `CREATE TABLE IF NOT EXISTS` would not have added the
 column to it.
 
-### 2d. `config.py` — remove retrieval settings — **done**
+### Step 2.4 - `config.py` — remove retrieval settings — **done**
 
 Deleted: `openrouter_embedding_model`, `embedding_dimensions`,
 `openrouter_rag_model`, `ollama_rag_model`, `max_source_text_chars`,
@@ -229,7 +229,7 @@ on first run. The cron log moves to `logs/last_run.log` for the same reason.
 Still open: `github_repo` default is `dummy/dummy` — harmless, since `.env` sets
 it, but change it if a real default is ever wanted.
 
-### 2e. Widen the `category` Literal — **done**
+### Step 2.5 - Widen the `category` Literal — **done**
 
 Current: `blog | press_release | product | release_notes`. AI sources need
 `research` (Anthropic, DeepMind), `engineering` (Anthropic), and `news`
@@ -243,7 +243,7 @@ categories that have to exist first. `Category` is now declared once in
 re-exports it and `main.py`'s `--category` choices read from it, so the Literal
 no longer appears in four places.
 
-### 2f. Rewrite the summarizer prompt — **done**
+### Step 2.6 - Rewrite the summarizer prompt — **done**
 
 `summarizer/__init__.py` was ported verbatim in Step 1, so its system prompt
 still reads *"a product intelligence analyst tracking two data-infrastructure
@@ -286,7 +286,7 @@ summary kept model, benchmark and algorithm names exact and preserved the post's
 hedges; the news summary opened "TechCrunch reports that…" rather than asserting
 the claim.
 
-### 2g. Longer summaries for firewall-blocked companies — **done**
+### Step 2.7. Longer summaries for firewall-blocked companies — **done**
 
 Some of these sites are blocked by a work firewall, so for them the summary is
 not a preview of the article — it is the only thing the reader will ever see. A
@@ -501,6 +501,42 @@ a `*Meta` cache from `discover_urls()` consumed by `scrape_page()`/`pre_check()`
   coarser than the feed's tz-aware datetime compare, since `lastmod` itself is
   daily-granularity for the age cutoff's purposes.
 
+### Step 4.1 — `lastmod` is not a publication date — **done**
+
+Completed 2026-08-02. Two claims above turned out to be wrong, and the first
+published digest showed it: hub pages and years-old posts appeared as new, and
+`/news/skills` (a product page that 301s to `claude.com/blog/skills`) ranked as
+a fresh article.
+
+- **"Anthropic's `lastmod` values are genuine per-page timestamps"** — they are
+  the CMS `_updatedAt`, so a migration restamps the archive. On 2026-08-02, 77
+  URLs passed a 30-day `lastmod` cutoff and only **22** were genuinely that
+  recent; 30 posts going back to March 2023 all read `2026-07-08`.
+- **"the date lives only in a client-rendered `publishedOn` field"** — it is
+  server-rendered as plain text in the post header (`Mar 8, 2023`). The earlier
+  fixtures missed it because they had been flattened into a single text blob,
+  destroying the node; they are re-captured with the DOM intact.
+
+The fix keeps `lastmod` only where being too *new* is harmless — it is an upper
+bound on the publication date, so the discovery filter never drops a real
+article, and `pre_check`'s restamps fall through to the content-hash compare
+(costing a fetch, not an LLM call). The real cutoff is `BaseScraper.run()`'s
+existing `_is_too_old` check against the extracted date.
+
+- `BaseScraper.extract_visible_date()` — first text node that is *nothing but* a
+  `Mon D, YYYY` date. Requiring a whole-node match is what keeps prose like
+  "applications close on January 20, 2025" out; article headers precede body
+  copy, so the first hit is the byline. `AnthropicScraper.extract_date()` calls
+  it after the base JSON-LD/meta/`<time>` chain. Verified against 14 live pages
+  on 2026-08-02: 14 correct, 0 fallbacks.
+- `BaseScraper._normalize_date()` — every date source now normalizes to
+  `YYYY-MM-DD` or is **skipped**, instead of being truncated to 10 characters.
+  `claude.com` emits `"datePublished": "Oct 16, 2025"`, which the old
+  `str(val)[:10]` turned into the un-rejectable `"Oct 16, 20"`.
+- `SitemapScraper.scrape_page()` logs a **warning** when it still has to fall
+  back to `lastmod`, so a site that stops rendering its dates is visible rather
+  than silently mis-dated.
+
 ## Step 5 — Company scrapers — **done**
 
 Each is a thin subclass declaring its sources. Expected total: **~26
@@ -650,7 +686,7 @@ Anthropic's page has none), then added
 `::test_company_page_shows_source_badge_only_for_multi_source_companies` to
 cover it going forward.
 
-### 7a. — Daily overview ("summary of summaries") — **done**
+### Step 7.1 — Daily overview ("summary of summaries") — **done**
 
 Completed 2026-08-02 01:55:45.
 

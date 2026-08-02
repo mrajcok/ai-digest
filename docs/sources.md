@@ -28,13 +28,21 @@ Estimated total: **~26 articles/day**, dominated by the two press sources.
 
 ### Anthropic — sitemap only
 There is no RSS feed. `www.anthropic.com/rss.xml` and `/news/rss.xml` both 404.
-The sitemap is a flat `urlset` with genuine per-URL `lastmod` timestamps (not
-reset daily the way Palo Alto's is), so the `MAX_ARTICLE_AGE_DAYS` pre-filter
-works directly off `lastmod`. This is structurally the same as the Cribl
-scraper in `product-update-digest`.
+The sitemap is a flat `urlset`, structurally the same as the Cribl scraper in
+`product-update-digest`.
 
-Suggested category mapping: `/news/` → `news`, `/research/` → `research`,
-`/engineering/` → `engineering`. Exclude `/legal/`, `/careers/`, `/events/`.
+`lastmod` is **not** a publication date — it is the CMS `_updatedAt`, so a bulk
+edit restamps hundreds of old posts at once. Measured 2026-08-02: 77 URLs passed
+a 30-day `lastmod` cutoff, but only 22 were actually published in that window;
+`/news/core-views-on-ai-safety` (March 2023) read `2026-07-08`. Treat `lastmod`
+as an upper bound for the cheap discovery pre-filter and get the real date off
+the page — see `scrapers/sitemap.py` and `scrapers/anthropic.py`.
+
+Category mapping: `/news/` → `news`, `/research/` → `research`, `/engineering/`
+→ `engineering`; `include_patterns` restricts discovery to exactly those three,
+because every other section is an evergreen page that gets restamped on each
+site rebuild. Note some `/news/` posts 301 to `claude.com/blog/…` product pages
+(e.g. `/news/skills`); those are excluded by date, not by pattern.
 
 ### OpenAI — the category tags are usable after all
 `openai.com/blog/rss.xml` redirects to the same feed. `pubDate` is reliable.

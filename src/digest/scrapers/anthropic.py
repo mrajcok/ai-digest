@@ -2,6 +2,9 @@
 
 from typing import ClassVar
 
+from bs4 import BeautifulSoup
+
+from digest.scrapers.base import BaseScraper
 from digest.scrapers.sitemap import SitemapScraper
 from digest.storage.models import Category
 
@@ -13,3 +16,12 @@ class AnthropicScraper(SitemapScraper):
         "/research/": "research",
         "/engineering/": "engineering",
     }
+
+    @staticmethod
+    def extract_date(soup: BeautifulSoup) -> str | None:
+        """Anthropic posts carry no JSON-LD, no meta date, and no `<time>` tag — the
+        publication date exists only as text in the post header, so fall through to
+        `extract_visible_date`. The base implementation still runs first because
+        `/news/` posts that redirect to claude.com do emit JSON-LD.
+        """
+        return BaseScraper.extract_date(soup) or BaseScraper.extract_visible_date(soup)

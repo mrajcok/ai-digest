@@ -7,6 +7,7 @@ rather than a hand-built one — see the Step 4 note about Cribl's JSON-LD-first
 extraction not applying here.
 """
 
+import logging
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
@@ -18,6 +19,7 @@ from digest.config import settings
 from digest.scrapers.anthropic import AnthropicScraper
 from digest.scrapers.sitemap import SitemapScraper, parse_sitemap
 from digest.sources import Source
+from digest.storage.db import ArticleDB
 from digest.storage.models import ArticleRecord
 
 FIXTURES = Path(__file__).parent / "fixtures" / "sitemap"
@@ -86,6 +88,7 @@ def test_parses_urlset() -> None:
         "https://www.anthropic.com/legal/acst-disclosure",
         "https://www.anthropic.com/careers",
         "https://www.anthropic.com/news/100k-context-windows",
+        "https://www.anthropic.com/news/core-views-on-ai-safety",
         "https://www.anthropic.com/research/a-general-language-assistant-as-a-laboratory-for-alignment",
         "https://www.anthropic.com/engineering/building-effective-agents",
         "https://www.anthropic.com/news/ancient-news-item",
@@ -153,6 +156,23 @@ def test_exclude_patterns_match_the_url(wide_window) -> None:
 
     assert urls == [
         "https://www.anthropic.com/news/100k-context-windows",
+        "https://www.anthropic.com/news/core-views-on-ai-safety",
+        "https://www.anthropic.com/research/a-general-language-assistant-as-a-laboratory-for-alignment",
+        "https://www.anthropic.com/engineering/building-effective-agents",
+        "https://www.anthropic.com/news/ancient-news-item",
+    ]
+
+
+@respx.mock
+def test_include_patterns_drop_urls_matching_none(wide_window) -> None:
+    src = _source(include_patterns=("/news/", "/research/", "/engineering/"))
+    respx.get(src.url).mock(return_value=httpx.Response(200, text=_fixture("anthropic_sitemap.xml")))
+
+    urls = [u for u, _ in _scraper(src).discover_urls()]
+
+    assert urls == [
+        "https://www.anthropic.com/news/100k-context-windows",
+        "https://www.anthropic.com/news/core-views-on-ai-safety",
         "https://www.anthropic.com/research/a-general-language-assistant-as-a-laboratory-for-alignment",
         "https://www.anthropic.com/engineering/building-effective-agents",
         "https://www.anthropic.com/news/ancient-news-item",
@@ -173,8 +193,8 @@ def test_category_map_assigns_by_path_prefix(wide_window) -> None:
         == "research"
     )
     assert urls["https://www.anthropic.com/engineering/building-effective-agents"] == "engineering"
-    # No path-prefix match falls back to the source's own category.
-    assert urls["https://www.anthropic.com/careers"] == "news"
+    # Outside the registry's include_patterns (/news/, /research/, /engineering/), so dropped.
+    assert "https://www.anthropic.com/careers" not in urls
 
 
 @respx.mock
@@ -191,9 +211,9 @@ def test_sitemap_fetch_failure_does_not_raise(monkeypatch: pytest.MonkeyPatch, w
 
 
 @respx.mock
-def test_scrape_page_uses_lastmod_when_page_has_no_date(wide_window) -> None:
-    """Anthropic's date is client-rendered — no JSON-LD, meta, or <time> tag on the
-    saved page — so the sitemap's lastmod is the only date source."""
+def test_scrape_page_reads_the_date_rendered_in_the_post_header(wide_window) -> None:
+    """Anthropic exposes no JSON-LD, meta date, or <time> tag — the date is plain
+    text in the header, and it disagrees with lastmod (2025-05-02)."""
     respx.get("https://www.anthropic.com/sitemap.xml").mock(
         return_value=httpx.Response(200, text=_fixture("anthropic_sitemap.xml"))
     )
@@ -207,7 +227,7 @@ def test_scrape_page_uses_lastmod_when_page_has_no_date(wide_window) -> None:
 
     assert page is not None
     assert page.title == "Introducing 100K Context Windows"
-    assert page.published_date == "2025-05-02"  # from lastmod, not the page
+    assert page.published_date == "2023-05-11"
     assert page.category == "news"
     assert len(page.raw_text) > 200
 
@@ -226,8 +246,65 @@ def test_scrape_page_research_article(wide_window) -> None:
 
     assert page is not None
     assert page.title == "A General Language Assistant as a Laboratory for Alignment"
-    assert page.published_date == "2024-12-19"
+    assert page.published_date == "2021-12-01"  # lastmod says 2024-12-19
     assert page.category == "research"
+
+
+@respx.mock
+def test_restamped_article_keeps_its_real_publication_date(wide_window) -> None:
+    """The lastmod problem: Anthropic's 2026-07-08 CMS migration restamped ~30 posts
+    going back to 2023. The page still renders the real date, so use that."""
+    respx.get("https://www.anthropic.com/sitemap.xml").mock(
+        return_value=httpx.Response(200, text=_fixture("anthropic_sitemap.xml"))
+    )
+    url = "https://www.anthropic.com/news/core-views-on-ai-safety"
+    respx.get(url).mock(return_value=httpx.Response(200, text=_fixture("anthropic_news_restamped.html")))
+
+    scraper = AnthropicScraper()
+    scraper.discover_urls()
+    page = scraper.scrape_page(url, "news")
+
+    assert page is not None
+    assert page.published_date == "2023-03-08"
+    assert scraper._sitemap_meta[url].entry.lastmod is not None
+    assert scraper._sitemap_meta[url].entry.lastmod.isoformat() == "2026-07-08"
+
+
+@respx.mock
+def test_restamped_article_is_dropped_by_the_post_fetch_age_check(
+    monkeypatch: pytest.MonkeyPatch, tmp_path
+) -> None:
+    """lastmod gets it past discovery; the extracted date gets it dropped in run()."""
+    monkeypatch.setattr(settings, "max_article_age_days", 30)
+    respx.get("https://www.anthropic.com/sitemap.xml").mock(
+        return_value=httpx.Response(200, text=_sitemap("https://www.anthropic.com/news/core-views-on-ai-safety"))
+    )
+    respx.get("https://www.anthropic.com/news/core-views-on-ai-safety").mock(
+        return_value=httpx.Response(200, text=_fixture("anthropic_news_restamped.html"))
+    )
+
+    scraper = AnthropicScraper()
+    scraper._sleep_between_requests = 0
+    assert len(scraper.discover_urls()) == 1
+    assert scraper.run(ArticleDB(":memory:")) == []
+
+
+@respx.mock
+def test_falls_back_to_lastmod_when_the_page_has_no_date_at_all(wide_window, caplog) -> None:
+    src = _source()
+    respx.get(src.url).mock(return_value=httpx.Response(200, text=_sitemap("https://example.com/a/")))
+    respx.get("https://example.com/a/").mock(
+        return_value=httpx.Response(200, text="<html><body><h1>T</h1><p>" + "x " * 200 + "</p></body></html>")
+    )
+
+    scraper = _scraper(src)
+    scraper.discover_urls()
+    with caplog.at_level(logging.WARNING):
+        page = scraper.scrape_page("https://example.com/a/", "news")
+
+    assert page is not None
+    assert page.published_date == _days_ago(1).date().isoformat()
+    assert "falling back to sitemap lastmod" in caplog.text
 
 
 def test_scrape_page_without_discovery_returns_none() -> None:

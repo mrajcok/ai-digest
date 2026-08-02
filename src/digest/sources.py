@@ -34,6 +34,7 @@ class Source:
     content_in_feed: bool = False               # True → skip the article fetch
     paginate: bool = False                      # True → ?paged=N supported for backfill
     include_categories: tuple[str, ...] = ()    # feed <category> allowlist; empty → keep all
+    include_patterns: tuple[str, ...] = ()      # URL path prefix allowlist; empty → keep all
     exclude_patterns: tuple[str, ...] = ()      # URL/title substrings to drop
     daily_cap: int | None = None                # max items per run, newest first
 
@@ -49,9 +50,14 @@ class Company:
 
 
 # Anthropic publishes no RSS feed (both /rss.xml candidates 404), so it is scraped
-# from the sitemap. `lastmod` values are genuine per-page timestamps, so the age
-# cutoff filters directly off them. Path prefix → category mapping lives in the
-# scraper (Step 4); these are the non-article prefixes to drop outright.
+# from the sitemap. `lastmod` there is a CMS edit timestamp, not a publication date
+# (see scrapers/sitemap.py), so a date cutoff alone lets evergreen hub pages
+# (/, /learn, /institute, /events, …) through looking "new" every time the site is
+# rebuilt. Restrict discovery to the three sections that are actually dated
+# articles — everything else is a landing/policy page.
+_ANTHROPIC_INCLUDES = ("/news/", "/research/", "/engineering/")
+
+# Belt-and-suspenders within those sections; unlikely to ever match but cheap to keep.
 _ANTHROPIC_EXCLUDES = (
     "/legal/", "/careers/", "/events/", "/claude/", "/product/", "/pricing/",
     "/customers/", "/partners/", "/supported-countries", "/contact-sales",
@@ -103,6 +109,7 @@ COMPANIES: dict[str, Company] = {
                 url="https://www.anthropic.com/sitemap.xml",
                 kind="sitemap",
                 category="news",
+                include_patterns=_ANTHROPIC_INCLUDES,
                 exclude_patterns=_ANTHROPIC_EXCLUDES,
             ),
         ),
