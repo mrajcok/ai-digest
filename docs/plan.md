@@ -597,7 +597,9 @@ vendor cap. All four call sites (`publish`, `render_from_db`,
   yet) covering the group-aware cap. Documented `INDEX_PER_COMPANY_PRESS` in
   README's config table alongside the existing `INDEX_PER_COMPANY` entry.
 
-## Step 7 — Publisher
+## Step 7 — Publisher — **done**
+
+Completed 2026-08-02 01:39:00.
 
 - `COMPANIES` list in `github_pages.py` comes from the registry (Step 2a).
 - `index.html.j2` — split vendor and press sections (Step 6.2).
@@ -611,6 +613,42 @@ vendor cap. All four call sites (`publish`, `render_from_db`,
 **Verify:** `--stage render` produces the full site into `data/dry-run/` for
 local review before anything is pushed. Confirm the source badges and the
 vendor/press split there.
+
+### Implementation Summary
+
+`index.html.j2` and `company_index.html.j2` were still the ported
+Cribl/Ocient/XSIAM templates (leftover title, three-vendor hint text, a
+"searchable in the vector database" line — this project has no vector store).
+Rewrote both:
+
+- `github_pages.py._render` now splits `top_updates` into `vendor_updates` /
+  `press_updates` (via `COMPANY_REGISTRY[...].group`) and passes both to
+  `index.html.j2`, which renders them as two headed sections through a shared
+  `card()` macro. Also passes `company_labels` (registry label per key) so the
+  template no longer guesses display names from the key string.
+- Added one badge color per company key (8 total) replacing the 3 hardcoded
+  Cribl/Ocient/XSIAM badges.
+- `company_index.html.j2` gets a `multi_source` flag
+  (`len(COMPANY_REGISTRY[company].sources) > 1`, true only for google and
+  microsoft) and renders a `source_label`-filtered badge per card only when
+  true; single-source company pages are byte-for-byte unaffected apart from
+  the title/heading now using the registry label instead of a
+  capitalize-the-key guess.
+- Removed the false "older articles are searchable in the vector database"
+  claim from the over-limit hint.
+- Registered a new `source_label` Jinja filter (wraps
+  `digest.sources.source_label`) alongside the existing `markdown` /
+  `plaintitle` filters.
+- `COMPANIES` list and site structure were already registry-driven from Step
+  6, so no changes needed there; `vector_preview.html.j2` was never ported (no
+  file to remove).
+
+Verified by rendering a synthetic DB through `render_from_db` and inspecting
+the output HTML (vendor/press ordering, Google's two source badges,
+Anthropic's page has none), then added
+`tests/test_github_pages.py::test_index_splits_vendor_and_press_sections` and
+`::test_company_page_shows_source_badge_only_for_multi_source_companies` to
+cover it going forward.
 
 ### 7a. — Daily overview ("summary of summaries")
 
