@@ -501,7 +501,7 @@ a `*Meta` cache from `discover_urls()` consumed by `scrape_page()`/`pre_check()`
   coarser than the feed's tz-aware datetime compare, since `lastmod` itself is
   daily-granularity for the age cutoff's purposes.
 
-## Step 5 — Company scrapers
+## Step 5 — Company scrapers — **done**
 
 Each is a thin subclass declaring its sources. Expected total: **~26
 articles/day**, so most of the work is the two filtered sources.
@@ -525,6 +525,33 @@ press feeds.
 `(url, category)` pairs from a fixture feed, and that filtered sources drop known
 off-topic items (e.g. TechCrunch's "India is starting to pay for apps", Ars's
 Reddit/DMCA piece — both real examples from the source probe).
+
+### Implementation Summary
+
+Completed 2026-08-02. Seven thin `FeedScraper` subclasses landed —
+`openai.py`, `google.py`, `microsoft.py`, `aws.py`, `mistral.py`, and
+`press.py` (which holds both `TechCrunchScraper` and `ArsTechnicaScraper`,
+since a company scraper is one company, not one module) — plus
+`main._build_scrapers()`, which was a `TODO` stub returning `[]`. It now maps
+`company_keys()` (or a single `--site`) to instances via a `_SCRAPER_CLASSES`
+dict. 12 new tests in `tests/test_company_scrapers.py`, suite now 119.
+
+- Google, Microsoft, AWS and Mistral needed no code beyond `company = "..."` —
+  everything (Azure's allowlist, per-source categories) was already data in
+  `sources.py` from Step 2. Only OpenAI needed a `categorize()` override
+  (feed tags → `research`/`engineering`/`product`, else the source default).
+- **The off-topic-drop verify step required a registry change, not just a
+  test.** `sources.py`'s own comment already said the press allowlist is a
+  sanity gate that can't drop the two known real examples (`<category>` tags
+  everything `AI`) — off-topic bleed is `exclude_patterns`'s job, and neither
+  press source had any yet. Added `_TECHCRUNCH_EXCLUDES` (the exact
+  `india-is-starting-to-pay-for-apps` slug) and `_ARSTECHNICA_EXCLUDES`
+  (`"dmca"`, no real slug being available from the source probe write-up).
+  Both are flagged in a comment as narrow one-off seeds, not a general filter —
+  tuning against live output is Step 6+ work, per the existing plan text.
+- Verified `_build_scrapers()` end-to-end offline (no network): importing
+  `digest.main` and instantiating with `site=None` and `site="mistral"` both
+  produce the expected scraper lists.
 
 ## Step 6 — Volume control
 

@@ -10,6 +10,13 @@ import httpx
 from digest.config import settings, setup_logging
 from digest.notifier import post_discord_summary
 from digest.publisher.github_pages import GitHubPagesPublisher
+from digest.scrapers.anthropic import AnthropicScraper
+from digest.scrapers.aws import AwsScraper
+from digest.scrapers.google import GoogleScraper
+from digest.scrapers.microsoft import MicrosoftScraper
+from digest.scrapers.mistral import MistralScraper
+from digest.scrapers.openai import OpenAIScraper
+from digest.scrapers.press import ArsTechnicaScraper, TechCrunchScraper
 from digest.sources import company_keys
 from digest.storage.db import ArticleDB
 from digest.storage.models import CATEGORIES, ArticleRecord, ScrapedPage, normalize_url
@@ -71,11 +78,21 @@ def _make_summarizer(stage: bool) -> Summarizer:
 # Helpers
 # ---------------------------------------------------------------------------
 
+_SCRAPER_CLASSES: dict[str, type] = {
+    "anthropic": AnthropicScraper,
+    "openai": OpenAIScraper,
+    "google": GoogleScraper,
+    "microsoft": MicrosoftScraper,
+    "aws": AwsScraper,
+    "mistral": MistralScraper,
+    "techcrunch": TechCrunchScraper,
+    "arstechnica": ArsTechnicaScraper,
+}
+
+
 def _build_scrapers(site: str | None) -> list:
-    # TODO(Step 5): instantiate the per-company scrapers from the sources.py
-    # registry. No scrapers exist yet, so every stage is a no-op.
-    logger.warning("No scrapers registered yet — see docs/plan.md Step 5")
-    return []
+    keys = [site] if site else company_keys()
+    return [_SCRAPER_CLASSES[key]() for key in keys]
 
 
 def _scraper_infos(scrapers: list) -> list[dict]:
