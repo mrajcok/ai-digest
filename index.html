@@ -1,1 +1,224 @@
-<h1>Coming soon</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Digest — Daily AI News & Blog Roundup</title>
+  <script>
+    if (localStorage.getItem('theme') === 'light')
+      document.documentElement.setAttribute('data-theme', 'light');
+  </script>
+  <style>
+    :root {
+      --bg:               #111;
+      --surface:          #1e1e1e;
+      --border:           #2e2e2e;
+      --border-subtle:    #252525;
+      --text:             #d4d4d4;
+      --text-2:           #888;
+      --text-3:           #555;
+      --link:             #7ab3f5;
+      --link-hover:       #a0c8ff;
+      --tag-bg:           #2a2a2a;
+      --tag-color:        #888;
+      --section-color:    #666;
+      --badge-anthropic-bg:   #d97757;
+      --badge-anthropic-fg:   #fff;
+      --badge-openai-bg:      #10a37f;
+      --badge-openai-fg:      #fff;
+      --badge-google-bg:      #4285f4;
+      --badge-google-fg:      #fff;
+      --badge-microsoft-bg:   #00a4ef;
+      --badge-microsoft-fg:   #fff;
+      --badge-aws-bg:         #ff9900;
+      --badge-aws-fg:         #111;
+      --badge-mistral-bg:     #fa500f;
+      --badge-mistral-fg:     #fff;
+      --badge-techcrunch-bg:  #0aab55;
+      --badge-techcrunch-fg:  #fff;
+      --badge-arstechnica-bg: #ff4e00;
+      --badge-arstechnica-fg: #fff;
+      --track-bg:            #444;
+      --track-active:     #5a8de0;
+      --thumb:            #bbb;
+      --thumb-active:     #fff;
+    }
+    html[data-theme="light"] {
+      --bg:               #fff;
+      --surface:          #fff;
+      --border:           #e0e0e0;
+      --border-subtle:    #eee;
+      --text:             #222;
+      --text-2:           #666;
+      --text-3:           #999;
+      --link:             #0066cc;
+      --link-hover:       #004499;
+      --tag-bg:           #f0f0f0;
+      --tag-color:        #555;
+      --section-color:    #999;
+      --track-bg:            #c8d8f0;
+      --track-active:     #0066cc;
+      --thumb:            #0066cc;
+      --thumb-active:     #fff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: system-ui, sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; color: var(--text); background: var(--bg); }
+    h1 { border-bottom: 2px solid var(--border); padding-bottom: .5rem; margin-bottom: 1rem; }
+    .top-bar { display: flex; align-items: center; margin-bottom: 1.5rem; }
+    .index-hint { flex: 1; font-size: .95rem; color: var(--text-2); margin: 0; }
+    .index-hint a { color: var(--link); text-decoration: none; }
+    .index-hint a:hover { color: var(--link-hover); }
+    h2.section { margin: 2rem 0 1rem; font-size: 1rem; color: var(--section-color); text-transform: uppercase; letter-spacing: .05em; border-bottom: 1px solid var(--border-subtle); padding-bottom: .25rem; }
+    .card { border: 1px solid var(--border); border-radius: 6px; padding: 1rem 1.25rem; margin-bottom: 1rem; background: var(--surface); }
+    .meta { font-size: .85rem; color: var(--text-2); margin-bottom: .4rem; }
+    .badge { display: inline-block; padding: .15rem .5rem; border-radius: 4px; font-size: .75rem; font-weight: 600; margin-right: .4rem; text-decoration: none; }
+    .badge:hover { opacity: .85; }
+    .badge-anthropic   { background: var(--badge-anthropic-bg);   color: var(--badge-anthropic-fg); }
+    .badge-openai      { background: var(--badge-openai-bg);      color: var(--badge-openai-fg); }
+    .badge-google      { background: var(--badge-google-bg);      color: var(--badge-google-fg); }
+    .badge-microsoft   { background: var(--badge-microsoft-bg);   color: var(--badge-microsoft-fg); }
+    .badge-aws         { background: var(--badge-aws-bg);         color: var(--badge-aws-fg); }
+    .badge-mistral     { background: var(--badge-mistral-bg);     color: var(--badge-mistral-fg); }
+    .badge-techcrunch  { background: var(--badge-techcrunch-bg);  color: var(--badge-techcrunch-fg); }
+    .badge-arstechnica { background: var(--badge-arstechnica-bg); color: var(--badge-arstechnica-fg); }
+    .card h2 { margin: .25rem 0 .5rem; font-size: 1.05rem; }
+    .card h2 a { color: var(--link); text-decoration: none; }
+    .card h2 a:hover { color: var(--link-hover); text-decoration: underline; }
+    .summary { font-size: .9rem; line-height: 1.5; color: var(--text-2); }
+    .generated-at { font-size: .82rem; color: var(--text-3); margin: -.5rem 0 1.5rem; }
+    .overview { border: 1px solid var(--border); border-radius: 6px; padding: 1.25rem 1.5rem; margin-bottom: 2rem; background: var(--surface); }
+    .overview-heading { margin: 0 0 .35rem; font-size: 1.1rem; }
+    .overview-meta { font-size: .82rem; color: var(--text-2); margin: 0 0 .75rem; }
+    .overview-text { font-size: .95rem; line-height: 1.6; color: var(--text); }
+    .scraper-summary { margin-top: 2.5rem; border-top: 2px solid var(--border); padding-top: 1rem; }
+    .scraper-summary h2 { font-size: 1rem; color: var(--text-2); margin-bottom: 1rem; }
+    .scraper-block { margin-bottom: 1.25rem; }
+    .scraper-block h3 { font-size: .9rem; font-weight: 600; color: var(--text); margin: 0 0 .35rem; }
+    .scraper-block ul { margin: 0 0 .5rem 1.25rem; padding: 0; font-size: .82rem; color: var(--text-2); }
+    .scraper-block li { margin-bottom: .2rem; }
+    .scraper-block .label { font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--text-3); margin: .4rem 0 .2rem; }
+
+
+    /* theme toggle */
+    .theme-toggle { display: flex; align-items: center; gap: .4rem; cursor: pointer; user-select: none; }
+    .theme-toggle input { position: absolute; opacity: 0; width: 0; height: 0; }
+    .track { width: 38px; height: 21px; background: var(--track-bg); border-radius: 21px; position: relative; transition: background .2s; flex-shrink: 0; }
+    .track::after { content: ''; position: absolute; top: 3px; left: 3px; width: 15px; height: 15px; border-radius: 50%; background: var(--thumb); transition: transform .2s, background .2s; }
+    .theme-toggle input:checked ~ .track { background: var(--track-active); }
+    .theme-toggle input:checked ~ .track::after { transform: translateX(17px); background: var(--thumb-active); }
+    .toggle-icon { font-size: .9rem; line-height: 1; }
+  </style>
+</head>
+<body>
+  <h1>AI Digest</h1>
+  <p class="generated-at">Generated 2026-08-02 19:24 UTC</p>
+  <div class="top-bar">
+    <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
+    <label class="theme-toggle" title="Toggle light/dark theme">
+      <input type="checkbox" id="theme-chk">
+      <span class="track"></span>
+      <span class="toggle-icon" id="theme-icon">☀</span>
+    </label>
+  </div>
+
+  
+
+  
+  <section class="overview">
+    <h2 class="overview-heading">Today in AI</h2>
+    <p class="overview-meta">2026-08-02 · 15 vendor sources · vendor sources only</p>
+    <div class="overview-text"><p>The most significant development today centers around cybersecurity, with Anthropic’s unveiling of Project Glasswing and the “Claude Mythos Preview” model. This unreleased model demonstrates a substantial advancement in code analysis, surpassing human experts—and even Claude Opus 4.6—in identifying software vulnerabilities, including zero-day exploits in major operating systems and browsers. Anthropic is proactively sharing access to Mythos Preview with over 40 organizations, including tech giants like Amazon, Apple, and Microsoft, alongside a $100 million credit and $4 million donation commitment to facilitate vulnerability patching. While Mythos Preview will not be generally released, the findings and lessons learned will be publicly reported, signaling a critical shift toward AI-assisted security practices.</p>
+<p>Beyond security, Anthropic is visibly expanding its focus on AI’s accelerating development cycle and its potential implications. Their Frontier Safety Roadmap outlines a comprehensive strategy for mitigating risks in areas like security, alignment, and policy, including a commitment to “eyes on everything” internal security protocols and active engagement with policymakers. Coupled with the release of its AI Exponential policy frameworks, which propose regulations for extremely large AI models (over 10²⁵ FLOPs), Anthropic demonstrates a clear interest in proactively addressing the societal and geopolitical challenges posed by increasingly capable AI. This coincides with research demonstrating that AI is now autonomously handling tasks previously done by humans—code merging has increased 8x since 2021—raising concerns about recursive self-improvement and the potential need for a slowdown in frontier AI development.</p>
+<p>Several releases are aimed at broadening the utility of Anthropic’s models. Claude 3 Code, now available via API, surpasses GPT-4 on the HumanEval benchmark, and Claude’s capabilities have been demonstrated in a real-world application with NASA’s Perseverance rover, which was autonomously routed across Mars using the model. Anthropic is also actively fostering developer engagement through the launch of Anthropic Academy offering courses and certificates and the release of Sonnet 5 and Opus 5, representing improved agent and coding performance. Further, the launch of the Anthropic Economic Index and the publication of its "Constitution" underline a commitment to transparently evaluating and guiding the societal impact of their technologies.</p>
+<p>Finally, a series of smaller announcements showcase Anthropic’s continued investment in real-world applications, exemplified by “Project Deal”—an AI-driven marketplace experiment—and the “Claude Corps” fellowship program, which connects early-career talent with non-profit organizations needing AI expertise. These initiatives suggest a growing emphasis on understanding and proactively addressing the broader economic and social implications of AI.</p></div>
+  </section>
+  
+
+  
+
+  
+  <h2 class="section">Vendors</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>news</span>
+      <span> · 2026-08-02</span>
+    </div>
+    <h2><a href="https://www.anthropic.com/responsible-scaling-policy/roadmap" target="_blank" rel="noopener">Frontier Safety Roadmap</a></h2>
+    
+    <div class="summary"><p>Anthropic has released its Frontier Safety Roadmap, outlining goals to address risks associated with rapidly improving AI capabilities. The roadmap focuses on four core areas: Security (preventing model theft/sabotage), Safeguards (preventing dangerous use), Alignment (ensuring beneficial model behavior), and Policy (advocating for effective AI risk management). </p>
+<p>Several goals have already been completed as of July 10, 2026, including launching “moonshot R&amp;D” projects – exploring provable inference and simulated secure environments – and completing a report on data retention policies. Current priorities include strengthening internal security through comprehensive logging (“eyes on everything”) and developing automated systems for detecting and responding to sophisticated cyberattacks and potential sabotage. Anthropic aims to uphold Claude’s Constitution through systematic audits and monitoring, and is actively working to share its learnings with policymakers and the wider AI community. </p>
+<p>The roadmap is a living document and will be updated, with progress tracked against specific targets (e.g., achieving “Fully or near-fully in place” status for at least 60% of security invariants by January 1, 2027). Further details on specific projects and assessment methods are available in the roadmap itself, though some information has been redacted for security reasons.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>news</span>
+      <span> · 2026-08-02</span>
+    </div>
+    <h2><a href="https://www.anthropic.com/policy-on-the-ai-exponential" target="_blank" rel="noopener">Policy on the AI Exponential</a></h2>
+    
+    <div class="summary"><p>Anthropic has released two policy frameworks intended to address the rapid advancement of AI. The first, the Advanced AI Framework, proposes government regulation of highly capable AI models – those trained using more than 10²⁵ floating-point operations (FLOPs) by companies with over $500 million in AI revenue or $1 billion in R&amp;D spending – to mitigate catastrophic risks. This includes authority to block or deter dangerous deployments, alongside requirements for transparency, independent evaluation, and robust security measures.</p>
+<p>The second framework focuses on societal resilience, outlining preventative and detection measures for biological and cyber risks posed by advanced AI. These include gene synthesis screening, cyber infrastructure hardening, and a government function to track AI cyber capabilities. Anthropic acknowledges that addressing loss-of-control and automated R&amp;D risks is an ongoing research area. The proposals are aimed primarily at the US federal government but suggest states should retain regulatory power unless federal law is equally or more stringent.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>news</span>
+      <span> · 2026-08-02</span>
+    </div>
+    <h2><a href="https://www.anthropic.com/learn" target="_blank" rel="noopener">AI Learning Resources &amp; Guides from Anthropic</a></h2>
+    
+    <div class="summary"><p>Anthropic has launched Anthropic Academy, offering courses and resources for developers and enterprise users of its AI models. New courses cover AI Fluency, API development, the Model Context Protocol, and specifically, Claude Code. Completion of courses awards certificates. </p>
+<p>The Academy provides guides for building applications with Claude via its API, implementing Claude within organizations to improve productivity, and utilizing Claude for personal projects. Anthropic is also offering a quarterly AI Fluency newsletter delivering research and resources on human-AI collaboration.</p></div>
+    
+  </div>
+  
+  
+
+  
+
+  
+  <section class="scraper-summary">
+    <h2>Coverage</h2>
+    
+    <div class="scraper-block">
+      <h3>Anthropic</h3>
+      <div class="label">Sources</div>
+      <ul>
+        <li>https://www.anthropic.com/sitemap.xml — Anthropic</li>
+      </ul>
+      <div class="label">Excluded</div>
+      <ul>
+        <li class="excl">Anthropic: URLs containing &#34;/legal/&#34;</li><li class="excl">Anthropic: URLs containing &#34;/careers/&#34;</li><li class="excl">Anthropic: URLs containing &#34;/events/&#34;</li><li class="excl">Anthropic: URLs containing &#34;/claude/&#34;</li><li class="excl">Anthropic: URLs containing &#34;/product/&#34;</li><li class="excl">Anthropic: URLs containing &#34;/pricing/&#34;</li><li class="excl">Anthropic: URLs containing &#34;/customers/&#34;</li><li class="excl">Anthropic: URLs containing &#34;/partners/&#34;</li><li class="excl">Anthropic: URLs containing &#34;/supported-countries&#34;</li><li class="excl">Anthropic: URLs containing &#34;/contact-sales&#34;</li>
+      </ul>
+    </div>
+    
+  </section>
+  
+
+  <script>
+    const chk = document.getElementById('theme-chk');
+    const icon = document.getElementById('theme-icon');
+    const saved = localStorage.getItem('theme') || 'dark';
+    if (saved === 'light') { chk.checked = true; icon.textContent = '🌙'; }
+    chk.addEventListener('change', function () {
+      if (this.checked) {
+        document.documentElement.setAttribute('data-theme', 'light');
+        icon.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        icon.textContent = '☀';
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
+</body>
+</html>

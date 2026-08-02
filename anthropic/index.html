@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anthropic News & Blog Posts</title>
+  <script>
+    if (localStorage.getItem('theme') === 'light')
+      document.documentElement.setAttribute('data-theme', 'light');
+  </script>
+  <style>
+    :root {
+      --bg:               #111;
+      --surface:          #1e1e1e;
+      --border:           #2e2e2e;
+      --border-subtle:    #252525;
+      --text:             #d4d4d4;
+      --text-2:           #888;
+      --text-3:           #555;
+      --link:             #7ab3f5;
+      --link-hover:       #a0c8ff;
+      --month-color:      #666;
+      --track-bg:         #444;
+      --track-active:     #5a8de0;
+      --thumb:            #bbb;
+      --thumb-active:     #fff;
+    }
+    html[data-theme="light"] {
+      --bg:               #fff;
+      --surface:          #fff;
+      --border:           #e0e0e0;
+      --border-subtle:    #eee;
+      --text:             #222;
+      --text-2:           #666;
+      --text-3:           #999;
+      --link:             #0066cc;
+      --link-hover:       #004499;
+      --month-color:      #555;
+      --track-bg:         #c8d8f0;
+      --track-active:     #0066cc;
+      --thumb:            #0066cc;
+      --thumb-active:     #fff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: system-ui, sans-serif; max-width: 860px; margin: 2rem auto; padding: 0 1rem; color: var(--text); background: var(--bg); }
+    h1 { border-bottom: 2px solid var(--border); padding-bottom: .5rem; margin-bottom: .75rem; }
+    .top-bar { display: flex; align-items: center; margin-bottom: 1.5rem; }
+    .breadcrumb { flex: 1; font-size: .9rem; }
+    .breadcrumb a { color: var(--link); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--link-hover); }
+    h2.month { margin: 1.75rem 0 .75rem; font-size: 1rem; color: var(--month-color); text-transform: uppercase; letter-spacing: .05em; border-bottom: 1px solid var(--border-subtle); padding-bottom: .25rem; }
+    .card { border: 1px solid var(--border); border-radius: 6px; padding: 1rem 1.25rem; margin-bottom: .75rem; background: var(--surface); }
+    .meta { font-size: .85rem; color: var(--text-2); margin-bottom: .4rem; }
+    .meta .source { font-weight: 600; color: var(--text); }
+    .card h3 { margin: .2rem 0 .5rem; font-size: 1rem; }
+    .card h3 a { color: var(--link); text-decoration: none; }
+    .card h3 a:hover { color: var(--link-hover); text-decoration: underline; }
+    .summary { font-size: .9rem; line-height: 1.5; color: var(--text-2); }
+    .generated-at { font-size: .82rem; color: var(--text-3); margin: -.5rem 0 1.5rem; }
+    .index-hint { font-size: .9rem; color: var(--text-2); margin: -.75rem 0 1.5rem; }
+
+    /* theme toggle */
+    .theme-toggle { display: flex; align-items: center; gap: .4rem; cursor: pointer; user-select: none; }
+    .theme-toggle input { position: absolute; opacity: 0; width: 0; height: 0; }
+    .track { width: 38px; height: 21px; background: var(--track-bg); border-radius: 21px; position: relative; transition: background .2s; flex-shrink: 0; }
+    .track::after { content: ''; position: absolute; top: 3px; left: 3px; width: 15px; height: 15px; border-radius: 50%; background: var(--thumb); transition: transform .2s, background .2s; }
+    .theme-toggle input:checked ~ .track { background: var(--track-active); }
+    .theme-toggle input:checked ~ .track::after { transform: translateX(17px); background: var(--thumb-active); }
+    .toggle-icon { font-size: .9rem; line-height: 1; }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="breadcrumb"><a href="../">← All Updates</a></div>
+    <label class="theme-toggle" title="Toggle light/dark theme">
+      <input type="checkbox" id="theme-chk">
+      <span class="track"></span>
+      <span class="toggle-icon" id="theme-icon">☀</span>
+    </label>
+  </div>
+  <h1>Anthropic News & Blog Posts</h1>
+  <p class="generated-at">Generated 2026-08-02 19:24 UTC</p>
+  
+
+  
+  <h2 class="month">August 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>news</span>
+      <span> · 2026-08-02</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/responsible-scaling-policy/roadmap" target="_blank" rel="noopener">Frontier Safety Roadmap</a></h3>
+    
+    <div class="summary"><p>Anthropic has released its Frontier Safety Roadmap, outlining goals to address risks associated with rapidly improving AI capabilities. The roadmap focuses on four core areas: Security (preventing model theft/sabotage), Safeguards (preventing dangerous use), Alignment (ensuring beneficial model behavior), and Policy (advocating for effective AI risk management). </p>
+<p>Several goals have already been completed as of July 10, 2026, including launching “moonshot R&amp;D” projects – exploring provable inference and simulated secure environments – and completing a report on data retention policies. Current priorities include strengthening internal security through comprehensive logging (“eyes on everything”) and developing automated systems for detecting and responding to sophisticated cyberattacks and potential sabotage. Anthropic aims to uphold Claude’s Constitution through systematic audits and monitoring, and is actively working to share its learnings with policymakers and the wider AI community. </p>
+<p>The roadmap is a living document and will be updated, with progress tracked against specific targets (e.g., achieving “Fully or near-fully in place” status for at least 60% of security invariants by January 1, 2027). Further details on specific projects and assessment methods are available in the roadmap itself, though some information has been redacted for security reasons.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>news</span>
+      <span> · 2026-08-02</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/policy-on-the-ai-exponential" target="_blank" rel="noopener">Policy on the AI Exponential</a></h3>
+    
+    <div class="summary"><p>Anthropic has released two policy frameworks intended to address the rapid advancement of AI. The first, the Advanced AI Framework, proposes government regulation of highly capable AI models – those trained using more than 10²⁵ floating-point operations (FLOPs) by companies with over $500 million in AI revenue or $1 billion in R&amp;D spending – to mitigate catastrophic risks. This includes authority to block or deter dangerous deployments, alongside requirements for transparency, independent evaluation, and robust security measures.</p>
+<p>The second framework focuses on societal resilience, outlining preventative and detection measures for biological and cyber risks posed by advanced AI. These include gene synthesis screening, cyber infrastructure hardening, and a government function to track AI cyber capabilities. Anthropic acknowledges that addressing loss-of-control and automated R&amp;D risks is an ongoing research area. The proposals are aimed primarily at the US federal government but suggest states should retain regulatory power unless federal law is equally or more stringent.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>news</span>
+      <span> · 2026-08-02</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/learn" target="_blank" rel="noopener">AI Learning Resources &amp; Guides from Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic has launched Anthropic Academy, offering courses and resources for developers and enterprise users of its AI models. New courses cover AI Fluency, API development, the Model Context Protocol, and specifically, Claude Code. Completion of courses awards certificates. </p>
+<p>The Academy provides guides for building applications with Claude via its API, implementing Claude within organizations to improve productivity, and utilizing Claude for personal projects. Anthropic is also offering a quarterly AI Fluency newsletter delivering research and resources on human-AI collaboration.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>news</span>
+      <span> · 2026-08-02</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/institute/recursive-self-improvement" target="_blank" rel="noopener">When AI builds itself</a></h3>
+    
+    <div class="summary"><p>Anthropic reports a significant acceleration in AI development, driven by AI systems increasingly assisting—and soon potentially autonomously handling—tasks previously done by humans. From 2021-2026, engineers at Anthropic now merge 8x more code per quarter, largely due to Claude writing and editing code with minimal human intervention.  AI is excelling at tasks like reproducing research findings (going from 20% success in 2024 to saturation fifteen months later) and optimizing code—achieving a 52x speedup in May 2026 compared to starting code.</p>
+<p>This trend suggests potential for recursive self-improvement, where AI designs and develops its own successors. Anthropic outlines three possible futures: stalled progress, continued efficiency gains with human oversight, or full recursive self-improvement leading to rapid, largely autonomous AI development.  They advocate for a potential slowdown or pause in frontier AI development, coupled with verification systems to ensure global participation, as a means to address the significant implications of increasingly capable AI.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>news</span>
+      <span> · 2026-08-02</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/institute" target="_blank" rel="noopener">The Anthropic Institute</a></h3>
+    
+    <div class="summary"><p>Anthropic announced the establishment of the Anthropic Institute to research the societal impact of powerful AI. The Institute’s research focuses on four key areas: AI's effect on jobs and the economy, potential threats and resilience, the behavior of AI systems, and autonomous AI research &amp; development.</p>
+<p>A major project involved a qualitative study of 81,000 Claude.ai users—the largest study of its kind—to understand their hopes and fears regarding AI. The Institute also launched the Anthropic Economic Index, providing data on Claude usage across US states and occupations. </p>
+<p>The Institute's work aims to address risks and maximize the benefits of advanced AI systems, including recursive self-improvement, and invites external collaboration to surface insights from its unique position.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>news</span>
+      <span> · 2026-08-02</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/glasswing" target="_blank" rel="noopener">Project Glasswing: Securing critical software for the AI era</a></h3>
+    
+    <div class="summary"><p>Anthropic announced Project Glasswing, a new cybersecurity initiative spurred by the capabilities of their unreleased “Claude Mythos Preview” frontier AI model. This model demonstrates a significant leap in code analysis, surpassing human experts in identifying and exploiting software vulnerabilities – including previously unknown (“zero-day”) flaws in major operating systems and browsers. Anthropic has already found thousands of such vulnerabilities, some existing for decades.</p>
+<p>To address this, Anthropic is providing access to Mythos Preview to over 40 organizations, including major tech companies like Amazon, Apple, and Microsoft, as well as open-source security groups.  They are committing $100 million in usage credits and $4 million in direct donations to support vulnerability scanning and patching.  Initial testing shows Mythos Preview outperformed Claude Opus 4.6 on cybersecurity tasks, with scores of 83.1% in vulnerability reproduction versus 66.6%. </p>
+<p>Anthropic does not plan a general release of Mythos Preview, but aims to develop safeguards allowing safe deployment of similar models. Access to the model will be available through existing cloud platforms at a cost of $25/$125 per million input/output tokens. Anthropic intends to publicly report findings and collaborate on evolving security practices in the age of AI.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>news</span>
+      <span> · 2026-08-02</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/features/project-deal" target="_blank" rel="noopener">Project Deal: our Claude-run marketplace experiment | Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic conducted an experiment, “Project Deal,” to explore AI-driven commerce, creating a marketplace for 69 employees in San Francisco in December 2025. Participants each received a $100 budget, represented by a custom Claude agent, to buy and sell personal belongings. The experiment involved 186 completed deals, totaling just over $4,000 in transactions – ranging from snowboards to ping pong balls – negotiated entirely by AI. </p>
+<p>Notably, Anthropic compared the performance of Claude Opus 4.5, its most advanced model, against Claude Haiku 4.5. While Opus agents achieved objectively better outcomes—selling items for an average of $3.64 more—participants didn’t perceive a difference in fairness or satisfaction between the two. Despite this, 46% of participants indicated a willingness to pay for a similar service in the future. </p>
+<p>The study also found that specific prompting instructions, such as requesting an "aggressive" negotiation style, didn’t significantly impact outcomes, with model quality proving more crucial. Anthropic notes potential implications for market inequalities as AI agents become more prevalent. Data and full regression results are available in linked appendices.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>news</span>
+      <span> · 2026-08-02</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/features/making-of-claude-code" target="_blank" rel="noopener">The Making of Claude Code</a></h3>
+    
+    <div class="summary"><p>Anthropic announced Claude 3 Code, a new model specializing in code generation and analysis, alongside Claude 3 Opus, Sonnet, and Haiku. They claim Code excels at tasks like complex reasoning about code, generating code from natural language, and identifying bugs. </p>
+<p>Anthropic states Claude 3 Code surpasses GPT-4 on the HumanEval benchmark, achieving 85.6% compared to GPT-4’s 80.4%, and exceeds Gemini 1.5 Pro on similar tests. It supports over 100 languages and accepts up to 200K tokens of code as input. Claude 3 Code is available now via API and in their web application.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>news</span>
+      <span> · 2026-08-02</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/features/claude-on-mars" target="_blank" rel="noopener">Claude AI Powers First AI-Planned Mars Rover Drive | Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic’s Claude AI model was used by NASA’s Jet Propulsion Laboratory (JPL) to plan a 400-meter drive for the Perseverance Mars rover on December 8th and 10th, 2025 (Sols 1707 and 1709). This marks the first time an AI has independently planned a rover’s route on another planet, addressing the challenge of signal delay between Earth and Mars. </p>
+<p>Engineers utilized Claude Code, providing the model with years of accumulated rover driving data. Claude then generated commands in Rover Markup Language, analyzing overhead images to create a waypoint-based path, iterating on its own proposed route. The resulting plans required only minor adjustments after verification through a simulation modeling over 500,000 variables, and subsequent review using ground-level camera images.</p>
+<p>JPL estimates that using Claude for route planning could halve the time currently required, leading to more efficient data collection and analysis. This success demonstrates Claude’s potential for future, more ambitious space missions, including NASA’s Artemis program and exploration of more distant solar system bodies.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>news</span>
+      <span> · 2026-08-02</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/features/81k-interviews" target="_blank" rel="noopener">What 81,000 people want from AI</a></h3>
+    
+    <div class="summary"><p>Anthropic interviewed 80,508 Claude users across 159 countries and 70 languages last December, using a version of Claude called “Anthropic Interviewer” to conduct conversational interviews about AI hopes and fears. The study identified nine primary aspirations for AI, with “professional excellence”—automating routine tasks to focus on higher-level work—being the most common (18.8%). Other top desires included “personal transformation” (13.7%), “life management” (13.5%), and “time freedom” (11.1%).</p>
+<p>Despite optimism, concerns were prevalent. The most frequently cited worry was unreliability (26.7%), specifically regarding hallucinations and inaccuracies. Job displacement and economic impacts were also major concerns for 22.3% of respondents.  Anthropic used Claude-powered classifiers to analyze the responses, categorizing conversations across various dimensions and extracting representative quotes. </p>
+<p>81% of interviewees reported AI having already positively impacted their lives, with common examples citing productivity gains, cognitive partnership, learning opportunities, and even emotional support. The full report, including a “Quote Wall” and a detailed methodology in the Appendix, provides a more comprehensive view of these findings.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>news</span>
+      <span> · 2026-08-02</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/events" target="_blank" rel="noopener">Events \ Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic has announced a series of upcoming events and product updates scheduled throughout the remainder of 2026. These include in-person events like “Claude Founder House Paris” on July 22, 2026, aimed at European AI company founders, and appearances at multiple AWS and Google Cloud summits across North America and Europe through June and April of 2026 respectively. Several virtual events, such as “Claude for Marketing Ops and Analytics” on August 6, 2026, and multiple webinars focused on building with the Claude platform, are also planned. </p>
+<p>In addition to events, Anthropic announced the release of Claude Sonnet 4.6, its latest model iteration, and launched the “Max plan” offering. A new product, “Cowork,” was also introduced, though further details were not provided in the source material. A series of webinars covering topics from agent orchestration to Claude’s integration with Microsoft Foundry and Google Cloud are available, offering focused training opportunities.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>news</span>
+      <span> · 2026-08-02</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/economic-index" target="_blank" rel="noopener">The Anthropic Economic Index</a></h3>
+    
+    <div class="summary"><p>Anthropic launched the “Anthropic Economic Index” on June 26, 2026, designed to track the economic impact of AI. The index aims to quantify AI’s effects, though current data loading suggests it's newly released and results are still developing. </p>
+<p>Anthropic intends for the index to provide ongoing insights into how AI influences various economic sectors, offering a data-driven perspective on this evolving landscape. No specific methodology or initial findings are detailed in this announcement.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>news</span>
+      <span> · 2026-08-02</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/constitution" target="_blank" rel="noopener">Claude’s Constitution</a></h3>
+    
+    <div class="summary"><p>Anthropic has released its “Constitution” for Claude, a detailed articulation of its intended values and behaviors to guide the AI model’s development and ensure safety and beneficial outcomes. The document, authored primarily by Amanda Askell and Joe Carlsmith with contributions from Chris Olah, Jared Kaplan, and Holden Karnofsky, outlines that Claude should be broadly safe, ethical, compliant with Anthropic’s guidelines, and genuinely helpful, prioritizing these in that order.</p>
+<p>The Constitution focuses on cultivating good judgment and values in Claude, rather than strict rules, emphasizing its capacity to adapt and weigh considerations contextually.  Key areas covered include helpfulness – positioning Claude as a knowledgeable and caring “friend” – adherence to Anthropic guidelines, ethical considerations, and safeguarding against undermining human oversight. Anthropic intends the document to be a living document, subject to revision as their understanding of AI evolves.</p>
+<p>The full Constitution is released under a Creative Commons CC0 1.0 Deed, allowing free use by anyone. Anthropic frames this release as both a commitment to transparency and a contribution toward responsible AI development, acknowledging the potential for powerful AI to dramatically impact the world, and hoping it will steer development toward beneficial outcomes.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>news</span>
+      <span> · 2026-08-02</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/claude-corps" target="_blank" rel="noopener">Claude Corps</a></h3>
+    
+    <div class="summary"><p>Anthropic, in collaboration with CodePath and Social Finance, launched Claude Corps, a year-long, fully-funded fellowship program designed to connect early-career talent with non-profit organizations. The program aims to empower mission-driven organizations to leverage AI tools by providing them with dedicated support from fellows trained in AI development. </p>
+<p>Applicants over 18 with less than two years of full-time work experience—no educational requirements are stipulated—will undergo an intensive training program led by CodePath before being matched with a host organization. Fellows will then work full-time with these organizations, building AI systems and receiving ongoing mentorship from both CodePath and Anthropic technical contacts.</p>
+<p>Initial host organizations, located across the US, include Braven in Chicago, Code for America in Oakland, and the International Rescue Committee in New York, among 17 others. Anthropic covers the fellows’ salaries, benefits, training, and support. The program’s long-term evolution and measurement of impact will be tracked by Anthropic.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>news</span>
+      <span> · 2026-08-02</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/" target="_blank" rel="noopener">Home \ Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic announced three releases on June 30 and July 24, 2026. Sonnet 5 is the most agentic iteration of the Sonnet model, offering strong coding and professional capabilities. Simultaneously, Claude Science was released as a customizable application for researchers, integrating common tools and providing auditable results. </p>
+<p>On July 24, Anthropic also released Opus 5, representing a significant improvement over previous Opus models. Opus 5 demonstrates enhanced coding, agent capabilities, and performance in professional applications, according to Anthropic. </p>
+<p>These announcements detail new models and tools focused on improving AI capabilities for both general professional use and specialized research. Anthropic additionally highlights their focus on AI safety, alignment, and economic research.</p></div>
+    
+  </div>
+  
+  
+
+  <script>
+    const chk = document.getElementById('theme-chk');
+    const icon = document.getElementById('theme-icon');
+    const saved = localStorage.getItem('theme') || 'dark';
+    if (saved === 'light') { chk.checked = true; icon.textContent = '🌙'; }
+    chk.addEventListener('change', function () {
+      if (this.checked) {
+        document.documentElement.setAttribute('data-theme', 'light');
+        icon.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        icon.textContent = '☀';
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
+</body>
+</html>
