@@ -12,6 +12,7 @@ from git import Repo
 from jinja2 import Environment, FileSystemLoader
 from markupsafe import Markup
 
+from digest.sources import COMPANIES as COMPANY_REGISTRY
 from digest.sources import company_keys
 from digest.storage.db import ArticleDB
 from digest.storage.models import ArticleRecord, ScrapedPage
@@ -51,10 +52,19 @@ def _sort_key(record: ArticleRecord) -> str:
     return record.published_date or record.last_scraped_at or ""
 
 
-def _top_per_company(company_updates: dict[str, list[ArticleRecord]], n: int) -> list[ArticleRecord]:
-    """Return up to n most-recent records per company, in COMPANIES order."""
+def _top_per_company(
+    company_updates: dict[str, list[ArticleRecord]],
+    index_per_company: int,
+    index_per_company_press: int,
+) -> list[ArticleRecord]:
+    """Return up to n most-recent records per company, in COMPANIES order.
+
+    Press companies use `index_per_company_press`, a lower cap, so the index page
+    isn't dominated by press coverage (Step 6).
+    """
     result = []
-    for records in company_updates.values():
+    for company, records in company_updates.items():
+        n = index_per_company_press if COMPANY_REGISTRY[company].group == "press" else index_per_company
         result.extend(records[:n])
     return result
 
@@ -82,7 +92,7 @@ class GitHubPagesPublisher:
             )[:settings.company_page_limit]
             for c in COMPANIES
         }
-        top_updates = _top_per_company(company_updates, settings.index_per_company)
+        top_updates = _top_per_company(company_updates, settings.index_per_company, settings.index_per_company_press)
 
         for company, records in company_updates.items():
             logger.info("Publishing %s: %d article(s)", company, len(records))
@@ -101,7 +111,7 @@ class GitHubPagesPublisher:
             c: sorted([r for r in ok_records if r.company == c], key=_sort_key, reverse=True)[:effective_limit]
             for c in COMPANIES
         }
-        top_updates = _top_per_company(company_updates, settings.index_per_company)
+        top_updates = _top_per_company(company_updates, settings.index_per_company, settings.index_per_company_press)
         html_files = self._render(top_updates, company_updates, scraper_infos)
         self._write_to_dir(html_files, out_dir)
         rendered = sum(len(v) for v in company_updates.values())
@@ -126,7 +136,7 @@ class GitHubPagesPublisher:
             c: sorted([r for r in records if r.company == c], key=_sort_key, reverse=True)
             for c in COMPANIES
         }
-        top_updates = _top_per_company(company_updates, settings.index_per_company)
+        top_updates = _top_per_company(company_updates, settings.index_per_company, settings.index_per_company_press)
         html_files = self._render(top_updates, company_updates, scraper_infos)
         self._write_to_dir(html_files, out_dir)
         logger.info("[stage:scrape] HTML written to %s/index.html", out_dir)
@@ -143,7 +153,7 @@ class GitHubPagesPublisher:
             c: sorted([r for r in records if r.company == c], key=_sort_key, reverse=True)
             for c in COMPANIES
         }
-        top_updates = _top_per_company(company_updates, settings.index_per_company)
+        top_updates = _top_per_company(company_updates, settings.index_per_company, settings.index_per_company_press)
         html_files = self._render(top_updates, company_updates, scraper_infos)
         self._write_to_dir(html_files, out_dir)
         logger.info("[stage:summarize] HTML written to %s/index.html", out_dir)
