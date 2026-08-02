@@ -112,7 +112,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at">Generated 2026-08-02 20:36 UTC</p>
+  <p class="generated-at">Generated 2026-08-02 22:31 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -125,34 +125,11 @@
   
 
   
-  <section class="overview">
-    <h2 class="overview-heading">Today in AI</h2>
-    <p class="overview-meta">2026-08-02 · 22 vendor sources · vendor sources only</p>
-    <div class="overview-text"><p>Today saw a flurry of activity from Anthropic, largely focused on expanding the capabilities and accessibility of its Claude models and related tools. The most significant development is the release of Claude Opus 5, positioned as a near-equal to Fable 5 in intelligence but at half the cost, offering a compelling balance for a wider range of applications. Alongside Opus 5, Anthropic launched Claude Sonnet 5, showcasing impressive performance approaching Opus levels at a substantially lower price point, and a new, faster, and more affordable Claude Haiku 4.5 model. These releases represent a clear strategy to cater to diverse needs – from high-end reasoning and coding tasks to real-time applications – and democratize access to advanced AI capabilities.</p>
-<p>Beyond model releases, Anthropic continued expanding the practical applications of its technology. They unveiled Agent Skills, enabling specialized task performance within Claude, and significantly upgraded Claude Code with features like dynamic workflows and desktop availability. Several partnerships were announced, extending Claude’s reach into enterprise solutions with Cognizant, small businesses with pre-built workflows connecting to common platforms like QuickBooks and HubSpot, and education with the “Claude for Teachers” initiative offering free access and curriculum support. These integrations aim to embed Claude directly into users’ existing workflows, rather than requiring entirely new processes. </p>
-<p>Furthermore, Anthropic demonstrated a commitment to both security and responsible AI development. Updates to Opus models incorporated new cybersecurity safeguards, and the company detailed investigations into incidents where models inadvertently accessed the internet during evaluations, emphasizing the need for robust operational controls.  They also launched the Economic Futures Research Fund, a $200 million initiative to study and mitigate the economic impacts of AI, alongside a $20 million donation to Public First Action to promote AI safety policy, and released CryptanalysisBench – a new benchmark for evaluating LLMs’ prowess at cryptography. </p>
-<p>Finally, Anthropic continued to refine the developer experience, launching new API features like context editing, and the Claude Agent SDK.  The introduction of the Anthropic Economic Index connector lets anyone leverage the insights on AI diffusion through the Anthropic ecosystem. These efforts combined signal a broad and ambitious strategy to not only advance AI technology, but also to safely and responsibly integrate it into various aspects of life and work.</p></div>
-  </section>
-  
 
   
 
   
   <h2 class="section">Vendors</h2>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>news</span>
-      <span> · Oct 16, 20</span>
-    </div>
-    <h2><a href="https://www.anthropic.com/news/skills" target="_blank" rel="noopener">Introducing Agent Skills | Claude by Anthropic</a></h2>
-    
-    <div class="summary"><p>Anthropic has introduced “Agent Skills” for its Claude models, designed to enhance task-specific performance. Skills are essentially folders containing instructions, scripts, and resources Claude can access when relevant. This allows Claude to perform specialized tasks—like Excel manipulation or adhering to brand guidelines—more effectively. </p>
-<p>These Skills are composable, portable across Claude apps, Claude Code, and the API, and efficient, loading only necessary information. They can even include executable code for tasks where programming is preferable to text generation. Users can create custom Skills, and Anthropic provides examples and a "skill-creator" tool to simplify the process. </p>
-<p>For developers, Agent Skills are now integrated into the Messages API and accessible via a new /v1/skills endpoint, offering programmatic control. Yashodha Bhavnani (Canva), Anwar Haneef (GM, Canva), and MJ Felix (Notion) have announced plans to integrate Skills into their respective platforms, citing improved workflows and results.</p></div>
-    
-  </div>
   
   <div class="card">
     <div class="meta">
@@ -172,12 +149,25 @@
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>research</span>
-      <span> · 2026-07-29</span>
+      <span> · 2026-07-28</span>
     </div>
     <h2><a href="https://www.anthropic.com/research/discovering-cryptographic-weaknesses" target="_blank" rel="noopener">Discovering cryptographic weaknesses with Claude</a></h2>
     
     <div class="summary"><p>Anthropic’s research demonstrates that the Claude Mythos Preview model can discover cryptographic weaknesses, improving existing attacks on both the HAWK digital signature scheme and reduced-round AES. Against HAWK, a post-quantum cryptography candidate, Mythos effectively halved its key strength in 60 hours – reducing the expected cost of a full key recovery attack from 2<sup>64</sup> to 2<sup>38</sup>.  For AES, Mythos improved upon previous attacks against a 7-round variant, speeding them up by a factor of 200-800 through a novel “Möbius Bridge” fingerprinting algorithm. </p>
 <p>Neither attack currently impacts production systems – HAWK isn’t deployed, and the AES attack targets a reduced-round version – but highlights AI’s potential to uncover flaws in cryptographic algorithms before and after deployment. The HAWK attack was achieved with semi-autonomous collaboration between a researcher and the model, while the AES attack was largely autonomous, guided by an initial scaffold.  These discoveries cost approximately $100,000 in API costs each and spurred the creation of CryptanalysisBench, a new benchmark for evaluating LLMs in cryptography. Anthropic has shared these findings with government and industry partners and released accompanying research papers detailing the methodologies and results.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>news</span>
+      <span> · 2026-07-27</span>
+    </div>
+    <h2><a href="https://www.anthropic.com/news/position-open-weights-models" target="_blank" rel="noopener">Our position on open-weights models</a></h2>
+    
+    <div class="summary"><p>Anthropic CEO Dario Amodei clarified the company’s position on open-weights AI models amid discussions of potential US bans on models originating from China. Anthropic does <em>not</em> advocate for a ban, recognizing that open-weights models – excluding those with dangerous capabilities – offer a public good by lowering compute costs and fostering development. However, Amodei outlined two primary national security concerns: the potential for authoritarian governments, particularly China, to leverage AI for military superiority or repression, and the risk of misuse leading to cyber or biological attacks.</p>
+<p>Amodei detailed three proposed measures to mitigate these risks. These include restricting the sale of advanced chips and chipmaking equipment to China, suppressing large-scale “distillation” operations that circumvent chip restrictions, and mandating comprehensive safety testing for all highly capable AI models, both open and closed. He pointed to collaborative research with AE Studio on modular training strategies as a potential method for improving open-weights model safety. Anthropic supports policies addressing distillation and safety testing, but does not agree with claims that open-weights directly improve safeguards or benefit defenders more than attackers, advocating for empirical testing.</p></div>
     
   </div>
   
@@ -198,6 +188,90 @@
       <div class="label">Excluded</div>
       <ul>
         <li class="excl">Anthropic: URLs containing &#34;/legal/&#34;</li><li class="excl">Anthropic: URLs containing &#34;/careers/&#34;</li><li class="excl">Anthropic: URLs containing &#34;/events/&#34;</li><li class="excl">Anthropic: URLs containing &#34;/claude/&#34;</li><li class="excl">Anthropic: URLs containing &#34;/product/&#34;</li><li class="excl">Anthropic: URLs containing &#34;/pricing/&#34;</li><li class="excl">Anthropic: URLs containing &#34;/customers/&#34;</li><li class="excl">Anthropic: URLs containing &#34;/partners/&#34;</li><li class="excl">Anthropic: URLs containing &#34;/supported-countries&#34;</li><li class="excl">Anthropic: URLs containing &#34;/contact-sales&#34;</li>
+      </ul>
+    </div>
+    
+    <div class="scraper-block">
+      <h3>OpenAI</h3>
+      <div class="label">Sources</div>
+      <ul>
+        <li>https://openai.com/news/rss.xml — OpenAI News</li>
+      </ul>
+      <div class="label">Excluded</div>
+      <ul>
+        
+      </ul>
+    </div>
+    
+    <div class="scraper-block">
+      <h3>Google</h3>
+      <div class="label">Sources</div>
+      <ul>
+        <li>https://blog.google/technology/ai/rss/ — Google AI Blog</li><li>https://deepmind.google/blog/rss.xml — DeepMind Blog</li>
+      </ul>
+      <div class="label">Excluded</div>
+      <ul>
+        
+      </ul>
+    </div>
+    
+    <div class="scraper-block">
+      <h3>Microsoft</h3>
+      <div class="label">Sources</div>
+      <ul>
+        <li>https://news.microsoft.com/source/topics/ai/feed/ — Microsoft Source AI</li><li>https://azure.microsoft.com/en-us/blog/feed/ — Azure Blog</li>
+      </ul>
+      <div class="label">Excluded</div>
+      <ul>
+        <li class="excl">Azure Blog: only items tagged AI, AI + machine learning, Azure AI, Azure AI Foundry, Azure OpenAI Service, Microsoft Foundry, Foundry Managed Compute, Open Source models, Machine learning, Copilot, M365 Copilot, Microsoft Copilot Cowork, Anthropic, OpenAI</li>
+      </ul>
+    </div>
+    
+    <div class="scraper-block">
+      <h3>AWS</h3>
+      <div class="label">Sources</div>
+      <ul>
+        <li>https://aws.amazon.com/blogs/machine-learning/feed/ — AWS Machine Learning Blog</li>
+      </ul>
+      <div class="label">Excluded</div>
+      <ul>
+        
+      </ul>
+    </div>
+    
+    <div class="scraper-block">
+      <h3>Mistral AI</h3>
+      <div class="label">Sources</div>
+      <ul>
+        <li>https://mistral.ai/rss.xml — Mistral Blog</li>
+      </ul>
+      <div class="label">Excluded</div>
+      <ul>
+        
+      </ul>
+    </div>
+    
+    <div class="scraper-block">
+      <h3>TechCrunch</h3>
+      <div class="label">Sources</div>
+      <ul>
+        <li>https://techcrunch.com/category/artificial-intelligence/feed/ — TechCrunch AI</li>
+      </ul>
+      <div class="label">Excluded</div>
+      <ul>
+        <li class="excl">TechCrunch AI: only items tagged AI, Artificial Intelligence, AI agents, LLMs, generative ai</li><li class="excl">TechCrunch AI: URLs/titles containing &#34;india-is-starting-to-pay-for-apps&#34;</li><li class="excl">TechCrunch AI: at most 8 item(s) per run, newest first</li>
+      </ul>
+    </div>
+    
+    <div class="scraper-block">
+      <h3>Ars Technica</h3>
+      <div class="label">Sources</div>
+      <ul>
+        <li>https://arstechnica.com/ai/feed/ — Ars Technica AI</li>
+      </ul>
+      <div class="label">Excluded</div>
+      <ul>
+        <li class="excl">Ars Technica AI: only items tagged AI, Artificial Intelligence, AI agents, LLMs, generative ai</li><li class="excl">Ars Technica AI: URLs/titles containing &#34;dmca&#34;</li><li class="excl">Ars Technica AI: at most 5 item(s) per run, newest first</li>
       </ul>
     </div>
     
