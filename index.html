@@ -112,7 +112,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at">Generated 2026-08-02 22:31 UTC</p>
+  <p class="generated-at">Generated 2026-08-03 00:01 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -148,6 +148,19 @@
   <div class="card">
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>blog</span>
+      <span> · 2026-07-28</span>
+    </div>
+    <h2><a href="https://claude.com/blog/bringing-mcp-2026-07-28-to-claude" target="_blank" rel="noopener">MCP 2026-07-28 spec: stateless core, coming to Claude | Claude by Anthropic</a></h2>
+    
+    <div class="summary"><p>Anthropic has released MCP 2026-07-28, the fifth specification for the Model Context Protocol, transitioning it to a stateless core. This change allows MCP servers to be deployed on serverless and edge infrastructure, improving scalability and simplifying server construction.  The update also introduces standardized extensions – MCP Apps and Tasks – offering a versioned framework for adding capabilities like interactive UIs without altering the core protocol.</p>
+<p>Beyond the core change, MCP 2026-07-28 strengthens authorization to align with industry-standard OAuth 2.0 and OIDC, enabling seamless integration with enterprise identity systems such as Entra and Okta.  The protocol, now at over 400 million monthly SDK downloads, also provides new features including MCP Apps for in-conversation UIs, enterprise-managed authentication, and developer observability tools.  A research preview of MCP tunnels is also available for connecting to private networks.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>research</span>
       <span> · 2026-07-28</span>
     </div>
@@ -155,19 +168,6 @@
     
     <div class="summary"><p>Anthropic’s research demonstrates that the Claude Mythos Preview model can discover cryptographic weaknesses, improving existing attacks on both the HAWK digital signature scheme and reduced-round AES. Against HAWK, a post-quantum cryptography candidate, Mythos effectively halved its key strength in 60 hours – reducing the expected cost of a full key recovery attack from 2<sup>64</sup> to 2<sup>38</sup>.  For AES, Mythos improved upon previous attacks against a 7-round variant, speeding them up by a factor of 200-800 through a novel “Möbius Bridge” fingerprinting algorithm. </p>
 <p>Neither attack currently impacts production systems – HAWK isn’t deployed, and the AES attack targets a reduced-round version – but highlights AI’s potential to uncover flaws in cryptographic algorithms before and after deployment. The HAWK attack was achieved with semi-autonomous collaboration between a researcher and the model, while the AES attack was largely autonomous, guided by an initial scaffold.  These discoveries cost approximately $100,000 in API costs each and spurred the creation of CryptanalysisBench, a new benchmark for evaluating LLMs in cryptography. Anthropic has shared these findings with government and industry partners and released accompanying research papers detailing the methodologies and results.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>news</span>
-      <span> · 2026-07-27</span>
-    </div>
-    <h2><a href="https://www.anthropic.com/news/position-open-weights-models" target="_blank" rel="noopener">Our position on open-weights models</a></h2>
-    
-    <div class="summary"><p>Anthropic CEO Dario Amodei clarified the company’s position on open-weights AI models amid discussions of potential US bans on models originating from China. Anthropic does <em>not</em> advocate for a ban, recognizing that open-weights models – excluding those with dangerous capabilities – offer a public good by lowering compute costs and fostering development. However, Amodei outlined two primary national security concerns: the potential for authoritarian governments, particularly China, to leverage AI for military superiority or repression, and the risk of misuse leading to cyber or biological attacks.</p>
-<p>Amodei detailed three proposed measures to mitigate these risks. These include restricting the sale of advanced chips and chipmaking equipment to China, suppressing large-scale “distillation” operations that circumvent chip restrictions, and mandating comprehensive safety testing for all highly capable AI models, both open and closed. He pointed to collaborative research with AE Studio on modular training strategies as a potential method for improving open-weights model safety. Anthropic supports policies addressing distillation and safety testing, but does not agree with claims that open-weights directly improve safeguards or benefit defenders more than attackers, advocating for empirical testing.</p></div>
     
   </div>
   
@@ -183,95 +183,11 @@
       <h3>Anthropic</h3>
       <div class="label">Sources</div>
       <ul>
-        <li>https://www.anthropic.com/sitemap.xml — Anthropic</li>
+        <li>https://www.anthropic.com/sitemap.xml — Anthropic</li><li>https://claude.com/blog — Claude Blog</li>
       </ul>
       <div class="label">Excluded</div>
       <ul>
         <li class="excl">Anthropic: URLs containing &#34;/legal/&#34;</li><li class="excl">Anthropic: URLs containing &#34;/careers/&#34;</li><li class="excl">Anthropic: URLs containing &#34;/events/&#34;</li><li class="excl">Anthropic: URLs containing &#34;/claude/&#34;</li><li class="excl">Anthropic: URLs containing &#34;/product/&#34;</li><li class="excl">Anthropic: URLs containing &#34;/pricing/&#34;</li><li class="excl">Anthropic: URLs containing &#34;/customers/&#34;</li><li class="excl">Anthropic: URLs containing &#34;/partners/&#34;</li><li class="excl">Anthropic: URLs containing &#34;/supported-countries&#34;</li><li class="excl">Anthropic: URLs containing &#34;/contact-sales&#34;</li>
-      </ul>
-    </div>
-    
-    <div class="scraper-block">
-      <h3>OpenAI</h3>
-      <div class="label">Sources</div>
-      <ul>
-        <li>https://openai.com/news/rss.xml — OpenAI News</li>
-      </ul>
-      <div class="label">Excluded</div>
-      <ul>
-        
-      </ul>
-    </div>
-    
-    <div class="scraper-block">
-      <h3>Google</h3>
-      <div class="label">Sources</div>
-      <ul>
-        <li>https://blog.google/technology/ai/rss/ — Google AI Blog</li><li>https://deepmind.google/blog/rss.xml — DeepMind Blog</li>
-      </ul>
-      <div class="label">Excluded</div>
-      <ul>
-        
-      </ul>
-    </div>
-    
-    <div class="scraper-block">
-      <h3>Microsoft</h3>
-      <div class="label">Sources</div>
-      <ul>
-        <li>https://news.microsoft.com/source/topics/ai/feed/ — Microsoft Source AI</li><li>https://azure.microsoft.com/en-us/blog/feed/ — Azure Blog</li>
-      </ul>
-      <div class="label">Excluded</div>
-      <ul>
-        <li class="excl">Azure Blog: only items tagged AI, AI + machine learning, Azure AI, Azure AI Foundry, Azure OpenAI Service, Microsoft Foundry, Foundry Managed Compute, Open Source models, Machine learning, Copilot, M365 Copilot, Microsoft Copilot Cowork, Anthropic, OpenAI</li>
-      </ul>
-    </div>
-    
-    <div class="scraper-block">
-      <h3>AWS</h3>
-      <div class="label">Sources</div>
-      <ul>
-        <li>https://aws.amazon.com/blogs/machine-learning/feed/ — AWS Machine Learning Blog</li>
-      </ul>
-      <div class="label">Excluded</div>
-      <ul>
-        
-      </ul>
-    </div>
-    
-    <div class="scraper-block">
-      <h3>Mistral AI</h3>
-      <div class="label">Sources</div>
-      <ul>
-        <li>https://mistral.ai/rss.xml — Mistral Blog</li>
-      </ul>
-      <div class="label">Excluded</div>
-      <ul>
-        
-      </ul>
-    </div>
-    
-    <div class="scraper-block">
-      <h3>TechCrunch</h3>
-      <div class="label">Sources</div>
-      <ul>
-        <li>https://techcrunch.com/category/artificial-intelligence/feed/ — TechCrunch AI</li>
-      </ul>
-      <div class="label">Excluded</div>
-      <ul>
-        <li class="excl">TechCrunch AI: only items tagged AI, Artificial Intelligence, AI agents, LLMs, generative ai</li><li class="excl">TechCrunch AI: URLs/titles containing &#34;india-is-starting-to-pay-for-apps&#34;</li><li class="excl">TechCrunch AI: at most 8 item(s) per run, newest first</li>
-      </ul>
-    </div>
-    
-    <div class="scraper-block">
-      <h3>Ars Technica</h3>
-      <div class="label">Sources</div>
-      <ul>
-        <li>https://arstechnica.com/ai/feed/ — Ars Technica AI</li>
-      </ul>
-      <div class="label">Excluded</div>
-      <ul>
-        <li class="excl">Ars Technica AI: only items tagged AI, Artificial Intelligence, AI agents, LLMs, generative ai</li><li class="excl">Ars Technica AI: URLs/titles containing &#34;dmca&#34;</li><li class="excl">Ars Technica AI: at most 5 item(s) per run, newest first</li>
       </ul>
     </div>
     

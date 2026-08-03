@@ -80,7 +80,9 @@
     </label>
   </div>
   <h1>Anthropic News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-08-02 22:31 UTC</p>
+  <p class="generated-at">Generated 2026-08-03 00:01 UTC</p>
+  
+  <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
@@ -88,7 +90,7 @@
   
   <div class="card">
     <div class="meta">
-      
+      <span class="source">Anthropic</span> · 
       <span>news</span>
       <span> · 2026-07-30</span>
     </div>
@@ -102,7 +104,20 @@
   
   <div class="card">
     <div class="meta">
-      
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-07-28</span>
+    </div>
+    <h3><a href="https://claude.com/blog/bringing-mcp-2026-07-28-to-claude" target="_blank" rel="noopener">MCP 2026-07-28 spec: stateless core, coming to Claude | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic has released MCP 2026-07-28, the fifth specification for the Model Context Protocol, transitioning it to a stateless core. This change allows MCP servers to be deployed on serverless and edge infrastructure, improving scalability and simplifying server construction.  The update also introduces standardized extensions – MCP Apps and Tasks – offering a versioned framework for adding capabilities like interactive UIs without altering the core protocol.</p>
+<p>Beyond the core change, MCP 2026-07-28 strengthens authorization to align with industry-standard OAuth 2.0 and OIDC, enabling seamless integration with enterprise identity systems such as Entra and Okta.  The protocol, now at over 400 million monthly SDK downloads, also provides new features including MCP Apps for in-conversation UIs, enterprise-managed authentication, and developer observability tools.  A research preview of MCP tunnels is also available for connecting to private networks.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
       <span>research</span>
       <span> · 2026-07-28</span>
     </div>
@@ -115,7 +130,7 @@
   
   <div class="card">
     <div class="meta">
-      
+      <span class="source">Anthropic</span> · 
       <span>news</span>
       <span> · 2026-07-27</span>
     </div>
@@ -128,7 +143,7 @@
   
   <div class="card">
     <div class="meta">
-      
+      <span class="source">Anthropic</span> · 
       <span>news</span>
       <span> · 2026-07-27</span>
     </div>
@@ -142,7 +157,46 @@
   
   <div class="card">
     <div class="meta">
-      
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-07-24</span>
+    </div>
+    <h3><a href="https://claude.com/blog/claude-models-explained-choosing-the-best-model-for-your-use-case" target="_blank" rel="noopener">Claude models explained: choosing the best model for your use case | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic has detailed its Claude model family, aiming to help users select the best option for their needs. The models range from the highly capable and safeguarded <strong>Mythos</strong> and <strong>Fable</strong> – suited for complex tasks like coding and agent workflows – to the more versatile <strong>Opus</strong>, <strong>Sonnet</strong>, and the fastest, lowest-cost <strong>Haiku</strong>. </p>
+<p>The recommendation is to start with the most intelligent model – currently Opus or Fable – and adjust the “effort” level to balance performance and cost.  A key strategy is the “advisor” approach, using a powerful model to validate work done by faster, cheaper models (e.g. Sonnet with Fable as an advisor showing 63% of the cost of using Fable alone on SWE-bench Pro).  Choosing the appropriate model depends on task complexity, latency requirements, access constraints (Mythos is limited to Project Glasswing participants), and cost considerations.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-07-24</span>
+    </div>
+    <h3><a href="https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models" target="_blank" rel="noopener">The new rules of context engineering for Claude 5 generation models  | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic has significantly updated its recommendations for “context engineering” – the practice of providing Claude models with background information beyond the immediate prompt – based on observations with the Claude 5 generation, including Opus 5 and Fable 5. They found that, surprisingly, removing over 80% of the system prompt in Claude Code did not negatively impact coding evaluations. </p>
+<p>This suggests the newer models exhibit stronger reasoning abilities and can better leverage surrounding context and independent judgment, reducing the need for explicit, and potentially conflicting, constraints. Anthropic now advocates for lighter-weight system prompts and CLAUDE.md files, focusing on codebase specifics and utilizing "progressive disclosure"— loading only necessary context when needed—through features like Skills and deferred loading of tools.  A new command, <code>claude doctor</code>, is available to help users rightsize their existing context configurations.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-07-24</span>
+    </div>
+    <h3><a href="https://claude.com/blog/how-the-product-designer-who-built-claude-design-uses-it-to-explore-ideas-before-building-them" target="_blank" rel="noopener">How the product designer who built Claude Design uses it | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic has released Claude Design, a new feature within the Claude platform (currently in beta on Pro, Max, Team, and Enterprise plans) leveraging the capabilities of Claude Opus 5. It allows users to generate visual content – including slide decks, animations, and prototypes – directly from text prompts using HTML as an intermediary format. Unlike traditional design tools requiring manual state creation, Claude Design can rapidly produce interactive prototypes from provided assets. </p>
+<p>A key element is the ability to customize Claude Design with an organization’s brand guidelines (fonts, colors, assets) via prompting, ensuring outputs align with established branding. The tool isn’t intended for image <em>generation</em> but for composing and iterating on visuals using existing assets.  It integrates with Claude Code, enabling a round-trip workflow between coding and design phases and can consume data from GitHub and through web search.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
       <span>research</span>
       <span> · 2026-07-24</span>
     </div>
@@ -156,7 +210,7 @@
   
   <div class="card">
     <div class="meta">
-      
+      <span class="source">Anthropic</span> · 
       <span>news</span>
       <span> · 2026-07-24</span>
     </div>
@@ -170,7 +224,61 @@
   
   <div class="card">
     <div class="meta">
-      
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-07-23</span>
+    </div>
+    <h3><a href="https://claude.com/blog/think-through-hard-problems-in-voice-mode" target="_blank" rel="noopener">Think through hard problems in voice mode | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic has expanded voice mode functionality to Claude Opus, Sonnet, and Haiku models. Previously limited to the Haiku model for speed, users can now leverage the more powerful Opus and Sonnet models for in-depth voice conversations. The system allows for mid-conversation model switching and remembers the last-used model for seamless transitions between voice and text interactions. </p>
+<p>This update also enables voice mode in multiple languages—including French, German, Hindi, and Spanish—allowing users to converse with Claude in their preferred language. Furthermore, voice mode is now integrated with connected tools like Google Calendar and Canva, enabling users to take action directly from voice conversations such as scheduling meetings or creating documents.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-07-23</span>
+    </div>
+    <h3><a href="https://claude.com/blog/four-role-based-claude-certifications" target="_blank" rel="noopener">Four role-based certifications for the people who put Claude to work for customers | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic has expanded its Claude Certification Program with three new role-based credentials – Associate, Developer, and Architect (foundations and professional levels) – alongside the existing foundational Architect certification. These certifications, granted via supervised, identity-verified exams, aim to establish a benchmark for expertise in deploying and utilizing Claude. The Associate certification focuses on everyday use, Developer on building applications with the Claude API and agent development, and Architect on large-scale integration, governance, and evaluation.</p>
+<p>To date, over 36,000 consultants from 1,300 organizations have received Claude certification, with 400,000 completing training through the Anthropic Partner Academy. Major consulting firms – Accenture, Capgemini, Cognizant, Deloitte, DXC, Infosys, KPMG, PwC, TCS, and UST – have committed to certifying significant numbers of professionals, totaling tens of thousands. These credentials are designed to provide confidence to enterprises selecting partners and demonstrate validated skills rather than just course completion.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-07-22</span>
+    </div>
+    <h3><a href="https://claude.com/blog/how-outtake-built-a-cyber-investigator-on-claude" target="_blank" rel="noopener">How Outtake built a cyber investigator on Claude | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Outtake has built a cyber investigation agent, called Recon Agent, using Anthropic’s Claude 3 Opus model, Claude Code, and the Agent SDK. The agent autonomously investigates digital threats – from phishing pages to full attack networks – by reading, writing, and executing code. Investigations typically last 16 minutes to over an hour, with one running for two hours. </p>
+<p>The Recon Agent operates in four stages: defining an ideal investigation, prototyping with Claude Code, moving to a production harness with the Agent SDK, and establishing a tight iteration loop with automated evaluations. A key principle is tight orchestration with freedom for improvisation when judgement is needed. The system utilizes a filesystem for long-term memory and prioritizes guardrails over relying solely on prompts for consistent behavior.</p>
+<p>Outtake emphasizes that providing agents with tools like a filesystem and bash access is crucial for handling unforeseen obstacles and maintaining successful outcomes, even in potentially compromised environments. They also use evaluations not just for reliability, but to accelerate the development and iteration cycle, effectively automating quality checks.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-07-22</span>
+    </div>
+    <h3><a href="https://claude.com/blog/building-verification-loops-in-claude-code-with-skills" target="_blank" rel="noopener">Building verification loops in Claude Code with skills | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic’s Claude Code now supports building “verification loops” – automated checks and fixes within the coding process. These loops enable Claude to iteratively test its work, running tools like type checkers, linters, and custom tests, then attempt to correct failures before presenting results.  Users can define these loops as “skills”, ensuring consistent checks across sessions. </p>
+<p>Built-in verification includes the <code>/verify</code> skill, toolchain integration (catching error codes), a Code Review research preview which integrates with GitHub Actions, and spec validation; custom loops can be built from existing manual checks, written in plain English and encoded as skills using a skill creator plugin or Markdown files. The system offers flexibility – standalone checks, embedding within existing skills, chaining multiple skills together, or triggering on every pull request.</p>
+<p>This feature is designed to automate repetitive tasks currently done manually by developers, reducing the need for constant review and allowing Claude to fix issues autonomously. Details on skill structure and how to implement the different loop types are provided, helping users tailor verification to their specific project needs.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
       <span>news</span>
       <span> · 2026-07-22</span>
     </div>
@@ -184,7 +292,7 @@
   
   <div class="card">
     <div class="meta">
-      
+      <span class="source">Anthropic</span> · 
       <span>news</span>
       <span> · 2026-07-22</span>
     </div>
@@ -198,7 +306,35 @@
   
   <div class="card">
     <div class="meta">
-      
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-07-21</span>
+    </div>
+    <h3><a href="https://claude.com/blog/how-datadog-built-a-universal-machine-tool-for-claude-code" target="_blank" rel="noopener">How Datadog built a “universal machine tool” for Claude Code | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Datadog has developed “Temper” – a deterministic kernel designed to enable agents using Claude Code to build and operate software systems more reliably.  Instead of agents directly producing application code, they now generate <em>specifications</em> which Temper then verifies through four layers of analysis – symbolic reasoning, state exploration, deterministic simulation, and randomized property testing – before deployment. This ensures the running system precisely matches the verified specification, avoiding drift and improving safety. </p>
+<p>The development of Temper stemmed from challenges with verifying agent-generated code as Datadog increasingly relied on Claude Code for tasks like bug fixes, refactoring, and even building entire systems. Prior projects – Courier, BitsEvolve, and Helix – each highlighted a different bottleneck leading to this need for a “machine tool” equivalent for agentic systems.  Temper aims to ensure agents build within a safe, policy-driven runtime, focusing on repeatable, inspectable, and replaceable components.</p>
+<p>Temper’s capabilities are defined by three contracts: Behavior, Data, and Authorization, each undergoing rigorous verification. This framework moves beyond simply increasing code generation throughput and focuses on building trust and control into agent-driven development workflows. Datadog believes this approach could potentially be applied broadly to any software with a defined control logic.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-07-21</span>
+    </div>
+    <h3><a href="https://claude.com/blog/how-anthropic-secures-its-ai-native-software-development-lifecycle" target="_blank" rel="noopener">How Anthropic secures its AI-native software development lifecycle | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic has significantly altered its software development lifecycle (SDLC) to accommodate the fact that Claude now authors approximately 80% of merged code. To maintain velocity—developers ship 8x more code per quarter than in 2021-2025—security has been shifted left, fully integrating with the coding stage. This includes a Claude Opus-powered project security review (PSR) application that analyzes designs against the MITRE ATT&amp;CK framework, connected to an internal knowledge index for contextual awareness.</p>
+<p>Key to this AI-native approach is containing “blast radius” through hard identity boundaries and remote virtual machines with egress allowlisting. Security processes are enhanced by automated, deterministic, and agentic reviews alongside human oversight, especially for critical code.  A core shift involves a closed-loop system where discovered vulnerabilities inform updates to Claude’s instructions, ensuring future code generation follows improved security practices. </p>
+<p>These strategies are built upon the principles of connecting security agents to organizational context and limiting agent access (“Principle of Least Agency”). Anthropic emphasizes that monitoring now focuses on the AI loops and dashboards rather than solely on bug reports, with all agent actions logged for auditing and threat detection.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
       <span>news</span>
       <span> · 2026-07-21</span>
     </div>
@@ -212,7 +348,21 @@
   
   <div class="card">
     <div class="meta">
-      
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-07-20</span>
+    </div>
+    <h3><a href="https://claude.com/blog/working-at-the-frontier-rakuten" target="_blank" rel="noopener">How Rakuten builds agents overnight with Claude Fable 5 | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Rakuten has been using Anthropic’s Claude models since March 2025, and their General Manager of AI for Business, Yusuke Kaji, reports a significant leap in capabilities with <strong>Claude Fable 5</strong>. The key improvement lies in Fable 5’s ability to run long-running tasks—spanning hours or even days—with minimal human oversight due to its enhanced self-verification capabilities.  Previously, mistakes early in a multi-hour task would often derail the entire process, requiring manual intervention.</p>
+<p>Fable 5 distinguishes itself by re-checking its own assumptions and returning to first principles at each step, proactively correcting course before errors compound. Kaji describes this as “taste alignment,” where it reliably makes the decisions his team would. This allows Rakuten to delegate entire tasks, rather than breaking them into smaller chunks, and frees staff to focus on higher-level decisions, increasing overall productivity.  </p>
+<p>The model’s self-correction and improved efficiency translate to fewer tokens used and fewer errors, making it a cost-effective choice for complex, protracted tasks. Rakuten is now exploring using Claude agents to coordinate <em>people</em>, leveraging the efficiency gains to tackle organizational alignment challenges.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
       <span>news</span>
       <span> · 2026-07-20</span>
     </div>
@@ -226,7 +376,89 @@
   
   <div class="card">
     <div class="meta">
-      
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-07-17</span>
+    </div>
+    <h3><a href="https://claude.com/blog/ciso-guide-to-agentic-ai" target="_blank" rel="noopener">CISO&#39;s guide to agentic AI | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic’s blog post details a risk assessment framework for adopting agentic AI, developed by their Deputy CISO, Jason Clinton. The core claim is that a CISO's role isn’t to eliminate risk, but to make it “legible and bounded” – to understand and manage it deliberately. This addresses the rapid increase in agentic AI use cases and the associated security concerns.</p>
+<p>The framework centers around four key questions: what untrusted content does the agent ingest, what actions can it take and on whose behalf, what is the potential blast radius of misalignment, and what observability exists over the agent’s actions. Anthropic illustrates this with two case studies: an incident response agent (system service account) and Claude Cowork (human-credentialed agent), highlighting how controls like identity management, connector allowlists, and egress allowlisting can mitigate risk. </p>
+<p>Notably, Anthropic found that simply upgrading the model powering their incident response agent (from Claude Opus 4 to 4.5) led to emergent behavior – the agent attempted self-remediation – illustrating the need to design for evolving model intelligence and the ongoing importance of human oversight. They emphasize that a layered security approach—identity, least privilege, monitoring, and an insider risk program—is critical.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-07-17</span>
+    </div>
+    <h3><a href="https://claude.com/blog/working-at-the-frontier-cursor" target="_blank" rel="noopener">How Cursor knew Claude Fable 5 was ready for the hardest 1% of problems | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic’s blog post details the performance of Claude Fable 5, evaluated by Cursor, an AI coding agent company. CursorBench, their internal benchmark simulating real developer tasks, showed Fable 5 achieving 72.9% on “Max effort” – a new high. Critically, developers using Fable 5 report needing less “babysitting” and fewer prompting iterations to achieve results, even on complex, previously intractable problems.</p>
+<p>Fable 5 demonstrates “global reasoning,” understanding the entire context of a task rather than just immediate steps – as demonstrated by successfully simulating a lunar landing after initial failures, by first prioritizing a scouting mission.  Cursor recommends using Fable 5 when the path to a solution is unclear, valuing its ability to find solutions to truly difficult (“p99”) problems and reduce time to solution.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-07-16</span>
+    </div>
+    <h3><a href="https://claude.com/blog/working-with-claude-fable-5-in-claude-cowork" target="_blank" rel="noopener">Working with Claude Fable 5 in Claude Cowork | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic has released Claude Fable 5, its most capable model to date, optimized for long-running, complex tasks within its agentic AI system, Claude Cowork.  Fable 5 excels at multi-step workflows—like research, due diligence, and contract review—by maintaining context and evaluating results over extended periods, a challenge for previous models. It’s designed to be used more like a skilled colleague: given a goal and constraints, it independently plans and executes the work, proactively correcting errors as they arise. </p>
+<p>Users select Claude Fable 5 within Claude Cowork, as it isn't the default; Claude Sonnet 5 handles everyday tasks, while Claude Opus is suitable for well-defined deep work.  Fable 5 demands more computing resources, so Anthropic suggests reserving it for crucial, time-sensitive projects.  The model also incorporates new classifiers for safety, triggering a handoff to Claude Opus 4.8 when potentially problematic requests regarding cybersecurity or biological/chemical topics are detected.</p>
+<p>To maximize Fable 5’s capabilities, Anthropic recommends providing thorough context – files, connected tools, clear objectives – and leveraging “skills” that capture repeatable processes.  The model's performance benefits from higher “effort” settings for complex tasks and lower settings for simpler ones, and Anthropic encourages users to review Claude’s plan during execution and the final output for verification.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-07-16</span>
+    </div>
+    <h3><a href="https://claude.com/blog/ai-code-migration" target="_blank" rel="noopener">How Anthropic runs large-scale code migrations with Claude Code | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic has demonstrated large-scale code migrations using AI agents and models including Claude Fable 5 and Claude Opus 4.8.  These migrations involved porting codebases of tens to hundreds of thousands of lines, with a notable example being Bun’s million-line migration from Zig to Rust completed in under two weeks, retaining 100% test suite pass rate before merging and resolving 19 regressions post-merge. </p>
+<p>Another migration, led by Mike Krieger, involved converting a 165,000-line Python codebase to TypeScript over a weekend, utilizing hundreds of AI agents, eight phase gates, three adversarial reviews, and a parity check against the original Python code.  The core process involves defining migration rules and verification loops, allowing AI agents to translate, compile, and test until behavioral parity is achieved. </p>
+<p>These successful migrations consumed significant API tokens – Bun's port used 5.9 billion uncached input tokens and 690 million output tokens, costing roughly $165,000. Anthropic’s process emphasizes fixing the migration <em>process</em> itself—the rules and loops—rather than directly editing the generated code, leveraging AI’s ability to handle parallel work and objective verification via testing.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>research</span>
+      <span> · 2026-07-14</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/research/how-canada-uses-claude" target="_blank" rel="noopener">How Canada uses Claude</a></h3>
+    
+    <div class="summary"><p>The Anthropic Economic Index finds Canada exhibits unusually high adoption of <strong>Claude</strong>, representing 2.6% of global traffic – ranking 8th overall, but second in usage per capita among the top ten countries. Canada's Anthropic AI Usage Index (AUI) is 4.4, over four times higher than expected given its working-age population. This surpasses adoption rates predicted by income levels, suggesting factors beyond wealth are at play.</p>
+<p>Within Canada, usage is regionally concentrated, with Ontario accounting for 43.9% of conversations and British Columbia leading per capita at 1.4x the expected rate.  Importantly, adoption correlates more strongly with the prevalence of professional, scientific, and technical services sectors within each province's economy than with per capita income.</p>
+<p>Canadian usage patterns are distinctive in their emphasis on academic work, coding assistance, and resume drafting, while leaning towards translation requests – likely tied to Canada’s bilingualism policy, making document translation a uniquely Canadian use case relative to other Anglosphere countries.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>news</span>
+      <span> · 2026-07-14</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/news/canadian-ai-research" target="_blank" rel="noopener">Anthropic commits $10 million to Canadian AI research</a></h3>
+    
+    <div class="summary"><p>Anthropic is investing $10 million CAD into Canadian AI research, partnering with Alberta Machine Intelligence Institute (Amii), Mila, the Vector Institute, CHEO, CAMH, Université Laval, University of Toronto, and the University of Saskatchewan. These partnerships will provide Claude API credits to researchers focusing on areas like reinforcement learning, AI safety, responsible AI, health applications, and linguistic diversity – including Quebec French and Indigenous languages. Anthropic will also add Amii, Mila, and Vector to its Anthropic for Startups program, providing at least $5,000 USD in credits to hundreds of Canadian startups. </p>
+<p>Additionally, Anthropic released its first Canadian country brief from the March 2026 Anthropic Economic Index, finding that Canada ranks eighth globally in Claude.ai usage, with per capita usage exceeding expectations. Usage correlates with provinces concentrating professional, scientific, and technical work, and translation requests are higher in provinces with significant government employment. The company emphasizes the historical importance of Canadian institutions in AI development and its commitment to democratic leadership in AI governance.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
       <span>news</span>
       <span> · 2026-07-14</span>
     </div>
@@ -235,6 +467,34 @@
     <div class="summary"><p>Anthropic has announced “Claude for Teachers”, providing verified US K-12 educators with free access to premium Claude capabilities. The offering includes a “Learning Commons” connector providing access to academic standards for all 50 states, plus integration with educational tools like ASSISTments, Brisk Teaching, Canva Education, Coteach, Diffit, Eedi, MagicSchool, Snorkl, and TeachFX. </p>
 <p>Claude for Teachers aims to assist with tasks such as lesson planning, differentiation for varied student levels, analysis of student data for instructional adjustments, and automated, recurring tasks like exit ticket review. Anthropic states that data shared by educators will not be used for model training and emphasizes K-12 data privacy compliance via a dedicated addendum and alignment with standards from the American Federation of Teachers.</p>
 <p>Additionally, Anthropic released “AI Fluency for PK-12 Teachers,” a Creative Commons-licensed course co-created with Teach For America, and will pilot testing in the Detroit Public Schools Community District. Access to Claude for Teachers is free for individual educators who sign up by June 30, 2027, with a dedicated offering for schools and districts planned for the future.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>research</span>
+      <span> · 2026-07-13</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/research/claude-values-models-languages" target="_blank" rel="noopener">How Claude&#39;s values vary by model and language</a></h3>
+    
+    <div class="summary"><p>Anthropic researchers investigated how the values expressed by Claude models vary across different models and languages. They found a way to compress the over 3,000 identified values into four key axes: Deference vs. Caution, Warmth vs. Rigor, Depth vs. Brevity, and Candor vs. Execution. These axes capture 15% of the variation in Claude’s responses while controlling for task, topic, and user input. </p>
+<p>Specifically, Sonnet 4.6 leans towards warmth and deference, while Opus 4.7 emphasizes rigor and caution.  The study also reveals linguistic variation: Claude expresses more warmth in Hindi and Arabic, while prioritizing rigor in English and Russian. These differences align with perceptions of each model’s character—Sonnet 4.6 is considered warmer, while Opus 4.7 is known for its rigor—and highlight potential impacts from training data and cultural context.</p>
+<p>The researchers used a privacy-preserving analysis of over 300,000 conversations across three models (Sonnet 4.6, Opus 4.6, and Opus 4.7) and 20 languages to build these value axes. This method allows Anthropic to track and potentially steer the values Claude expresses, informing future training adjustments and model evaluation.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>research</span>
+      <span> · 2026-07-09</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/research/claude-plays-robotics" target="_blank" rel="noopener">How Claude Performs on Robotics Tasks</a></h3>
+    
+    <div class="summary"><p>Claude models, particularly Mythos Preview and Opus 4.6/4.7, demonstrate improving robotics capabilities when connected to robots via higher-abstraction control methods. Anthropic tested these models—along with Gemini 3.1 and GPT-5.4—controlling robot bodies ranging from simulated environments to a real Unitree Go2 quadruped, using control interfaces from direct motor torque commands to supervising pretrained policies.  While direct control remains challenging, newer models show substantial gains supervising pretrained controllers for navigation and manipulation tasks.</p>
+<p>The research utilized a benchmark suite called Embody, measuring performance in classic control problems, locomotion/navigation, and manipulation. Results indicate a model’s success heavily depends on the control interface; direct control frequently fails, while supervising existing policies or using orientation tools yields better outcomes. Newer models (especially Mythos Preview) excel at recognizing when a pretrained policy will fail and adjusting accordingly, showing promise in safely guiding robotic systems and exhibiting net gains on tasks the policy couldn’t handle alone. </p>
+<p>Adding visual aids like depth maps showed limited improvement, but a simple compass indicating orientation significantly enhanced both manipulation and locomotion performance, suggesting a key bottleneck is spatial awareness. The suite of 11 navigation tasks showed newer models struggled with tasks requiring sustained spatial bookkeeping, but made gains with clear instructions.</p></div>
     
   </div>
   
