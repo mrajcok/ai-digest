@@ -208,7 +208,10 @@ class FeedScraper(BaseScraper):
 
     @property
     def sources(self) -> list[str]:
-        return [f"{s.url} — {s.label}" for s in self.feed_sources]
+        return [
+            f"{s.url} — {s.label}" + (" (blocked — see Known issues below)" if s.blocked else "")
+            for s in self.feed_sources
+        ]
 
     @property
     def exclusions(self) -> list[str]:

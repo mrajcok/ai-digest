@@ -37,6 +37,11 @@ class Source:
     include_patterns: tuple[str, ...] = ()      # URL path prefix allowlist; empty → keep all
     exclude_patterns: tuple[str, ...] = ()      # URL/title substrings to drop
     daily_cap: int | None = None                # max items per run, newest first
+    # True → discovery still runs, but article fetches always fail (e.g. a
+    # Cloudflare block). Flags the index page's Coverage line so 0 articles
+    # from this source doesn't read as "just hasn't run yet." Pair with a
+    # matching note on the scraper's `known_issues`.
+    blocked: bool = False
 
 
 @dataclass(frozen=True)
@@ -165,6 +170,7 @@ COMPANIES: dict[str, Company] = {
                 url="https://openai.com/news/rss.xml",
                 kind="rss",
                 category="news",
+                blocked=True,
             ),
         ),
     ),
