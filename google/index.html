@@ -80,11 +80,96 @@
     </label>
   </div>
   <h1>Google News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-08-03 00:01 UTC</p>
+  <p class="generated-at">Generated 2026-08-03 01:35 UTC</p>
   
 
   
-  <p>No updates yet.</p>
+  <h2 class="month">July 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">DeepMind Blog</span> · 
+      <span>research</span>
+      <span> · 2026-07-30</span>
+    </div>
+    <h3><a href="https://deepmind.google/blog/gemini-robotics-er-2-powering-robotics-with-video-understanding-task-orchestration-and-multi-robot-collaboration/" target="_blank" rel="noopener">Gemini Robotics ER 2: powering robotics with video understanding, task orchestration, and multi-robot collaboration</a></h3>
+    
+    <div class="summary"><p>Gemini Robotics ER 2 is a new model designed to act as a high-level “brain” for robots, enabling real-time spatial reasoning, multi-step task planning, and multi-robot collaboration.</p>
+<ul>
+<li>The model improves task orchestration by outperforming Gemini Robotics ER 1.6 across real, simulated, and human-teleoperated control modes.</li>
+<li>Gemini Robotics ER 2 achieves 57.4% accuracy on progress classification tasks and 91.3% accuracy with a 0.96s mean absolute distance on moment-finding, exceeding previous generation models.</li>
+<li>The model supports multi-robot collaboration, demonstrated with Apptronik’s Apollo 2 and Franka F3 Duo robots.</li>
+<li>Gemini Robotics ER 2 is available via the Gemini API, Google AI Studio, and in private preview on the Gemini Enterprise Agent Platform and shows gains in safety benchmarks like Safety Instruction Following and Human Proximity.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">DeepMind Blog</span> · 
+      <span>research</span>
+      <span> · 2026-07-29</span>
+    </div>
+    <h3><a href="https://deepmind.google/blog/were-launching-lyria-35-in-google-flow-music-with-advances-across-musicality-lyrics-vocals-and-creative-control/" target="_blank" rel="noopener">We’re launching Lyria 3.5 in Google Flow Music, with advances across musicality, lyrics, vocals, and creative control</a></h3>
+    
+    <div class="summary"><p>Lyria 3.5, a new music generation model, is now available in Google Flow Music and delivers improvements to musicality, lyrics, and vocal quality. The model produces more natural melodies, higher-quality lyrics with better prompt adherence, and vocals with improved emotional nuance and pronunciation, and offers greater control over tempo and duration. This release represents an advancement over prior versions of Lyria, enabling users to create richer and more complex tracks within the Flow Music application.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">DeepMind Blog</span> · 
+      <span>research</span>
+      <span> · 2026-07-28</span>
+    </div>
+    <h3><a href="https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/" target="_blank" rel="noopener">Gemini Robotics 2 brings whole body intelligence to robots</a></h3>
+    
+    <div class="summary"><p>Gemini Robotics 2 brings whole-body intelligence to robots, enabling advanced dexterity and multi-robot collaboration.</p>
+<ul>
+<li>Gemini Robotics 2 is a vision-language-action (VLA) model that controls full humanoids and bi-arm robots, improving dexterity in both hands and grippers.</li>
+<li>Gemini Robotics ER 2, an embodied reasoning (ER) model, acts as an agent, allowing robots to communicate, understand the physical world, and plan multi-step tasks lasting several minutes; it’s available on Google AI Studio and in private preview on Gemini Enterprise Agent Platform.</li>
+<li>Gemini Robotics On-Device 2 is an efficient VLA optimized for running locally on robots, enabling adaptation to new robot bodies with a few hours of data (typically &lt;200 examples).</li>
+<li>The system achieved medium to high success rates for whole-body and gripper-based tasks, though multi-finger dexterous manipulation remains challenging; new ASIMOV-Agentic benchmark evaluates agentic safety.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Google AI Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-07-28</span>
+    </div>
+    <h3><a href="https://blog.google/products-and-platforms/products/search/ai-mode-real-world-tips/" target="_blank" rel="noopener">5 ways AI Mode in Search helps you enjoy the real world</a></h3>
+    
+    <div class="summary"><p>AI Mode in Google Search provides new capabilities to assist with offline activity planning.</p>
+<ul>
+<li>AI Mode can suggest local classes (like tennis lessons) tailored to a user’s Google Calendar schedule using Personal Intelligence.</li>
+<li>Shopping within AI Mode allows users to find specific gear (e.g., hiking boots with ankle support) and check local store stock, including by phone.</li>
+<li>The Canvas feature within AI Mode enables strategy guide creation for games (like chess) and even practice simulations against a computer.</li>
+<li>AI Mode can curate event ticket options based on user preferences (budget, quantity, event type) and connect to booking platforms.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Google AI Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-07-28</span>
+    </div>
+    <h3><a href="https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api-3-6-flash-hooks/" target="_blank" rel="noopener">Gemini API Managed Agents: 3.6 Flash, hooks, and more</a></h3>
+    
+    <div class="summary"><p>Gemini API Managed Agents now default to Gemini 3.6 Flash and introduce new capabilities for controlling and monitoring agent behavior.</p>
+<ul>
+<li><strong>Gemini 3.6 Flash is the default model</strong>, offering a balance of reasoning, coding, and tool use; alternatives include Gemini 3.5 Flash and Gemini 3.5 Flash-Lite for lower cost/latency, selectable via <code>agent_config.model</code>.</li>
+<li><strong>Environment hooks</strong> allow custom scripts to be executed before or after tool calls within the agent’s sandbox, enabling security checks, linting, and auditing through <code>.agents/hooks.json</code> configuration.</li>
+<li><strong>Budget controls</strong> can be implemented using <code>max_total_tokens</code> in <code>agent_config</code> to cap resource consumption and prevent runaway tasks, allowing paused execution to be resumed.</li>
+<li><strong>Scheduled triggers</strong> enable automated, recurring agent tasks based on a cron schedule, with persistent sandboxes retaining files between executions, and the Environments API allows listing/managing these sandboxes.</li>
+</ul></div>
+    
+  </div>
+  
   
 
   <script>
