@@ -17,7 +17,7 @@ from digest.storage.models import CATEGORIES, Category
 
 logger = logging.getLogger(__name__)
 
-Kind = Literal["rss", "atom", "sitemap"]
+Kind = Literal["rss", "atom", "sitemap", "listing"]
 Group = Literal["vendor", "press"]
 
 
@@ -47,6 +47,10 @@ class Company:
     label: str          # "Google"
     group: Group
     sources: tuple[Source, ...]
+    # True → still scraped (so discovery keeps working and the company page
+    # still renders) but dropped from the index page's company nav, e.g. a
+    # site that currently blocks non-browser fetches. See docs/sources.md.
+    blocked: bool = False
 
 
 # Anthropic publishes no RSS feed (both /rss.xml candidates 404), so it is scraped
@@ -95,6 +99,22 @@ _PRESS_AI_CATEGORIES = ("AI", "Artificial Intelligence", "AI agents", "LLMs", "g
 _TECHCRUNCH_EXCLUDES = ("india-is-starting-to-pay-for-apps",)
 _ARSTECHNICA_EXCLUDES = ("dmca",)
 
+# Every item in blog.google/technology/ai/rss/ carries an "AI" tag — it's a
+# section feed, not a real topic filter — so an include_categories allowlist
+# can't separate AI announcements from product-marketing/PR posts that just
+# mention an AI feature in passing. Seeded from the 9 of 20 items the
+# 2026-08-02 probe found doing that (docs/sources.md); same "starting point,
+# needs tuning" caveat as the TechCrunch/Ars lists above.
+_GOOGLE_AI_BLOG_EXCLUDES = (
+    "dinner-party",
+    "galaxy-unpacked",
+    "25th-anniversary",
+    "google-finance",
+    "thrifting",
+    "trailblazers",
+    "infrastructure-and-cloud/global-network",
+)
+
 
 COMPANIES: dict[str, Company] = {
     "anthropic": Company(
@@ -112,12 +132,28 @@ COMPANIES: dict[str, Company] = {
                 include_patterns=_ANTHROPIC_INCLUDES,
                 exclude_patterns=_ANTHROPIC_EXCLUDES,
             ),
+            # Anthropic's product and engineering writing moved to claude.com —
+            # this is where the Claude Code posts live. Its sitemap carries no
+            # `lastmod` on any of ~199 entries, so discovery uses the listing
+            # page, which renders each post's date. See scrapers/listing.py.
+            Source(
+                key="claude-blog",
+                company="anthropic",
+                label="Claude Blog",
+                url="https://claude.com/blog",
+                kind="listing",
+                category="blog",
+                include_patterns=("/blog/",),
+            ),
         ),
     ),
     "openai": Company(
         key="openai",
         label="OpenAI",
         group="vendor",
+        # openai.com blocks non-browser fetches on article pages — see
+        # OpenAIScraper.known_issues and docs/sources.md.
+        blocked=True,
         sources=(
             # No filtering: the whole feed is AI by definition. Its <category> tags
             # are real though (Research, Engineering, Product, …) — see sources.md;
@@ -144,6 +180,7 @@ COMPANIES: dict[str, Company] = {
                 url="https://blog.google/technology/ai/rss/",
                 kind="rss",
                 category="blog",
+                exclude_patterns=_GOOGLE_AI_BLOG_EXCLUDES,
             ),
             # DeepMind's feed carries no <category> elements — categorize by source.
             Source(

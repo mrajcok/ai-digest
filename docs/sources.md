@@ -44,6 +44,31 @@ because every other section is an evergreen page that gets restamped on each
 site rebuild. Note some `/news/` posts 301 to `claude.com/blog/…` product pages
 (e.g. `/news/skills`); those are excluded by date, not by pattern.
 
+The `/claude/` exclusion drops exactly five model landing pages (`/claude/opus`,
+`/claude/sonnet`, `/claude/haiku`, `/claude/fable`, `/claude/mythos`) and no
+posts — the pattern has slashes, so it never touches `/news/claude-…` or
+`/engineering/claude-code-…`. Keep it: those five do render a date, so removing
+it would admit five evergreen product pages as articles.
+
+### Anthropic — claude.com blog (listing page)
+Anthropic's product and engineering writing now lives at `claude.com/blog`; this
+is where the Claude Code posts are. There is no feed (`/blog/rss.xml`,
+`/blog/feed`, `/atom.xml` all 404) and **`claude.com/sitemap.xml` carries no
+`lastmod` on any of its ~199 `/blog/` entries**, so a sitemap-driven run would
+have to fetch every post every day just to read its date.
+
+The listing page is the exception to the "prefer sitemaps and feeds" rule: it is
+server-rendered and pairs each of the ~25 newest posts with its publication
+date, so discovery is one request and the age cutoff runs before any article is
+fetched. Measured 2026-08-02: 25 of 25 posts dated, covering 2026-04-02 to
+2026-07-28.
+
+Two card layouts share the page — the date sits three levels above the link in
+the featured row and two in the grid — so `scrapers/listing.py` walks up from
+each link rather than using a fixed selector, stopping when an ancestor covers
+more than one distinct post URL. Backfill deeper than the listing window is not
+possible from this source.
+
 ### OpenAI — the category tags are usable after all
 `openai.com/blog/rss.xml` redirects to the same feed. `pubDate` is reliable.
 
@@ -64,11 +89,35 @@ are good enough to **categorize** on: `Research`/`Publication` → `research`,
 else → `news`. `FeedScraper.categorize()` is the hook for that; wiring it up is
 Step 5's call.
 
-### Google — two sources, no filtering
-`blog.google/technology/ai/rss/` is already topic-scoped, which resolves the
-open question about how hard Google would be to filter: it isn't. DeepMind is
-a separate feed with no overlap. Note DeepMind's feed has no `<category>`
-elements — categorize by source, not by tag.
+**Known limitation, found 2026-08-02: article pages are Cloudflare-gated.**
+The feed itself (`openai.com/news/rss.xml`) still returns 200, but every
+`openai.com/index/*` and `openai.com/academy/*` article page now 403s —
+confirmed with `ai-digest/1.0`, no UA, and a full browser UA string alike, so
+it isn't a header fix. Response carries `cf-mitigated: challenge` and
+`server: cloudflare`, i.e. a JS/fingerprint challenge, the same failure mode
+already excluded xAI and Perplexity below — incompatible with the
+httpx-only, no-headless-browser design. Net effect: `discover_urls()` still
+finds OpenAI's URLs, but every `scrape_page()` fetch fails, so the source
+currently yields 0 summarized articles.
+
+The feed's `<description>` (avg ~173 chars, some as short as 10) could stand
+in for the article body as a stopgap, but that is exactly the
+"summarize a teaser" case `feed.py` already avoids by design (see comment at
+`_parse_entry`, `content:encoded` vs `description`) — not implemented.
+
+### Google — two sources, one needs exclude_patterns
+DeepMind is a separate feed with no overlap and no `<category>` elements —
+categorize by source, not by tag.
+
+`blog.google/technology/ai/rss/` looked topic-scoped but isn't: **every item
+carries an `AI` tag** — same shape as the TechCrunch/Ars problem below, an
+allowlist can't separate signal from noise — and re-probed 2026-08-02, 9 of
+20 items were product-marketing or corporate-PR posts that just mention an AI
+feature in passing (a Search "5 ways to host a dinner party" listicle, a
+Galaxy Unpacked hardware recap, a Google Finance app update, data-center
+community-investment posts). `exclude_patterns` on `google-ai-blog` in
+`sources.py` (`_GOOGLE_AI_BLOG_EXCLUDES`) drops those 9; same "seeded from one
+probe, needs tuning" caveat as `_TECHCRUNCH_EXCLUDES`/`_ARSTECHNICA_EXCLUDES`.
 
 `cloud.google.com/blog/rss` and `.../products/ai-machine-learning/rss` return
 zero entries; do not use them.

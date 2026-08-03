@@ -154,7 +154,10 @@ def _close_scrapers(scrapers: list) -> None:
 
 
 def _scraper_infos(scrapers: list) -> list[dict]:
-    return [{"company": s.company, "sources": s.sources, "exclusions": s.exclusions} for s in scrapers]
+    return [
+        {"company": s.company, "sources": s.sources, "exclusions": s.exclusions, "known_issues": s.known_issues}
+        for s in scrapers
+    ]
 
 
 def _scrape_and_cache(scraper, db: ArticleDB, limit: int, category: str | None = None) -> list[ScrapedPage]:

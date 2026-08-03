@@ -15,6 +15,12 @@ _PRODUCT_TAGS = {"product", "release"}
 
 class OpenAIScraper(FeedScraper):
     company = "openai"
+    known_issues = (
+        "openai.com blocks machines via Cloudflare on article pages — every "
+        "/index/* and /academy/* URL returns HTTP 403 with cf-mitigated: "
+        "challenge, even with a browser User-Agent. The RSS feed itself "
+        "still returns 200. See docs/sources.md.",
+    )
 
     def categorize(self, source: Source, entry: FeedEntry) -> Category:
         tags = {c.lower() for c in entry.categories}

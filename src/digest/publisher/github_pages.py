@@ -176,6 +176,7 @@ class GitHubPagesPublisher:
             vendor_updates=vendor_updates,
             press_updates=press_updates,
             company_labels={c: COMPANY_REGISTRY[c].label for c in COMPANIES},
+            nav_companies=[(c, COMPANY_REGISTRY[c].label) for c in COMPANIES if not COMPANY_REGISTRY[c].blocked],
             index_per_company=settings.index_per_company,
             index_per_company_press=settings.index_per_company_press,
             generated_at=datetime.now(UTC).strftime("%Y-%m-%d %H:%M %Z"),

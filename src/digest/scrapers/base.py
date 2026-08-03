@@ -70,6 +70,7 @@ class BaseScraper(ABC):
     company: str
     _sleep_between_requests: float = 1.0
     _user_agent: str = "ai-digest/1.0"
+    known_issues: tuple[str, ...] = ()  # index-page Coverage note; see main._scraper_infos
 
     def __init__(self) -> None:
         self.client = httpx.Client(

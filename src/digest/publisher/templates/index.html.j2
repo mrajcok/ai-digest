@@ -69,6 +69,9 @@
     .index-hint { flex: 1; font-size: .95rem; color: var(--text-2); margin: 0; }
     .index-hint a { color: var(--link); text-decoration: none; }
     .index-hint a:hover { color: var(--link-hover); }
+    .company-links { font-size: .95rem; color: var(--text-2); margin: -.75rem 0 1.5rem; }
+    .company-links a { color: var(--link); text-decoration: none; }
+    .company-links a:hover { color: var(--link-hover); }
     h2.section { margin: 2rem 0 1rem; font-size: 1rem; color: var(--section-color); text-transform: uppercase; letter-spacing: .05em; border-bottom: 1px solid var(--border-subtle); padding-bottom: .25rem; }
     .card { border: 1px solid var(--border); border-radius: 6px; padding: 1rem 1.25rem; margin-bottom: 1rem; background: var(--surface); }
     .meta { font-size: .85rem; color: var(--text-2); margin-bottom: .4rem; }
@@ -121,6 +124,9 @@
       <span class="toggle-icon" id="theme-icon">☀</span>
     </label>
   </div>
+  <p class="company-links">
+    {% for c, label in nav_companies %}<a href="{{ c }}/">{{ label }}</a>{% if not loop.last %} · {% endif %}{% endfor %}
+  </p>
 
   {% macro card(r) %}
   <div class="card">
@@ -172,6 +178,12 @@
       <ul>
         {% for e in info.exclusions %}<li class="excl">{{ e }}</li>{% endfor %}
       </ul>
+      {% if info.known_issues %}
+      <div class="label">Known issues</div>
+      <ul>
+        {% for k in info.known_issues %}<li class="excl">{{ k }}</li>{% endfor %}
+      </ul>
+      {% endif %}
     </div>
     {% endfor %}
   </section>
