@@ -80,11 +80,54 @@
     </label>
   </div>
   <h1>Mistral AI News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-08-03 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-08-04 10:16 UTC</p>
   
 
   
-  <p>No updates yet.</p>
+  <h2 class="month">July 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-07-09</span>
+    </div>
+    <h3><a href="https://mistral.ai/news/manage-prompts-and-skills-in-studio/" target="_blank" rel="noopener">Your Prompts and Skills need a system of record.</a></h3>
+    
+    <div class="summary"><p>Mistral AI’s Studio now offers a system of record for managing AI prompts and skills, addressing the common enterprise problem of scattered and unmanaged instructions. This feature treats prompts as production assets, providing version control, ownership, and audit logs to ensure AI behavior is governed and traceable. Every prompt or skill receives an immutable version, a designated owner, and can be labeled for classification (e.g., “Production” vs. “Staging”).</p>
+<p>The system aims to accelerate iteration by allowing quick testing of changes without requiring full CI/CD pipelines, while still maintaining enterprise-level controls for deployment. Domain experts can directly improve production instructions, triggering existing CI/CD processes via the Mistral SDK. Importantly, Studio connects these governed assets to runtime behavior through observability, lineage, and telemetry, tracing outputs back to specific versions and usage data.</p>
+<p>This differs from standalone prompt catalogs by providing a closed-loop system where behavior is defined, monitored, and improved against a single source of truth, helping organizations maintain compliance and reduce risk related to ungoverned AI instructions. The feature is currently available to Mistral Studio customers.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-07-08</span>
+    </div>
+    <h3><a href="https://mistral.ai/news/robostral-navigate/" target="_blank" rel="noopener">Introducing Robostral Navigate</a></h3>
+    
+    <div class="summary"><p>Mistral AI has introduced Robostral Navigate, an 8B parameter model designed for robot navigation using only a single RGB camera. Unlike many existing solutions that require depth sensors or multiple cameras, Navigate achieves a 76.6% success rate on unseen R2R-CE (Room-to-Room in Continuous Environments) benchmarks – surpassing existing single and multi-sensor approaches by 9.7 and 4.5 points respectively. </p>
+<p>The model works by predicting target locations using "pointing" – inferring image coordinates and desired orientation – and falls back to metric displacements when the target is out of view.  Training leveraged 2.4 million simulated trajectories across 350k scenes, using a token-efficient prefix-caching method that reduced training time by a factor of 22x.  </p>
+<p>Further performance gains (a 3.2% improvement in success rate) were achieved via online reinforcement learning with the CISPO algorithm. Robostral Navigate has demonstrated successful operation on various robot types—wheeled, legged, and flying—and is notable for being built entirely in-house, not relying on existing open-source visual-language models.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-07-02</span>
+    </div>
+    <h3><a href="https://mistral.ai/news/leanstral-1-5/" target="_blank" rel="noopener">Leanstral 1.5: Proof Abundance for All</a></h3>
+    
+    <div class="summary"><p>Mistral AI has released Leanstral 1.5, a 6B parameter model (within a 119B total parameter model) licensed under Apache 2.0, designed to advance performance in formal verification. The model saturates the miniF2F benchmark, solves 587 of 672 PutnamBench problems, and achieves state-of-the-art results on FATE-H (87%) and FATE-X (34%) abstract algebra benchmarks. Leanstral 1.5 was trained using a three-stage process: mid-training, supervised fine-tuning, and reinforcement learning with CISPO.</p>
+<p>Beyond benchmarks, Leanstral 1.5 successfully verified complex code properties and identified five previously unknown bugs across 57 open-source repositories, including an overflow bug in the <code>datrs/varinteger</code> library. The system operates in both a multi-turn theorem proving environment and a code-agent environment allowing it to edit files and run commands. Benchmarking shows a strong correlation between computational budget (tokens) and performance, scaling up to solving more problems with increased resources – achieving a pass rate of 587/672 on PutnamBench with 4 million tokens per attempt, at roughly $4 per problem. </p>
+<p>The model and a free API endpoint are available on Hugging Face under the name <code>leanstral-1-5</code>. Mistral AI provides instructions for integrating Leanstral 1.5 with their Vibe environment for accessible proof engineering in Lean 4 and also fully open-sourced FLTEval a benchmark for practical proof engineering.</p></div>
+    
+  </div>
+  
   
 
   <script>

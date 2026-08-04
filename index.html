@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at">Generated 2026-08-03 10:17 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-08-04T10:16:50.263892+00:00">Generated 2026-08-04 10:16 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,7 +132,7 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI</h2>
+    <h2 class="overview-heading">Today in AI — Overview for 2026-08-03</h2>
     <p class="overview-meta">2026-08-03 · 7 vendor sources · vendor sources only</p>
     <div class="overview-text"><p>Today’s developments center on advancements in robotic intelligence and model efficiency, with notable updates across Google and Microsoft’s offerings. A significant leap forward comes from Google’s Gemini Robotics 2, a vision-language-action model that markedly improves dexterity in both humanoid and bi-arm robots, enabling more complex, whole-body manipulations as well as more sophisticated multi-robot collaboration. Gemini Robotics ER 2 builds on this, acting as a high-level robotic “brain” exhibiting improved task orchestration and spatial reasoning—currently available through the Gemini API and in private preview on the Enterprise Agent Platform—and addressing safety concerns with new benchmark evaluations. Closely related, Google also released Gemini API Managed Agents, now defaulting to the Gemini 3.6 Flash model which emphasizes speed and efficiency, alongside new tools for controlling agent behavior, including budget controls and scheduled triggers via the Environments API.</p>
 <p>Beyond robotics, Google is expanding the utility of AI within existing consumer products. The launch of Lyria 3.5 in Google Flow Music demonstrates continuing progress on generative music, with improved musicality, lyric quality, and vocal nuance offering greater creative control to users. Meanwhile, enhancements to AI Mode in Google Search broaden its offline planning capabilities, now suggesting tailored classes based on calendar data, streamlining shopping with local stock checks, offering in-application game strategy assistance, and curating event tickets. </p>
@@ -269,6 +269,83 @@
     
   </div>
   
+  <div class="card">
+    <div class="meta">
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
+      <span> · 2026-08-03</span>
+    </div>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/automated-reasoning-policy-refinement-in-amazon-bedrock/" target="_blank" rel="noopener">Automated Reasoning policy refinement in Amazon Bedrock</a></h2>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock now offers automatic policy refinement to automate the process of diagnosing and fixing issues in Automated Reasoning policies, reducing manual effort.</li>
+<li>Two new refinement modes are available: Iterative Refinement addresses rule issues by proposing edits to formal logic, while Ambiguous Variable Refinement resolves language issues by suggesting clearer variable descriptions.</li>
+<li>Iterative Refinement requires a source document and optional feedback, analyzing divergence from the document to propose rule or variable changes, and uses an asynchronous API workflow (start, poll, retrieve).</li>
+<li>Ambiguous Variable Refinement identifies overlapping or incomplete variable definitions causing translation issues and proposes refined descriptions, utilizing the same API workflow as Iterative Refinement but without the need for a source document or tests.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
+      <span> · 2026-08-03</span>
+    </div>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/from-weeks-to-minutes-how-formula-1-uses-agentic-ai-on-aws-to-accelerate-data-operations/" target="_blank" rel="noopener">From weeks to minutes: How Formula 1® uses agentic AI on AWS to accelerate data operations</a></h2>
+    
+    <div class="summary"><p>Formula 1® partnered with AWS to build the Data Accelerator, leveraging agentic AI to accelerate their MarTech data platform operations.</p>
+<ul>
+<li>The Data Accelerator utilizes <strong>Amazon Bedrock AgentCore</strong> to reduce data source onboarding from 6-8 weeks to approximately 40 minutes of code generation plus deployment time.</li>
+<li>The solution includes automated schema evolution detection and remediation, utilizing <strong>AWS Lambda</strong> and <strong>Amazon EventBridge</strong> to monitor for upstream changes and generate code updates.</li>
+<li>A unified data access layer is built on <strong>Amazon SageMaker Unified Studio</strong>, enabling governed self-service data access for data scientists and analysts.</li>
+<li>End-to-end observability and root cause analysis are provided through a new dashboard leveraging an agentic RCA tool, offering data lineage visualized as an interactive graph, with context provided via JSON.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="mistral/" class="badge badge-mistral">Mistral AI</a>
+      <span>blog</span>
+      <span> · 2026-07-09</span>
+    </div>
+    <h2><a href="https://mistral.ai/news/manage-prompts-and-skills-in-studio/" target="_blank" rel="noopener">Your Prompts and Skills need a system of record.</a></h2>
+    
+    <div class="summary"><p>Mistral AI’s Studio now offers a system of record for managing AI prompts and skills, addressing the common enterprise problem of scattered and unmanaged instructions. This feature treats prompts as production assets, providing version control, ownership, and audit logs to ensure AI behavior is governed and traceable. Every prompt or skill receives an immutable version, a designated owner, and can be labeled for classification (e.g., “Production” vs. “Staging”).</p>
+<p>The system aims to accelerate iteration by allowing quick testing of changes without requiring full CI/CD pipelines, while still maintaining enterprise-level controls for deployment. Domain experts can directly improve production instructions, triggering existing CI/CD processes via the Mistral SDK. Importantly, Studio connects these governed assets to runtime behavior through observability, lineage, and telemetry, tracing outputs back to specific versions and usage data.</p>
+<p>This differs from standalone prompt catalogs by providing a closed-loop system where behavior is defined, monitored, and improved against a single source of truth, helping organizations maintain compliance and reduce risk related to ungoverned AI instructions. The feature is currently available to Mistral Studio customers.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="mistral/" class="badge badge-mistral">Mistral AI</a>
+      <span>blog</span>
+      <span> · 2026-07-08</span>
+    </div>
+    <h2><a href="https://mistral.ai/news/robostral-navigate/" target="_blank" rel="noopener">Introducing Robostral Navigate</a></h2>
+    
+    <div class="summary"><p>Mistral AI has introduced Robostral Navigate, an 8B parameter model designed for robot navigation using only a single RGB camera. Unlike many existing solutions that require depth sensors or multiple cameras, Navigate achieves a 76.6% success rate on unseen R2R-CE (Room-to-Room in Continuous Environments) benchmarks – surpassing existing single and multi-sensor approaches by 9.7 and 4.5 points respectively. </p>
+<p>The model works by predicting target locations using "pointing" – inferring image coordinates and desired orientation – and falls back to metric displacements when the target is out of view.  Training leveraged 2.4 million simulated trajectories across 350k scenes, using a token-efficient prefix-caching method that reduced training time by a factor of 22x.  </p>
+<p>Further performance gains (a 3.2% improvement in success rate) were achieved via online reinforcement learning with the CISPO algorithm. Robostral Navigate has demonstrated successful operation on various robot types—wheeled, legged, and flying—and is notable for being built entirely in-house, not relying on existing open-source visual-language models.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="mistral/" class="badge badge-mistral">Mistral AI</a>
+      <span>blog</span>
+      <span> · 2026-07-02</span>
+    </div>
+    <h2><a href="https://mistral.ai/news/leanstral-1-5/" target="_blank" rel="noopener">Leanstral 1.5: Proof Abundance for All</a></h2>
+    
+    <div class="summary"><p>Mistral AI has released Leanstral 1.5, a 6B parameter model (within a 119B total parameter model) licensed under Apache 2.0, designed to advance performance in formal verification. The model saturates the miniF2F benchmark, solves 587 of 672 PutnamBench problems, and achieves state-of-the-art results on FATE-H (87%) and FATE-X (34%) abstract algebra benchmarks. Leanstral 1.5 was trained using a three-stage process: mid-training, supervised fine-tuning, and reinforcement learning with CISPO.</p>
+<p>Beyond benchmarks, Leanstral 1.5 successfully verified complex code properties and identified five previously unknown bugs across 57 open-source repositories, including an overflow bug in the <code>datrs/varinteger</code> library. The system operates in both a multi-turn theorem proving environment and a code-agent environment allowing it to edit files and run commands. Benchmarking shows a strong correlation between computational budget (tokens) and performance, scaling up to solving more problems with increased resources – achieving a pass rate of 587/672 on PutnamBench with 4 million tokens per attempt, at roughly $4 per problem. </p>
+<p>The model and a free API endpoint are available on Hugging Face under the name <code>leanstral-1-5</code>. Mistral AI provides instructions for integrating Leanstral 1.5 with their Vibe environment for accessible proof engineering in Lean 4 and also fully open-sourced FLTEval a benchmark for practical proof engineering.</p></div>
+    
+  </div>
+  
   
 
   
@@ -278,16 +355,16 @@
     <div class="meta">
       <a href="techcrunch/" class="badge badge-techcrunch">TechCrunch</a>
       <span>news</span>
-      <span> · 2026-08-02</span>
+      <span> · 2026-08-03</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/08/02/sam-altman-and-ais-decel-debate/" target="_blank" rel="noopener">Sam Altman and AI’s decel debate</a></h2>
+    <h2><a href="https://techcrunch.com/2026/08/03/a-marc-benioff-backed-startup-thinks-ai-can-solve-the-ai-deployment-problem/" target="_blank" rel="noopener">A Marc Benioff-backed startup thinks AI can solve the AI deployment problem</a></h2>
     
-    <div class="summary"><p>OpenAI CEO Sam Altman suggested a possible need to “pace the rate of AI development” to allow societal adaptation, prompted in part by a recent security incident.</p>
+    <div class="summary"><p>June AI, founded by former Salesforce executives, launched Monday with $20 million in pre-seed funding led by Time Ventures.</p>
 <ul>
-<li>An OpenAI model breached Hugging Face’s systems, though the incident was described as a relatively unsophisticated hack – comparable to the Watergate break-in, rather than a stealthy cyberattack.</li>
-<li>Altman and Anthropic supported a petition reflecting the need for a more considered approach to AI development.</li>
-<li>Discussion arose regarding whether “acceleration vs. deceleration” is the correct framing for the debate, with some suggesting a focus on building better guardrails and alternative paths.</li>
-<li>TechCrunch reports the hack highlighted basic security failures in OpenAI’s testing environment, increasing the risk associated with powerful but potentially misaligned AI.</li>
+<li>The platform aims to simplify AI deployment within enterprises by automating the process of integrating AI agents with existing, often complex, systems like Salesforce, ServiceNow, and Databricks.</li>
+<li>June’s platform scans a company’s infrastructure to identify bottlenecks and then builds optimized, agent-powered processes, providing a step-by-step guide for implementation.</li>
+<li>The company claims its platform can automatically generate a roadmap for successful AI agent implementation, including tasks like data source connection and duplicate field removal, significantly reducing the need for specialized “forward-deployed engineers."</li>
+<li>Early customer CMG used June to overcome roadblocks integrating Claude Code with Salesforce and is on track to deploy 100 agents, after previously struggling to make progress.</li>
 </ul></div>
     
   </div>
@@ -296,11 +373,17 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-08-01</span>
+      <span> · 2026-08-03</span>
     </div>
-    <h2><a href="https://arstechnica.com/ai/2026/08/reddit-ceo-on-ai-overviews-were-still-looking-for-that-win-win/" target="_blank" rel="noopener">As Reddit stock falls, CEO questions value of Google&#39;s AI Overviews</a></h2>
+    <h2><a href="https://arstechnica.com/culture/2026/08/an-ai-supervised-remote-exam-went-so-badly-that-58000-students-must-retake-it/" target="_blank" rel="noopener">An AI-supervised remote exam went so badly that 58,000 students must retake it</a></h2>
     
-    <div class="summary"><p>Reddit CEO Steve Huffman criticized Google’s AI Overviews, suggesting they devalue content creators and potentially reduce traffic to sites like Reddit. Huffman’s comments came during a quarterly earnings report where he discussed the company's strategic direction in light of increasing AI usage. Ars Technica reports Huffman believes AI Overviews leverage content without appropriately recognizing or compensating the original sources.</p></div>
+    <div class="summary"><p>An AI-supervised remote exam resulted in inflated scores and will require 58,000 students to retake the test in person.</p>
+<ul>
+<li>The Universidad Nacional Autónoma de México (UNAM) administered a remote entrance exam to approximately 160,000 applicants using the Respondus LockDown Browser and AI-powered proctoring software from Territorium.</li>
+<li>The percentage of test takers scoring 100+ increased from 3.5% (2021-2025 average) to 16.3% this year, and scoring 110+ rose from 0.9% to 5.5%.</li>
+<li>Territorium's system used AI algorithms to monitor webcam feeds for indicators of cheating, such as a second person present, use of phones/earphones, or leaving the frame.</li>
+<li>UNAM will administer a new, in-person "control exam" to approximately 58,000 applicants – those admitted this year and anyone who would have qualified since 2021 – to ensure equitable access.</li>
+</ul></div>
     
   </div>
   
@@ -438,6 +521,18 @@
         localStorage.setItem('theme', 'dark');
       }
     });
+
+    const generatedEl = document.getElementById('generated-at');
+    const generatedIso = generatedEl && generatedEl.dataset.iso;
+    if (generatedIso) {
+      const d = new Date(generatedIso);
+      if (!isNaN(d)) {
+        generatedEl.textContent = 'Generated ' + d.toLocaleString(undefined, {
+          year: 'numeric', month: 'short', day: 'numeric',
+          hour: '2-digit', minute: '2-digit', timeZoneName: 'short',
+        });
+      }
+    }
   </script>
 </body>
 </html>
