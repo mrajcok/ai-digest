@@ -761,13 +761,18 @@ call, with the same `--stage` override. Condensing text that is already condense
 is not a harder task than writing those summaries was, so there is nothing here
 to pay more for.
 
-#### "The day's" articles means first-seen, not published
+#### "The day's" articles means published, not first-seen
 
-Select on `date(first_scraped_at) == today` (UTC), not `published_date`: a
-backfilled three-day-old Anthropic post is still new *to this digest* on the day
-it first appears, and that is what the reader wants summarized. Needs one new
-query in `storage/db.py` — `articles_first_seen_on(day, companies)`, returning
-`ok` records with a non-empty summary.
+Select on `date(published_date) == today` (UTC). **Reversed 2026-08-04** — the
+original choice was `first_scraped_at`, on the theory that a backfilled old
+post is still new *to this digest* the day it first appears. In practice a
+manual backfill (`--since` set far in the past) scrapes weeks-old posts in one
+run, and dating them by discovery put a stale AT&T/Foundry post (published
+2026-07-23) under a same-day "Today in AI" banner during a manual Microsoft
+backfill. The section reads as "what's new today," so it needs to select on
+when a post actually published, not when this pipeline happened to see it.
+One query in `storage/db.py` — `articles_published_on(day, companies)`,
+returning `ok` records with a non-empty summary.
 
 #### Persist it — a new table, not a re-computation
 
@@ -895,6 +900,12 @@ the prose before it goes on the front page.
 - Not built: the `/overview/<day>.html` archive page mentioned as a possible
   follow-up — out of scope for this step, and the `daily_overview` table
   already retains full history if that's wanted later.
+
+**Corrected 2026-08-04.** `articles_first_seen_on` (filtered on
+`date(first_scraped_at)`) is now `articles_published_on` (filters on
+`date(published_date)`) — see "The day's articles means published, not
+first-seen" above. `_generate_overview` and the test suite were updated to
+match.
 
 ## Step 8 — Pipeline stages, notifier — **done**
 

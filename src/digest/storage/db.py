@@ -42,6 +42,16 @@ CREATE TABLE IF NOT EXISTS daily_overview (
 );
 """
 
+# No migration framework here (single-developer project) — this is the one
+# column added after daily_overview shipped, so a plain guarded ALTER TABLE
+# is simpler than introducing one. Backfills existing rows with `day` itself
+# (a single-day window), which is correct for every row written before the
+# watermark logic existed.
+_MIGRATIONS = (
+    "ALTER TABLE daily_overview ADD COLUMN window_start TEXT",
+    "UPDATE daily_overview SET window_start = day WHERE window_start IS NULL",
+)
+
 _UPSERT_SQL = """
 INSERT INTO scraped_articles
     (url, normalized_url, company, source, category, title,
@@ -90,6 +100,10 @@ class ArticleDB:
         self._conn = sqlite3.connect(db_path)
         self._conn.row_factory = sqlite3.Row
         self._conn.executescript(_SCHEMA)
+        existing_cols = {row[1] for row in self._conn.execute("PRAGMA table_info(daily_overview)")}
+        if "window_start" not in existing_cols:
+            for statement in _MIGRATIONS:
+                self._conn.execute(statement)
         self._conn.commit()
         logger.info("ArticleDB opened at %r", db_path)
 
@@ -171,13 +185,16 @@ class ArticleDB:
         ).fetchall()
         return [_row_to_record(r) for r in rows]
 
-    def articles_first_seen_on(
+    def articles_published_on(
         self, day: str, companies: list[str], limit: int | None = None
     ) -> list[ArticleRecord]:
-        """Return `ok` records with a summary whose first_scraped_at date is `day` (UTC).
+        """Return `ok` records with a summary whose published_date is `day` (UTC).
 
-        `first_scraped_at`, not `published_date` — a backfilled old post is still new
-        to this digest on the day it first appears (docs/plan.md Step 7a).
+        Was `first_scraped_at` — a manual backfill (`--since` far in the past)
+        scrapes weeks-old posts in one run, and dating them by discovery made
+        "Today in AI" quote stale articles under a same-day banner. Selecting on
+        `published_date` means the section only ever reflects what actually
+        published today. See docs/plan.md Step 7a.
         """
         if not companies:
             return []
@@ -189,9 +206,37 @@ class ArticleDB:
             params.append(limit)
         rows = self._conn.execute(
             f"""SELECT * FROM scraped_articles
-               WHERE date(first_scraped_at) = ? AND company IN ({placeholders})
+               WHERE date(published_date) = ? AND company IN ({placeholders})
                  AND status = 'ok' AND summary != ''
-               ORDER BY first_scraped_at DESC
+               ORDER BY published_date DESC
+               {limit_clause}""",
+            params,
+        ).fetchall()
+        return [_row_to_record(r) for r in rows]
+
+    def articles_published_between(
+        self, start_exclusive: str, end_inclusive: str, companies: list[str], limit: int | None = None
+    ) -> list[ArticleRecord]:
+        """Return `ok` records with a summary whose published_date is in (start_exclusive, end_inclusive].
+
+        Backs the daily overview's rolling watermark: a quiet morning widens
+        the window back to the last day that had coverage, instead of the
+        section going empty. See docs/plan.md Step 7a.
+        """
+        if not companies:
+            return []
+        placeholders = ", ".join("?" for _ in companies)
+        params: list = [start_exclusive, end_inclusive, *companies]
+        limit_clause = ""
+        if limit is not None:
+            limit_clause = "LIMIT ?"
+            params.append(limit)
+        rows = self._conn.execute(
+            f"""SELECT * FROM scraped_articles
+               WHERE date(published_date) > ? AND date(published_date) <= ?
+                 AND company IN ({placeholders})
+                 AND status = 'ok' AND summary != ''
+               ORDER BY published_date DESC
                {limit_clause}""",
             params,
         ).fetchall()
@@ -219,9 +264,10 @@ class ArticleDB:
     def upsert_daily_overview(self, overview: DailyOverview) -> None:
         self._conn.execute(
             """INSERT INTO daily_overview
-                (day, text, article_count, source_hash, model, generated_at)
-               VALUES (:day, :text, :article_count, :source_hash, :model, :generated_at)
+                (day, window_start, text, article_count, source_hash, model, generated_at)
+               VALUES (:day, :window_start, :text, :article_count, :source_hash, :model, :generated_at)
                ON CONFLICT(day) DO UPDATE SET
+                   window_start  = excluded.window_start,
                    text          = excluded.text,
                    article_count = excluded.article_count,
                    source_hash   = excluded.source_hash,

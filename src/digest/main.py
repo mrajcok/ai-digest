@@ -2,7 +2,7 @@ import argparse
 import logging
 import sys
 import time
-from datetime import UTC, date, datetime
+from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
 
 import httpx
@@ -87,18 +87,34 @@ def _overview_company_keys() -> list[str]:
 
 
 def _generate_overview(db: ArticleDB, stage: bool) -> None:
-    """Generate and persist today's daily overview if the day's article set changed.
+    """Generate and persist the daily overview if the window's article set changed.
 
-    Skipped entirely (no LLM call, no row) when there are zero eligible articles —
-    a quiet-day run should cost nothing. See docs/plan.md Step 7a.
+    The window is (watermark, today]: it normally covers just today, but widens
+    back to the last day that actually had coverage — capped at
+    `overview_max_lookback_days` — so a quiet morning (nothing published yet in
+    today's UTC window when cron runs) doesn't leave the section empty. Because
+    the watermark always advances to the last *covered* day, no article is ever
+    pulled into two overviews. The watermark only ever looks at overviews from
+    *before* today (`before_or_on=yesterday`), never at today's own row — so a
+    second run later the same day still sees all of today's articles, not just
+    ones added since the first run. Skipped entirely (no LLM call, no row) when
+    there are zero eligible articles even in the widened window — a genuinely
+    quiet stretch should cost nothing. See docs/plan.md Step 7a.
     """
-    day = datetime.now(UTC).date().isoformat()
-    records = db.articles_first_seen_on(
-        day, _overview_company_keys(), limit=settings.overview_max_articles
+    today_date = datetime.now(UTC).date()
+    day = today_date.isoformat()
+    yesterday = (today_date - timedelta(days=1)).isoformat()
+    earliest_allowed = (today_date - timedelta(days=settings.overview_max_lookback_days)).isoformat()
+    last = db.latest_daily_overview(before_or_on=yesterday)
+    start_exclusive = max(last.day, earliest_allowed) if last else earliest_allowed
+
+    records = db.articles_published_between(
+        start_exclusive, day, _overview_company_keys(), limit=settings.overview_max_articles
     )
     if not records:
-        logger.info("[stage:overview] no eligible articles for %s — skipping", day)
+        logger.info("[stage:overview] no eligible articles since %s — skipping", start_exclusive)
         return
+    window_start = min(r.published_date for r in records if r.published_date)
 
     source_hash = daily_overview_source_hash(records)
     existing = db.get_daily_overview(day)
@@ -117,6 +133,7 @@ def _generate_overview(db: ArticleDB, stage: bool) -> None:
     db.upsert_daily_overview(
         DailyOverview(
             day=day,
+            window_start=window_start,
             text=text,
             article_count=len(records),
             source_hash=source_hash,

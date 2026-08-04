@@ -147,6 +147,7 @@ All configuration is via environment variables (`.env` file locally, system env 
 | `OVERVIEW_INCLUDE_PRESS` | Include press articles in the daily overview synthesis (default: `false`, vendor only) |
 | `OVERVIEW_TARGET_WORDS` | Target word count for the daily overview (default: `500`) |
 | `OVERVIEW_MAX_ARTICLES` | Max articles fed into the overview prompt; caps a `--since` backfill day (default: `40`) |
+| `OVERVIEW_MAX_LOOKBACK_DAYS` | On a quiet morning (nothing published yet today when cron runs), how far the window can widen back to the last day with coverage (default: `3`) |
 | `DISCORD_NOTIFY` | Post a per-company summary to Discord after each run (default: `true`; set `false` to disable) |
 | `DISCORD_NOTIFY_METHOD` | Only `webhook` is supported (default: `webhook`) |
 | `DISCORD_WEBHOOK_URL` | Discord webhook URL; required when `DISCORD_NOTIFY_METHOD=webhook` |

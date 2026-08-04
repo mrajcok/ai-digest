@@ -43,6 +43,10 @@ class Settings(BaseSettings):
     overview_include_press: bool = False
     overview_target_words: int = 500
     overview_max_articles: int = 40
+    # Window widens back to the last day that actually had coverage (a quiet
+    # morning shouldn't skip the section), capped here so a long outage
+    # doesn't dump a huge backlog into one summary.
+    overview_max_lookback_days: int = 3
 
     # Feed pagination (?paged=N) — only reached during backfill, since a normal run's
     # cutoff is covered by page 1. Caps how far a --since backfill will walk a feed.

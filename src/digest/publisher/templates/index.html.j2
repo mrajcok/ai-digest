@@ -144,7 +144,7 @@
 
   {% if overview %}
   <section class="overview">
-    <h2 class="overview-heading">Today in AI{% if not overview_is_today %} — Overview for {{ overview.day }}{% endif %}</h2>
+    <h2 class="overview-heading">Today in AI{% if not overview_is_today %} — Overview for {{ overview.day }}{% elif overview.window_start != overview.day %} — since {{ overview.window_start }}{% endif %}</h2>
     <p class="overview-meta">{{ overview.day }} · {{ overview.article_count }} vendor source{{ "s" if overview.article_count != 1 else "" }} · vendor sources only</p>
     <div class="overview-text">{{ overview.text | markdown }}</div>
   </section>

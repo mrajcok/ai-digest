@@ -94,9 +94,10 @@ def daily_overview_source_hash(records: list["ArticleRecord"]) -> str:
 
 
 class DailyOverview(BaseModel):
-    """A single day's synthesis of that day's vendor summaries — docs/plan.md Step 7a."""
+    """A synthesis of vendor summaries published in (window_start, day] — docs/plan.md Step 7a."""
 
-    day: str  # YYYY-MM-DD, UTC
+    day: str  # YYYY-MM-DD, UTC — the day this overview was generated for
+    window_start: str  # YYYY-MM-DD — earliest published_date actually included; == day on a normal day
     text: str
     article_count: int
     source_hash: str
