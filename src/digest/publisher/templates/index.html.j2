@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at">Generated {{ generated_at }}</p>
+  <p class="generated-at" id="generated-at" data-iso="{{ generated_at_iso }}">Generated {{ generated_at }}</p>
   <div class="top-bar">
     <p class="index-hint">Showing the {{ index_per_company }} most recent from each vendor and the {{ index_per_company_press }} most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -205,6 +205,18 @@
         localStorage.setItem('theme', 'dark');
       }
     });
+
+    const generatedEl = document.getElementById('generated-at');
+    const generatedIso = generatedEl && generatedEl.dataset.iso;
+    if (generatedIso) {
+      const d = new Date(generatedIso);
+      if (!isNaN(d)) {
+        generatedEl.textContent = 'Generated ' + d.toLocaleString(undefined, {
+          year: 'numeric', month: 'short', day: 'numeric',
+          hour: '2-digit', minute: '2-digit', timeZoneName: 'short',
+        });
+      }
+    }
   </script>
 </body>
 </html>

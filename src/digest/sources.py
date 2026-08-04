@@ -235,6 +235,7 @@ COMPANIES: dict[str, Company] = {
                 url="https://aws.amazon.com/blogs/machine-learning/feed/",
                 kind="rss",
                 category="blog",
+                content_in_feed=True,
             ),
         ),
     ),
