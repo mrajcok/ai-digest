@@ -363,7 +363,7 @@ def test_pre_check_falls_back_to_head_without_sitemap_metadata() -> None:
 
 def test_sources_come_from_the_registry() -> None:
     scraper = AnthropicScraper()
-    assert [s.key for s in scraper.sitemap_sources] == ["anthropic-sitemap"]
+    assert [s.key for s in scraper.sitemap_sources] == ["anthropic-sitemap", "claude-blog"]
 
 
 def test_feed_sources_are_not_sitemap_sources() -> None:

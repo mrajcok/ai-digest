@@ -45,10 +45,17 @@ _THIN_CONTENT_CHARS = 200
 
 @dataclass(frozen=True)
 class SitemapEntry:
-    """One `<url>` element, as it appears in the sitemap — no filtering applied."""
+    """One `<url>` element, as it appears in the sitemap — no filtering applied.
+
+    `date_is_publication` distinguishes the two kinds of date an index document
+    can carry. A sitemap's `lastmod` is an edit timestamp and must not be shown
+    to a reader as a publication date; a listing page's byline date is the real
+    thing. Subclasses that parse a trustworthy date set the flag.
+    """
 
     url: str
     lastmod: date | None
+    date_is_publication: bool = False
 
 
 @dataclass(frozen=True)
@@ -120,11 +127,13 @@ class SitemapScraper(BaseScraper):
 
     company: str
     category_map: ClassVar[dict[str, Category]] = {}
+    # Registry `kind` values this scraper claims. `ListingScraper` widens it.
+    source_kinds: ClassVar[tuple[str, ...]] = ("sitemap",)
 
     def __init__(self, sources: Sequence[Source] | None = None) -> None:
         super().__init__()
         if sources is None:
-            sources = [s for s in sources_for(self.company) if s.kind == "sitemap"]
+            sources = [s for s in sources_for(self.company) if s.kind in self.source_kinds]
         self.sitemap_sources: tuple[Source, ...] = tuple(sources)
         if not self.sitemap_sources:
             raise ValueError(f"{self.company}: no sitemap sources declared in the registry")
@@ -166,18 +175,22 @@ class SitemapScraper(BaseScraper):
                 return category
         return source.category
 
+    def parse_index(self, source: Source, body: str) -> list[SitemapEntry]:
+        """Index document → entries. Overridden by `ListingScraper` for HTML."""
+        return parse_sitemap(body)
+
     def _discover_source(self, source: Source, cutoff: date) -> list[SitemapEntry]:
         try:
-            xml = self._fetch_with_httpx(source.url)
+            body = self._fetch_with_httpx(source.url)
         except Exception:
-            logger.warning("%s: failed to fetch sitemap %s", self.company, source.url, exc_info=True)
+            logger.warning("%s: failed to fetch %s %s", self.company, source.kind, source.url, exc_info=True)
             return []
 
-        entries = parse_sitemap(xml)
+        entries = self.parse_index(source, body)
         if not entries:
             logger.warning(
-                "%s: %s returned 0 URLs — sitemap structure may have changed (%s)",
-                self.company, source.key, source.url,
+                "%s: %s returned 0 URLs — %s structure may have changed (%s)",
+                self.company, source.key, source.kind, source.url,
             )
             return []
 
@@ -238,13 +251,14 @@ class SitemapScraper(BaseScraper):
 
         published_date = self.extract_date(soup)
         if published_date is None and entry.lastmod is not None:
-            # See the module docstring: lastmod tracks CMS edits, so this dates a
-            # 2023 post to whenever it was last migrated. Warn — a site that stops
-            # rendering its dates should be visible, not silently mis-dated.
-            logger.warning(
-                "%s: no date on the page, falling back to sitemap lastmod (%s) %s",
-                self.company, entry.lastmod, url,
-            )
+            if not entry.date_is_publication:
+                # See the module docstring: lastmod tracks CMS edits, so this dates a
+                # 2023 post to whenever it was last migrated. Warn — a site that stops
+                # rendering its dates should be visible, not silently mis-dated.
+                logger.warning(
+                    "%s: no date on the page, falling back to sitemap lastmod (%s) %s",
+                    self.company, entry.lastmod, url,
+                )
             published_date = entry.lastmod.isoformat()
 
         if len(text) < _THIN_CONTENT_CHARS:

@@ -5,16 +5,19 @@ from typing import ClassVar
 from bs4 import BeautifulSoup
 
 from digest.scrapers.base import BaseScraper
-from digest.scrapers.sitemap import SitemapScraper
+from digest.scrapers.listing import ListingScraper
 from digest.storage.models import Category
 
 
-class AnthropicScraper(SitemapScraper):
+class AnthropicScraper(ListingScraper):
+    """Two sources: www.anthropic.com's sitemap, and the claude.com blog listing."""
+
     company = "anthropic"
     category_map: ClassVar[dict[str, Category]] = {
         "/news/": "news",
         "/research/": "research",
         "/engineering/": "engineering",
+        "/blog/": "blog",
     }
 
     @staticmethod

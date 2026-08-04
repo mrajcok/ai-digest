@@ -537,6 +537,44 @@ existing `_is_too_old` check against the extracted date.
   back to `lastmod`, so a site that stops rendering its dates is visible rather
   than silently mis-dated.
 
+### Step 4.2 — `claude.com/blog` as a listing source — **done**
+
+Completed 2026-08-02. Anthropic's Claude Code writing lives on `claude.com/blog`,
+which the project was not scraping at all — 199 posts, 41 with "code" in the
+slug. Adding it needed a third source kind, because neither existing one fits:
+there is no feed, and the claude.com sitemap has **no `lastmod` on any entry**,
+so a sitemap-driven run would fetch all 199 posts daily just to learn their
+dates.
+
+`scrapers/listing.py` (`parse_listing` + `ListingScraper`) reads the
+server-rendered listing page instead: one request yields the ~25 newest posts
+each paired with its publication date, so the age cutoff runs before any article
+is fetched. Verified live — discovery for the whole Anthropic company is **2
+HTTP GETs** (one sitemap, one listing).
+
+- `ListingScraper` subclasses `SitemapScraper` and widens `source_kinds` to
+  `("sitemap", "listing")`; only the index document's format differs, so
+  filtering, categorization and dedup are inherited unchanged. `SitemapScraper`
+  grew a `parse_index()` seam for this.
+- `SitemapEntry.date_is_publication` separates the two kinds of date an index
+  can carry. A listing date is real, so `scrape_page()` may fall back to it
+  silently; a sitemap `lastmod` still warns (Step 4.1).
+- **Dedup makes steady state nearly free.** A post already in the DB has a
+  publication date no newer than `last_scraped_at`, so the inherited `pre_check`
+  returns `False` — no HEAD, no GET. Only genuinely new slugs are fetched.
+- `_card_date()` walks up from each link rather than using a CSS selector: the
+  page renders two card layouts, with the date three levels above the link in
+  the featured row and two in the grid. It stops widening when an ancestor
+  covers more than one **distinct** post URL — counting `<a>` tags instead fails,
+  because a card links its own post two or three times (image, title, tag).
+- Backfill deeper than the listing window (2026-04-02 on capture day) is not
+  possible from this source.
+
+Also checked, per the question that prompted this: the `/claude/` exclusion
+drops five model landing pages and **no** posts. Every Claude Code article on
+www.anthropic.com was already being discovered under `/news/`, `/engineering/`
+and `/research/`.
+
 ## Step 5 — Company scrapers — **done**
 
 Each is a thin subclass declaring its sources. Expected total: **~26

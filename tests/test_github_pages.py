@@ -53,7 +53,8 @@ def test_company_page_shows_source_badge_only_for_multi_source_companies(tmp_pat
     db = ArticleDB(":memory:")
     db.upsert(_record("google", 0, "google-ai-blog"))
     db.upsert(_record("google", 1, "google-deepmind"))
-    db.upsert(_record("anthropic", 0, "anthropic-sitemap"))
+    # openai, not anthropic: anthropic carries both a sitemap and a listing source.
+    db.upsert(_record("openai", 0, "openai-news"))
 
     publisher = GitHubPagesPublisher(db)
     publisher.render_from_db(tmp_path)
@@ -62,5 +63,5 @@ def test_company_page_shows_source_badge_only_for_multi_source_companies(tmp_pat
     assert "Google AI Blog" in google_html
     assert "DeepMind Blog" in google_html
 
-    anthropic_html = (tmp_path / "anthropic" / "index.html").read_text()
-    assert '<span class="source">' not in anthropic_html
+    openai_html = (tmp_path / "openai" / "index.html").read_text()
+    assert '<span class="source">' not in openai_html
