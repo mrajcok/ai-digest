@@ -279,7 +279,9 @@ COMPANIES: dict[str, Company] = {
         label="Ars Technica",
         group="press",
         sources=(
-            # Ships full content:encoded — no second fetch per article.
+            # content:encoded is a truncated teaser ending in "Read full
+            # article" (re-checked 2026-08-03: ~1-2k chars vs ~11k on the
+            # real page) — needs the second fetch, unlike AWS ML.
             Source(
                 key="arstechnica-ai",
                 company="arstechnica",
@@ -287,7 +289,6 @@ COMPANIES: dict[str, Company] = {
                 url="https://arstechnica.com/ai/feed/",
                 kind="rss",
                 category="news",
-                content_in_feed=True,
                 paginate=True,
                 include_categories=_PRESS_AI_CATEGORIES,
                 exclude_patterns=_ARSTECHNICA_EXCLUDES,

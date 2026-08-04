@@ -165,10 +165,13 @@ distinct group in the UI:
   volume control. Volume is handled by `daily_cap`, off-topic bleed by
   `exclude_patterns`, and neither can be tuned without watching real output —
   see plan Step 5/6.
-- **Content extraction.** Ars includes full `content:encoded`, so the article
-  body can be taken straight from the feed with no second HTTP fetch.
-  TechCrunch does **not** — its items are summary-only and require fetching the
-  article page.
+- **Content extraction.** Neither feed carries the full article. Ars's
+  `content:encoded` looked like full body text but is a truncated teaser
+  ending in "Read full article" (re-checked 2026-08-03: ~1-2k chars of feed
+  content vs ~11k on the real page — `content_in_feed` was wrongly set on
+  `arstechnica-ai` and has been removed). TechCrunch's items are
+  summary-only, same as it always was. Both require fetching the article
+  page.
 - **Backfill.** Both feeds hold only ~20 items (TechCrunch ≈ 31 hours of
   coverage). `?paged=N` pagination works on both and is the only way to reach
   the 30-day window.

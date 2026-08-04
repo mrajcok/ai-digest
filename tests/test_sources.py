@@ -96,7 +96,7 @@ def test_filtered_sources_declare_an_allowlist() -> None:
 
 def test_sources_that_take_content_from_the_feed() -> None:
     in_feed = [k for k, s in SOURCES.items() if s.content_in_feed]
-    assert in_feed == ["aws-ml-blog", "arstechnica-ai"]
+    assert in_feed == ["aws-ml-blog"]
 
 
 def test_anthropic_is_the_only_sitemap() -> None:
