@@ -80,11 +80,81 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-08-05 10:21 UTC</p>
+  <p class="generated-at">Generated 2026-08-06 10:16 UTC</p>
   
 
   
   <h2 class="month">August 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-05</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/run-production-ai-agents-in-n8n-with-amazon-bedrock-agentcore-harness/" target="_blank" rel="noopener">Run production AI agents in n8n with Amazon Bedrock AgentCore harness</a></h3>
+    
+    <div class="summary"><p>AWS has released the AgentCore harness, a platform for building and scaling AI agents, now accessible within n8n through a new open-source community node (@aws/n8n-nodes-agentcore, version 0.3).</p>
+<ul>
+<li>The node enables building production-ready agents with persistent memory, tool access (like code interpreters and web browsers), and the ability to switch between model providers (Amazon Bedrock, OpenAI, Google Gemini, and LiteLLM) mid-conversation.</li>
+<li>AgentCore harness manages the orchestration loop, tool calls, context windows, state, failure recovery and session isolation—reducing the need for custom infrastructure code. Agents are defined via configuration, allowing for flexibility and control.</li>
+<li>Features like actor IDs allow for scoped memory per user, and agents can run privately within a VPC by configuring network settings in the n8n credential.</li>
+<li>The node supports features like skills (pre-built instructions/scripts), custom containers and inline functions, and uses the same AWS credential pattern as existing n8n AWS nodes.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-05</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-we-built-an-mcp-bridge-to-give-our-agentcore-hosted-ai-agent-access-to-local-mcp-tools/" target="_blank" rel="noopener">How we built an MCP bridge to give our AgentCore-hosted AI agent access to local MCP tools</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock AgentCore now supports bridging to local tools via the Model Context Protocol (MCP) using a WebSocket and native messaging tunnel.</li>
+<li>The architecture includes an AgentCore runtime (cloud-hosted Strands agent), a browser extension, a local MCP Bridge (FastMCP proxy), and a local MCP Server.</li>
+<li>The bridge translates between native messaging (browser extension to local process) and MCP (JSON-RPC over stdio) allowing a remote agent to interact with local files and tools.</li>
+<li>Key components rely on securing communication through presigned WebSocket URLs (5-minute expiry) and native messaging origin restriction, with recommendations for JWT authentication, payload signing and file system scoping for enhanced production security.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-05</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-mobileye-transformed-support-operations-using-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How Mobileye transformed support operations using Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><ul>
+<li>Mobileye deployed an AI Support Agent using Amazon Bedrock AgentCore to automate responses to routine support tickets related to their data collection pipeline.</li>
+<li>The agent, powered by Anthropic Claude models accessed via Mobileye’s internal LLM Gateway on Amazon Bedrock, utilizes the Model Context Protocol (MCP) for real-time access to backend APIs.</li>
+<li>A hybrid architecture was implemented, bridging on-premises ticketing systems with AWS cloud services, leveraging AgentCore’s serverless infrastructure, observability features, and secure authentication via AWS Secrets Manager.</li>
+<li>The agent achieved a 98% success rate and reduced response times by 90%, automating 66% of total ticket volume, and has been scaled into a self-service platform for teams across the company.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-05</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-lendingtree-built-a-multi-agent-mortgage-assistant-on-amazon-bedrock/" target="_blank" rel="noopener">How LendingTree built a multi-agent mortgage assistant on Amazon Bedrock</a></h3>
+    
+    <div class="summary"><p>LendingTree built a multi-agent mortgage assistant using Amazon Bedrock to provide tailored guidance throughout the home-buying process.</p>
+<ul>
+<li>The assistant utilizes three AI agents – a Supervisor and two specialized workers (Education and Matching) – orchestrated via LangGraph and the Model Context Protocol (MCP).</li>
+<li>The solution leverages Amazon Bedrock models, specifically Amazon Nova Pro for complex reasoning and Amazon Nova Lite for conversational responses, dynamically selecting between them to balance performance and cost.</li>
+<li>Amazon Bedrock Guardrails and a custom safety classifier are employed for content filtering, PII redaction, and compliance with mortgage industry regulations.</li>
+<li>Conversation memory is managed using a LangGraph PostgreSQL checkpointer on Amazon RDS, enabling persistent and contextual conversations across multiple turns and agent handoffs.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
