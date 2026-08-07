@@ -80,11 +80,150 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-08-06 10:16 UTC</p>
+  <p class="generated-at">Generated 2026-08-07 10:17 UTC</p>
   
 
   
   <h2 class="month">August 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-06</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/llm-optimization-integration-for-amazon-sagemaker-python-sdk/" target="_blank" rel="noopener">LLM optimization integration for Amazon SageMaker Python SDK</a></h3>
+    
+    <div class="summary"><p>The Amazon SageMaker Python SDK v3 (version 3.17.0+) now integrates generative AI inference recommendations directly into notebook workflows.</p>
+<ul>
+<li>The <code>sagemaker.serve.ai_inference_recommender</code> package allows benchmarking deployed endpoints against synthetic or real traffic, measuring metrics like throughput and time-to-first-token (TTFT).</li>
+<li>It generates ranked deployment recommendations based on cost-performance tradeoffs, using your usage patterns.</li>
+<li>The top-ranked configuration can be deployed directly to a SageMaker real-time endpoint from a notebook.</li>
+<li>Functionality includes <code>ModelBuilder</code> operations for creating, benchmarking, and deploying models, as well as functions for generating and applying recommendations, and supporting comparison of serving frameworks like LMI and vLLM.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-06</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/building-an-agentic-app-deployer-with-amazon-bedrock-and-aws-lambda/" target="_blank" rel="noopener">Building an agentic app deployer with Amazon Bedrock and AWS Lambda</a></h3>
+    
+    <div class="summary"><ul>
+<li>PDI Technologies built PDI Brew, an agentic application deployer, leveraging Amazon Bedrock and AWS Lambda to enable non-technical users to create and deploy web applications in seconds using natural language.</li>
+<li>The system utilizes a two-agent architecture: a “planning agent” (using AI assistants like Claude, ChatGPT, or Amazon Bedrock) to capture user intent as a structured JSON manifest, and a “provisioning agent” (an AWS Lambda function) to orchestrate the creation of downstream AWS resources.</li>
+<li>A key feature is governed AI access via Amazon Bedrock, enforced through mandatory guardrails for PII redaction and content filtering, an atomic budget system limiting spend across multiple scopes, and a terminate switch for platform-wide control.</li>
+<li>The architecture supports a pluggable planner, allowing intent to originate from AI assistants or directly from Amazon Bedrock within the AWS trust boundary, and utilizes a dual-tier compute model – shared compute for standard apps &amp; dedicated compute for apps requiring specific capabilities.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-06</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/agent-skills-for-automated-reasoning-policies-in-amazon-bedrock/" target="_blank" rel="noopener">Agent Skills for Automated Reasoning policies in Amazon Bedrock</a></h3>
+    
+    <div class="summary"><p>Amazon Bedrock Agent Skills enable programmatic management of Automated Reasoning policies for AI systems.</p>
+<ul>
+<li>Agent Skills are an open format from Anthropic that extend coding agents with specialized knowledge for interacting with Amazon Bedrock Automated Reasoning.</li>
+<li>The suite consists of six skills – builder, reviewer, tester, debugger, deployer, and validator – covering the full policy lifecycle, utilizing Python scripts and the Amazon Bedrock API.</li>
+<li>Automated Reasoning checks translate questions/answers into formal logic and validate against defined rules, providing mathematically verifiable results (VALID, INVALID, or SATISFIABLE) along with supporting/contradicting rules for explainability.</li>
+<li>The skills incorporate a mechanism to handle build workflow limits and correctly interpret SATISFIABLE verdicts, distinguishing between consistency and entailment within a policy.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-06</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/enforcing-data-residency-with-single-region-claude-code-on-amazon-bedrock/" target="_blank" rel="noopener">Enforcing data residency with single-Region Claude Code on Amazon Bedrock</a></h3>
+    
+    <div class="summary"><ul>
+<li>AWS provides two paths for enforcing single-Region data residency with Claude Code on Amazon Bedrock: using Mantle (bedrock-mantle) or the classic Amazon Bedrock Invoke API (bedrock-runtime).</li>
+<li>Path 1 (Mantle) offers single-Region routing natively by setting <code>AWS_REGION</code> and is available in Ireland, Stockholm, Tokyo, Melbourne, US East (N. Virginia), US East (Ohio), and US West (Oregon), supporting models like <code>anthropic.claude-sonnet-5</code> and <code>anthropic.claude-opus-4-8</code>.</li>
+<li>Path 2 (classic Amazon Bedrock) requires creating application inference profiles pointing to in-Region foundation model ARNs, is limited to London (eu-west-2) for <code>anthropic.claude-opus-4-6-v1</code> and <code>anthropic.claude-sonnet-4-6</code>, and necessitates using <code>CLAUDE_CODE_USE_BEDROCK=1</code>.</li>
+<li>Compliance is verified through AWS CloudTrail: Path 1 uses <code>CreateInference</code> events under <code>bedrock-mantle.amazonaws.com</code>, while Path 2 uses <code>InvokeModel</code> events under <code>bedrock.amazonaws.com</code>; both require verifying the <code>awsRegion</code> field matches the target Region.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-06</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-visibility-for-codex-on-amazon-bedrock-with-opentelemetry-and-amazon-cloudwatch/" target="_blank" rel="noopener">Build visibility for Codex on Amazon Bedrock with OpenTelemetry and Amazon CloudWatch</a></h3>
+    
+    <div class="summary"><ul>
+<li>Codex can now emit OpenTelemetry (OTel) metrics about its activity when used with Amazon Bedrock and authenticated with AWS IAM Identity Center.</li>
+<li>Metrics, including <code>codex.api_request</code>, <code>codex.turn.token_usage</code>, and <code>codex.conversation.turn.count</code>, are sent from a local collector on developer workstations to Amazon CloudWatch using SigV4 authentication, avoiding a centralized proxy.</li>
+<li>A bundled CloudWatch dashboard provides views of Codex usage by user, team, department, and cost center, focusing on active users, conversation turns, API requests, and token usage.</li>
+<li>The reference implementation includes scripts for enabling CloudWatch OTel capabilities, deploying the dashboard, generating per-developer configurations, and configuring Codex itself; clean-up scripts are also provided.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-06</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/control-agent-behaviors-and-cost-beyond-a-single-action-new-capabilities-in-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Control agent behaviors and cost beyond a single action: new capabilities in Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock AgentCore introduces temporal policies, powered by the new open-source policy language Dogwood, enabling control over sequences of agent actions, not just individual ones.</li>
+<li>Dogwood builds upon Cedar and adds temporal constructs like rate limits, time windows, and prerequisite steps for enhanced agent governance, and is available under the Apache 2.0 license.</li>
+<li>Rate limiting is now available in the AgentCore gateway, allowing teams to cap AI consumption (requests, tokens, connection duration) per user across tools, models, and agents using existing OAuth or IAM identities.</li>
+<li>These new capabilities (temporal policies and rate limiting) are enforced at the gateway layer, without requiring changes to agent code, and aim to provide deterministic control and logging for increased trust and scalability of AI agents.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-06</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/configure-rate-limits-for-ai-traffic-on-agentcore-gateway/" target="_blank" rel="noopener">Configure rate limits for AI traffic on AgentCore gateway</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock AgentCore gateway now supports rate limiting, providing fine-grained control over AI traffic consumption by users.</li>
+<li>Rate limits can be defined based on requests per minute/second (RPS/RPM), tokens per minute (TPM – for inference targets only), and connections per second (CPS).</li>
+<li>Dimension keys like <code>targetName</code>, <code>toolName</code>, <code>qualifiedModelId</code>, JWT claims (<code>$.context.jwt.&lt;claim&gt;</code>), and IAM information (<code>$.context.iam.principal</code>, <code>$.context.iam.sourceIdentity</code>) can group traffic into rate buckets.</li>
+<li>Rate limiting is layered: customer-defined limits are evaluated first, then Service Quotas, with the effective rate being the minimum of the two.  AWS CLI examples are provided for configuration.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-06</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/securing-ai-agents-with-temporal-policies-in-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Securing AI agents with temporal policies in Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><p>Temporal policies in Amazon Bedrock AgentCore enable stateful authorization rules for AI agents by evaluating requests within the context of their session history.</p>
+<ul>
+<li>Temporal policies leverage Dogwood, a new open-source governance language compatible with existing Cedar policies, to define conditions and rules.</li>
+<li>Policies operate at the AgentCore Gateway, outside the agent’s code, preventing bypass and governing Model Context Protocol (MCP) calls (tool calls, agent-to-agent, and model inference).</li>
+<li>They utilize agent trajectories – bounded sequences of actions identified by principal and session ID – with a 24-hour look-back window, and invalidate sessions upon policy changes.</li>
+<li>Use cases include enforcing workflow sequencing, preventing data fabrication, capping cumulative financial exposure, requiring human approval, and ensuring data freshness.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
