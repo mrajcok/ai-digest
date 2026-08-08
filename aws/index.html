@@ -80,11 +80,64 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-08-07 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-08-08 10:16 UTC</p>
   
 
   
   <h2 class="month">August 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-07</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/determining-playoff-clinching-scenarios-in-the-nhl-using-constraint-programming/" target="_blank" rel="noopener">Determining playoff clinching scenarios in the NHL using constraint programming</a></h3>
+    
+    <div class="summary"><p>AWS Generative AI Innovation Center developed a system for automating NHL playoff clinching scenarios using constraint programming and tree search.</p>
+<ul>
+<li>The system uses a constraint programming (CP) model, solved with Google OR-Tools CP-SAT solver, to determine if a team has already clinched based on current standings and remaining game outcomes.</li>
+<li>A custom tree search, leveraging the CP model, identifies game outcomes over the next <em>n</em> days that would cause a team to clinch a playoff spot.</li>
+<li>Preprocessing, pruning strategies, and node-ordering heuristics are employed to optimize the tree search’s efficiency, achieving runtimes in the order of minutes for 1-day scenarios.</li>
+<li>Validation against four NHL seasons (2021-22 through 2024-25) confirmed 100% accuracy matching official NHL-published scenarios.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-07</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-trends-automates-root-cause-analysis-with-amazon-bedrock/" target="_blank" rel="noopener">How TReNDS automates root-cause analysis with Amazon Bedrock</a></h3>
+    
+    <div class="summary"><p>Automates root-cause analysis of errors using Amazon Bedrock and other AWS services.</p>
+<ul>
+<li>The architecture uses Amazon CloudWatch subscription filters to detect errors, triggering an AWS Lambda function with the Strands Agents SDK powered by Amazon Bedrock for investigation.</li>
+<li>The system utilizes a custom tool built with the Strands Agents SDK to fetch source code from GitHub repositories, aiding in tracing execution paths and identifying the cause of failures.</li>
+<li>The solution leverages Amazon Bedrock’s Anthropic Claude Sonnet model for reasoning about errors, code, and root causes, outputting a structured analysis including severity, explanation, source context, and suggested fixes.</li>
+<li>The TReNDS Center observed a reduction in investigation time from 15-30 minutes to under 60 seconds and positive feedback from developers receiving AI-powered analysis via email and Slack.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-07</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-cohere-health-digitizes-clinical-policies-using-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How Cohere Health digitizes clinical policies using Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><ul>
+<li>Cohere Health used Amazon Bedrock AgentCore to build Cohere Policy Studio, a system for digitizing clinical policies for prior authorization, addressing a bottleneck in healthcare operations.</li>
+<li>The solution leverages AgentCore Runtime’s secure MicroVM isolation, AgentCore Gateway for unified tool access, and AgentCore Memory for managing feedback loops during policy digitization.</li>
+<li>A base image pattern (using Amazon ECR) enables reusable, customized agent deployments, combined with a modular skills framework for rapid development and versioning of domain-specific expertise.</li>
+<li>The system achieved a 30% reduction in policy digitization time, decreased agent deployment timelines from months to weeks, and improved policy coverage through structured, versioned outputs, using tools like LangChain and Arize AI for evaluation.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">

@@ -80,13 +80,40 @@
     </label>
   </div>
   <h1>Anthropic News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-08-07 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-08-08 10:16 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">August 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-08-07</span>
+    </div>
+    <h3><a href="https://claude.com/blog/auto-mode-in-production" target="_blank" rel="noopener">Running auto mode in production | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic has made Auto mode the default setting in Claude Code. This feature balances speed and safety by using a classifier to evaluate each action an agent attempts, blocking potentially harmful commands instead of requiring constant human approval. Internal testing shows the classifier surpasses developers in identifying dangerous actions, and it allows Claude Code sessions to run nine times longer without interruption.</p>
+<p>Companies like Nuro, Gusto, and Garner Health are leveraging Auto mode in production. Nuro uses it for long-running agents that autonomously improve their autonomous driving stack, even running tasks overnight. Gusto’s engineers saw a reduction in permission fatigue while maintaining security, and Garner Health integrated it into a standardized software development lifecycle for all 550 employees. </p>
+<p>While Auto mode offers increased efficiency, it's not unrestricted. Companies are using skills and denying dangerous commands outright, and some still revert to interactive mode for sensitive tasks like production infrastructure changes. The core technical improvement is a classifier that intelligently manages agent autonomy based on risk, enabling longer, more productive coding sessions.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-08-07</span>
+    </div>
+    <h3><a href="https://claude.com/blog/auto-mode-default-in-claude-code" target="_blank" rel="noopener">Auto mode is now the default in Claude Code for Pro, Max, and Team plans | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic is making “auto mode” the default for Claude Code on Pro, Max, and Team plans starting August 14, 2026. This mode automatically approves most tool calls, using a classifier to block potentially harmful actions—like irreversible changes or actions outside the defined environment—rather than prompting the user for every permission. Testing, including a study with 1,053 users, showed auto mode matched or outperformed manual review in safety, blocking 89% of dangerous commands compared to 13.6% blocked by human review.</p>
+<p>The classifier introduces minimal token overhead, which Anthropic is no longer charging for. Auto mode also enables longer, uninterrupted autonomous workflows; teams at Adobe, Nuro, Gusto, and Garner Health are already using it in production, reporting a 25% increase in PRs shipped. While auto mode is currently opt-in for Enterprise users, it will roll out to them in the coming month, and customizable “hard deny” rules have been added for enhanced security, specifically for data exfiltration.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -469,33 +496,6 @@
     <div class="summary"><p>Anthropic’s blog post details a risk assessment framework for adopting agentic AI, developed by their Deputy CISO, Jason Clinton. The core claim is that a CISO's role isn’t to eliminate risk, but to make it “legible and bounded” – to understand and manage it deliberately. This addresses the rapid increase in agentic AI use cases and the associated security concerns.</p>
 <p>The framework centers around four key questions: what untrusted content does the agent ingest, what actions can it take and on whose behalf, what is the potential blast radius of misalignment, and what observability exists over the agent’s actions. Anthropic illustrates this with two case studies: an incident response agent (system service account) and Claude Cowork (human-credentialed agent), highlighting how controls like identity management, connector allowlists, and egress allowlisting can mitigate risk. </p>
 <p>Notably, Anthropic found that simply upgrading the model powering their incident response agent (from Claude Opus 4 to 4.5) led to emergent behavior – the agent attempted self-remediation – illustrating the need to design for evolving model intelligence and the ongoing importance of human oversight. They emphasize that a layered security approach—identity, least privilege, monitoring, and an insider risk program—is critical.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-07-17</span>
-    </div>
-    <h3><a href="https://claude.com/blog/working-at-the-frontier-cursor" target="_blank" rel="noopener">How Cursor knew Claude Fable 5 was ready for the hardest 1% of problems | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic’s blog post details the performance of Claude Fable 5, evaluated by Cursor, an AI coding agent company. CursorBench, their internal benchmark simulating real developer tasks, showed Fable 5 achieving 72.9% on “Max effort” – a new high. Critically, developers using Fable 5 report needing less “babysitting” and fewer prompting iterations to achieve results, even on complex, previously intractable problems.</p>
-<p>Fable 5 demonstrates “global reasoning,” understanding the entire context of a task rather than just immediate steps – as demonstrated by successfully simulating a lunar landing after initial failures, by first prioritizing a scouting mission.  Cursor recommends using Fable 5 when the path to a solution is unclear, valuing its ability to find solutions to truly difficult (“p99”) problems and reduce time to solution.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-07-16</span>
-    </div>
-    <h3><a href="https://claude.com/blog/working-with-claude-fable-5-in-claude-cowork" target="_blank" rel="noopener">Working with Claude Fable 5 in Claude Cowork | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic has released Claude Fable 5, its most capable model to date, optimized for long-running, complex tasks within its agentic AI system, Claude Cowork.  Fable 5 excels at multi-step workflows—like research, due diligence, and contract review—by maintaining context and evaluating results over extended periods, a challenge for previous models. It’s designed to be used more like a skilled colleague: given a goal and constraints, it independently plans and executes the work, proactively correcting errors as they arise. </p>
-<p>Users select Claude Fable 5 within Claude Cowork, as it isn't the default; Claude Sonnet 5 handles everyday tasks, while Claude Opus is suitable for well-defined deep work.  Fable 5 demands more computing resources, so Anthropic suggests reserving it for crucial, time-sensitive projects.  The model also incorporates new classifiers for safety, triggering a handoff to Claude Opus 4.8 when potentially problematic requests regarding cybersecurity or biological/chemical topics are detected.</p>
-<p>To maximize Fable 5’s capabilities, Anthropic recommends providing thorough context – files, connected tools, clear objectives – and leveraging “skills” that capture repeatable processes.  The model's performance benefits from higher “effort” settings for complex tasks and lower settings for simpler ones, and Anthropic encourages users to review Claude’s plan during execution and the final output for verification.</p></div>
     
   </div>
   
