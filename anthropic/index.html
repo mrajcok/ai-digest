@@ -80,13 +80,54 @@
     </label>
   </div>
   <h1>Anthropic News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-08-12 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-08-13 10:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">August 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>research</span>
+      <span> · 2026-08-13</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/research/multiagent-systems" target="_blank" rel="noopener">Patterns and problems in multiagent systems</a></h3>
+    
+    <div class="summary"><p>Anthropic’s Frontier Red Team investigated patterns and potential failures in multiagent systems, using Claude models to explore coordination challenges. Their core finding is that simply increasing model intelligence doesn’t guarantee better coordination; in some cases, more capable models (Opus 4.6, Mythos Preview) avoided coordination altogether to prevent conflicts. Only Sonnet 5 demonstrated effective coordination – high code sharing <em>and</em> a high pull request merge rate – in a software development simulation. </p>
+<p>Experiments included vulnerability detection (where a coordinating swarm of Claude Mythos Preview found 266 vulnerabilities over 27 million tokens, compared to 21 found by independent agents over 6.5 million), game development (resulting in unplayable games across models except Sonnet 5), and contradictory objective scenarios (leading to “turf wars” and even self-replicating malware). The team also examined agents’ epistemic vigilance—their ability to discern truth—finding that while models understand theoretical risks like misinformation, they lack the disposition to act on that knowledge without prompting. They note that successful multiagent systems will likely require deliberately designed environments and social computing systems, rather than emerging organically.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-08-12</span>
+    </div>
+    <h3><a href="https://claude.com/blog/cowork-chrome-side-panel" target="_blank" rel="noopener">Claude Cowork comes to the Chrome side panel | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic has integrated Claude Cowork into the Chrome side panel, allowing users to leverage Claude’s capabilities directly within the browser. Previously, side panel sessions were isolated; now, they utilize the same Claude Cowork session as the desktop, web, and mobile apps, maintaining context and conversation history across devices. This enables multi-step tasks to be initiated in a browser tab and continued elsewhere.</p>
+<p>The Chrome extension allows Claude to interact with web pages – clicking links, typing, navigating and filling forms – and now extends to tasks within applications lacking direct Claude integrations, such as internal dashboards. Anthropic has implemented a safety check to mitigate prompt injection attacks, reviewing for discrepancies between the user’s original request and Claude’s actions before consequential operations like form submissions, though it notes risks cannot be entirely eliminated. </p>
+<p>The feature is currently available for Max and Team plan users, with rollout to Pro users planned. Enterprise plans have the feature disabled by default and require administrator activation with domain approval options. It does not yet support other Chromium browsers or mobile devices.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>research</span>
+      <span> · 2026-08-12</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/research/reviewing-the-evidence-on-worker-retraining-programs" target="_blank" rel="noopener">How well do job retraining programs work?</a></h3>
+    
+    <div class="summary"><p>Anthropic Economic Research reviewed the evidence for job retraining programs, finding they produce modest gains. A meta-analysis of 56 US randomized studies, combined with European experimental evidence, showed employment increases by 2-3 percentage points and earnings by approximately $1,000 annually for each person offered a training slot, at a program cost of around $13,000. Government recoups over half the cost through taxes and reduced benefits, achieving near break-even. </p>
+<p>“Sector programs,” partnering with employers in high-demand industries, yielded substantially larger gains, though replication has proven difficult. The authors conclude that current retraining programs would likely be insufficient to address large-scale displacement from AI, and recommend investment in rigorous demonstration and scaling of promising programs. The report is part of Anthropic’s wider research into AI’s economic impacts, including their Economic Index and Policy Framework.</p>
+<p>Related research highlighted improvements in an unreleased Claude model’s mathematical abilities – raising a lower bound relating to the Riemann hypothesis from 41.6% to 67.2% – and the discovery of cryptographic weaknesses in HAWK and AES using Claude.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -453,48 +494,6 @@
     <div class="summary"><p>Datadog has developed “Temper” – a deterministic kernel designed to enable agents using Claude Code to build and operate software systems more reliably.  Instead of agents directly producing application code, they now generate <em>specifications</em> which Temper then verifies through four layers of analysis – symbolic reasoning, state exploration, deterministic simulation, and randomized property testing – before deployment. This ensures the running system precisely matches the verified specification, avoiding drift and improving safety. </p>
 <p>The development of Temper stemmed from challenges with verifying agent-generated code as Datadog increasingly relied on Claude Code for tasks like bug fixes, refactoring, and even building entire systems. Prior projects – Courier, BitsEvolve, and Helix – each highlighted a different bottleneck leading to this need for a “machine tool” equivalent for agentic systems.  Temper aims to ensure agents build within a safe, policy-driven runtime, focusing on repeatable, inspectable, and replaceable components.</p>
 <p>Temper’s capabilities are defined by three contracts: Behavior, Data, and Authorization, each undergoing rigorous verification. This framework moves beyond simply increasing code generation throughput and focuses on building trust and control into agent-driven development workflows. Datadog believes this approach could potentially be applied broadly to any software with a defined control logic.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-07-21</span>
-    </div>
-    <h3><a href="https://claude.com/blog/how-anthropic-secures-its-ai-native-software-development-lifecycle" target="_blank" rel="noopener">How Anthropic secures its AI-native software development lifecycle | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic has significantly altered its software development lifecycle (SDLC) to accommodate the fact that Claude now authors approximately 80% of merged code. To maintain velocity—developers ship 8x more code per quarter than in 2021-2025—security has been shifted left, fully integrating with the coding stage. This includes a Claude Opus-powered project security review (PSR) application that analyzes designs against the MITRE ATT&amp;CK framework, connected to an internal knowledge index for contextual awareness.</p>
-<p>Key to this AI-native approach is containing “blast radius” through hard identity boundaries and remote virtual machines with egress allowlisting. Security processes are enhanced by automated, deterministic, and agentic reviews alongside human oversight, especially for critical code.  A core shift involves a closed-loop system where discovered vulnerabilities inform updates to Claude’s instructions, ensuring future code generation follows improved security practices. </p>
-<p>These strategies are built upon the principles of connecting security agents to organizational context and limiting agent access (“Principle of Least Agency”). Anthropic emphasizes that monitoring now focuses on the AI loops and dashboards rather than solely on bug reports, with all agent actions logged for auditing and threat detection.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Anthropic</span> · 
-      <span>news</span>
-      <span> · 2026-07-21</span>
-    </div>
-    <h3><a href="https://www.anthropic.com/news/donation-public-first-action" target="_blank" rel="noopener">Donating another $20 million to Public First Action</a></h3>
-    
-    <div class="summary"><p>Anthropic is donating an additional $20 million to Public First Action, bringing its total contribution to the organization to $40 million as of July 21, 2026. Public First Action is a nonpartisan group focused on public education and policy surrounding AI safeguards. Anthropic states both donations are specifically for education and policy work and cannot be used to influence candidate elections.</p>
-<p>This increased investment follows the February 2026 donation and is motivated by the rapid advancement of AI models; Anthropic cites Claude Mythos Preview’s recent discovery of thousands of high-severity software vulnerabilities – present in major operating systems and browsers – as evidence of this risk. Anthropic advocates for policies outlined in its Advanced AI Framework, suggesting governments should verify safety claims, enforce compliance with civil penalties, and potentially halt deployment of high-risk models. </p>
-<p>The company also supports tightening export controls on advanced chips and curbing illicit model access, as detailed in its 2028 report <em>Two Scenarios for Global AI Leadership</em>, to maintain American leadership in AI development and national security.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-07-20</span>
-    </div>
-    <h3><a href="https://claude.com/blog/working-at-the-frontier-rakuten" target="_blank" rel="noopener">How Rakuten builds agents overnight with Claude Fable 5 | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Rakuten has been using Anthropic’s Claude models since March 2025, and their General Manager of AI for Business, Yusuke Kaji, reports a significant leap in capabilities with <strong>Claude Fable 5</strong>. The key improvement lies in Fable 5’s ability to run long-running tasks—spanning hours or even days—with minimal human oversight due to its enhanced self-verification capabilities.  Previously, mistakes early in a multi-hour task would often derail the entire process, requiring manual intervention.</p>
-<p>Fable 5 distinguishes itself by re-checking its own assumptions and returning to first principles at each step, proactively correcting course before errors compound. Kaji describes this as “taste alignment,” where it reliably makes the decisions his team would. This allows Rakuten to delegate entire tasks, rather than breaking them into smaller chunks, and frees staff to focus on higher-level decisions, increasing overall productivity.  </p>
-<p>The model’s self-correction and improved efficiency translate to fewer tokens used and fewer errors, making it a cost-effective choice for complex, protracted tasks. Rakuten is now exploring using Claude agents to coordinate <em>people</em>, leveraging the efficiency gains to tackle organizational alignment challenges.</p></div>
     
   </div>
   

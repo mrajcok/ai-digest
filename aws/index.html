@@ -80,11 +80,84 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-08-12 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-08-13 10:17 UTC</p>
+  
+  <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">August 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-12</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/tiered-kv-cache-for-large-llms-on-amazon-sagemaker-hyperpod-with-curvine/" target="_blank" rel="noopener">Tiered KV cache for large LLMs on Amazon SageMaker HyperPod with Curvine</a></h3>
+    
+    <div class="summary"><p>AWS introduces a tiered KV cache architecture for large language model (LLM) inference on SageMaker HyperPod, utilizing Curvine for a shared, distributed NVMe pool.</p>
+<ul>
+<li>The architecture implements a three-tier cache: L0 (GPU HBM), L1 (local CPU/host memory), and L2 (Curvine, shared NVMe), coupled with intelligent request routing.</li>
+<li>Curvine is a distributed cache filesystem pooling node-local NVMe drives into a shared namespace accessible via a FUSE client as a ReadWriteMany PVC.</li>
+<li>HyperPod’s Intelligent Routing directs requests to replicas with the best prefix match to maximize cache hits, supporting prefix-aware, kv-aware, and round-robin strategies.</li>
+<li>The solution aims to reduce costs by enabling the use of lower-cost instances (e.g., G6e) for workloads that previously required more expensive instances (e.g., P5), achieving up to a 2.7x TTFT improvement and 100% cross-Pod cache hit rate in testing.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-12</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/pay-with-confidence-how-solv-labs-built-verifiable-auditable-agent-payments-on-amazon-bedrock-agentcore-payments/" target="_blank" rel="noopener">Pay with confidence: How Solv Labs built verifiable, auditable agent payments on Amazon Bedrock AgentCore payments</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock AgentCore payments, launched in May 2026, provides payment infrastructure for AI agents accessing services like web content, APIs, and other agents, governed by existing developer controls.</li>
+<li>Solv Labs implemented a workflow utilizing AgentCore payments with ORACLE (a policy engine with AWS Nitro Enclave attestation) and ICME PreFlight to provide verifiable, auditable agent payments with sub-second latency (under 4 seconds total, &lt;1 second overhead).</li>
+<li>Each transaction generates a signed evidence record, binding the policy, proof of policy check, hardware attestation, risk price, and settlement artifacts, enabling independent verification by auditors, counterparties, and regulators.</li>
+<li>The system achieves governance at scale with a single observability surface through Amazon Bedrock AgentCore Observability via Amazon CloudWatch, enabling a shift from volume-based to exception-based review processes.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-12</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-oneadvanced-deployed-over-50-ai-agents-on-uk-sovereign-aws/" target="_blank" rel="noopener">How OneAdvanced deployed over 50 AI agents on UK-sovereign AWS</a></h3>
+    
+    <div class="summary"><p>OneAdvanced deployed over 50 AI agents in a UK-sovereign environment using self-hosted open-weight LLMs on AWS.</p>
+<ul>
+<li>The solution utilizes Llama 4 Maverick (meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8) and Llama Guard 4 (meta-llama/Llama-Guard-4-12B) served via vLLM on Amazon SageMaker AI, running on p5.48xlarge instances.</li>
+<li>Over 50 specialized agents are powered by the Strands Agents SDK and deployed on Amazon ECS, with agent configurations stored in Amazon DynamoDB.</li>
+<li>A custom RAG pipeline, internally named “Llamadex”, uses pgvector with Amazon Aurora PostgreSQL for document retrieval, embedding using intfloat/multilingual-e5-large-instruct, and supports both personal and organizational document collections from Amazon S3.</li>
+<li>Llama Guard 4 content filtering precedes inference to screen user inputs, replacing Llama Guard 3 due to improved rejection rates, and the solution incorporates security measures like Amazon GuardDuty and ISO 42001 certification.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-12</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/part-2-amazon-bedrock-cost-attribution-with-amazon-athena-and-cudos/" target="_blank" rel="noopener">Part 2: Amazon Bedrock cost attribution with Amazon Athena and CUDOS</a></h3>
+    
+    <div class="summary"><p>Amazon Bedrock cost attribution is now available with Amazon Athena queries and CUDOS dashboards.</p>
+<ul>
+<li>Enabling IAM principal data in Cost and Usage Report (CUR) 2.0 exports populates a <code>line_item_iam_principal</code> column, allowing cost tracking per user or application.</li>
+<li>Amazon Athena can query CUR 2.0 data using SQL, with example queries provided for breaking down Bedrock costs by IAM principal, usage type, and IAM principal tags.</li>
+<li>CUDOS dashboards (version 5.8+) now include a dedicated Amazon Bedrock section with grouping dimensions, cost-per-million-tokens tracking, and interactive drill-down filtering.</li>
+<li>CUR 2.0 with IAM principal data increases file sizes, requiring consideration for S3 storage and lifecycle policies, and queries scoped to a single month can minimize Athena costs by limiting data scanned.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
