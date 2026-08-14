@@ -80,13 +80,82 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-08-13 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-08-14 10:18 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">August 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-13</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/amazon-quick-for-microsoft-365-agentic-ai-where-you-work/" target="_blank" rel="noopener">Amazon Quick for Microsoft 365: Agentic AI where you work</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Quick now offers extensions for Microsoft Word, Excel, PowerPoint, and Outlook, providing agentic AI capabilities directly within these applications.</li>
+<li>The extensions are “agentic,” meaning they take action <em>within</em> the Microsoft 365 apps (e.g., reformatting text in Word, explaining formulas in Excel) rather than simply providing chatbot responses.</li>
+<li>Installation is cloud-based and requires no client-side software, utilizing standard Microsoft 365 add-in deployment methods; Outlook may require administrator approval for full functionality due to Graph API permissions.</li>
+<li>The extensions connect to existing Quick data sources (QuickSight, Salesforce, Jira, etc.) and leverage existing Quick permissions and security policies, offering data residency across seven AWS Regions.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-13</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/accelerating-ma-due-diligence-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Accelerating M&amp;A due diligence with Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock AgentCore is presented as a platform for building, connecting, and optimizing AI agents at scale, and is used in this example to accelerate M&amp;A due diligence.</li>
+<li>A reference architecture is provided utilizing Amazon Bedrock AgentCore to orchestrate agents for target screening, financial analysis, strategic fit assessment, and compliance validation.</li>
+<li>The architecture leverages Retrieval Augmented Generation (RAG) with Amazon Bedrock Knowledge Bases, structured data from Amazon Aurora PostgreSQL, and external tool integration via AgentCore Gateway.</li>
+<li>The solution includes built-in governance features such as citation checking (using a custom Lambda function) and policy enforcement through Amazon Bedrock Guardrails, alongside built-in auditability and observability via CloudWatch and X-Ray.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-13</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/automate-legacy-web-applications-with-amazon-bedrock-agentcore-browser-tool/" target="_blank" rel="noopener">Automate legacy web applications with Amazon Bedrock AgentCore Browser Tool</a></h3>
+    
+    <div class="summary"><p>Amazon Bedrock AgentCore Browser Tool enables automation of interactions with legacy web applications lacking modern APIs.</p>
+<ul>
+<li>The tool provides a fully managed, cloud-based browser service utilizing Playwright and the Chrome DevTools Protocol (CDP) to interact with web applications regardless of their technology stack.</li>
+<li>It features browser profiles to persist authentication state, proxy configuration for accessing internal applications, and session recording to Amazon S3 for audit trails.</li>
+<li>Combined with Strands Agents and Amazon Bedrock foundation models, it supports a ReAct (Reason + Act) loop for dynamic, visually-driven automation, adapting to changes in UI elements.</li>
+<li>The solution includes human-in-the-loop integration, enabling operators to review and approve actions during automation workflows with pauses and screenshot sharing.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-13</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/monitor-on-premises-and-multi-cloud-ai-agents-with-agentcore-observability/" target="_blank" rel="noopener">Monitor on-premises and multi-cloud AI agents with AgentCore Observability</a></h3>
+    
+    <div class="summary"><ul>
+<li>This post details how to set up observability for AI agents built with frameworks like Strands Agents, LangGraph, and CrewAI when they are deployed outside of AWS, using the Amazon Bedrock AgentCore Observability dashboard.</li>
+<li>The core solution utilizes the AWS Distro for OpenTelemetry (ADOT) to auto-instrument agent frameworks, capturing generative AI semantic convention spans and exporting telemetry to Amazon CloudWatch via the OTLP endpoint using SigV4 authentication with IAM credentials.</li>
+<li>Key environment variables are required to configure ADOT, including <code>AGENT_OBSERVABILITY_ENABLED</code>, <code>OTEL_PYTHON_DISTRO</code>, <code>OTEL_PYTHON_CONFIGURATOR</code>, <code>OTEL_RESOURCE_ATTRIBUTES</code>, <code>OTEL_EXPORTER_OTLP_LOGS_HEADERS</code>, <code>OTEL_EXPORTER_OTLP_PROTOCOL</code>, and <code>OTEL_TRACES_EXPORTER</code>.</li>
+<li>The walkthrough demonstrates successful telemetry reporting from agents running on Google Cloud Platform and validates that the same AgentCore Observability dashboard can be used for agents deployed across multiple environments, providing a unified view of agent behavior and performance.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -540,75 +609,6 @@
 <li>The solution leverages Amazon Bedrock models, specifically Amazon Nova Pro for complex reasoning and Amazon Nova Lite for conversational responses, dynamically selecting between them to balance performance and cost.</li>
 <li>Amazon Bedrock Guardrails and a custom safety classifier are employed for content filtering, PII redaction, and compliance with mortgage industry regulations.</li>
 <li>Conversation memory is managed using a LangGraph PostgreSQL checkpointer on Amazon RDS, enabling persistent and contextual conversations across multiple turns and agent handoffs.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-04</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/automated-web-insight-extraction-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Automated web insight extraction with Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock AgentCore Browser provides a fully managed browser service that reliably renders JavaScript-heavy web pages, overcoming issues with traditional web scrapers.</li>
-<li>The solution uses an event-driven architecture with Amazon S3, Amazon SQS, and AWS Lambda to collect web content from RSS feeds, extract insights using Amazon Bedrock, and index the results for search.</li>
-<li>AI-powered analysis with Amazon Bedrock extracts summaries, themes, entities, and actionable insights from web content, and generates vector embeddings for semantic search in Amazon OpenSearch Serverless.</li>
-<li>URL hashing in Amazon S3 is critical for deduplication to manage costs associated with using AgentCore Browser sessions, which are more expensive than standard HTTP requests.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-04</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-web-search-on-amazon-bedrock-for-foundation-model-grounding/" target="_blank" rel="noopener">Introducing Web Search on Amazon Bedrock for foundation model grounding</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock now includes Web Search, a server-side tool for grounding model responses in current web knowledge, eliminating the need for third-party web search integrations.</li>
-<li>Web Search utilizes a multi-source grounding approach, combining a web index with a knowledge graph for factual accuracy and efficient retrieval using semantic snippet extraction.</li>
-<li>Enabling Web Search is done through a single parameter in the OpenAI Responses API, requiring no vendor onboarding, API keys, or SDKs, and supports zero data egress by default.</li>
-<li>Web Search is integrated with AWS CloudTrail for auditing, logging <code>InvokeSearch</code> and <code>InvokeFetch</code> calls without exposing query text, and is currently available in US regions (us-east-1, us-east-2, us-west-2).</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-03</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/automated-reasoning-policy-refinement-in-amazon-bedrock/" target="_blank" rel="noopener">Automated Reasoning policy refinement in Amazon Bedrock</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock now offers automatic policy refinement to automate the process of diagnosing and fixing issues in Automated Reasoning policies, reducing manual effort.</li>
-<li>Two new refinement modes are available: Iterative Refinement addresses rule issues by proposing edits to formal logic, while Ambiguous Variable Refinement resolves language issues by suggesting clearer variable descriptions.</li>
-<li>Iterative Refinement requires a source document and optional feedback, analyzing divergence from the document to propose rule or variable changes, and uses an asynchronous API workflow (start, poll, retrieve).</li>
-<li>Ambiguous Variable Refinement identifies overlapping or incomplete variable definitions causing translation issues and proposes refined descriptions, utilizing the same API workflow as Iterative Refinement but without the need for a source document or tests.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-03</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/from-weeks-to-minutes-how-formula-1-uses-agentic-ai-on-aws-to-accelerate-data-operations/" target="_blank" rel="noopener">From weeks to minutes: How Formula 1® uses agentic AI on AWS to accelerate data operations</a></h3>
-    
-    <div class="summary"><p>Formula 1® partnered with AWS to build the Data Accelerator, leveraging agentic AI to accelerate their MarTech data platform operations.</p>
-<ul>
-<li>The Data Accelerator utilizes <strong>Amazon Bedrock AgentCore</strong> to reduce data source onboarding from 6-8 weeks to approximately 40 minutes of code generation plus deployment time.</li>
-<li>The solution includes automated schema evolution detection and remediation, utilizing <strong>AWS Lambda</strong> and <strong>Amazon EventBridge</strong> to monitor for upstream changes and generate code updates.</li>
-<li>A unified data access layer is built on <strong>Amazon SageMaker Unified Studio</strong>, enabling governed self-service data access for data scientists and analysts.</li>
-<li>End-to-end observability and root cause analysis are provided through a new dashboard leveraging an agentic RCA tool, offering data lineage visualized as an interactive graph, with context provided via JSON.</li>
 </ul></div>
     
   </div>

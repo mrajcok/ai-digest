@@ -80,13 +80,54 @@
     </label>
   </div>
   <h1>Anthropic News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-08-13 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-08-14 10:18 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">August 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-08-13</span>
+    </div>
+    <h3><a href="https://claude.com/blog/how-jetbrains-evaluates-and-deploys-claude-fable-5" target="_blank" rel="noopener">Securing the frontier: How JetBrains evaluates and deploys Claude Fable 5 | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>JetBrains evaluated Anthropic’s Claude Fable 5 against its private code repositories, finding it outperformed Opus 4.8 on Python pass rates by 16 points – achieving 44.3% versus 28.2%. Notably, Fable 5 solved 18 Python tasks that Opus 4.8 failed to complete, with code running successfully and producing correct results more consistently.</p>
+<p>The evaluation also revealed efficiency gains: Fable 5 required approximately 22% fewer steps than Opus 4.8 to reach a solution. JetBrains utilizes Fable 5 for complex reasoning tasks, especially where definitive solutions aren't readily apparent, such as implementing sophisticated IDE components and long-running agentic coding experiments for rewriting applications across different runtimes. </p>
+<p>JetBrains prioritizes a systematic approach to model deployment, focusing on safety infrastructure and harnesses around the model rather than attempting to modify the model itself. While they acknowledge the need for data retention for classifier review, they favor minimizing it and see the trade-off as acceptable for accessing the model's advanced capabilities.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-08-13</span>
+    </div>
+    <h3><a href="https://claude.com/blog/claude-tag-now-reads-even-more-of-the-room" target="_blank" rel="noopener">Claude Tag now reads even more of the room | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic has updated Claude Tag for Slack, enabling it to consider the full context of a channel – not just individual messages – when deciding whether to proactively contribute. Previously, a simple classifier determined responses; now, Claude can choose to reply inline, start a thread, route to existing work, or remain silent based on broader conversation dynamics, improving proactive response accuracy by roughly 30%.</p>
+<p>This contextual awareness doesn't impact usage limits, despite increased processing. Claude Tag assesses usefulness, confidence, and the presence of more suitable responders to avoid interrupting conversations unnecessarily, and can be instructed to only respond to direct mentions. The update also reduces initial response latency, providing quicker acknowledgement. This is available now to Claude Teams and Enterprise customers.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-08-13</span>
+    </div>
+    <h3><a href="https://claude.com/blog/self-service-data-analytics-in-slack-how-anthropic-deploys-claude-tag-for-ad-hoc-questions" target="_blank" rel="noopener">Self-service data analytics in Slack: how Anthropic deploys Claude Tag for ad-hoc questions | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic has deployed Claude Tag, currently in public beta, to enable self-service data analytics directly within Slack. Building on a foundation of governed semantic layers and analytical skill files (as described in a previous post), Claude Tag allows anyone to ask data-related questions and receive answers aligned with established analytical standards. A key architectural decision was to treat skill files as continuously refreshed content, ensuring Claude doesn’t rely on outdated information—the system remounts and re-reads skills on every conversation. </p>
+<p>Beyond simply retrieving data, Claude Tag is equipped with specialized “runbook” skills including forecasting, cohort analysis, funnel analysis, charting conventions, and analytical writing—capabilities that go beyond basic querying to provide insightful answers, similar to a data analyst’s approach. To provide complete context, the system is also integrated with an internal knowledge index, surfacing relevant information from Slack threads, incident trackers, and documentation alongside quantitative data.</p>
+<p>Security is addressed by limiting the service account’s data access to governed data and denying access to PII at the column level, alongside detailed logging of queries and user interactions. The team emphasizes careful permissioning, continuous monitoring of skill freshness and accuracy (through user feedback and telemetry), and incremental skill development informed by actual user questions. This aims to accelerate self-service analytics adoption by embedding data insights directly within existing workflows.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -452,48 +493,6 @@
     <div class="summary"><p>Anthropic’s Claude Code now supports building “verification loops” – automated checks and fixes within the coding process. These loops enable Claude to iteratively test its work, running tools like type checkers, linters, and custom tests, then attempt to correct failures before presenting results.  Users can define these loops as “skills”, ensuring consistent checks across sessions. </p>
 <p>Built-in verification includes the <code>/verify</code> skill, toolchain integration (catching error codes), a Code Review research preview which integrates with GitHub Actions, and spec validation; custom loops can be built from existing manual checks, written in plain English and encoded as skills using a skill creator plugin or Markdown files. The system offers flexibility – standalone checks, embedding within existing skills, chaining multiple skills together, or triggering on every pull request.</p>
 <p>This feature is designed to automate repetitive tasks currently done manually by developers, reducing the need for constant review and allowing Claude to fix issues autonomously. Details on skill structure and how to implement the different loop types are provided, helping users tailor verification to their specific project needs.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Anthropic</span> · 
-      <span>news</span>
-      <span> · 2026-07-22</span>
-    </div>
-    <h3><a href="https://www.anthropic.com/news/economic-futures-research-fund-agenda" target="_blank" rel="noopener">Supporting ambitious external research through the Anthropic Economic Futures Research Fund</a></h3>
-    
-    <div class="summary"><p>Anthropic is launching a $200 million Economic Futures Research Fund to study the economic impacts of artificial intelligence and identify interventions to ensure broadly shared benefits. The fund will prioritize research in five areas: the impact of AI on workers and workplaces, equipping people for AI-driven transitions, modernizing income support, building worker stakes in AI growth, and generating evidence on effective public investments. </p>
-<p>The fund will focus on large-scale randomized controlled trials (RCTs) and ambitious pilot programs, with grants ranging from $1 million to $30 million, though larger projects will be considered. Anthropic is seeking proposals from accredited universities, research institutes, and nonprofits, with a preference for projects fitting the identified research priorities. The initiative reflects a shift toward funding larger, more impactful research bets than previous iterations of the Economic Futures program.</p>
-<p>Anthropic emphasizes the need for rapid dissemination of research findings and aims to fund projects scalable to widespread adoption; proposals are accepted globally, though current focus is US-centric due to Claude’s existing user base. They are open to creative proposals beyond those explicitly outlined, particularly those addressing a rapidly changing landscape where historical precedent may not apply.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Anthropic</span> · 
-      <span>news</span>
-      <span> · 2026-07-22</span>
-    </div>
-    <h3><a href="https://www.anthropic.com/news/anthropic-economic-index-connector" target="_blank" rel="noopener">The Anthropic Economic Index connector</a></h3>
-    
-    <div class="summary"><p>Anthropic has launched the Anthropic Economic Index connector for its Claude models, enabling users to directly query data regarding AI usage in the economy. The Index measures actual AI application, and Anthropic states the connector allows anyone—not just researchers, journalists, and policymakers—to explore this data through natural language questions within Claude. </p>
-<p>Examples of queries include identifying occupations with high AI use, specific use cases of Claude in a given region (like Colorado), and tasks teachers are automating with AI. Responses are grounded in the Index’s data, with Claude able to display the source data and its limitations upon request. The connector is available within claude.ai via the connectors menu and works with all Claude models; no installation is required.</p>
-<p>It's important to note, according to Anthropic, that the Index reflects patterns in <em>Claude</em> usage, rather than the overall labor market. Full datasets underpinning the Index remain freely available on the Anthropic website.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-07-21</span>
-    </div>
-    <h3><a href="https://claude.com/blog/how-datadog-built-a-universal-machine-tool-for-claude-code" target="_blank" rel="noopener">How Datadog built a “universal machine tool” for Claude Code | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Datadog has developed “Temper” – a deterministic kernel designed to enable agents using Claude Code to build and operate software systems more reliably.  Instead of agents directly producing application code, they now generate <em>specifications</em> which Temper then verifies through four layers of analysis – symbolic reasoning, state exploration, deterministic simulation, and randomized property testing – before deployment. This ensures the running system precisely matches the verified specification, avoiding drift and improving safety. </p>
-<p>The development of Temper stemmed from challenges with verifying agent-generated code as Datadog increasingly relied on Claude Code for tasks like bug fixes, refactoring, and even building entire systems. Prior projects – Courier, BitsEvolve, and Helix – each highlighted a different bottleneck leading to this need for a “machine tool” equivalent for agentic systems.  Temper aims to ensure agents build within a safe, policy-driven runtime, focusing on repeatable, inspectable, and replaceable components.</p>
-<p>Temper’s capabilities are defined by three contracts: Behavior, Data, and Authorization, each undergoing rigorous verification. This framework moves beyond simply increasing code generation throughput and focuses on building trust and control into agent-driven development workflows. Datadog believes this approach could potentially be applied broadly to any software with a defined control logic.</p></div>
     
   </div>
   

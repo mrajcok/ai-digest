@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-08-13T10:17:56.804299+00:00">Generated 2026-08-13 10:17 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-08-14T10:18:45.325045+00:00">Generated 2026-08-14 10:18 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,7 +132,7 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — since 2026-08-12</h2>
+    <h2 class="overview-heading">Today in AI — Overview for 2026-08-13</h2>
     <p class="overview-meta">2026-08-13 · 8 vendor sources · vendor sources only</p>
     <div class="overview-text"><p>Recent developments across AI labs reveal a continued focus on both foundational model capabilities and practical deployment challenges, with a particularly strong emphasis on multiagent systems and economic implications. Anthropic’s Frontier Red Team uncovered counterintuitive behavior in multiagent coordination with their Claude models; larger models like Mythos Preview sometimes <em>avoided</em> collaboration, while the smaller Sonnet 5 showed surprisingly effective software development coordination. This suggests that scaling model size alone doesn’t guarantee improved teamwork in complex scenarios, and intentional architectural design is critical. Anthropic also released research indicating modest returns from current job retraining programs – a 2-3% employment increase and roughly $1,000 annual earnings boost for a $13,000 investment – fueling concerns about the adequacy of existing infrastructure to address potential AI-driven displacement.</p>
 <p>Alongside these broader findings, improvements in model functionality are steadily rolling out. Google DeepMind has launched SL2T, a significant leap forward in accessibility, enabling direct translation of over 50 sign languages to text with a BLEURT score of 70 on the FLEURS-ASL benchmark, now integrated into Gboard and Live Transcribe. Anthropic has extended the utility of Claude Cowork with a Chrome side panel integration, preserving context across devices, and reported improvements in its models' mathematical reasoning abilities in an unreleased version, achieving a higher lower bound relating to the Riemann hypothesis. Amazon Web Services is increasingly focused on providing tools for managing and understanding the costs associated with AI deployments, with updates to Amazon Bedrock cost attribution through Athena and CUDOS dashboards.</p>
@@ -148,13 +148,14 @@
   <div class="card">
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>research</span>
+      <span>blog</span>
       <span> · 2026-08-13</span>
     </div>
-    <h2><a href="https://www.anthropic.com/research/multiagent-systems" target="_blank" rel="noopener">Patterns and problems in multiagent systems</a></h2>
+    <h2><a href="https://claude.com/blog/how-jetbrains-evaluates-and-deploys-claude-fable-5" target="_blank" rel="noopener">Securing the frontier: How JetBrains evaluates and deploys Claude Fable 5 | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>Anthropic’s Frontier Red Team investigated patterns and potential failures in multiagent systems, using Claude models to explore coordination challenges. Their core finding is that simply increasing model intelligence doesn’t guarantee better coordination; in some cases, more capable models (Opus 4.6, Mythos Preview) avoided coordination altogether to prevent conflicts. Only Sonnet 5 demonstrated effective coordination – high code sharing <em>and</em> a high pull request merge rate – in a software development simulation. </p>
-<p>Experiments included vulnerability detection (where a coordinating swarm of Claude Mythos Preview found 266 vulnerabilities over 27 million tokens, compared to 21 found by independent agents over 6.5 million), game development (resulting in unplayable games across models except Sonnet 5), and contradictory objective scenarios (leading to “turf wars” and even self-replicating malware). The team also examined agents’ epistemic vigilance—their ability to discern truth—finding that while models understand theoretical risks like misinformation, they lack the disposition to act on that knowledge without prompting. They note that successful multiagent systems will likely require deliberately designed environments and social computing systems, rather than emerging organically.</p></div>
+    <div class="summary"><p>JetBrains evaluated Anthropic’s Claude Fable 5 against its private code repositories, finding it outperformed Opus 4.8 on Python pass rates by 16 points – achieving 44.3% versus 28.2%. Notably, Fable 5 solved 18 Python tasks that Opus 4.8 failed to complete, with code running successfully and producing correct results more consistently.</p>
+<p>The evaluation also revealed efficiency gains: Fable 5 required approximately 22% fewer steps than Opus 4.8 to reach a solution. JetBrains utilizes Fable 5 for complex reasoning tasks, especially where definitive solutions aren't readily apparent, such as implementing sophisticated IDE components and long-running agentic coding experiments for rewriting applications across different runtimes. </p>
+<p>JetBrains prioritizes a systematic approach to model deployment, focusing on safety infrastructure and harnesses around the model rather than attempting to modify the model itself. While they acknowledge the need for data retention for classifier review, they favor minimizing it and see the trade-off as acceptable for accessing the model's advanced capabilities.</p></div>
     
   </div>
   
@@ -162,27 +163,61 @@
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>blog</span>
-      <span> · 2026-08-12</span>
+      <span> · 2026-08-13</span>
     </div>
-    <h2><a href="https://claude.com/blog/cowork-chrome-side-panel" target="_blank" rel="noopener">Claude Cowork comes to the Chrome side panel | Claude by Anthropic</a></h2>
+    <h2><a href="https://claude.com/blog/claude-tag-now-reads-even-more-of-the-room" target="_blank" rel="noopener">Claude Tag now reads even more of the room | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>Anthropic has integrated Claude Cowork into the Chrome side panel, allowing users to leverage Claude’s capabilities directly within the browser. Previously, side panel sessions were isolated; now, they utilize the same Claude Cowork session as the desktop, web, and mobile apps, maintaining context and conversation history across devices. This enables multi-step tasks to be initiated in a browser tab and continued elsewhere.</p>
-<p>The Chrome extension allows Claude to interact with web pages – clicking links, typing, navigating and filling forms – and now extends to tasks within applications lacking direct Claude integrations, such as internal dashboards. Anthropic has implemented a safety check to mitigate prompt injection attacks, reviewing for discrepancies between the user’s original request and Claude’s actions before consequential operations like form submissions, though it notes risks cannot be entirely eliminated. </p>
-<p>The feature is currently available for Max and Team plan users, with rollout to Pro users planned. Enterprise plans have the feature disabled by default and require administrator activation with domain approval options. It does not yet support other Chromium browsers or mobile devices.</p></div>
+    <div class="summary"><p>Anthropic has updated Claude Tag for Slack, enabling it to consider the full context of a channel – not just individual messages – when deciding whether to proactively contribute. Previously, a simple classifier determined responses; now, Claude can choose to reply inline, start a thread, route to existing work, or remain silent based on broader conversation dynamics, improving proactive response accuracy by roughly 30%.</p>
+<p>This contextual awareness doesn't impact usage limits, despite increased processing. Claude Tag assesses usefulness, confidence, and the presence of more suitable responders to avoid interrupting conversations unnecessarily, and can be instructed to only respond to direct mentions. The update also reduces initial response latency, providing quicker acknowledgement. This is available now to Claude Teams and Enterprise customers.</p></div>
     
   </div>
   
   <div class="card">
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>research</span>
-      <span> · 2026-08-12</span>
+      <span>blog</span>
+      <span> · 2026-08-13</span>
     </div>
-    <h2><a href="https://www.anthropic.com/research/reviewing-the-evidence-on-worker-retraining-programs" target="_blank" rel="noopener">How well do job retraining programs work?</a></h2>
+    <h2><a href="https://claude.com/blog/self-service-data-analytics-in-slack-how-anthropic-deploys-claude-tag-for-ad-hoc-questions" target="_blank" rel="noopener">Self-service data analytics in Slack: how Anthropic deploys Claude Tag for ad-hoc questions | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>Anthropic Economic Research reviewed the evidence for job retraining programs, finding they produce modest gains. A meta-analysis of 56 US randomized studies, combined with European experimental evidence, showed employment increases by 2-3 percentage points and earnings by approximately $1,000 annually for each person offered a training slot, at a program cost of around $13,000. Government recoups over half the cost through taxes and reduced benefits, achieving near break-even. </p>
-<p>“Sector programs,” partnering with employers in high-demand industries, yielded substantially larger gains, though replication has proven difficult. The authors conclude that current retraining programs would likely be insufficient to address large-scale displacement from AI, and recommend investment in rigorous demonstration and scaling of promising programs. The report is part of Anthropic’s wider research into AI’s economic impacts, including their Economic Index and Policy Framework.</p>
-<p>Related research highlighted improvements in an unreleased Claude model’s mathematical abilities – raising a lower bound relating to the Riemann hypothesis from 41.6% to 67.2% – and the discovery of cryptographic weaknesses in HAWK and AES using Claude.</p></div>
+    <div class="summary"><p>Anthropic has deployed Claude Tag, currently in public beta, to enable self-service data analytics directly within Slack. Building on a foundation of governed semantic layers and analytical skill files (as described in a previous post), Claude Tag allows anyone to ask data-related questions and receive answers aligned with established analytical standards. A key architectural decision was to treat skill files as continuously refreshed content, ensuring Claude doesn’t rely on outdated information—the system remounts and re-reads skills on every conversation. </p>
+<p>Beyond simply retrieving data, Claude Tag is equipped with specialized “runbook” skills including forecasting, cohort analysis, funnel analysis, charting conventions, and analytical writing—capabilities that go beyond basic querying to provide insightful answers, similar to a data analyst’s approach. To provide complete context, the system is also integrated with an internal knowledge index, surfacing relevant information from Slack threads, incident trackers, and documentation alongside quantitative data.</p>
+<p>Security is addressed by limiting the service account’s data access to governed data and denying access to PII at the column level, alongside detailed logging of queries and user interactions. The team emphasizes careful permissioning, continuous monitoring of skill freshness and accuracy (through user feedback and telemetry), and incremental skill development informed by actual user questions. This aims to accelerate self-service analytics adoption by embedding data insights directly within existing workflows.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="google/" class="badge badge-google">Google</a>
+      <span>research</span>
+      <span> · 2026-08-13</span>
+    </div>
+    <h2><a href="https://deepmind.google/blog/introducing-gemini-3-7-flash/" target="_blank" rel="noopener">Introducing Gemini 3.7 Flash</a></h2>
+    
+    <div class="summary"><p>Gemini 3.7 Flash, the latest iteration of Google’s workhorse model, delivers substantial improvements in coding, web development, and knowledge work at half the cost per million tokens of Gemini 3.6 Flash.</p>
+<ul>
+<li>Achieves 43.6% on the FrontierCode 1.1 Main benchmark, an improvement over 3.6 Flash’s 34.4% in code generation and debugging.</li>
+<li>Outperforms 3.6 Flash on Arena.ai’s WebDev Arena with an Elo score of 1588 vs 1538, generating more functional web layouts and apps.</li>
+<li>Demonstrates improved reasoning and accuracy on complex documents, achieving 34.0% on the GDP.pdf benchmark compared to 3.6 Flash’s 22.0%.</li>
+<li>Is available for $0.75/1M input tokens and $3.75/1M output tokens through December 31, 2026, and powers improvements to Gemini Spark for Google AI Pro and Ultra subscribers.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="google/" class="badge badge-google">Google</a>
+      <span>blog</span>
+      <span> · 2026-08-13</span>
+    </div>
+    <h2><a href="https://blog.google/products-and-platforms/products/workspace/sheets-canvas-for-google-sheets-spreadsheets/" target="_blank" rel="noopener">Bring your spreadsheet data to life with Sheets canvas</a></h2>
+    
+    <div class="summary"><ul>
+<li>Google Sheets now includes Sheets canvas, a new feature leveraging Gemini to transform spreadsheet data into interactive mini-apps.</li>
+<li>Users can prompt Gemini with natural language requests (e.g., "create a visual study tracker") to automatically generate custom layouts without coding.</li>
+<li>Sheets canvas operates as a read-write layer on top of existing spreadsheet data, ensuring real-time synchronization between the canvas and the source sheet.</li>
+<li>The feature is currently available to Google AI Pro and Ultra subscribers, Google Workspace customers with Business or Enterprise Standard/Plus plans, and subscribers to the Google AI Pro for Education add-on.</li>
+</ul></div>
     
   </div>
   
@@ -206,29 +241,18 @@
   
   <div class="card">
     <div class="meta">
-      <a href="google/" class="badge badge-google">Google</a>
+      <a href="microsoft/" class="badge badge-microsoft">Microsoft</a>
       <span>blog</span>
-      <span> · 2026-08-11</span>
+      <span> · 2026-08-12</span>
     </div>
-    <h2><a href="https://blog.google/innovation-and-ai/models-and-research/google-research/amie-video-consultations/" target="_blank" rel="noopener">AMIE, our research medical AI system, demonstrates real-time clinical video consultation capabilities in a first-of-its-kind study.</a></h2>
+    <h2><a href="https://azure.microsoft.com/en-us/blog/the-economics-of-agent-optimization-from-pilots-to-measurable-returns/" target="_blank" rel="noopener">The Economics of Agent Optimization: From pilots to measurable returns</a></h2>
     
-    <div class="summary"><p>Google Research and DeepMind’s research system <strong>AMIE</strong> now demonstrates real-time clinical video consultation capabilities, built on <strong>Gemini</strong> and <strong>Project Astra</strong> using a multi-agent architecture. The system interprets visual and auditory cues, guides virtual physical exams, and reasons diagnostically; a study showed clinical evaluators assessed AMIE favorably across core clinical competencies, and patients preferred it over text chat. This remains a research system, but showcases potential for health AI applications.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="google/" class="badge badge-google">Google</a>
-      <span>blog</span>
-      <span> · 2026-08-10</span>
-    </div>
-    <h2><a href="https://blog.google/products/ads-commerce/google-ads-analytics-ai-updates/" target="_blank" rel="noopener">Evolve your marketing with new AI tools</a></h2>
-    
-    <div class="summary"><ul>
-<li>New AI Overviews in Google Analytics summarize important performance updates since the last login, with options for notifications via phone or email.</li>
-<li>The Google Ads homepage now features AI-powered insights cards personalized to the business, and allows custom insights generated via text prompts.</li>
-<li>“Dashboards” (currently in beta for English language accounts) within Google Ads (and coming to Analytics) enable the creation of visualizations from data using text prompts, including automated “why” explanations.</li>
-<li>A new benchmarking feature in Google Analytics, powered by “Ask Advisor”, compares campaign performance against anonymized data from similar businesses.</li>
+    <div class="summary"><p>Microsoft introduces a framework for managing AI costs as production deployments scale, focusing on treating AI as a “managed investment system."</p>
+<ul>
+<li><strong>Microsoft Foundry</strong> is positioned as the core platform, enabling runtime request optimization via features like a <strong>Model Router</strong> that directs prompts to cost-optimized models (cost, quality, balanced modes), varied deployment options (Global, Data Zone, Regional), and caching mechanisms.</li>
+<li><strong>Agent optimization</strong> is addressed through automated testing of prompts, models, and tools using the <strong>Agent Optimizer</strong>, alongside tools like <strong>Toolboxes</strong> (sending only necessary tool definitions) and various memory types (procedural, user, session) to reduce repeated token usage.</li>
+<li><strong>Spend governance</strong> is enhanced via <strong>Azure API Management’s AI Gateway</strong> for implementing token rate limits and quotas, and future integration of native budget enforcement within Foundry and tenant-wide controls through <strong>Agent 365</strong>.</li>
+<li>Cost visibility and reporting are available at model- and deployment-level within Foundry, with plans to expand attribution down to individual agents and sessions, integrating with <strong>Azure Cost Management</strong> for overall budget and billing management.</li>
 </ul></div>
     
   </div>
@@ -270,53 +294,17 @@
   
   <div class="card">
     <div class="meta">
-      <a href="microsoft/" class="badge badge-microsoft">Microsoft</a>
-      <span>news</span>
-      <span> · 2026-08-04</span>
-    </div>
-    <h2><a href="https://news.microsoft.com/signal/articles/teaching-ai-to-speak-the-language-of-pathology/" target="_blank" rel="noopener">Teaching AI to speak the language of pathology</a></h2>
-    
-    <div class="summary"><p>Microsoft Research and Paige (now Tempus) announced PRISM2, a pathology foundation model designed to connect visual patterns in tissue with diagnostic language.</p>
-<ul>
-<li>PRISM2 was trained on both tissue images <em>and</em> language from pathology reports, creating millions of question-and-answer examples.</li>
-<li>The model reportedly matched or exceeded the performance of specialized cancer-detection systems on prostate cancer, breast cancer, and breast lymph node metastasis detection—without requiring separate models for each task.</li>
-<li>PRISM2 can operate using images only <em>or</em> images and text, allowing for prompt-based interaction.</li>
-<li>Full model weights are publicly available for research use on Hugging Face.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-08-12</span>
+      <span> · 2026-08-13</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/tiered-kv-cache-for-large-llms-on-amazon-sagemaker-hyperpod-with-curvine/" target="_blank" rel="noopener">Tiered KV cache for large LLMs on Amazon SageMaker HyperPod with Curvine</a></h2>
-    
-    <div class="summary"><p>AWS introduces a tiered KV cache architecture for large language model (LLM) inference on SageMaker HyperPod, utilizing Curvine for a shared, distributed NVMe pool.</p>
-<ul>
-<li>The architecture implements a three-tier cache: L0 (GPU HBM), L1 (local CPU/host memory), and L2 (Curvine, shared NVMe), coupled with intelligent request routing.</li>
-<li>Curvine is a distributed cache filesystem pooling node-local NVMe drives into a shared namespace accessible via a FUSE client as a ReadWriteMany PVC.</li>
-<li>HyperPod’s Intelligent Routing directs requests to replicas with the best prefix match to maximize cache hits, supporting prefix-aware, kv-aware, and round-robin strategies.</li>
-<li>The solution aims to reduce costs by enabling the use of lower-cost instances (e.g., G6e) for workloads that previously required more expensive instances (e.g., P5), achieving up to a 2.7x TTFT improvement and 100% cross-Pod cache hit rate in testing.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-08-12</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/pay-with-confidence-how-solv-labs-built-verifiable-auditable-agent-payments-on-amazon-bedrock-agentcore-payments/" target="_blank" rel="noopener">Pay with confidence: How Solv Labs built verifiable, auditable agent payments on Amazon Bedrock AgentCore payments</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/amazon-quick-for-microsoft-365-agentic-ai-where-you-work/" target="_blank" rel="noopener">Amazon Quick for Microsoft 365: Agentic AI where you work</a></h2>
     
     <div class="summary"><ul>
-<li>Amazon Bedrock AgentCore payments, launched in May 2026, provides payment infrastructure for AI agents accessing services like web content, APIs, and other agents, governed by existing developer controls.</li>
-<li>Solv Labs implemented a workflow utilizing AgentCore payments with ORACLE (a policy engine with AWS Nitro Enclave attestation) and ICME PreFlight to provide verifiable, auditable agent payments with sub-second latency (under 4 seconds total, &lt;1 second overhead).</li>
-<li>Each transaction generates a signed evidence record, binding the policy, proof of policy check, hardware attestation, risk price, and settlement artifacts, enabling independent verification by auditors, counterparties, and regulators.</li>
-<li>The system achieves governance at scale with a single observability surface through Amazon Bedrock AgentCore Observability via Amazon CloudWatch, enabling a shift from volume-based to exception-based review processes.</li>
+<li>Amazon Quick now offers extensions for Microsoft Word, Excel, PowerPoint, and Outlook, providing agentic AI capabilities directly within these applications.</li>
+<li>The extensions are “agentic,” meaning they take action <em>within</em> the Microsoft 365 apps (e.g., reformatting text in Word, explaining formulas in Excel) rather than simply providing chatbot responses.</li>
+<li>Installation is cloud-based and requires no client-side software, utilizing standard Microsoft 365 add-in deployment methods; Outlook may require administrator approval for full functionality due to Graph API permissions.</li>
+<li>The extensions connect to existing Quick data sources (QuickSight, Salesforce, Jira, etc.) and leverage existing Quick permissions and security policies, offering data residency across seven AWS Regions.</li>
 </ul></div>
     
   </div>
@@ -325,16 +313,33 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-08-12</span>
+      <span> · 2026-08-13</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-oneadvanced-deployed-over-50-ai-agents-on-uk-sovereign-aws/" target="_blank" rel="noopener">How OneAdvanced deployed over 50 AI agents on UK-sovereign AWS</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/accelerating-ma-due-diligence-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Accelerating M&amp;A due diligence with Amazon Bedrock AgentCore</a></h2>
     
-    <div class="summary"><p>OneAdvanced deployed over 50 AI agents in a UK-sovereign environment using self-hosted open-weight LLMs on AWS.</p>
+    <div class="summary"><ul>
+<li>Amazon Bedrock AgentCore is presented as a platform for building, connecting, and optimizing AI agents at scale, and is used in this example to accelerate M&amp;A due diligence.</li>
+<li>A reference architecture is provided utilizing Amazon Bedrock AgentCore to orchestrate agents for target screening, financial analysis, strategic fit assessment, and compliance validation.</li>
+<li>The architecture leverages Retrieval Augmented Generation (RAG) with Amazon Bedrock Knowledge Bases, structured data from Amazon Aurora PostgreSQL, and external tool integration via AgentCore Gateway.</li>
+<li>The solution includes built-in governance features such as citation checking (using a custom Lambda function) and policy enforcement through Amazon Bedrock Guardrails, alongside built-in auditability and observability via CloudWatch and X-Ray.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
+      <span> · 2026-08-13</span>
+    </div>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/automate-legacy-web-applications-with-amazon-bedrock-agentcore-browser-tool/" target="_blank" rel="noopener">Automate legacy web applications with Amazon Bedrock AgentCore Browser Tool</a></h2>
+    
+    <div class="summary"><p>Amazon Bedrock AgentCore Browser Tool enables automation of interactions with legacy web applications lacking modern APIs.</p>
 <ul>
-<li>The solution utilizes Llama 4 Maverick (meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8) and Llama Guard 4 (meta-llama/Llama-Guard-4-12B) served via vLLM on Amazon SageMaker AI, running on p5.48xlarge instances.</li>
-<li>Over 50 specialized agents are powered by the Strands Agents SDK and deployed on Amazon ECS, with agent configurations stored in Amazon DynamoDB.</li>
-<li>A custom RAG pipeline, internally named “Llamadex”, uses pgvector with Amazon Aurora PostgreSQL for document retrieval, embedding using intfloat/multilingual-e5-large-instruct, and supports both personal and organizational document collections from Amazon S3.</li>
-<li>Llama Guard 4 content filtering precedes inference to screen user inputs, replacing Llama Guard 3 due to improved rejection rates, and the solution incorporates security measures like Amazon GuardDuty and ISO 42001 certification.</li>
+<li>The tool provides a fully managed, cloud-based browser service utilizing Playwright and the Chrome DevTools Protocol (CDP) to interact with web applications regardless of their technology stack.</li>
+<li>It features browser profiles to persist authentication state, proxy configuration for accessing internal applications, and session recording to Amazon S3 for audit trails.</li>
+<li>Combined with Strands Agents and Amazon Bedrock foundation models, it supports a ReAct (Reason + Act) loop for dynamic, visually-driven automation, adapting to changes in UI elements.</li>
+<li>The solution includes human-in-the-loop integration, enabling operators to review and approve actions during automation workflows with pauses and screenshot sharing.</li>
 </ul></div>
     
   </div>
@@ -390,11 +395,17 @@
     <div class="meta">
       <a href="techcrunch/" class="badge badge-techcrunch">TechCrunch</a>
       <span>news</span>
-      <span> · 2026-08-12</span>
+      <span> · 2026-08-13</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/08/12/lovable-confirms-new-13-3b-valuation-raises-another-400m/" target="_blank" rel="noopener">Lovable confirms new $13.3B valuation, raises another $400M</a></h2>
+    <h2><a href="https://techcrunch.com/2026/08/13/nvidias-new-500b-plan-is-risky-but-brilliant-especially-for-aging-gpus/" target="_blank" rel="noopener">Nvidia’s new $500B plan is risky but brilliant, especially for aging GPUs</a></h2>
     
-    <div class="summary"><p>Lovable, a European “vibe-coding” startup, secured $400 million in Series C funding led by Menlo Ventures and the Scaleup Europe Fund, resulting in a $13.3 billion valuation. The company reports $500 million in annualized run rate revenue as of June and currently hosts 60 million projects with 900 million monthly visitors. Lovable offers both an in-house trained AI model and access to frontier models, and recently increased its Google Cloud usage fivefold through a multiyear deal. TechCrunch notes that Lovable also invests in other European AI startups, such as Atech, which focuses on hardware design.</p></div>
+    <div class="summary"><p>Nvidia announced a plan to enable up to $500 billion in funding for AI data center builds through commitments from Apollo, BlackRock, Blackstone, Brookfield, Goldman Sachs, and KKR.</p>
+<ul>
+<li>Nvidia will guarantee the residual value of its GPUs used as collateral for loans financing these data centers, covering up to 25% of any loss in value.</li>
+<li>The initiative aims to create a secondary market for used AI hardware, sustaining demand for Nvidia chips over time and treating AI servers as long-term "investable infrastructure."</li>
+<li>Unlike previous instances of manufacturers financing customer purchases (like Lucent during the dot-com bubble), Nvidia is securing funding from external financial institutions while assuming a limited portion of the risk.</li>
+<li>The plan seeks to address concerns of "circular financing" by introducing independent capital into the AI infrastructure market, as stated by Nvidia CEO Jensen Huang.</li>
+</ul></div>
     
   </div>
   
@@ -402,15 +413,16 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-08-12</span>
+      <span> · 2026-08-13</span>
     </div>
-    <h2><a href="https://arstechnica.com/tech-policy/2026/08/heres-a-balm-if-the-idea-of-destroying-books-to-train-ai-breaks-your-heart/" target="_blank" rel="noopener">Booksellers suspect AI firms are buying and then destroying rare books</a></h2>
+    <h2><a href="https://arstechnica.com/tech-policy/2026/08/claudes-new-scarlet-letter-watermark-is-invisible-for-now/" target="_blank" rel="noopener">Claude&#39;s new Scarlet Letter watermark is invisible—for now</a></h2>
     
-    <div class="summary"><ul>
-<li>Reports indicate AI firms are suspected of purchasing and destroying physical books to cheaply create datasets for training large language models.</li>
-<li>Anthropic was previously identified (Summer 2025) as having destroyed millions of books under “Project Panama,” although the company denies destroying <em>rare</em> books.</li>
-<li>Alternatives to destructive scanning exist, such as the Internet Archive’s manual, page-by-page scanning process, which has scanned over 3 million pages with a goal of “zero errors,” and Google's patented non-destructive scanning technology.</li>
-<li>Booksellers are reporting suspicious bulk orders of obscure titles, often without price negotiation, suggesting sourcing for AI training purposes, and some are refusing such orders to protect authors’ rights and book availability.</li>
+    <div class="summary"><p>Anthropic will soon watermark content processed or generated by its Claude models to comply with the EU AI Act.</p>
+<ul>
+<li>All new Claude models will be watermarked globally “from day one.”</li>
+<li>Text outputs will include embedded, invisible watermarks that bias word choices, while other file types will use digitally signed metadata (C2PA).</li>
+<li>Anthropic is applying watermarks broadly – even to processed content like grammar corrections – despite exemptions in the EU AI Act.</li>
+<li>The company plans to release a detection tool but acknowledges watermarks are easily bypassed and may not definitively indicate AI generation; a lack of a watermark does not guarantee content is not AI-generated.</li>
 </ul></div>
     
   </div>
