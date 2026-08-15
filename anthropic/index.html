@@ -80,13 +80,40 @@
     </label>
   </div>
   <h1>Anthropic News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-08-14 10:18 UTC</p>
+  <p class="generated-at">Generated 2026-08-15 10:28 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">August 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-08-14</span>
+    </div>
+    <h3><a href="https://claude.com/blog/maximizing-the-value-of-your-claude-code-sessions" target="_blank" rel="noopener">Maximizing the value of your Claude Code sessions | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic’s blog post details techniques for cost-efficient sessions with Claude Code. The core claim is that managing token usage – both input and output – directly impacts the cost of each task. Input tokens are cheaper, while output tokens are roughly 5x more expensive, and caching significantly reduces the cost of re-used tokens (to 0.1x the input price). </p>
+<p>Key recommendations include using <code>/clear</code> between tasks to prevent irrelevant context from increasing token usage, setting the model and effort level at the <em>start</em> of a session to avoid prompt cache invalidation, and utilizing <code>@-mentions</code> for files instead of paths to skip read calls. Users can further optimize by running <code>/context</code> to review loaded content, <code>/compact</code> to summarize conversations while the cache is valid, and leveraging subagents for tasks generating substantial output. Commands executed during a session also contribute to the context, so employing quiet flags or running them in subagents is advised.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>news</span>
+      <span> · 2026-08-14</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/news/claude-text-watermark" target="_blank" rel="noopener">How Claude&#39;s text watermarking works</a></h3>
+    
+    <div class="summary"><p>Anthropic will implement a text watermarking system in future versions of Claude to comply with the August 2, 2026 EU AI Act, which requires marking AI-generated content. This system, based on Google DeepMind’s SynthID-Text method published in a 2024 <em>Nature</em> paper, works by subtly influencing word choices during text generation – selecting from equally valid options based on a cryptographic key rather than pure randomness. </p>
+<p>The watermarking is designed to be undetectable to readers and has shown no impact on text quality, creativity, or readability in internal and Google DeepMind testing. It doesn’t add visible characters or increase costs. The watermark indicates the <em>likelihood</em> that Claude contributed to a text, but cannot identify users or definitively prove AI authorship, especially in heavily edited or short samples, or for exact outputs like code. </p>
+<p>Anthropic will also attach cryptographically signed metadata to files created or processed by Claude, using the C2PA standard, and plans to offer a watermark detection API. The change will be applied globally, though regional scoping is being evaluated.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -465,34 +492,6 @@
     
     <div class="summary"><p>Anthropic has expanded its Claude Certification Program with three new role-based credentials – Associate, Developer, and Architect (foundations and professional levels) – alongside the existing foundational Architect certification. These certifications, granted via supervised, identity-verified exams, aim to establish a benchmark for expertise in deploying and utilizing Claude. The Associate certification focuses on everyday use, Developer on building applications with the Claude API and agent development, and Architect on large-scale integration, governance, and evaluation.</p>
 <p>To date, over 36,000 consultants from 1,300 organizations have received Claude certification, with 400,000 completing training through the Anthropic Partner Academy. Major consulting firms – Accenture, Capgemini, Cognizant, Deloitte, DXC, Infosys, KPMG, PwC, TCS, and UST – have committed to certifying significant numbers of professionals, totaling tens of thousands. These credentials are designed to provide confidence to enterprises selecting partners and demonstrate validated skills rather than just course completion.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-07-22</span>
-    </div>
-    <h3><a href="https://claude.com/blog/how-outtake-built-a-cyber-investigator-on-claude" target="_blank" rel="noopener">How Outtake built a cyber investigator on Claude | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Outtake has built a cyber investigation agent, called Recon Agent, using Anthropic’s Claude 3 Opus model, Claude Code, and the Agent SDK. The agent autonomously investigates digital threats – from phishing pages to full attack networks – by reading, writing, and executing code. Investigations typically last 16 minutes to over an hour, with one running for two hours. </p>
-<p>The Recon Agent operates in four stages: defining an ideal investigation, prototyping with Claude Code, moving to a production harness with the Agent SDK, and establishing a tight iteration loop with automated evaluations. A key principle is tight orchestration with freedom for improvisation when judgement is needed. The system utilizes a filesystem for long-term memory and prioritizes guardrails over relying solely on prompts for consistent behavior.</p>
-<p>Outtake emphasizes that providing agents with tools like a filesystem and bash access is crucial for handling unforeseen obstacles and maintaining successful outcomes, even in potentially compromised environments. They also use evaluations not just for reliability, but to accelerate the development and iteration cycle, effectively automating quality checks.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-07-22</span>
-    </div>
-    <h3><a href="https://claude.com/blog/building-verification-loops-in-claude-code-with-skills" target="_blank" rel="noopener">Building verification loops in Claude Code with skills | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic’s Claude Code now supports building “verification loops” – automated checks and fixes within the coding process. These loops enable Claude to iteratively test its work, running tools like type checkers, linters, and custom tests, then attempt to correct failures before presenting results.  Users can define these loops as “skills”, ensuring consistent checks across sessions. </p>
-<p>Built-in verification includes the <code>/verify</code> skill, toolchain integration (catching error codes), a Code Review research preview which integrates with GitHub Actions, and spec validation; custom loops can be built from existing manual checks, written in plain English and encoded as skills using a skill creator plugin or Markdown files. The system offers flexibility – standalone checks, embedding within existing skills, chaining multiple skills together, or triggering on every pull request.</p>
-<p>This feature is designed to automate repetitive tasks currently done manually by developers, reducing the need for constant review and allowing Claude to fix issues autonomously. Details on skill structure and how to implement the different loop types are provided, helping users tailor verification to their specific project needs.</p></div>
     
   </div>
   
