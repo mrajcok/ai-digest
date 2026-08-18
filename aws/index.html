@@ -80,13 +80,48 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-08-17 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-08-18 10:16 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">August 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-17</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-openclaw-agents-that-transact-with-amazon-bedrock-agentcore-payments/" target="_blank" rel="noopener">Build OpenClaw agents that transact with Amazon Bedrock AgentCore payments</a></h3>
+    
+    <div class="summary"><p>AWS and the OpenClaw Foundation have integrated payment capabilities for autonomous agents using Amazon Bedrock AgentCore.</p>
+<ul>
+<li>AgentCore payments provides a consistent payment layer for agents, supporting protocols like x402 and MPP, and integrates with wallet providers like Coinbase and Stripe Privy.</li>
+<li>The integration uses AgentCore Identity for credential storage and AgentCore Observability for logging/metrics via CloudWatch/X-Ray.</li>
+<li>A human-supervised setup process provisions wallets and payment sessions with defined limits (recipient, asset, amount, expiry), while the agent runtime initiates payments within those bounds using the <code>get_payment_session_status</code> and <code>get_paid_content</code> tools from the <code>aws-agents-pay</code> plugin.</li>
+<li>The current implementation supports OpenClaw version 2026.3.24 or later, and focuses on Base Sepolia for testing, with potential for expansion to other chains like Ethereum and Solana, utilizing the x402 v2 protocol.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-17</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-5-lightning-now-available-in-amazon-sagemaker-jumpstart/" target="_blank" rel="noopener">NVIDIA Nemotron 3.5 Lightning now available in Amazon SageMaker JumpStart</a></h3>
+    
+    <div class="summary"><ul>
+<li>NVIDIA's Nemotron 3.5 Lightning, designed for high-volume agentic workloads, is now available in Amazon SageMaker JumpStart.</li>
+<li>The model features a hybrid Mixture-of-Experts (MoE) architecture with 30B total parameters and 3B active, enabling single-GPU operation and high throughput.</li>
+<li>It delivers up to 4x higher throughput and 30% faster task completion compared to other models for specialized agent tasks, and supports a 1M token context window.</li>
+<li>Both BF16 (huggingface-reasoning-nemotron-3-5-lightning-30b-a3b-bf16) and NVFP4 (huggingface-reasoning-nemotron-3-5-lightning-30b-a3b-nvfp4) variants are available for deployment via SageMaker JumpStart, Hugging Face, or the SageMaker Python SDK.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -575,41 +610,6 @@
 <li>Policies operate at the AgentCore Gateway, outside the agent’s code, preventing bypass and governing Model Context Protocol (MCP) calls (tool calls, agent-to-agent, and model inference).</li>
 <li>They utilize agent trajectories – bounded sequences of actions identified by principal and session ID – with a 24-hour look-back window, and invalidate sessions upon policy changes.</li>
 <li>Use cases include enforcing workflow sequencing, preventing data fabrication, capping cumulative financial exposure, requiring human approval, and ensuring data freshness.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-05</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/run-production-ai-agents-in-n8n-with-amazon-bedrock-agentcore-harness/" target="_blank" rel="noopener">Run production AI agents in n8n with Amazon Bedrock AgentCore harness</a></h3>
-    
-    <div class="summary"><p>AWS has released the AgentCore harness, a platform for building and scaling AI agents, now accessible within n8n through a new open-source community node (@aws/n8n-nodes-agentcore, version 0.3).</p>
-<ul>
-<li>The node enables building production-ready agents with persistent memory, tool access (like code interpreters and web browsers), and the ability to switch between model providers (Amazon Bedrock, OpenAI, Google Gemini, and LiteLLM) mid-conversation.</li>
-<li>AgentCore harness manages the orchestration loop, tool calls, context windows, state, failure recovery and session isolation—reducing the need for custom infrastructure code. Agents are defined via configuration, allowing for flexibility and control.</li>
-<li>Features like actor IDs allow for scoped memory per user, and agents can run privately within a VPC by configuring network settings in the n8n credential.</li>
-<li>The node supports features like skills (pre-built instructions/scripts), custom containers and inline functions, and uses the same AWS credential pattern as existing n8n AWS nodes.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-05</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-we-built-an-mcp-bridge-to-give-our-agentcore-hosted-ai-agent-access-to-local-mcp-tools/" target="_blank" rel="noopener">How we built an MCP bridge to give our AgentCore-hosted AI agent access to local MCP tools</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock AgentCore now supports bridging to local tools via the Model Context Protocol (MCP) using a WebSocket and native messaging tunnel.</li>
-<li>The architecture includes an AgentCore runtime (cloud-hosted Strands agent), a browser extension, a local MCP Bridge (FastMCP proxy), and a local MCP Server.</li>
-<li>The bridge translates between native messaging (browser extension to local process) and MCP (JSON-RPC over stdio) allowing a remote agent to interact with local files and tools.</li>
-<li>Key components rely on securing communication through presigned WebSocket URLs (5-minute expiry) and native messaging origin restriction, with recommendations for JWT authentication, payload signing and file system scoping for enhanced production security.</li>
 </ul></div>
     
   </div>
