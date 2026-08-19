@@ -80,13 +80,54 @@
     </label>
   </div>
   <h1>Anthropic News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-08-18 10:16 UTC</p>
+  <p class="generated-at">Generated 2026-08-19 10:49 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">August 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-08-18</span>
+    </div>
+    <h3><a href="https://claude.com/blog/the-claude-science-product-guide" target="_blank" rel="noopener">The Claude Science product guide | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic has released Claude Science (currently in beta), an AI workbench specifically designed for life sciences research. It’s positioned within the broader Claude family—including Chat, Cowork, Code, and Managed Agents—and aims to address the gap between high interest (91% of scientists want more AI) and low implementation (14% fully implemented) due to concerns about trust and reliability. </p>
+<p>Claude Science operates with a local daemon that keeps data and computation on the user’s infrastructure—either on-premise GPUs, SLURM clusters, or cloud accounts—and is designed for reproducibility. The guide details ideal use cases for different Claude surfaces: Claude Science for analysis and results, Cowork and Microsoft 365 for documentation, and Code for pipeline development. </p>
+<p>Anthropic provides a three-phase adoption roadmap (Foundation, Pilot, Scale) with associated metrics for measuring success. Use cases include single-cell RNA-seq clustering and drafting scientific methods sections. The software's focus is on scientific validity, supported by five key design choices highlighted in the guide.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-08-18</span>
+    </div>
+    <h3><a href="https://claude.com/blog/ai-ci-cd-on-call" target="_blank" rel="noopener">How Claude Tag serves as Anthropic’s first responder for CI/CD failures | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic has implemented “Claude Tag,” an agent powered by Claude 3, to serve as the first responder for CI/CD failures. This agent operates within their on-call Slack channel, providing initial incident reports within 15 minutes and often identifying the root cause within 4 minutes. Claude Tag maintains memory of the channel’s history and integrates with tools like Datadog, Grafana, GitHub, and Kubernetes via MCP Connectors. </p>
+<p>The system utilizes markdown files, committed to a GitHub repository, to store instructions, policies, and a “lessons learned” log for continuous improvement.  Claude Tag not only detects incidents—including by analyzing data and reducing alert fatigue—but also triages them, investigating dependencies and synthesizing findings into reports. It can even handle automated fixes, such as managing feature flags and suggesting PRs. A separate “ci-weather” agent compiles incident data for company-wide communication. The setup requires a Claude Team or Enterprise plan and can be streamlined using Anthropic’s provided on-call setup kit.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>research</span>
+      <span> · 2026-08-18</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/research/Claude-accelerates-protein-design" target="_blank" rel="noopener">How Claude is accelerating protein design and analytical chemistry</a></h3>
+    
+    <div class="summary"><p>Claude (Mythos Preview and Opus 4.8) successfully designed protein binders against 14 of 15 targets, achieving 22-35% success rates – exceeding typical protein design campaigns (10-15%). Some designs exhibited higher affinities than previously published results. In a separate test, Claude Opus 5 analyzed raw NMR and LC-MS data, matching a contract lab’s analysis of hydrogen counts (within 0.08 ¹H) and purity (96.4% versus 96.33%) in 23 and 19 minutes, respectively.</p>
+<p>These experiments demonstrate Claude’s ability to accelerate both the design of new molecules and the analysis of existing ones. The protein design campaign utilized specialized protein design and folding models with up to 12,500 NVIDIA H100 hours of compute. The analytical chemistry task involved processing proprietary instrument files without vendor software. </p>
+<p>These capabilities are currently limited in access due to dual-use concerns, but Anthropic plans access programs for scientists and continues to improve the models’ scientific judgment. Further technical details, prompts, and data are available in accompanying reports.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -451,47 +492,6 @@
     
     <div class="summary"><p>Anthropic has released Claude Design, a new feature within the Claude platform (currently in beta on Pro, Max, Team, and Enterprise plans) leveraging the capabilities of Claude Opus 5. It allows users to generate visual content – including slide decks, animations, and prototypes – directly from text prompts using HTML as an intermediary format. Unlike traditional design tools requiring manual state creation, Claude Design can rapidly produce interactive prototypes from provided assets. </p>
 <p>A key element is the ability to customize Claude Design with an organization’s brand guidelines (fonts, colors, assets) via prompting, ensuring outputs align with established branding. The tool isn’t intended for image <em>generation</em> but for composing and iterating on visuals using existing assets.  It integrates with Claude Code, enabling a round-trip workflow between coding and design phases and can consume data from GitHub and through web search.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Anthropic</span> · 
-      <span>research</span>
-      <span> · 2026-07-24</span>
-    </div>
-    <h3><a href="https://www.anthropic.com/research/project-pilot" target="_blank" rel="noopener">Project Pilot: Can AI models fly drones?</a></h3>
-    
-    <div class="summary"><p>Anthropic, in collaboration with Andon Labs, assessed AI models’ ability to autonomously control drones for a locate-and-follow task—similar to aerial surveillance—using a new benchmark called Drone-Bench. The core claim is that current models are nearing the capability to perform this task at the level of human-AI teams, demonstrating improvements in AI’s interaction with the physical world. The evaluation decomposes the task into five sub-tasks: reconstruction of the environment, localization of the drone, navigation, person detection, and following.</p>
-<p>Testing 15 models including GPT-4o, Claude Opus, and Gemini, the researchers found performance increases with newer models, with detection and following being more successful than reconstruction and localization. Claude Fable 5 performed best, surpassing the baseline on all tasks except reconstruction; while it successfully detected and followed a person, limitations in reconstructing the environment prevented autonomous navigation between rooms. </p>
-<p>Notably, Fable 5 demonstrated local analysis – calculating camera angles and building environment simulations – to improve its implementation, exhibiting a trend of increasing model sophistication. While models occasionally achieve baseline performance, consistent success remains six months behind current peak capabilities. This highlights a growing pressure to reduce human oversight as capabilities improve, necessitating careful consideration of safety and governance in applications with security and privacy implications.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Anthropic</span> · 
-      <span>news</span>
-      <span> · 2026-07-24</span>
-    </div>
-    <h3><a href="https://www.anthropic.com/news/claude-opus-5" target="_blank" rel="noopener">Introducing Claude Opus 5</a></h3>
-    
-    <div class="summary"><p>Anthropic has released Claude Opus 5, positioned as a more affordable alternative to Claude Fable 5, offering near-comparable intelligence at half the price. Opus 5 currently leads in coding and knowledge work evaluations like Frontier-Bench and GDPval-AA, though it trails Fable 5 in cybersecurity tasks. It's designed for daily use with improved efficiency and is now the default model for Claude Max and the strongest on Claude Pro, costing $5/million input tokens and $25/million output tokens – the same as Opus 4.8.</p>
-<p>Performance gains are significant across several benchmarks: it more than doubles Opus 4.8’s performance on Frontier-Bench v0.1 at a reduced cost, achieving near-Fable 5 scores on CursorBench 3.2 at half the price.  Notably, Opus 5 demonstrated agency by autonomously building a computer vision pipeline to process an image when direct access was unavailable, and identified a bug missed by a community patch in an open-source package manager.  The model also shows improved performance in scientific research areas like structural biology and organic chemistry.</p>
-<p>Anthropic emphasizes Opus 5's improved alignment and safety, reporting the lowest rates of misaligned behavior of their recent models.  Safeguards have been adjusted, particularly in cybersecurity, to allow some vulnerability identification while blocking exploit generation.  Features like mid-conversation tool changes and automatic fallbacks to other models are also available in beta.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-07-23</span>
-    </div>
-    <h3><a href="https://claude.com/blog/think-through-hard-problems-in-voice-mode" target="_blank" rel="noopener">Think through hard problems in voice mode | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic has expanded voice mode functionality to Claude Opus, Sonnet, and Haiku models. Previously limited to the Haiku model for speed, users can now leverage the more powerful Opus and Sonnet models for in-depth voice conversations. The system allows for mid-conversation model switching and remembers the last-used model for seamless transitions between voice and text interactions. </p>
-<p>This update also enables voice mode in multiple languages—including French, German, Hindi, and Spanish—allowing users to converse with Claude in their preferred language. Furthermore, voice mode is now integrated with connected tools like Google Calendar and Canva, enabling users to take action directly from voice conversations such as scheduling meetings or creating documents.</p></div>
     
   </div>
   

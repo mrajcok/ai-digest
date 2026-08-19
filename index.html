@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-08-18T10:16:16.876937+00:00">Generated 2026-08-18 10:16 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-08-19T10:49:55.434259+00:00">Generated 2026-08-19 10:49 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,13 +132,12 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — Overview for 2026-08-17</h2>
-    <p class="overview-meta">2026-08-17 · 1 vendor source · vendor sources only</p>
-    <div class="overview-text"><hr />
-<p>Today in AI saw a focus on practical applications and model integrations, though no single development dramatically reshaped the landscape. The most significant news centers around Google’s deepening integration of Gemini into real-world experiences, specifically through partnerships with five major European football clubs – Arsenal, Barcelona, Bayern Munich, Liverpool, and PSG. Gemini will operate as an agentic “football personal assistant,” delivering detailed match analytics, historical data, and player statistics. Crucially, these partnerships emphasize equal coverage for both men’s and women’s teams, showcasing a commitment to broader inclusivity within the sport. Complementing this, Google’s upcoming Pixel 11 devices will equip club media teams with AI-enhanced camera tools for content creation within the "Shot on Pixel" series, offering a synergy between software and hardware designed to elevate fan engagement.</p>
-<p>The use of Gemini as an interactive football analyst demonstrates a move towards more specialized, agentic AI applications – shifting beyond broadly capable models towards those deeply embedded in niche expertise. For software engineers, this signals the rising importance of building AI systems capable of not only processing information but also reasoning and presenting insights within specific contexts. The Pixel 11’s role as a content creation tool similarly highlights the increasing convergence of AI and mobile photography, suggesting potential avenues for innovation in image processing and automated video editing.</p>
-<p>While advancements in foundational models continue, today’s news leans toward demonstrating practical use cases and building out surrounding ecosystems. This illustrates a potentially maturing phase where the emphasis is less on raw capability and more on delivering value to end-users through well-integrated applications.</p>
-<hr /></div>
+    <h2 class="overview-heading">Today in AI — since 2026-08-18</h2>
+    <p class="overview-meta">2026-08-19 · 9 vendor sources · vendor sources only</p>
+    <div class="overview-text"><p>Recent developments center on enabling AI to perform more sophisticated scientific work, streamlining software development processes, and expanding the capabilities of AI agents. Anthropic released Claude Science, a beta workbench geared towards life sciences researchers, designed to address concerns about trust and reproducibility with a local daemon for data and computation control. Simultaneously, they demonstrated Claude’s potential in molecular design, achieving higher success rates in protein binding than typical campaigns, and in analytical chemistry, matching lab results when processing raw data. These advancements, while powerful, are currently subject to limited access due to dual-use considerations. In a related vein, Anthropic's internal tooling is benefitting from AI as well; “Claude Tag” – a Claude 3-powered agent – now handles first response to CI/CD failures, often identifying root causes within minutes and even enacting automated fixes.</p>
+<p>Amazon Web Services has focused heavily on expanding the functionality and security surrounding AI agents. AgentCore Payments is now generally available, enabling autonomous transactions for APIs and content using stablecoins via Coinbase and Stripe Privy, alongside enhanced observability and security features.  AWS has also introduced customization options for Amazon Quick embedded chat, allowing developers to tailor the interface's branding and behavior programmatically. Further enhancements leverage Bedrock with solutions for improved document classification - combining textual reasoning from Claude Haiku and visual pattern recognition from Titan Multimodal Embeddings - and contract search accuracy via AI-driven annotation and auto-generated filters. </p>
+<p>Several AWS case studies demonstrate practical applications of these services. Jumio implemented a real-time feature store on AWS to significantly reduce latency and costs in fraud detection, while Axonius built a secure, multi-tenant AI agent infrastructure on Bedrock AgentCore, emphasizing tenant isolation through a siloed architecture and microVMs.  A solution enabling vector-prompt document classification using Bedrock demonstrates integrating capabilities from both Anthropic and Amazon Titan models.  These examples highlight a trend toward deploying sophisticated AI applications in production environments, focusing on performance, security, and cost optimization.</p>
+<p>It was a relatively active week for practical AI deployment and research, particularly within Anthropic and AWS ecosystems.  While not a groundbreaking week of entirely novel models, these updates showcase significant maturation in applying existing technologies to complex scientific and industrial problems.</p></div>
   </section>
   
 
@@ -151,12 +150,13 @@
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>blog</span>
-      <span> · 2026-08-17</span>
+      <span> · 2026-08-18</span>
     </div>
-    <h2><a href="https://claude.com/blog/how-abc-legal-turned-every-employee-into-a-builder-with-claude-managed-agents" target="_blank" rel="noopener">How ABC Legal turned every employee into a builder with Claude Managed Agents | Claude by Anthropic</a></h2>
+    <h2><a href="https://claude.com/blog/the-claude-science-product-guide" target="_blank" rel="noopener">The Claude Science product guide | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>ABC Legal deployed Claude Managed Agents to all 1,100 employees, resulting in over 50 agents in production as of July 2026. The core technical approach involves treating each agent as code – structured text (prompt + configuration) stored in a git repository – enabling version control, code review, and audit trails. They utilize two starter templates: one for event-driven agents and one for scheduled agents, each with a standard directory structure containing config files and system prompts.</p>
-<p>The system works by having agents submit recommendations to Slack, where human feedback (reactions and replies) is harvested and used to tune the agents' prompts and configurations via a pull request-based workflow. This iterative process has yielded up to a 50% cost reduction for certain tasks. ABC Legal leverages Claude Sonnet for most agents, Claude Haiku for high-volume tasks, and Claude Opus for complex reasoning, with the ability to easily switch between models. They track AI spend by vendor, tool, and team.</p></div>
+    <div class="summary"><p>Anthropic has released Claude Science (currently in beta), an AI workbench specifically designed for life sciences research. It’s positioned within the broader Claude family—including Chat, Cowork, Code, and Managed Agents—and aims to address the gap between high interest (91% of scientists want more AI) and low implementation (14% fully implemented) due to concerns about trust and reliability. </p>
+<p>Claude Science operates with a local daemon that keeps data and computation on the user’s infrastructure—either on-premise GPUs, SLURM clusters, or cloud accounts—and is designed for reproducibility. The guide details ideal use cases for different Claude surfaces: Claude Science for analysis and results, Cowork and Microsoft 365 for documentation, and Code for pipeline development. </p>
+<p>Anthropic provides a three-phase adoption roadmap (Foundation, Pilot, Scale) with associated metrics for measuring success. Use cases include single-cell RNA-seq clustering and drafting scientific methods sections. The software's focus is on scientific validity, supported by five key design choices highlighted in the guide.</p></div>
     
   </div>
   
@@ -164,26 +164,26 @@
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>blog</span>
-      <span> · 2026-08-14</span>
+      <span> · 2026-08-18</span>
     </div>
-    <h2><a href="https://claude.com/blog/maximizing-the-value-of-your-claude-code-sessions" target="_blank" rel="noopener">Maximizing the value of your Claude Code sessions | Claude by Anthropic</a></h2>
+    <h2><a href="https://claude.com/blog/ai-ci-cd-on-call" target="_blank" rel="noopener">How Claude Tag serves as Anthropic’s first responder for CI/CD failures | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>Anthropic’s blog post details techniques for cost-efficient sessions with Claude Code. The core claim is that managing token usage – both input and output – directly impacts the cost of each task. Input tokens are cheaper, while output tokens are roughly 5x more expensive, and caching significantly reduces the cost of re-used tokens (to 0.1x the input price). </p>
-<p>Key recommendations include using <code>/clear</code> between tasks to prevent irrelevant context from increasing token usage, setting the model and effort level at the <em>start</em> of a session to avoid prompt cache invalidation, and utilizing <code>@-mentions</code> for files instead of paths to skip read calls. Users can further optimize by running <code>/context</code> to review loaded content, <code>/compact</code> to summarize conversations while the cache is valid, and leveraging subagents for tasks generating substantial output. Commands executed during a session also contribute to the context, so employing quiet flags or running them in subagents is advised.</p></div>
+    <div class="summary"><p>Anthropic has implemented “Claude Tag,” an agent powered by Claude 3, to serve as the first responder for CI/CD failures. This agent operates within their on-call Slack channel, providing initial incident reports within 15 minutes and often identifying the root cause within 4 minutes. Claude Tag maintains memory of the channel’s history and integrates with tools like Datadog, Grafana, GitHub, and Kubernetes via MCP Connectors. </p>
+<p>The system utilizes markdown files, committed to a GitHub repository, to store instructions, policies, and a “lessons learned” log for continuous improvement.  Claude Tag not only detects incidents—including by analyzing data and reducing alert fatigue—but also triages them, investigating dependencies and synthesizing findings into reports. It can even handle automated fixes, such as managing feature flags and suggesting PRs. A separate “ci-weather” agent compiles incident data for company-wide communication. The setup requires a Claude Team or Enterprise plan and can be streamlined using Anthropic’s provided on-call setup kit.</p></div>
     
   </div>
   
   <div class="card">
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>news</span>
-      <span> · 2026-08-14</span>
+      <span>research</span>
+      <span> · 2026-08-18</span>
     </div>
-    <h2><a href="https://www.anthropic.com/news/claude-text-watermark" target="_blank" rel="noopener">How Claude&#39;s text watermarking works</a></h2>
+    <h2><a href="https://www.anthropic.com/research/Claude-accelerates-protein-design" target="_blank" rel="noopener">How Claude is accelerating protein design and analytical chemistry</a></h2>
     
-    <div class="summary"><p>Anthropic will implement a text watermarking system in future versions of Claude to comply with the August 2, 2026 EU AI Act, which requires marking AI-generated content. This system, based on Google DeepMind’s SynthID-Text method published in a 2024 <em>Nature</em> paper, works by subtly influencing word choices during text generation – selecting from equally valid options based on a cryptographic key rather than pure randomness. </p>
-<p>The watermarking is designed to be undetectable to readers and has shown no impact on text quality, creativity, or readability in internal and Google DeepMind testing. It doesn’t add visible characters or increase costs. The watermark indicates the <em>likelihood</em> that Claude contributed to a text, but cannot identify users or definitively prove AI authorship, especially in heavily edited or short samples, or for exact outputs like code. </p>
-<p>Anthropic will also attach cryptographically signed metadata to files created or processed by Claude, using the C2PA standard, and plans to offer a watermark detection API. The change will be applied globally, though regional scoping is being evaluated.</p></div>
+    <div class="summary"><p>Claude (Mythos Preview and Opus 4.8) successfully designed protein binders against 14 of 15 targets, achieving 22-35% success rates – exceeding typical protein design campaigns (10-15%). Some designs exhibited higher affinities than previously published results. In a separate test, Claude Opus 5 analyzed raw NMR and LC-MS data, matching a contract lab’s analysis of hydrogen counts (within 0.08 ¹H) and purity (96.4% versus 96.33%) in 23 and 19 minutes, respectively.</p>
+<p>These experiments demonstrate Claude’s ability to accelerate both the design of new molecules and the analysis of existing ones. The protein design campaign utilized specialized protein design and folding models with up to 12,500 NVIDIA H100 hours of compute. The analytical chemistry task involved processing proprietary instrument files without vendor software. </p>
+<p>These capabilities are currently limited in access due to dual-use concerns, but Anthropic plans access programs for scientists and continues to improve the models’ scientific judgment. Further technical details, prompts, and data are available in accompanying reports.</p></div>
     
   </div>
   
@@ -298,16 +298,16 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-08-17</span>
+      <span> · 2026-08-18</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/build-openclaw-agents-that-transact-with-amazon-bedrock-agentcore-payments/" target="_blank" rel="noopener">Build OpenClaw agents that transact with Amazon Bedrock AgentCore payments</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-axonius-built-secure-multi-tenant-ai-agents-on-bedrock-agentcore/" target="_blank" rel="noopener">How Axonius built secure multi-tenant AI agents on Bedrock AgentCore</a></h2>
     
-    <div class="summary"><p>AWS and the OpenClaw Foundation have integrated payment capabilities for autonomous agents using Amazon Bedrock AgentCore.</p>
+    <div class="summary"><p>Axonius deployed secure, multi-tenant AI agents using AWS Bedrock AgentCore, maintaining a siloed architecture for tenant isolation.</p>
 <ul>
-<li>AgentCore payments provides a consistent payment layer for agents, supporting protocols like x402 and MPP, and integrates with wallet providers like Coinbase and Stripe Privy.</li>
-<li>The integration uses AgentCore Identity for credential storage and AgentCore Observability for logging/metrics via CloudWatch/X-Ray.</li>
-<li>A human-supervised setup process provisions wallets and payment sessions with defined limits (recipient, asset, amount, expiry), while the agent runtime initiates payments within those bounds using the <code>get_payment_session_status</code> and <code>get_paid_content</code> tools from the <code>aws-agents-pay</code> plugin.</li>
-<li>The current implementation supports OpenClaw version 2026.3.24 or later, and focuses on Base Sepolia for testing, with potential for expansion to other chains like Ethereum and Solana, utilizing the x402 v2 protocol.</li>
+<li>Axonius chose a silo deployment model, provisioning a dedicated AgentCore runtime per customer, leveraging microVMs for session isolation and IAM for access control.</li>
+<li>They utilize Amazon Bedrock Knowledge Bases (with Amazon S3 Vectors for cost efficiency) and Guardrails for data isolation, content filtering, and cost governance via CloudWatch monitoring and IAM policies.</li>
+<li>The architecture integrates Amazon VPC Lattice for private connectivity and utilizes AWS CloudFormation for automated provisioning and scaling of agent deployments.</li>
+<li>AgentCore runtime was selected for its session isolation via microVMs, framework flexibility, built-in observability, and ability to integrate with existing VPC infrastructure.</li>
 </ul></div>
     
   </div>
@@ -316,15 +316,15 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-08-17</span>
+      <span> · 2026-08-18</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-5-lightning-now-available-in-amazon-sagemaker-jumpstart/" target="_blank" rel="noopener">NVIDIA Nemotron 3.5 Lightning now available in Amazon SageMaker JumpStart</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/improve-contract-search-accuracy-with-auto-generated-filters-in-amazon-bedrock/" target="_blank" rel="noopener">Improve contract search accuracy with auto-generated filters in Amazon Bedrock</a></h2>
     
     <div class="summary"><ul>
-<li>NVIDIA's Nemotron 3.5 Lightning, designed for high-volume agentic workloads, is now available in Amazon SageMaker JumpStart.</li>
-<li>The model features a hybrid Mixture-of-Experts (MoE) architecture with 30B total parameters and 3B active, enabling single-GPU operation and high throughput.</li>
-<li>It delivers up to 4x higher throughput and 30% faster task completion compared to other models for specialized agent tasks, and supports a 1M token context window.</li>
-<li>Both BF16 (huggingface-reasoning-nemotron-3-5-lightning-30b-a3b-bf16) and NVFP4 (huggingface-reasoning-nemotron-3-5-lightning-30b-a3b-nvfp4) variants are available for deployment via SageMaker JumpStart, Hugging Face, or the SageMaker Python SDK.</li>
+<li>Amazon Bedrock now supports auto-generated filters for improved contract search accuracy using AI-Driven Annotation (AIDA) and a RAG architecture.</li>
+<li>The solution utilizes implicit filtering, applying metadata-based conditions (like date ranges or parties) <em>before</em> semantic search to narrow the document pool.</li>
+<li>Explicit filtering is applied at the application layer, enforcing constraints like geographic restrictions or confidentiality levels, independent of user input.</li>
+<li>Chunks are enriched with document-level metadata (contract type, governing law, dates, etc.) to provide LLMs with added context for more precise responses, and to prevent wasted tokens.</li>
 </ul></div>
     
   </div>
@@ -333,16 +333,15 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-08-14</span>
+      <span> · 2026-08-18</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/building-agentic-workflows-with-sagemaker-ai-and-bedrock-agentcore/" target="_blank" rel="noopener">Building agentic workflows with SageMaker AI and Bedrock AgentCore</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-jumio-built-a-real-time-feature-store-on-aws/" target="_blank" rel="noopener">How Jumio built a real-time feature store on AWS</a></h2>
     
-    <div class="summary"><p>Combining SageMaker AI and Bedrock AgentCore for Agentic Workflows</p>
-<ul>
-<li>Amazon Bedrock AgentCore runtime now supports integration with OpenAI-compatible endpoints on Amazon SageMaker AI, enabling a hybrid approach to model selection within agentic workflows.</li>
-<li>The solution utilizes Qwen 3.5 9B on SageMaker AI, alongside models like Claude Haiku 4.5 and Claude Sonnet 4.6 on Amazon Bedrock, managed by an orchestrator agent within the AgentCore runtime.</li>
-<li>To achieve full observability of token usage from SageMaker endpoints (which Strands Agents doesn’t provide by default), custom OpenTelemetry spans must be manually implemented, wrapping the SageMaker agent invocation and extracting token counts from <code>result.metrics.accumulated_usage</code>.</li>
-<li>Successful token tracking with Qwen 3.5 9B on SageMaker requires enabling <code>stream_options: {"include_usage": True}</code> in the OpenAIModel parameters, as vLLM (version 0.22.1) does not include token usage in streaming responses by default.</li>
+    <div class="summary"><ul>
+<li>Jumio built a real-time feature store on AWS to address data duplication, manual deployment, and latency challenges in fraud detection, achieving sub-100ms prediction latency.</li>
+<li>The architecture utilizes Amazon Kinesis Data Streams for real-time ingestion, Apache Flink for processing and enrichment, and Amazon SageMaker Feature Store (with ElastiCache for Valkey providing an in-memory store) for low-latency feature serving.</li>
+<li>A parallel batch processing path uses Amazon Data Firehose and Amazon EMR with Apache Iceberg tables for offline feature storage used in model training and analysis.</li>
+<li>Performance metrics achieved a 95th-percentile read latency of 16.9ms and a 50th-percentile write latency of 18.6ms, with $120,000 in annual cost savings through storage optimization in Amazon SageMaker Feature Store.</li>
 </ul></div>
     
   </div>
@@ -398,11 +397,17 @@
     <div class="meta">
       <a href="techcrunch/" class="badge badge-techcrunch">TechCrunch</a>
       <span>news</span>
-      <span> · 2026-08-17</span>
+      <span> · 2026-08-19</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/08/17/wispr-raises-280m-at-2b-valuation-as-it-looks-beyond-dictation/" target="_blank" rel="noopener">Wispr raises $280M at $2B valuation as it looks beyond dictation</a></h2>
+    <h2><a href="https://techcrunch.com/2026/08/19/relativity-networks-raises-22-million-to-bring-a-faster-kind-of-fiber-to-data-centers/" target="_blank" rel="noopener">Relativity Networks raises $22 million to bring a faster kind of fiber to data centers</a></h2>
     
-    <div class="summary"><p>Wispr secured $280 million in Series B funding at a $2 billion valuation, led by Menlo Ventures, to expand beyond its dictation tool. The company announced a new speech understanding model, Canto, intended to reduce error rates from 30% to under 10% in its core product, Wispr Flow.  Alongside this, Wispr launched a meeting note-taker, positioning it to compete with Granola, Fireflies, and Read AI, and established Wispr Interface Labs to explore new human-computer interaction methods. Since November, Wispr has expanded to Android and into markets including India and the U.K.</p></div>
+    <div class="summary"><p>Relativity Networks raised $22 million in SAFE note funding to develop and deploy faster fiber optic technology.</p>
+<ul>
+<li>The company secured a $40 million follow-on order from an unnamed hyperscaler.</li>
+<li>Relativity Networks focuses on hollow-core fiber, which transmits data 30% faster than conventional fiber optic glass by using a vacuum chamber.</li>
+<li>The technology reduces signal travel time by approximately 1.5 microseconds per kilometer, reducing latency.</li>
+<li>The company aims to extend the viable distances between data center campuses, enabling larger, geographically distributed AI compute deployments.</li>
+</ul></div>
     
   </div>
   
@@ -410,16 +415,15 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-08-17</span>
+      <span> · 2026-08-18</span>
     </div>
-    <h2><a href="https://arstechnica.com/tech-policy/2026/08/hidden-airtag-reveals-amazon-is-trashing-rare-books-to-train-ai/" target="_blank" rel="noopener">Hidden Airtag reveals Amazon is trashing rare books to train AI</a></h2>
+    <h2><a href="https://arstechnica.com/security/2026/08/microsoft-copilot-reveals-secret-input-that-allowed-it-to-be-hacked/" target="_blank" rel="noopener">Microsoft Copilot reveals secret input that allowed it to be hacked</a></h2>
     
-    <div class="summary"><p>Amazon is reportedly destroying rare books to train its AI models.</p>
-<ul>
-<li>An Airtag hidden in a rare book tracked its delivery to an Amazon AI training facility (VGT3) in Las Vegas, where books are torn apart and scanned.</li>
-<li>Amazon’s statement regarding the practice only indicated books are purchased to “develop and improve…products and services,” but the facility is focused on AI training and is reportedly experiencing book supply shortages.</li>
-<li>Workers at the facility are trained to scan ISBNs, suggesting a systematic effort to digitize all printed books by working through ISBN lists.</li>
-<li>Amazon is targeting older books with lower monetary value, but which may still possess historical or intellectual value, to provide training data for its "frontier AI models."</li>
+    <div class="summary"><ul>
+<li>Microsoft 365 Copilot was found to be vulnerable to a URL-based attack allowing data exfiltration with a single click.</li>
+<li>Researchers at Varonis discovered the vulnerability by querying Copilot about its own guardrails, which led Copilot to reveal the undocumented prompt parameter <code>?autorun=1</code>.</li>
+<li>Combining <code>?autorun=1</code> with the <code>?q=</code> parameter allowed attackers to bypass user consent and automatically execute prompts, including those designed to steal data.</li>
+<li>Microsoft mitigated the vulnerability in February and implemented further fixes in August by preventing <code>?q=</code> from injecting text into the chatbot input and requiring manual input instead.</li>
 </ul></div>
     
   </div>
