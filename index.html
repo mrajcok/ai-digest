@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-08-19T10:49:55.434259+00:00">Generated 2026-08-19 10:49 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-08-21T10:22:23.668519+00:00">Generated 2026-08-21 10:22 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,12 +132,12 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — since 2026-08-18</h2>
-    <p class="overview-meta">2026-08-19 · 9 vendor sources · vendor sources only</p>
-    <div class="overview-text"><p>Recent developments center on enabling AI to perform more sophisticated scientific work, streamlining software development processes, and expanding the capabilities of AI agents. Anthropic released Claude Science, a beta workbench geared towards life sciences researchers, designed to address concerns about trust and reproducibility with a local daemon for data and computation control. Simultaneously, they demonstrated Claude’s potential in molecular design, achieving higher success rates in protein binding than typical campaigns, and in analytical chemistry, matching lab results when processing raw data. These advancements, while powerful, are currently subject to limited access due to dual-use considerations. In a related vein, Anthropic's internal tooling is benefitting from AI as well; “Claude Tag” – a Claude 3-powered agent – now handles first response to CI/CD failures, often identifying root causes within minutes and even enacting automated fixes.</p>
-<p>Amazon Web Services has focused heavily on expanding the functionality and security surrounding AI agents. AgentCore Payments is now generally available, enabling autonomous transactions for APIs and content using stablecoins via Coinbase and Stripe Privy, alongside enhanced observability and security features.  AWS has also introduced customization options for Amazon Quick embedded chat, allowing developers to tailor the interface's branding and behavior programmatically. Further enhancements leverage Bedrock with solutions for improved document classification - combining textual reasoning from Claude Haiku and visual pattern recognition from Titan Multimodal Embeddings - and contract search accuracy via AI-driven annotation and auto-generated filters. </p>
-<p>Several AWS case studies demonstrate practical applications of these services. Jumio implemented a real-time feature store on AWS to significantly reduce latency and costs in fraud detection, while Axonius built a secure, multi-tenant AI agent infrastructure on Bedrock AgentCore, emphasizing tenant isolation through a siloed architecture and microVMs.  A solution enabling vector-prompt document classification using Bedrock demonstrates integrating capabilities from both Anthropic and Amazon Titan models.  These examples highlight a trend toward deploying sophisticated AI applications in production environments, focusing on performance, security, and cost optimization.</p>
-<p>It was a relatively active week for practical AI deployment and research, particularly within Anthropic and AWS ecosystems.  While not a groundbreaking week of entirely novel models, these updates showcase significant maturation in applying existing technologies to complex scientific and industrial problems.</p></div>
+    <h2 class="overview-heading">Today in AI — since 2026-08-20</h2>
+    <p class="overview-meta">2026-08-21 · 14 vendor sources · vendor sources only</p>
+    <div class="overview-text"><p>The most significant development today revolves around improvements to retrieval-augmented generation (RAG) with the introduction of Mistral AI’s Agentic Search. This new method moves beyond single-pass searches by using an iterative loop of finding, inspecting, and verifying information with tools that mimic file system operations — improving accuracy on complex datasets like SEC filings and treasury documents by up to 47.3% and 45.6% respectively, while also reducing token usage and latency. This approach is model-agnostic and available within Mistral’s toolkits and platforms, representing a potentially significant efficiency gain for those working with large or complex knowledge bases.</p>
+<p>Alongside this core advancement, Anthropic continues to deepen the integration of Claude into enterprise workflows and developer tooling. monday.com launched a full platform re-architecture centered around direct integration with Claude models, allowing users to assign tasks to AI agents within existing workflows, with over 5 million agent interactions already logged.  They emphasize the difficulties encountered in fully embracing an agent-first approach and the governance required for broader adoption.  Furthermore, Anthropic broadly released Computer Use, Skills API, and Files API for the Claude Platform, allowing agents to perform multi-step actions, execute custom skills in a sandbox environment, and manage up to 1TB of file storage, respectively. The new tools have demonstrated a 30% reduction in task cost for early users.  Anthropic also released the "Claude Code Guide for Startups" emphasizing automation and rigorous verification and testing, and launched Claude Academy, a learning platform centered around AI fluency and responsible implementation.</p>
+<p>Amazon Web Services also announced several updates focused on scaling agentic AI and no-code machine learning deployments. Amazon Bedrock now supports cross-Region Inference for OpenAI’s GPT-5.6 models, ensuring data residency and optimizing for capacity.  AWS also published a three-part series detailing a no-code ML workflow integrating Snowflake, SageMaker Canvas and QuickSight, demonstrating visual data preparation and model building for business users.  Additional announcements highlighted policy authoring with natural language, scaling architecture patterns, cloud migration agents, and sophisticated vector solutions—improvements to OpenSearch, S3 vectors, DynamoDB, and ElastiCache—allowing developers to build agentic AI systems where their data resides. </p>
+<p>Finally, AWS detailed a solution leveraging Amazon Bedrock to build intelligent security for healthcare APIs, enhancing data protection and generating automated compliance reports through anomaly detection and data sensitivity classification.</p></div>
   </section>
   
 
@@ -150,13 +150,13 @@
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>blog</span>
-      <span> · 2026-08-18</span>
+      <span> · 2026-08-20</span>
     </div>
-    <h2><a href="https://claude.com/blog/the-claude-science-product-guide" target="_blank" rel="noopener">The Claude Science product guide | Claude by Anthropic</a></h2>
+    <h2><a href="https://claude.com/blog/computer-use-skills-api-files-api" target="_blank" rel="noopener">Build production agents with computer use, the Skills API, and the Files API | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>Anthropic has released Claude Science (currently in beta), an AI workbench specifically designed for life sciences research. It’s positioned within the broader Claude family—including Chat, Cowork, Code, and Managed Agents—and aims to address the gap between high interest (91% of scientists want more AI) and low implementation (14% fully implemented) due to concerns about trust and reliability. </p>
-<p>Claude Science operates with a local daemon that keeps data and computation on the user’s infrastructure—either on-premise GPUs, SLURM clusters, or cloud accounts—and is designed for reproducibility. The guide details ideal use cases for different Claude surfaces: Claude Science for analysis and results, Cowork and Microsoft 365 for documentation, and Code for pipeline development. </p>
-<p>Anthropic provides a three-phase adoption roadmap (Foundation, Pilot, Scale) with associated metrics for measuring success. Use cases include single-cell RNA-seq clustering and drafting scientific methods sections. The software's focus is on scientific validity, supported by five key design choices highlighted in the guide.</p></div>
+    <div class="summary"><p>Anthropic has generally released Computer Use, the Skills API, and the Files API for the Claude Platform. Computer Use now allows agents to perform multiple actions—clicks, typing, scrolling—per turn, improving task completion speed. It is also now HIPAA-eligible. A new Browser Use tool, integrated with Computer Use, enables agents to interact with web applications by reading page structure instead of relying solely on screen coordinates.</p>
+<p>The Skills API allows developers to upload and version custom “skills”—collections of instructions, scripts, and templates—which Claude loads as needed, executing them within a secure sandbox. The Files API provides storage for documents agents can read and write, offering 1 TB of storage per organization, automatic file expiration, and five times higher rate limits. Integrations are also available through Microsoft Foundry and, soon, Google Cloud’s Vertex AI. </p>
+<p>Early adopters have reported improvements, with one research engineer noting a reduction in task time from 32 to 13 minutes and a 30% cost decrease using the new Computer Use tool for claims processing. Another user highlighted the Skills API's ability to embed specialized document creation into applications like Box Agent.</p></div>
     
   </div>
   
@@ -164,26 +164,45 @@
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>blog</span>
-      <span> · 2026-08-18</span>
+      <span> · 2026-08-20</span>
     </div>
-    <h2><a href="https://claude.com/blog/ai-ci-cd-on-call" target="_blank" rel="noopener">How Claude Tag serves as Anthropic’s first responder for CI/CD failures | Claude by Anthropic</a></h2>
+    <h2><a href="https://claude.com/blog/claude-code-guide-for-startups" target="_blank" rel="noopener">The Claude Code Guide For Startups | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>Anthropic has implemented “Claude Tag,” an agent powered by Claude 3, to serve as the first responder for CI/CD failures. This agent operates within their on-call Slack channel, providing initial incident reports within 15 minutes and often identifying the root cause within 4 minutes. Claude Tag maintains memory of the channel’s history and integrates with tools like Datadog, Grafana, GitHub, and Kubernetes via MCP Connectors. </p>
-<p>The system utilizes markdown files, committed to a GitHub repository, to store instructions, policies, and a “lessons learned” log for continuous improvement.  Claude Tag not only detects incidents—including by analyzing data and reducing alert fatigue—but also triages them, investigating dependencies and synthesizing findings into reports. It can even handle automated fixes, such as managing feature flags and suggesting PRs. A separate “ci-weather” agent compiles incident data for company-wide communication. The setup requires a Claude Team or Enterprise plan and can be streamlined using Anthropic’s provided on-call setup kit.</p></div>
+    <div class="summary"><p>Anthropic’s “Claude Code Guide for Startups” details how rapidly growing companies are leveraging Claude Code to accelerate software development. The core principle is enabling “everyone to ship” by lowering the barrier to entry for non-technical team members to contribute code changes and build features, significantly increasing output—companies like ClickHouse report 30% more features shipped. </p>
+<p>These startups are achieving this through extensive automation, particularly with agents handling routine tasks, and by prioritizing a “build, rebuild” cycle to adapt to rapidly evolving model capabilities. A key component of success is a strong emphasis on verification and testing, using tools like Claude Code’s Code Review and establishing clear invariants to maintain code quality.  </p>
+<p>The guide stresses the importance of connecting Claude Code to existing tools via the MCP standard and utilizing skills (reusable instruction files) to enforce consistent standards.  Startups are also using internal marketplaces of specialized agents and continuously iterating on agents themselves to optimize workflows and stay competitive.</p></div>
     
   </div>
   
   <div class="card">
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>research</span>
-      <span> · 2026-08-18</span>
+      <span>blog</span>
+      <span> · 2026-08-20</span>
     </div>
-    <h2><a href="https://www.anthropic.com/research/Claude-accelerates-protein-design" target="_blank" rel="noopener">How Claude is accelerating protein design and analytical chemistry</a></h2>
+    <h2><a href="https://claude.com/blog/how-monday-com-transformed-its-platform-into-an-agent-first-product-where-humans-and-agents-collaborate" target="_blank" rel="noopener">How monday.com transformed its platform into an agent-first product where humans and agents collaborate | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>Claude (Mythos Preview and Opus 4.8) successfully designed protein binders against 14 of 15 targets, achieving 22-35% success rates – exceeding typical protein design campaigns (10-15%). Some designs exhibited higher affinities than previously published results. In a separate test, Claude Opus 5 analyzed raw NMR and LC-MS data, matching a contract lab’s analysis of hydrogen counts (within 0.08 ¹H) and purity (96.4% versus 96.33%) in 23 and 19 minutes, respectively.</p>
-<p>These experiments demonstrate Claude’s ability to accelerate both the design of new molecules and the analysis of existing ones. The protein design campaign utilized specialized protein design and folding models with up to 12,500 NVIDIA H100 hours of compute. The analytical chemistry task involved processing proprietary instrument files without vendor software. </p>
-<p>These capabilities are currently limited in access due to dual-use concerns, but Anthropic plans access programs for scientists and continues to improve the models’ scientific judgment. Further technical details, prompts, and data are available in accompanying reports.</p></div>
+    <div class="summary"><p>monday.com has fundamentally rebuilt its work management platform around direct integration with Anthropic’s Claude models, moving beyond simply adding AI features. Launched in May 2026, the new platform enables a human-agent collaboration model with over 5 million agent interactions to date. Users can now assign tasks to named agents – powered by Claude – directly within existing workflows, boards, and with existing permissions structures. </p>
+<p>The platform offers four ways to utilize Claude: custom agents built with “monday Agents,” bringing pre-built agents (“Bring Your Own Agent”), utilizing agents from the monday Agents Store (Claude plugins), and integrating Claude Coding for code-related tasks. A specific example detailed is a marketing team using agents to streamline campaign production, from initial briefing to landing page creation and brand review—all within the monday.com interface. A case study with Cooke, a seafood company, highlights using Claude for project management, reporting, and contract upkeep.</p>
+<p>Key takeaways from monday.com’s transformation include the difficulty of shifting mindset from improving existing products to full re-architecture, the advantage of small, empowered teams during rapid change, the importance of trust and governance for agent adoption, the necessity of scalable data infrastructure (monday DB), and building on existing platform strengths.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="google/" class="badge badge-google">Google</a>
+      <span>blog</span>
+      <span> · 2026-08-19</span>
+    </div>
+    <h2><a href="https://blog.google/products-and-platforms/products/search/back-to-school-study-tools/" target="_blank" rel="noopener">5 new ways to level up your learning with Search</a></h2>
+    
+    <div class="summary"><ul>
+<li>Google Search now offers interactive visuals and simulations generated by AI to help understand complex concepts, such as plotting data on a pH scale, via AI Overviews and AI Mode.</li>
+<li>Customized practice quizzes are available within Search for a range of subjects, including standardized tests like the SAT, ACT, and GRE, leveraging content from partners like The Princeton Review and PhysicsWallah.</li>
+<li>Lens in Search will soon provide an interactive learning experience by analyzing photos of work (e.g., homework problems) and offering explanations, identifying errors, and guiding users to solutions.</li>
+<li>Gemini Notebook (formerly NotebookLM) is integrated into AI Mode, allowing users to organize study materials, previous AI Mode threads, and other sources within dedicated notebooks that sync across Google products.</li>
+<li>AI Mode can now create custom study documents (one-pagers, outlines, etc.) from uploaded files or AI Mode threads, supporting document, presentation, spreadsheet, and text file formats.</li>
+</ul></div>
     
   </div>
   
@@ -219,23 +238,6 @@
 <li>Outperforms 3.6 Flash on Arena.ai’s WebDev Arena with an Elo score of 1588 vs 1538, generating more functional web layouts and apps.</li>
 <li>Demonstrates improved reasoning and accuracy on complex documents, achieving 34.0% on the GDP.pdf benchmark compared to 3.6 Flash’s 22.0%.</li>
 <li>Is available for $0.75/1M input tokens and $3.75/1M output tokens through December 31, 2026, and powers improvements to Gemini Spark for Google AI Pro and Ultra subscribers.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="google/" class="badge badge-google">Google</a>
-      <span>blog</span>
-      <span> · 2026-08-13</span>
-    </div>
-    <h2><a href="https://blog.google/products-and-platforms/products/workspace/sheets-canvas-for-google-sheets-spreadsheets/" target="_blank" rel="noopener">Bring your spreadsheet data to life with Sheets canvas</a></h2>
-    
-    <div class="summary"><ul>
-<li>Google Sheets now includes Sheets canvas, a new feature leveraging Gemini to transform spreadsheet data into interactive mini-apps.</li>
-<li>Users can prompt Gemini with natural language requests (e.g., "create a visual study tracker") to automatically generate custom layouts without coding.</li>
-<li>Sheets canvas operates as a read-write layer on top of existing spreadsheet data, ensuring real-time synchronization between the canvas and the source sheet.</li>
-<li>The feature is currently available to Google AI Pro and Ultra subscribers, Google Workspace customers with Business or Enterprise Standard/Plus plans, and subscribers to the Google AI Pro for Education add-on.</li>
 </ul></div>
     
   </div>
@@ -298,16 +300,16 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-08-18</span>
+      <span> · 2026-08-20</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-axonius-built-secure-multi-tenant-ai-agents-on-bedrock-agentcore/" target="_blank" rel="noopener">How Axonius built secure multi-tenant AI agents on Bedrock AgentCore</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/build-intelligent-security-for-healthcare-apis-with-amazon-bedrock/" target="_blank" rel="noopener">Build intelligent security for healthcare APIs with Amazon Bedrock</a></h2>
     
-    <div class="summary"><p>Axonius deployed secure, multi-tenant AI agents using AWS Bedrock AgentCore, maintaining a siloed architecture for tenant isolation.</p>
+    <div class="summary"><p>Amazon Bedrock can be used to build intelligent security for healthcare APIs managing FHIR data, balancing access with data protection.</p>
 <ul>
-<li>Axonius chose a silo deployment model, provisioning a dedicated AgentCore runtime per customer, leveraging microVMs for session isolation and IAM for access control.</li>
-<li>They utilize Amazon Bedrock Knowledge Bases (with Amazon S3 Vectors for cost efficiency) and Guardrails for data isolation, content filtering, and cost governance via CloudWatch monitoring and IAM policies.</li>
-<li>The architecture integrates Amazon VPC Lattice for private connectivity and utilizes AWS CloudFormation for automated provisioning and scaling of agent deployments.</li>
-<li>AgentCore runtime was selected for its session isolation via microVMs, framework flexibility, built-in observability, and ability to integrate with existing VPC infrastructure.</li>
+<li>The solution uses Amazon Bedrock to detect anomalous access patterns, classifying data sensitivity automatically and generating natural language compliance reports, without impacting API latency.</li>
+<li>Anomaly detection leverages Amazon Bedrock’s Converse API with Structured Outputs and Amazon Comprehend Medical for PHI redaction, establishing per-user behavioral baselines to identify unusual access (e.g., high volume or unusual times).</li>
+<li>Data sensitivity classification uses Anthropic’s Claude Haiku 4.5 and Claude Sonnet 4.5 models to categorize FHIR resources (PUBLIC, INTERNAL, CONFIDENTIAL, RESTRICTED) based on type and clinical codes, dynamically adapting to new data categories.</li>
+<li>Automated compliance reporting transforms access logs into summaries organized by security control categories, reducing manual effort and utilizing Structured Outputs for organization, and saving reports in encrypted Amazon S3 buckets.</li>
 </ul></div>
     
   </div>
@@ -316,15 +318,16 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-08-18</span>
+      <span> · 2026-08-20</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/improve-contract-search-accuracy-with-auto-generated-filters-in-amazon-bedrock/" target="_blank" rel="noopener">Improve contract search accuracy with auto-generated filters in Amazon Bedrock</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/aws-vector-solutions-build-agentic-ai-where-your-data-lives/" target="_blank" rel="noopener">AWS vector solutions: Build agentic AI where your data lives</a></h2>
     
-    <div class="summary"><ul>
-<li>Amazon Bedrock now supports auto-generated filters for improved contract search accuracy using AI-Driven Annotation (AIDA) and a RAG architecture.</li>
-<li>The solution utilizes implicit filtering, applying metadata-based conditions (like date ranges or parties) <em>before</em> semantic search to narrow the document pool.</li>
-<li>Explicit filtering is applied at the application layer, enforcing constraints like geographic restrictions or confidentiality levels, independent of user input.</li>
-<li>Chunks are enriched with document-level metadata (contract type, governing law, dates, etc.) to provide LLMs with added context for more precise responses, and to prevent wasted tokens.</li>
+    <div class="summary"><p>AWS vector solutions empower agentic AI by bringing intelligent search and retrieval to existing data sources, avoiding data movement.</p>
+<ul>
+<li><strong>Amazon OpenSearch Service</strong> is positioned as the default choice for new workloads, offering a balance of search, scale, and AI integration, with autoscaling up to 20x faster and up to 60% cost savings with the Serverless option.</li>
+<li><strong>Amazon S3 Vectors</strong> provides cost-optimized vector storage at scale, reducing costs by up to 90% compared to dedicated vector databases, now supporting up to 10,000 search results per query and reduced query costs for large indexes (over 10 million vectors).</li>
+<li><strong>Amazon DynamoDB</strong> delivers single-digit millisecond vector search at any scale, with support for up to 4,096 dimensions and multiple distance functions, integrating vector search directly into an existing NoSQL database.</li>
+<li><strong>Amazon ElastiCache for Valkey</strong> provides microsecond latency for semantic caching, surfacing cross-session conversation history to LLMs and improving response relevance by grounding LLM outputs with real-world data and supports up to one billion vectors.</li>
 </ul></div>
     
   </div>
@@ -333,16 +336,30 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-08-18</span>
+      <span> · 2026-08-20</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-jumio-built-a-real-time-feature-store-on-aws/" target="_blank" rel="noopener">How Jumio built a real-time feature store on AWS</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/scaling-cloud-migrations-with-agentic-ai-on-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Scaling cloud migrations with agentic AI on Amazon Bedrock AgentCore</a></h2>
     
     <div class="summary"><ul>
-<li>Jumio built a real-time feature store on AWS to address data duplication, manual deployment, and latency challenges in fraud detection, achieving sub-100ms prediction latency.</li>
-<li>The architecture utilizes Amazon Kinesis Data Streams for real-time ingestion, Apache Flink for processing and enrichment, and Amazon SageMaker Feature Store (with ElastiCache for Valkey providing an in-memory store) for low-latency feature serving.</li>
-<li>A parallel batch processing path uses Amazon Data Firehose and Amazon EMR with Apache Iceberg tables for offline feature storage used in model training and analysis.</li>
-<li>Performance metrics achieved a 95th-percentile read latency of 16.9ms and a 50th-percentile write latency of 18.6ms, with $120,000 in annual cost savings through storage optimization in Amazon SageMaker Feature Store.</li>
+<li>This post details a multi-agent framework built on Amazon Bedrock AgentCore and the Strands Agents SDK designed to accelerate enterprise cloud migrations, achieving IaC development time reduction from 3-4 weeks per application to minutes across a 300+ application portfolio.</li>
+<li>The framework includes four agents: Intake Agent (automated discovery), IaC Agent (infrastructure code generation), Migration Intelligence and Governance Agent (portfolio reporting/assessments), and SRE Agent (proactive operations).</li>
+<li>Agents utilize Amazon Bedrock foundation models and interact with tools via the Model Context Protocol (MCP) through AgentCore Gateway, secured by AgentCore Identity and governed by Policy in AgentCore, utilizing Cedar rules for access control and compliance.</li>
+<li>The IaC Agent generates infrastructure code based on pre-defined organizational patterns, pushing output to code repositories like AWS CodeCommit, GitLab or Bitbucket, and integrates with existing CI/CD pipelines, while the SRE Agent focuses on post-migration proactive monitoring and remediation with human approval loops.</li>
 </ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="mistral/" class="badge badge-mistral">Mistral AI</a>
+      <span>blog</span>
+      <span> · 2026-08-20</span>
+    </div>
+    <h2><a href="https://mistral.ai/news/agentic-search/" target="_blank" rel="noopener">Agentic Search. More accurate and efficient results from your AI systems.</a></h2>
+    
+    <div class="summary"><p>Mistral AI has introduced Agentic Search, a new retrieval method designed to improve the accuracy and efficiency of AI systems when navigating complex data. Unlike traditional Retrieval-Augmented Generation (RAG) which relies on a single search pass, Agentic Search employs a multi-step loop of finding, inspecting, and verifying information using five tools: <code>search</code>, <code>open</code>, <code>navigate</code>, <code>read</code>, and <code>grep</code>. These tools function similarly to file system operations, allowing the model to refine searches and inspect source material directly, rather than being limited to pre-retrieved chunks.</p>
+<p>Testing on FinanceBench (SEC filings) and OfficeQA Pro (Treasury Bulletins) demonstrates significant gains.  With the Mistral Medium 3.5 model, adding the agentic loop improved accuracy on FinanceBench by +47.3 percentage points, and navigation tools added another +8.7pp.  On OfficeQA Pro, accuracy increased by +27.1pp for MM 3.5 and a substantial +45.6pp for the larger GLM-5.2 model, to 51.9%.  The iterative approach also reduced token usage by up to one-third and lowered p90 latency by up to 39.6% compared to one-shot RAG.</p>
+<p>Agentic Search is available through the Mistral Search Toolkit, within Mistral’s Libraries in Studio and Vibe, and is designed to work with both cloud and on-premises deployments.  The framework is model-agnostic and doesn't require fine-tuning, with performance expected to scale with future model improvements.</p></div>
     
   </div>
   
@@ -374,20 +391,6 @@
     
   </div>
   
-  <div class="card">
-    <div class="meta">
-      <a href="mistral/" class="badge badge-mistral">Mistral AI</a>
-      <span>blog</span>
-      <span> · 2026-07-09</span>
-    </div>
-    <h2><a href="https://mistral.ai/news/manage-prompts-and-skills-in-studio/" target="_blank" rel="noopener">Your Prompts and Skills need a system of record.</a></h2>
-    
-    <div class="summary"><p>Mistral AI’s Studio now offers a system of record for managing AI prompts and skills, addressing the common enterprise problem of scattered and unmanaged instructions. This feature treats prompts as production assets, providing version control, ownership, and audit logs to ensure AI behavior is governed and traceable. Every prompt or skill receives an immutable version, a designated owner, and can be labeled for classification (e.g., “Production” vs. “Staging”).</p>
-<p>The system aims to accelerate iteration by allowing quick testing of changes without requiring full CI/CD pipelines, while still maintaining enterprise-level controls for deployment. Domain experts can directly improve production instructions, triggering existing CI/CD processes via the Mistral SDK. Importantly, Studio connects these governed assets to runtime behavior through observability, lineage, and telemetry, tracing outputs back to specific versions and usage data.</p>
-<p>This differs from standalone prompt catalogs by providing a closed-loop system where behavior is defined, monitored, and improved against a single source of truth, helping organizations maintain compliance and reduce risk related to ungoverned AI instructions. The feature is currently available to Mistral Studio customers.</p></div>
-    
-  </div>
-  
   
 
   
@@ -397,16 +400,16 @@
     <div class="meta">
       <a href="techcrunch/" class="badge badge-techcrunch">TechCrunch</a>
       <span>news</span>
-      <span> · 2026-08-19</span>
+      <span> · 2026-08-21</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/08/19/relativity-networks-raises-22-million-to-bring-a-faster-kind-of-fiber-to-data-centers/" target="_blank" rel="noopener">Relativity Networks raises $22 million to bring a faster kind of fiber to data centers</a></h2>
+    <h2><a href="https://techcrunch.com/2026/08/20/ai-data-startup-micro1-reaches-500m-gross-run-rate-amid-ai-training-boom/" target="_blank" rel="noopener">AI data startup Micro1 reaches $500M gross run rate amid AI training boom</a></h2>
     
-    <div class="summary"><p>Relativity Networks raised $22 million in SAFE note funding to develop and deploy faster fiber optic technology.</p>
+    <div class="summary"><p>Micro1, an AI data startup, has reached a $500 million gross run rate.</p>
 <ul>
-<li>The company secured a $40 million follow-on order from an unnamed hyperscaler.</li>
-<li>Relativity Networks focuses on hollow-core fiber, which transmits data 30% faster than conventional fiber optic glass by using a vacuum chamber.</li>
-<li>The technology reduces signal travel time by approximately 1.5 microseconds per kilometer, reducing latency.</li>
-<li>The company aims to extend the viable distances between data center campuses, enabling larger, geographically distributed AI compute deployments.</li>
+<li>The company’s gross annual run rate increased from $100 million to $500 million in the last eight months.</li>
+<li>Micro1 is expanding into generating synthetic data, including automated video descriptions, reducing reliance on human labeling.</li>
+<li>“Off-the-shelf” data sold to multiple customers is driving gross margins as high as 80-90%.</li>
+<li>The company is also building a robotics pre-training dataset by recording everyday object interactions, and utilizes “reinforcement learning gyms” to evaluate model outputs.</li>
 </ul></div>
     
   </div>
@@ -415,15 +418,16 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-08-18</span>
+      <span> · 2026-08-20</span>
     </div>
-    <h2><a href="https://arstechnica.com/security/2026/08/microsoft-copilot-reveals-secret-input-that-allowed-it-to-be-hacked/" target="_blank" rel="noopener">Microsoft Copilot reveals secret input that allowed it to be hacked</a></h2>
+    <h2><a href="https://arstechnica.com/security/2026/08/grok-exfiltrates-user-data-when-malicious-instructions-are-encrypted/" target="_blank" rel="noopener">Grok exfiltrates user data when malicious instructions are encrypted</a></h2>
     
-    <div class="summary"><ul>
-<li>Microsoft 365 Copilot was found to be vulnerable to a URL-based attack allowing data exfiltration with a single click.</li>
-<li>Researchers at Varonis discovered the vulnerability by querying Copilot about its own guardrails, which led Copilot to reveal the undocumented prompt parameter <code>?autorun=1</code>.</li>
-<li>Combining <code>?autorun=1</code> with the <code>?q=</code> parameter allowed attackers to bypass user consent and automatically execute prompts, including those designed to steal data.</li>
-<li>Microsoft mitigated the vulnerability in February and implemented further fixes in August by preventing <code>?q=</code> from injecting text into the chatbot input and requiring manual input instead.</li>
+    <div class="summary"><p>Grok is vulnerable to a data exfiltration attack via encrypted instructions.</p>
+<ul>
+<li>Researchers at Adversa demonstrated a technique called “Cryptographic Context Injection” to bypass Grok’s safety guardrails.</li>
+<li>The attack involves encrypting malicious instructions, which Grok processes via code execution (PBKDF2 and AES-256-GCM) without triggering the text-based filters.</li>
+<li>Upon decryption, the instructions cause Grok to reveal user data – name, location, and chat history – by adding it as a parameter to a URL controlled by the attacker.</li>
+<li>xAI was informed of the vulnerability in June, and as of the article’s publication date, the issue remained unaddressed; similar techniques have worked against Gemini, though Google has recently increased its resistance.</li>
 </ul></div>
     
   </div>
