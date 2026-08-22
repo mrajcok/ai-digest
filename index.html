@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-08-21T10:22:23.668519+00:00">Generated 2026-08-21 10:22 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-08-22T10:17:40.484974+00:00">Generated 2026-08-22 10:17 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,7 +132,7 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — since 2026-08-20</h2>
+    <h2 class="overview-heading">Today in AI — Overview for 2026-08-21</h2>
     <p class="overview-meta">2026-08-21 · 14 vendor sources · vendor sources only</p>
     <div class="overview-text"><p>The most significant development today revolves around improvements to retrieval-augmented generation (RAG) with the introduction of Mistral AI’s Agentic Search. This new method moves beyond single-pass searches by using an iterative loop of finding, inspecting, and verifying information with tools that mimic file system operations — improving accuracy on complex datasets like SEC filings and treasury documents by up to 47.3% and 45.6% respectively, while also reducing token usage and latency. This approach is model-agnostic and available within Mistral’s toolkits and platforms, representing a potentially significant efficiency gain for those working with large or complex knowledge bases.</p>
 <p>Alongside this core advancement, Anthropic continues to deepen the integration of Claude into enterprise workflows and developer tooling. monday.com launched a full platform re-architecture centered around direct integration with Claude models, allowing users to assign tasks to AI agents within existing workflows, with over 5 million agent interactions already logged.  They emphasize the difficulties encountered in fully embracing an agent-first approach and the governance required for broader adoption.  Furthermore, Anthropic broadly released Computer Use, Skills API, and Files API for the Claude Platform, allowing agents to perform multi-step actions, execute custom skills in a sandbox environment, and manage up to 1TB of file storage, respectively. The new tools have demonstrated a 30% reduction in task cost for early users.  Anthropic also released the "Claude Code Guide for Startups" emphasizing automation and rigorous verification and testing, and launched Claude Academy, a learning platform centered around AI fluency and responsible implementation.</p>
@@ -150,6 +150,34 @@
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>blog</span>
+      <span> · 2026-08-21</span>
+    </div>
+    <h2><a href="https://claude.com/blog/the-ai-native-sdlc-playbook" target="_blank" rel="noopener">The AI-Native SDLC playbook | Claude by Anthropic</a></h2>
+    
+    <div class="summary"><p>Anthropic’s blog post details how to transform the Software Development Lifecycle (SDLC) to fully leverage AI, specifically their Claude Code model. The core claim is that, with AI handling code generation, the bottleneck in development has shifted <em>away</em> from writing code itself and <em>toward</em> planning, review, testing, and deployment.  To address this, they propose an “AI-native SDLC” – a looped process embedding AI at each stage – replacing the traditional linear flow.</p>
+<p>This involves creating committed artifacts at each stage (like <code>intent.md</code> for initial ideas, <code>spec.md</code> for design, and <code>plan.md</code> for implementation plans) stored in version control, which then trigger the next phase.  They introduce "plays" – modular steps for integrating Claude into each SDLC stage – focusing on automated handoffs and continuous evaluation.  Key to this is using Claude to synthesize requirements from stakeholders into machine-readable formats, automating design tasks, generating code <em>with</em> integrated tests, and using AI-driven review layers alongside human oversight, particularly for critical or regulated code.  </p>
+<p>The post emphasizes institutional knowledge as code, through <code>CLAUDE.md</code> files that maintain project-specific context,  and "skills" – reusable, versioned instructions applied by Claude to enforce standards and policies. They also discuss leveraging hooks for deterministic guardrails and the use of parallel sessions and sub-agents to increase engineer throughput.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>blog</span>
+      <span> · 2026-08-21</span>
+    </div>
+    <h2><a href="https://claude.com/blog/bringing-claude-mythos-5-to-more-defenders" target="_blank" rel="noopener">Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders | Claude by Anthropic</a></h2>
+    
+    <div class="summary"><p>Anthropic has expanded access to its most powerful model, Claude Mythos 5, for cybersecurity applications. Initially available through Project Glasswing, Mythos 5 is now integrated into both Claude Security – available to Claude Enterprise customers – and partners’ existing cyber defense tools. Claude Security scans codebases for vulnerabilities, providing CWE-categorized findings with severity ratings and suggested patches generated by Mythos 5, without directly exposing users to the model.</p>
+<p>To further bolster cybersecurity, Anthropic launched the $35 million Defender Advantage Fund (0xDAF) to support open-source security projects by funding vulnerability patching, automated scanning, and innovative security approaches. Simultaneously, the Cyber Verification Program is expanding to provide reduced safeguards and broader dual-use capabilities, including access to Mythos-class models, for vetted cyber defenders, while continuing the existing Project Glasswing collaboration with the U.S. Government. </p>
+<p>The core technical shift is enabling defensive use of a powerful model like Mythos 5 <em>without</em> exposing its offensive capabilities, by limiting user interaction to specific, pre-defined outputs – like vulnerability reports or patches – rather than direct prompting, and maintaining abuse prevention measures.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>blog</span>
       <span> · 2026-08-20</span>
     </div>
     <h2><a href="https://claude.com/blog/computer-use-skills-api-files-api" target="_blank" rel="noopener">Build production agents with computer use, the Skills API, and the Files API | Claude by Anthropic</a></h2>
@@ -162,29 +190,19 @@
   
   <div class="card">
     <div class="meta">
-      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>blog</span>
-      <span> · 2026-08-20</span>
+      <a href="google/" class="badge badge-google">Google</a>
+      <span>research</span>
+      <span> · 2026-08-21</span>
     </div>
-    <h2><a href="https://claude.com/blog/claude-code-guide-for-startups" target="_blank" rel="noopener">The Claude Code Guide For Startups | Claude by Anthropic</a></h2>
+    <h2><a href="https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games/" target="_blank" rel="noopener">From Atari to EVE Online: Building on 15 Years of AI Research in Games</a></h2>
     
-    <div class="summary"><p>Anthropic’s “Claude Code Guide for Startups” details how rapidly growing companies are leveraging Claude Code to accelerate software development. The core principle is enabling “everyone to ship” by lowering the barrier to entry for non-technical team members to contribute code changes and build features, significantly increasing output—companies like ClickHouse report 30% more features shipped. </p>
-<p>These startups are achieving this through extensive automation, particularly with agents handling routine tasks, and by prioritizing a “build, rebuild” cycle to adapt to rapidly evolving model capabilities. A key component of success is a strong emphasis on verification and testing, using tools like Claude Code’s Code Review and establishing clear invariants to maintain code quality.  </p>
-<p>The guide stresses the importance of connecting Claude Code to existing tools via the MCP standard and utilizing skills (reusable instruction files) to enforce consistent standards.  Startups are also using internal marketplaces of specialized agents and continuously iterating on agents themselves to optimize workflows and stay competitive.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>blog</span>
-      <span> · 2026-08-20</span>
-    </div>
-    <h2><a href="https://claude.com/blog/how-monday-com-transformed-its-platform-into-an-agent-first-product-where-humans-and-agents-collaborate" target="_blank" rel="noopener">How monday.com transformed its platform into an agent-first product where humans and agents collaborate | Claude by Anthropic</a></h2>
-    
-    <div class="summary"><p>monday.com has fundamentally rebuilt its work management platform around direct integration with Anthropic’s Claude models, moving beyond simply adding AI features. Launched in May 2026, the new platform enables a human-agent collaboration model with over 5 million agent interactions to date. Users can now assign tasks to named agents – powered by Claude – directly within existing workflows, boards, and with existing permissions structures. </p>
-<p>The platform offers four ways to utilize Claude: custom agents built with “monday Agents,” bringing pre-built agents (“Bring Your Own Agent”), utilizing agents from the monday Agents Store (Claude plugins), and integrating Claude Coding for code-related tasks. A specific example detailed is a marketing team using agents to streamline campaign production, from initial briefing to landing page creation and brand review—all within the monday.com interface. A case study with Cooke, a seafood company, highlights using Claude for project management, reporting, and contract upkeep.</p>
-<p>Key takeaways from monday.com’s transformation include the difficulty of shifting mindset from improving existing products to full re-architecture, the advantage of small, empowered teams during rapid change, the importance of trust and governance for agent adoption, the necessity of scalable data infrastructure (monday DB), and building on existing platform strengths.</p></div>
+    <div class="summary"><p>Google DeepMind is extending its 15-year history of AI research in games, focusing on building AI agents that can <em>understand</em> and interact with game worlds like a human player.</p>
+<ul>
+<li>The latest agent, SIMA 2, powered by Gemini, achieves human-like play across games like <em>No Man's Sky</em>, <em>Valheim</em>, and <em>Hydroneer</em> by interpreting natural language instructions and using standard keyboard/mouse controls.</li>
+<li>A partnership with Fenris Creations and the <em>EVE Universe</em> (including <em>EVE Online</em>, <em>EVE Vanguard</em>, and <em>EVE Frontier</em>) is underway to tackle challenges in continual learning, long-horizon planning, and complex multi-agent dynamics.</li>
+<li>Aura Guidance, a system utilizing Gemini, is already in <em>EVE Online</em> delivering player-generated knowledge to new players.</li>
+<li>Research is progressing from offline instances of <em>EVE Online</em> to <em>EVE Frontier</em> as a testing ground before potential integration into the live game, with the goal of enriching human gameplay and informing AI development for real-world applications.</li>
+</ul></div>
     
   </div>
   
@@ -220,24 +238,6 @@
 <li>Pixel 11 devices will be used by club media teams to capture behind-the-scenes content using the "Shot on Pixel" series and AI-powered camera tools.</li>
 <li>Official club wallpapers are available for customization on Pixel 11 devices.</li>
 <li>The partnerships specifically aim to increase visibility for women’s football teams by providing equal coverage alongside men’s teams.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="google/" class="badge badge-google">Google</a>
-      <span>research</span>
-      <span> · 2026-08-13</span>
-    </div>
-    <h2><a href="https://deepmind.google/blog/introducing-gemini-3-7-flash/" target="_blank" rel="noopener">Introducing Gemini 3.7 Flash</a></h2>
-    
-    <div class="summary"><p>Gemini 3.7 Flash, the latest iteration of Google’s workhorse model, delivers substantial improvements in coding, web development, and knowledge work at half the cost per million tokens of Gemini 3.6 Flash.</p>
-<ul>
-<li>Achieves 43.6% on the FrontierCode 1.1 Main benchmark, an improvement over 3.6 Flash’s 34.4% in code generation and debugging.</li>
-<li>Outperforms 3.6 Flash on Arena.ai’s WebDev Arena with an Elo score of 1588 vs 1538, generating more functional web layouts and apps.</li>
-<li>Demonstrates improved reasoning and accuracy on complex documents, achieving 34.0% on the GDP.pdf benchmark compared to 3.6 Flash’s 22.0%.</li>
-<li>Is available for $0.75/1M input tokens and $3.75/1M output tokens through December 31, 2026, and powers improvements to Gemini Spark for Google AI Pro and Ultra subscribers.</li>
 </ul></div>
     
   </div>
@@ -300,51 +300,51 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-08-20</span>
+      <span> · 2026-08-21</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/build-intelligent-security-for-healthcare-apis-with-amazon-bedrock/" target="_blank" rel="noopener">Build intelligent security for healthcare APIs with Amazon Bedrock</a></h2>
-    
-    <div class="summary"><p>Amazon Bedrock can be used to build intelligent security for healthcare APIs managing FHIR data, balancing access with data protection.</p>
-<ul>
-<li>The solution uses Amazon Bedrock to detect anomalous access patterns, classifying data sensitivity automatically and generating natural language compliance reports, without impacting API latency.</li>
-<li>Anomaly detection leverages Amazon Bedrock’s Converse API with Structured Outputs and Amazon Comprehend Medical for PHI redaction, establishing per-user behavioral baselines to identify unusual access (e.g., high volume or unusual times).</li>
-<li>Data sensitivity classification uses Anthropic’s Claude Haiku 4.5 and Claude Sonnet 4.5 models to categorize FHIR resources (PUBLIC, INTERNAL, CONFIDENTIAL, RESTRICTED) based on type and clinical codes, dynamically adapting to new data categories.</li>
-<li>Automated compliance reporting transforms access logs into summaries organized by security control categories, reducing manual effort and utilizing Structured Outputs for organization, and saving reports in encrypted Amazon S3 buckets.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-08-20</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/aws-vector-solutions-build-agentic-ai-where-your-data-lives/" target="_blank" rel="noopener">AWS vector solutions: Build agentic AI where your data lives</a></h2>
-    
-    <div class="summary"><p>AWS vector solutions empower agentic AI by bringing intelligent search and retrieval to existing data sources, avoiding data movement.</p>
-<ul>
-<li><strong>Amazon OpenSearch Service</strong> is positioned as the default choice for new workloads, offering a balance of search, scale, and AI integration, with autoscaling up to 20x faster and up to 60% cost savings with the Serverless option.</li>
-<li><strong>Amazon S3 Vectors</strong> provides cost-optimized vector storage at scale, reducing costs by up to 90% compared to dedicated vector databases, now supporting up to 10,000 search results per query and reduced query costs for large indexes (over 10 million vectors).</li>
-<li><strong>Amazon DynamoDB</strong> delivers single-digit millisecond vector search at any scale, with support for up to 4,096 dimensions and multiple distance functions, integrating vector search directly into an existing NoSQL database.</li>
-<li><strong>Amazon ElastiCache for Valkey</strong> provides microsecond latency for semantic caching, surfacing cross-session conversation history to LLMs and improving response relevance by grounding LLM outputs with real-world data and supports up to one billion vectors.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-08-20</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/scaling-cloud-migrations-with-agentic-ai-on-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Scaling cloud migrations with agentic AI on Amazon Bedrock AgentCore</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/accelerating-aircraft-ifec-diagnostics-with-agentic-ai-on-aws/" target="_blank" rel="noopener">Accelerating aircraft IFEC diagnostics with agentic AI on AWS</a></h2>
     
     <div class="summary"><ul>
-<li>This post details a multi-agent framework built on Amazon Bedrock AgentCore and the Strands Agents SDK designed to accelerate enterprise cloud migrations, achieving IaC development time reduction from 3-4 weeks per application to minutes across a 300+ application portfolio.</li>
-<li>The framework includes four agents: Intake Agent (automated discovery), IaC Agent (infrastructure code generation), Migration Intelligence and Governance Agent (portfolio reporting/assessments), and SRE Agent (proactive operations).</li>
-<li>Agents utilize Amazon Bedrock foundation models and interact with tools via the Model Context Protocol (MCP) through AgentCore Gateway, secured by AgentCore Identity and governed by Policy in AgentCore, utilizing Cedar rules for access control and compliance.</li>
-<li>The IaC Agent generates infrastructure code based on pre-defined organizational patterns, pushing output to code repositories like AWS CodeCommit, GitLab or Bitbucket, and integrates with existing CI/CD pipelines, while the SRE Agent focuses on post-migration proactive monitoring and remediation with human approval loops.</li>
+<li>This blog details how Panasonic Avionics Corporation (PAC) built an agentic AI system on AWS to accelerate diagnostics of in-flight entertainment and connectivity (IFEC) systems.</li>
+<li>The solution leverages Amazon Bedrock (Anthropic Claude), Amazon SageMaker (with LangGraph and Strands Agents SDK), and AWS Glue to analyze operational data from a data lakehouse in Amazon S3 using Apache Iceberg.</li>
+<li>A multi-agent workflow includes a Trend Analyzer, Correlation Analyzer, System Checks, and a Log Analyzer, culminating in a diagnostic report generated by an LLM with root cause hypotheses and recommended actions.</li>
+<li>The system integrates semantic search using Amazon RDS with pgvector to provide institutional memory, and has demonstrated 20-40% improvements in operational efficiency with reduced MTTD and MTTR.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
+      <span> · 2026-08-21</span>
+    </div>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/reduce-rag-costs-on-amazon-bedrock-with-query-aware-compression/" target="_blank" rel="noopener">Reduce RAG costs on Amazon Bedrock with query-aware compression</a></h2>
+    
+    <div class="summary"><p>Reduce RAG costs by filtering retrieved chunks with a smaller model before sending context to the primary model.</p>
+<ul>
+<li>Amazon Bedrock enables a “query-aware compression” pattern where a smaller, lower-cost model (e.g., Anthropic Claude Haiku) filters retrieved chunks based on the user query.</li>
+<li>This reduces the number of input tokens sent to the primary model (e.g., Anthropic Claude Sonnet), lowering costs, and potentially reducing hallucination by removing irrelevant context.</li>
+<li>The implementation uses an AWS Lambda function with the Amazon Bedrock Converse API, adding a compression step before the final answer generation. The pattern achieved 33% cost savings in testing.</li>
+<li>Key considerations include the price ratio between the models, inference speed, and maintaining answer quality – with tests showing minimal impact on correctness and a reduction in hallucination rate.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
+      <span> · 2026-08-21</span>
+    </div>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/govern-ai-agent-tool-access-with-amazon-bedrock-agentcore-gateway/" target="_blank" rel="noopener">Govern AI agent tool access with Amazon Bedrock AgentCore Gateway</a></h2>
+    
+    <div class="summary"><p>Amazon Bedrock AgentCore introduces a governed gateway for managing AI agent access to internal tools, addressing concerns around credential sprawl, policy drift, and audit gaps.</p>
+<ul>
+<li><strong>AgentCore Gateway</strong> provides a single, secure entry point for agentic traffic, utilizing <strong>AgentCore Identity</strong> for authentication, authorization, and credential management, and <strong>AgentCore Policy</strong> for security controls.</li>
+<li>The solution proposes a four-scope maturity journey: <strong>Connect</strong> (basic SSO &amp; centralized credentials), <strong>Control</strong> (identity-aware authorization with Cedar RBAC/ABAC and <strong>Amazon Bedrock Guardrails</strong>), <strong>Catalog</strong> (tool discovery and publishing with <strong>AWS Agent Registry</strong>), and <strong>Harden</strong> (advanced security measures like private connectivity and failover).</li>
+<li><strong>Dynamic Client Registration (DCR)</strong> enables user-delegated access via OAuth 2.0, where clients receive dynamically added client IDs, enhancing security over machine-to-machine authentication.</li>
+<li><strong>Cedar Policies</strong> can be integrated with <strong>Amazon Bedrock Guardrails</strong> to apply PII filtering and content policies directly within the access control framework, leveraging conditions like <code>suppressOutput</code> or filtering via <code>when guardrails condition</code>.</li>
 </ul></div>
     
   </div>
@@ -402,14 +402,14 @@
       <span>news</span>
       <span> · 2026-08-21</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/08/20/ai-data-startup-micro1-reaches-500m-gross-run-rate-amid-ai-training-boom/" target="_blank" rel="noopener">AI data startup Micro1 reaches $500M gross run rate amid AI training boom</a></h2>
+    <h2><a href="https://techcrunch.com/2026/08/21/starcloud-raises-200-million-for-orbital-data-centers-as-launch-options-dry-up/" target="_blank" rel="noopener">Starcloud raises $250 million for orbital data centers as launch options dry up</a></h2>
     
-    <div class="summary"><p>Micro1, an AI data startup, has reached a $500 million gross run rate.</p>
+    <div class="summary"><p>Starcloud secured a $250 million extension to its Series A funding, valuing the company at $2.3 billion, to expand manufacturing and advance its orbital data center plans.</p>
 <ul>
-<li>The company’s gross annual run rate increased from $100 million to $500 million in the last eight months.</li>
-<li>Micro1 is expanding into generating synthetic data, including automated video descriptions, reducing reliance on human labeling.</li>
-<li>“Off-the-shelf” data sold to multiple customers is driving gross margins as high as 80-90%.</li>
-<li>The company is also building a robotics pre-training dataset by recording everyday object interactions, and utilizes “reinforcement learning gyms” to evaluate model outputs.</li>
+<li>The company aims to launch its largest orbital data center spacecraft, Starcloud-3, on SpaceX’s Starship rocket.</li>
+<li>Starcloud-2 satellites (8 kW compute) are scheduled for rideshare launches in 2027, performing orbital inference for U.S. government customers.</li>
+<li>Starcloud is currently operating Nvidia H100 GPUs in orbit – the only known company to do so - and collaborating with Nvidia on the development of the Vera Rubin Space-1 GPU, expected to launch in late 2028.</li>
+<li>The company is addressing design challenges related to heat management, radiation shielding, and launch survivability for space-based GPUs.</li>
 </ul></div>
     
   </div>
@@ -418,16 +418,15 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-08-20</span>
+      <span> · 2026-08-21</span>
     </div>
-    <h2><a href="https://arstechnica.com/security/2026/08/grok-exfiltrates-user-data-when-malicious-instructions-are-encrypted/" target="_blank" rel="noopener">Grok exfiltrates user data when malicious instructions are encrypted</a></h2>
+    <h2><a href="https://arstechnica.com/tech-policy/2026/08/meta-ai-glasses-may-get-creepier-and-apps-that-detect-them-arent-perfect/" target="_blank" rel="noopener">As demand for Meta AI glasses explodes, it’s harder to avoid creepy recordings</a></h2>
     
-    <div class="summary"><p>Grok is vulnerable to a data exfiltration attack via encrypted instructions.</p>
-<ul>
-<li>Researchers at Adversa demonstrated a technique called “Cryptographic Context Injection” to bypass Grok’s safety guardrails.</li>
-<li>The attack involves encrypting malicious instructions, which Grok processes via code execution (PBKDF2 and AES-256-GCM) without triggering the text-based filters.</li>
-<li>Upon decryption, the instructions cause Grok to reveal user data – name, location, and chat history – by adding it as a parameter to a URL controlled by the attacker.</li>
-<li>xAI was informed of the vulnerability in June, and as of the article’s publication date, the issue remained unaddressed; similar techniques have worked against Gemini, though Google has recently increased its resistance.</li>
+    <div class="summary"><ul>
+<li>Meta’s AI glasses are experiencing increased demand, leading to concerns over non-consensual recording and prompting bans in some locations like schools and DEF CON 26.</li>
+<li>The Electronic Frontier Foundation (EFF) warns that Meta may add invasive features like facial recognition without adequate privacy safeguards, potentially enabling deepfakes or non-consensual imagery.</li>
+<li>Developers are creating apps—Nearby Glasses, Antizuck Smart Glasses Scanner, and Zuckoff—to detect nearby Ray-Ban Meta, Oakley Meta, and Snap Spectacles via Bluetooth signals. These apps are not foolproof and cannot confirm active recording.</li>
+<li>Meta is reportedly developing “super sensing” glasses with continuous recording capabilities and may not activate the recording indicator LED during use, raising further privacy concerns; the company recently removed a facial recognition system quietly installed on 50 million phones.</li>
 </ul></div>
     
   </div>
