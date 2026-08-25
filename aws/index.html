@@ -80,13 +80,100 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-08-24 10:15 UTC</p>
+  <p class="generated-at">Generated 2026-08-25 10:16 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">August 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-24</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/ai-powered-metadata-correction-and-harmonization/" target="_blank" rel="noopener">AI-powered metadata correction and harmonization</a></h3>
+    
+    <div class="summary"><p>AI-powered metadata correction and harmonization leverages LLMs to automate metadata management, addressing challenges with data standardization at scale.</p>
+<ul>
+<li>The system uses Amazon Bedrock for LLM-powered schema alignment and correction recommendations, integrated with services like Amazon S3, DynamoDB, Cognito, and ECS.</li>
+<li>Schema alignment utilizes LLMs to semantically understand metadata, handling synonyms, misspellings and complex relationships beyond simple string matching.</li>
+<li>Metadata field validation employs a tiered approach: required field checks, enumerated value validation against controlled vocabularies, pattern matching with regular expressions, and LLM-based resolution as a fallback.</li>
+<li>Recommendations combine NLP, embedding-based similarity (using Amazon Titan), contextual inference (k-nearest neighbors with TF-IDF and PMI), fuzzy matching, and LLM resolution to balance accuracy, scalability, and cost.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-24</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/building-a-restaurant-telephony-ai-host-with-amazon-connect/" target="_blank" rel="noopener">Building a restaurant telephony AI host with Amazon Connect</a></h3>
+    
+    <div class="summary"><ul>
+<li>This blog details building a voice-based restaurant ordering system using Amazon Connect, leveraging AI to handle calls from greeting to order confirmation.</li>
+<li>The system uses Amazon Connect Agentic Voice (Advanced ASR and TTS) for real-time speech recognition and synthesis, orchestrated by an Amazon Connect AI agent powered by Anthropic Claude Haiku 4.5 in Amazon Bedrock.</li>
+<li>Backend services are connected via the Model Context Protocol (MCP) through AgentCore Gateway, enabling modularity and allowing backend changes without impacting the AI agent logic.</li>
+<li>The solution utilizes AWS CDK for deployment, encompassing Amazon Connect, Lex V2, Agentic Voice, AI Agents, Guardrails, AgentCore Gateway, API Gateway, Lambda, DynamoDB, and Location Service.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-24</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/agentic-resource-discovery-ard-an-open-specification-for-agent-discovery/" target="_blank" rel="noopener">Agentic Resource Discovery (ARD): An open specification for agent discovery</a></h3>
+    
+    <div class="summary"><p>AWS introduces Agentic Resource Discovery (ARD), an open specification for cross-environment agent discovery.</p>
+<ul>
+<li>AWS Agent Registry provides a centralized, searchable catalog for agents, Model Context Protocol (MCP) servers, tools, and resources, utilizing registries and registry records.</li>
+<li>The Agent Registry supports curation workflows with approval settings, hybrid search (semantic and keyword-based), and flexible authorization via IAM or JWTs.</li>
+<li>ARD is an open standard (Apache 2.0 license, agenticresourcediscovery.org) designed to enable federation across registries, analogous to DNS, allowing discovery without requiring proprietary connectors.</li>
+<li>AWS envisions ARD complementing AWS Agent Registry by enabling federated discovery across environments while maintaining local control and potentially opening paths for public discovery.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-24</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/democratizing-institutional-knowledge-building-an-ai-powered-knowledge-management-system-with-aws/" target="_blank" rel="noopener">Democratizing institutional knowledge: Building an AI-powered knowledge management system with AWS</a></h3>
+    
+    <div class="summary"><ul>
+<li>This post details a customizable, cloud-based knowledge management system utilizing AWS services to capture and deliver institutional knowledge via an intelligent avatar system.</li>
+<li>The solution leverages Amazon Bedrock Knowledge Bases with Amazon Titan Text Embeddings for RAG, storing data in Amazon S3 and using Amazon OpenSearch Serverless as a vector store, orchestrated by AWS Lambda and cached with Amazon DynamoDB.</li>
+<li>A key differentiator is voice-first, avatar-driven delivery, requiring minimal technical expertise for end-users, alongside simplified content management via direct document uploads to Amazon S3.</li>
+<li>Deployment is accelerated using AWS CloudFormation, featuring built-in cost optimization through a DynamoDB cache achieving 50-70% hit rates, and utilizes Amazon Transcribe/Polly for voice interaction and models like Amazon Nova Pro and Anthropic Claude 3 Sonnet via Amazon Bedrock.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-24</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-new-ray-capabilities-on-sagemaker-hyperpod/" target="_blank" rel="noopener">Introducing new Ray capabilities on SageMaker HyperPod</a></h3>
+    
+    <div class="summary"><ul>
+<li>SageMaker HyperPod now integrates with Ray, an open-source framework for scaling distributed Python workloads, simplifying cluster creation and management directly from the SageMaker Studio console without needing Kubernetes manifests or <code>kubectl</code> commands.</li>
+<li>Ray training jobs benefit from automatic fault tolerance via HyperPod node health monitoring &amp; recovery, alongside tiered checkpointing using HyperPod distributed tiered storage for faster resume times.</li>
+<li>SageMaker JumpStart integration allows direct loading of model weights into Ray Serve endpoints, with KV cache offloading to tiered storage to improve serving performance for long-context requests.</li>
+<li>Out-of-the-box observability is provided through the HyperPod Observability EKS add-on, which automatically provisions pre-built Grafana dashboards in Amazon Managed Grafana for Ray Core, Data, Train, and Serve.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -523,93 +610,6 @@
 <li>The integration uses AgentCore Identity for credential storage and AgentCore Observability for logging/metrics via CloudWatch/X-Ray.</li>
 <li>A human-supervised setup process provisions wallets and payment sessions with defined limits (recipient, asset, amount, expiry), while the agent runtime initiates payments within those bounds using the <code>get_payment_session_status</code> and <code>get_paid_content</code> tools from the <code>aws-agents-pay</code> plugin.</li>
 <li>The current implementation supports OpenClaw version 2026.3.24 or later, and focuses on Base Sepolia for testing, with potential for expansion to other chains like Ethereum and Solana, utilizing the x402 v2 protocol.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-17</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-5-lightning-now-available-in-amazon-sagemaker-jumpstart/" target="_blank" rel="noopener">NVIDIA Nemotron 3.5 Lightning now available in Amazon SageMaker JumpStart</a></h3>
-    
-    <div class="summary"><ul>
-<li>NVIDIA's Nemotron 3.5 Lightning, designed for high-volume agentic workloads, is now available in Amazon SageMaker JumpStart.</li>
-<li>The model features a hybrid Mixture-of-Experts (MoE) architecture with 30B total parameters and 3B active, enabling single-GPU operation and high throughput.</li>
-<li>It delivers up to 4x higher throughput and 30% faster task completion compared to other models for specialized agent tasks, and supports a 1M token context window.</li>
-<li>Both BF16 (huggingface-reasoning-nemotron-3-5-lightning-30b-a3b-bf16) and NVFP4 (huggingface-reasoning-nemotron-3-5-lightning-30b-a3b-nvfp4) variants are available for deployment via SageMaker JumpStart, Hugging Face, or the SageMaker Python SDK.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-14</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/building-agentic-workflows-with-sagemaker-ai-and-bedrock-agentcore/" target="_blank" rel="noopener">Building agentic workflows with SageMaker AI and Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><p>Combining SageMaker AI and Bedrock AgentCore for Agentic Workflows</p>
-<ul>
-<li>Amazon Bedrock AgentCore runtime now supports integration with OpenAI-compatible endpoints on Amazon SageMaker AI, enabling a hybrid approach to model selection within agentic workflows.</li>
-<li>The solution utilizes Qwen 3.5 9B on SageMaker AI, alongside models like Claude Haiku 4.5 and Claude Sonnet 4.6 on Amazon Bedrock, managed by an orchestrator agent within the AgentCore runtime.</li>
-<li>To achieve full observability of token usage from SageMaker endpoints (which Strands Agents doesn’t provide by default), custom OpenTelemetry spans must be manually implemented, wrapping the SageMaker agent invocation and extracting token counts from <code>result.metrics.accumulated_usage</code>.</li>
-<li>Successful token tracking with Qwen 3.5 9B on SageMaker requires enabling <code>stream_options: {"include_usage": True}</code> in the OpenAIModel parameters, as vLLM (version 0.22.1) does not include token usage in streaming responses by default.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-14</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/custom-reward-functions-for-multi-turn-reinforcement-learning-with-amazon-nova-forge/" target="_blank" rel="noopener">Custom reward functions for multi-turn reinforcement learning with Amazon Nova Forge</a></h3>
-    
-    <div class="summary"><p>Custom reward functions are critical for effective multi-turn reinforcement learning with Amazon Nova Forge, particularly when using reinforcement fine-tuning (RFT) and Group Relative Policy Optimization (GRPO).</p>
-<ul>
-<li>Amazon Nova Forge allows you to bring your own orchestration (BYOO) to run reward logic in your environment for multi-turn RL, handling rollouts, message passing, and state across turns.</li>
-<li>RFT uses a reward function—code you write—to score model outputs and adjust weights to maximize cumulative reward across a sequence of interactions, unlike supervised fine-tuning which relies on annotated examples.</li>
-<li>Effective reward design combines outcome rewards (goal completion), behavioral rewards (desired intermediate steps), and penalties to discourage failures—ensuring a balanced learning signal and preventing gaming of individual components.</li>
-<li>When executing model-generated code within the reward function, security measures like isolated environments, resource limits, and input/output validation are essential to prevent exploitation and maintain system integrity.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-13</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/amazon-quick-for-microsoft-365-agentic-ai-where-you-work/" target="_blank" rel="noopener">Amazon Quick for Microsoft 365: Agentic AI where you work</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Quick now offers extensions for Microsoft Word, Excel, PowerPoint, and Outlook, providing agentic AI capabilities directly within these applications.</li>
-<li>The extensions are “agentic,” meaning they take action <em>within</em> the Microsoft 365 apps (e.g., reformatting text in Word, explaining formulas in Excel) rather than simply providing chatbot responses.</li>
-<li>Installation is cloud-based and requires no client-side software, utilizing standard Microsoft 365 add-in deployment methods; Outlook may require administrator approval for full functionality due to Graph API permissions.</li>
-<li>The extensions connect to existing Quick data sources (QuickSight, Salesforce, Jira, etc.) and leverage existing Quick permissions and security policies, offering data residency across seven AWS Regions.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-13</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/accelerating-ma-due-diligence-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Accelerating M&amp;A due diligence with Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock AgentCore is presented as a platform for building, connecting, and optimizing AI agents at scale, and is used in this example to accelerate M&amp;A due diligence.</li>
-<li>A reference architecture is provided utilizing Amazon Bedrock AgentCore to orchestrate agents for target screening, financial analysis, strategic fit assessment, and compliance validation.</li>
-<li>The architecture leverages Retrieval Augmented Generation (RAG) with Amazon Bedrock Knowledge Bases, structured data from Amazon Aurora PostgreSQL, and external tool integration via AgentCore Gateway.</li>
-<li>The solution includes built-in governance features such as citation checking (using a custom Lambda function) and policy enforcement through Amazon Bedrock Guardrails, alongside built-in auditability and observability via CloudWatch and X-Ray.</li>
 </ul></div>
     
   </div>

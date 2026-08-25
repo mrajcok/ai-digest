@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-08-24T10:15:45.837687+00:00">Generated 2026-08-24 10:15 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-08-25T10:16:39.889184+00:00">Generated 2026-08-25 10:16 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,12 +132,11 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — Overview for 2026-08-21</h2>
-    <p class="overview-meta">2026-08-21 · 14 vendor sources · vendor sources only</p>
-    <div class="overview-text"><p>The most significant development today revolves around improvements to retrieval-augmented generation (RAG) with the introduction of Mistral AI’s Agentic Search. This new method moves beyond single-pass searches by using an iterative loop of finding, inspecting, and verifying information with tools that mimic file system operations — improving accuracy on complex datasets like SEC filings and treasury documents by up to 47.3% and 45.6% respectively, while also reducing token usage and latency. This approach is model-agnostic and available within Mistral’s toolkits and platforms, representing a potentially significant efficiency gain for those working with large or complex knowledge bases.</p>
-<p>Alongside this core advancement, Anthropic continues to deepen the integration of Claude into enterprise workflows and developer tooling. monday.com launched a full platform re-architecture centered around direct integration with Claude models, allowing users to assign tasks to AI agents within existing workflows, with over 5 million agent interactions already logged.  They emphasize the difficulties encountered in fully embracing an agent-first approach and the governance required for broader adoption.  Furthermore, Anthropic broadly released Computer Use, Skills API, and Files API for the Claude Platform, allowing agents to perform multi-step actions, execute custom skills in a sandbox environment, and manage up to 1TB of file storage, respectively. The new tools have demonstrated a 30% reduction in task cost for early users.  Anthropic also released the "Claude Code Guide for Startups" emphasizing automation and rigorous verification and testing, and launched Claude Academy, a learning platform centered around AI fluency and responsible implementation.</p>
-<p>Amazon Web Services also announced several updates focused on scaling agentic AI and no-code machine learning deployments. Amazon Bedrock now supports cross-Region Inference for OpenAI’s GPT-5.6 models, ensuring data residency and optimizing for capacity.  AWS also published a three-part series detailing a no-code ML workflow integrating Snowflake, SageMaker Canvas and QuickSight, demonstrating visual data preparation and model building for business users.  Additional announcements highlighted policy authoring with natural language, scaling architecture patterns, cloud migration agents, and sophisticated vector solutions—improvements to OpenSearch, S3 vectors, DynamoDB, and ElastiCache—allowing developers to build agentic AI systems where their data resides. </p>
-<p>Finally, AWS detailed a solution leveraging Amazon Bedrock to build intelligent security for healthcare APIs, enhancing data protection and generating automated compliance reports through anomaly detection and data sensitivity classification.</p></div>
+    <h2 class="overview-heading">Today in AI — since 2026-08-24</h2>
+    <p class="overview-meta">2026-08-25 · 7 vendor sources · vendor sources only</p>
+    <div class="overview-text"><p>Recent activity across several AI labs and Amazon Web Services points to a significant push toward streamlining AI workflows and democratizing access to powerful models, with a strong emphasis on enterprise use cases. The most consequential development is the unveiling of Agentic Resource Discovery (ARD) by AWS. This open specification, licensed under Apache 2.0, aims to establish a universal system for discovering AI agents and resources across different environments—essentially creating a “DNS” for AI. This has the potential to dramatically improve interoperability and reduce vendor lock-in, allowing for a more federated and versatile AI landscape. Alongside ARD, AWS launched several enhancements to SageMaker HyperPod, significantly simplifying Ray integration and adding observability features crucial for managing complex distributed training and serving workloads.</p>
+<p>Alongside infrastructure improvements, there's a clear trend toward applying AI to internal processes and knowledge management. Anthropic demonstrated a compelling internal use case with Claude Code automating personalized updates for their sales teams—highlighting the efficiency gains achievable through prompt engineering and automation. AWS is similarly focused on this with a new system for AI-powered knowledge management, utilizing Amazon Bedrock Knowledge Bases and Amazon Titan embeddings to create an intelligent, voice-driven avatar interface for accessing institutional knowledge, designed for ease of use and cost efficiency. Further on this theme, AWS showcased an AI-powered metadata solution leveraging LLMs for correction and harmonization, addressing critical challenges in data management at scale.</p>
+<p>Several announcements focused on specific applications of AI built on AWS services. A solution for automating restaurant telephony, powered by Anthropic’s Claude Haiku, demonstrates the potential for practical AI agents in customer service. Finally, a significant strategic partnership was announced between Mistral AI and HUMAIN to expand sovereign AI capabilities within Saudi Arabia and the Middle East, prioritizing development of Arabic language models and localized control over data and compute. This indicates a growing global demand for AI solutions tailored to specific regional needs and regulatory requirements, with an emphasis on open-weight models for greater customization.</p></div>
   </section>
   
 
@@ -145,6 +144,20 @@
 
   
   <h2 class="section">Vendors</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>blog</span>
+      <span> · 2026-08-24</span>
+    </div>
+    <h2><a href="https://claude.com/blog/how-an-anthropic-field-marketer-uses-claude-code-to-send-weekly-personalized-updates-to-every-sales-rep" target="_blank" rel="noopener">How an Anthropic field marketer uses Claude Code to send weekly personalized updates to every sales rep | Claude by Anthropic</a></h2>
+    
+    <div class="summary"><p>Anthropic’s marketing team used <strong>Claude Code</strong> to automate the creation of weekly, personalized Slack briefings for their sales representatives. The system connects to <strong>BigQuery</strong> (housing data from HubSpot, Clay, and Salesforce) via the Model Callbacks Platform (MCP) to pull relevant information based on each rep’s territory and accounts. </p>
+<p>The process began by providing Claude with example updates and defining the desired format – a “top three things for the week” list focusing on actionable items like events or content.  The key to success was iterative prompt engineering, driven by direct user feedback; rules were added to the prompt (now at nine) to address issues like fabricated URLs and irrelevant event suggestions. </p>
+<p>The resulting system now delivers tailored updates including priority actions, events, webinar registrations, relevant content, and even customized messaging for new sales reps, freeing up the marketer's time and demonstrably increasing event registrations. The initial prompt was successfully duplicated for BDRs, Customer Success, and Alliance teams with minimal modification.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -171,20 +184,6 @@
     <div class="summary"><p>Anthropic has expanded access to its most powerful model, Claude Mythos 5, for cybersecurity applications. Initially available through Project Glasswing, Mythos 5 is now integrated into both Claude Security – available to Claude Enterprise customers – and partners’ existing cyber defense tools. Claude Security scans codebases for vulnerabilities, providing CWE-categorized findings with severity ratings and suggested patches generated by Mythos 5, without directly exposing users to the model.</p>
 <p>To further bolster cybersecurity, Anthropic launched the $35 million Defender Advantage Fund (0xDAF) to support open-source security projects by funding vulnerability patching, automated scanning, and innovative security approaches. Simultaneously, the Cyber Verification Program is expanding to provide reduced safeguards and broader dual-use capabilities, including access to Mythos-class models, for vetted cyber defenders, while continuing the existing Project Glasswing collaboration with the U.S. Government. </p>
 <p>The core technical shift is enabling defensive use of a powerful model like Mythos 5 <em>without</em> exposing its offensive capabilities, by limiting user interaction to specific, pre-defined outputs – like vulnerability reports or patches – rather than direct prompting, and maintaining abuse prevention measures.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>blog</span>
-      <span> · 2026-08-20</span>
-    </div>
-    <h2><a href="https://claude.com/blog/computer-use-skills-api-files-api" target="_blank" rel="noopener">Build production agents with computer use, the Skills API, and the Files API | Claude by Anthropic</a></h2>
-    
-    <div class="summary"><p>Anthropic has generally released Computer Use, the Skills API, and the Files API for the Claude Platform. Computer Use now allows agents to perform multiple actions—clicks, typing, scrolling—per turn, improving task completion speed. It is also now HIPAA-eligible. A new Browser Use tool, integrated with Computer Use, enables agents to interact with web applications by reading page structure instead of relying solely on screen coordinates.</p>
-<p>The Skills API allows developers to upload and version custom “skills”—collections of instructions, scripts, and templates—which Claude loads as needed, executing them within a secure sandbox. The Files API provides storage for documents agents can read and write, offering 1 TB of storage per organization, automatic file expiration, and five times higher rate limits. Integrations are also available through Microsoft Foundry and, soon, Google Cloud’s Vertex AI. </p>
-<p>Early adopters have reported improvements, with one research engineer noting a reduction in task time from 32 to 13 minutes and a 30% cost decrease using the new Computer Use tool for claims processing. Another user highlighted the Skills API's ability to embed specialized document creation into applications like Box Agent.</p></div>
     
   </div>
   
@@ -300,15 +299,33 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-08-21</span>
+      <span> · 2026-08-24</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/accelerating-aircraft-ifec-diagnostics-with-agentic-ai-on-aws/" target="_blank" rel="noopener">Accelerating aircraft IFEC diagnostics with agentic AI on AWS</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/ai-powered-metadata-correction-and-harmonization/" target="_blank" rel="noopener">AI-powered metadata correction and harmonization</a></h2>
+    
+    <div class="summary"><p>AI-powered metadata correction and harmonization leverages LLMs to automate metadata management, addressing challenges with data standardization at scale.</p>
+<ul>
+<li>The system uses Amazon Bedrock for LLM-powered schema alignment and correction recommendations, integrated with services like Amazon S3, DynamoDB, Cognito, and ECS.</li>
+<li>Schema alignment utilizes LLMs to semantically understand metadata, handling synonyms, misspellings and complex relationships beyond simple string matching.</li>
+<li>Metadata field validation employs a tiered approach: required field checks, enumerated value validation against controlled vocabularies, pattern matching with regular expressions, and LLM-based resolution as a fallback.</li>
+<li>Recommendations combine NLP, embedding-based similarity (using Amazon Titan), contextual inference (k-nearest neighbors with TF-IDF and PMI), fuzzy matching, and LLM resolution to balance accuracy, scalability, and cost.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
+      <span> · 2026-08-24</span>
+    </div>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/building-a-restaurant-telephony-ai-host-with-amazon-connect/" target="_blank" rel="noopener">Building a restaurant telephony AI host with Amazon Connect</a></h2>
     
     <div class="summary"><ul>
-<li>This blog details how Panasonic Avionics Corporation (PAC) built an agentic AI system on AWS to accelerate diagnostics of in-flight entertainment and connectivity (IFEC) systems.</li>
-<li>The solution leverages Amazon Bedrock (Anthropic Claude), Amazon SageMaker (with LangGraph and Strands Agents SDK), and AWS Glue to analyze operational data from a data lakehouse in Amazon S3 using Apache Iceberg.</li>
-<li>A multi-agent workflow includes a Trend Analyzer, Correlation Analyzer, System Checks, and a Log Analyzer, culminating in a diagnostic report generated by an LLM with root cause hypotheses and recommended actions.</li>
-<li>The system integrates semantic search using Amazon RDS with pgvector to provide institutional memory, and has demonstrated 20-40% improvements in operational efficiency with reduced MTTD and MTTR.</li>
+<li>This blog details building a voice-based restaurant ordering system using Amazon Connect, leveraging AI to handle calls from greeting to order confirmation.</li>
+<li>The system uses Amazon Connect Agentic Voice (Advanced ASR and TTS) for real-time speech recognition and synthesis, orchestrated by an Amazon Connect AI agent powered by Anthropic Claude Haiku 4.5 in Amazon Bedrock.</li>
+<li>Backend services are connected via the Model Context Protocol (MCP) through AgentCore Gateway, enabling modularity and allowing backend changes without impacting the AI agent logic.</li>
+<li>The solution utilizes AWS CDK for deployment, encompassing Amazon Connect, Lex V2, Agentic Voice, AI Agents, Guardrails, AgentCore Gateway, API Gateway, Lambda, DynamoDB, and Location Service.</li>
 </ul></div>
     
   </div>
@@ -317,35 +334,31 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-08-21</span>
+      <span> · 2026-08-24</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/reduce-rag-costs-on-amazon-bedrock-with-query-aware-compression/" target="_blank" rel="noopener">Reduce RAG costs on Amazon Bedrock with query-aware compression</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/agentic-resource-discovery-ard-an-open-specification-for-agent-discovery/" target="_blank" rel="noopener">Agentic Resource Discovery (ARD): An open specification for agent discovery</a></h2>
     
-    <div class="summary"><p>Reduce RAG costs by filtering retrieved chunks with a smaller model before sending context to the primary model.</p>
+    <div class="summary"><p>AWS introduces Agentic Resource Discovery (ARD), an open specification for cross-environment agent discovery.</p>
 <ul>
-<li>Amazon Bedrock enables a “query-aware compression” pattern where a smaller, lower-cost model (e.g., Anthropic Claude Haiku) filters retrieved chunks based on the user query.</li>
-<li>This reduces the number of input tokens sent to the primary model (e.g., Anthropic Claude Sonnet), lowering costs, and potentially reducing hallucination by removing irrelevant context.</li>
-<li>The implementation uses an AWS Lambda function with the Amazon Bedrock Converse API, adding a compression step before the final answer generation. The pattern achieved 33% cost savings in testing.</li>
-<li>Key considerations include the price ratio between the models, inference speed, and maintaining answer quality – with tests showing minimal impact on correctness and a reduction in hallucination rate.</li>
+<li>AWS Agent Registry provides a centralized, searchable catalog for agents, Model Context Protocol (MCP) servers, tools, and resources, utilizing registries and registry records.</li>
+<li>The Agent Registry supports curation workflows with approval settings, hybrid search (semantic and keyword-based), and flexible authorization via IAM or JWTs.</li>
+<li>ARD is an open standard (Apache 2.0 license, agenticresourcediscovery.org) designed to enable federation across registries, analogous to DNS, allowing discovery without requiring proprietary connectors.</li>
+<li>AWS envisions ARD complementing AWS Agent Registry by enabling federated discovery across environments while maintaining local control and potentially opening paths for public discovery.</li>
 </ul></div>
     
   </div>
   
   <div class="card">
     <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
+      <a href="mistral/" class="badge badge-mistral">Mistral AI</a>
       <span>blog</span>
-      <span> · 2026-08-21</span>
+      <span> · 2026-08-24</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/govern-ai-agent-tool-access-with-amazon-bedrock-agentcore-gateway/" target="_blank" rel="noopener">Govern AI agent tool access with Amazon Bedrock AgentCore Gateway</a></h2>
+    <h2><a href="https://mistral.ai/news/mistral-x-humain/" target="_blank" rel="noopener">Mistral x HUMAIN</a></h2>
     
-    <div class="summary"><p>Amazon Bedrock AgentCore introduces a governed gateway for managing AI agent access to internal tools, addressing concerns around credential sprawl, policy drift, and audit gaps.</p>
-<ul>
-<li><strong>AgentCore Gateway</strong> provides a single, secure entry point for agentic traffic, utilizing <strong>AgentCore Identity</strong> for authentication, authorization, and credential management, and <strong>AgentCore Policy</strong> for security controls.</li>
-<li>The solution proposes a four-scope maturity journey: <strong>Connect</strong> (basic SSO &amp; centralized credentials), <strong>Control</strong> (identity-aware authorization with Cedar RBAC/ABAC and <strong>Amazon Bedrock Guardrails</strong>), <strong>Catalog</strong> (tool discovery and publishing with <strong>AWS Agent Registry</strong>), and <strong>Harden</strong> (advanced security measures like private connectivity and failover).</li>
-<li><strong>Dynamic Client Registration (DCR)</strong> enables user-delegated access via OAuth 2.0, where clients receive dynamically added client IDs, enhancing security over machine-to-machine authentication.</li>
-<li><strong>Cedar Policies</strong> can be integrated with <strong>Amazon Bedrock Guardrails</strong> to apply PII filtering and content policies directly within the access control framework, leveraging conditions like <code>suppressOutput</code> or filtering via <code>when guardrails condition</code>.</li>
-</ul></div>
+    <div class="summary"><p>Mistral AI and HUMAIN have established a strategic collaboration to advance sovereign AI capabilities in Saudi Arabia and the wider Middle East. The partnership, valued in the hundreds of millions of Euros, focuses on three core areas: AI infrastructure, advanced model development, and the deployment of AI solutions—particularly in regulated industries. A key technical goal is the development of frontier models optimized for the Arabic language.</p>
+<p>The collaboration intends to leverage HUMAIN’s data center infrastructure to address growing compute demands. Both companies plan to create a shared go-to-market strategy within Saudi Arabia, with an emphasis on sectors like cybersecurity, manufacturing and finance, where data sovereignty, model customization, and operational control are critical. </p>
+<p>This alliance reflects the increasing demand for “sovereign AI,” defined as maintaining customer control over data, models, compute, and the AI development lifecycle. The companies explicitly highlight the use of open-weight models to allow for localized adaptation and innovation. Note forward-looking statements apply, and actual outcomes are subject to future commercial agreements and inherent business uncertainties.</p></div>
     
   </div>
   
@@ -377,20 +390,6 @@
     
   </div>
   
-  <div class="card">
-    <div class="meta">
-      <a href="mistral/" class="badge badge-mistral">Mistral AI</a>
-      <span>blog</span>
-      <span> · 2026-08-04</span>
-    </div>
-    <h2><a href="https://mistral.ai/news/shieldstral/" target="_blank" rel="noopener">Introducing Shieldstral.</a></h2>
-    
-    <div class="summary"><p>Mistral AI has released Shieldstral, a 3 billion parameter open-weights model designed for multimodal safety classification.  The core innovation is framing content moderation as a question-answering task, allowing users to define safety policies in plain language <em>at inference time</em> without requiring model retraining.  Shieldstral accepts a structured input consisting of an instruction, a yes/no query representing the safety policy, and the content to be evaluated (text, image, or both), then outputs a calibrated safety score.</p>
-<p>The model is designed to rival the performance of models up to seven times its size on text safety and achieves state-of-the-art results on multimodal moderation tasks.  It was trained on a combination of real and synthetically generated data and requires only a single 16GB NVIDIA GPU for operation.  Shieldstral is available under the Apache 2.0 license and was created utilizing Mistral’s Forge platform.  </p>
-<p>Key to Shieldstral's performance is its approach to data handling: unifying diverse datasets, teaching the model to discriminate between similar policies rather than memorizing labels, incorporating image data, and combining multiple fine-tuned checkpoints.</p></div>
-    
-  </div>
-  
   
 
   
@@ -400,17 +399,11 @@
     <div class="meta">
       <a href="techcrunch/" class="badge badge-techcrunch">TechCrunch</a>
       <span>news</span>
-      <span> · 2026-08-23</span>
+      <span> · 2026-08-25</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/08/23/is-it-legal-to-train-ai-models-on-copyrighted-books-its-complicated/" target="_blank" rel="noopener">Is it legal to train AI models on copyrighted books? It’s complicated</a></h2>
+    <h2><a href="https://techcrunch.com/2026/08/24/situational-awareness-star-ai-hedge-fund-that-nearly-imploded-now-being-probed-by-the-sec/" target="_blank" rel="noopener">Situational Awareness, star AI hedge fund that nearly imploded, now being probed by the SEC</a></h2>
     
-    <div class="summary"><p>The legal status of training AI models on copyrighted books is complex and currently being litigated.</p>
-<ul>
-<li>Judge William Alsup ruled Anthropic’s AI training was lawful, but penalized the company $1.5 billion for sourcing books from illegal online libraries.</li>
-<li>Current copyright law, dating back to 1976, is being applied to novel AI use cases, leading to inconsistent rulings based on “fair use” considerations.</li>
-<li>Courts are more likely to rule against AI training when it's used to directly compete with the original copyrighted work (as seen in <em>Thomson Reuters v. Ross Intelligence</em>).</li>
-<li>The courts have ruled that works created entirely by AI are not copyrightable, raising questions about authorship and ownership of AI-generated content.</li>
-</ul></div>
+    <div class="summary"><p>Situational Awareness, a hedge fund founded by former OpenAI employee Leopold Aschenbrenner, is currently under investigation by the SEC. The probe involves subpoenas issued to banks that supervised the fund’s trading and provided funding, according to reporting by <em>The New York Times</em>. This follows a significant loss of value in late July due to a downturn in AI stocks, erasing billions of dollars for the firm after a period of "phenomenal growth" related to AI investments. While no wrongdoing has been alleged, regulators have instructed banks to preserve information about the fund.</p></div>
     
   </div>
   
@@ -418,15 +411,15 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-08-21</span>
+      <span> · 2026-08-24</span>
     </div>
-    <h2><a href="https://arstechnica.com/tech-policy/2026/08/meta-ai-glasses-may-get-creepier-and-apps-that-detect-them-arent-perfect/" target="_blank" rel="noopener">As demand for Meta AI glasses explodes, it’s harder to avoid creepy recordings</a></h2>
+    <h2><a href="https://arstechnica.com/tech-policy/2026/08/nvidia-senior-manager-linked-to-supermicro-scheme-smuggling-ai-servers-to-china/" target="_blank" rel="noopener">Nvidia senior manager linked to Supermicro scheme smuggling AI servers to China</a></h2>
     
     <div class="summary"><ul>
-<li>Meta’s AI glasses are experiencing increased demand, leading to concerns over non-consensual recording and prompting bans in some locations like schools and DEF CON 26.</li>
-<li>The Electronic Frontier Foundation (EFF) warns that Meta may add invasive features like facial recognition without adequate privacy safeguards, potentially enabling deepfakes or non-consensual imagery.</li>
-<li>Developers are creating apps—Nearby Glasses, Antizuck Smart Glasses Scanner, and Zuckoff—to detect nearby Ray-Ban Meta, Oakley Meta, and Snap Spectacles via Bluetooth signals. These apps are not foolproof and cannot confirm active recording.</li>
-<li>Meta is reportedly developing “super sensing” glasses with continuous recording capabilities and may not activate the recording indicator LED during use, raising further privacy concerns; the company recently removed a facial recognition system quietly installed on 50 million phones.</li>
+<li>Taiwan has indicted nine people, including a reportedly senior Nvidia manager and two Supermicro employees, for allegedly forging documents to illegally export AI servers to China, violating US export controls implemented since 2022.</li>
+<li>The scheme involved attempts to falsely report 130 B300 servers as installed in Taiwan, while 74 were ultimately exported to Chinese customers and 56 were intercepted by customs officials.</li>
+<li>Nvidia CEO Jensen Huang previously urged Supermicro to “fix” compliance issues in May, and Supermicro has since confirmed internal investigations and employee terminations related to the scheme.</li>
+<li>The US is considering the Remote Access Security Act (RASA) to potentially block China's remote access to Nvidia chips and servers via cloud data centers, as remote access is cited as a key factor in the advancement of Chinese AI models.</li>
 </ul></div>
     
   </div>
