@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-08-25T10:16:39.889184+00:00">Generated 2026-08-25 10:16 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-08-26T10:23:23.949262+00:00">Generated 2026-08-26 10:23 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,7 +132,7 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — since 2026-08-24</h2>
+    <h2 class="overview-heading">Today in AI — Overview for 2026-08-25</h2>
     <p class="overview-meta">2026-08-25 · 7 vendor sources · vendor sources only</p>
     <div class="overview-text"><p>Recent activity across several AI labs and Amazon Web Services points to a significant push toward streamlining AI workflows and democratizing access to powerful models, with a strong emphasis on enterprise use cases. The most consequential development is the unveiling of Agentic Resource Discovery (ARD) by AWS. This open specification, licensed under Apache 2.0, aims to establish a universal system for discovering AI agents and resources across different environments—essentially creating a “DNS” for AI. This has the potential to dramatically improve interoperability and reduce vendor lock-in, allowing for a more federated and versatile AI landscape. Alongside ARD, AWS launched several enhancements to SageMaker HyperPod, significantly simplifying Ray integration and adding observability features crucial for managing complex distributed training and serving workloads.</p>
 <p>Alongside infrastructure improvements, there's a clear trend toward applying AI to internal processes and knowledge management. Anthropic demonstrated a compelling internal use case with Claude Code automating personalized updates for their sales teams—highlighting the efficiency gains achievable through prompt engineering and automation. AWS is similarly focused on this with a new system for AI-powered knowledge management, utilizing Amazon Bedrock Knowledge Bases and Amazon Titan embeddings to create an intelligent, voice-driven avatar interface for accessing institutional knowledge, designed for ease of use and cost efficiency. Further on this theme, AWS showcased an AI-powered metadata solution leveraging LLMs for correction and harmonization, addressing critical challenges in data management at scale.</p>
@@ -149,13 +149,12 @@
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>blog</span>
-      <span> · 2026-08-24</span>
+      <span> · 2026-08-25</span>
     </div>
-    <h2><a href="https://claude.com/blog/how-an-anthropic-field-marketer-uses-claude-code-to-send-weekly-personalized-updates-to-every-sales-rep" target="_blank" rel="noopener">How an Anthropic field marketer uses Claude Code to send weekly personalized updates to every sales rep | Claude by Anthropic</a></h2>
+    <h2><a href="https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it" target="_blank" rel="noopener">Claude&#39;s memory works everywhere, and you decide what&#39;s in it | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>Anthropic’s marketing team used <strong>Claude Code</strong> to automate the creation of weekly, personalized Slack briefings for their sales representatives. The system connects to <strong>BigQuery</strong> (housing data from HubSpot, Clay, and Salesforce) via the Model Callbacks Platform (MCP) to pull relevant information based on each rep’s territory and accounts. </p>
-<p>The process began by providing Claude with example updates and defining the desired format – a “top three things for the week” list focusing on actionable items like events or content.  The key to success was iterative prompt engineering, driven by direct user feedback; rules were added to the prompt (now at nine) to address issues like fabricated URLs and irrelevant event suggestions. </p>
-<p>The resulting system now delivers tailored updates including priority actions, events, webinar registrations, relevant content, and even customized messaging for new sales reps, freeing up the marketer's time and demonstrably increasing event registrations. The initial prompt was successfully duplicated for BDRs, Customer Success, and Alliance teams with minimal modification.</p></div>
+    <div class="summary"><p>Anthropic has unified the memory function across Claude chat and Claude Cowork. This means a single memory persists between the two interfaces—context established in chat is immediately available in Cowork, and vice versa—reducing the need for repeated explanations. Claude now updates memory <em>during</em> conversations, reacting to new information immediately, rather than summarizing and storing it after a chat concludes.</p>
+<p>Users can view and edit their saved memories as a list of topic-based files within the settings, enabling quick corrections to persistent data (like a company name change). By default, Claude does not store memories about sensitive topics (health, religion, politics, etc.), but a user-controlled setting allows inclusion of these, with notification each time a sensitive topic is saved.  Information like SSNs or criminal history is explicitly excluded, even with the sensitive topics setting enabled. The feature is available on Free, Pro, and Max plans, and is controllable by administrators for Team and Enterprise accounts.</p></div>
     
   </div>
   
@@ -163,27 +162,45 @@
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>blog</span>
-      <span> · 2026-08-21</span>
+      <span> · 2026-08-25</span>
     </div>
-    <h2><a href="https://claude.com/blog/the-ai-native-sdlc-playbook" target="_blank" rel="noopener">The AI-Native SDLC playbook | Claude by Anthropic</a></h2>
+    <h2><a href="https://claude.com/blog/bain-company-joins-the-claude-partner-network-as-a-global-premier-partner" target="_blank" rel="noopener">Bain &amp; Company joins the Claude Partner Network as a Global Premier partner | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>Anthropic’s blog post details how to transform the Software Development Lifecycle (SDLC) to fully leverage AI, specifically their Claude Code model. The core claim is that, with AI handling code generation, the bottleneck in development has shifted <em>away</em> from writing code itself and <em>toward</em> planning, review, testing, and deployment.  To address this, they propose an “AI-native SDLC” – a looped process embedding AI at each stage – replacing the traditional linear flow.</p>
-<p>This involves creating committed artifacts at each stage (like <code>intent.md</code> for initial ideas, <code>spec.md</code> for design, and <code>plan.md</code> for implementation plans) stored in version control, which then trigger the next phase.  They introduce "plays" – modular steps for integrating Claude into each SDLC stage – focusing on automated handoffs and continuous evaluation.  Key to this is using Claude to synthesize requirements from stakeholders into machine-readable formats, automating design tasks, generating code <em>with</em> integrated tests, and using AI-driven review layers alongside human oversight, particularly for critical or regulated code.  </p>
-<p>The post emphasizes institutional knowledge as code, through <code>CLAUDE.md</code> files that maintain project-specific context,  and "skills" – reusable, versioned instructions applied by Claude to enforce standards and policies. They also discuss leveraging hooks for deterministic guardrails and the use of parallel sessions and sub-agents to increase engineer throughput.</p></div>
+    <div class="summary"><p>Anthropic and Bain &amp; Company have formed a global partnership to accelerate enterprise AI deployments, with Bain joining the Claude Partner Network as a Global Premier partner. Bain has already rolled out Claude – specifically Claude.ai, Claude Cowork, Claude Code, Claude for Excel, and Claude for Microsoft 365 – to its entire workforce of 19,000 employees for both client work and internal use.</p>
+<p>Early adoption saw over 7,000 employees actively using Claude within weeks, with more than two-thirds of a pilot group adopting the Excel integration. Bain emphasizes that successful rollout requires enablement, training, and governance alongside access. Initial client engagements leveraging this partnership have reportedly yielded productivity gains of 30% to 50% when addressing complex legacy codebases lacking documentation.</p></div>
     
   </div>
   
   <div class="card">
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>blog</span>
-      <span> · 2026-08-21</span>
+      <span>news</span>
+      <span> · 2026-08-25</span>
     </div>
-    <h2><a href="https://claude.com/blog/bringing-claude-mythos-5-to-more-defenders" target="_blank" rel="noopener">Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders | Claude by Anthropic</a></h2>
+    <h2><a href="https://www.anthropic.com/news/wellbeing-research-grants" target="_blank" rel="noopener">Funding better evaluations of AI’s impact on wellbeing</a></h2>
     
-    <div class="summary"><p>Anthropic has expanded access to its most powerful model, Claude Mythos 5, for cybersecurity applications. Initially available through Project Glasswing, Mythos 5 is now integrated into both Claude Security – available to Claude Enterprise customers – and partners’ existing cyber defense tools. Claude Security scans codebases for vulnerabilities, providing CWE-categorized findings with severity ratings and suggested patches generated by Mythos 5, without directly exposing users to the model.</p>
-<p>To further bolster cybersecurity, Anthropic launched the $35 million Defender Advantage Fund (0xDAF) to support open-source security projects by funding vulnerability patching, automated scanning, and innovative security approaches. Simultaneously, the Cyber Verification Program is expanding to provide reduced safeguards and broader dual-use capabilities, including access to Mythos-class models, for vetted cyber defenders, while continuing the existing Project Glasswing collaboration with the U.S. Government. </p>
-<p>The core technical shift is enabling defensive use of a powerful model like Mythos 5 <em>without</em> exposing its offensive capabilities, by limiting user interaction to specific, pre-defined outputs – like vulnerability reports or patches – rather than direct prompting, and maintaining abuse prevention measures.</p></div>
+    <div class="summary"><p>Anthropic announced a $5 million grant program to fund independent research evaluating the impact of AI on user wellbeing. The program will offer direct funding, access to Anthropic’s models (specifically mentioning Claude), and technical support to grantees. Funded research will focus on building open-source evaluations and benchmarks, and results will be published as open-source projects.</p>
+<p>Anthropic acknowledges difficulties in evaluating wellbeing—unlike factual accuracy, assessment requires contextual understanding over multi-turn conversations, and a single response can be appropriate or harmful depending on user history. The company seeks evaluations that clearly define what they measure, involve clinical and subject-matter experts, test for both over- and under-caution, reflect realistic user interactions, and validate grading against human experts. </p>
+<p>Applications for the grant are due September 21, with selected applicants for full proposals notified by October 5. Anthropic also published guidance on building robust wellbeing evaluations. Related announcements include updates to Claude Fable 5’s biology safeguards to reduce “fallbacks” and the appointment of Mariano-Florentino (Tino) Cuéllar as Chief Global Affairs Officer.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="google/" class="badge badge-google">Google</a>
+      <span>blog</span>
+      <span> · 2026-08-25</span>
+    </div>
+    <h2><a href="https://blog.google/products-and-platforms/products/search/home-decor-tips/" target="_blank" rel="noopener">5 ways to upgrade your home decor with Google Search</a></h2>
+    
+    <div class="summary"><p>Google Search introduces several AI-powered features for home decor.</p>
+<ul>
+<li><strong>AI Mode in Search</strong> allows users to upload a photo of a room and receive AI-generated recommendations for furniture, visualizing how different items would look in the space.</li>
+<li><strong>Lens in Search</strong> enables users to identify and find similar products to vintage items they encounter using their camera.</li>
+<li><strong>Circle to Search</strong> (available on Pixel and Samsung Galaxy S26 devices) allows users to circle items in images or videos (like wallpaper) to find similar options online.</li>
+<li><strong>Search Live</strong> provides step-by-step video guidance for DIY projects, responding to user questions and visual input from the camera feed.</li>
+<li>Price tracking and history features are integrated into product listings to help users find the best deals.</li>
+</ul></div>
     
   </div>
   
@@ -225,18 +242,17 @@
   
   <div class="card">
     <div class="meta">
-      <a href="google/" class="badge badge-google">Google</a>
+      <a href="microsoft/" class="badge badge-microsoft">Microsoft</a>
       <span>blog</span>
-      <span> · 2026-08-17</span>
+      <span> · 2026-08-25</span>
     </div>
-    <h2><a href="https://blog.google/products-and-platforms/products/gemini/google-gemini-pixel-football-club-partnerships/" target="_blank" rel="noopener">Get closer to the game with Gemini and Pixel</a></h2>
+    <h2><a href="https://azure.microsoft.com/en-us/blog/the-patch-window-is-collapsing-why-security-needs-a-new-control-plane/" target="_blank" rel="noopener">The patch window is collapsing: Why security needs a new control plane</a></h2>
     
-    <div class="summary"><p>Google is integrating Gemini and Pixel technologies with five major football clubs (Arsenal, Barcelona, Bayern Munich, Liverpool, and PSG).</p>
-<ul>
-<li>Gemini will function as a football "personal assistant," providing in-depth match insights, stats, and head-to-head history via its agentic capabilities.</li>
-<li>Pixel 11 devices will be used by club media teams to capture behind-the-scenes content using the "Shot on Pixel" series and AI-powered camera tools.</li>
-<li>Official club wallpapers are available for customization on Pixel 11 devices.</li>
-<li>The partnerships specifically aim to increase visibility for women’s football teams by providing equal coverage alongside men’s teams.</li>
+    <div class="summary"><ul>
+<li>Microsoft details a shift in cybersecurity necessitated by a “collapsed patch window,” where the time between vulnerability disclosure and exploitation is shrinking due to rapid dissemination of exploits and the complexity of modern enterprise environments.</li>
+<li>The article highlights the increasing role of AI in accelerating both offensive and defensive security operations, compressing the timeline for exploitation and requiring faster responses than traditional patching allows.</li>
+<li>Microsoft proposes leveraging the network as a faster “control plane” for security, enabling restrictions on access, limiting attack paths, and segmenting risky assets <em>before</em> patches can be fully deployed. This includes context-aware enforcement beyond simple IP/port blocking.</li>
+<li>The core strategy focuses on “adaptive security” – using AI to understand vulnerabilities within specific environments and automatically adjust protections, moving beyond static rules to continuous risk management and exposure reduction.</li>
 </ul></div>
     
   </div>
@@ -279,18 +295,35 @@
   
   <div class="card">
     <div class="meta">
-      <a href="microsoft/" class="badge badge-microsoft">Microsoft</a>
-      <span>news</span>
-      <span> · 2026-08-10</span>
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
+      <span> · 2026-08-25</span>
     </div>
-    <h2><a href="https://news.microsoft.com/signal/articles/how-to-build-an-ai-agent-guide/" target="_blank" rel="noopener">How to build an AI agent: A simple guide for anyone</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/governed-reports-with-amazon-quick-desktop-and-amazon-fsx-for-netapp-ontap/" target="_blank" rel="noopener">Governed reports with Amazon Quick Desktop and Amazon FSx for NetApp ONTAP</a></h2>
     
-    <div class="summary"><p>Microsoft details how to build AI agents using Microsoft 365 Copilot.</p>
+    <div class="summary"><ul>
+<li>Amazon Quick Desktop introduces AI-assisted reporting capabilities for files managed on Amazon FSx for NetApp ONTAP (FSx for ONTAP).</li>
+<li>A new “skill”, Weekly Business Reporting Assistant, automates the creation of reports by connecting governed files to a guided reporting experience, requiring human review before sharing.</li>
+<li>Amazon S3 access points are used to grant Amazon Quick controlled, read-only access to specific folders within FSx for ONTAP, leveraging existing storage and access controls.</li>
+<li>The solution requires FSx for ONTAP version 9.17.1 or later and an Amazon Quick Enterprise subscription to create knowledge bases and integrations with services like Slack.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
+      <span> · 2026-08-25</span>
+    </div>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/agentic-observability-with-amazon-opensearch-service-mcp-apps/" target="_blank" rel="noopener">Agentic observability with Amazon OpenSearch Service MCP Apps</a></h2>
+    
+    <div class="summary"><p>Amazon OpenSearch Service now supports MCP Apps, extending the Model Context Protocol (MCP) to deliver interactive visualizations – trace waterfalls, service maps, log views – directly within AI assistant chat windows.</p>
 <ul>
-<li>Users can build agents without code, starting by defining the problem the agent will solve, rather than focusing on the technology itself.</li>
-<li>Microsoft 365 Copilot allows users to create a new agent via the "Agents" section, where the Copilot will generate a draft based on plain language descriptions.</li>
-<li>Agents can be refined through instructions defining behavior, tone, and tasks, and can be connected to data sources like emails, documents, and SharePoint sites.</li>
-<li>The article provides examples of agents automating tasks like status report creation, email triage, and weekly report generation, and emphasizes iterative testing and refinement.</li>
+<li>MCP Apps enable a dual response pattern: text summaries <em>and</em> interactive visualizations are returned in response to tool calls.</li>
+<li>The visualizations are generated by executing code against existing data sources (OpenSearch domains, serverless collections, Amazon Managed Service for Prometheus), ensuring deterministic results.</li>
+<li>A local MCP server acts as a secure bridge between the IDE and the OpenSearch UI application, utilizing existing AWS credentials and policies.</li>
+<li>Available tools cover investigation stages including triage, log analysis, trace investigation, metric analysis, and topology mapping, with specialized tools for AI/LLM observability and stack health.</li>
 </ul></div>
     
   </div>
@@ -309,41 +342,6 @@
 <li>Schema alignment utilizes LLMs to semantically understand metadata, handling synonyms, misspellings and complex relationships beyond simple string matching.</li>
 <li>Metadata field validation employs a tiered approach: required field checks, enumerated value validation against controlled vocabularies, pattern matching with regular expressions, and LLM-based resolution as a fallback.</li>
 <li>Recommendations combine NLP, embedding-based similarity (using Amazon Titan), contextual inference (k-nearest neighbors with TF-IDF and PMI), fuzzy matching, and LLM resolution to balance accuracy, scalability, and cost.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-08-24</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/building-a-restaurant-telephony-ai-host-with-amazon-connect/" target="_blank" rel="noopener">Building a restaurant telephony AI host with Amazon Connect</a></h2>
-    
-    <div class="summary"><ul>
-<li>This blog details building a voice-based restaurant ordering system using Amazon Connect, leveraging AI to handle calls from greeting to order confirmation.</li>
-<li>The system uses Amazon Connect Agentic Voice (Advanced ASR and TTS) for real-time speech recognition and synthesis, orchestrated by an Amazon Connect AI agent powered by Anthropic Claude Haiku 4.5 in Amazon Bedrock.</li>
-<li>Backend services are connected via the Model Context Protocol (MCP) through AgentCore Gateway, enabling modularity and allowing backend changes without impacting the AI agent logic.</li>
-<li>The solution utilizes AWS CDK for deployment, encompassing Amazon Connect, Lex V2, Agentic Voice, AI Agents, Guardrails, AgentCore Gateway, API Gateway, Lambda, DynamoDB, and Location Service.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-08-24</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/agentic-resource-discovery-ard-an-open-specification-for-agent-discovery/" target="_blank" rel="noopener">Agentic Resource Discovery (ARD): An open specification for agent discovery</a></h2>
-    
-    <div class="summary"><p>AWS introduces Agentic Resource Discovery (ARD), an open specification for cross-environment agent discovery.</p>
-<ul>
-<li>AWS Agent Registry provides a centralized, searchable catalog for agents, Model Context Protocol (MCP) servers, tools, and resources, utilizing registries and registry records.</li>
-<li>The Agent Registry supports curation workflows with approval settings, hybrid search (semantic and keyword-based), and flexible authorization via IAM or JWTs.</li>
-<li>ARD is an open standard (Apache 2.0 license, agenticresourcediscovery.org) designed to enable federation across registries, analogous to DNS, allowing discovery without requiring proprietary connectors.</li>
-<li>AWS envisions ARD complementing AWS Agent Registry by enabling federated discovery across environments while maintaining local control and potentially opening paths for public discovery.</li>
 </ul></div>
     
   </div>
@@ -399,11 +397,17 @@
     <div class="meta">
       <a href="techcrunch/" class="badge badge-techcrunch">TechCrunch</a>
       <span>news</span>
-      <span> · 2026-08-25</span>
+      <span> · 2026-08-26</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/08/24/situational-awareness-star-ai-hedge-fund-that-nearly-imploded-now-being-probed-by-the-sec/" target="_blank" rel="noopener">Situational Awareness, star AI hedge fund that nearly imploded, now being probed by the SEC</a></h2>
+    <h2><a href="https://techcrunch.com/2026/08/25/openai-loses-a-top-data-center-exec-as-stream-of-high-profile-departures-continues/" target="_blank" rel="noopener">OpenAI loses a top data center exec as stream of high-profile departures continues</a></h2>
     
-    <div class="summary"><p>Situational Awareness, a hedge fund founded by former OpenAI employee Leopold Aschenbrenner, is currently under investigation by the SEC. The probe involves subpoenas issued to banks that supervised the fund’s trading and provided funding, according to reporting by <em>The New York Times</em>. This follows a significant loss of value in late July due to a downturn in AI stocks, erasing billions of dollars for the firm after a period of "phenomenal growth" related to AI investments. While no wrongdoing has been alleged, regulators have instructed banks to preserve information about the fund.</p></div>
+    <div class="summary"><p>OpenAI has experienced a series of executive departures, including the head of data centers.</p>
+<ul>
+<li>Chris Malone, former head of data centers, left OpenAI after a roughly one-year tenure, having previously worked at Meta and Google.</li>
+<li>Malone’s departure coincides with a reorganization of OpenAI’s infrastructure organization, where he began reporting to Sachin Katti instead of Greg Brockman.</li>
+<li>OpenAI is a key partner in the $500 million Stargate Project, focused on developing U.S. data centers.</li>
+<li>Thirteen executive departures have been reported in 2026, including the chief revenue officer, chief operating officer, and head of ethics, raising questions about the company’s stability as it prepares for a potential 2027 IPO.</li>
+</ul></div>
     
   </div>
   
@@ -411,15 +415,16 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-08-24</span>
+      <span> · 2026-08-25</span>
     </div>
-    <h2><a href="https://arstechnica.com/tech-policy/2026/08/nvidia-senior-manager-linked-to-supermicro-scheme-smuggling-ai-servers-to-china/" target="_blank" rel="noopener">Nvidia senior manager linked to Supermicro scheme smuggling AI servers to China</a></h2>
+    <h2><a href="https://arstechnica.com/apple/2026/08/with-new-mac-studio-and-mac-mini-apple-leans-hard-into-local-ai-inference/" target="_blank" rel="noopener">Apple&#39;s new desktop computers are designed specifically for local AI development</a></h2>
     
-    <div class="summary"><ul>
-<li>Taiwan has indicted nine people, including a reportedly senior Nvidia manager and two Supermicro employees, for allegedly forging documents to illegally export AI servers to China, violating US export controls implemented since 2022.</li>
-<li>The scheme involved attempts to falsely report 130 B300 servers as installed in Taiwan, while 74 were ultimately exported to Chinese customers and 56 were intercepted by customs officials.</li>
-<li>Nvidia CEO Jensen Huang previously urged Supermicro to “fix” compliance issues in May, and Supermicro has since confirmed internal investigations and employee terminations related to the scheme.</li>
-<li>The US is considering the Remote Access Security Act (RASA) to potentially block China's remote access to Nvidia chips and servers via cloud data centers, as remote access is cited as a key factor in the advancement of Chinese AI models.</li>
+    <div class="summary"><p>Apple announced updates to the Mac mini and Mac Studio, positioning them for local AI development.</p>
+<ul>
+<li>The new chips are the M6 (Apple’s first 2nm chip) featuring a 12-core CPU (two “super cores”, four performance cores, and six efficiency cores) and a 12-core GPU, and the M5 Ultra, built from two M5 Maxes with 36 CPU cores and 80 GPU cores.</li>
+<li>Apple claims the M6 offers up to 40% faster multi-threaded CPU performance compared to the M4, and the M5 Ultra achieves up to 1.2TB/s unified memory bandwidth.</li>
+<li>macOS 26.2 enabled “low-latency communication between Thunderbolt 5 hosts” for distributed AI inference using MLX, an open source array framework.</li>
+<li>The Mac mini with M6 starts at $899, the Mac mini with M5 Pro starts at $1,699, the Mac Studio with M5 Max starts at $2,499, and the Mac Studio with M5 Ultra starts at $5,499; shipping begins September 22 (512GB Studio config in late October).</li>
 </ul></div>
     
   </div>
