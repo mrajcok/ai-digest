@@ -80,13 +80,68 @@
     </label>
   </div>
   <h1>Anthropic News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-08-26 10:23 UTC</p>
+  <p class="generated-at">Generated 2026-08-27 10:19 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">August 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-08-26</span>
+    </div>
+    <h3><a href="https://claude.com/blog/how-warp-builds-self-improving-agents-on-claude" target="_blank" rel="noopener">How Warp builds self-improving agents on Claude | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Warp has developed a self-improvement loop for agents built on the Claude Platform, utilizing a “skills”-based framework. Skills are file-based encodings of knowledge, keeping instructions separate from the prompt itself. This system employs two primary skills: a “base skill” containing domain knowledge for a specific task (like code review), and an “improver skill” that periodically analyzes human feedback on the base skill’s output. </p>
+<p>The process involves capturing human feedback – ideally detailed explanations, not just simple approvals – and using the improver skill to propose small, focused edits to the base skill. These edits are submitted as pull requests, allowing for review and approval before being merged, thus continuously refining the agent’s performance. Warp has deployed this pattern across its open-source repo, for tasks like issue triage and spec writing.</p>
+<p>Key recommendations from Warp include writing skills as guiding principles rather than rigid rules, explaining the rationale behind them, minimizing friction for providing feedback, and prioritizing quality feedback over quantity. They emphasize the reusability of the “improver skill” across different agent applications and the importance of maintaining human oversight in the loop.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-08-26</span>
+    </div>
+    <h3><a href="https://claude.com/blog/cowork-built-in-browser" target="_blank" rel="noopener">Claude Cowork gets a built-in browser: nothing to install | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic has added a built-in browser to Claude Cowork within the desktop application, eliminating the need for extensions. This allows Claude to independently navigate websites, read content, and complete forms directly within the interface—handling tasks like data extraction or form filling without accessing the user’s existing browser profile. The browser is isolated; it does not share tabs, bookmarks, or passwords, though users can selectively import logins from Chrome, Edge, or Firefox. </p>
+<p>The built-in browser is initially rolling out to Pro, Max, and Team plan users, with Enterprise admins gaining control via Organization settings as of today. A key distinction is made between the new browser and the existing "Claude in Chrome" extension: the built-in browser tackles new web tasks while the extension works with already-authenticated sessions. Users can switch their preferred method in settings.</p>
+<p>The new capability includes existing safety measures to mitigate prompt injection attacks, but Anthropic recommends beginning with trusted websites. The built-in browser is currently in beta on macOS, Windows and Linux desktop apps. Availability on the web or mobile devices requires an active desktop application.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-08-26</span>
+    </div>
+    <h3><a href="https://claude.com/blog/claude-in-chrome-generally-available" target="_blank" rel="noopener">Claude in Chrome is generally available | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic has generally released Claude in Chrome for all paid plans, enabling the model to interact directly with webpages. This allows Claude to perform actions within the browser – reading, typing, clicking, form filling – without requiring manual approval for each step, though a safety classifier validates actions before execution. </p>
+<p>A core focus of this release is improved resilience against prompt injection attacks, where malicious instructions are hidden within web content. Anthropic has expanded its training datasets and implemented probes to scan web content, as well as a safety classifier to verify actions against the user’s original request. Testing shows Claude Fable 5, Opus 5, and Sonnet 5 successfully resisted attacks in their Cowork harness, with a 0.3% success rate for Fable 5 when using stronger, professionally sourced attacks. </p>
+<p>The feature is available as a Chrome Web Store extension and is manageable within Organization Settings for Enterprise plans. It currently does not support other Chromium browsers or mobile devices.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>research</span>
+      <span> · 2026-08-26</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/research/enabling-independent-research" target="_blank" rel="noopener">Enabling independent research on how people use Claude</a></h3>
+    
+    <div class="summary"><p>Anthropic piloted a program granting three external research groups—Stanford’s SALT Lab, Oxford’s Human Information Processing Lab, and the non-profit METR—independent access to analyze roughly 250,000 Claude.ai and Claude Code conversations from April-May 2026 via Anthropic Insights, a privacy-preserving tool. The goal was to enable research on real-world AI usage, addressing the limitations of lab-internal studies and public datasets. The SALT Lab found people delegate consequential tasks to Claude more often than previously thought, typically directing and adapting its output, and that friction during collaboration can improve results. </p>
+<p>The Human Information Processing Lab observed a link between Claude’s behavior and user sentiment, finding patterns similar to those on the broader web. METR’s ongoing work suggests newer Claude models yield greater productivity gains for coders and reliably estimate task completion times. Anthropic emphasizes this is the first time external researchers have independently studied an AI company’s usage data, noting the program’s complexity and resource intensity as challenges for future scaling. The full datasets and detailed findings are publicly available.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -441,60 +496,6 @@
     <div class="summary"><p>Anthropic has made Auto mode the default setting in Claude Code. This feature balances speed and safety by using a classifier to evaluate each action an agent attempts, blocking potentially harmful commands instead of requiring constant human approval. Internal testing shows the classifier surpasses developers in identifying dangerous actions, and it allows Claude Code sessions to run nine times longer without interruption.</p>
 <p>Companies like Nuro, Gusto, and Garner Health are leveraging Auto mode in production. Nuro uses it for long-running agents that autonomously improve their autonomous driving stack, even running tasks overnight. Gusto’s engineers saw a reduction in permission fatigue while maintaining security, and Garner Health integrated it into a standardized software development lifecycle for all 550 employees. </p>
 <p>While Auto mode offers increased efficiency, it's not unrestricted. Companies are using skills and denying dangerous commands outright, and some still revert to interactive mode for sensitive tasks like production infrastructure changes. The core technical improvement is a classifier that intelligently manages agent autonomy based on risk, enabling longer, more productive coding sessions.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-08-07</span>
-    </div>
-    <h3><a href="https://claude.com/blog/auto-mode-default-in-claude-code" target="_blank" rel="noopener">Auto mode is now the default in Claude Code for Pro, Max, and Team plans | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic is making “auto mode” the default for Claude Code on Pro, Max, and Team plans starting August 14, 2026. This mode automatically approves most tool calls, using a classifier to block potentially harmful actions—like irreversible changes or actions outside the defined environment—rather than prompting the user for every permission. Testing, including a study with 1,053 users, showed auto mode matched or outperformed manual review in safety, blocking 89% of dangerous commands compared to 13.6% blocked by human review.</p>
-<p>The classifier introduces minimal token overhead, which Anthropic is no longer charging for. Auto mode also enables longer, uninterrupted autonomous workflows; teams at Adobe, Nuro, Gusto, and Garner Health are already using it in production, reporting a 25% increase in PRs shipped. While auto mode is currently opt-in for Enterprise users, it will roll out to them in the coming month, and customizable “hard deny” rules have been added for enhanced security, specifically for data exfiltration.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Anthropic</span> · 
-      <span>news</span>
-      <span> · 2026-08-07</span>
-    </div>
-    <h3><a href="https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards" target="_blank" rel="noopener">Improving Fable 5 Safeguards</a></h3>
-    
-    <div class="summary"><p>Anthropic has released updates to Claude Fable 5’s biology safeguards, substantially reducing false positives—instances where the system unnecessarily switches to the less capable Opus 5 model. Testing indicates an 85% reduction in biology-related fallbacks across Anthropic’s product surfaces including Claude.ai, Cowork, Code and the platform. This means Fable 5 will be able to handle a wider range of biology-related tasks, like interpreting lab results and learning about biological concepts.</p>
-<p>These improvements stem from a re-written classifier constitution, coupled with updated training data and expert feedback, aiming to better distinguish between benign and harmful biology queries. While Fable 5 will still block requests deemed “dual-use”—particularly in areas like virology, toxicology, and molecular design—the update intends to allow more legitimate biological inquiry. Anthropic reports overall fallbacks are expected to decrease by 67% on Claude.ai, 55% on Cowork, 17% on Claude Code, and 7% on the Claude Platform. </p>
-<p>Anthropic emphasizes the potential for both positive impact and misuse in biology, making caution paramount and outlining ongoing commitments to develop trusted access pathways for responsible frontier biology research.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-08-06</span>
-    </div>
-    <h3><a href="https://claude.com/blog/run-claude-code-sessions-on-your-own-compute" target="_blank" rel="noopener">Self-hosted environments for Claude Code | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic now offers self-hosted environments for running Claude Code sessions, currently in public beta for Claude Team and Enterprise plan customers (excluding those using Zero Data Residency, or ZDR). This allows organizations to execute Claude Code within their own infrastructure, maintaining control over network access, customization, and compliance. Sessions can be initiated from web, mobile, desktop, or existing routines.</p>
-<p>The core feature involves deploying “runners” – long-lived processes that execute Claude Code sessions. These come in two modes: "fixed," maintaining a constant number of runners, and “on-demand,” which dynamically scales runner capacity based on queued sessions. Importantly, while prompts, responses, and tool results are sent to Anthropic for inference and transcript storage, all repository checkouts, build artifacts, and secrets remain within the customer's infrastructure. This differs from the Remote Control feature, which ties sessions to a specific user’s machine and terminates when that machine stops running. </p>
-<p>Organizations considering self-hosting should anticipate the need for dedicated platform or developer experience engineering teams to manage setup, maintenance, and runner image updates. Anthropic provides documentation and requests feedback via GitHub or account teams.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-08-06</span>
-    </div>
-    <h3><a href="https://claude.com/blog/millennium-and-anthropic-are-building-a-digital-risk-analyst-with-claude" target="_blank" rel="noopener">Millennium and Anthropic are building a digital risk analyst with Claude  | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic is collaborating with Millennium Management to develop a digital risk analyst powered by the Claude and Claude Code models. This AI tool aims to augment, not replace, human risk managers by surfacing new risk insights and providing opinions on exposure across various asset classes. The system is designed to retain and recall information over time, enabling it to explain daily risk changes and apply learned reasoning to new questions. </p>
-<p>Millennium is leveraging its proprietary data alongside Claude’s intelligence, with the AI operating within a secure and auditable framework – logging reasoning, using sandboxed environments, and requiring human approval for decisions. The firm’s internal AI lab is also pressure-testing Anthropic's latest Claude models against real-world use cases, and currently leverages both Claude and Claude Code for tasks across its 340+ investment teams, including code writing and workflow improvement. The goal is to deliver automated recommendations and save time for risk managers.</p></div>
     
   </div>
   

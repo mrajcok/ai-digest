@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-08-26T10:23:23.949262+00:00">Generated 2026-08-26 10:23 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-08-27T10:19:59.046919+00:00">Generated 2026-08-27 10:19 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,11 +132,12 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — Overview for 2026-08-25</h2>
-    <p class="overview-meta">2026-08-25 · 7 vendor sources · vendor sources only</p>
-    <div class="overview-text"><p>Recent activity across several AI labs and Amazon Web Services points to a significant push toward streamlining AI workflows and democratizing access to powerful models, with a strong emphasis on enterprise use cases. The most consequential development is the unveiling of Agentic Resource Discovery (ARD) by AWS. This open specification, licensed under Apache 2.0, aims to establish a universal system for discovering AI agents and resources across different environments—essentially creating a “DNS” for AI. This has the potential to dramatically improve interoperability and reduce vendor lock-in, allowing for a more federated and versatile AI landscape. Alongside ARD, AWS launched several enhancements to SageMaker HyperPod, significantly simplifying Ray integration and adding observability features crucial for managing complex distributed training and serving workloads.</p>
-<p>Alongside infrastructure improvements, there's a clear trend toward applying AI to internal processes and knowledge management. Anthropic demonstrated a compelling internal use case with Claude Code automating personalized updates for their sales teams—highlighting the efficiency gains achievable through prompt engineering and automation. AWS is similarly focused on this with a new system for AI-powered knowledge management, utilizing Amazon Bedrock Knowledge Bases and Amazon Titan embeddings to create an intelligent, voice-driven avatar interface for accessing institutional knowledge, designed for ease of use and cost efficiency. Further on this theme, AWS showcased an AI-powered metadata solution leveraging LLMs for correction and harmonization, addressing critical challenges in data management at scale.</p>
-<p>Several announcements focused on specific applications of AI built on AWS services. A solution for automating restaurant telephony, powered by Anthropic’s Claude Haiku, demonstrates the potential for practical AI agents in customer service. Finally, a significant strategic partnership was announced between Mistral AI and HUMAIN to expand sovereign AI capabilities within Saudi Arabia and the Middle East, prioritizing development of Arabic language models and localized control over data and compute. This indicates a growing global demand for AI solutions tailored to specific regional needs and regulatory requirements, with an emphasis on open-weight models for greater customization.</p></div>
+    <h2 class="overview-heading">Today in AI — since 2026-08-26</h2>
+    <p class="overview-meta">2026-08-27 · 13 vendor sources · vendor sources only</p>
+    <div class="overview-text"><p>Recent advancements across multiple AI labs are focused on improving agent capabilities, especially around web interaction, data handling, and cost optimization. A significant development is Anthropic's expanded efforts to allow external research into Claude's usage data, granting access to roughly 250,000 conversations to Stanford, Oxford, and METR through Anthropic Insights. Preliminary findings suggest users delegate complex tasks to Claude more often than anticipated, and actively refine its output through iterative collaboration. This initiative marks a pivotal step towards open research within the typically closed environment of AI model usage, although scaling this kind of access presents substantial challenges.</p>
+<p>The focus on agents that can interact with the real world is evident in Anthropic's general availability of Claude in Chrome and release of a built-in browser for Claude Cowork. Both features enable Claude to navigate webpages, complete forms, and perform actions directly within a browser environment, improving automation and usability. Anthropic has prioritized robust defenses against prompt injection attacks through dataset expansion, content scanning, and safety classifiers, achieving a 0.3% success rate with professionally sourced attacks on Claude Fable 5. Warp is also refining agent workflows by implementing a self-improvement loop centered around 'skills’— modular, file-based knowledge encodings— coupled with human feedback, ultimately improving agent performance through pull request-based contributions. </p>
+<p>AWS is concentrating on agent infrastructure and tooling. Amazon Bedrock AgentCore Evaluations provides a standardized way to assess performance across different agent frameworks using OpenTelemetry. Natera successfully deployed Bedrock AgentCore to rebuild its appointment scheduling agent, dramatically improving accuracy and achieving sub-7-second latency through event-driven masking. Further, AWS is enabling cross-account knowledge base access for AgentCore agents via Redshift Serverless, and introducing SageMaker AI Script mode to streamline bringing-your-own-model workflows. Google, meanwhile, released Gemini 3.5 Transcribe, achieving significantly improved speech-to-text accuracy (4.0% WER streaming, 2.6% non-streaming) and integrating the technology across its product suite.</p>
+<p>Finally, cost considerations are becoming increasingly important. Microsoft is addressing agent economics with strategies including dynamic model routing, extensive caching mechanisms, and automated prompt and agent optimization tools provided through Microsoft Foundry. These tools, alongside robust observability features, aim to deliver demonstrable ROI from AI agent implementations.</p></div>
   </section>
   
 
@@ -149,12 +150,13 @@
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>blog</span>
-      <span> · 2026-08-25</span>
+      <span> · 2026-08-26</span>
     </div>
-    <h2><a href="https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it" target="_blank" rel="noopener">Claude&#39;s memory works everywhere, and you decide what&#39;s in it | Claude by Anthropic</a></h2>
+    <h2><a href="https://claude.com/blog/how-warp-builds-self-improving-agents-on-claude" target="_blank" rel="noopener">How Warp builds self-improving agents on Claude | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>Anthropic has unified the memory function across Claude chat and Claude Cowork. This means a single memory persists between the two interfaces—context established in chat is immediately available in Cowork, and vice versa—reducing the need for repeated explanations. Claude now updates memory <em>during</em> conversations, reacting to new information immediately, rather than summarizing and storing it after a chat concludes.</p>
-<p>Users can view and edit their saved memories as a list of topic-based files within the settings, enabling quick corrections to persistent data (like a company name change). By default, Claude does not store memories about sensitive topics (health, religion, politics, etc.), but a user-controlled setting allows inclusion of these, with notification each time a sensitive topic is saved.  Information like SSNs or criminal history is explicitly excluded, even with the sensitive topics setting enabled. The feature is available on Free, Pro, and Max plans, and is controllable by administrators for Team and Enterprise accounts.</p></div>
+    <div class="summary"><p>Warp has developed a self-improvement loop for agents built on the Claude Platform, utilizing a “skills”-based framework. Skills are file-based encodings of knowledge, keeping instructions separate from the prompt itself. This system employs two primary skills: a “base skill” containing domain knowledge for a specific task (like code review), and an “improver skill” that periodically analyzes human feedback on the base skill’s output. </p>
+<p>The process involves capturing human feedback – ideally detailed explanations, not just simple approvals – and using the improver skill to propose small, focused edits to the base skill. These edits are submitted as pull requests, allowing for review and approval before being merged, thus continuously refining the agent’s performance. Warp has deployed this pattern across its open-source repo, for tasks like issue triage and spec writing.</p>
+<p>Key recommendations from Warp include writing skills as guiding principles rather than rigid rules, explaining the rationale behind them, minimizing friction for providing feedback, and prioritizing quality feedback over quantity. They emphasize the reusability of the “improver skill” across different agent applications and the importance of maintaining human oversight in the loop.</p></div>
     
   </div>
   
@@ -162,26 +164,45 @@
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>blog</span>
-      <span> · 2026-08-25</span>
+      <span> · 2026-08-26</span>
     </div>
-    <h2><a href="https://claude.com/blog/bain-company-joins-the-claude-partner-network-as-a-global-premier-partner" target="_blank" rel="noopener">Bain &amp; Company joins the Claude Partner Network as a Global Premier partner | Claude by Anthropic</a></h2>
+    <h2><a href="https://claude.com/blog/cowork-built-in-browser" target="_blank" rel="noopener">Claude Cowork gets a built-in browser: nothing to install | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>Anthropic and Bain &amp; Company have formed a global partnership to accelerate enterprise AI deployments, with Bain joining the Claude Partner Network as a Global Premier partner. Bain has already rolled out Claude – specifically Claude.ai, Claude Cowork, Claude Code, Claude for Excel, and Claude for Microsoft 365 – to its entire workforce of 19,000 employees for both client work and internal use.</p>
-<p>Early adoption saw over 7,000 employees actively using Claude within weeks, with more than two-thirds of a pilot group adopting the Excel integration. Bain emphasizes that successful rollout requires enablement, training, and governance alongside access. Initial client engagements leveraging this partnership have reportedly yielded productivity gains of 30% to 50% when addressing complex legacy codebases lacking documentation.</p></div>
+    <div class="summary"><p>Anthropic has added a built-in browser to Claude Cowork within the desktop application, eliminating the need for extensions. This allows Claude to independently navigate websites, read content, and complete forms directly within the interface—handling tasks like data extraction or form filling without accessing the user’s existing browser profile. The browser is isolated; it does not share tabs, bookmarks, or passwords, though users can selectively import logins from Chrome, Edge, or Firefox. </p>
+<p>The built-in browser is initially rolling out to Pro, Max, and Team plan users, with Enterprise admins gaining control via Organization settings as of today. A key distinction is made between the new browser and the existing "Claude in Chrome" extension: the built-in browser tackles new web tasks while the extension works with already-authenticated sessions. Users can switch their preferred method in settings.</p>
+<p>The new capability includes existing safety measures to mitigate prompt injection attacks, but Anthropic recommends beginning with trusted websites. The built-in browser is currently in beta on macOS, Windows and Linux desktop apps. Availability on the web or mobile devices requires an active desktop application.</p></div>
     
   </div>
   
   <div class="card">
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>news</span>
-      <span> · 2026-08-25</span>
+      <span>blog</span>
+      <span> · 2026-08-26</span>
     </div>
-    <h2><a href="https://www.anthropic.com/news/wellbeing-research-grants" target="_blank" rel="noopener">Funding better evaluations of AI’s impact on wellbeing</a></h2>
+    <h2><a href="https://claude.com/blog/claude-in-chrome-generally-available" target="_blank" rel="noopener">Claude in Chrome is generally available | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>Anthropic announced a $5 million grant program to fund independent research evaluating the impact of AI on user wellbeing. The program will offer direct funding, access to Anthropic’s models (specifically mentioning Claude), and technical support to grantees. Funded research will focus on building open-source evaluations and benchmarks, and results will be published as open-source projects.</p>
-<p>Anthropic acknowledges difficulties in evaluating wellbeing—unlike factual accuracy, assessment requires contextual understanding over multi-turn conversations, and a single response can be appropriate or harmful depending on user history. The company seeks evaluations that clearly define what they measure, involve clinical and subject-matter experts, test for both over- and under-caution, reflect realistic user interactions, and validate grading against human experts. </p>
-<p>Applications for the grant are due September 21, with selected applicants for full proposals notified by October 5. Anthropic also published guidance on building robust wellbeing evaluations. Related announcements include updates to Claude Fable 5’s biology safeguards to reduce “fallbacks” and the appointment of Mariano-Florentino (Tino) Cuéllar as Chief Global Affairs Officer.</p></div>
+    <div class="summary"><p>Anthropic has generally released Claude in Chrome for all paid plans, enabling the model to interact directly with webpages. This allows Claude to perform actions within the browser – reading, typing, clicking, form filling – without requiring manual approval for each step, though a safety classifier validates actions before execution. </p>
+<p>A core focus of this release is improved resilience against prompt injection attacks, where malicious instructions are hidden within web content. Anthropic has expanded its training datasets and implemented probes to scan web content, as well as a safety classifier to verify actions against the user’s original request. Testing shows Claude Fable 5, Opus 5, and Sonnet 5 successfully resisted attacks in their Cowork harness, with a 0.3% success rate for Fable 5 when using stronger, professionally sourced attacks. </p>
+<p>The feature is available as a Chrome Web Store extension and is manageable within Organization Settings for Enterprise plans. It currently does not support other Chromium browsers or mobile devices.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="google/" class="badge badge-google">Google</a>
+      <span>research</span>
+      <span> · 2026-08-26</span>
+    </div>
+    <h2><a href="https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe/" target="_blank" rel="noopener">Intelligent transcription with Gemini 3.5 Transcribe</a></h2>
+    
+    <div class="summary"><p>Gemini 3.5 Transcribe offers more precise and intelligent speech-to-text capabilities compared to prior models.</p>
+<ul>
+<li>The model achieves an average Word Error Rate (WER) of 4.0% for streaming and 2.6% for non-streaming use-cases, representing a significant improvement over Chirp 3 (5.50% and 5.04% WER respectively on the FLEURS benchmark).</li>
+<li>It’s available through two APIs: the Live API (gemini-3.5-transcribe-live) for real-time streaming with sub-second latency, and the Interactions API (gemini-3.5-transcribe) for pre-recorded audio with speaker attribution and timestamps.</li>
+<li>Key features include smart transcription (handling disfluencies, removing filler words, auto-formatting), function calling to delegate tasks to other Gemini models, custom vocabulary recognition, and support for over 85 languages.</li>
+<li>The technology is integrated into products like the Gemini app (macOS), the Gemini app, Android's Rambler feature, and Google Antigravity, with plans for Chrome integration; it's accessible to developers via the Gemini API in Google AI Studio and the Gemini Enterprise Agent Platform.</li>
+</ul></div>
     
   </div>
   
@@ -224,18 +245,19 @@
   
   <div class="card">
     <div class="meta">
-      <a href="google/" class="badge badge-google">Google</a>
+      <a href="microsoft/" class="badge badge-microsoft">Microsoft</a>
       <span>blog</span>
-      <span> · 2026-08-19</span>
+      <span> · 2026-08-26</span>
     </div>
-    <h2><a href="https://blog.google/products-and-platforms/products/search/back-to-school-study-tools/" target="_blank" rel="noopener">5 new ways to level up your learning with Search</a></h2>
+    <h2><a href="https://azure.microsoft.com/en-us/blog/the-economics-of-agent-optimization-four-ways-to-lower-the-cost/" target="_blank" rel="noopener">The Economics of Agent Optimization: Four ways to lower the cost</a></h2>
     
-    <div class="summary"><ul>
-<li>Google Search now offers interactive visuals and simulations generated by AI to help understand complex concepts, such as plotting data on a pH scale, via AI Overviews and AI Mode.</li>
-<li>Customized practice quizzes are available within Search for a range of subjects, including standardized tests like the SAT, ACT, and GRE, leveraging content from partners like The Princeton Review and PhysicsWallah.</li>
-<li>Lens in Search will soon provide an interactive learning experience by analyzing photos of work (e.g., homework problems) and offering explanations, identifying errors, and guiding users to solutions.</li>
-<li>Gemini Notebook (formerly NotebookLM) is integrated into AI Mode, allowing users to organize study materials, previous AI Mode threads, and other sources within dedicated notebooks that sync across Google products.</li>
-<li>AI Mode can now create custom study documents (one-pagers, outlines, etc.) from uploaded files or AI Mode threads, supporting document, presentation, spreadsheet, and text file formats.</li>
+    <div class="summary"><h2>The Economics of Agent Optimization: Four Ways to Lower the Cost</h2>
+<p>This post details strategies within Microsoft Foundry for optimizing AI agent costs, moving beyond simply proving concepts to achieving measurable ROI.</p>
+<ul>
+<li><strong>Model Routing:</strong> Foundry Models’ Model Router dynamically dispatches requests to the most suitable model (including options for cost, quality, or a balance), supporting model subsets aligned with Azure Policy and built-in failover for resilience. Different deployment options (Standard, Priority Processing, PTUs, Batch) allow further optimization based on workload requirements.</li>
+<li><strong>Caching:</strong> Utilizing prompt caching (with discounted read costs on standard and provisioned deployments) and semantic caching via Azure API Management’s AI Gateway to reuse frequently used content (system instructions, tool schemas) and reduce token consumption. Optimizing prompt architecture to place stable content first maximizes cache effectiveness.</li>
+<li><strong>Prompt &amp; Agent Optimization:</strong> Foundry provides automated tools – Prompt Optimizer (rewrites system instructions) and Agent Optimizer (runs agents against datasets, generates configurations, and scores results) – to improve efficiency and performance without infrastructure changes.</li>
+<li><strong>Observability &amp; Evaluation:</strong>  Foundry’s observability features (input/output tokens, cache hit rate, latency, model used, evaluation scores) alongside Azure budgets/alerts allow for tracking cost per request and cost per completed outcome to ensure optimizations maintain quality and deliver tangible savings.</li>
 </ul></div>
     
   </div>
@@ -277,19 +299,20 @@
   
   <div class="card">
     <div class="meta">
-      <a href="microsoft/" class="badge badge-microsoft">Microsoft</a>
+      <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-08-12</span>
+      <span> · 2026-08-26</span>
     </div>
-    <h2><a href="https://azure.microsoft.com/en-us/blog/the-economics-of-agent-optimization-from-pilots-to-measurable-returns/" target="_blank" rel="noopener">The Economics of Agent Optimization: From pilots to measurable returns</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/connect-amazon-bedrock-agentcore-to-cross-account-knowledge-bases/" target="_blank" rel="noopener">Connect Amazon Bedrock AgentCore to cross-account knowledge bases</a></h2>
     
-    <div class="summary"><p>Microsoft introduces a framework for managing AI costs as production deployments scale, focusing on treating AI as a “managed investment system."</p>
+    <div class="summary"><p>Amazon Bedrock AgentCore now supports cross-account access to knowledge bases without data duplication.</p>
 <ul>
-<li><strong>Microsoft Foundry</strong> is positioned as the core platform, enabling runtime request optimization via features like a <strong>Model Router</strong> that directs prompts to cost-optimized models (cost, quality, balanced modes), varied deployment options (Global, Data Zone, Regional), and caching mechanisms.</li>
-<li><strong>Agent optimization</strong> is addressed through automated testing of prompts, models, and tools using the <strong>Agent Optimizer</strong>, alongside tools like <strong>Toolboxes</strong> (sending only necessary tool definitions) and various memory types (procedural, user, session) to reduce repeated token usage.</li>
-<li><strong>Spend governance</strong> is enhanced via <strong>Azure API Management’s AI Gateway</strong> for implementing token rate limits and quotas, and future integration of native budget enforcement within Foundry and tenant-wide controls through <strong>Agent 365</strong>.</li>
-<li>Cost visibility and reporting are available at model- and deployment-level within Foundry, with plans to expand attribution down to individual agents and sessions, integrating with <strong>Azure Cost Management</strong> for overall budget and billing management.</li>
-</ul></div>
+<li>Agents built with Amazon Bedrock AgentCore can access knowledge bases in separate AWS accounts using Amazon Redshift Serverless.</li>
+<li>Two orchestration models are available: a code-based Strands agent on AgentCore runtime and a declarative AgentCore harness using AWS Lambda.</li>
+<li>Both models utilize a narrowly scoped IAM role and AWS Security Token Service (STS) to call <code>RetrieveAndGenerate</code> with Claude Haiku 4.5 (us.anthropic.claude-haiku-4-5-20251001-v1:0) and return generated answers.</li>
+<li>Deployment procedures and implementation details for both variants are available in a public GitHub sample, utilizing Amazon Nova Pro (us.amazon.nova-pro-v1:0). </li>
+</ul>
+<p>For full implementation details and decision guidance, consult the original post.</p></div>
     
   </div>
   
@@ -297,15 +320,15 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-08-25</span>
+      <span> · 2026-08-26</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/governed-reports-with-amazon-quick-desktop-and-amazon-fsx-for-netapp-ontap/" target="_blank" rel="noopener">Governed reports with Amazon Quick Desktop and Amazon FSx for NetApp ONTAP</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/preparing-data-for-supervised-fine-tuning-part-1-formatting-and-quality/" target="_blank" rel="noopener">Preparing data for supervised fine-tuning Part 1: Formatting and quality</a></h2>
     
     <div class="summary"><ul>
-<li>Amazon Quick Desktop introduces AI-assisted reporting capabilities for files managed on Amazon FSx for NetApp ONTAP (FSx for ONTAP).</li>
-<li>A new “skill”, Weekly Business Reporting Assistant, automates the creation of reports by connecting governed files to a guided reporting experience, requiring human review before sharing.</li>
-<li>Amazon S3 access points are used to grant Amazon Quick controlled, read-only access to specific folders within FSx for ONTAP, leveraging existing storage and access controls.</li>
-<li>The solution requires FSx for ONTAP version 9.17.1 or later and an Amazon Quick Enterprise subscription to create knowledge bases and integrations with services like Slack.</li>
+<li>This post details data preparation for supervised fine-tuning (SFT), focusing on quality checks and formatting requirements, and contrasts SFT with continued pre-training (CPT) and reinforcement learning from human feedback (RFT).</li>
+<li>Data quality is paramount; prioritize accurate and diverse examples – even a small set (around 1,000) of curated examples can be highly effective, with techniques like clustering by embedding similarity helping identify gaps in coverage.</li>
+<li>Formatting should adhere to the model’s chat template (e.g., the Amazon Nova 2.0 <code>bedrock-conversation-2024</code> schema uses JSONL format with <code>system</code>, <code>user</code>, and <code>assistant</code> roles), including system prompts and reasoning traces when applicable.</li>
+<li>The post covers formatting for tool calling (using <code>toolUse</code> and <code>toolResult</code> blocks) and multimodal inputs (handling documents and images via <code>document</code> blocks referencing S3 locations), emphasizing consistent application of these features during both training and inference.</li>
 </ul></div>
     
   </div>
@@ -314,34 +337,15 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-08-25</span>
+      <span> · 2026-08-26</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/agentic-observability-with-amazon-opensearch-service-mcp-apps/" target="_blank" rel="noopener">Agentic observability with Amazon OpenSearch Service MCP Apps</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/preparing-data-for-supervised-fine-tuning-part-2-advanced-data-strategies/" target="_blank" rel="noopener">Preparing data for supervised fine-tuning Part 2: Advanced data strategies</a></h2>
     
-    <div class="summary"><p>Amazon OpenSearch Service now supports MCP Apps, extending the Model Context Protocol (MCP) to deliver interactive visualizations – trace waterfalls, service maps, log views – directly within AI assistant chat windows.</p>
-<ul>
-<li>MCP Apps enable a dual response pattern: text summaries <em>and</em> interactive visualizations are returned in response to tool calls.</li>
-<li>The visualizations are generated by executing code against existing data sources (OpenSearch domains, serverless collections, Amazon Managed Service for Prometheus), ensuring deterministic results.</li>
-<li>A local MCP server acts as a secure bridge between the IDE and the OpenSearch UI application, utilizing existing AWS credentials and policies.</li>
-<li>Available tools cover investigation stages including triage, log analysis, trace investigation, metric analysis, and topology mapping, with specialized tools for AI/LLM observability and stack health.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-08-24</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/ai-powered-metadata-correction-and-harmonization/" target="_blank" rel="noopener">AI-powered metadata correction and harmonization</a></h2>
-    
-    <div class="summary"><p>AI-powered metadata correction and harmonization leverages LLMs to automate metadata management, addressing challenges with data standardization at scale.</p>
-<ul>
-<li>The system uses Amazon Bedrock for LLM-powered schema alignment and correction recommendations, integrated with services like Amazon S3, DynamoDB, Cognito, and ECS.</li>
-<li>Schema alignment utilizes LLMs to semantically understand metadata, handling synonyms, misspellings and complex relationships beyond simple string matching.</li>
-<li>Metadata field validation employs a tiered approach: required field checks, enumerated value validation against controlled vocabularies, pattern matching with regular expressions, and LLM-based resolution as a fallback.</li>
-<li>Recommendations combine NLP, embedding-based similarity (using Amazon Titan), contextual inference (k-nearest neighbors with TF-IDF and PMI), fuzzy matching, and LLM resolution to balance accuracy, scalability, and cost.</li>
+    <div class="summary"><ul>
+<li>This post details advanced strategies for optimizing supervised fine-tuning (SFT) datasets, assuming data is already cleaned and formatted according to Amazon Nova's conversational schema.</li>
+<li>Learning curve analysis is recommended to determine the optimal dataset size, training until gains from additional data diminish (less than 1-2% improvement in primary metric).</li>
+<li>Data subset selection and filtering methods (DEITA, DELIFT, coreset selection) can outperform full-dataset training by focusing on high-quality, diverse examples and reducing catastrophic forgetting.</li>
+<li>Data mixing, blending target-task data with general data to preserve existing model capabilities, is suggested, with ratios needing experimentation but a 50/50 split recommended as a starting point for Amazon Nova models.</li>
 </ul></div>
     
   </div>
@@ -397,17 +401,11 @@
     <div class="meta">
       <a href="techcrunch/" class="badge badge-techcrunch">TechCrunch</a>
       <span>news</span>
-      <span> · 2026-08-26</span>
+      <span> · 2026-08-27</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/08/25/openai-loses-a-top-data-center-exec-as-stream-of-high-profile-departures-continues/" target="_blank" rel="noopener">OpenAI loses a top data center exec as stream of high-profile departures continues</a></h2>
+    <h2><a href="https://techcrunch.com/2026/08/26/viral-ai-startup-instinct-has-raised-350-million-at-a-2-5-billion-valuation/" target="_blank" rel="noopener">Viral AI startup Instinct has raised $350M at a $2.5B valuation</a></h2>
     
-    <div class="summary"><p>OpenAI has experienced a series of executive departures, including the head of data centers.</p>
-<ul>
-<li>Chris Malone, former head of data centers, left OpenAI after a roughly one-year tenure, having previously worked at Meta and Google.</li>
-<li>Malone’s departure coincides with a reorganization of OpenAI’s infrastructure organization, where he began reporting to Sachin Katti instead of Greg Brockman.</li>
-<li>OpenAI is a key partner in the $500 million Stargate Project, focused on developing U.S. data centers.</li>
-<li>Thirteen executive departures have been reported in 2026, including the chief revenue officer, chief operating officer, and head of ethics, raising questions about the company’s stability as it prepares for a potential 2027 IPO.</li>
-</ul></div>
+    <div class="summary"><p>AI startup Instinct, developed by Spear Street Technology, has raised $350 million in funding, reaching a $2.5 billion valuation. The company’s AI assistant, currently in private beta, connects to user apps and devices and can be communicated with via text and calls. According to early users reported to the Wall Street Journal, the assistant is being used for tasks including trip planning, grocery shopping, subscription cancellation, and even wedding planning. TechCrunch notes the app has sparked privacy concerns related to required permissions and terms of use.</p></div>
     
   </div>
   
@@ -415,17 +413,11 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-08-25</span>
+      <span> · 2026-08-26</span>
     </div>
-    <h2><a href="https://arstechnica.com/apple/2026/08/with-new-mac-studio-and-mac-mini-apple-leans-hard-into-local-ai-inference/" target="_blank" rel="noopener">Apple&#39;s new desktop computers are designed specifically for local AI development</a></h2>
+    <h2><a href="https://arstechnica.com/ai/2026/08/ibms-new-granite-4-2-models-ride-the-wave-of-interest-in-local-llms/" target="_blank" rel="noopener">IBM&#39;s new Granite 4.2 models ride the wave of interest in local LLMs</a></h2>
     
-    <div class="summary"><p>Apple announced updates to the Mac mini and Mac Studio, positioning them for local AI development.</p>
-<ul>
-<li>The new chips are the M6 (Apple’s first 2nm chip) featuring a 12-core CPU (two “super cores”, four performance cores, and six efficiency cores) and a 12-core GPU, and the M5 Ultra, built from two M5 Maxes with 36 CPU cores and 80 GPU cores.</li>
-<li>Apple claims the M6 offers up to 40% faster multi-threaded CPU performance compared to the M4, and the M5 Ultra achieves up to 1.2TB/s unified memory bandwidth.</li>
-<li>macOS 26.2 enabled “low-latency communication between Thunderbolt 5 hosts” for distributed AI inference using MLX, an open source array framework.</li>
-<li>The Mac mini with M6 starts at $899, the Mac mini with M5 Pro starts at $1,699, the Mac Studio with M5 Max starts at $2,499, and the Mac Studio with M5 Ultra starts at $5,499; shipping begins September 22 (512GB Studio config in late October).</li>
-</ul></div>
+    <div class="summary"><p>IBM released the Granite 4.2 series of open-weight large language models in 3B, 8B, and 30B parameter sizes, designed for local deployment. The models utilize a decoder-only approach and feature a native 128,000-token context window.  The 8B and 30B variants include agentic reinforcement learning for capabilities like web searching and tool use, while the 3B model supports tools with less specialized training. According to IBM, Granite 4.2 is focused on reasoning capabilities via “chain-of-thought” processing, potentially increasing accuracy at the cost of speed and compute.</p></div>
     
   </div>
   
