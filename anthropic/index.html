@@ -80,13 +80,41 @@
     </label>
   </div>
   <h1>Anthropic News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-08-27 10:19 UTC</p>
+  <p class="generated-at">Generated 2026-08-28 10:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">August 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>news</span>
+      <span> · 2026-08-27</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/news/model-hardware-standard-research-preview" target="_blank" rel="noopener">Previewing the Model Hardware Standard</a></h3>
+    
+    <div class="summary"><p>Anthropic has announced a research preview of the Model Hardware Standard (MHS), a specification designed to allow AI agents to safely and efficiently operate physical devices. Developed in collaboration with HHMI Janelia Research Campus, MHS aims to reduce integration time for lab and manufacturing equipment—currently weeks or months—to hours or minutes by standardizing communication between devices. </p>
+<p>The standard introduces a universal “driver” that translates commands like “read” and “write” for any programmable device, using a simple set of primitives and enabling discoverability across networks.  The driver also incorporates natural language descriptions of device characteristics, automatically creating reference files for AI agent understanding. Anthropic reports early tests with Claude demonstrate the AI can learn to operate devices, and even write deterministic scripts for automated tasks, such as laser alignment.</p>
+<p>Initial partners including Genentech, QuEra Computing, and Carnegie Mellon University have tested MHS, reporting speed increases in experiments and simplified automation. Anthropic is inviting stakeholders to join the research preview, with plans to eventually open-source the standard after further safety evaluations and developer input, and is already seeing support from companies like Amazon Web Services, Automata, and Raspberry Pi.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>news</span>
+      <span> · 2026-08-27</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/news/expanding-support-for-scientists" target="_blank" rel="noopener">Expanding our support for scientists</a></h3>
+    
+    <div class="summary"><p>Anthropic announced expansions to its support for the scientific community on August 27, 2026. The company is offering 10,000 free or discounted subscriptions to its Claude team plan for scientists for one year. Standard seats are free, while premium seats, offering five times the usage limits, are priced at $15 per month. Anthropic intends to expand the program beyond the initial 10,000 seats in the coming months.</p>
+<p>Alongside the team plan, Anthropic is broadening the scope of its AI for Science program, which currently supports biological sciences research with free credits. The program will now include researchers in other fields, particularly those undertaking computationally intensive projects. Individual projects can apply for up to $50,000 in credits. Access to Opus-class models remains limited for biology and chemistry researchers, while Fable models block relevant queries due to dual-use concerns. </p>
+<p>Anthropic is also partnering with the US government to give life science professionals access to its Mythos-class models and has begun enrolling initial participants. A research preview of the Model Hardware Standard (MHS) is being offered to select labs and manufacturers. Additionally, a $5 million grant program was launched to research AI's impact on user wellbeing.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -468,34 +496,6 @@
     
     <div class="summary"><p>Anthropic has extended the coverage of its Compliance API to include sessions from Claude Cowork (desktop, web, and mobile) and Claude Code (CLI and desktop app). This beta feature, available to Claude Enterprise customers, allows security and compliance teams to access session content and metadata – including prompts, responses, tool calls, and user information – through a unified API interface. </p>
 <p>The API returns consolidated transcripts for each session, containing both the text of interactions and associated metadata like user IDs, organization IDs, and timestamps. Existing Compliance API users can immediately query the new endpoints using their current access keys; no new integration is required. Note that this initial beta does <em>not</em> cover Claude Code accessed via the web, the Claude Platform, or through Amazon Bedrock, Google Vertex AI, or Microsoft Foundry. The Compliance API is intended to work alongside existing OpenTelemetry exports.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Anthropic</span> · 
-      <span>research</span>
-      <span> · 2026-08-10</span>
-    </div>
-    <h3><a href="https://www.anthropic.com/research/riemann-zeta" target="_blank" rel="noopener">Learning more about Claude&#39;s mathematical capabilities</a></h3>
-    
-    <div class="summary"><p>An unreleased research version of Claude has improved a longstanding lower bound for the fraction of zeros of the Riemann zeta function that satisfy the Riemann hypothesis, increasing it from 41.6% to 67.2%. This was achieved by combining results from prior work by Baluyot, Goldston, Suriajaya, Turnage-Butterbaugh, and Bombieri, using a novel approach involving quadratic forms and spaces of functions. While not resolving the Riemann hypothesis itself, Claude’s result extends existing mathematical research.</p>
-<p>The model arrived at this finding after being prompted to tackle the Riemann hypothesis, initially generating 650 unsuccessful ideas.  A subsequent session utilized 60 Claude subagents running 2,400 shell commands and writing hundreds of Python scripts over a day and a half, along with encouragement from a staff member. Claude independently verified its findings and produced both a research paper and a formally verifiable proof in Lean, validated by Anthropic mathematicians. </p>
-<p>The process involved 31 million output tokens in Claude Code. This demonstrates AI’s potential to accelerate mathematical discovery, even in areas considered beyond current AI capabilities, and highlights the speed of progress in AI-driven research.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-08-07</span>
-    </div>
-    <h3><a href="https://claude.com/blog/auto-mode-in-production" target="_blank" rel="noopener">Running auto mode in production | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic has made Auto mode the default setting in Claude Code. This feature balances speed and safety by using a classifier to evaluate each action an agent attempts, blocking potentially harmful commands instead of requiring constant human approval. Internal testing shows the classifier surpasses developers in identifying dangerous actions, and it allows Claude Code sessions to run nine times longer without interruption.</p>
-<p>Companies like Nuro, Gusto, and Garner Health are leveraging Auto mode in production. Nuro uses it for long-running agents that autonomously improve their autonomous driving stack, even running tasks overnight. Gusto’s engineers saw a reduction in permission fatigue while maintaining security, and Garner Health integrated it into a standardized software development lifecycle for all 550 employees. </p>
-<p>While Auto mode offers increased efficiency, it's not unrestricted. Companies are using skills and denying dangerous commands outright, and some still revert to interactive mode for sensitive tasks like production infrastructure changes. The core technical improvement is a classifier that intelligently manages agent autonomy based on risk, enabling longer, more productive coding sessions.</p></div>
     
   </div>
   

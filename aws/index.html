@@ -80,13 +80,82 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-08-27 10:19 UTC</p>
+  <p class="generated-at">Generated 2026-08-28 10:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">August 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-27</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/reduce-asr-inference-costs-by-75-with-nvidia-mps-on-amazon-ec2/" target="_blank" rel="noopener">Reduce ASR inference costs by 75% with NVIDIA MPS on Amazon EC2</a></h3>
+    
+    <div class="summary"><ul>
+<li>This blog post details how to reduce ASR inference costs by 75% using NVIDIA CUDA Multi-Process Service (MPS) with NVIDIA Triton Inference Server on Amazon EC2, achieving 92.1 requests per second (RPS) per GPU.</li>
+<li>NVIDIA MPS allows concurrent execution of multiple processes on a single GPU by partitioning it, eliminating context-switching overhead and improving GPU utilization compared to default CUDA time-slicing or Multi-Instance GPU (MIG).</li>
+<li>The solution incorporates model-level optimizations using ONNX Runtime with the TensorRT Execution Provider for the encoder portion of a Parakeet TDT 0.6B V2 model, alongside CUDA graph caching in the PyTorch decoder.</li>
+<li>A complete, deployable inference pipeline is available, running on Amazon EC2 g6e/g7e instances, and utilizing FastAPI gateway, Triton Inference Server, and CUDA MPS, with support for both transcription and speaker diarization tasks.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-27</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/deepgram-deepens-amazon-sagemaker-ai-observability-with-enhanced-metrics/" target="_blank" rel="noopener">Deepgram deepens Amazon SageMaker AI observability with Enhanced Metrics</a></h3>
+    
+    <div class="summary"><p>Deepgram is releasing enhanced observability features for its speech-to-text (STT) and text-to-speech (TTS) models deployed on Amazon SageMaker AI.</p>
+<ul>
+<li><strong>Deepgram Enhanced Metrics</strong> publishes usage and billing metrics directly to Amazon CloudWatch, providing transparency into AWS Marketplace billing and feature usage without requiring additional agents or IAM permissions. Metrics are available at the Category, Model, and Transport levels.</li>
+<li>A separate <strong>Deepgram/SelfHosted</strong> namespace provides detailed usage metrics broken down by API method, model tier, and enabled features like diarization and redaction.</li>
+<li><strong>Prometheus and OpenTelemetry support</strong> enables engine-level metrics (including per-GPU utilization via DCGM exporter and host metrics via node exporter) which are scraped from the Deepgram container and exported to CloudWatch.</li>
+<li>Detailed observability is enabled by default for new SageMaker AI endpoints, with the ability to configure metric publish frequency using <code>MetricsConfig</code>. Metrics are accessible via PromQL from CloudWatch, Grafana, or other Prometheus-compatible tools.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-27</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-openai-models-on-amazon-bedrock-for-in-country-inferencing-in-india/" target="_blank" rel="noopener">Introducing OpenAI models on Amazon Bedrock for in-country inferencing in India</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock now supports OpenAI’s GPT-5.6 models, Terra and Luna, within India via new “in.” prefixed inference profiles (e.g., <code>in.openai.gpt-5.6-terra</code>).</li>
+<li>These models offer a 1-million-token context window and support both text and image inputs, producing text outputs, enabling processing of large documents and codebases.</li>
+<li>India geographic cross-Region inference routes requests within the India geography (ap-south-1 and ap-south-2) to improve throughput and maintain data residency.</li>
+<li>The OpenAI Responses API, OpenAI Chat Completions API, Amazon Bedrock Converse API, and prompt caching are supported, and access requires specific IAM permissions for both the inference profile and the foundation models in both regions.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-27</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-agentic-creative-workflows-with-amazon-quick-and-fal/" target="_blank" rel="noopener">Build agentic creative workflows with Amazon Quick and fal</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Quick now functions as an agentic workspace and orchestrator, integrating with the fal generative media platform via the Model Context Protocol (MCP) to streamline creative workflows.</li>
+<li>“Skills” within Amazon Quick allow creators to capture and reuse repeatable processes, including approval gates for quality control and consistent creative direction.</li>
+<li>fal provides access to over 1,000 generative AI models for image, video, audio, and 3D media generation, accessible through an MCP server connected to Amazon Quick.</li>
+<li>Examples included demonstrate agentic workflows for storyboard production utilizing FLUX.1 Kontext and music video concept prototyping, highlighting the ability to maintain context and iterate with human review.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -541,77 +610,6 @@
 <li>Amazon SageMaker Canvas connects directly to Snowflake for data preparation and model building without code.</li>
 <li>Sample SQL commands are provided to create a Snowflake database and populate it with fraud detection data.</li>
 <li>The architecture supports regression, classification, and time-series forecasting problem types; batch predictions are output to Amazon S3 for visualization in QuickSight.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-20</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-cross-region-inference-for-openai-gpt-5-6-models-on-amazon-bedrock/" target="_blank" rel="noopener">Introducing cross-Region inference for OpenAI GPT-5.6 models on Amazon Bedrock</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock now supports cross-Region Inference (CRIS) for OpenAI’s GPT-5.6 models (Sol, Terra, and Luna) across more than 25 AWS Regions.</li>
-<li>CRIS utilizes inference profiles – geographic (e.g., <code>us.openai.gpt-5.6-terra</code>) for data residency within a geography, and global (e.g., <code>global.openai.gpt-5.6-terra</code>) for capacity based routing across all commercial AWS Regions.</li>
-<li>GPT-5.6 variants (Sol, Terra, Luna) accept text and image inputs, return text, have a 1 million token context window, and support reasoning mode, server-side tool calling, and prompt caching; they are callable via the OpenAI Responses API, Chat Completions API, and Amazon Bedrock Converse API.</li>
-<li>The OpenAI SDK and Converse API can be used with CRIS by swapping the model ID with the appropriate inference profile ID, and appropriate IAM permissions are required for the source and destination regions (detailed in the post with policy examples).</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-19</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/knowledgeforge-mining-gold-from-the-itsm-ticket-graveyard/" target="_blank" rel="noopener">KnowledgeForge: mining gold from the ITSM ticket graveyard</a></h3>
-    
-    <div class="summary"><p>KnowledgeForge automates knowledge base article creation and curation from ITSM tickets, aiming to reduce knowledge silos and improve article quality.</p>
-<ul>
-<li>The system utilizes Amazon Bedrock (specifically Anthropic Claude Sonnet 4.5) for generating new draft articles and improving existing content based on clustered incident tickets.</li>
-<li>Amazon S3 Vectors is employed for efficient duplicate detection by storing and querying embedding vectors directly within Amazon S3, avoiding the need for a separate vector database.</li>
-<li>AWS Step Functions orchestrates the curation process—classification, deduplication, quality scoring, and content improvement—using a two-phase distributed map for scalability and fault tolerance.</li>
-<li>The system leverages Retrieval Augmented Generation (RAG) with Amazon Titan Text Embeddings V2 to ground generated articles in existing knowledge, improving consistency and accuracy, storing vectors in Amazon S3 Vectors for reuse in subsequent generations.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-19</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-fanatics-betting-and-gaming-built-a-multi-agent-customer-support-system/" target="_blank" rel="noopener">How Fanatics Betting and Gaming built a multi-agent customer support system</a></h3>
-    
-    <div class="summary"><p>Fanatics Betting and Gaming (FBG) built a multi-agent customer support system on AWS to handle complex, state-specific regulations and high-volume inquiries common in sports betting.</p>
-<ul>
-<li>FBG utilizes Amazon Bedrock to access foundation models via a single API, currently employing Anthropic Claude Sonnet for orchestration, Amazon Nova 2 Lite for responsible gaming classification, and Amazon Titan V2 for RAG pipeline embeddings.</li>
-<li>The system architecture is based on an orchestrator pattern, with a Supervisor Agent coordinating specialized tools like a Retrieval Augmented Generation (RAG) pipeline, account/transaction Model Context Protocol (MCP) servers, and a transfer-to-agent tool.</li>
-<li>A custom RAG pipeline driven by Amazon Titan V2 embeddings retrieves knowledge from a vector store built from support documentation, combining state-specific and general information to improve accuracy.</li>
-<li>The entire AI stack is hosted on Amazon EKS, leveraging Spring AI and MCP for scalable agent hosting and standardized tool communication, with Amazon Bedrock Guardrails providing responsible AI safeguards.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-19</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/asynchronous-patterns-for-calling-amazon-bedrock-agentcore-agents-in-serverless-pipelines/" target="_blank" rel="noopener">Asynchronous patterns for calling Amazon Bedrock AgentCore agents in serverless pipelines</a></h3>
-    
-    <div class="summary"><p>Asynchronous invocation patterns for Amazon Bedrock AgentCore agents in serverless pipelines reduce costs by eliminating idle compute time while the agent processes requests.</p>
-<ul>
-<li>The post details three patterns – task-token callback, direct service integration, and durable function – to avoid the cost of blocking compute services (like Lambda) while waiting for an AgentCore agent to respond.</li>
-<li>Amazon Bedrock AgentCore runtime is consumption-based, billing only for memory during idle time (waiting on LLM generation or tool calls), unlike compute services that are billed for full compute allocation even while blocked.</li>
-<li>Pattern 1 (task-token callback) uses Step Functions' <code>waitForTaskToken</code> integration with a dispatcher function, minimizing compute cost by pausing execution and resuming with a task token.</li>
-<li>Pattern 2 (direct service integration) eliminates the dispatcher Lambda function entirely by leveraging Step Functions' direct integration with AgentCore, further reducing costs, while Pattern 3 (durable function) expresses orchestration as code in a single Lambda function that suspends during the wait.</li>
 </ul></div>
     
   </div>

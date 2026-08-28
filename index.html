@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-08-27T10:19:59.046919+00:00">Generated 2026-08-27 10:19 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-08-28T10:17:26.313631+00:00">Generated 2026-08-28 10:17 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,7 +132,7 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — since 2026-08-26</h2>
+    <h2 class="overview-heading">Today in AI — Overview for 2026-08-27</h2>
     <p class="overview-meta">2026-08-27 · 13 vendor sources · vendor sources only</p>
     <div class="overview-text"><p>Recent advancements across multiple AI labs are focused on improving agent capabilities, especially around web interaction, data handling, and cost optimization. A significant development is Anthropic's expanded efforts to allow external research into Claude's usage data, granting access to roughly 250,000 conversations to Stanford, Oxford, and METR through Anthropic Insights. Preliminary findings suggest users delegate complex tasks to Claude more often than anticipated, and actively refine its output through iterative collaboration. This initiative marks a pivotal step towards open research within the typically closed environment of AI model usage, although scaling this kind of access presents substantial challenges.</p>
 <p>The focus on agents that can interact with the real world is evident in Anthropic's general availability of Claude in Chrome and release of a built-in browser for Claude Cowork. Both features enable Claude to navigate webpages, complete forms, and perform actions directly within a browser environment, improving automation and usability. Anthropic has prioritized robust defenses against prompt injection attacks through dataset expansion, content scanning, and safety classifiers, achieving a 0.3% success rate with professionally sourced attacks on Claude Fable 5. Warp is also refining agent workflows by implementing a self-improvement loop centered around 'skills’— modular, file-based knowledge encodings— coupled with human feedback, ultimately improving agent performance through pull request-based contributions. </p>
@@ -145,6 +145,34 @@
 
   
   <h2 class="section">Vendors</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>news</span>
+      <span> · 2026-08-27</span>
+    </div>
+    <h2><a href="https://www.anthropic.com/news/model-hardware-standard-research-preview" target="_blank" rel="noopener">Previewing the Model Hardware Standard</a></h2>
+    
+    <div class="summary"><p>Anthropic has announced a research preview of the Model Hardware Standard (MHS), a specification designed to allow AI agents to safely and efficiently operate physical devices. Developed in collaboration with HHMI Janelia Research Campus, MHS aims to reduce integration time for lab and manufacturing equipment—currently weeks or months—to hours or minutes by standardizing communication between devices. </p>
+<p>The standard introduces a universal “driver” that translates commands like “read” and “write” for any programmable device, using a simple set of primitives and enabling discoverability across networks.  The driver also incorporates natural language descriptions of device characteristics, automatically creating reference files for AI agent understanding. Anthropic reports early tests with Claude demonstrate the AI can learn to operate devices, and even write deterministic scripts for automated tasks, such as laser alignment.</p>
+<p>Initial partners including Genentech, QuEra Computing, and Carnegie Mellon University have tested MHS, reporting speed increases in experiments and simplified automation. Anthropic is inviting stakeholders to join the research preview, with plans to eventually open-source the standard after further safety evaluations and developer input, and is already seeing support from companies like Amazon Web Services, Automata, and Raspberry Pi.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>news</span>
+      <span> · 2026-08-27</span>
+    </div>
+    <h2><a href="https://www.anthropic.com/news/expanding-support-for-scientists" target="_blank" rel="noopener">Expanding our support for scientists</a></h2>
+    
+    <div class="summary"><p>Anthropic announced expansions to its support for the scientific community on August 27, 2026. The company is offering 10,000 free or discounted subscriptions to its Claude team plan for scientists for one year. Standard seats are free, while premium seats, offering five times the usage limits, are priced at $15 per month. Anthropic intends to expand the program beyond the initial 10,000 seats in the coming months.</p>
+<p>Alongside the team plan, Anthropic is broadening the scope of its AI for Science program, which currently supports biological sciences research with free credits. The program will now include researchers in other fields, particularly those undertaking computationally intensive projects. Individual projects can apply for up to $50,000 in credits. Access to Opus-class models remains limited for biology and chemistry researchers, while Fable models block relevant queries due to dual-use concerns. </p>
+<p>Anthropic is also partnering with the US government to give life science professionals access to its Mythos-class models and has begun enrolling initial participants. A research preview of the Model Hardware Standard (MHS) is being offered to select labs and manufacturers. Additionally, a $5 million grant program was launched to research AI's impact on user wellbeing.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -162,29 +190,13 @@
   
   <div class="card">
     <div class="meta">
-      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>blog</span>
-      <span> · 2026-08-26</span>
+      <a href="google/" class="badge badge-google">Google</a>
+      <span>research</span>
+      <span> · 2026-08-27</span>
     </div>
-    <h2><a href="https://claude.com/blog/cowork-built-in-browser" target="_blank" rel="noopener">Claude Cowork gets a built-in browser: nothing to install | Claude by Anthropic</a></h2>
+    <h2><a href="https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/" target="_blank" rel="noopener">Piloting the world&#39;s first double-blind AI evaluations</a></h2>
     
-    <div class="summary"><p>Anthropic has added a built-in browser to Claude Cowork within the desktop application, eliminating the need for extensions. This allows Claude to independently navigate websites, read content, and complete forms directly within the interface—handling tasks like data extraction or form filling without accessing the user’s existing browser profile. The browser is isolated; it does not share tabs, bookmarks, or passwords, though users can selectively import logins from Chrome, Edge, or Firefox. </p>
-<p>The built-in browser is initially rolling out to Pro, Max, and Team plan users, with Enterprise admins gaining control via Organization settings as of today. A key distinction is made between the new browser and the existing "Claude in Chrome" extension: the built-in browser tackles new web tasks while the extension works with already-authenticated sessions. Users can switch their preferred method in settings.</p>
-<p>The new capability includes existing safety measures to mitigate prompt injection attacks, but Anthropic recommends beginning with trusted websites. The built-in browser is currently in beta on macOS, Windows and Linux desktop apps. Availability on the web or mobile devices requires an active desktop application.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>blog</span>
-      <span> · 2026-08-26</span>
-    </div>
-    <h2><a href="https://claude.com/blog/claude-in-chrome-generally-available" target="_blank" rel="noopener">Claude in Chrome is generally available | Claude by Anthropic</a></h2>
-    
-    <div class="summary"><p>Anthropic has generally released Claude in Chrome for all paid plans, enabling the model to interact directly with webpages. This allows Claude to perform actions within the browser – reading, typing, clicking, form filling – without requiring manual approval for each step, though a safety classifier validates actions before execution. </p>
-<p>A core focus of this release is improved resilience against prompt injection attacks, where malicious instructions are hidden within web content. Anthropic has expanded its training datasets and implemented probes to scan web content, as well as a safety classifier to verify actions against the user’s original request. Testing shows Claude Fable 5, Opus 5, and Sonnet 5 successfully resisted attacks in their Cowork harness, with a 0.3% success rate for Fable 5 when using stronger, professionally sourced attacks. </p>
-<p>The feature is available as a Chrome Web Store extension and is manageable within Organization Settings for Enterprise plans. It currently does not support other Chromium browsers or mobile devices.</p></div>
+    <div class="summary"><p>Google DeepMind piloted the first double-blind evaluation of a proprietary AI model, addressing the problem of benchmark contamination where models may have seen test questions during training. The evaluation utilized Confidential Space within Google Cloud’s Confidential Computing to cryptographically ensure the Gemini Flash Lite model and external evaluation data remained private to their owners, preventing either party from accessing the other’s information. This method eliminates the traditional trade-off between sharing prompts or model weights for external evaluation, and was conducted in partnership with the Singapore AI Safety Institute, OpenMined, AVERI, and MLCommons. This approach intends to increase trust in AI benchmarks and enable rigorous testing without compromising data security or intellectual property, and details of the methodology are available in a technical report.</p></div>
     
   </div>
   
@@ -192,17 +204,18 @@
     <div class="meta">
       <a href="google/" class="badge badge-google">Google</a>
       <span>research</span>
-      <span> · 2026-08-26</span>
+      <span> · 2026-08-27</span>
     </div>
-    <h2><a href="https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe/" target="_blank" rel="noopener">Intelligent transcription with Gemini 3.5 Transcribe</a></h2>
+    <h2><a href="https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control/" target="_blank" rel="noopener">Gemini Omni 1.1 Flash lets you build with more control</a></h2>
     
-    <div class="summary"><p>Gemini 3.5 Transcribe offers more precise and intelligent speech-to-text capabilities compared to prior models.</p>
+    <div class="summary"><p>Gemini Omni 1.1 Flash provides developers with enhanced control over generative video creation.</p>
 <ul>
-<li>The model achieves an average Word Error Rate (WER) of 4.0% for streaming and 2.6% for non-streaming use-cases, representing a significant improvement over Chirp 3 (5.50% and 5.04% WER respectively on the FLEURS benchmark).</li>
-<li>It’s available through two APIs: the Live API (gemini-3.5-transcribe-live) for real-time streaming with sub-second latency, and the Interactions API (gemini-3.5-transcribe) for pre-recorded audio with speaker attribution and timestamps.</li>
-<li>Key features include smart transcription (handling disfluencies, removing filler words, auto-formatting), function calling to delegate tasks to other Gemini models, custom vocabulary recognition, and support for over 85 languages.</li>
-<li>The technology is integrated into products like the Gemini app (macOS), the Gemini app, Android's Rambler feature, and Google Antigravity, with plans for Chrome integration; it's accessible to developers via the Gemini API in Google AI Studio and the Gemini Enterprise Agent Platform.</li>
-</ul></div>
+<li>Scene extension now analyzes up to 10 seconds of prior context, improving visual consistency when extending videos up to 40 seconds cumulatively.</li>
+<li>Users can specify start and end frames to create smooth transitions and camera movements, generating continuous video between keyframes.</li>
+<li>360p previews are available for faster prototyping and reduced costs, generating up to 60% faster than 720p.</li>
+<li>The model supports upscaling to 4K resolution for professional-quality output and accepts up to 3 seconds of video as reference for visual consistency. </li>
+</ul>
+<p>The model is accessible through Google AI Studio and the Gemini Enterprise Agent Platform.</p></div>
     
   </div>
   
@@ -210,35 +223,16 @@
     <div class="meta">
       <a href="google/" class="badge badge-google">Google</a>
       <span>blog</span>
-      <span> · 2026-08-25</span>
+      <span> · 2026-08-27</span>
     </div>
-    <h2><a href="https://blog.google/products-and-platforms/products/search/home-decor-tips/" target="_blank" rel="noopener">5 ways to upgrade your home decor with Google Search</a></h2>
+    <h2><a href="https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/" target="_blank" rel="noopener">3 new ways to plan and book travel in Search</a></h2>
     
-    <div class="summary"><p>Google Search introduces several AI-powered features for home decor.</p>
+    <div class="summary"><p>AI Mode in Google Search receives updates for travel planning and booking.</p>
 <ul>
-<li><strong>AI Mode in Search</strong> allows users to upload a photo of a room and receive AI-generated recommendations for furniture, visualizing how different items would look in the space.</li>
-<li><strong>Lens in Search</strong> enables users to identify and find similar products to vintage items they encounter using their camera.</li>
-<li><strong>Circle to Search</strong> (available on Pixel and Samsung Galaxy S26 devices) allows users to circle items in images or videos (like wallpaper) to find similar options online.</li>
-<li><strong>Search Live</strong> provides step-by-step video guidance for DIY projects, responding to user questions and visual input from the camera feed.</li>
-<li>Price tracking and history features are integrated into product listings to help users find the best deals.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="google/" class="badge badge-google">Google</a>
-      <span>research</span>
-      <span> · 2026-08-21</span>
-    </div>
-    <h2><a href="https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games/" target="_blank" rel="noopener">From Atari to EVE Online: Building on 15 Years of AI Research in Games</a></h2>
-    
-    <div class="summary"><p>Google DeepMind is extending its 15-year history of AI research in games, focusing on building AI agents that can <em>understand</em> and interact with game worlds like a human player.</p>
-<ul>
-<li>The latest agent, SIMA 2, powered by Gemini, achieves human-like play across games like <em>No Man's Sky</em>, <em>Valheim</em>, and <em>Hydroneer</em> by interpreting natural language instructions and using standard keyboard/mouse controls.</li>
-<li>A partnership with Fenris Creations and the <em>EVE Universe</em> (including <em>EVE Online</em>, <em>EVE Vanguard</em>, and <em>EVE Frontier</em>) is underway to tackle challenges in continual learning, long-horizon planning, and complex multi-agent dynamics.</li>
-<li>Aura Guidance, a system utilizing Gemini, is already in <em>EVE Online</em> delivering player-generated knowledge to new players.</li>
-<li>Research is progressing from offline instances of <em>EVE Online</em> to <em>EVE Frontier</em> as a testing ground before potential integration into the live game, with the goal of enriching human gameplay and informing AI development for real-world applications.</li>
+<li>AI Mode now integrates Google Flights’ price tracking, allowing users to set up price alerts directly within the chat interface for flights from over 300 airlines and travel sites.</li>
+<li>AI Mode can display flight and hotel costs in points or miles, initially supporting Alaska/Hawaiian Airlines, American Airlines, Choice/Hilton/Wyndham Hotels, with additions planned for Accor, Flying Blue, Hyatt, LATAM, and Lufthansa.</li>
+<li>Users in the U.S. can now book hotels directly within AI Mode through partners like Booking.com, Expedia, Hilton, and Marriott, utilizing Google Pay for secure transactions.</li>
+<li>Hotel booking is initially available in the U.S. in English, with phased rollout plans for wider availability and partner integration.</li>
 </ul></div>
     
   </div>
@@ -301,34 +295,15 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-08-26</span>
+      <span> · 2026-08-27</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/connect-amazon-bedrock-agentcore-to-cross-account-knowledge-bases/" target="_blank" rel="noopener">Connect Amazon Bedrock AgentCore to cross-account knowledge bases</a></h2>
-    
-    <div class="summary"><p>Amazon Bedrock AgentCore now supports cross-account access to knowledge bases without data duplication.</p>
-<ul>
-<li>Agents built with Amazon Bedrock AgentCore can access knowledge bases in separate AWS accounts using Amazon Redshift Serverless.</li>
-<li>Two orchestration models are available: a code-based Strands agent on AgentCore runtime and a declarative AgentCore harness using AWS Lambda.</li>
-<li>Both models utilize a narrowly scoped IAM role and AWS Security Token Service (STS) to call <code>RetrieveAndGenerate</code> with Claude Haiku 4.5 (us.anthropic.claude-haiku-4-5-20251001-v1:0) and return generated answers.</li>
-<li>Deployment procedures and implementation details for both variants are available in a public GitHub sample, utilizing Amazon Nova Pro (us.amazon.nova-pro-v1:0). </li>
-</ul>
-<p>For full implementation details and decision guidance, consult the original post.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-08-26</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/preparing-data-for-supervised-fine-tuning-part-1-formatting-and-quality/" target="_blank" rel="noopener">Preparing data for supervised fine-tuning Part 1: Formatting and quality</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/reduce-asr-inference-costs-by-75-with-nvidia-mps-on-amazon-ec2/" target="_blank" rel="noopener">Reduce ASR inference costs by 75% with NVIDIA MPS on Amazon EC2</a></h2>
     
     <div class="summary"><ul>
-<li>This post details data preparation for supervised fine-tuning (SFT), focusing on quality checks and formatting requirements, and contrasts SFT with continued pre-training (CPT) and reinforcement learning from human feedback (RFT).</li>
-<li>Data quality is paramount; prioritize accurate and diverse examples – even a small set (around 1,000) of curated examples can be highly effective, with techniques like clustering by embedding similarity helping identify gaps in coverage.</li>
-<li>Formatting should adhere to the model’s chat template (e.g., the Amazon Nova 2.0 <code>bedrock-conversation-2024</code> schema uses JSONL format with <code>system</code>, <code>user</code>, and <code>assistant</code> roles), including system prompts and reasoning traces when applicable.</li>
-<li>The post covers formatting for tool calling (using <code>toolUse</code> and <code>toolResult</code> blocks) and multimodal inputs (handling documents and images via <code>document</code> blocks referencing S3 locations), emphasizing consistent application of these features during both training and inference.</li>
+<li>This blog post details how to reduce ASR inference costs by 75% using NVIDIA CUDA Multi-Process Service (MPS) with NVIDIA Triton Inference Server on Amazon EC2, achieving 92.1 requests per second (RPS) per GPU.</li>
+<li>NVIDIA MPS allows concurrent execution of multiple processes on a single GPU by partitioning it, eliminating context-switching overhead and improving GPU utilization compared to default CUDA time-slicing or Multi-Instance GPU (MIG).</li>
+<li>The solution incorporates model-level optimizations using ONNX Runtime with the TensorRT Execution Provider for the encoder portion of a Parakeet TDT 0.6B V2 model, alongside CUDA graph caching in the PyTorch decoder.</li>
+<li>A complete, deployable inference pipeline is available, running on Amazon EC2 g6e/g7e instances, and utilizing FastAPI gateway, Triton Inference Server, and CUDA MPS, with support for both transcription and speaker diarization tasks.</li>
 </ul></div>
     
   </div>
@@ -337,15 +312,33 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-08-26</span>
+      <span> · 2026-08-27</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/preparing-data-for-supervised-fine-tuning-part-2-advanced-data-strategies/" target="_blank" rel="noopener">Preparing data for supervised fine-tuning Part 2: Advanced data strategies</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/deepgram-deepens-amazon-sagemaker-ai-observability-with-enhanced-metrics/" target="_blank" rel="noopener">Deepgram deepens Amazon SageMaker AI observability with Enhanced Metrics</a></h2>
+    
+    <div class="summary"><p>Deepgram is releasing enhanced observability features for its speech-to-text (STT) and text-to-speech (TTS) models deployed on Amazon SageMaker AI.</p>
+<ul>
+<li><strong>Deepgram Enhanced Metrics</strong> publishes usage and billing metrics directly to Amazon CloudWatch, providing transparency into AWS Marketplace billing and feature usage without requiring additional agents or IAM permissions. Metrics are available at the Category, Model, and Transport levels.</li>
+<li>A separate <strong>Deepgram/SelfHosted</strong> namespace provides detailed usage metrics broken down by API method, model tier, and enabled features like diarization and redaction.</li>
+<li><strong>Prometheus and OpenTelemetry support</strong> enables engine-level metrics (including per-GPU utilization via DCGM exporter and host metrics via node exporter) which are scraped from the Deepgram container and exported to CloudWatch.</li>
+<li>Detailed observability is enabled by default for new SageMaker AI endpoints, with the ability to configure metric publish frequency using <code>MetricsConfig</code>. Metrics are accessible via PromQL from CloudWatch, Grafana, or other Prometheus-compatible tools.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
+      <span> · 2026-08-27</span>
+    </div>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/introducing-openai-models-on-amazon-bedrock-for-in-country-inferencing-in-india/" target="_blank" rel="noopener">Introducing OpenAI models on Amazon Bedrock for in-country inferencing in India</a></h2>
     
     <div class="summary"><ul>
-<li>This post details advanced strategies for optimizing supervised fine-tuning (SFT) datasets, assuming data is already cleaned and formatted according to Amazon Nova's conversational schema.</li>
-<li>Learning curve analysis is recommended to determine the optimal dataset size, training until gains from additional data diminish (less than 1-2% improvement in primary metric).</li>
-<li>Data subset selection and filtering methods (DEITA, DELIFT, coreset selection) can outperform full-dataset training by focusing on high-quality, diverse examples and reducing catastrophic forgetting.</li>
-<li>Data mixing, blending target-task data with general data to preserve existing model capabilities, is suggested, with ratios needing experimentation but a 50/50 split recommended as a starting point for Amazon Nova models.</li>
+<li>Amazon Bedrock now supports OpenAI’s GPT-5.6 models, Terra and Luna, within India via new “in.” prefixed inference profiles (e.g., <code>in.openai.gpt-5.6-terra</code>).</li>
+<li>These models offer a 1-million-token context window and support both text and image inputs, producing text outputs, enabling processing of large documents and codebases.</li>
+<li>India geographic cross-Region inference routes requests within the India geography (ap-south-1 and ap-south-2) to improve throughput and maintain data residency.</li>
+<li>The OpenAI Responses API, OpenAI Chat Completions API, Amazon Bedrock Converse API, and prompt caching are supported, and access requires specific IAM permissions for both the inference profile and the foundation models in both regions.</li>
 </ul></div>
     
   </div>
@@ -403,9 +396,15 @@
       <span>news</span>
       <span> · 2026-08-27</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/08/26/viral-ai-startup-instinct-has-raised-350-million-at-a-2-5-billion-valuation/" target="_blank" rel="noopener">Viral AI startup Instinct has raised $350M at a $2.5B valuation</a></h2>
+    <h2><a href="https://techcrunch.com/2026/08/27/plauds-new-earphones-come-with-an-esim-enabled-case-for-talking-to-ai-agents/" target="_blank" rel="noopener">Plaud’s new earphones come with an eSIM-enabled case for talking to AI agents</a></h2>
     
-    <div class="summary"><p>AI startup Instinct, developed by Spear Street Technology, has raised $350 million in funding, reaching a $2.5 billion valuation. The company’s AI assistant, currently in private beta, connects to user apps and devices and can be communicated with via text and calls. According to early users reported to the Wall Street Journal, the assistant is being used for tasks including trip planning, grocery shopping, subscription cancellation, and even wedding planning. TechCrunch notes the app has sparked privacy concerns related to required permissions and terms of use.</p></div>
+    <div class="summary"><p>Plaud launched Plaud One, AI-enabled earphones with an eSIM-enabled case for remote AI interaction.</p>
+<ul>
+<li>The Plaud One earphones feature 12mm drivers and active noise cancellation, offering six hours of recording on a single charge, expandable to 25 hours with the case.</li>
+<li>The case incorporates an eSIM, enabling remote instruction of Plaud’s AI agents without requiring a connected phone or computer.</li>
+<li>Plaud’s AI agent integrates with tools like Gmail, Google Calendar, Notion, and Slack, automating tasks such as email drafting and document creation from transcribed conversations.</li>
+<li>The device is available for pre-order at $249, shipping in Q4 2026, and includes 300 minutes of free transcription, with additional plans starting at $8.33/month; buyers receive $200 in credits for future agentic tasks.</li>
+</ul></div>
     
   </div>
   
@@ -413,11 +412,17 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-08-26</span>
+      <span> · 2026-08-27</span>
     </div>
-    <h2><a href="https://arstechnica.com/ai/2026/08/ibms-new-granite-4-2-models-ride-the-wave-of-interest-in-local-llms/" target="_blank" rel="noopener">IBM&#39;s new Granite 4.2 models ride the wave of interest in local LLMs</a></h2>
+    <h2><a href="https://arstechnica.com/security/2026/08/claude-codex-and-hermes-installed-unowned-code-inside-corporate-networks/" target="_blank" rel="noopener">Claude, Codex, and Hermes installed unowned code inside corporate networks</a></h2>
     
-    <div class="summary"><p>IBM released the Granite 4.2 series of open-weight large language models in 3B, 8B, and 30B parameter sizes, designed for local deployment. The models utilize a decoder-only approach and feature a native 128,000-token context window.  The 8B and 30B variants include agentic reinforcement learning for capabilities like web searching and tool use, while the 3B model supports tools with less specialized training. According to IBM, Granite 4.2 is focused on reasoning capabilities via “chain-of-thought” processing, potentially increasing accuracy at the cost of speed and compute.</p></div>
+    <div class="summary"><p>Claude, Codex, and Hermes were found to execute unowned code within corporate networks via improperly configured website files.</p>
+<ul>
+<li>Researchers identified 120 websites, including those of Fortune 500 companies, hosting <code>llms.txt</code> or <code>llms-full.txt</code> files referencing unregistered code packages or domains.</li>
+<li>Testing revealed that AI agents, specifically Anthropic’s Claude, OpenAI’s Codex, and Nous Research’s Hermes, executed proof-of-concept code hosted at these unclaimed locations, with a Fortune 500 company responding within an hour.</li>
+<li>One active attack was discovered on clerk.com, utilizing <code>npx</code> to execute malware from a claimed package; the company has since resolved the issue.</li>
+<li>The core vulnerability stems from AI agents treating website documentation as authoritative instructions, lacking verification of package legitimacy, and blurring the line between data and executable code.</li>
+</ul></div>
     
   </div>
   
