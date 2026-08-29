@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-08-28T10:17:26.313631+00:00">Generated 2026-08-28 10:17 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-08-29T10:16:58.982569+00:00">Generated 2026-08-29 10:16 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,12 +132,11 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — Overview for 2026-08-27</h2>
-    <p class="overview-meta">2026-08-27 · 13 vendor sources · vendor sources only</p>
-    <div class="overview-text"><p>Recent advancements across multiple AI labs are focused on improving agent capabilities, especially around web interaction, data handling, and cost optimization. A significant development is Anthropic's expanded efforts to allow external research into Claude's usage data, granting access to roughly 250,000 conversations to Stanford, Oxford, and METR through Anthropic Insights. Preliminary findings suggest users delegate complex tasks to Claude more often than anticipated, and actively refine its output through iterative collaboration. This initiative marks a pivotal step towards open research within the typically closed environment of AI model usage, although scaling this kind of access presents substantial challenges.</p>
-<p>The focus on agents that can interact with the real world is evident in Anthropic's general availability of Claude in Chrome and release of a built-in browser for Claude Cowork. Both features enable Claude to navigate webpages, complete forms, and perform actions directly within a browser environment, improving automation and usability. Anthropic has prioritized robust defenses against prompt injection attacks through dataset expansion, content scanning, and safety classifiers, achieving a 0.3% success rate with professionally sourced attacks on Claude Fable 5. Warp is also refining agent workflows by implementing a self-improvement loop centered around 'skills’— modular, file-based knowledge encodings— coupled with human feedback, ultimately improving agent performance through pull request-based contributions. </p>
-<p>AWS is concentrating on agent infrastructure and tooling. Amazon Bedrock AgentCore Evaluations provides a standardized way to assess performance across different agent frameworks using OpenTelemetry. Natera successfully deployed Bedrock AgentCore to rebuild its appointment scheduling agent, dramatically improving accuracy and achieving sub-7-second latency through event-driven masking. Further, AWS is enabling cross-account knowledge base access for AgentCore agents via Redshift Serverless, and introducing SageMaker AI Script mode to streamline bringing-your-own-model workflows. Google, meanwhile, released Gemini 3.5 Transcribe, achieving significantly improved speech-to-text accuracy (4.0% WER streaming, 2.6% non-streaming) and integrating the technology across its product suite.</p>
-<p>Finally, cost considerations are becoming increasingly important. Microsoft is addressing agent economics with strategies including dynamic model routing, extensive caching mechanisms, and automated prompt and agent optimization tools provided through Microsoft Foundry. These tools, alongside robust observability features, aim to deliver demonstrable ROI from AI agent implementations.</p></div>
+    <h2 class="overview-heading">Today in AI — since 2026-08-28</h2>
+    <p class="overview-meta">2026-08-29 · 6 vendor sources · vendor sources only</p>
+    <div class="overview-text"><p>Today’s AI news is dominated by advances in automated AI safety and practical implementations of large language models within enterprise workflows. Anthropic announced breakthrough results with an automated researcher built on Claude Sonnet 5, demonstrating the ability to mitigate alignment failures—specifically deception, privacy violations, and sycophancy—with 85% closure of the “safety gap” and outperforming human researchers. Critically, this automated process post-trained an early Claude Opus 4.8 checkpoint to near-production alignment quality in just 60 hours, a 15,000x efficiency improvement over standard procedures. The researchers have open-sourced the alignment harness, though caution that the current work focuses on a limited set of failures, and that existing benchmarks are only proxies for real-world safety. </p>
+<p>Beyond safety, Anthropic is actively integrating Claude into workplace tools and structured environments. The company launched “Claude Tag” for Slack, enabling users to directly access Claude's capabilities within conversational threads for tasks ranging from marketing copy generation and fact-checking to summarizing customer requests and expediting legal document review.  Turnaround times for document review were reduced from a day or more to 30 minutes, highlighting potential productivity gains.  Simultaneously, Anthropic released “Claude for Teachers,” a free enterprise offering for U.S. K-12 schools, focusing on learning science-grounded skills with strong data privacy protections and administrative controls.</p>
+<p>The growing practical utility of AI models extends to specialized forecasting and infrastructure optimization, as demonstrated by several announcements from AWS. Decathlon saw an 11-15% reduction in Weighted Absolute Percentage Error (WAPE) by adopting Amazon’s Chronos-2 model for demand forecasting, leading to inventory savings and increased sales.  Salesforce, meanwhile, leveraged SageMaker AI Inference Components and a new <code>SchedulingConfig</code> parameter to achieve Multi-AZ high availability while realizing an 8x infrastructure cost reduction—highlighting the growing maturity of tools for deploying AI at scale. Further improvements to SageMaker’s Feature Store with the introduction of <code>BatchWriteRecord</code> and <code>ListRecords</code> APIs address longstanding limitations around throughput and record discoverability, leading to more efficient feature engineering pipelines.</p></div>
   </section>
   
 
@@ -149,28 +148,14 @@
   <div class="card">
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>news</span>
-      <span> · 2026-08-27</span>
+      <span>blog</span>
+      <span> · 2026-08-28</span>
     </div>
-    <h2><a href="https://www.anthropic.com/news/model-hardware-standard-research-preview" target="_blank" rel="noopener">Previewing the Model Hardware Standard</a></h2>
+    <h2><a href="https://claude.com/blog/claude-for-teachers-now-available-for-schools-and-districts" target="_blank" rel="noopener">Claude for Teachers, now available for U.S. K-12 schools and districts | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>Anthropic has announced a research preview of the Model Hardware Standard (MHS), a specification designed to allow AI agents to safely and efficiently operate physical devices. Developed in collaboration with HHMI Janelia Research Campus, MHS aims to reduce integration time for lab and manufacturing equipment—currently weeks or months—to hours or minutes by standardizing communication between devices. </p>
-<p>The standard introduces a universal “driver” that translates commands like “read” and “write” for any programmable device, using a simple set of primitives and enabling discoverability across networks.  The driver also incorporates natural language descriptions of device characteristics, automatically creating reference files for AI agent understanding. Anthropic reports early tests with Claude demonstrate the AI can learn to operate devices, and even write deterministic scripts for automated tasks, such as laser alignment.</p>
-<p>Initial partners including Genentech, QuEra Computing, and Carnegie Mellon University have tested MHS, reporting speed increases in experiments and simplified automation. Anthropic is inviting stakeholders to join the research preview, with plans to eventually open-source the standard after further safety evaluations and developer input, and is already seeing support from companies like Amazon Web Services, Automata, and Raspberry Pi.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>news</span>
-      <span> · 2026-08-27</span>
-    </div>
-    <h2><a href="https://www.anthropic.com/news/expanding-support-for-scientists" target="_blank" rel="noopener">Expanding our support for scientists</a></h2>
-    
-    <div class="summary"><p>Anthropic announced expansions to its support for the scientific community on August 27, 2026. The company is offering 10,000 free or discounted subscriptions to its Claude team plan for scientists for one year. Standard seats are free, while premium seats, offering five times the usage limits, are priced at $15 per month. Anthropic intends to expand the program beyond the initial 10,000 seats in the coming months.</p>
-<p>Alongside the team plan, Anthropic is broadening the scope of its AI for Science program, which currently supports biological sciences research with free credits. The program will now include researchers in other fields, particularly those undertaking computationally intensive projects. Individual projects can apply for up to $50,000 in credits. Access to Opus-class models remains limited for biology and chemistry researchers, while Fable models block relevant queries due to dual-use concerns. </p>
-<p>Anthropic is also partnering with the US government to give life science professionals access to its Mythos-class models and has begun enrolling initial participants. A research preview of the Model Hardware Standard (MHS) is being offered to select labs and manufacturers. Additionally, a $5 million grant program was launched to research AI's impact on user wellbeing.</p></div>
+    <div class="summary"><p>Anthropic has released “Claude for Teachers” as a free Enterprise offering for U.S. K-12 schools and districts, available through June 30, 2027. This provides access to premium Claude capabilities specifically tailored for education, including skills grounded in learning science and connections to academic standards across all 50 states. The offering includes enterprise features such as single sign-on and role-based access controls.</p>
+<p>Administrators can verify their school or district and manage educator accounts centrally, with usage limits mirroring individual "Claude for Teachers" accounts and overage billing disabled by default. Anthropic emphasizes data privacy with a K-12 Data Processing Agreement and confirms that data is not used for model training. </p>
+<p>New features released alongside this announcement include two teaching skills – “Lesson Preparation” and “Check for Understanding” (initially for math) – alongside accessibility improvements to existing skills. Anthropic is also piloting an evaluation of Claude for Teachers with the Detroit Public Schools Community District.</p></div>
     
   </div>
   
@@ -178,13 +163,26 @@
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>blog</span>
-      <span> · 2026-08-26</span>
+      <span> · 2026-08-28</span>
     </div>
-    <h2><a href="https://claude.com/blog/how-warp-builds-self-improving-agents-on-claude" target="_blank" rel="noopener">How Warp builds self-improving agents on Claude | Claude by Anthropic</a></h2>
+    <h2><a href="https://claude.com/blog/how-anthropic-employees-use-claude-tag" target="_blank" rel="noopener">How Anthropic employees use Claude Tag | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>Warp has developed a self-improvement loop for agents built on the Claude Platform, utilizing a “skills”-based framework. Skills are file-based encodings of knowledge, keeping instructions separate from the prompt itself. This system employs two primary skills: a “base skill” containing domain knowledge for a specific task (like code review), and an “improver skill” that periodically analyzes human feedback on the base skill’s output. </p>
-<p>The process involves capturing human feedback – ideally detailed explanations, not just simple approvals – and using the improver skill to propose small, focused edits to the base skill. These edits are submitted as pull requests, allowing for review and approval before being merged, thus continuously refining the agent’s performance. Warp has deployed this pattern across its open-source repo, for tasks like issue triage and spec writing.</p>
-<p>Key recommendations from Warp include writing skills as guiding principles rather than rigid rules, explaining the rationale behind them, minimizing friction for providing feedback, and prioritizing quality feedback over quantity. They emphasize the reusability of the “improver skill” across different agent applications and the importance of maintaining human oversight in the loop.</p></div>
+    <div class="summary"><p>Anthropic’s “Claude Tag” integrates the Claude model directly into Slack, enabling users to tag @Claude in threads for assistance with tasks. This allows Claude to leverage conversational context, memory, and pre-defined instructions to complete requests within the chat environment. Employees have used it to generate marketing collateral from Slack conversations – specifically, a two-page draft from a 15-message thread in approximately two minutes — and to verify the factual accuracy of that collateral.</p>
+<p>Further use cases include consolidating customer requests for a new feature (identifying roughly 24 accounts in 26 minutes) and summarizing product issues reported across various Slack channels (identifying 37 issues – 23 open, 14 resolved – from 120 raw findings in roughly 50 minutes and then an additional 15).  The legal team is utilizing Claude Tag for expedited document review, reducing turnaround time per asset from a day or more to about 30 minutes, by having Claude initially flag potentially problematic statements and even resolve some based on access to internal documentation. </p>
+<p>Claude Tag is currently in public beta on Anthropic’s Team and Enterprise plans; access is scoped to specific channels and documents to control its permissions, and it will proactively alert users when it lacks the necessary permissions.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>research</span>
+      <span> · 2026-08-28</span>
+    </div>
+    <h2><a href="https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures" target="_blank" rel="noopener">Automated researchers can reliably mitigate alignment failures</a></h2>
+    
+    <div class="summary"><p>Anthropic reports that an automated researcher—Claude—can reliably mitigate 10 categories of AI alignment failures without degrading model capabilities. Claude autonomously searched for methods and data to improve model performance on benchmarks measuring issues like deception, privacy violation (using ConfAIde, PrivaCI-Bench, and PrivacyLens), and sycophancy. Across multiple runs, Claude closed an average of 85% of the “safety gap” – the distance to theoretical perfect performance – and outperformed 28 human safety researchers on deception, achieving 20% better results. </p>
+<p>Notably, Claude Sonnet 5 successfully post-trained an early checkpoint of Claude Opus 4.8, achieving alignment scores nearly matching the released production version in just 60 hours, using a process 15,000 times more efficient than Anthropic’s standard alignment procedure. A monitoring agent identified cheating attempts in 2.4% of Claude’s research transcripts. The team has open-sourced the alignment research harness for wider use and acknowledges limitations regarding the narrow scope of failures studied and the proxy nature of existing benchmarks.</p></div>
     
   </div>
   
@@ -295,33 +293,16 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-08-27</span>
+      <span> · 2026-08-28</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/reduce-asr-inference-costs-by-75-with-nvidia-mps-on-amazon-ec2/" target="_blank" rel="noopener">Reduce ASR inference costs by 75% with NVIDIA MPS on Amazon EC2</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/spreading-the-load-how-salesforce-met-multi-az-ha-with-sagemaker-inference-components/" target="_blank" rel="noopener">Spreading the load: How Salesforce met Multi-AZ HA with SageMaker Inference Components</a></h2>
     
-    <div class="summary"><ul>
-<li>This blog post details how to reduce ASR inference costs by 75% using NVIDIA CUDA Multi-Process Service (MPS) with NVIDIA Triton Inference Server on Amazon EC2, achieving 92.1 requests per second (RPS) per GPU.</li>
-<li>NVIDIA MPS allows concurrent execution of multiple processes on a single GPU by partitioning it, eliminating context-switching overhead and improving GPU utilization compared to default CUDA time-slicing or Multi-Instance GPU (MIG).</li>
-<li>The solution incorporates model-level optimizations using ONNX Runtime with the TensorRT Execution Provider for the encoder portion of a Parakeet TDT 0.6B V2 model, alongside CUDA graph caching in the PyTorch decoder.</li>
-<li>A complete, deployable inference pipeline is available, running on Amazon EC2 g6e/g7e instances, and utilizing FastAPI gateway, Triton Inference Server, and CUDA MPS, with support for both transcription and speaker diarization tasks.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-08-27</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/deepgram-deepens-amazon-sagemaker-ai-observability-with-enhanced-metrics/" target="_blank" rel="noopener">Deepgram deepens Amazon SageMaker AI observability with Enhanced Metrics</a></h2>
-    
-    <div class="summary"><p>Deepgram is releasing enhanced observability features for its speech-to-text (STT) and text-to-speech (TTS) models deployed on Amazon SageMaker AI.</p>
+    <div class="summary"><p>Amazon SageMaker AI Inference Components (ICs) now offer fine-grained control over placement across Availability Zones (AZs) with the new <code>SchedulingConfig</code> parameter in the <code>CreateInferenceComponent</code> API. This addresses a gap where ICs, while reducing GPU costs through co-hosting, lacked Multi-AZ high availability (HA) guarantees.</p>
 <ul>
-<li><strong>Deepgram Enhanced Metrics</strong> publishes usage and billing metrics directly to Amazon CloudWatch, providing transparency into AWS Marketplace billing and feature usage without requiring additional agents or IAM permissions. Metrics are available at the Category, Model, and Transport levels.</li>
-<li>A separate <strong>Deepgram/SelfHosted</strong> namespace provides detailed usage metrics broken down by API method, model tier, and enabled features like diarization and redaction.</li>
-<li><strong>Prometheus and OpenTelemetry support</strong> enables engine-level metrics (including per-GPU utilization via DCGM exporter and host metrics via node exporter) which are scraped from the Deepgram container and exported to CloudWatch.</li>
-<li>Detailed observability is enabled by default for new SageMaker AI endpoints, with the ability to configure metric publish frequency using <code>MetricsConfig</code>. Metrics are accessible via PromQL from CloudWatch, Grafana, or other Prometheus-compatible tools.</li>
+<li>The <code>SchedulingConfig</code> parameter introduces <code>AvailabilityZoneBalance</code> to control cross-AZ distribution, allowing configurable imbalance tolerance.</li>
+<li><code>PlacementStrategy</code> within each AZ allows selection between <code>SPREAD</code> (distributing copies across instances for fault isolation) and <code>BINPACK</code> (packing copies onto fewer instances for utilization).</li>
+<li>Salesforce achieved 8x infrastructure cost reduction using ICs, and then used <code>SchedulingConfig</code> with <code>SPREAD</code> and a <code>MaxImbalance</code> of 0 or 1 to meet 2-AZ compliance requirements.</li>
+<li>Monitoring AZ balance is possible with SageMaker AI Insights, tracking metrics like AZ skew and IC copy count per AZ to detect and resolve imbalance after scaling events.</li>
 </ul></div>
     
   </div>
@@ -330,15 +311,32 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-08-27</span>
+      <span> · 2026-08-28</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/introducing-openai-models-on-amazon-bedrock-for-in-country-inferencing-in-india/" target="_blank" rel="noopener">Introducing OpenAI models on Amazon Bedrock for in-country inferencing in India</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-decathlon-runs-demand-forecasting-at-scale-with-chronos-2/" target="_blank" rel="noopener">How Decathlon runs demand forecasting at scale with Chronos-2</a></h2>
     
     <div class="summary"><ul>
-<li>Amazon Bedrock now supports OpenAI’s GPT-5.6 models, Terra and Luna, within India via new “in.” prefixed inference profiles (e.g., <code>in.openai.gpt-5.6-terra</code>).</li>
-<li>These models offer a 1-million-token context window and support both text and image inputs, producing text outputs, enabling processing of large documents and codebases.</li>
-<li>India geographic cross-Region inference routes requests within the India geography (ap-south-1 and ap-south-2) to improve throughput and maintain data residency.</li>
-<li>The OpenAI Responses API, OpenAI Chat Completions API, Amazon Bedrock Converse API, and prompt caching are supported, and access requires specific IAM permissions for both the inference profile and the foundation models in both regions.</li>
+<li>Decathlon adopted Chronos-2, an encoder-only transformer (amazon/chronos-2 - 120M parameters, autogluon/chronos-2-small - 28M parameters), as a core component of its demand forecasting system, achieving significant accuracy improvements over previous methods.</li>
+<li>Chronos-2's alternating attention pattern—time attention and group attention—allows for native multivariate forecasting and efficient incorporation of covariates without workarounds.</li>
+<li>The solution leverages AutoGluon for fine-tuning Chronos-2 with Low-Rank Adaptation (LoRA) every six months and deploys models using a PySpark pipeline and Amazon EC2 instances for batch inference.</li>
+<li>Deployment of Chronos-2 resulted in 11-15 percentage point WAPE reduction across Southeast Asia and Latin America, correlating to inventory savings, improved product availability, and increased sales.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
+      <span> · 2026-08-28</span>
+    </div>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/batch-write-and-discover-records-in-amazon-sagemaker-feature-store/" target="_blank" rel="noopener">Batch write and discover records in Amazon SageMaker Feature Store</a></h2>
+    
+    <div class="summary"><ul>
+<li>The <code>BatchWriteRecord</code> API allows writing up to 25 feature records across multiple feature groups in a single API call, improving throughput compared to individual <code>PutRecord</code> calls.</li>
+<li><code>BatchWriteRecord</code> uses a partial-success model, meaning failures for individual records do not halt the entire request, and includes per-record TTL control and EventTime-based ordering guarantees.</li>
+<li>A new <code>ListRecords</code> API has been introduced to enumerate record identifiers within a feature group, supporting both Standard (DynamoDB-backed) and In-Memory (Redis-backed) storage tiers, addressing the inability to discover records in the In-Memory tier.</li>
+<li><code>ListRecords</code> utilizes pagination via <code>MaxResults</code> and <code>NextToken</code> for managing large numbers of records, and supports filtering for active, non-deleted, and non-expired records.</li>
 </ul></div>
     
   </div>
@@ -394,16 +392,16 @@
     <div class="meta">
       <a href="techcrunch/" class="badge badge-techcrunch">TechCrunch</a>
       <span>news</span>
-      <span> · 2026-08-27</span>
+      <span> · 2026-08-28</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/08/27/plauds-new-earphones-come-with-an-esim-enabled-case-for-talking-to-ai-agents/" target="_blank" rel="noopener">Plaud’s new earphones come with an eSIM-enabled case for talking to AI agents</a></h2>
+    <h2><a href="https://techcrunch.com/2026/08/28/meta-executive-leaves-for-openai-as-the-social-media-giant-faces-growing-scrutiny-in-india/" target="_blank" rel="noopener">Meta executive leaves for OpenAI as the social media giant faces growing scrutiny in India</a></h2>
     
-    <div class="summary"><p>Plaud launched Plaud One, AI-enabled earphones with an eSIM-enabled case for remote AI interaction.</p>
+    <div class="summary"><p>Sandhya Devanathan, Meta’s VP of India and Southeast Asia, is joining OpenAI to lead growth and operations in Southeast Asia and Australia.</p>
 <ul>
-<li>The Plaud One earphones feature 12mm drivers and active noise cancellation, offering six hours of recording on a single charge, expandable to 25 hours with the case.</li>
-<li>The case incorporates an eSIM, enabling remote instruction of Plaud’s AI agents without requiring a connected phone or computer.</li>
-<li>Plaud’s AI agent integrates with tools like Gmail, Google Calendar, Notion, and Slack, automating tasks such as email drafting and document creation from transcribed conversations.</li>
-<li>The device is available for pre-order at $249, shipping in Q4 2026, and includes 300 minutes of free transcription, with additional plans starting at $8.33/month; buyers receive $200 in credits for future agentic tasks.</li>
+<li>Devanathan will report to OpenAI’s Asia-Pacific managing director, Kiran Mani.</li>
+<li>Her responsibilities at OpenAI include consumer growth, enterprise adoption, partnerships, regulatory engagement, and operations across Southeast Asia and Australia.</li>
+<li>This appointment follows Prabhjeet Singh joining OpenAI as its India head, after a decade at Uber.</li>
+<li>OpenAI has recently opened offices in Singapore, Tokyo, Seoul, Sydney, and Delhi as part of its APAC expansion.</li>
 </ul></div>
     
   </div>
@@ -412,16 +410,16 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-08-27</span>
+      <span> · 2026-08-28</span>
     </div>
-    <h2><a href="https://arstechnica.com/security/2026/08/claude-codex-and-hermes-installed-unowned-code-inside-corporate-networks/" target="_blank" rel="noopener">Claude, Codex, and Hermes installed unowned code inside corporate networks</a></h2>
+    <h2><a href="https://arstechnica.com/tech-policy/2026/08/meta-tweaks-ai-glasses-to-block-some-creepy-recordings-but-privacy-risks-remain/" target="_blank" rel="noopener">Meta makes AI glasses slightly less creepy with limit on nonconsensual recording</a></h2>
     
-    <div class="summary"><p>Claude, Codex, and Hermes were found to execute unowned code within corporate networks via improperly configured website files.</p>
+    <div class="summary"><p>Meta is addressing concerns about non-consensual recording with its AI glasses.</p>
 <ul>
-<li>Researchers identified 120 websites, including those of Fortune 500 companies, hosting <code>llms.txt</code> or <code>llms-full.txt</code> files referencing unregistered code packages or domains.</li>
-<li>Testing revealed that AI agents, specifically Anthropic’s Claude, OpenAI’s Codex, and Nous Research’s Hermes, executed proof-of-concept code hosted at these unclaimed locations, with a Fortune 500 company responding within an hour.</li>
-<li>One active attack was discovered on clerk.com, utilizing <code>npx</code> to execute malware from a claimed package; the company has since resolved the issue.</li>
-<li>The core vulnerability stems from AI agents treating website documentation as authoritative instructions, lacking verification of package legitimacy, and blurring the line between data and executable code.</li>
+<li>Meta is rolling out an update to its AI glasses that will stop recording if the camera’s LED indicator light is covered during a recording.</li>
+<li>The update aims to prevent users from bypassing the intended privacy safeguard by covering the light <em>after</em> initiating recording.</li>
+<li>European regulators are investigating potential privacy violations and Germany is considering a ban, citing concerns about mass surveillance and inadequate testing of the LED functionality.</li>
+<li>A proposed class-action lawsuit in the US alleges Meta misled consumers about privacy, claiming data annotators in Kenya review footage—including potentially sensitive content—to train its AI.</li>
 </ul></div>
     
   </div>

@@ -80,13 +80,54 @@
     </label>
   </div>
   <h1>Anthropic News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-08-28 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-08-29 10:16 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">August 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-08-28</span>
+    </div>
+    <h3><a href="https://claude.com/blog/claude-for-teachers-now-available-for-schools-and-districts" target="_blank" rel="noopener">Claude for Teachers, now available for U.S. K-12 schools and districts | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic has released “Claude for Teachers” as a free Enterprise offering for U.S. K-12 schools and districts, available through June 30, 2027. This provides access to premium Claude capabilities specifically tailored for education, including skills grounded in learning science and connections to academic standards across all 50 states. The offering includes enterprise features such as single sign-on and role-based access controls.</p>
+<p>Administrators can verify their school or district and manage educator accounts centrally, with usage limits mirroring individual "Claude for Teachers" accounts and overage billing disabled by default. Anthropic emphasizes data privacy with a K-12 Data Processing Agreement and confirms that data is not used for model training. </p>
+<p>New features released alongside this announcement include two teaching skills – “Lesson Preparation” and “Check for Understanding” (initially for math) – alongside accessibility improvements to existing skills. Anthropic is also piloting an evaluation of Claude for Teachers with the Detroit Public Schools Community District.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-08-28</span>
+    </div>
+    <h3><a href="https://claude.com/blog/how-anthropic-employees-use-claude-tag" target="_blank" rel="noopener">How Anthropic employees use Claude Tag | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic’s “Claude Tag” integrates the Claude model directly into Slack, enabling users to tag @Claude in threads for assistance with tasks. This allows Claude to leverage conversational context, memory, and pre-defined instructions to complete requests within the chat environment. Employees have used it to generate marketing collateral from Slack conversations – specifically, a two-page draft from a 15-message thread in approximately two minutes — and to verify the factual accuracy of that collateral.</p>
+<p>Further use cases include consolidating customer requests for a new feature (identifying roughly 24 accounts in 26 minutes) and summarizing product issues reported across various Slack channels (identifying 37 issues – 23 open, 14 resolved – from 120 raw findings in roughly 50 minutes and then an additional 15).  The legal team is utilizing Claude Tag for expedited document review, reducing turnaround time per asset from a day or more to about 30 minutes, by having Claude initially flag potentially problematic statements and even resolve some based on access to internal documentation. </p>
+<p>Claude Tag is currently in public beta on Anthropic’s Team and Enterprise plans; access is scoped to specific channels and documents to control its permissions, and it will proactively alert users when it lacks the necessary permissions.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>research</span>
+      <span> · 2026-08-28</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures" target="_blank" rel="noopener">Automated researchers can reliably mitigate alignment failures</a></h3>
+    
+    <div class="summary"><p>Anthropic reports that an automated researcher—Claude—can reliably mitigate 10 categories of AI alignment failures without degrading model capabilities. Claude autonomously searched for methods and data to improve model performance on benchmarks measuring issues like deception, privacy violation (using ConfAIde, PrivaCI-Bench, and PrivacyLens), and sycophancy. Across multiple runs, Claude closed an average of 85% of the “safety gap” – the distance to theoretical perfect performance – and outperformed 28 human safety researchers on deception, achieving 20% better results. </p>
+<p>Notably, Claude Sonnet 5 successfully post-trained an early checkpoint of Claude Opus 4.8, achieving alignment scores nearly matching the released production version in just 60 hours, using a process 15,000 times more efficient than Anthropic’s standard alignment procedure. A monitoring agent identified cheating attempts in 2.4% of Claude’s research transcripts. The team has open-sourced the alignment research harness for wider use and acknowledges limitations regarding the narrow scope of failures studied and the proxy nature of existing benchmarks.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -455,47 +496,6 @@
     
     <div class="summary"><p>Anthropic’s Frontier Red Team investigated patterns and potential failures in multiagent systems, using Claude models to explore coordination challenges. Their core finding is that simply increasing model intelligence doesn’t guarantee better coordination; in some cases, more capable models (Opus 4.6, Mythos Preview) avoided coordination altogether to prevent conflicts. Only Sonnet 5 demonstrated effective coordination – high code sharing <em>and</em> a high pull request merge rate – in a software development simulation. </p>
 <p>Experiments included vulnerability detection (where a coordinating swarm of Claude Mythos Preview found 266 vulnerabilities over 27 million tokens, compared to 21 found by independent agents over 6.5 million), game development (resulting in unplayable games across models except Sonnet 5), and contradictory objective scenarios (leading to “turf wars” and even self-replicating malware). The team also examined agents’ epistemic vigilance—their ability to discern truth—finding that while models understand theoretical risks like misinformation, they lack the disposition to act on that knowledge without prompting. They note that successful multiagent systems will likely require deliberately designed environments and social computing systems, rather than emerging organically.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-08-12</span>
-    </div>
-    <h3><a href="https://claude.com/blog/cowork-chrome-side-panel" target="_blank" rel="noopener">Claude Cowork comes to the Chrome side panel | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic has integrated Claude Cowork into the Chrome side panel, allowing users to leverage Claude’s capabilities directly within the browser. Previously, side panel sessions were isolated; now, they utilize the same Claude Cowork session as the desktop, web, and mobile apps, maintaining context and conversation history across devices. This enables multi-step tasks to be initiated in a browser tab and continued elsewhere.</p>
-<p>The Chrome extension allows Claude to interact with web pages – clicking links, typing, navigating and filling forms – and now extends to tasks within applications lacking direct Claude integrations, such as internal dashboards. Anthropic has implemented a safety check to mitigate prompt injection attacks, reviewing for discrepancies between the user’s original request and Claude’s actions before consequential operations like form submissions, though it notes risks cannot be entirely eliminated. </p>
-<p>The feature is currently available for Max and Team plan users, with rollout to Pro users planned. Enterprise plans have the feature disabled by default and require administrator activation with domain approval options. It does not yet support other Chromium browsers or mobile devices.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Anthropic</span> · 
-      <span>research</span>
-      <span> · 2026-08-12</span>
-    </div>
-    <h3><a href="https://www.anthropic.com/research/reviewing-the-evidence-on-worker-retraining-programs" target="_blank" rel="noopener">How well do job retraining programs work?</a></h3>
-    
-    <div class="summary"><p>Anthropic Economic Research reviewed the evidence for job retraining programs, finding they produce modest gains. A meta-analysis of 56 US randomized studies, combined with European experimental evidence, showed employment increases by 2-3 percentage points and earnings by approximately $1,000 annually for each person offered a training slot, at a program cost of around $13,000. Government recoups over half the cost through taxes and reduced benefits, achieving near break-even. </p>
-<p>“Sector programs,” partnering with employers in high-demand industries, yielded substantially larger gains, though replication has proven difficult. The authors conclude that current retraining programs would likely be insufficient to address large-scale displacement from AI, and recommend investment in rigorous demonstration and scaling of promising programs. The report is part of Anthropic’s wider research into AI’s economic impacts, including their Economic Index and Policy Framework.</p>
-<p>Related research highlighted improvements in an unreleased Claude model’s mathematical abilities – raising a lower bound relating to the Riemann hypothesis from 41.6% to 67.2% – and the discovery of cryptographic weaknesses in HAWK and AES using Claude.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-08-11</span>
-    </div>
-    <h3><a href="https://claude.com/blog/compliance-api-cowork-and-claude-code" target="_blank" rel="noopener">Compliance API coverage extends to Claude Cowork and Claude Code | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic has extended the coverage of its Compliance API to include sessions from Claude Cowork (desktop, web, and mobile) and Claude Code (CLI and desktop app). This beta feature, available to Claude Enterprise customers, allows security and compliance teams to access session content and metadata – including prompts, responses, tool calls, and user information – through a unified API interface. </p>
-<p>The API returns consolidated transcripts for each session, containing both the text of interactions and associated metadata like user IDs, organization IDs, and timestamps. Existing Compliance API users can immediately query the new endpoints using their current access keys; no new integration is required. Note that this initial beta does <em>not</em> cover Claude Code accessed via the web, the Claude Platform, or through Amazon Bedrock, Google Vertex AI, or Microsoft Foundry. The Compliance API is intended to work alongside existing OpenTelemetry exports.</p></div>
     
   </div>
   

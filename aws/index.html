@@ -80,13 +80,65 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-08-28 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-08-29 10:16 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">August 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-28</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/spreading-the-load-how-salesforce-met-multi-az-ha-with-sagemaker-inference-components/" target="_blank" rel="noopener">Spreading the load: How Salesforce met Multi-AZ HA with SageMaker Inference Components</a></h3>
+    
+    <div class="summary"><p>Amazon SageMaker AI Inference Components (ICs) now offer fine-grained control over placement across Availability Zones (AZs) with the new <code>SchedulingConfig</code> parameter in the <code>CreateInferenceComponent</code> API. This addresses a gap where ICs, while reducing GPU costs through co-hosting, lacked Multi-AZ high availability (HA) guarantees.</p>
+<ul>
+<li>The <code>SchedulingConfig</code> parameter introduces <code>AvailabilityZoneBalance</code> to control cross-AZ distribution, allowing configurable imbalance tolerance.</li>
+<li><code>PlacementStrategy</code> within each AZ allows selection between <code>SPREAD</code> (distributing copies across instances for fault isolation) and <code>BINPACK</code> (packing copies onto fewer instances for utilization).</li>
+<li>Salesforce achieved 8x infrastructure cost reduction using ICs, and then used <code>SchedulingConfig</code> with <code>SPREAD</code> and a <code>MaxImbalance</code> of 0 or 1 to meet 2-AZ compliance requirements.</li>
+<li>Monitoring AZ balance is possible with SageMaker AI Insights, tracking metrics like AZ skew and IC copy count per AZ to detect and resolve imbalance after scaling events.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-28</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-decathlon-runs-demand-forecasting-at-scale-with-chronos-2/" target="_blank" rel="noopener">How Decathlon runs demand forecasting at scale with Chronos-2</a></h3>
+    
+    <div class="summary"><ul>
+<li>Decathlon adopted Chronos-2, an encoder-only transformer (amazon/chronos-2 - 120M parameters, autogluon/chronos-2-small - 28M parameters), as a core component of its demand forecasting system, achieving significant accuracy improvements over previous methods.</li>
+<li>Chronos-2's alternating attention pattern—time attention and group attention—allows for native multivariate forecasting and efficient incorporation of covariates without workarounds.</li>
+<li>The solution leverages AutoGluon for fine-tuning Chronos-2 with Low-Rank Adaptation (LoRA) every six months and deploys models using a PySpark pipeline and Amazon EC2 instances for batch inference.</li>
+<li>Deployment of Chronos-2 resulted in 11-15 percentage point WAPE reduction across Southeast Asia and Latin America, correlating to inventory savings, improved product availability, and increased sales.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-28</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/batch-write-and-discover-records-in-amazon-sagemaker-feature-store/" target="_blank" rel="noopener">Batch write and discover records in Amazon SageMaker Feature Store</a></h3>
+    
+    <div class="summary"><ul>
+<li>The <code>BatchWriteRecord</code> API allows writing up to 25 feature records across multiple feature groups in a single API call, improving throughput compared to individual <code>PutRecord</code> calls.</li>
+<li><code>BatchWriteRecord</code> uses a partial-success model, meaning failures for individual records do not halt the entire request, and includes per-record TTL control and EventTime-based ordering guarantees.</li>
+<li>A new <code>ListRecords</code> API has been introduced to enumerate record identifiers within a feature group, supporting both Standard (DynamoDB-backed) and In-Memory (Redis-backed) storage tiers, addressing the inability to discover records in the In-Memory tier.</li>
+<li><code>ListRecords</code> utilizes pagination via <code>MaxResults</code> and <code>NextToken</code> for managing large numbers of records, and supports filtering for active, non-deleted, and non-expired records.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -558,58 +610,6 @@
 <li>The new feature supports generating policies for temporal and trajectory constraints (rate limiting, prerequisites, sequential ordering), content detection using Amazon Bedrock Guardrails, and restrictions on tool input parameters.</li>
 <li>The system utilizes a schema derived from the agent's Model Context Protocol (MCP) tool manifest, ensuring policies reference the correct tool names and arguments (e.g., <code>context.input.amount</code>).</li>
 <li>Examples demonstrate translation of policies enforcing constraints on tool arguments (time-based restrictions, amount limits), required prior steps, cumulative caps, rate limits, and content checks.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-20</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-a-no-code-ml-workflow-with-snowflake-amazon-sagemaker-canvas-and-amazon-quick-part-3-visualizing-insights-with-amazon-quick-sight/" target="_blank" rel="noopener">Build a no-code ML workflow with Snowflake, Amazon SageMaker Canvas and Amazon Quick – Part 3: Visualizing insights with Amazon Quick Sight</a></h3>
-    
-    <div class="summary"><ul>
-<li>This post details integrating predictions from an Amazon SageMaker Canvas XGBoost fraud detection model – built on Snowflake data – with Amazon QuickSight (now part of Amazon Quick) for visualization and business intelligence.</li>
-<li>Amazon QuickSight can import predictions from SageMaker Canvas as a dataset and allows building interactive dashboards without additional infrastructure.</li>
-<li>Generative BI features within Amazon QuickSight (available with Admin Pro, Author Pro, or Reader Pro roles) enable natural language querying of data and automated generation of visuals and executive summaries.</li>
-<li>The complete workflow, spanning Snowflake, SageMaker Canvas, and QuickSight, is intended to provide an end-to-end no-code ML solution for business users.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-20</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-a-no-code-ml-workflow-with-snowflake-amazon-sagemaker-canvas-and-amazon-quick-part-2-data-preparation-and-model-building-with-amazon-sagemaker-canvas/" target="_blank" rel="noopener">Build a no-code ML workflow with Snowflake, Amazon SageMaker Canvas and Amazon Quick – Part 2: Data preparation and model building with Amazon SageMaker Canvas</a></h3>
-    
-    <div class="summary"><p>Amazon SageMaker Canvas now integrates directly with Snowflake, enabling a no-code ML workflow for data preparation and model building.</p>
-<ul>
-<li>Data Wrangler within Canvas allows visual data transformations directly on Snowflake data, avoiding data movement.</li>
-<li>A new SQL editor in Data Wrangler facilitates data preparation using SQL queries, including example queries for fraud detection datasets.</li>
-<li>Custom formulas can be added to create new features (e.g., outlier flags) and sensitive columns can be dropped via built-in transformations.</li>
-<li>After data preparation, a classification model (XGBoost) can be trained in Canvas, with results exportable to Amazon QuickSight for visualization – with specific IAM and S3 permissions required for QuickSight integration.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-20</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-a-no-code-ml-workflow-with-snowflake-amazon-sagemaker-canvas-and-amazon-quick-part-1-setting-up-your-snowflake-environment/" target="_blank" rel="noopener">Build a no-code ML workflow with Snowflake, Amazon SageMaker Canvas and Amazon Quick – Part 1: Setting up your Snowflake environment</a></h3>
-    
-    <div class="summary"><ul>
-<li>This blog post details building a no-code ML workflow integrating Snowflake, Amazon SageMaker Canvas, and Amazon QuickSight.</li>
-<li>Amazon SageMaker Canvas connects directly to Snowflake for data preparation and model building without code.</li>
-<li>Sample SQL commands are provided to create a Snowflake database and populate it with fraud detection data.</li>
-<li>The architecture supports regression, classification, and time-series forecasting problem types; batch predictions are output to Amazon S3 for visualization in QuickSight.</li>
 </ul></div>
     
   </div>
