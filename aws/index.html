@@ -80,13 +80,95 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-08-31 10:15 UTC</p>
+  <p class="generated-at">Generated 2026-09-01 10:16 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">August 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-31</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-multi-tenant-agentic-chat-applications-on-enterprise-data-with-amazon-bedrock-managed-knowledge-base/" target="_blank" rel="noopener">Build multi-tenant agentic chat applications on enterprise data with Amazon Bedrock Managed Knowledge Base</a></h3>
+    
+    <div class="summary"><p>Amazon Bedrock Managed Knowledge Base enables building multi-tenant agentic chat applications on enterprise data.</p>
+<ul>
+<li>The service manages document ingestion, storage, embedding, and ranking, eliminating the need for users to build and maintain this infrastructure.</li>
+<li>It provides agentic retrieval using iterative planning and multi-hop retrievals, with built-in access permission enforcement on each retrieval step.</li>
+<li>Direct ingestion via a custom connector allows for rapid indexing of documents (seconds), and supports files up to 50MB (text) through S3 references.</li>
+<li>Per-user data isolation is achieved by tagging documents with a <code>user_id</code> metadata attribute and filtering queries using a server-side derived value from a verified JWT, as well as the option for document-level ACLs.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-31</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-observable-enterprise-agentic-retrieval-using-managed-amazon-bedrock-knowledge-base-with-aws-cloudformation/" target="_blank" rel="noopener">Build observable enterprise agentic retrieval using Managed Amazon Bedrock Knowledge Base with AWS CloudFormation</a></h3>
+    
+    <div class="summary"><p>Build observable enterprise agentic retrieval using Managed Amazon Bedrock Knowledge Base with AWS CloudFormation.</p>
+<ul>
+<li>This post details a solution for enterprise agentic retrieval using Amazon Bedrock Managed Knowledge Base and AgentCore, providing observability and evaluation through a single AWS CloudFormation chain.</li>
+<li>The solution leverages the <code>AgenticRetrieveStream</code> API of Managed Knowledge Bases to perform multi-turn planning, iterative retrieval, and grounded answer generation with citations across multiple knowledge bases.</li>
+<li>Seven observability layers are implemented, capturing metrics like retrieval invocations, ingestion status, agentic retrieval quality, Gateway latency, OpenTelemetry spans, token usage, and evaluation scores – all accessible via CloudWatch dashboards.</li>
+<li>The deployment utilizes four CloudFormation stacks to create S3 buckets, Managed Knowledge Bases, an AgentCore Gateway, an OpenTelemetry-instrumented agent runtime, and the observability dashboards, using synthetic financial and weather corpora for testing.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-31</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/manage-agents-tools-and-skills-at-scale-with-aws-agent-registry/" target="_blank" rel="noopener">Manage agents, tools and skills at scale with AWS Agent Registry</a></h3>
+    
+    <div class="summary"><ul>
+<li>AWS Agent Registry is now generally available, providing a central, searchable, and governed catalog for AI agents, tools, skills, and custom resources.</li>
+<li>The system operates through a Governance Plane (authoritative record of all resources with metadata and policies) and a Discovery Plane (curated view of approved resources for consumers).</li>
+<li>It supports four record types: MCP (Model Context Protocol) servers, Agents (Agent2Agent), Skills (markdown files and code), and Custom (JSON) descriptors.</li>
+<li>Administrators can configure approval workflows, access policies, and lifecycle rules, while curators manage resource approval and deprecation, with all actions audited via AWS CloudTrail.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-31</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/aws-recognized-as-a-leader-in-the-forrester-wave-ai-infrastructure-solutions-q4-2025/" target="_blank" rel="noopener">AWS recognized as a Leader in The Forrester Wave: AI Infrastructure Solutions, Q4 2025</a></h3>
+    
+    <div class="summary"><p>AWS was recognized as a Leader in The Forrester Wave: AI Infrastructure Solutions, Q4 2025, receiving the highest score in the Strategy category. The report highlights AWS’s flexible infrastructure supporting the full AI lifecycle, with specific strengths in workload-specific architecture, engineering efficiency, and sustainability.  AWS offers both proprietary AI chips – <strong>AWS Inferentia</strong> and <strong>AWS Trainium</strong> – alongside <strong>NVIDIA GPU</strong> instances, allowing customers to optimize cost and performance without vendor lock-in.  The evaluation noted AWS is well-suited for high-volume inference workloads and integrates closely with services like <strong>Amazon SageMaker</strong> and <strong>Amazon Bedrock</strong>. The full Forrester report provides a detailed comparison of 13 providers.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-08-31</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/connect-an-agentcore-runtime-hosted-mcp-server-to-amazon-quick/" target="_blank" rel="noopener">Connect an AgentCore Runtime hosted MCP server to Amazon Quick</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Quick now integrates with Model Context Protocol (MCP) servers via AgentCore Gateway, enabling access to external data, tools, and specialized AI sub-agents.</li>
+<li>AgentCore Runtime provides a fully managed, serverless environment for hosting MCP servers, offering features like session isolation, persistent file systems, and built-in authentication.</li>
+<li>Integration involves setting up Inbound Auth (using Amazon Cognito for user authorization) and Outbound Auth (using AgentCore Identity with OAuth 2.0) between Amazon Quick, AgentCore Gateway, and AgentCore Runtime.</li>
+<li>The process includes deploying an MCP server to AgentCore Runtime, configuring AgentCore Gateway with IAM roles and Cognito user pools, and registering the integration within Amazon Quick using the Gateway's resource URL.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -521,95 +603,6 @@
 <li>ADOP utilizes AI agents that operate primarily in development environments to generate deterministic artifacts (PySpark, SQL, Airflow DAGs, IAM/Cedar policies) which are then deployed to production through CI/CD, minimizing runtime model dependency.</li>
 <li>The platform distinguishes itself from general-purpose coding assistants through a narrowed focus on data engineering, embedding company standards and policies into the build process via a “Decision Engine” and configurable guardrails.</li>
 <li>ADOP integrates with tools like Claude Code, Kiro, Cursor, and Codex, ensuring consistent architectural patterns across development teams and offering features like automated compliance controls, agent observability, and secure data handling.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-20</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-intelligent-security-for-healthcare-apis-with-amazon-bedrock/" target="_blank" rel="noopener">Build intelligent security for healthcare APIs with Amazon Bedrock</a></h3>
-    
-    <div class="summary"><p>Amazon Bedrock can be used to build intelligent security for healthcare APIs managing FHIR data, balancing access with data protection.</p>
-<ul>
-<li>The solution uses Amazon Bedrock to detect anomalous access patterns, classifying data sensitivity automatically and generating natural language compliance reports, without impacting API latency.</li>
-<li>Anomaly detection leverages Amazon Bedrock’s Converse API with Structured Outputs and Amazon Comprehend Medical for PHI redaction, establishing per-user behavioral baselines to identify unusual access (e.g., high volume or unusual times).</li>
-<li>Data sensitivity classification uses Anthropic’s Claude Haiku 4.5 and Claude Sonnet 4.5 models to categorize FHIR resources (PUBLIC, INTERNAL, CONFIDENTIAL, RESTRICTED) based on type and clinical codes, dynamically adapting to new data categories.</li>
-<li>Automated compliance reporting transforms access logs into summaries organized by security control categories, reducing manual effort and utilizing Structured Outputs for organization, and saving reports in encrypted Amazon S3 buckets.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-20</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/aws-vector-solutions-build-agentic-ai-where-your-data-lives/" target="_blank" rel="noopener">AWS vector solutions: Build agentic AI where your data lives</a></h3>
-    
-    <div class="summary"><p>AWS vector solutions empower agentic AI by bringing intelligent search and retrieval to existing data sources, avoiding data movement.</p>
-<ul>
-<li><strong>Amazon OpenSearch Service</strong> is positioned as the default choice for new workloads, offering a balance of search, scale, and AI integration, with autoscaling up to 20x faster and up to 60% cost savings with the Serverless option.</li>
-<li><strong>Amazon S3 Vectors</strong> provides cost-optimized vector storage at scale, reducing costs by up to 90% compared to dedicated vector databases, now supporting up to 10,000 search results per query and reduced query costs for large indexes (over 10 million vectors).</li>
-<li><strong>Amazon DynamoDB</strong> delivers single-digit millisecond vector search at any scale, with support for up to 4,096 dimensions and multiple distance functions, integrating vector search directly into an existing NoSQL database.</li>
-<li><strong>Amazon ElastiCache for Valkey</strong> provides microsecond latency for semantic caching, surfacing cross-session conversation history to LLMs and improving response relevance by grounding LLM outputs with real-world data and supports up to one billion vectors.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-20</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/scaling-cloud-migrations-with-agentic-ai-on-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Scaling cloud migrations with agentic AI on Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><ul>
-<li>This post details a multi-agent framework built on Amazon Bedrock AgentCore and the Strands Agents SDK designed to accelerate enterprise cloud migrations, achieving IaC development time reduction from 3-4 weeks per application to minutes across a 300+ application portfolio.</li>
-<li>The framework includes four agents: Intake Agent (automated discovery), IaC Agent (infrastructure code generation), Migration Intelligence and Governance Agent (portfolio reporting/assessments), and SRE Agent (proactive operations).</li>
-<li>Agents utilize Amazon Bedrock foundation models and interact with tools via the Model Context Protocol (MCP) through AgentCore Gateway, secured by AgentCore Identity and governed by Policy in AgentCore, utilizing Cedar rules for access control and compliance.</li>
-<li>The IaC Agent generates infrastructure code based on pre-defined organizational patterns, pushing output to code repositories like AWS CodeCommit, GitLab or Bitbucket, and integrates with existing CI/CD pipelines, while the SRE Agent focuses on post-migration proactive monitoring and remediation with human approval loops.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-20</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/scaling-agentic-ai-enterprise-patterns-without-vendor-lock-in/" target="_blank" rel="noopener">Scaling agentic AI: Enterprise patterns without vendor lock-in</a></h3>
-    
-    <div class="summary"><p>Scaling agentic AI requires architectural patterns to avoid vendor lock-in and enable enterprise-wide operation.</p>
-<ul>
-<li>Amazon SageMaker is positioned as the core for model lifecycle management – development, fine-tuning, deployment, and inference – providing a standardized execution layer.</li>
-<li>Amazon Bedrock offers a managed interface for accessing foundation models, enabling rapid experimentation while SageMaker handles customization and production inference.</li>
-<li>The post advocates separating control planes (identity, policy, observability) from execution planes (agent building &amp; running) to balance flexibility with centralized governance.</li>
-<li>Key architectural principles include centralized identity &amp; governance, unified observability, model abstraction, dynamic routing and resilience – supported by services like IAM, CloudWatch, SageMaker, Bedrock, Lambda, and Step Functions.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-20</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/authoring-dogwood-policies-from-natural-language-in-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Authoring Dogwood policies from natural language in Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><p>Amazon Bedrock AgentCore expands Policy capabilities with natural language policy authoring via Dogwood.</p>
-<ul>
-<li>Policy Authoring automatically translates natural language policy documents into Dogwood, an open-source governance language, for use with Amazon Bedrock AgentCore agents.</li>
-<li>The new feature supports generating policies for temporal and trajectory constraints (rate limiting, prerequisites, sequential ordering), content detection using Amazon Bedrock Guardrails, and restrictions on tool input parameters.</li>
-<li>The system utilizes a schema derived from the agent's Model Context Protocol (MCP) tool manifest, ensuring policies reference the correct tool names and arguments (e.g., <code>context.input.amount</code>).</li>
-<li>Examples demonstrate translation of policies enforcing constraints on tool arguments (time-based restrictions, amount limits), required prior steps, cumulative caps, rate limits, and content checks.</li>
 </ul></div>
     
   </div>
