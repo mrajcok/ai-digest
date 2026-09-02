@@ -80,11 +80,28 @@
     </label>
   </div>
   <h1>Anthropic News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-01 10:16 UTC</p>
+  <p class="generated-at">Generated 2026-09-02 10:16 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
+  
+  <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>news</span>
+      <span> · 2026-09-01</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/news/enterprise-frontier-safeguards" target="_blank" rel="noopener">Developing Enterprise Frontier Safeguards with our customers</a></h3>
+    
+    <div class="summary"><p>Anthropic announced Enterprise Frontier Safeguards (EFS), a solution designed to combine data privacy with robust misuse detection for its most powerful AI models. EFS allows customers to store data in their own cloud infrastructure—AWS, Google Cloud, or Microsoft Azure—rather than with Anthropic, providing control over encryption, access, and auditing. The system is built around customer-controlled data storage, customer-managed encryption keys, and fully automated review processes, without requiring Anthropic's own human review. </p>
+<p>The development of EFS stemmed from customer feedback regarding the balance between data retention for security and the need to maintain zero data retention (ZDR) policies, particularly in regulated industries. Anthropic has collaborated with over 100 enterprises, including major financial institutions like Goldman Sachs and Wells Fargo, and technology companies such as Comcast and Salesforce, to design EFS. Eligible customers will receive ZDR on Fable 5 and 5.1 while EFS is being rolled out in phases starting this fall, and Anthropic will not charge for the service itself, though standard cloud storage costs will apply.</p>
+<p>This system is intended to allow enterprise clients to deploy frontier AI models—like Claude Fable 5.1—safely, without compromising data control or regulatory compliance. The automated review will flag potentially harmful activity, such as cyberattack attempts or credential theft, for customer review.</p></div>
+    
+  </div>
+  
   
   <h2 class="month">August 2026</h2>
   
@@ -483,20 +500,6 @@
     
     <div class="summary"><p>Anthropic has updated Claude Tag for Slack, enabling it to consider the full context of a channel – not just individual messages – when deciding whether to proactively contribute. Previously, a simple classifier determined responses; now, Claude can choose to reply inline, start a thread, route to existing work, or remain silent based on broader conversation dynamics, improving proactive response accuracy by roughly 30%.</p>
 <p>This contextual awareness doesn't impact usage limits, despite increased processing. Claude Tag assesses usefulness, confidence, and the presence of more suitable responders to avoid interrupting conversations unnecessarily, and can be instructed to only respond to direct mentions. The update also reduces initial response latency, providing quicker acknowledgement. This is available now to Claude Teams and Enterprise customers.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-08-13</span>
-    </div>
-    <h3><a href="https://claude.com/blog/self-service-data-analytics-in-slack-how-anthropic-deploys-claude-tag-for-ad-hoc-questions" target="_blank" rel="noopener">Self-service data analytics in Slack: how Anthropic deploys Claude Tag for ad-hoc questions | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic has deployed Claude Tag, currently in public beta, to enable self-service data analytics directly within Slack. Building on a foundation of governed semantic layers and analytical skill files (as described in a previous post), Claude Tag allows anyone to ask data-related questions and receive answers aligned with established analytical standards. A key architectural decision was to treat skill files as continuously refreshed content, ensuring Claude doesn’t rely on outdated information—the system remounts and re-reads skills on every conversation. </p>
-<p>Beyond simply retrieving data, Claude Tag is equipped with specialized “runbook” skills including forecasting, cohort analysis, funnel analysis, charting conventions, and analytical writing—capabilities that go beyond basic querying to provide insightful answers, similar to a data analyst’s approach. To provide complete context, the system is also integrated with an internal knowledge index, surfacing relevant information from Slack threads, incident trackers, and documentation alongside quantitative data.</p>
-<p>Security is addressed by limiting the service account’s data access to governed data and denying access to PII at the column level, alongside detailed logging of queries and user interactions. The team emphasizes careful permissioning, continuous monitoring of skill freshness and accuracy (through user feedback and telemetry), and incremental skill development informed by actual user questions. This aims to accelerate self-service analytics adoption by embedding data insights directly within existing workflows.</p></div>
     
   </div>
   

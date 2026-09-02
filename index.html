@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-09-01T10:16:51.900299+00:00">Generated 2026-09-01 10:16 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-09-02T10:16:53.513667+00:00">Generated 2026-09-02 10:16 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,7 +132,7 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — since 2026-08-31</h2>
+    <h2 class="overview-heading">Today in AI — Overview for 2026-09-01</h2>
     <p class="overview-meta">2026-09-01 · 6 vendor sources · vendor sources only</p>
     <div class="overview-text"><p>Recent activity focuses heavily on infrastructure improvements for deploying and managing AI agents, particularly within the AWS ecosystem. AWS announced the general availability of Agent Registry, a centrally governed catalog for agents, tools, and skills, offering administrators control through approval workflows and audit trails. Simultaneously, AWS deepened its support for the Model Context Protocol (MCP) by integrating Amazon Quick with AgentCore Runtime, allowing access to external tools and specialized AI sub-agents. A detailed CloudFormation deployment showcases building observable agentic retrieval systems leveraging Managed Amazon Bedrock Knowledge Base, incorporating seven observability layers via CloudWatch. Further expanding on Bedrock’s capabilities, AWS highlighted features for building multi-tenant agentic chat applications, emphasizing rapid document indexing and per-user data isolation through metadata tagging and ACLs. These combined offerings signal a major push towards enterprise-ready agentic applications on AWS’s platform.</p>
 <p>Alongside these agent-focused tools, AWS also received external validation, being recognized as a Leader in The Forrester Wave for AI Infrastructure Solutions. The report specifically lauded AWS’s flexibility across the AI lifecycle, engineering efficiency, and commitment to sustainability, while acknowledging the benefits of its hybrid approach—providing both proprietary Inferentia/Trainium chips and NVIDIA GPU instances—to avoid vendor lock-in. This recognition underscores AWS’s broad positioning within the AI infrastructure landscape.</p>
@@ -144,6 +144,20 @@
 
   
   <h2 class="section">Vendors</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>news</span>
+      <span> · 2026-09-01</span>
+    </div>
+    <h2><a href="https://www.anthropic.com/news/enterprise-frontier-safeguards" target="_blank" rel="noopener">Developing Enterprise Frontier Safeguards with our customers</a></h2>
+    
+    <div class="summary"><p>Anthropic announced Enterprise Frontier Safeguards (EFS), a solution designed to combine data privacy with robust misuse detection for its most powerful AI models. EFS allows customers to store data in their own cloud infrastructure—AWS, Google Cloud, or Microsoft Azure—rather than with Anthropic, providing control over encryption, access, and auditing. The system is built around customer-controlled data storage, customer-managed encryption keys, and fully automated review processes, without requiring Anthropic's own human review. </p>
+<p>The development of EFS stemmed from customer feedback regarding the balance between data retention for security and the need to maintain zero data retention (ZDR) policies, particularly in regulated industries. Anthropic has collaborated with over 100 enterprises, including major financial institutions like Goldman Sachs and Wells Fargo, and technology companies such as Comcast and Salesforce, to design EFS. Eligible customers will receive ZDR on Fable 5 and 5.1 while EFS is being rolled out in phases starting this fall, and Anthropic will not charge for the service itself, though standard cloud storage costs will apply.</p>
+<p>This system is intended to allow enterprise clients to deploy frontier AI models—like Claude Fable 5.1—safely, without compromising data control or regulatory compliance. The automated review will flag potentially harmful activity, such as cyberattack attempts or credential theft, for customer review.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -175,46 +189,19 @@
   
   <div class="card">
     <div class="meta">
-      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>blog</span>
-      <span> · 2026-08-28</span>
-    </div>
-    <h2><a href="https://claude.com/blog/how-anthropic-employees-use-claude-tag" target="_blank" rel="noopener">How Anthropic employees use Claude Tag | Claude by Anthropic</a></h2>
-    
-    <div class="summary"><p>Anthropic’s “Claude Tag” integrates the Claude model directly into Slack, enabling users to tag @Claude in threads for assistance with tasks. This allows Claude to leverage conversational context, memory, and pre-defined instructions to complete requests within the chat environment. Employees have used it to generate marketing collateral from Slack conversations – specifically, a two-page draft from a 15-message thread in approximately two minutes — and to verify the factual accuracy of that collateral.</p>
-<p>Further use cases include consolidating customer requests for a new feature (identifying roughly 24 accounts in 26 minutes) and summarizing product issues reported across various Slack channels (identifying 37 issues – 23 open, 14 resolved – from 120 raw findings in roughly 50 minutes and then an additional 15).  The legal team is utilizing Claude Tag for expedited document review, reducing turnaround time per asset from a day or more to about 30 minutes, by having Claude initially flag potentially problematic statements and even resolve some based on access to internal documentation. </p>
-<p>Claude Tag is currently in public beta on Anthropic’s Team and Enterprise plans; access is scoped to specific channels and documents to control its permissions, and it will proactively alert users when it lacks the necessary permissions.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
       <a href="google/" class="badge badge-google">Google</a>
       <span>research</span>
-      <span> · 2026-08-27</span>
+      <span> · 2026-09-01</span>
     </div>
-    <h2><a href="https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/" target="_blank" rel="noopener">Piloting the world&#39;s first double-blind AI evaluations</a></h2>
+    <h2><a href="https://deepmind.google/blog/introducing-agentic-video-in-gemini/" target="_blank" rel="noopener">Introducing agentic video understanding with Gemini</a></h2>
     
-    <div class="summary"><p>Google DeepMind piloted the first double-blind evaluation of a proprietary AI model, addressing the problem of benchmark contamination where models may have seen test questions during training. The evaluation utilized Confidential Space within Google Cloud’s Confidential Computing to cryptographically ensure the Gemini Flash Lite model and external evaluation data remained private to their owners, preventing either party from accessing the other’s information. This method eliminates the traditional trade-off between sharing prompts or model weights for external evaluation, and was conducted in partnership with the Singapore AI Safety Institute, OpenMined, AVERI, and MLCommons. This approach intends to increase trust in AI benchmarks and enable rigorous testing without compromising data security or intellectual property, and details of the methodology are available in a technical report.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="google/" class="badge badge-google">Google</a>
-      <span>research</span>
-      <span> · 2026-08-27</span>
-    </div>
-    <h2><a href="https://deepmind.google/blog/gemini-omni-1-1-flash-lets-you-build-with-more-control/" target="_blank" rel="noopener">Gemini Omni 1.1 Flash lets you build with more control</a></h2>
-    
-    <div class="summary"><p>Gemini Omni 1.1 Flash provides developers with enhanced control over generative video creation.</p>
+    <div class="summary"><p>Google has released agentic video understanding for Gemini 3.7 Flash, 3.6 Flash, and 3.5 Flash-Lite, improving accuracy and reducing costs for video analysis.</p>
 <ul>
-<li>Scene extension now analyzes up to 10 seconds of prior context, improving visual consistency when extending videos up to 40 seconds cumulatively.</li>
-<li>Users can specify start and end frames to create smooth transitions and camera movements, generating continuous video between keyframes.</li>
-<li>360p previews are available for faster prototyping and reduced costs, generating up to 60% faster than 720p.</li>
-<li>The model supports upscaling to 4K resolution for professional-quality output and accepts up to 3 seconds of video as reference for visual consistency. </li>
-</ul>
-<p>The model is accessible through Google AI Studio and the Gemini Enterprise Agent Platform.</p></div>
+<li>The feature dynamically scans video segments using Gemini’s native video tools, rather than processing at a fixed frame rate.</li>
+<li>Benchmarks show up to an 88% reduction in token consumption and up to a 66% reduction in costs, with up to a 7% improvement in accuracy.</li>
+<li>Gemini 3.7 Flash with agentic understanding achieves the best accuracy-to-cost ratio on tested video understanding tasks.</li>
+<li>Applications include sub-second moment retrieval, long-form video search, anomaly detection, and accurate object/action counting.</li>
+</ul></div>
     
   </div>
   
@@ -222,16 +209,34 @@
     <div class="meta">
       <a href="google/" class="badge badge-google">Google</a>
       <span>blog</span>
-      <span> · 2026-08-27</span>
+      <span> · 2026-09-01</span>
     </div>
-    <h2><a href="https://blog.google/products-and-platforms/products/search/book-travel-ai-mode/" target="_blank" rel="noopener">3 new ways to plan and book travel in Search</a></h2>
+    <h2><a href="https://blog.google/products-and-platforms/products/workspace/google-pics/" target="_blank" rel="noopener">Try Google Pics: Easy image creation and editing in Google Workspace</a></h2>
     
-    <div class="summary"><p>AI Mode in Google Search receives updates for travel planning and booking.</p>
+    <div class="summary"><p>Google has launched Google Pics, an AI-powered image creation and editing tool.</p>
 <ul>
-<li>AI Mode now integrates Google Flights’ price tracking, allowing users to set up price alerts directly within the chat interface for flights from over 300 airlines and travel sites.</li>
-<li>AI Mode can display flight and hotel costs in points or miles, initially supporting Alaska/Hawaiian Airlines, American Airlines, Choice/Hilton/Wyndham Hotels, with additions planned for Accor, Flying Blue, Hyatt, LATAM, and Lufthansa.</li>
-<li>Users in the U.S. can now book hotels directly within AI Mode through partners like Booking.com, Expedia, Hilton, and Marriott, utilizing Google Pay for secure transactions.</li>
-<li>Hotel booking is initially available in the U.S. in English, with phased rollout plans for wider availability and partner integration.</li>
+<li>It’s powered by the Nano Banana image generation and editing model.</li>
+<li>Key features include object segmentation for targeted edits, in-image text editing and translation, and the generation of multiple image iterations from a single prompt.</li>
+<li>Integration is rolling out to Google Docs and Slides (with Drive integration coming soon) allowing image manipulation within existing workflows.</li>
+<li>Google Pics is available to Google AI Pro and Ultra subscribers and most Workspace business customers.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="google/" class="badge badge-google">Google</a>
+      <span>blog</span>
+      <span> · 2026-09-01</span>
+    </div>
+    <h2><a href="https://blog.google/innovation-and-ai/technology/google-ai-updates-august-2026/" target="_blank" rel="noopener">The latest AI news we announced in August 2026</a></h2>
+    
+    <div class="summary"><p>Google announced several AI updates in August 2026, focusing on practical applications and improved efficiency.</p>
+<ul>
+<li>Gemini 3.7 Flash was released as a cost-effective model optimized for coding and agent-based tasks, offering substantial improvements over 3.6 Flash at half the cost per million tokens.</li>
+<li>The Pixel 11 series (Pixel 11, Pro, Pro XL, and Pro Fold) was unveiled, featuring the Google Tensor G6 chip and Gemini Nano, designed to deliver enhanced performance and Gemini Intelligence features.</li>
+<li>Gemini 3.5 Transcribe provides accurate, real-time speech-to-text transcription for developers, specifically designed to handle noisy audio and specialized jargon.</li>
+<li>Gemini Omni 1.1 Flash was introduced, enabling more precise video generation with features like scene extension and 4K upscaling, and is available across Google Flow, AI Studio, and the Gemini Enterprise Agent Platform.</li>
 </ul></div>
     
   </div>
@@ -294,16 +299,16 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-08-31</span>
+      <span> · 2026-09-01</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/build-multi-tenant-agentic-chat-applications-on-enterprise-data-with-amazon-bedrock-managed-knowledge-base/" target="_blank" rel="noopener">Build multi-tenant agentic chat applications on enterprise data with Amazon Bedrock Managed Knowledge Base</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-boomi-scribe-streamlines-documentation-using-aws/" target="_blank" rel="noopener">How Boomi Scribe streamlines documentation using AWS</a></h2>
     
-    <div class="summary"><p>Amazon Bedrock Managed Knowledge Base enables building multi-tenant agentic chat applications on enterprise data.</p>
+    <div class="summary"><p>Boomi Scribe automates integration process documentation using AI, reducing technical debt for developers.</p>
 <ul>
-<li>The service manages document ingestion, storage, embedding, and ranking, eliminating the need for users to build and maintain this infrastructure.</li>
-<li>It provides agentic retrieval using iterative planning and multi-hop retrievals, with built-in access permission enforcement on each retrieval step.</li>
-<li>Direct ingestion via a custom connector allows for rapid indexing of documents (seconds), and supports files up to 50MB (text) through S3 references.</li>
-<li>Per-user data isolation is achieved by tagging documents with a <code>user_id</code> metadata attribute and filtering queries using a server-side derived value from a verified JWT, as well as the option for document-level ACLs.</li>
+<li>The system parses integration processes represented as XML and converts them into Directed Acyclic Graphs (DAGs) to be processed by AI models.</li>
+<li>Documentation is generated using Amazon Bedrock and Anthropic’s Claude Haiku 4.5, including process overviews, metadata, business context, and step-by-step descriptions.</li>
+<li>Version comparisons of DAGs are performed using a proprietary algorithm within AWS Lambda to highlight additions, modifications, and deletions between process versions.</li>
+<li>The architecture utilizes Amazon S3 for storage of DAGs and documentation, Amazon DynamoDB as a backend datastore, and AWS Lambda for orchestration.</li>
 </ul></div>
     
   </div>
@@ -312,16 +317,16 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-08-31</span>
+      <span> · 2026-09-01</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/build-observable-enterprise-agentic-retrieval-using-managed-amazon-bedrock-knowledge-base-with-aws-cloudformation/" target="_blank" rel="noopener">Build observable enterprise agentic retrieval using Managed Amazon Bedrock Knowledge Base with AWS CloudFormation</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-zs-democratized-secure-ad-hoc-analytics-with-amazon-sagemaker/" target="_blank" rel="noopener">How ZS democratized secure ad-hoc analytics with Amazon SageMaker</a></h2>
     
-    <div class="summary"><p>Build observable enterprise agentic retrieval using Managed Amazon Bedrock Knowledge Base with AWS CloudFormation.</p>
+    <div class="summary"><p>ZS Associates built a security-hardened, multi-tenant machine learning platform on Amazon SageMaker to balance developer agility with healthcare compliance requirements.</p>
 <ul>
-<li>This post details a solution for enterprise agentic retrieval using Amazon Bedrock Managed Knowledge Base and AgentCore, providing observability and evaluation through a single AWS CloudFormation chain.</li>
-<li>The solution leverages the <code>AgenticRetrieveStream</code> API of Managed Knowledge Bases to perform multi-turn planning, iterative retrieval, and grounded answer generation with citations across multiple knowledge bases.</li>
-<li>Seven observability layers are implemented, capturing metrics like retrieval invocations, ingestion status, agentic retrieval quality, Gateway latency, OpenTelemetry spans, token usage, and evaluation scores – all accessible via CloudWatch dashboards.</li>
-<li>The deployment utilizes four CloudFormation stacks to create S3 buckets, Managed Knowledge Bases, an AgentCore Gateway, an OpenTelemetry-instrumented agent runtime, and the observability dashboards, using synthetic financial and weather corpora for testing.</li>
+<li>The platform utilizes Amazon SageMaker Studio as its foundation, running in an internet-free mode with communication to AWS services via VPC endpoints.</li>
+<li>Security features include JFrog Artifactory for secure package management, AWS KMS encryption by default across resources, integration with CrowdStrike and Splunk for threat detection/logging, and a three-tier IAM role structure for least privilege access.</li>
+<li>Custom implementations address gaps in standard SageMaker, including automated backups of SageMaker Spaces to Amazon S3, enforced configurations for AWS Glue interactive sessions, and a SageMaker S3 browser extension.</li>
+<li>The platform currently supports over 1,000 daily active users across 200+ SageMaker domains, with monthly SageMaker spend exceeding $50K and approximate savings of $10K/month through Savings Plans and auto-shutdown configurations.</li>
 </ul></div>
     
   </div>
@@ -330,15 +335,15 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-08-31</span>
+      <span> · 2026-09-01</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/manage-agents-tools-and-skills-at-scale-with-aws-agent-registry/" target="_blank" rel="noopener">Manage agents, tools and skills at scale with AWS Agent Registry</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-t54-built-a-trust-layer-with-amazon-bedrock-agentcore-payments/" target="_blank" rel="noopener">How t54 built a trust layer with Amazon Bedrock AgentCore payments</a></h2>
     
     <div class="summary"><ul>
-<li>AWS Agent Registry is now generally available, providing a central, searchable, and governed catalog for AI agents, tools, skills, and custom resources.</li>
-<li>The system operates through a Governance Plane (authoritative record of all resources with metadata and policies) and a Discovery Plane (curated view of approved resources for consumers).</li>
-<li>It supports four record types: MCP (Model Context Protocol) servers, Agents (Agent2Agent), Skills (markdown files and code), and Custom (JSON) descriptors.</li>
-<li>Administrators can configure approval workflows, access policies, and lifecycle rules, while curators manage resource approval and deprecation, with all actions audited via AWS CloudTrail.</li>
+<li>t54 has integrated its x402-secure trust layer with Amazon Bedrock AgentCore payments to enable autonomous agent payments, processing over 20 million transactions without human intervention.</li>
+<li>The system utilizes x402, an open payment standard using HTTP 402 for payments, and incorporates session-scoped spending limits enforced by Amazon Bedrock AgentCore payments along with a credit facility (ClawCredit).</li>
+<li>x402-secure evaluates five independent signals – blockchain history, webpage legitimacy, social media footprint, API health, and a synthesized risk score – before authorizing a payment, rejecting transactions that fail to meet the risk threshold.</li>
+<li>The architecture emphasizes separation of duties with strict IAM role separation, ensuring agents only receive session IDs and instrument IDs, and credentials are securely managed via AWS Secrets Manager, preventing direct access to private keys.</li>
 </ul></div>
     
   </div>
@@ -396,15 +401,9 @@
       <span>news</span>
       <span> · 2026-09-01</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/08/31/apple-shares-shocking-evidence-against-former-employee-accused-of-stealing-company-data-for-openai/" target="_blank" rel="noopener">Apple shares ‘shocking evidence’ against former employee accused of stealing company data for OpenAI</a></h2>
+    <h2><a href="https://techcrunch.com/2026/09/01/amazon-alexa-can-now-alert-you-when-something-new-might-tempt-you-to-shop/" target="_blank" rel="noopener">Amazon Alexa can now alert you when something new might tempt you to shop</a></h2>
     
-    <div class="summary"><p>Apple alleges former employee Chang Liu transferred confidential data to OpenAI.</p>
-<ul>
-<li>Apple claims Liu used a confidential Apple circuit schematic in his work at OpenAI.</li>
-<li>The company further alleges Liu utilized a tool sharing a name with an internal Apple engineering application while at OpenAI.</li>
-<li>Apple states Liu and colleague Yu-Ting Peng allegedly attempted to destroy evidence of data transfer in June, after learning of the Apple investigation.</li>
-<li>Apple is seeking a preliminary injunction to prevent OpenAI from using Apple’s technology and has identified over 400 former Apple employees now working at OpenAI.</li>
-</ul></div>
+    <div class="summary"><p>Amazon launched a new Alexa for Shopping feature called “Update Me When” on September 1, 2026, which sends personalized notifications about potentially desirable purchases. Users can configure alerts to track new product lines from favorite brands, new releases of shows/books/music, or product launches from specific tech companies. TechCrunch notes this shifts Alexa’s functionality from reactive product answering to proactively anticipating purchasing triggers. Existing features like price tracking—including automated purchasing—and AI-powered shopping guides were also highlighted as part of Amazon's broader AI strategy.</p></div>
     
   </div>
   
@@ -414,15 +413,9 @@
       <span>news</span>
       <span> · 2026-08-31</span>
     </div>
-    <h2><a href="https://arstechnica.com/gaming/2026/08/pockets-ai-made-my-game-ideas-real-now-meta-controls-the-results/" target="_blank" rel="noopener">Pocket&#39;s AI made my game ideas real. Now Meta controls the results.</a></h2>
+    <h2><a href="https://arstechnica.com/tech-policy/2026/08/chatgtp-and-reddit-now-face-eus-toughest-online-safety-rules/" target="_blank" rel="noopener">ChatGPT and Reddit now face EU&#39;s toughest online safety rules</a></h2>
     
-    <div class="summary"><p>Meta’s Pocket app, launched August 21st after acquiring the Gizmo team in March, allows users to create interactive “gizmos” – essentially small games – using text prompts, without needing to write any code.</p>
-<ul>
-<li>Users describe their idea in a text box, and Pocket’s AI generates a functional prototype, often with unexpected features, within approximately two minutes.</li>
-<li>The app supports iterative refinement through further prompts, allowing users to add features like enemies, scoring systems, and sound effects, with the AI interpreting both detailed and vague requests.</li>
-<li>Pocket includes an "Ideas" tab that suggests features, but the resulting creations are limited aesthetically to basic graphics and sounds and lack extensive customization options.</li>
-<li>Gizmos are shared within the Pocket platform as “Posts,” viewable via an algorithmic feed, but cannot be exported as code or deployed outside of Pocket, making them exclusively tied to Meta’s ecosystem.</li>
-</ul></div>
+    <div class="summary"><p>The European Commission has designated OpenAI’s <strong>ChatGPT</strong>, <strong>Reddit</strong>, and <strong>Roblox</strong> as “very large online platforms” under the EU’s Digital Services Act (DSA). This classification requires them to comply with stricter rules regarding illegal content removal and user privacy, with potential fines reaching up to 6% of global revenue for non-compliance. The decision was triggered by each service surpassing 45 million monthly users within the EU, and they have until the end of December to adapt to the new obligations. This move expands the DSA’s scope to include generative AI, following a previous investigation into X's <strong>Grok</strong> chatbot.</p></div>
     
   </div>
   

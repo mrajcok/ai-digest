@@ -80,11 +80,138 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-01 10:16 UTC</p>
+  <p class="generated-at">Generated 2026-09-02 10:16 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
+  
+  <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-01</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-boomi-scribe-streamlines-documentation-using-aws/" target="_blank" rel="noopener">How Boomi Scribe streamlines documentation using AWS</a></h3>
+    
+    <div class="summary"><p>Boomi Scribe automates integration process documentation using AI, reducing technical debt for developers.</p>
+<ul>
+<li>The system parses integration processes represented as XML and converts them into Directed Acyclic Graphs (DAGs) to be processed by AI models.</li>
+<li>Documentation is generated using Amazon Bedrock and Anthropic’s Claude Haiku 4.5, including process overviews, metadata, business context, and step-by-step descriptions.</li>
+<li>Version comparisons of DAGs are performed using a proprietary algorithm within AWS Lambda to highlight additions, modifications, and deletions between process versions.</li>
+<li>The architecture utilizes Amazon S3 for storage of DAGs and documentation, Amazon DynamoDB as a backend datastore, and AWS Lambda for orchestration.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-01</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-zs-democratized-secure-ad-hoc-analytics-with-amazon-sagemaker/" target="_blank" rel="noopener">How ZS democratized secure ad-hoc analytics with Amazon SageMaker</a></h3>
+    
+    <div class="summary"><p>ZS Associates built a security-hardened, multi-tenant machine learning platform on Amazon SageMaker to balance developer agility with healthcare compliance requirements.</p>
+<ul>
+<li>The platform utilizes Amazon SageMaker Studio as its foundation, running in an internet-free mode with communication to AWS services via VPC endpoints.</li>
+<li>Security features include JFrog Artifactory for secure package management, AWS KMS encryption by default across resources, integration with CrowdStrike and Splunk for threat detection/logging, and a three-tier IAM role structure for least privilege access.</li>
+<li>Custom implementations address gaps in standard SageMaker, including automated backups of SageMaker Spaces to Amazon S3, enforced configurations for AWS Glue interactive sessions, and a SageMaker S3 browser extension.</li>
+<li>The platform currently supports over 1,000 daily active users across 200+ SageMaker domains, with monthly SageMaker spend exceeding $50K and approximate savings of $10K/month through Savings Plans and auto-shutdown configurations.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-01</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-t54-built-a-trust-layer-with-amazon-bedrock-agentcore-payments/" target="_blank" rel="noopener">How t54 built a trust layer with Amazon Bedrock AgentCore payments</a></h3>
+    
+    <div class="summary"><ul>
+<li>t54 has integrated its x402-secure trust layer with Amazon Bedrock AgentCore payments to enable autonomous agent payments, processing over 20 million transactions without human intervention.</li>
+<li>The system utilizes x402, an open payment standard using HTTP 402 for payments, and incorporates session-scoped spending limits enforced by Amazon Bedrock AgentCore payments along with a credit facility (ClawCredit).</li>
+<li>x402-secure evaluates five independent signals – blockchain history, webpage legitimacy, social media footprint, API health, and a synthesized risk score – before authorizing a payment, rejecting transactions that fail to meet the risk threshold.</li>
+<li>The architecture emphasizes separation of duties with strict IAM role separation, ensuring agents only receive session IDs and instrument IDs, and credentials are securely managed via AWS Secrets Manager, preventing direct access to private keys.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-01</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/securing-amazon-quick-from-poc-to-production-agents-flows-and-spaces/" target="_blank" rel="noopener">Securing Amazon Quick from POC to production: Agents, Flows, and Spaces</a></h3>
+    
+    <div class="summary"><p>Amazon Quick introduces security patterns for scaling AI projects from proof-of-concept to production, addressing concerns about data access and compliance.</p>
+<ul>
+<li>The solution shapes one source dataset into three authorization-aligned views (HR Leadership, Department Managers, All Employees) and connects each to a dedicated Agent.</li>
+<li>It utilizes dataset shaping, removing sensitive columns to structurally limit access, and Row-Level Security (RLS) to filter data based on user identity at the dataset level.</li>
+<li>Spaces organize documents with permission tiers (Owners, Viewers) to control knowledge base access, and document classification prevents sensitive data from being indexed.</li>
+<li>Flows enable human-in-the-loop controls for outbound actions, ensuring approvals are required before data leaves the system; the implementation outlines patterns for dataset shaping, agent isolation, document classification, and approval gates.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-01</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/tokenomics-at-scale-how-jamf-built-real-time-spend-enforcement-for-amazon-bedrock/" target="_blank" rel="noopener">Tokenomics at scale: How Jamf built real-time spend enforcement for Amazon Bedrock</a></h3>
+    
+    <div class="summary"><ul>
+<li>Jamf built a system to enforce tiered spending limits for individual engineers using Amazon Bedrock, addressing the challenge of unpredictable AI costs (“tokenomics”).</li>
+<li>The solution uses AWS IAM Customer Managed Policies (CMPs) to restrict access to specific Bedrock models (e.g., Anthropic Claude Opus, Sonnet, Haiku) based on daily spending thresholds.</li>
+<li>An Amazon Athena view calculates per-user spend from Bedrock invocation logs stored in Amazon S3, and an AWS Lambda function runs every 15 minutes to enforce limits by updating CMPs.</li>
+<li>The system includes a Slack-based exception workflow managed via DynamoDB, allowing administrators to grant temporary, higher limits to engineers when needed, with costs under $10/month for hundreds of engineers.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-01</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/from-theory-to-delivery-how-atos-upskilled-400-engineers-in-agentic-ai/" target="_blank" rel="noopener">From theory to delivery: How Atos upskilled 400 engineers in agentic AI</a></h3>
+    
+    <div class="summary"><p>Atos upskilled 400 engineers in agentic AI through an AWS AI League competition focused on practical application.</p>
+<ul>
+<li>Engineers built autonomous AI agents to navigate a dungeon maze using AWS services like Amazon Bedrock, Amazon Bedrock AgentCore, AWS Lambda, and Amazon SageMaker.</li>
+<li>The event leveraged Amazon Bedrock AgentCore capabilities including runtime, gateway, memory, and Code Interpreter for orchestrating multi-agent systems and tool execution.</li>
+<li>Reinforcement Learning from Verifiable Rewards (RLVR) was utilized with Amazon SageMaker Studio for fine-tuning custom models, enhancing token efficiency and performance.</li>
+<li>The challenge incorporated scoring based on successful challenge completion, coin collection, map completion, life retention, efficiency, and fine-tuning, testing skills in AI safety, code generation, context retention, and pathfinding.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-01</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-claude-fable-5-1-on-aws/" target="_blank" rel="noopener">Introducing Claude Fable 5.1 on AWS</a></h3>
+    
+    <div class="summary"><p>Claude Fable 5.1 is now available on Amazon Bedrock and the Claude Platform on AWS, offering enhanced reasoning capabilities.</p>
+<ul>
+<li>Anthropic designates Fable 5.1 as a “Covered Model” requiring up to 30 days of data retention and potential human review via the <code>aws_review</code> mode when used through Amazon Bedrock.</li>
+<li>Fable 5.1 demonstrates improvements in complex reasoning tasks, including mathematics, science, and engineering, and exhibits improved judgment with fewer confidently incorrect responses.</li>
+<li>The model offers advanced autonomous operation, capable of handling multi-hour, multi-application workflows with planning, error recovery, and proactive updates.</li>
+<li>Enterprise Frontier Safeguards (EFS) allow eligible customers to use Fable 5 and 5.1 with zero data retention (ZDR) within their AWS environment through December 31, 2026, with further safeguards planned for later in the year.</li>
+</ul></div>
+    
+  </div>
+  
   
   <h2 class="month">August 2026</h2>
   
@@ -481,128 +608,6 @@
 <li>The system uses Amazon Connect Agentic Voice (Advanced ASR and TTS) for real-time speech recognition and synthesis, orchestrated by an Amazon Connect AI agent powered by Anthropic Claude Haiku 4.5 in Amazon Bedrock.</li>
 <li>Backend services are connected via the Model Context Protocol (MCP) through AgentCore Gateway, enabling modularity and allowing backend changes without impacting the AI agent logic.</li>
 <li>The solution utilizes AWS CDK for deployment, encompassing Amazon Connect, Lex V2, Agentic Voice, AI Agents, Guardrails, AgentCore Gateway, API Gateway, Lambda, DynamoDB, and Location Service.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-24</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/agentic-resource-discovery-ard-an-open-specification-for-agent-discovery/" target="_blank" rel="noopener">Agentic Resource Discovery (ARD): An open specification for agent discovery</a></h3>
-    
-    <div class="summary"><p>AWS introduces Agentic Resource Discovery (ARD), an open specification for cross-environment agent discovery.</p>
-<ul>
-<li>AWS Agent Registry provides a centralized, searchable catalog for agents, Model Context Protocol (MCP) servers, tools, and resources, utilizing registries and registry records.</li>
-<li>The Agent Registry supports curation workflows with approval settings, hybrid search (semantic and keyword-based), and flexible authorization via IAM or JWTs.</li>
-<li>ARD is an open standard (Apache 2.0 license, agenticresourcediscovery.org) designed to enable federation across registries, analogous to DNS, allowing discovery without requiring proprietary connectors.</li>
-<li>AWS envisions ARD complementing AWS Agent Registry by enabling federated discovery across environments while maintaining local control and potentially opening paths for public discovery.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-24</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/democratizing-institutional-knowledge-building-an-ai-powered-knowledge-management-system-with-aws/" target="_blank" rel="noopener">Democratizing institutional knowledge: Building an AI-powered knowledge management system with AWS</a></h3>
-    
-    <div class="summary"><ul>
-<li>This post details a customizable, cloud-based knowledge management system utilizing AWS services to capture and deliver institutional knowledge via an intelligent avatar system.</li>
-<li>The solution leverages Amazon Bedrock Knowledge Bases with Amazon Titan Text Embeddings for RAG, storing data in Amazon S3 and using Amazon OpenSearch Serverless as a vector store, orchestrated by AWS Lambda and cached with Amazon DynamoDB.</li>
-<li>A key differentiator is voice-first, avatar-driven delivery, requiring minimal technical expertise for end-users, alongside simplified content management via direct document uploads to Amazon S3.</li>
-<li>Deployment is accelerated using AWS CloudFormation, featuring built-in cost optimization through a DynamoDB cache achieving 50-70% hit rates, and utilizes Amazon Transcribe/Polly for voice interaction and models like Amazon Nova Pro and Anthropic Claude 3 Sonnet via Amazon Bedrock.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-24</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-new-ray-capabilities-on-sagemaker-hyperpod/" target="_blank" rel="noopener">Introducing new Ray capabilities on SageMaker HyperPod</a></h3>
-    
-    <div class="summary"><ul>
-<li>SageMaker HyperPod now integrates with Ray, an open-source framework for scaling distributed Python workloads, simplifying cluster creation and management directly from the SageMaker Studio console without needing Kubernetes manifests or <code>kubectl</code> commands.</li>
-<li>Ray training jobs benefit from automatic fault tolerance via HyperPod node health monitoring &amp; recovery, alongside tiered checkpointing using HyperPod distributed tiered storage for faster resume times.</li>
-<li>SageMaker JumpStart integration allows direct loading of model weights into Ray Serve endpoints, with KV cache offloading to tiered storage to improve serving performance for long-context requests.</li>
-<li>Out-of-the-box observability is provided through the HyperPod Observability EKS add-on, which automatically provisions pre-built Grafana dashboards in Amazon Managed Grafana for Ray Core, Data, Train, and Serve.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-21</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/accelerating-aircraft-ifec-diagnostics-with-agentic-ai-on-aws/" target="_blank" rel="noopener">Accelerating aircraft IFEC diagnostics with agentic AI on AWS</a></h3>
-    
-    <div class="summary"><ul>
-<li>This blog details how Panasonic Avionics Corporation (PAC) built an agentic AI system on AWS to accelerate diagnostics of in-flight entertainment and connectivity (IFEC) systems.</li>
-<li>The solution leverages Amazon Bedrock (Anthropic Claude), Amazon SageMaker (with LangGraph and Strands Agents SDK), and AWS Glue to analyze operational data from a data lakehouse in Amazon S3 using Apache Iceberg.</li>
-<li>A multi-agent workflow includes a Trend Analyzer, Correlation Analyzer, System Checks, and a Log Analyzer, culminating in a diagnostic report generated by an LLM with root cause hypotheses and recommended actions.</li>
-<li>The system integrates semantic search using Amazon RDS with pgvector to provide institutional memory, and has demonstrated 20-40% improvements in operational efficiency with reduced MTTD and MTTR.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-21</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/reduce-rag-costs-on-amazon-bedrock-with-query-aware-compression/" target="_blank" rel="noopener">Reduce RAG costs on Amazon Bedrock with query-aware compression</a></h3>
-    
-    <div class="summary"><p>Reduce RAG costs by filtering retrieved chunks with a smaller model before sending context to the primary model.</p>
-<ul>
-<li>Amazon Bedrock enables a “query-aware compression” pattern where a smaller, lower-cost model (e.g., Anthropic Claude Haiku) filters retrieved chunks based on the user query.</li>
-<li>This reduces the number of input tokens sent to the primary model (e.g., Anthropic Claude Sonnet), lowering costs, and potentially reducing hallucination by removing irrelevant context.</li>
-<li>The implementation uses an AWS Lambda function with the Amazon Bedrock Converse API, adding a compression step before the final answer generation. The pattern achieved 33% cost savings in testing.</li>
-<li>Key considerations include the price ratio between the models, inference speed, and maintaining answer quality – with tests showing minimal impact on correctness and a reduction in hallucination rate.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-21</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/govern-ai-agent-tool-access-with-amazon-bedrock-agentcore-gateway/" target="_blank" rel="noopener">Govern AI agent tool access with Amazon Bedrock AgentCore Gateway</a></h3>
-    
-    <div class="summary"><p>Amazon Bedrock AgentCore introduces a governed gateway for managing AI agent access to internal tools, addressing concerns around credential sprawl, policy drift, and audit gaps.</p>
-<ul>
-<li><strong>AgentCore Gateway</strong> provides a single, secure entry point for agentic traffic, utilizing <strong>AgentCore Identity</strong> for authentication, authorization, and credential management, and <strong>AgentCore Policy</strong> for security controls.</li>
-<li>The solution proposes a four-scope maturity journey: <strong>Connect</strong> (basic SSO &amp; centralized credentials), <strong>Control</strong> (identity-aware authorization with Cedar RBAC/ABAC and <strong>Amazon Bedrock Guardrails</strong>), <strong>Catalog</strong> (tool discovery and publishing with <strong>AWS Agent Registry</strong>), and <strong>Harden</strong> (advanced security measures like private connectivity and failover).</li>
-<li><strong>Dynamic Client Registration (DCR)</strong> enables user-delegated access via OAuth 2.0, where clients receive dynamically added client IDs, enhancing security over machine-to-machine authentication.</li>
-<li><strong>Cedar Policies</strong> can be integrated with <strong>Amazon Bedrock Guardrails</strong> to apply PII filtering and content policies directly within the access control framework, leveraging conditions like <code>suppressOutput</code> or filtering via <code>when guardrails condition</code>.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-21</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/agentic-data-operations-platform-adop-data-engineering-into-hours/" target="_blank" rel="noopener">Agentic Data Operations Platform (ADOP): Data engineering into hours</a></h3>
-    
-    <div class="summary"><ul>
-<li>The Agentic Data Operations Platform (ADOP) is a reference architecture built on Amazon Bedrock designed to automate the full data lifecycle (Bronze to Gold) and accelerate data source onboarding, aiming to reduce onboarding timelines from weeks to hours.</li>
-<li>ADOP utilizes AI agents that operate primarily in development environments to generate deterministic artifacts (PySpark, SQL, Airflow DAGs, IAM/Cedar policies) which are then deployed to production through CI/CD, minimizing runtime model dependency.</li>
-<li>The platform distinguishes itself from general-purpose coding assistants through a narrowed focus on data engineering, embedding company standards and policies into the build process via a “Decision Engine” and configurable guardrails.</li>
-<li>ADOP integrates with tools like Claude Code, Kiro, Cursor, and Codex, ensuring consistent architectural patterns across development teams and offering features like automated compliance controls, agent observability, and secure data handling.</li>
 </ul></div>
     
   </div>
