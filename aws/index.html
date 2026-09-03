@@ -80,13 +80,101 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-02 10:16 UTC</p>
+  <p class="generated-at">Generated 2026-09-03 10:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-02</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/trinity-agentic-ai-powered-transition-planning-for-students-with-disabilities/" target="_blank" rel="noopener">Trinity: Agentic AI-powered transition planning for students with disabilities</a></h3>
+    
+    <div class="summary"><ul>
+<li>Trinity is an agentic AI solution built on AWS utilizing a six-agent hierarchical system powered by Amazon Bedrock’s Claude 3.5 Sonnet, designed to assist students with disabilities in postsecondary transition planning and IEP development.</li>
+<li>The architecture employs a multi-agent system – Orchestrator, College, Employment, Training, Community, and Independent Living Agents – each accessing dedicated Amazon Bedrock Knowledge Bases (30k+ colleges, 1k+ occupations, 5k+ training programs) via a hybrid retrieval scoring model (semantic, keyword, location, attributes).</li>
+<li>The solution addresses compliance requirements, including HIPAA and FERPA, through AWS KMS field-level encryption, IAM policies following least privilege, and role-based access control integrated with Canvas LTI 1.3 federation for single sign-on via Amazon Cognito.</li>
+<li>Trinity uses a two-phase pipeline – recommendation, then plan generation – achieved through serverless AWS Lambda functions, DynamoDB for state management, Amazon Polly for text-to-speech, and Amazon Transcribe for speech-to-text, along with Amazon Bedrock Guardrails for content filtering.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-02</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/from-code-to-diagrams-agentic-architecture-documentation-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">From code to diagrams: Agentic architecture documentation with Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><p>Amazon Bedrock AgentCore enables autonomous agents to analyze codebases, generate architecture diagrams, and maintain searchable documentation.</p>
+<ul>
+<li>The solution uses AgentCore coupled with Amazon Bedrock Knowledge Bases and AWS CodePipeline to automate documentation for .NET code.</li>
+<li>Agents analyze code, generate diagrams in Mermaid syntax, validate them, convert to SVG, and publish to S3, achieving 95% reliability through iterative refinement and self-correction.</li>
+<li>Amazon Titan Text Embeddings v2 is used to create vector embeddings for semantic search within Amazon Bedrock Knowledge Bases, allowing natural language queries about the architecture.</li>
+<li>The system has been in production since Q1 2026 with a financial services firm, and example pipeline configurations are provided using AWS CodePipeline.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-02</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-an-aws-team-detects-dashboard-content-failures-at-scale-using-amazon-bedrock/" target="_blank" rel="noopener">How an AWS team detects dashboard content failures at scale using Amazon Bedrock</a></h3>
+    
+    <div class="summary"><p>AWS developed an automated content validation solution for dashboards within the AWS Insights application to detect failures before users report them, reducing detection time from up to 72 hours to less than 1 hour.</p>
+<ul>
+<li>The solution uses <strong>Amazon Bedrock</strong> (specifically <strong>Anthropic Claude models</strong>) for visual integrity checks, detecting anomalies like blank tiles or error states in screenshots of dashboard sections. Screenshots are redacted using <strong>Amazon Rekognition</strong> to remove sensitive data before analysis.</li>
+<li>A “hybrid validation” approach is used for numeric consistency; <strong>Amazon Bedrock</strong> LLMs locate and read metric values, while deterministic code handles unit normalization and precision comparisons to identify discrepancies.</li>
+<li>The system is built on a five-stage serverless architecture utilizing <strong>Amazon EventBridge</strong>, <strong>AWS Lambda</strong>, <strong>Amazon S3</strong>, <strong>Amazon CloudFront</strong>, and <strong>Amazon Redshift</strong> for scalability and cost-efficiency.</li>
+<li>Key engineering lessons included prioritizing accuracy over speed to minimize false positives and keeping LLMs away from arithmetic calculations, opting instead for deterministic code for numeric comparisons to ensure consistency and reliability.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-02</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/modernizing-and-scaling-support-operations-with-generative-ai-on-aws/" target="_blank" rel="noopener">Modernizing and scaling support operations with generative AI on AWS</a></h3>
+    
+    <div class="summary"><p>AWS introduces a generative AI-based solution for modernizing and scaling support operations.</p>
+<ul>
+<li>The solution uses <strong>Amazon Bedrock</strong> (with models like <strong>Marengo Embed 2.7</strong> and <strong>Pegasus 1.2</strong>) to automatically convert training videos into structured Standard Operating Procedures (SOPs) using multimodal video understanding and semantic retrieval.</li>
+<li>A “Ticket Analyzer” leverages <strong>Amazon Bedrock</strong> and <strong>AWS Strands Agents SDK</strong> to analyze incoming tickets, using Retrieval Augmented Generation (RAG) to identify relevant SOPs and generate resolution guidance, including automated ticket tagging and commenting.</li>
+<li>“Value Stream Intelligence” visualizes resolution workflows as interactive swim lane maps, highlighting bottlenecks and connecting datasets across teams and systems to improve visibility.</li>
+<li><strong>Amazon QuickSight</strong> is utilized for an analytics layer providing dashboards for workload management, ML-based SLA risk prediction, and actionable recommendations for workload rebalancing.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-02</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/accessing-openai-gpt-5-6-models-on-amazon-bedrock-from-australia-with-global-cross-region-inference/" target="_blank" rel="noopener">Accessing OpenAI models on Amazon Bedrock from Australia with global cross-Region inference</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock now supports access to OpenAI's GPT-5.6 Sol, Terra, and Luna models from the Asia Pacific (Sydney) and Asia Pacific (Melbourne) AWS Regions.</li>
+<li>These models offer up to 1 million token context windows and accept both text and image inputs, with Sol optimized for complex tasks, Terra balancing cost and performance, and Luna focused on high-volume, low-latency applications.</li>
+<li>Access is facilitated through the Amazon Bedrock Runtime endpoint, supporting the Responses API, Chat Completions API, and Converse API, authenticated via SigV4 or a short-term model inference API key.</li>
+<li>Codex can be configured to utilize these models via the Amazon Bedrock Runtime provider, and telemetry can be exported to CloudWatch Coding Agent Insights for monitoring token usage and request activity.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -521,93 +609,6 @@
 <li>The migration involved rationalizing over 5,000 dashboards down to fewer than 2,500, saving approximately 15,000 annual work hours.</li>
 <li>Amazon Quick’s AI-powered features, including anomaly detection, forecasting, and natural language querying, were leveraged, alongside custom chat agents and Quick Flows for workflow automation.</li>
 <li>GoDaddy achieved an estimated 7,900+ annual hours saved via automation with Quick Flows and custom chat agents, and is integrating Quick with communication and project management tools like Slack and Jira.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-26</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/evaluate-any-agent-framework-with-amazon-bedrock-agentcore-evaluations/" target="_blank" rel="noopener">Evaluate any agent framework with Amazon Bedrock AgentCore Evaluations</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock AgentCore Evaluations decouples agent evaluation from the underlying agent framework by leveraging OpenTelemetry as a common standard for telemetry data.</li>
-<li>The system focuses on classifying and extracting data from three span roles: <code>invoke agent</code> (user turn), <code>inference</code> (model calls), and <code>execute tool</code> (tool calls), while ignoring other spans for forward compatibility.</li>
-<li>The service automatically detects how to read telemetry data based on the <code>scope.name</code> of the instrumentation library used (e.g., under <code>opentelemetry.instrumentation.*</code> or <code>openinference.instrumentation.*</code>), supporting frameworks like Strands, LangGraph, OpenAI Agents SDK, LlamaIndex, Google ADK, and Claude Agent SDK.</li>
-<li>Evaluation requires a <code>session.id</code> attribute to group spans into sessions and access to message content either through correlated event records or directly on the spans; ADOT automatically injects the session ID on AgentCore runtime.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-25</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/governed-reports-with-amazon-quick-desktop-and-amazon-fsx-for-netapp-ontap/" target="_blank" rel="noopener">Governed reports with Amazon Quick Desktop and Amazon FSx for NetApp ONTAP</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Quick Desktop introduces AI-assisted reporting capabilities for files managed on Amazon FSx for NetApp ONTAP (FSx for ONTAP).</li>
-<li>A new “skill”, Weekly Business Reporting Assistant, automates the creation of reports by connecting governed files to a guided reporting experience, requiring human review before sharing.</li>
-<li>Amazon S3 access points are used to grant Amazon Quick controlled, read-only access to specific folders within FSx for ONTAP, leveraging existing storage and access controls.</li>
-<li>The solution requires FSx for ONTAP version 9.17.1 or later and an Amazon Quick Enterprise subscription to create knowledge bases and integrations with services like Slack.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-25</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/agentic-observability-with-amazon-opensearch-service-mcp-apps/" target="_blank" rel="noopener">Agentic observability with Amazon OpenSearch Service MCP Apps</a></h3>
-    
-    <div class="summary"><p>Amazon OpenSearch Service now supports MCP Apps, extending the Model Context Protocol (MCP) to deliver interactive visualizations – trace waterfalls, service maps, log views – directly within AI assistant chat windows.</p>
-<ul>
-<li>MCP Apps enable a dual response pattern: text summaries <em>and</em> interactive visualizations are returned in response to tool calls.</li>
-<li>The visualizations are generated by executing code against existing data sources (OpenSearch domains, serverless collections, Amazon Managed Service for Prometheus), ensuring deterministic results.</li>
-<li>A local MCP server acts as a secure bridge between the IDE and the OpenSearch UI application, utilizing existing AWS credentials and policies.</li>
-<li>Available tools cover investigation stages including triage, log analysis, trace investigation, metric analysis, and topology mapping, with specialized tools for AI/LLM observability and stack health.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-24</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/ai-powered-metadata-correction-and-harmonization/" target="_blank" rel="noopener">AI-powered metadata correction and harmonization</a></h3>
-    
-    <div class="summary"><p>AI-powered metadata correction and harmonization leverages LLMs to automate metadata management, addressing challenges with data standardization at scale.</p>
-<ul>
-<li>The system uses Amazon Bedrock for LLM-powered schema alignment and correction recommendations, integrated with services like Amazon S3, DynamoDB, Cognito, and ECS.</li>
-<li>Schema alignment utilizes LLMs to semantically understand metadata, handling synonyms, misspellings and complex relationships beyond simple string matching.</li>
-<li>Metadata field validation employs a tiered approach: required field checks, enumerated value validation against controlled vocabularies, pattern matching with regular expressions, and LLM-based resolution as a fallback.</li>
-<li>Recommendations combine NLP, embedding-based similarity (using Amazon Titan), contextual inference (k-nearest neighbors with TF-IDF and PMI), fuzzy matching, and LLM resolution to balance accuracy, scalability, and cost.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-24</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/building-a-restaurant-telephony-ai-host-with-amazon-connect/" target="_blank" rel="noopener">Building a restaurant telephony AI host with Amazon Connect</a></h3>
-    
-    <div class="summary"><ul>
-<li>This blog details building a voice-based restaurant ordering system using Amazon Connect, leveraging AI to handle calls from greeting to order confirmation.</li>
-<li>The system uses Amazon Connect Agentic Voice (Advanced ASR and TTS) for real-time speech recognition and synthesis, orchestrated by an Amazon Connect AI agent powered by Anthropic Claude Haiku 4.5 in Amazon Bedrock.</li>
-<li>Backend services are connected via the Model Context Protocol (MCP) through AgentCore Gateway, enabling modularity and allowing backend changes without impacting the AI agent logic.</li>
-<li>The solution utilizes AWS CDK for deployment, encompassing Amazon Connect, Lex V2, Agentic Voice, AI Agents, Guardrails, AgentCore Gateway, API Gateway, Lambda, DynamoDB, and Location Service.</li>
 </ul></div>
     
   </div>

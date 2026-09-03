@@ -80,13 +80,41 @@
     </label>
   </div>
   <h1>Anthropic News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-02 10:16 UTC</p>
+  <p class="generated-at">Generated 2026-09-03 10:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-09-02</span>
+    </div>
+    <h3><a href="https://claude.com/blog/claude-for-commerce-agents" target="_blank" rel="noopener">Building Commerce Agents with Claude | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic has released a “blueprint” for building commerce agents powered by their Claude models, intended to accelerate development for retail, travel, and other e-commerce businesses. The blueprint provides pre-built implementations of both shopping and merchant agents, accessible via the Claude API, Amazon Bedrock, Microsoft Foundry, or Google Cloud Vertex AI. </p>
+<p>The shopping agent can handle complex requests – like assembling a camping gear list – and integrates with catalogs, carts, and customer data to provide personalized suggestions and complete purchases within a conversational interface. Safeguards are included to ensure accuracy and avoid manipulative sales tactics. The merchant agent supports internal business users by analyzing sales data, managing inventory, and even drafting marketing copy, always requiring human approval before implementing changes. </p>
+<p>Reference implementations, demos, and an engineering deep-dive are available, alongside integrations with partners like Accenture, Mastercard and Visa, to reduce initial setup time to days. The blueprint leverages Claude’s Messages API, Agent SDK, or Claude Managed Agents (beta).</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-09-02</span>
+    </div>
+    <h3><a href="https://claude.com/blog/the-anatomy-of-effective-commerce-agents" target="_blank" rel="noopener">A guide to the anatomy of effective commerce agents | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic details the architecture and best practices for building effective commerce agents using their Claude models. The core approach centers on a single Claude model within a standard agent loop, leveraging "skills" rather than numerous sub-agents to handle a wide range of commerce tasks – from assisting customers with purchases to aiding merchants with operations.  Skills are favored over subagents due to reduced context loss and latency associated with handoffs. </p>
+<p>The guide emphasizes optimizing for both speed and cost. Techniques include prompt caching, selecting appropriate model configurations (like Sonnet versus Opus, depending on requirements), and streaming UI components to improve perceived latency.  Safety is paramount; the recommendation is to enforce business rules and financial transactions through code-level controls <em>outside</em> the model, ensuring no direct model manipulation of funds or critical business changes. </p>
+<p>Finally, robust evaluation (evals) is crucial. They advise a layered memory approach utilizing existing databases for long-term storage, asynchronous writing, and layered reading, combined with thorough testing to account for non-deterministic model behavior and regressions. A reference implementation with shopping and merchant agent examples is also available.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -473,33 +501,6 @@
     <div class="summary"><p>Anthropic will implement a text watermarking system in future versions of Claude to comply with the August 2, 2026 EU AI Act, which requires marking AI-generated content. This system, based on Google DeepMind’s SynthID-Text method published in a 2024 <em>Nature</em> paper, works by subtly influencing word choices during text generation – selecting from equally valid options based on a cryptographic key rather than pure randomness. </p>
 <p>The watermarking is designed to be undetectable to readers and has shown no impact on text quality, creativity, or readability in internal and Google DeepMind testing. It doesn’t add visible characters or increase costs. The watermark indicates the <em>likelihood</em> that Claude contributed to a text, but cannot identify users or definitively prove AI authorship, especially in heavily edited or short samples, or for exact outputs like code. </p>
 <p>Anthropic will also attach cryptographically signed metadata to files created or processed by Claude, using the C2PA standard, and plans to offer a watermark detection API. The change will be applied globally, though regional scoping is being evaluated.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-08-13</span>
-    </div>
-    <h3><a href="https://claude.com/blog/how-jetbrains-evaluates-and-deploys-claude-fable-5" target="_blank" rel="noopener">Securing the frontier: How JetBrains evaluates and deploys Claude Fable 5 | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>JetBrains evaluated Anthropic’s Claude Fable 5 against its private code repositories, finding it outperformed Opus 4.8 on Python pass rates by 16 points – achieving 44.3% versus 28.2%. Notably, Fable 5 solved 18 Python tasks that Opus 4.8 failed to complete, with code running successfully and producing correct results more consistently.</p>
-<p>The evaluation also revealed efficiency gains: Fable 5 required approximately 22% fewer steps than Opus 4.8 to reach a solution. JetBrains utilizes Fable 5 for complex reasoning tasks, especially where definitive solutions aren't readily apparent, such as implementing sophisticated IDE components and long-running agentic coding experiments for rewriting applications across different runtimes. </p>
-<p>JetBrains prioritizes a systematic approach to model deployment, focusing on safety infrastructure and harnesses around the model rather than attempting to modify the model itself. While they acknowledge the need for data retention for classifier review, they favor minimizing it and see the trade-off as acceptable for accessing the model's advanced capabilities.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-08-13</span>
-    </div>
-    <h3><a href="https://claude.com/blog/claude-tag-now-reads-even-more-of-the-room" target="_blank" rel="noopener">Claude Tag now reads even more of the room | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic has updated Claude Tag for Slack, enabling it to consider the full context of a channel – not just individual messages – when deciding whether to proactively contribute. Previously, a simple classifier determined responses; now, Claude can choose to reply inline, start a thread, route to existing work, or remain silent based on broader conversation dynamics, improving proactive response accuracy by roughly 30%.</p>
-<p>This contextual awareness doesn't impact usage limits, despite increased processing. Claude Tag assesses usefulness, confidence, and the presence of more suitable responders to avoid interrupting conversations unnecessarily, and can be instructed to only respond to direct mentions. The update also reduces initial response latency, providing quicker acknowledgement. This is available now to Claude Teams and Enterprise customers.</p></div>
     
   </div>
   
