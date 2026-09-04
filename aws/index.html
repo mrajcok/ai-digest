@@ -80,13 +80,118 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-03 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-09-04 10:21 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-03</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/embed-quick-sight-visuals-using-cognito-user-authentication/" target="_blank" rel="noopener">Embed Quick Sight visuals using Cognito user authentication</a></h3>
+    
+    <div class="summary"><ul>
+<li>This post details embedding individual Amazon QuickSight visuals into React applications with user authentication via Amazon Cognito, offering granular control over layout and user experience.</li>
+<li>The solution utilizes a serverless architecture with React (CloudFront/S3), Cognito for authentication (JWTs), Lambda for URL generation (using <code>GenerateEmbedUrlForRegisteredUser</code> API) and QuickSight for rendering visuals via the Embedding SDK.</li>
+<li>New Cognito users are automatically provisioned as <code>READER</code>s in QuickSight upon first access, and can be granted dashboard access either manually or automatically via Lambda function updates.</li>
+<li>The QuickSight Embedding SDK (v2.5.0+) allows for programmatic filtering of embedded visuals from the React UI, using methods like <code>addFilterGroups</code>, <code>updateFilterGroups</code>, and <code>removeFilterGroups</code>.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-03</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/best-practices-for-building-agentic-automations-with-amazon-quick-automate/" target="_blank" rel="noopener">Best practices for building agentic automations with Amazon Quick Automate</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Quick Automate enables building, deploying, and maintaining multi-agent automations at scale, coordinating agents across systems and applications.</li>
+<li>Best practices emphasize process understanding <em>before</em> automation design, focusing on identifying the right processes with unstructured inputs and contextual decision-making.</li>
+<li>Agents should be designed with clear, bounded responsibilities, leveraging features like scoped instructions and structured output to improve reliability and cost-efficiency.</li>
+<li>Quick Automate supports combining agentic steps with deterministic steps and integrating human-in-the-loop (HITL) review – both blocking and non-blocking – for high-stakes scenarios, alongside robust evaluation and observability features.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-03</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/set-up-openai-chatgpt-codex-with-litellm-on-amazon-ecs-and-amazon-bedrock/" target="_blank" rel="noopener">Set up OpenAI ChatGPT Codex with LiteLLM on Amazon ECS and Amazon Bedrock</a></h3>
+    
+    <div class="summary"><p>AWS details deploying OpenAI’s Codex with LiteLLM on Amazon ECS and Amazon Bedrock to provide centralized enterprise controls for generative AI coding agents.</p>
+<ul>
+<li>The solution uses LiteLLM as a gateway for authentication, routing, budgets, rate limits, and telemetry between Codex and Amazon Bedrock, while Codex retains local task execution control.</li>
+<li>LiteLLM is deployed on ECS, using Amazon RDS for PostgreSQL for state, Secrets Manager/KMS for key storage, CloudWatch for logging/alarms, and ECR for image storage; optional WAF protections are available.</li>
+<li>The deployment process includes cloning a repository, configuring <code>.env.deploy</code>, building/pushing the LiteLLM image to ECR, creating CloudFormation change sets, and provisioning scoped gateway identities/keys.</li>
+<li>Codex is configured to use the LiteLLM gateway’s Responses API; testing includes verifying request success, key alias resolution, model mapping, cost tracking, and API contract validation (semantic continuation, streaming, function calling).</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-03</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/integrating-outlook-with-amazon-quick-for-ai-powered-email-automation/" target="_blank" rel="noopener">Integrating Outlook with Amazon Quick for AI-powered email automation</a></h3>
+    
+    <div class="summary"><p>Amazon Quick now integrates with Microsoft Outlook to automate email workflows.</p>
+<ul>
+<li><strong>Amazon Quick chat agents</strong> can draft contextual email responses and summarize threads, accessing organizational knowledge bases.</li>
+<li><strong>Amazon Quick Flows</strong> can automate tasks like generating meeting briefings, extracting action items, and routing inquiries.</li>
+<li><strong>Amazon Quick Automate</strong> orchestrates complex, multi-step processes spanning email, calendars and other systems, such as customer onboarding.</li>
+<li>Integration uses the Microsoft Graph API and OAuth 2.0 for secure access, requiring specific permissions within the Microsoft Entra admin center.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-03</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/migrate-agentic-workloads-to-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Migrate agentic workloads to Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><p>Migrates agentic workloads to Amazon Bedrock AgentCore, aiming to offload operational burdens.</p>
+<ul>
+<li>The migration occurs in stages: Stage 1 moves the agent runtime to Amazon Bedrock AgentCore Runtime, Gateway, and Memory without altering the agent's core logic.</li>
+<li>Stage 2 rebuilds the agent's planning loop using Strands Agents for model-driven planning. Stage 3 (documented but not built in the walkthrough) further leverages AgentCore capabilities.</li>
+<li>Key components include <code>BedrockAgentCoreApp</code> for hosting the agent loop, and utilizing <code>Gateway</code> and <code>Memory</code> services to handle tool authorization and durable state management, respectively.</li>
+<li>The process involves converting local tools to MCP tools published by AgentCore Gateway and migrating state management to AgentCore Memory, enabling session persistence across turns and processes.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-03</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/ai-driven-development-lifecycle-using-amazon-bedrock-agentcore/" target="_blank" rel="noopener">AI-driven development lifecycle using Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock AgentCore is a service enabling the building, connecting, and optimization of agents at scale, demonstrated through reference implementations for the AI-Driven Development Lifecycle (AI-DLC).</li>
+<li>The first implementation uses AgentCore runtime and Claude Sonnet 4 (model_id="us.anthropic.claude-sonnet-4-5-20250929-v1:0") to automatically generate Mermaid ER diagrams from SQL schemas, leveraging chunked processing and structured prompting.</li>
+<li>A second implementation utilizes a multi-agent architecture with AgentCore Gateway and AgentCore memory, alongside external tools, to provide automated code security analysis for Python and Java, evaluating CVE risks and policy compliance using Claude Sonnet 4.</li>
+<li>Integration with local agentic tools like Kiro, OpenAI ChatGPT Codex (with a local MCP server accessing databases via INFORMATION_SCHEMA), and Claude Code further extends AI-DLC patterns to developer workstations for tasks like spec-driven development and infrastructure-as-code generation.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -502,113 +607,6 @@
 <li>“Skills” within Amazon Quick allow creators to capture and reuse repeatable processes, including approval gates for quality control and consistent creative direction.</li>
 <li>fal provides access to over 1,000 generative AI models for image, video, audio, and 3D media generation, accessible through an MCP server connected to Amazon Quick.</li>
 <li>Examples included demonstrate agentic workflows for storyboard production utilizing FLUX.1 Kontext and music video concept prototyping, highlighting the ability to maintain context and iterate with human review.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-26</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/connect-amazon-bedrock-agentcore-to-cross-account-knowledge-bases/" target="_blank" rel="noopener">Connect Amazon Bedrock AgentCore to cross-account knowledge bases</a></h3>
-    
-    <div class="summary"><p>Amazon Bedrock AgentCore now supports cross-account access to knowledge bases without data duplication.</p>
-<ul>
-<li>Agents built with Amazon Bedrock AgentCore can access knowledge bases in separate AWS accounts using Amazon Redshift Serverless.</li>
-<li>Two orchestration models are available: a code-based Strands agent on AgentCore runtime and a declarative AgentCore harness using AWS Lambda.</li>
-<li>Both models utilize a narrowly scoped IAM role and AWS Security Token Service (STS) to call <code>RetrieveAndGenerate</code> with Claude Haiku 4.5 (us.anthropic.claude-haiku-4-5-20251001-v1:0) and return generated answers.</li>
-<li>Deployment procedures and implementation details for both variants are available in a public GitHub sample, utilizing Amazon Nova Pro (us.amazon.nova-pro-v1:0). </li>
-</ul>
-<p>For full implementation details and decision guidance, consult the original post.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-26</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/preparing-data-for-supervised-fine-tuning-part-1-formatting-and-quality/" target="_blank" rel="noopener">Preparing data for supervised fine-tuning Part 1: Formatting and quality</a></h3>
-    
-    <div class="summary"><ul>
-<li>This post details data preparation for supervised fine-tuning (SFT), focusing on quality checks and formatting requirements, and contrasts SFT with continued pre-training (CPT) and reinforcement learning from human feedback (RFT).</li>
-<li>Data quality is paramount; prioritize accurate and diverse examples – even a small set (around 1,000) of curated examples can be highly effective, with techniques like clustering by embedding similarity helping identify gaps in coverage.</li>
-<li>Formatting should adhere to the model’s chat template (e.g., the Amazon Nova 2.0 <code>bedrock-conversation-2024</code> schema uses JSONL format with <code>system</code>, <code>user</code>, and <code>assistant</code> roles), including system prompts and reasoning traces when applicable.</li>
-<li>The post covers formatting for tool calling (using <code>toolUse</code> and <code>toolResult</code> blocks) and multimodal inputs (handling documents and images via <code>document</code> blocks referencing S3 locations), emphasizing consistent application of these features during both training and inference.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-26</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/preparing-data-for-supervised-fine-tuning-part-2-advanced-data-strategies/" target="_blank" rel="noopener">Preparing data for supervised fine-tuning Part 2: Advanced data strategies</a></h3>
-    
-    <div class="summary"><ul>
-<li>This post details advanced strategies for optimizing supervised fine-tuning (SFT) datasets, assuming data is already cleaned and formatted according to Amazon Nova's conversational schema.</li>
-<li>Learning curve analysis is recommended to determine the optimal dataset size, training until gains from additional data diminish (less than 1-2% improvement in primary metric).</li>
-<li>Data subset selection and filtering methods (DEITA, DELIFT, coreset selection) can outperform full-dataset training by focusing on high-quality, diverse examples and reducing catastrophic forgetting.</li>
-<li>Data mixing, blending target-task data with general data to preserve existing model capabilities, is suggested, with ratios needing experimentation but a 50/50 split recommended as a starting point for Amazon Nova models.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-26</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/bring-your-own-model-with-amazon-sagemaker-ai-script-mode-in-sdk-v3/" target="_blank" rel="noopener">Bring your own model with Amazon SageMaker AI: Script mode in SDK v3</a></h3>
-    
-    <div class="summary"><p>The SageMaker Python SDK v3 introduces a redesigned workflow for bringing your own models, streamlining training and deployment.</p>
-<ul>
-<li>A unified <code>ModelTrainer</code> and <code>ModelBuilder</code> replace framework-specific estimators, supporting any container image (AWS DLC, third-party, or custom).</li>
-<li>The <code>SourceCode</code> object allows injecting local code into the training or inference container at runtime, eliminating the need to rebuild containers for code changes.</li>
-<li>The SDK supports faster iterations by decoupling code from the container image and enables full control over the container environment via system package installation.</li>
-<li>The new pattern is demonstrated with examples of training and deploying a scikit-learn Random Forest and fine-tuning Stable Diffusion 3.5 with LoRA, illustrating its versatility across different frameworks and use cases.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-26</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/nateras-intelligent-appointment-scheduling-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Natera’s intelligent appointment scheduling with Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><p>Natera rebuilt its patient appointment scheduling agent using Amazon Bedrock AgentCore to improve accuracy, scalability, and engagement.</p>
-<ul>
-<li>The system uses a dual-WebSocket bridge pattern to separate telephony streaming from model inference, enabling flexible swapping of components like the telephony provider or foundation model.</li>
-<li>Event-driven latency masking generates contextual filler responses while awaiting tool execution (like checking availability), maintaining a natural conversation flow and aiming for sub-7-second perceived latency.</li>
-<li>A progressive trust model incrementally authenticates patients, starting with low-trust interactions and gradually granting access to sensitive information as verification occurs.</li>
-<li>The migration from Amazon ECS to AgentCore runtime involved decoupling orchestration logic, refactoring the agent’s entry point, and migrating session state to Bedrock AgentCore memory – achieving high tool-calling accuracy (100% in testing) at a cost of under USD 0.01 per call.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-26</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-godaddy-transformed-its-analytics-with-amazon-quick/" target="_blank" rel="noopener">How GoDaddy transformed its analytics with Amazon Quick</a></h3>
-    
-    <div class="summary"><p>GoDaddy migrated from a legacy BI tool to Amazon Quick to address performance bottlenecks and high infrastructure costs, resulting in significant time savings and increased data accessibility.</p>
-<ul>
-<li>GoDaddy reduced dashboard rendering times from 15 minutes to under 5 seconds using Amazon QuickSight.</li>
-<li>The migration involved rationalizing over 5,000 dashboards down to fewer than 2,500, saving approximately 15,000 annual work hours.</li>
-<li>Amazon Quick’s AI-powered features, including anomaly detection, forecasting, and natural language querying, were leveraged, alongside custom chat agents and Quick Flows for workflow automation.</li>
-<li>GoDaddy achieved an estimated 7,900+ annual hours saved via automation with Quick Flows and custom chat agents, and is integrating Quick with communication and project management tools like Slack and Jira.</li>
 </ul></div>
     
   </div>
