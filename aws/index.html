@@ -80,13 +80,125 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-04 10:21 UTC</p>
+  <p class="generated-at">Generated 2026-09-06 10:16 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-04</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-intuit-built-an-agentic-disaster-recovery-assistant-with-amazon-bedrock/" target="_blank" rel="noopener">How Intuit built an agentic disaster recovery assistant with Amazon Bedrock</a></h3>
+    
+    <div class="summary"><p>Intuit built an agentic disaster recovery assistant (EWOK Agent) using Amazon Bedrock to automate and improve decision-making during failover events.</p>
+<ul>
+<li>EWOK Agent leverages Amazon Bedrock to access and evaluate foundation models for failover reasoning, without requiring rearchitecting the agent, with models accessed via a single API.</li>
+<li>The system uses “skills” – defined by YAML schemas and prompts – to encode failover knowledge, which are compiled into tool specifications for Amazon Bedrock’s Converse API.</li>
+<li>Amazon Bedrock Guardrails are integrated to provide security and privacy, ensuring data is not used for model training and remains encrypted.</li>
+<li>The architecture consists of four layers: a consumer layer (engineering portal/IDE), an agent layer (Amazon Bedrock), a skill layer, and an execution layer (EWOK API) for deterministic recovery actions.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-04</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/customizing-your-knowledge-base-on-amazon-bedrock-for-large-and-complex-documents-using-amazon-textract/" target="_blank" rel="noopener">Customizing your knowledge base on Amazon Bedrock for large and complex documents using Amazon Textract</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock now integrates with Amazon Textract to improve Retrieval Augmented Generation (RAG) accuracy with large and complex documents.</li>
+<li>Amazon Textract extracts text and structured data from PDFs, DOCX, TXT, HTML, XLSX, and PNG files, cleaning and enriching the data before it is sent to the LLM.</li>
+<li>The solution deploys via a CloudFormation stack creating Lambda functions, S3 buckets, an OpenSearch Serverless cluster, and an Amazon Bedrock Knowledge Base.</li>
+<li>Testing utilizes the Amazon Nova Micro model within the Bedrock console, demonstrating improved response quality when querying the custom knowledge base versus direct LLM access to raw documents.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-04</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/run-agent-driven-amazon-sagemaker-hyperpod-operations-with-instantstart/" target="_blank" rel="noopener">Run agent-driven Amazon SageMaker HyperPod operations with InstantStart</a></h3>
+    
+    <div class="summary"><p>Amazon SageMaker HyperPod InstantStart introduces an AI agent-driven control plane for simplifying infrastructure operations.</p>
+<ul>
+<li>The system offers both a web UI and a command-line interface ([hypd-inst-agent]) to automate cluster creation, dependency installation, and resource provisioning within AWS.</li>
+<li>It manages the orchestration of AWS services (Amazon EKS, Amazon S3, Amazon FSx for Lustre, Amazon ECR) and Kubernetes resources, handling tasks like health monitoring, node autoscaling, and recovery.</li>
+<li>The agent encodes operational rules into its API, ensuring consistent and dependable infrastructure management by focusing on decision-making prompts for the user (Availability Zone, instance type, capacity type).</li>
+<li>InstantStart organizes infrastructure into four layers: managed foundation, capacity and resilience, workloads and data, and interfaces, handling staging, reconciliation, and idempotent operations across AWS and Kubernetes.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-04</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-a-physical-ai-model-factory-with-nvidia-cosmos-3-on-sagemaker-hyperpod/" target="_blank" rel="noopener">Build a Physical AI model factory with NVIDIA Cosmos 3 on SageMaker HyperPod</a></h3>
+    
+    <div class="summary"><h2>NVIDIA Cosmos 3 on SageMaker HyperPod: Building a Physical AI Model Factory</h2>
+<p>This post details building a continuous pipeline for Physical AI systems using NVIDIA Cosmos 3 on Amazon SageMaker HyperPod, focusing on efficiently managing GPU resources for data generation, model post-training, and evaluation.</p>
+<ul>
+<li>NVIDIA Cosmos 3 is a Mixture-of-Transformers (MoT) model designed for multimodal processing (video, image, action, sound) with a unique architecture featuring a shared token stream, dual-expert attention, and asymmetry between training and inference.</li>
+<li>Cosmos 3 comes in three tiers: Cosmos3-Nano (16B parameters), Cosmos3-Super (64B parameters), and Cosmos3-Edge (4B parameters) and can operate in three modes - forward dynamics (synthetic data generation), inverse dynamics (action labeling) and policy deployment.</li>
+<li>Amazon SageMaker HyperPod, using Amazon EKS, provides a single cluster environment with persistent GPU capacity, low-latency interconnects (EFA), and automated recovery for continuous operation of the AI pipeline stages, optimizing GPU goodput.</li>
+<li>The provided repository includes manifests and configuration files for running the described pipeline across three representative workloads: robot-policy training (using the DROID dataset), vision supervised fine-tuning, and low-rank adaptation on the 64B model.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-04</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/designing-lifecycle-policies-for-agentcore-memory/" target="_blank" rel="noopener">Designing lifecycle policies for AgentCore memory</a></h3>
+    
+    <div class="summary"><p>Memory lifecycle management for Amazon Bedrock AgentCore helps maintain agent effectiveness by managing retained information.</p>
+<ul>
+<li>The solution introduces three lifecycle policies: TTL-based expiration (defaulting to 90 days for episodic memories), relevance decay scoring (using recency, access frequency, and a configurable <code>pruneDays</code> parameter), and LLM-based consolidation (using Amazon Bedrock to summarize and merge memories).</li>
+<li>AgentCore memory categorizes memories into Episodic, Semantic, and Procedural types, each with different retention requirements and strategies for storage and management.</li>
+<li>Relevance scoring utilizes a weighted formula – `score = W_RECENCY</li>
+<li>exp(-decay_rate</li>
+<li>days_since_creation) + W_ACCESS</li>
+<li>exp(-decay_rate</li>
+<li>days_since_last_access) + W_FREQUENCY</li>
+<li>min(access_count / MAX_ACCESS_BASELINE, 1.0)<code>– and derives a decay rate from a</code>pruneDays` parameter to determine memory relevance.</li>
+<li>The architecture uses Amazon EventBridge, AWS Step Functions, and Lambda functions to orchestrate a nightly lifecycle workflow, tracking access via AWS CloudTrail and persisting results in Amazon S3, with failure notifications sent via Amazon SNS.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-04</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/deploy-a-multimodal-whatsapp-ordering-assistant-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Deploy a multimodal WhatsApp ordering assistant with Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><ul>
+<li>This post details a solution for deploying a multimodal ordering assistant for WhatsApp using Amazon Bedrock AgentCore, enabling customers to order via text, voice notes, or calls.</li>
+<li>The system utilizes Amazon Nova 2 Lite and Nova 2 Sonic models accessed through the Amazon Bedrock Converse API and real-time speech capabilities respectively, with AgentCore hosting the agents and managing cross-channel memory.</li>
+<li>The solution employs the Model Context Protocol (MCP) to connect agents to a restaurant backend, deployed using the AWS Cloud Development Kit (AWS CDK), and decouples traffic processing with Amazon SQS for asynchronous handling.</li>
+<li>The architecture separates the WhatsApp layer, agent runtimes (chat, voice note, call), and backend logic, leveraging services like Amazon DynamoDB, Amazon Location Service, Kinesis Video Streams, and a VPC for voice calls, with a focus on security through Secrets Manager and KMS.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -504,109 +616,6 @@
 <li><code>PlacementStrategy</code> within each AZ allows selection between <code>SPREAD</code> (distributing copies across instances for fault isolation) and <code>BINPACK</code> (packing copies onto fewer instances for utilization).</li>
 <li>Salesforce achieved 8x infrastructure cost reduction using ICs, and then used <code>SchedulingConfig</code> with <code>SPREAD</code> and a <code>MaxImbalance</code> of 0 or 1 to meet 2-AZ compliance requirements.</li>
 <li>Monitoring AZ balance is possible with SageMaker AI Insights, tracking metrics like AZ skew and IC copy count per AZ to detect and resolve imbalance after scaling events.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-28</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-decathlon-runs-demand-forecasting-at-scale-with-chronos-2/" target="_blank" rel="noopener">How Decathlon runs demand forecasting at scale with Chronos-2</a></h3>
-    
-    <div class="summary"><ul>
-<li>Decathlon adopted Chronos-2, an encoder-only transformer (amazon/chronos-2 - 120M parameters, autogluon/chronos-2-small - 28M parameters), as a core component of its demand forecasting system, achieving significant accuracy improvements over previous methods.</li>
-<li>Chronos-2's alternating attention pattern—time attention and group attention—allows for native multivariate forecasting and efficient incorporation of covariates without workarounds.</li>
-<li>The solution leverages AutoGluon for fine-tuning Chronos-2 with Low-Rank Adaptation (LoRA) every six months and deploys models using a PySpark pipeline and Amazon EC2 instances for batch inference.</li>
-<li>Deployment of Chronos-2 resulted in 11-15 percentage point WAPE reduction across Southeast Asia and Latin America, correlating to inventory savings, improved product availability, and increased sales.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-28</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/batch-write-and-discover-records-in-amazon-sagemaker-feature-store/" target="_blank" rel="noopener">Batch write and discover records in Amazon SageMaker Feature Store</a></h3>
-    
-    <div class="summary"><ul>
-<li>The <code>BatchWriteRecord</code> API allows writing up to 25 feature records across multiple feature groups in a single API call, improving throughput compared to individual <code>PutRecord</code> calls.</li>
-<li><code>BatchWriteRecord</code> uses a partial-success model, meaning failures for individual records do not halt the entire request, and includes per-record TTL control and EventTime-based ordering guarantees.</li>
-<li>A new <code>ListRecords</code> API has been introduced to enumerate record identifiers within a feature group, supporting both Standard (DynamoDB-backed) and In-Memory (Redis-backed) storage tiers, addressing the inability to discover records in the In-Memory tier.</li>
-<li><code>ListRecords</code> utilizes pagination via <code>MaxResults</code> and <code>NextToken</code> for managing large numbers of records, and supports filtering for active, non-deleted, and non-expired records.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-27</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/reduce-asr-inference-costs-by-75-with-nvidia-mps-on-amazon-ec2/" target="_blank" rel="noopener">Reduce ASR inference costs by 75% with NVIDIA MPS on Amazon EC2</a></h3>
-    
-    <div class="summary"><ul>
-<li>This blog post details how to reduce ASR inference costs by 75% using NVIDIA CUDA Multi-Process Service (MPS) with NVIDIA Triton Inference Server on Amazon EC2, achieving 92.1 requests per second (RPS) per GPU.</li>
-<li>NVIDIA MPS allows concurrent execution of multiple processes on a single GPU by partitioning it, eliminating context-switching overhead and improving GPU utilization compared to default CUDA time-slicing or Multi-Instance GPU (MIG).</li>
-<li>The solution incorporates model-level optimizations using ONNX Runtime with the TensorRT Execution Provider for the encoder portion of a Parakeet TDT 0.6B V2 model, alongside CUDA graph caching in the PyTorch decoder.</li>
-<li>A complete, deployable inference pipeline is available, running on Amazon EC2 g6e/g7e instances, and utilizing FastAPI gateway, Triton Inference Server, and CUDA MPS, with support for both transcription and speaker diarization tasks.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-27</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/deepgram-deepens-amazon-sagemaker-ai-observability-with-enhanced-metrics/" target="_blank" rel="noopener">Deepgram deepens Amazon SageMaker AI observability with Enhanced Metrics</a></h3>
-    
-    <div class="summary"><p>Deepgram is releasing enhanced observability features for its speech-to-text (STT) and text-to-speech (TTS) models deployed on Amazon SageMaker AI.</p>
-<ul>
-<li><strong>Deepgram Enhanced Metrics</strong> publishes usage and billing metrics directly to Amazon CloudWatch, providing transparency into AWS Marketplace billing and feature usage without requiring additional agents or IAM permissions. Metrics are available at the Category, Model, and Transport levels.</li>
-<li>A separate <strong>Deepgram/SelfHosted</strong> namespace provides detailed usage metrics broken down by API method, model tier, and enabled features like diarization and redaction.</li>
-<li><strong>Prometheus and OpenTelemetry support</strong> enables engine-level metrics (including per-GPU utilization via DCGM exporter and host metrics via node exporter) which are scraped from the Deepgram container and exported to CloudWatch.</li>
-<li>Detailed observability is enabled by default for new SageMaker AI endpoints, with the ability to configure metric publish frequency using <code>MetricsConfig</code>. Metrics are accessible via PromQL from CloudWatch, Grafana, or other Prometheus-compatible tools.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-27</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-openai-models-on-amazon-bedrock-for-in-country-inferencing-in-india/" target="_blank" rel="noopener">Introducing OpenAI models on Amazon Bedrock for in-country inferencing in India</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock now supports OpenAI’s GPT-5.6 models, Terra and Luna, within India via new “in.” prefixed inference profiles (e.g., <code>in.openai.gpt-5.6-terra</code>).</li>
-<li>These models offer a 1-million-token context window and support both text and image inputs, producing text outputs, enabling processing of large documents and codebases.</li>
-<li>India geographic cross-Region inference routes requests within the India geography (ap-south-1 and ap-south-2) to improve throughput and maintain data residency.</li>
-<li>The OpenAI Responses API, OpenAI Chat Completions API, Amazon Bedrock Converse API, and prompt caching are supported, and access requires specific IAM permissions for both the inference profile and the foundation models in both regions.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-27</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-agentic-creative-workflows-with-amazon-quick-and-fal/" target="_blank" rel="noopener">Build agentic creative workflows with Amazon Quick and fal</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Quick now functions as an agentic workspace and orchestrator, integrating with the fal generative media platform via the Model Context Protocol (MCP) to streamline creative workflows.</li>
-<li>“Skills” within Amazon Quick allow creators to capture and reuse repeatable processes, including approval gates for quality control and consistent creative direction.</li>
-<li>fal provides access to over 1,000 generative AI models for image, video, audio, and 3D media generation, accessible through an MCP server connected to Amazon Quick.</li>
-<li>Examples included demonstrate agentic workflows for storyboard production utilizing FLUX.1 Kontext and music video concept prototyping, highlighting the ability to maintain context and iterate with human review.</li>
 </ul></div>
     
   </div>

@@ -80,13 +80,26 @@
     </label>
   </div>
   <h1>Anthropic News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-04 10:21 UTC</p>
+  <p class="generated-at">Generated 2026-09-06 10:16 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>research</span>
+      <span> · 2026-09-04</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/research/formalizing-fermats-last-theorem" target="_blank" rel="noopener">Formalizing Fermat&#39;s Last Theorem</a></h3>
+    
+    <div class="summary"><p>Anthropic reports that its Claude model autonomously produced the first complete, computer-checked proof of Fermat’s Last Theorem in 11 days. This involved writing 13 million lines of code in the Lean programming language and proving 29,500 intermediate theorems. The work builds upon, and exceeds, a multi-year community formalization effort initiated in 2024 by Kevin Buzzard at Imperial College London.</p>
+<p>The proof was achieved using a multi-agent system coordinated by the Prove2Me platform, and consumed approximately six billion output tokens from a research model comparable to Claude Fable 5.1.  Unlike recent AI work generating <em>new</em> mathematics, this accomplishment focuses on rigorously <em>verifying</em> an existing, complex proof against established axioms. This advancement suggests the potential for automating the formalization of large portions of mathematics, aiding in error detection and reducing verification burdens.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -487,20 +500,6 @@
     
     <div class="summary"><p>Anthropic’s blog post details techniques for cost-efficient sessions with Claude Code. The core claim is that managing token usage – both input and output – directly impacts the cost of each task. Input tokens are cheaper, while output tokens are roughly 5x more expensive, and caching significantly reduces the cost of re-used tokens (to 0.1x the input price). </p>
 <p>Key recommendations include using <code>/clear</code> between tasks to prevent irrelevant context from increasing token usage, setting the model and effort level at the <em>start</em> of a session to avoid prompt cache invalidation, and utilizing <code>@-mentions</code> for files instead of paths to skip read calls. Users can further optimize by running <code>/context</code> to review loaded content, <code>/compact</code> to summarize conversations while the cache is valid, and leveraging subagents for tasks generating substantial output. Commands executed during a session also contribute to the context, so employing quiet flags or running them in subagents is advised.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Anthropic</span> · 
-      <span>news</span>
-      <span> · 2026-08-14</span>
-    </div>
-    <h3><a href="https://www.anthropic.com/news/claude-text-watermark" target="_blank" rel="noopener">How Claude&#39;s text watermarking works</a></h3>
-    
-    <div class="summary"><p>Anthropic will implement a text watermarking system in future versions of Claude to comply with the August 2, 2026 EU AI Act, which requires marking AI-generated content. This system, based on Google DeepMind’s SynthID-Text method published in a 2024 <em>Nature</em> paper, works by subtly influencing word choices during text generation – selecting from equally valid options based on a cryptographic key rather than pure randomness. </p>
-<p>The watermarking is designed to be undetectable to readers and has shown no impact on text quality, creativity, or readability in internal and Google DeepMind testing. It doesn’t add visible characters or increase costs. The watermark indicates the <em>likelihood</em> that Claude contributed to a text, but cannot identify users or definitively prove AI authorship, especially in heavily edited or short samples, or for exact outputs like code. </p>
-<p>Anthropic will also attach cryptographically signed metadata to files created or processed by Claude, using the C2PA standard, and plans to offer a watermark detection API. The change will be applied globally, though regional scoping is being evaluated.</p></div>
     
   </div>
   
