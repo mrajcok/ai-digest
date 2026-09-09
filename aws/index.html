@@ -80,13 +80,172 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-08 10:16 UTC</p>
+  <p class="generated-at">Generated 2026-09-09 10:24 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-08</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-didi-built-intelligent-contact-center-qa-with-amazon-bedrock/" target="_blank" rel="noopener">How DiDi built intelligent contact center QA with Amazon Bedrock</a></h3>
+    
+    <div class="summary"><p>DiDi built an intelligent contact center QA system using Amazon Bedrock to replace an opaque third-party solution, improving accuracy and transparency.</p>
+<ul>
+<li>The system consists of three pipelines: intent verification (improved accuracy from 38% to 86%), compliance evaluation (exceeding 90% accuracy), and Voice of Customer (VOC) analysis which significantly reduced manual summarization time.</li>
+<li>Amazon Bedrock was chosen for its model-agnostic access, built-in governance/security (including VPC endpoints, encryption, and IAM), and Amazon Bedrock Guardrails for responsible AI.</li>
+<li>The intent pipeline uses task and information isolation to improve accuracy – verifying existing labels before suggesting alternatives, and separating “Other” label analysis.</li>
+<li>The evaluation pipeline dynamically assembles prompts from external configurations for multilingual and multi-business-line support, leveraging Amazon Bedrock’s Tool Use capability to enforce schema-validated JSON output and programmatic post-validation for deterministic criteria.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-08</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-hpe-zerto-built-an-agentic-troubleshooting-system-with-amazon-bedrock/" target="_blank" rel="noopener">How HPE Zerto built an agentic troubleshooting system with Amazon Bedrock</a></h3>
+    
+    <div class="summary"><p>HPE Zerto built an agentic troubleshooting system using Amazon Bedrock to assist with hybrid and multi-cloud infrastructure management, focusing on faster issue resolution and improved recovery decisions.</p>
+<ul>
+<li>The system uses Amazon Bedrock for secure model access, flexibility in model selection, and integration with AWS services like Guardrails and Knowledge Bases for RAG.</li>
+<li>The architecture consists of a UI layer, an agentic layer built with the Strands Agents framework (running on-premises), and an intelligence layer leveraging Amazon Bedrock for inference and security, with observability provided through AWS CloudWatch.</li>
+<li>A multi-agent approach with an Orchestrator and specialized agents (ZVM, VRA) is used, decomposing tasks for improved reliability and performance, with agents accessing live data via a Model Context Protocol (MCP) server.</li>
+<li>The system utilizes PyTest and the Strands Agents Evals SDK for systematic agent evaluation, employing basic query, multi-turn, and dynamic tests with response, trajectory, latency, and token evaluators.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-08</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/benchmarking-small-llm-inference-on-sagemaker-ai-g7-vs-g5-and-g6/" target="_blank" rel="noopener">Benchmarking small LLM inference on SageMaker AI: G7 vs G5 and G6</a></h3>
+    
+    <div class="summary"><ul>
+<li>AWS SageMaker AI now benchmarks small LLM inference on G7 instances (powered by NVIDIA Blackwell GPUs) against G5 and G6 instances, demonstrating potential gains in throughput, latency, and cost-per-token.</li>
+<li>Benchmarking Qwen3-Coder-30B showed G7 (ml.g7.12xlarge) delivered approximately 60.8% higher throughput and 37.6% lower average latency compared to G6 (ml.g6.12xlarge). Streaming performance showed a median Time To First Token (TTFT) of 118ms and an Inter-Token Latency (ITL) of 8.9ms.</li>
+<li>Amazon SageMaker AI Generative AI Inference Recommendations can automate configuration selection; evaluating NVIDIA Nemotron-3-Nano-30B-A3B-NVFP4 with vLLM showed g7.48xlarge providing the highest throughput (2,397 output tokens/second) for a shorter workload while g7.2xlarge offered the lowest cost ($0.90/million tokens).</li>
+<li>Key technical advantages of G7 instances include native support for low-precision formats like FP8 and NVFP4, and improved memory bandwidth which is critical for Mixture-of-Experts (MoE) model performance; G7 instances use two GPUs, while G5/G6 use four, offering performance gains with less hardware.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-08</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/automated-agent-evaluation-with-amazon-bedrock-agentcore-and-github-actions/" target="_blank" rel="noopener">Automated agent evaluation with Amazon Bedrock AgentCore and GitHub Actions</a></h3>
+    
+    <div class="summary"><p>Automated agent evaluation is now possible using Amazon Bedrock AgentCore and GitHub Actions, enabling CI/CD quality gates for AI agents.</p>
+<ul>
+<li>The solution deploys agents and MCP servers to AgentCore runtime using CDK, supporting role-based access control via a three-layer authentication pattern.</li>
+<li>It utilizes OAuth to authenticate CI pipelines against agents, offering three approaches: evaluating stored traces, using a service account with pre-authorized consent, or employing M2M (machine-to-machine) authentication.</li>
+<li>AgentCore Evaluations scores agent behavior using LLMs or custom code against OpenTelemetry traces from CloudWatch, with options for on-demand, online, and batch evaluation modes.</li>
+<li>A quality gate blocks PR merges if evaluation scores fall below a defined threshold, ensuring agent quality before deployment to production.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-08</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/govern-models-with-mlflow-and-amazon-sagemaker-ai-model-registry-sync-part-1/" target="_blank" rel="noopener">Govern models with MLflow and Amazon SageMaker AI Model Registry sync: Part 1</a></h3>
+    
+    <div class="summary"><p>Governs models using MLflow and Amazon SageMaker AI Model Registry with enhanced synchronization capabilities.</p>
+<ul>
+<li>Enables automatic synchronization of MLflow models to the SageMaker AI Model Registry, including training/evaluation metrics, lineage, and lifecycle stage promotion.</li>
+<li>Utilizes <code>AutoModelRegistrationEnabled</code> mode when creating or updating an MLflow app via the AWS CLI to activate the synchronization.</li>
+<li>Supports logging inference specifications and evaluation metrics directly from MLflow using <code>sagemaker_mlflow</code>, enabling deployable models directly from the registry.</li>
+<li>Implements lifecycle stage control via MLflow aliases (e.g., <code>sagemakerlifecycle-staging-pending</code>) which automatically updates the corresponding SageMaker AI Model Package lifecycle, managed by IAM condition keys and resource-tag conditions.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-08</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/govern-models-with-mlflow-and-amazon-sagemaker-ai-model-registry-sync-part-2/" target="_blank" rel="noopener">Govern models with MLflow and Amazon SageMaker AI Model Registry sync: Part 2</a></h3>
+    
+    <div class="summary"><p>Governing models across multiple accounts is enabled through synchronization between MLflow and the Amazon SageMaker AI Model Registry.</p>
+<ul>
+<li>Two cross-account governance patterns are detailed: a hub-and-spoke pattern using AWS Resource Access Manager (AWS RAM) for centralized governance and a hybrid pattern for isolated development environments.</li>
+<li>The hub-and-spoke model shares an MLflow app across development accounts via AWS RAM, allowing central approval and CI/CD deployment from a central hub account.</li>
+<li>The hybrid model keeps development fully isolated; local approval triggers a copy workflow to the hub for re-validation and governance, avoiding direct writes to the hub.</li>
+<li>Both topologies leverage automatic model registration, lifecycle staging, and IAM condition keys, with the core difference lying in how models cross account boundaries – directly through RAM sharing or via an approval-triggered copy mechanism.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-08</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-feature-store-introduces-updaterecord-for-feature-level-writes/" target="_blank" rel="noopener">Amazon SageMaker Feature Store introduces UpdateRecord for feature-level writes</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon SageMaker Feature Store now offers <code>UpdateRecord</code> API for feature-level writes, eliminating the read-modify-write cycle previously required with <code>PutRecord</code>.</li>
+<li><code>UpdateRecord</code> supports atomic updates to specific features within a record, preserving existing values and preventing race conditions; requires either the Standard_V2 storage format (DynamoDB-backed) or works directly with the existing In-Memory (ElastiCache-backed) tier.</li>
+<li>Migration to the new <code>Standard_V2</code> storage format can be achieved via bulk migration using the Feature Processor SDK (Strategy A) or an in-place update using the <code>UpdateFeatureGroup</code> API (Strategy B - recommended).</li>
+<li>New IAM condition keys, <code>sagemaker:IsUpdateRecord</code> and <code>sagemaker:UpdatableFeatures</code>, allow for fine-grained access control over which features can be updated by specific principals.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-08</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/pathways-brain-inspired-architecture-development-on-amazon-sagemaker-hyperpod/" target="_blank" rel="noopener">Pathway’s brain-inspired architecture development on Amazon SageMaker HyperPod</a></h3>
+    
+    <div class="summary"><ul>
+<li>Pathway has developed BDH (Brain Dynamics Hatchling), a new AI architecture inspired by brain structure, as an alternative to the transformer model, focusing on latent space reasoning rather than token generation.</li>
+<li>BDH-CQ, built on BDH, achieved 29.2% pass@2 on the ARC-AGI benchmark at a cost of $0.0007 per task, demonstrating a new state-of-the-art in cost efficiency for this benchmark as of August 2026.</li>
+<li>The BDH architecture utilizes Hebbian learning and sparse, local interactions between "neuron particles," scaling with a single neuron dimension (n) and aiming for more efficient computation compared to transformers.</li>
+<li>Pathway leveraged Amazon SageMaker HyperPod, utilizing EC2 p5en.48xlarge instances with NVIDIA H200 GPUs and Elastic Fabric Adapter (EFA), to scale training and achieve performance gains, alongside Amazon Managed Service for Prometheus and Grafana for observability.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-08</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/take-on-your-most-ambitious-work-with-gpt-6-astra-on-amazon-bedrock/" target="_blank" rel="noopener">Take on your most ambitious work with GPT-6 Astra on Amazon Bedrock</a></h3>
+    
+    <div class="summary"><p>GPT-6 Astra, OpenAI’s latest model, is now generally available on Amazon Bedrock offering enhanced reasoning and judgment capabilities.</p>
+<ul>
+<li>GPT-6 Astra features a 1 million token context window for processing large documents and codebases.</li>
+<li>The model supports both implicit and explicit prompt caching to reduce latency and cost for recurring tasks.</li>
+<li>GPT-6 Astra has been evaluated via OpenAI’s Preparedness Framework, achieving a “Critical” classification for cybersecurity—with automated safeguards and real-time misuse monitoring.</li>
+<li>It can be accessed directly via Amazon Bedrock APIs or integrated with ChatGPT Work and Codex, and new enterprise plugins extend ChatGPT Work's browser capabilities to applications like Workday and Avalara.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -460,162 +619,6 @@
 <li>It utilizes dataset shaping, removing sensitive columns to structurally limit access, and Row-Level Security (RLS) to filter data based on user identity at the dataset level.</li>
 <li>Spaces organize documents with permission tiers (Owners, Viewers) to control knowledge base access, and document classification prevents sensitive data from being indexed.</li>
 <li>Flows enable human-in-the-loop controls for outbound actions, ensuring approvals are required before data leaves the system; the implementation outlines patterns for dataset shaping, agent isolation, document classification, and approval gates.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-01</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/tokenomics-at-scale-how-jamf-built-real-time-spend-enforcement-for-amazon-bedrock/" target="_blank" rel="noopener">Tokenomics at scale: How Jamf built real-time spend enforcement for Amazon Bedrock</a></h3>
-    
-    <div class="summary"><ul>
-<li>Jamf built a system to enforce tiered spending limits for individual engineers using Amazon Bedrock, addressing the challenge of unpredictable AI costs (“tokenomics”).</li>
-<li>The solution uses AWS IAM Customer Managed Policies (CMPs) to restrict access to specific Bedrock models (e.g., Anthropic Claude Opus, Sonnet, Haiku) based on daily spending thresholds.</li>
-<li>An Amazon Athena view calculates per-user spend from Bedrock invocation logs stored in Amazon S3, and an AWS Lambda function runs every 15 minutes to enforce limits by updating CMPs.</li>
-<li>The system includes a Slack-based exception workflow managed via DynamoDB, allowing administrators to grant temporary, higher limits to engineers when needed, with costs under $10/month for hundreds of engineers.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-01</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/from-theory-to-delivery-how-atos-upskilled-400-engineers-in-agentic-ai/" target="_blank" rel="noopener">From theory to delivery: How Atos upskilled 400 engineers in agentic AI</a></h3>
-    
-    <div class="summary"><p>Atos upskilled 400 engineers in agentic AI through an AWS AI League competition focused on practical application.</p>
-<ul>
-<li>Engineers built autonomous AI agents to navigate a dungeon maze using AWS services like Amazon Bedrock, Amazon Bedrock AgentCore, AWS Lambda, and Amazon SageMaker.</li>
-<li>The event leveraged Amazon Bedrock AgentCore capabilities including runtime, gateway, memory, and Code Interpreter for orchestrating multi-agent systems and tool execution.</li>
-<li>Reinforcement Learning from Verifiable Rewards (RLVR) was utilized with Amazon SageMaker Studio for fine-tuning custom models, enhancing token efficiency and performance.</li>
-<li>The challenge incorporated scoring based on successful challenge completion, coin collection, map completion, life retention, efficiency, and fine-tuning, testing skills in AI safety, code generation, context retention, and pathfinding.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-01</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-claude-fable-5-1-on-aws/" target="_blank" rel="noopener">Introducing Claude Fable 5.1 on AWS</a></h3>
-    
-    <div class="summary"><p>Claude Fable 5.1 is now available on Amazon Bedrock and the Claude Platform on AWS, offering enhanced reasoning capabilities.</p>
-<ul>
-<li>Anthropic designates Fable 5.1 as a “Covered Model” requiring up to 30 days of data retention and potential human review via the <code>aws_review</code> mode when used through Amazon Bedrock.</li>
-<li>Fable 5.1 demonstrates improvements in complex reasoning tasks, including mathematics, science, and engineering, and exhibits improved judgment with fewer confidently incorrect responses.</li>
-<li>The model offers advanced autonomous operation, capable of handling multi-hour, multi-application workflows with planning, error recovery, and proactive updates.</li>
-<li>Enterprise Frontier Safeguards (EFS) allow eligible customers to use Fable 5 and 5.1 with zero data retention (ZDR) within their AWS environment through December 31, 2026, with further safeguards planned for later in the year.</li>
-</ul></div>
-    
-  </div>
-  
-  
-  <h2 class="month">August 2026</h2>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-31</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-multi-tenant-agentic-chat-applications-on-enterprise-data-with-amazon-bedrock-managed-knowledge-base/" target="_blank" rel="noopener">Build multi-tenant agentic chat applications on enterprise data with Amazon Bedrock Managed Knowledge Base</a></h3>
-    
-    <div class="summary"><p>Amazon Bedrock Managed Knowledge Base enables building multi-tenant agentic chat applications on enterprise data.</p>
-<ul>
-<li>The service manages document ingestion, storage, embedding, and ranking, eliminating the need for users to build and maintain this infrastructure.</li>
-<li>It provides agentic retrieval using iterative planning and multi-hop retrievals, with built-in access permission enforcement on each retrieval step.</li>
-<li>Direct ingestion via a custom connector allows for rapid indexing of documents (seconds), and supports files up to 50MB (text) through S3 references.</li>
-<li>Per-user data isolation is achieved by tagging documents with a <code>user_id</code> metadata attribute and filtering queries using a server-side derived value from a verified JWT, as well as the option for document-level ACLs.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-31</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-observable-enterprise-agentic-retrieval-using-managed-amazon-bedrock-knowledge-base-with-aws-cloudformation/" target="_blank" rel="noopener">Build observable enterprise agentic retrieval using Managed Amazon Bedrock Knowledge Base with AWS CloudFormation</a></h3>
-    
-    <div class="summary"><p>Build observable enterprise agentic retrieval using Managed Amazon Bedrock Knowledge Base with AWS CloudFormation.</p>
-<ul>
-<li>This post details a solution for enterprise agentic retrieval using Amazon Bedrock Managed Knowledge Base and AgentCore, providing observability and evaluation through a single AWS CloudFormation chain.</li>
-<li>The solution leverages the <code>AgenticRetrieveStream</code> API of Managed Knowledge Bases to perform multi-turn planning, iterative retrieval, and grounded answer generation with citations across multiple knowledge bases.</li>
-<li>Seven observability layers are implemented, capturing metrics like retrieval invocations, ingestion status, agentic retrieval quality, Gateway latency, OpenTelemetry spans, token usage, and evaluation scores – all accessible via CloudWatch dashboards.</li>
-<li>The deployment utilizes four CloudFormation stacks to create S3 buckets, Managed Knowledge Bases, an AgentCore Gateway, an OpenTelemetry-instrumented agent runtime, and the observability dashboards, using synthetic financial and weather corpora for testing.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-31</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/manage-agents-tools-and-skills-at-scale-with-aws-agent-registry/" target="_blank" rel="noopener">Manage agents, tools and skills at scale with AWS Agent Registry</a></h3>
-    
-    <div class="summary"><ul>
-<li>AWS Agent Registry is now generally available, providing a central, searchable, and governed catalog for AI agents, tools, skills, and custom resources.</li>
-<li>The system operates through a Governance Plane (authoritative record of all resources with metadata and policies) and a Discovery Plane (curated view of approved resources for consumers).</li>
-<li>It supports four record types: MCP (Model Context Protocol) servers, Agents (Agent2Agent), Skills (markdown files and code), and Custom (JSON) descriptors.</li>
-<li>Administrators can configure approval workflows, access policies, and lifecycle rules, while curators manage resource approval and deprecation, with all actions audited via AWS CloudTrail.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-31</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/aws-recognized-as-a-leader-in-the-forrester-wave-ai-infrastructure-solutions-q4-2025/" target="_blank" rel="noopener">AWS recognized as a Leader in The Forrester Wave: AI Infrastructure Solutions, Q4 2025</a></h3>
-    
-    <div class="summary"><p>AWS was recognized as a Leader in The Forrester Wave: AI Infrastructure Solutions, Q4 2025, receiving the highest score in the Strategy category. The report highlights AWS’s flexible infrastructure supporting the full AI lifecycle, with specific strengths in workload-specific architecture, engineering efficiency, and sustainability.  AWS offers both proprietary AI chips – <strong>AWS Inferentia</strong> and <strong>AWS Trainium</strong> – alongside <strong>NVIDIA GPU</strong> instances, allowing customers to optimize cost and performance without vendor lock-in.  The evaluation noted AWS is well-suited for high-volume inference workloads and integrates closely with services like <strong>Amazon SageMaker</strong> and <strong>Amazon Bedrock</strong>. The full Forrester report provides a detailed comparison of 13 providers.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-31</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/connect-an-agentcore-runtime-hosted-mcp-server-to-amazon-quick/" target="_blank" rel="noopener">Connect an AgentCore Runtime hosted MCP server to Amazon Quick</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Quick now integrates with Model Context Protocol (MCP) servers via AgentCore Gateway, enabling access to external data, tools, and specialized AI sub-agents.</li>
-<li>AgentCore Runtime provides a fully managed, serverless environment for hosting MCP servers, offering features like session isolation, persistent file systems, and built-in authentication.</li>
-<li>Integration involves setting up Inbound Auth (using Amazon Cognito for user authorization) and Outbound Auth (using AgentCore Identity with OAuth 2.0) between Amazon Quick, AgentCore Gateway, and AgentCore Runtime.</li>
-<li>The process includes deploying an MCP server to AgentCore Runtime, configuring AgentCore Gateway with IAM roles and Cognito user pools, and registering the integration within Amazon Quick using the Gateway's resource URL.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-08-28</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/spreading-the-load-how-salesforce-met-multi-az-ha-with-sagemaker-inference-components/" target="_blank" rel="noopener">Spreading the load: How Salesforce met Multi-AZ HA with SageMaker Inference Components</a></h3>
-    
-    <div class="summary"><p>Amazon SageMaker AI Inference Components (ICs) now offer fine-grained control over placement across Availability Zones (AZs) with the new <code>SchedulingConfig</code> parameter in the <code>CreateInferenceComponent</code> API. This addresses a gap where ICs, while reducing GPU costs through co-hosting, lacked Multi-AZ high availability (HA) guarantees.</p>
-<ul>
-<li>The <code>SchedulingConfig</code> parameter introduces <code>AvailabilityZoneBalance</code> to control cross-AZ distribution, allowing configurable imbalance tolerance.</li>
-<li><code>PlacementStrategy</code> within each AZ allows selection between <code>SPREAD</code> (distributing copies across instances for fault isolation) and <code>BINPACK</code> (packing copies onto fewer instances for utilization).</li>
-<li>Salesforce achieved 8x infrastructure cost reduction using ICs, and then used <code>SchedulingConfig</code> with <code>SPREAD</code> and a <code>MaxImbalance</code> of 0 or 1 to meet 2-AZ compliance requirements.</li>
-<li>Monitoring AZ balance is possible with SageMaker AI Insights, tracking metrics like AZ skew and IC copy count per AZ to detect and resolve imbalance after scaling events.</li>
 </ul></div>
     
   </div>

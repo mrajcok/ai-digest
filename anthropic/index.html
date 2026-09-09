@@ -80,13 +80,26 @@
     </label>
   </div>
   <h1>Anthropic News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-08 10:16 UTC</p>
+  <p class="generated-at">Generated 2026-09-09 10:24 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-09-08</span>
+    </div>
+    <h3><a href="https://claude.com/blog/reducing-cost-and-improving-performance-with-claude-platform" target="_blank" rel="noopener">Reducing cost and improving performance with Claude Platform | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic’s blog post details techniques for reducing costs and improving performance when using the Claude Platform. The core of the announcement revolves around optimizing three key areas: prompt caching, instruction refinement, and effort calibration. For prompt caching, the article stresses the importance of byte-exact matches for cache hits, avoiding changes to settings like ‘effort’ mid-conversation (though this is possible with Claude Opus 5 and Fable 5.1), and keeping dynamic values out of the prompt prefix to maintain cache validity.</p>
+<p>Regarding instructions, the post identifies common “anti-patterns” in prompts – like excessive verification requests or overly thoroughness instructions – that can lead to increased token usage and reduced performance with newer Claude models (Opus 5 and Fable 5.1). Anthropic provides a <code>claude-api</code> skill (<code>/claude-api prompt-audit</code>) to automatically detect and remove these problematic instructions. Finally, the post discusses the ‘effort’ parameter, noting that performance gains diminish at very high effort levels and that stronger models can achieve comparable results at lower effort settings. <code>/claude-api hillclimb</code> and <code>/claude-api cost-optimize</code> are new tools for automating these optimizations.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -487,19 +500,6 @@
     
     <div class="summary"><p>ABC Legal deployed Claude Managed Agents to all 1,100 employees, resulting in over 50 agents in production as of July 2026. The core technical approach involves treating each agent as code – structured text (prompt + configuration) stored in a git repository – enabling version control, code review, and audit trails. They utilize two starter templates: one for event-driven agents and one for scheduled agents, each with a standard directory structure containing config files and system prompts.</p>
 <p>The system works by having agents submit recommendations to Slack, where human feedback (reactions and replies) is harvested and used to tune the agents' prompts and configurations via a pull request-based workflow. This iterative process has yielded up to a 50% cost reduction for certain tasks. ABC Legal leverages Claude Sonnet for most agents, Claude Haiku for high-volume tasks, and Claude Opus for complex reasoning, with the ability to easily switch between models. They track AI spend by vendor, tool, and team.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-08-14</span>
-    </div>
-    <h3><a href="https://claude.com/blog/maximizing-the-value-of-your-claude-code-sessions" target="_blank" rel="noopener">Maximizing the value of your Claude Code sessions | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic’s blog post details techniques for cost-efficient sessions with Claude Code. The core claim is that managing token usage – both input and output – directly impacts the cost of each task. Input tokens are cheaper, while output tokens are roughly 5x more expensive, and caching significantly reduces the cost of re-used tokens (to 0.1x the input price). </p>
-<p>Key recommendations include using <code>/clear</code> between tasks to prevent irrelevant context from increasing token usage, setting the model and effort level at the <em>start</em> of a session to avoid prompt cache invalidation, and utilizing <code>@-mentions</code> for files instead of paths to skip read calls. Users can further optimize by running <code>/context</code> to review loaded content, <code>/compact</code> to summarize conversations while the cache is valid, and leveraging subagents for tasks generating substantial output. Commands executed during a session also contribute to the context, so employing quiet flags or running them in subagents is advised.</p></div>
     
   </div>
   
