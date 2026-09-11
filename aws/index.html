@@ -80,13 +80,151 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-10 10:21 UTC</p>
+  <p class="generated-at">Generated 2026-09-11 10:19 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-10</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-aviobook-uses-generative-ai-to-drive-airline-turnaround-insights/" target="_blank" rel="noopener">How AvioBook builds turnaround insights from operational data with Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><p>AvioBook is using Amazon Bedrock AgentCore to build Connected Analytics, enabling airlines to gain insights from operational data and improve turnaround times.</p>
+<ul>
+<li>The solution utilizes two agents – one for airline managers focused on historical analysis and delay code validation, and another for OCC dispatchers focused on live operational queries – built using Amazon Bedrock AgentCore runtime and memory.</li>
+<li>AgentCore Gateway provides secure access to tools, enabling agents to query data from Amazon Athena, which accesses partitioned Parquet data in Amazon S3 using the AWS Glue Data Catalog.</li>
+<li>The architecture leverages JWT authentication via Amazon Cognito and AWS Lambda functions for data processing and agent invocation.</li>
+<li>AvioBook estimates that reducing average turnaround time by 2 minutes could be worth roughly $240,000 a month for a mid-size carrier, with potential for significantly higher savings through improved process compliance and proactive anomaly alerting.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-10</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/agent-evaluation-metric-for-multi-turn-conversations/" target="_blank" rel="noopener">Agent Evaluation Metric for multi-turn conversations</a></h3>
+    
+    <div class="summary"><ul>
+<li>AWS introduces the Agent Evaluation Metric (AEM), a turn-level metric designed to pinpoint the specific turn causing failures in multi-turn agent conversations, unlike holistic evaluation methods.</li>
+<li>AEM decomposes correctness into two sub-metrics: Truthfulness (factual consistency of values) and Completeness (presence of all required elements), applying these to both response and action turns.</li>
+<li>The evaluation utilizes semantic comparison for both responses and parameter values – assessing semantic equivalence rather than requiring exact matches – using either embedding-based similarity or LLM-as-judge scoring.</li>
+<li>AEM identifies root causes of failure using a failure taxonomy, labeling turns as either root causes or cascading effects from prior errors, enabling targeted fixes instead of investigating every failed turn.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-10</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/model-agnostic-pii-detection-with-llms/" target="_blank" rel="noopener">Model-agnostic PII detection with LLMs</a></h3>
+    
+    <div class="summary"><ul>
+<li>This post details a configurable, model-agnostic PII (Personally Identifiable Information) detector built on Large Language Models (LLMs) and designed to run on Amazon Bedrock or custom infrastructure.</li>
+<li>The detector uses instruction-driven detection, relying on prompts to define PII entities and expected output, and a uniform inference interface called "Inferencer," supporting models like Mistral and OSS-GPT.</li>
+<li>Customization is achieved by editing the instruction prompt to modify the entity set (what counts as PII) without requiring retraining or redeployment of the model.</li>
+<li>Benchmarking against eight other LLM-based detectors (including OpenAI’s PrivacyFilter) on five public PII corpora showed Core F1 scores ranging from 74.9% to 83.1%, with latency varying depending on the chosen LLM and backend (Amazon Bedrock vs. Amazon EC2).</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-10</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-an-end-to-end-rfi-questionnaire-workflow-using-amazon-quick-automate/" target="_blank" rel="noopener">Build an end-to-end RFI questionnaire workflow using Amazon Quick Automate</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Quick Automate can now process multi-tab RFI (Request for Information) workbooks from Amazon S3, extracting and structuring questionnaire data without custom code.</li>
+<li>The workflow is described using natural language prompts, which the AI assistant translates into an executable workflow covering ingestion, transformation, validation, and output.</li>
+<li>Users can refine the workflow through conversational updates, validate results, and then promote validated versions across AWS Regions using Import/Export functionality.</li>
+<li>The solution utilizes Amazon S3 action connectors, automation groups, and projects within Quick Automate, and outputs structured data as a CSV file.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-10</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/amazon-quick-is-now-generally-available-on-desktop/" target="_blank" rel="noopener">Amazon Quick is now generally available on desktop</a></h3>
+    
+    <div class="summary"><p>Amazon Quick is now generally available, providing an AI assistant integrated with existing enterprise systems.</p>
+<ul>
+<li>Quick is available as a desktop application for macOS and Windows, and an updated mobile experience for iOS and Android includes a prioritized activity feed consolidating email, calendar, CRM, and messaging.</li>
+<li>The application runs on AWS infrastructure, inheriting its security and compliance certifications (HIPAA, FedRAMP, SOC 2, ISO 27001), and offers full audit trails via Amazon CloudWatch and AWS CloudTrail.</li>
+<li>Quick focuses on completing tasks, not just answering questions, by synthesizing information and drafting deliverables across connected systems, aiming to improve worker capacity.</li>
+<li>The system creates a shared workspace allowing teams to share dashboards, agents, and automations, and learns user priorities to surface relevant information.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-10</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/video-and-image-search-in-amazon-bedrock-knowledge-base-using-marengo-3-0/" target="_blank" rel="noopener">Video and image search in Amazon Bedrock Knowledge Base using Marengo 3.0</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock Knowledge Bases now generally supports TwelveLabs Marengo Embed 3.0, a multimodal embedding model.</li>
+<li>Marengo 3.0 encodes video, audio, images, and text into a 512-dimensional vector space, enabling semantic search across media types.</li>
+<li>Managed Knowledge Bases automatically handles segmentation, frame sampling, transcription, and embedding generation using Marengo 3.0.</li>
+<li>The service supports ingestion from Amazon S3, SharePoint, and Confluence, and retrieval via the Amazon Bedrock Retrieve API.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-10</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/reduce-inference-cold-starts-on-amazon-sagemaker-hyperpod-with-model-caching/" target="_blank" rel="noopener">Reduce inference cold starts on Amazon SageMaker HyperPod with model caching</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon SageMaker HyperPod now supports model caching to reduce inference cold starts by pre-loading model weights and container images onto cluster nodes.</li>
+<li>The weights cache downloads model weights to local NVMe storage from sources like Amazon S3, Amazon FSx for Lustre, HuggingFace Hub, or JumpStart, achieving read speeds of approximately 7 GB/s.</li>
+<li>The image cache pre-pulls inference server container images (like vLLM or LMI) onto nodes, saving 5–7 minutes of download time from Amazon ECR.</li>
+<li>Benchmarks show up to 60% faster scale-out with weights caching and a 97% reduction in image pull time, especially benefitting models exceeding 600GB like DeepSeek-R1, with configuration managed via new Custom Resource Definitions (CRDs) <code>ModelDataCacheConfig</code> and <code>InferenceImageCache</code>.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-10</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/reduce-llm-latency-with-prefix-aware-routing-on-amazon-sagemaker-inference/" target="_blank" rel="noopener">Reduce LLM latency with prefix-aware routing on Amazon SageMaker Inference</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon SageMaker Inference now offers prefix-aware routing, a new routing strategy designed to reduce LLM latency.</li>
+<li>The feature routes requests with identical prompt prefixes to the same instance, enabling KV cache reuse and improving performance with frameworks like vLLM and TensorRT-LLM.</li>
+<li>Benchmarks using Llama 3.1 70B Instruct showed P50 TTFT reductions of up to 77% and throughput increases up to 16% with longer context workloads.</li>
+<li>Configuration involves setting <code>PrefixLength</code> (1024-65536) and <code>ConcurrencyThreshold</code> (1-1024) within the endpoint configuration, with no changes required to the model container or serving framework.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -479,148 +617,6 @@
 <li>Best practices emphasize process understanding <em>before</em> automation design, focusing on identifying the right processes with unstructured inputs and contextual decision-making.</li>
 <li>Agents should be designed with clear, bounded responsibilities, leveraging features like scoped instructions and structured output to improve reliability and cost-efficiency.</li>
 <li>Quick Automate supports combining agentic steps with deterministic steps and integrating human-in-the-loop (HITL) review – both blocking and non-blocking – for high-stakes scenarios, alongside robust evaluation and observability features.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-03</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/set-up-openai-chatgpt-codex-with-litellm-on-amazon-ecs-and-amazon-bedrock/" target="_blank" rel="noopener">Set up OpenAI ChatGPT Codex with LiteLLM on Amazon ECS and Amazon Bedrock</a></h3>
-    
-    <div class="summary"><p>AWS details deploying OpenAI’s Codex with LiteLLM on Amazon ECS and Amazon Bedrock to provide centralized enterprise controls for generative AI coding agents.</p>
-<ul>
-<li>The solution uses LiteLLM as a gateway for authentication, routing, budgets, rate limits, and telemetry between Codex and Amazon Bedrock, while Codex retains local task execution control.</li>
-<li>LiteLLM is deployed on ECS, using Amazon RDS for PostgreSQL for state, Secrets Manager/KMS for key storage, CloudWatch for logging/alarms, and ECR for image storage; optional WAF protections are available.</li>
-<li>The deployment process includes cloning a repository, configuring <code>.env.deploy</code>, building/pushing the LiteLLM image to ECR, creating CloudFormation change sets, and provisioning scoped gateway identities/keys.</li>
-<li>Codex is configured to use the LiteLLM gateway’s Responses API; testing includes verifying request success, key alias resolution, model mapping, cost tracking, and API contract validation (semantic continuation, streaming, function calling).</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-03</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/integrating-outlook-with-amazon-quick-for-ai-powered-email-automation/" target="_blank" rel="noopener">Integrating Outlook with Amazon Quick for AI-powered email automation</a></h3>
-    
-    <div class="summary"><p>Amazon Quick now integrates with Microsoft Outlook to automate email workflows.</p>
-<ul>
-<li><strong>Amazon Quick chat agents</strong> can draft contextual email responses and summarize threads, accessing organizational knowledge bases.</li>
-<li><strong>Amazon Quick Flows</strong> can automate tasks like generating meeting briefings, extracting action items, and routing inquiries.</li>
-<li><strong>Amazon Quick Automate</strong> orchestrates complex, multi-step processes spanning email, calendars and other systems, such as customer onboarding.</li>
-<li>Integration uses the Microsoft Graph API and OAuth 2.0 for secure access, requiring specific permissions within the Microsoft Entra admin center.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-03</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/migrate-agentic-workloads-to-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Migrate agentic workloads to Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><p>Migrates agentic workloads to Amazon Bedrock AgentCore, aiming to offload operational burdens.</p>
-<ul>
-<li>The migration occurs in stages: Stage 1 moves the agent runtime to Amazon Bedrock AgentCore Runtime, Gateway, and Memory without altering the agent's core logic.</li>
-<li>Stage 2 rebuilds the agent's planning loop using Strands Agents for model-driven planning. Stage 3 (documented but not built in the walkthrough) further leverages AgentCore capabilities.</li>
-<li>Key components include <code>BedrockAgentCoreApp</code> for hosting the agent loop, and utilizing <code>Gateway</code> and <code>Memory</code> services to handle tool authorization and durable state management, respectively.</li>
-<li>The process involves converting local tools to MCP tools published by AgentCore Gateway and migrating state management to AgentCore Memory, enabling session persistence across turns and processes.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-03</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/ai-driven-development-lifecycle-using-amazon-bedrock-agentcore/" target="_blank" rel="noopener">AI-driven development lifecycle using Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock AgentCore is a service enabling the building, connecting, and optimization of agents at scale, demonstrated through reference implementations for the AI-Driven Development Lifecycle (AI-DLC).</li>
-<li>The first implementation uses AgentCore runtime and Claude Sonnet 4 (model_id="us.anthropic.claude-sonnet-4-5-20250929-v1:0") to automatically generate Mermaid ER diagrams from SQL schemas, leveraging chunked processing and structured prompting.</li>
-<li>A second implementation utilizes a multi-agent architecture with AgentCore Gateway and AgentCore memory, alongside external tools, to provide automated code security analysis for Python and Java, evaluating CVE risks and policy compliance using Claude Sonnet 4.</li>
-<li>Integration with local agentic tools like Kiro, OpenAI ChatGPT Codex (with a local MCP server accessing databases via INFORMATION_SCHEMA), and Claude Code further extends AI-DLC patterns to developer workstations for tasks like spec-driven development and infrastructure-as-code generation.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-02</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/trinity-agentic-ai-powered-transition-planning-for-students-with-disabilities/" target="_blank" rel="noopener">Trinity: Agentic AI-powered transition planning for students with disabilities</a></h3>
-    
-    <div class="summary"><ul>
-<li>Trinity is an agentic AI solution built on AWS utilizing a six-agent hierarchical system powered by Amazon Bedrock’s Claude 3.5 Sonnet, designed to assist students with disabilities in postsecondary transition planning and IEP development.</li>
-<li>The architecture employs a multi-agent system – Orchestrator, College, Employment, Training, Community, and Independent Living Agents – each accessing dedicated Amazon Bedrock Knowledge Bases (30k+ colleges, 1k+ occupations, 5k+ training programs) via a hybrid retrieval scoring model (semantic, keyword, location, attributes).</li>
-<li>The solution addresses compliance requirements, including HIPAA and FERPA, through AWS KMS field-level encryption, IAM policies following least privilege, and role-based access control integrated with Canvas LTI 1.3 federation for single sign-on via Amazon Cognito.</li>
-<li>Trinity uses a two-phase pipeline – recommendation, then plan generation – achieved through serverless AWS Lambda functions, DynamoDB for state management, Amazon Polly for text-to-speech, and Amazon Transcribe for speech-to-text, along with Amazon Bedrock Guardrails for content filtering.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-02</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/from-code-to-diagrams-agentic-architecture-documentation-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">From code to diagrams: Agentic architecture documentation with Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><p>Amazon Bedrock AgentCore enables autonomous agents to analyze codebases, generate architecture diagrams, and maintain searchable documentation.</p>
-<ul>
-<li>The solution uses AgentCore coupled with Amazon Bedrock Knowledge Bases and AWS CodePipeline to automate documentation for .NET code.</li>
-<li>Agents analyze code, generate diagrams in Mermaid syntax, validate them, convert to SVG, and publish to S3, achieving 95% reliability through iterative refinement and self-correction.</li>
-<li>Amazon Titan Text Embeddings v2 is used to create vector embeddings for semantic search within Amazon Bedrock Knowledge Bases, allowing natural language queries about the architecture.</li>
-<li>The system has been in production since Q1 2026 with a financial services firm, and example pipeline configurations are provided using AWS CodePipeline.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-02</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-an-aws-team-detects-dashboard-content-failures-at-scale-using-amazon-bedrock/" target="_blank" rel="noopener">How an AWS team detects dashboard content failures at scale using Amazon Bedrock</a></h3>
-    
-    <div class="summary"><p>AWS developed an automated content validation solution for dashboards within the AWS Insights application to detect failures before users report them, reducing detection time from up to 72 hours to less than 1 hour.</p>
-<ul>
-<li>The solution uses <strong>Amazon Bedrock</strong> (specifically <strong>Anthropic Claude models</strong>) for visual integrity checks, detecting anomalies like blank tiles or error states in screenshots of dashboard sections. Screenshots are redacted using <strong>Amazon Rekognition</strong> to remove sensitive data before analysis.</li>
-<li>A “hybrid validation” approach is used for numeric consistency; <strong>Amazon Bedrock</strong> LLMs locate and read metric values, while deterministic code handles unit normalization and precision comparisons to identify discrepancies.</li>
-<li>The system is built on a five-stage serverless architecture utilizing <strong>Amazon EventBridge</strong>, <strong>AWS Lambda</strong>, <strong>Amazon S3</strong>, <strong>Amazon CloudFront</strong>, and <strong>Amazon Redshift</strong> for scalability and cost-efficiency.</li>
-<li>Key engineering lessons included prioritizing accuracy over speed to minimize false positives and keeping LLMs away from arithmetic calculations, opting instead for deterministic code for numeric comparisons to ensure consistency and reliability.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-02</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/modernizing-and-scaling-support-operations-with-generative-ai-on-aws/" target="_blank" rel="noopener">Modernizing and scaling support operations with generative AI on AWS</a></h3>
-    
-    <div class="summary"><p>AWS introduces a generative AI-based solution for modernizing and scaling support operations.</p>
-<ul>
-<li>The solution uses <strong>Amazon Bedrock</strong> (with models like <strong>Marengo Embed 2.7</strong> and <strong>Pegasus 1.2</strong>) to automatically convert training videos into structured Standard Operating Procedures (SOPs) using multimodal video understanding and semantic retrieval.</li>
-<li>A “Ticket Analyzer” leverages <strong>Amazon Bedrock</strong> and <strong>AWS Strands Agents SDK</strong> to analyze incoming tickets, using Retrieval Augmented Generation (RAG) to identify relevant SOPs and generate resolution guidance, including automated ticket tagging and commenting.</li>
-<li>“Value Stream Intelligence” visualizes resolution workflows as interactive swim lane maps, highlighting bottlenecks and connecting datasets across teams and systems to improve visibility.</li>
-<li><strong>Amazon QuickSight</strong> is utilized for an analytics layer providing dashboards for workload management, ML-based SLA risk prediction, and actionable recommendations for workload rebalancing.</li>
 </ul></div>
     
   </div>
