@@ -80,13 +80,67 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-11 10:19 UTC</p>
+  <p class="generated-at">Generated 2026-09-12 10:21 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-11</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-interactive-mcp-apps-using-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Build interactive MCP Apps using Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock AgentCore now supports building interactive MCP Apps with HTML widgets rendered directly within AI hosts like ChatGPT and Claude.</li>
+<li>AgentCore runtime provides a secure, serverless, session-isolated host with native MCP support, and AgentCore Gateway exposes it via a single secure endpoint.</li>
+<li>The example application, Unicorn Rentals, demonstrates browsing, booking, viewing, and returning unicorns, with a TypeScript-based MCP App using the <code>@modelcontextprotocol/sdk</code> and <code>@modelcontextprotocol/ext-apps</code> extension.</li>
+<li>Deployment utilizes an AWS Lambda function for business logic connected to Amazon DynamoDB, and a deployment script simplifies setup, offering production considerations like CloudWatch monitoring and Bedrock Guardrails for responsible AI.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-11</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/beyond-the-price-per-token-choosing-the-right-openai-model-on-amazon-bedrock-for-your-workload/" target="_blank" rel="noopener">Beyond the price per token: Choosing the right OpenAI model on Amazon Bedrock for your workload</a></h3>
+    
+    <div class="summary"><h3>Beyond the Price Per Token: Choosing the Right OpenAI Model on Amazon Bedrock</h3>
+<p>This post details benchmarking results comparing OpenAI models available on Amazon Bedrock (gpt-5.6-luna, gpt-5.6-terra, and gpt-5.6-sol) against cost-optimized OpenAI API models (gpt-5.4-mini and gpt-5.4-nano), emphasizing cost <em>per successful outcome</em> rather than solely price per token.</p>
+<ul>
+<li>The benchmarking harness, <code>openai-on-aws/benchmarks-openai</code>, evaluates models using the OpenAI Responses API and assesses single-call accuracy (AIME, GPQA Diamond, MMLU-Pro), multi-turn agent trajectories (DeepSearchQA), and rubric-graded professional deliverables (GDPval).</li>
+<li>Results indicate that after the July 2026 price reduction, gpt-5.6-luna on Amazon Bedrock often offers the lowest cost per correct answer, even compared to nano, despite nano's lower nominal token price.</li>
+<li>Agent trajectory cost (influenced by turn count - more turns = more tokens sent) is a significant factor; Luna and Terra demonstrated higher F1 scores and fewer turns in DeepSearchQA than mini, resulting in lower costs per passing answer.</li>
+<li>For professional deliverables evaluated with GDPval, Luna achieved the highest pass rate among cost-efficient models and the lowest cost per passing deliverable post-repricing, while Sol offers a different capability/price tier for genuinely difficult tasks needing higher accuracy.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-11</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/monitoring-production-agent-lifecycle-with-aws-devops-agent-and-agentcore-evaluations/" target="_blank" rel="noopener">Monitoring production agent lifecycle with AWS DevOps Agent and AgentCore Evaluations</a></h3>
+    
+    <div class="summary"><p>AWS introduces a dual-layer monitoring system for production multi-agent systems, combining quality assessment with infrastructure health checks.</p>
+<ul>
+<li><strong>Amazon Bedrock AgentCore Evaluations</strong> continuously scores agent interactions (helpfulness, correctness, goal completion) using LLM-as-a-Judge methodology and provides pattern analysis to identify failure modes and suggest improvements.</li>
+<li><strong>AWS DevOps Agent</strong> autonomously investigates incidents by analyzing CloudWatch logs, correlating errors across services (IAM, Bedrock), tracing failure paths, and delivering remediation recommendations.</li>
+<li>The system utilizes <strong>Amazon Bedrock</strong> for foundation models, <strong>AgentCore runtime</strong> for orchestration and observability (via OpenTelemetry), and the <strong>Swarm pattern</strong> for dynamic multi-agent collaboration.</li>
+<li>A sample airline reservation system, built with four specialized agents, demonstrates the architecture and highlights challenges in monitoring complex, dynamic agent interactions; source code is available on GitHub via the FAST template.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -566,57 +620,6 @@
 <li>days_since_last_access) + W_FREQUENCY</li>
 <li>min(access_count / MAX_ACCESS_BASELINE, 1.0)<code>– and derives a decay rate from a</code>pruneDays` parameter to determine memory relevance.</li>
 <li>The architecture uses Amazon EventBridge, AWS Step Functions, and Lambda functions to orchestrate a nightly lifecycle workflow, tracking access via AWS CloudTrail and persisting results in Amazon S3, with failure notifications sent via Amazon SNS.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-04</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/deploy-a-multimodal-whatsapp-ordering-assistant-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Deploy a multimodal WhatsApp ordering assistant with Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><ul>
-<li>This post details a solution for deploying a multimodal ordering assistant for WhatsApp using Amazon Bedrock AgentCore, enabling customers to order via text, voice notes, or calls.</li>
-<li>The system utilizes Amazon Nova 2 Lite and Nova 2 Sonic models accessed through the Amazon Bedrock Converse API and real-time speech capabilities respectively, with AgentCore hosting the agents and managing cross-channel memory.</li>
-<li>The solution employs the Model Context Protocol (MCP) to connect agents to a restaurant backend, deployed using the AWS Cloud Development Kit (AWS CDK), and decouples traffic processing with Amazon SQS for asynchronous handling.</li>
-<li>The architecture separates the WhatsApp layer, agent runtimes (chat, voice note, call), and backend logic, leveraging services like Amazon DynamoDB, Amazon Location Service, Kinesis Video Streams, and a VPC for voice calls, with a focus on security through Secrets Manager and KMS.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-03</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/embed-quick-sight-visuals-using-cognito-user-authentication/" target="_blank" rel="noopener">Embed Quick Sight visuals using Cognito user authentication</a></h3>
-    
-    <div class="summary"><ul>
-<li>This post details embedding individual Amazon QuickSight visuals into React applications with user authentication via Amazon Cognito, offering granular control over layout and user experience.</li>
-<li>The solution utilizes a serverless architecture with React (CloudFront/S3), Cognito for authentication (JWTs), Lambda for URL generation (using <code>GenerateEmbedUrlForRegisteredUser</code> API) and QuickSight for rendering visuals via the Embedding SDK.</li>
-<li>New Cognito users are automatically provisioned as <code>READER</code>s in QuickSight upon first access, and can be granted dashboard access either manually or automatically via Lambda function updates.</li>
-<li>The QuickSight Embedding SDK (v2.5.0+) allows for programmatic filtering of embedded visuals from the React UI, using methods like <code>addFilterGroups</code>, <code>updateFilterGroups</code>, and <code>removeFilterGroups</code>.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-03</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/best-practices-for-building-agentic-automations-with-amazon-quick-automate/" target="_blank" rel="noopener">Best practices for building agentic automations with Amazon Quick Automate</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Quick Automate enables building, deploying, and maintaining multi-agent automations at scale, coordinating agents across systems and applications.</li>
-<li>Best practices emphasize process understanding <em>before</em> automation design, focusing on identifying the right processes with unstructured inputs and contextual decision-making.</li>
-<li>Agents should be designed with clear, bounded responsibilities, leveraging features like scoped instructions and structured output to improve reliability and cost-efficiency.</li>
-<li>Quick Automate supports combining agentic steps with deterministic steps and integrating human-in-the-loop (HITL) review – both blocking and non-blocking – for high-stakes scenarios, alongside robust evaluation and observability features.</li>
 </ul></div>
     
   </div>
