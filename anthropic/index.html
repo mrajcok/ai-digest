@@ -80,13 +80,66 @@
     </label>
   </div>
   <h1>Anthropic News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-14 10:16 UTC</p>
+  <p class="generated-at">Generated 2026-09-15 10:16 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-09-14</span>
+    </div>
+    <h3><a href="https://claude.com/blog/deploying-ai-from-pilot-to-production" target="_blank" rel="noopener">Deploying AI from pilot to production: a practical blueprint for CIOs and technical leaders | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic, in collaboration with Accenture, has released a blueprint for deploying AI initiatives—specifically those built on Claude—from pilot programs to full enterprise production.  Accenture’s recent research indicates that only 23% of C-suite leaders have seen sustained, enterprise-wide impact from AI, despite successful pilots. The guide outlines seven key considerations, structured chronologically across the pilot, pre-pilot, and production phases, including assigning ownership for AI costs and outcomes—currently lacking in 42% of organizations according to Accenture’s Tokenomics research. </p>
+<p>The blueprint emphasizes defining the AI’s job with a four-part framework (user, task, output, and quality threshold) along with a total cost of ownership model established <em>before</em> piloting.  It also details a four-tier oversight model—automated, sampled, reviewed, and advisory—to calibrate human review to output risk. This model provides review cadences for each tier, helping balance safety and efficiency.  The guidance intends to aid CIOs and technical leaders in making critical decisions around scaling AI programs.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-09-14</span>
+    </div>
+    <h3><a href="https://claude.com/blog/how-healthcare-organizations-use-claude-tag" target="_blank" rel="noopener">How healthcare organizations use Claude Tag | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic’s Claude Tag (beta) integrates Claude directly into Slack workspaces as a collaborative teammate. It’s currently being utilized by healthcare organizations like Insight Health, Tennr, and Medallion—in channels excluding protected health information (PHI)—for tasks like triaging alerts, tool maintenance, and answering payer rule questions. Claude Tag operates by reading Slack threads, utilizing connected tools, and reporting back, while retaining channel memory for ongoing context.</p>
+<p>Administrators maintain control by selectively enabling Claude Tag in approved channels, disabling DMs, and scoping connector access. Insight Health uses it with a custom agent, Zeus, for incident response, automating tasks from alert investigation to PR creation, closing 97% of critical alerts without engineer intervention. Tennr utilizes it to maintain internal tools, enabling non-technical teams to request and receive code changes directly via Slack. Medallion leverages Claude Tag to accumulate and disseminate payer rule expertise, reducing reliance on individual domain experts.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-09-14</span>
+    </div>
+    <h3><a href="https://claude.com/blog/claude-for-financial-advisors" target="_blank" rel="noopener">Claude for Financial Advisors | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic has released “Claude for Financial Advisors,” a new plugin for its Claude AI model designed to automate tasks and improve efficiency for financial advisors. The plugin integrates with numerous existing financial tools – including Addepar, BlackRock, Charles Schwab, Envestnet, iCapital, Orion, SS&amp;C Black Diamond, Wealthbox, Wealth.com, Vanguard, and Zocks – allowing Claude to access client data from multiple sources in one place. </p>
+<p>The core functionality centers around “skills” that automate tasks like meeting preparation, portfolio analysis, compliance checks, and post-meeting follow-ups. For example, the “Alternative Investments Brief” skill summarizes a client’s alternative investments from iCapital or Addepar, while the “Estate and Tax Brief” verifies estate plans against account details. Importantly, all outputs are designed for advisor review before implementation, maintaining human oversight and control, and adhering to SEC regulations with features like compliance flagging. Anthropic recommends its Enterprise plan for firms due to its audit logging capabilities.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-09-14</span>
+    </div>
+    <h3><a href="https://claude.com/blog/agentic-coding-is-straining-ci-heres-how-we-scaled-test-impact-analysis-at-anthropic" target="_blank" rel="noopener">Agentic coding is straining CI. Here’s how we scaled test impact analysis at Anthropic | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic experienced a 25x increase in CI jobs over six months, driven by increased code output from engineers—with 80% of code authored by their Claude agent—and a 10x growth in tests. Their existing test impact analysis service, designed to determine which tests run for each change, struggled to keep pace. Initial fixes – increasing machine size, parallelizing processes, and restarting the service – provided only temporary relief.</p>
+<p>The core redesign involved moving from a single-process architecture to a distributed one utilizing an in-memory data store to offload processing. This allows listener workers to process test results independently without holding state, enabling horizontal scalability.  Claude aided in this process, autonomously fine-tuning the system. The complete re-architecture was achieved by a single engineer in three weeks, a timeline drastically reduced by AI assistance.</p>
+<p>The key takeaway is the need to plan for <em>exponential</em> growth in CI load as AI-driven code generation and review become more prevalent.  Anthropic now recommends designing for 10-20x expected scale upfront and leveraging AI agents to monitor and optimize service performance—specifically ensuring consistent job in/out rates.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -443,62 +496,6 @@
     <div class="summary"><p>Anthropic’s blog post details how to transform the Software Development Lifecycle (SDLC) to fully leverage AI, specifically their Claude Code model. The core claim is that, with AI handling code generation, the bottleneck in development has shifted <em>away</em> from writing code itself and <em>toward</em> planning, review, testing, and deployment.  To address this, they propose an “AI-native SDLC” – a looped process embedding AI at each stage – replacing the traditional linear flow.</p>
 <p>This involves creating committed artifacts at each stage (like <code>intent.md</code> for initial ideas, <code>spec.md</code> for design, and <code>plan.md</code> for implementation plans) stored in version control, which then trigger the next phase.  They introduce "plays" – modular steps for integrating Claude into each SDLC stage – focusing on automated handoffs and continuous evaluation.  Key to this is using Claude to synthesize requirements from stakeholders into machine-readable formats, automating design tasks, generating code <em>with</em> integrated tests, and using AI-driven review layers alongside human oversight, particularly for critical or regulated code.  </p>
 <p>The post emphasizes institutional knowledge as code, through <code>CLAUDE.md</code> files that maintain project-specific context,  and "skills" – reusable, versioned instructions applied by Claude to enforce standards and policies. They also discuss leveraging hooks for deterministic guardrails and the use of parallel sessions and sub-agents to increase engineer throughput.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-08-21</span>
-    </div>
-    <h3><a href="https://claude.com/blog/bringing-claude-mythos-5-to-more-defenders" target="_blank" rel="noopener">Bringing the cybersecurity capabilities of Claude Mythos 5 to more defenders | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic has expanded access to its most powerful model, Claude Mythos 5, for cybersecurity applications. Initially available through Project Glasswing, Mythos 5 is now integrated into both Claude Security – available to Claude Enterprise customers – and partners’ existing cyber defense tools. Claude Security scans codebases for vulnerabilities, providing CWE-categorized findings with severity ratings and suggested patches generated by Mythos 5, without directly exposing users to the model.</p>
-<p>To further bolster cybersecurity, Anthropic launched the $35 million Defender Advantage Fund (0xDAF) to support open-source security projects by funding vulnerability patching, automated scanning, and innovative security approaches. Simultaneously, the Cyber Verification Program is expanding to provide reduced safeguards and broader dual-use capabilities, including access to Mythos-class models, for vetted cyber defenders, while continuing the existing Project Glasswing collaboration with the U.S. Government. </p>
-<p>The core technical shift is enabling defensive use of a powerful model like Mythos 5 <em>without</em> exposing its offensive capabilities, by limiting user interaction to specific, pre-defined outputs – like vulnerability reports or patches – rather than direct prompting, and maintaining abuse prevention measures.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-08-20</span>
-    </div>
-    <h3><a href="https://claude.com/blog/computer-use-skills-api-files-api" target="_blank" rel="noopener">Build production agents with computer use, the Skills API, and the Files API | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic has generally released Computer Use, the Skills API, and the Files API for the Claude Platform. Computer Use now allows agents to perform multiple actions—clicks, typing, scrolling—per turn, improving task completion speed. It is also now HIPAA-eligible. A new Browser Use tool, integrated with Computer Use, enables agents to interact with web applications by reading page structure instead of relying solely on screen coordinates.</p>
-<p>The Skills API allows developers to upload and version custom “skills”—collections of instructions, scripts, and templates—which Claude loads as needed, executing them within a secure sandbox. The Files API provides storage for documents agents can read and write, offering 1 TB of storage per organization, automatic file expiration, and five times higher rate limits. Integrations are also available through Microsoft Foundry and, soon, Google Cloud’s Vertex AI. </p>
-<p>Early adopters have reported improvements, with one research engineer noting a reduction in task time from 32 to 13 minutes and a 30% cost decrease using the new Computer Use tool for claims processing. Another user highlighted the Skills API's ability to embed specialized document creation into applications like Box Agent.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-08-20</span>
-    </div>
-    <h3><a href="https://claude.com/blog/claude-code-guide-for-startups" target="_blank" rel="noopener">The Claude Code Guide For Startups | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic’s “Claude Code Guide for Startups” details how rapidly growing companies are leveraging Claude Code to accelerate software development. The core principle is enabling “everyone to ship” by lowering the barrier to entry for non-technical team members to contribute code changes and build features, significantly increasing output—companies like ClickHouse report 30% more features shipped. </p>
-<p>These startups are achieving this through extensive automation, particularly with agents handling routine tasks, and by prioritizing a “build, rebuild” cycle to adapt to rapidly evolving model capabilities. A key component of success is a strong emphasis on verification and testing, using tools like Claude Code’s Code Review and establishing clear invariants to maintain code quality.  </p>
-<p>The guide stresses the importance of connecting Claude Code to existing tools via the MCP standard and utilizing skills (reusable instruction files) to enforce consistent standards.  Startups are also using internal marketplaces of specialized agents and continuously iterating on agents themselves to optimize workflows and stay competitive.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-08-20</span>
-    </div>
-    <h3><a href="https://claude.com/blog/how-monday-com-transformed-its-platform-into-an-agent-first-product-where-humans-and-agents-collaborate" target="_blank" rel="noopener">How monday.com transformed its platform into an agent-first product where humans and agents collaborate | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>monday.com has fundamentally rebuilt its work management platform around direct integration with Anthropic’s Claude models, moving beyond simply adding AI features. Launched in May 2026, the new platform enables a human-agent collaboration model with over 5 million agent interactions to date. Users can now assign tasks to named agents – powered by Claude – directly within existing workflows, boards, and with existing permissions structures. </p>
-<p>The platform offers four ways to utilize Claude: custom agents built with “monday Agents,” bringing pre-built agents (“Bring Your Own Agent”), utilizing agents from the monday Agents Store (Claude plugins), and integrating Claude Coding for code-related tasks. A specific example detailed is a marketing team using agents to streamline campaign production, from initial briefing to landing page creation and brand review—all within the monday.com interface. A case study with Cooke, a seafood company, highlights using Claude for project management, reporting, and contract upkeep.</p>
-<p>Key takeaways from monday.com’s transformation include the difficulty of shifting mindset from improving existing products to full re-architecture, the advantage of small, empowered teams during rapid change, the importance of trust and governance for agent adoption, the necessity of scalable data infrastructure (monday DB), and building on existing platform strengths.</p></div>
     
   </div>
   

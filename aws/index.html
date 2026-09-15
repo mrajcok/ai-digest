@@ -80,13 +80,100 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-14 10:16 UTC</p>
+  <p class="generated-at">Generated 2026-09-15 10:16 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-14</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/automate-replenishment-with-mmf-databricks-genie-and-amazon-quick/" target="_blank" rel="noopener">Automate replenishment with MMF, Databricks Genie, and Amazon Quick</a></h3>
+    
+    <div class="summary"><p>Automate replenishment by integrating demand forecasting from Databricks with order placement via Amazon Quick, addressing the bottleneck between forecast generation and order execution.</p>
+<ul>
+<li>Databricks Many Model Forecasting (MMF) utilizing the Chronos-2 model predicts 7-day demand for each SKU.</li>
+<li>Databricks Genie Agents detect demand surges defined as a 1.5x increase in the 7-day average compared to the prior 14-day average, filtering for SKUs with at least 1 unit of prior sales.</li>
+<li>Amazon Quick reconciles surging SKU demand against live supplier availability stored in Amazon S3 Tables, selecting the cheapest capable supplier.</li>
+<li>Amazon Quick Flows places purchase orders via a Supplier Order API or escalates to a human-review ticket when no supplier can fulfill the demand, utilizing Model Context Protocol (MCP) connectors to access forecasts and OpenAPI connectors for order placement.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-14</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/the-generative-ai-customization-spectrum-from-prompt-engineering-to-custom-models-on-aws/" target="_blank" rel="noopener">The generative AI customization spectrum: From prompt engineering to custom models on AWS</a></h3>
+    
+    <div class="summary"><p>The post details a decision framework, the "generative AI customization spectrum," for choosing the right approach to customizing foundation models on AWS, ranging from simple prompt engineering to full model training.</p>
+<ul>
+<li>Models from Anthropic (Claude, Nova), Meta (Llama), and Mistral are accessible through Amazon Bedrock; customization ranges from using models as-is (Step 1) to training custom models (Step 8).</li>
+<li>The spectrum is divided into three categories: USE (prompt engineering &amp; optimization - Steps 1-2), ENHANCE (adding context via RAG, caching, distillation - Steps 3-5), and TRAIN (fine-tuning, continued pre-training, custom models - Steps 6-8).</li>
+<li>Key AWS services supporting customization include Amazon Bedrock (RAG, model access), Amazon SageMaker (fine-tuning, DPO), and Amazon Nova Forge (continued pre-training, custom model building).</li>
+<li>Advanced techniques like Reinforcement Learning from Human Feedback (RFT) and Direct Preference Optimization (DPO) are now available within Amazon Bedrock and SageMaker; Amazon Nova Forge addresses "catastrophic forgetting" during continued pre-training with data mixing.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-14</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-ninth-wave-built-ai-powered-open-finance-onboarding-on-amazon-bedrock/" target="_blank" rel="noopener">How Ninth Wave built AI-powered open finance onboarding on Amazon Bedrock</a></h3>
+    
+    <div class="summary"><ul>
+<li>Ninth Wave implemented Compass, an AI-powered onboarding assistant for open finance, built on <strong>Amazon Bedrock AgentCore</strong> and the <strong>Strands Agents</strong> framework.</li>
+<li>The system utilizes a multi-agent architecture with intent-based routing and per-task model selection, leveraging models within <strong>Amazon Bedrock</strong> to handle tasks ranging from documentation Q&amp;A to readiness analysis.</li>
+<li>Tenant-scoped grounding is achieved by assembling each bank’s specific context from <strong>Amazon OpenSearch Service</strong> and <strong>Amazon S3</strong> before invoking agents, ensuring data isolation.</li>
+<li>The system employs deterministic scoring for FDX readiness, computed from field mapping coverage in OpenSearch, and incorporates comprehensive observability with <strong>Amazon CloudWatch</strong> and security features including <strong>AWS WAF</strong>, <strong>AWS IAM</strong>, and <strong>AWS KMS</strong>.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-14</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/manage-end-user-oauth-consent-for-ai-agents-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Manage end-user OAuth consent for AI agents with Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock AgentCore now offers a managed Consent portal for handling end-user OAuth consent, eliminating the need for customers to build and host their own session binding infrastructure for 3LO flows.</li>
+<li>The Consent portal integrates with a user's corporate Identity Provider (IdP) to authenticate users and allows them to review and grant consent to individual service providers (e.g., GitHub, Slack).</li>
+<li>Administrators configure the IdP, gateway targets, and portal via the AWS Management Console, utilizing IAM policies to control access and permissions, and can create outbound OAuth credential providers for each service.</li>
+<li>The portal handles browser redirects and securely stores tokens in the AgentCore Identity token vault, automatically refreshing access tokens when possible, and all consent activity is logged in AWS CloudTrail.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-14</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/abnormal-ai-amazon-bedrock-agentcore-for-agentic-email-security-at-scale/" target="_blank" rel="noopener">Abnormal AI: Amazon Bedrock AgentCore for agentic email security at scale</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock AgentCore Code Interpreter, a capability of Amazon Bedrock AgentCore, provides a fully managed, serverless runtime for agents to execute code dynamically within ephemeral MicroVM sessions configurable from 15 minutes to 8 hours.</li>
+<li>Code Interpreter offers security through host operating system-level sandboxing and configurable networking (VPC mode or public internet access) with file handling up to 100 MB via API or Amazon S3 integration.</li>
+<li>Abnormal AI uses Code Interpreter within a three-tiered email security pipeline, reserving agent-driven code execution for the most difficult cases (Tier 3) – processing tens of thousands of messages daily – after initial filtering by heuristics (Tier 1) and machine learning models (Tier 2).</li>
+<li>Abnormal AI also employs an “analyst agent” utilizing Code Interpreter in batch mode to ingest misclassifications, identify patterns, and autonomously generate draft heuristics and improve models, leveraging the file system for checkpointing during long-running tasks.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -525,101 +612,6 @@
 <li>The model supports both implicit and explicit prompt caching to reduce latency and cost for recurring tasks.</li>
 <li>GPT-6 Astra has been evaluated via OpenAI’s Preparedness Framework, achieving a “Critical” classification for cybersecurity—with automated safeguards and real-time misuse monitoring.</li>
 <li>It can be accessed directly via Amazon Bedrock APIs or integrated with ChatGPT Work and Codex, and new enterprise plugins extend ChatGPT Work's browser capabilities to applications like Workday and Avalara.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-04</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-intuit-built-an-agentic-disaster-recovery-assistant-with-amazon-bedrock/" target="_blank" rel="noopener">How Intuit built an agentic disaster recovery assistant with Amazon Bedrock</a></h3>
-    
-    <div class="summary"><p>Intuit built an agentic disaster recovery assistant (EWOK Agent) using Amazon Bedrock to automate and improve decision-making during failover events.</p>
-<ul>
-<li>EWOK Agent leverages Amazon Bedrock to access and evaluate foundation models for failover reasoning, without requiring rearchitecting the agent, with models accessed via a single API.</li>
-<li>The system uses “skills” – defined by YAML schemas and prompts – to encode failover knowledge, which are compiled into tool specifications for Amazon Bedrock’s Converse API.</li>
-<li>Amazon Bedrock Guardrails are integrated to provide security and privacy, ensuring data is not used for model training and remains encrypted.</li>
-<li>The architecture consists of four layers: a consumer layer (engineering portal/IDE), an agent layer (Amazon Bedrock), a skill layer, and an execution layer (EWOK API) for deterministic recovery actions.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-04</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/customizing-your-knowledge-base-on-amazon-bedrock-for-large-and-complex-documents-using-amazon-textract/" target="_blank" rel="noopener">Customizing your knowledge base on Amazon Bedrock for large and complex documents using Amazon Textract</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock now integrates with Amazon Textract to improve Retrieval Augmented Generation (RAG) accuracy with large and complex documents.</li>
-<li>Amazon Textract extracts text and structured data from PDFs, DOCX, TXT, HTML, XLSX, and PNG files, cleaning and enriching the data before it is sent to the LLM.</li>
-<li>The solution deploys via a CloudFormation stack creating Lambda functions, S3 buckets, an OpenSearch Serverless cluster, and an Amazon Bedrock Knowledge Base.</li>
-<li>Testing utilizes the Amazon Nova Micro model within the Bedrock console, demonstrating improved response quality when querying the custom knowledge base versus direct LLM access to raw documents.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-04</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/run-agent-driven-amazon-sagemaker-hyperpod-operations-with-instantstart/" target="_blank" rel="noopener">Run agent-driven Amazon SageMaker HyperPod operations with InstantStart</a></h3>
-    
-    <div class="summary"><p>Amazon SageMaker HyperPod InstantStart introduces an AI agent-driven control plane for simplifying infrastructure operations.</p>
-<ul>
-<li>The system offers both a web UI and a command-line interface ([hypd-inst-agent]) to automate cluster creation, dependency installation, and resource provisioning within AWS.</li>
-<li>It manages the orchestration of AWS services (Amazon EKS, Amazon S3, Amazon FSx for Lustre, Amazon ECR) and Kubernetes resources, handling tasks like health monitoring, node autoscaling, and recovery.</li>
-<li>The agent encodes operational rules into its API, ensuring consistent and dependable infrastructure management by focusing on decision-making prompts for the user (Availability Zone, instance type, capacity type).</li>
-<li>InstantStart organizes infrastructure into four layers: managed foundation, capacity and resilience, workloads and data, and interfaces, handling staging, reconciliation, and idempotent operations across AWS and Kubernetes.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-04</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-a-physical-ai-model-factory-with-nvidia-cosmos-3-on-sagemaker-hyperpod/" target="_blank" rel="noopener">Build a Physical AI model factory with NVIDIA Cosmos 3 on SageMaker HyperPod</a></h3>
-    
-    <div class="summary"><h2>NVIDIA Cosmos 3 on SageMaker HyperPod: Building a Physical AI Model Factory</h2>
-<p>This post details building a continuous pipeline for Physical AI systems using NVIDIA Cosmos 3 on Amazon SageMaker HyperPod, focusing on efficiently managing GPU resources for data generation, model post-training, and evaluation.</p>
-<ul>
-<li>NVIDIA Cosmos 3 is a Mixture-of-Transformers (MoT) model designed for multimodal processing (video, image, action, sound) with a unique architecture featuring a shared token stream, dual-expert attention, and asymmetry between training and inference.</li>
-<li>Cosmos 3 comes in three tiers: Cosmos3-Nano (16B parameters), Cosmos3-Super (64B parameters), and Cosmos3-Edge (4B parameters) and can operate in three modes - forward dynamics (synthetic data generation), inverse dynamics (action labeling) and policy deployment.</li>
-<li>Amazon SageMaker HyperPod, using Amazon EKS, provides a single cluster environment with persistent GPU capacity, low-latency interconnects (EFA), and automated recovery for continuous operation of the AI pipeline stages, optimizing GPU goodput.</li>
-<li>The provided repository includes manifests and configuration files for running the described pipeline across three representative workloads: robot-policy training (using the DROID dataset), vision supervised fine-tuning, and low-rank adaptation on the 64B model.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-04</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/designing-lifecycle-policies-for-agentcore-memory/" target="_blank" rel="noopener">Designing lifecycle policies for AgentCore memory</a></h3>
-    
-    <div class="summary"><p>Memory lifecycle management for Amazon Bedrock AgentCore helps maintain agent effectiveness by managing retained information.</p>
-<ul>
-<li>The solution introduces three lifecycle policies: TTL-based expiration (defaulting to 90 days for episodic memories), relevance decay scoring (using recency, access frequency, and a configurable <code>pruneDays</code> parameter), and LLM-based consolidation (using Amazon Bedrock to summarize and merge memories).</li>
-<li>AgentCore memory categorizes memories into Episodic, Semantic, and Procedural types, each with different retention requirements and strategies for storage and management.</li>
-<li>Relevance scoring utilizes a weighted formula – `score = W_RECENCY</li>
-<li>exp(-decay_rate</li>
-<li>days_since_creation) + W_ACCESS</li>
-<li>exp(-decay_rate</li>
-<li>days_since_last_access) + W_FREQUENCY</li>
-<li>min(access_count / MAX_ACCESS_BASELINE, 1.0)<code>– and derives a decay rate from a</code>pruneDays` parameter to determine memory relevance.</li>
-<li>The architecture uses Amazon EventBridge, AWS Step Functions, and Lambda functions to orchestrate a nightly lifecycle workflow, tracking access via AWS CloudTrail and persisting results in Amazon S3, with failure notifications sent via Amazon SNS.</li>
 </ul></div>
     
   </div>
