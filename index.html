@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-09-15T10:16:55.602993+00:00">Generated 2026-09-15 10:16 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-09-16T10:17:03.021101+00:00">Generated 2026-09-16 10:17 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,12 +132,13 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — since 2026-09-14</h2>
-    <p class="overview-meta">2026-09-15 · 11 vendor sources · vendor sources only</p>
-    <div class="overview-text"><p>The most significant development today centers on the growing pains of AI-driven development and the necessity for robust infrastructure. Anthropic detailed a 25x increase in CI jobs over six months, with 80% of code now authored by their Claude agent, forcing a complete re-architecture of their test impact analysis service. This wasn’t a matter of incremental scaling, but a fundamental shift to a distributed system leveraging an in-memory data store.  Critically, Anthropic found that design efforts should aim for 10-20x <em>expected</em> scale upfront – a stark warning to engineering leaders about the exponential impact of AI code generation.  The speed of this re-architecture – completed by a single engineer in three weeks with AI assistance – further underscores both the opportunity and the urgency.</p>
-<p>Anthropic continued to expand the application of Claude through several specialized offerings.  “Claude for Financial Advisors” introduces a plugin integrating with major financial institutions, automating tasks like portfolio analysis and compliance checks but retaining human oversight.  Separately, “Claude Tag” beta is seeing traction in healthcare, enabling teams like Insight Health to automate incident response and reduce engineer on-call burden, though usage remains limited to non-PHI channels. Finally, Anthropic, in collaboration with Accenture, released a blueprint for scaling AI initiatives – from pilot to production – with a focus on establishing clear ownership of AI costs and defining outputs with precise quality thresholds. </p>
-<p>Amazon Web Services showcased how its Bedrock AgentCore is being utilized in production. Abnormal AI is using AgentCore’s Code Interpreter as a Tier 3 escalation path for complex email security threats, processing tens of thousands of messages daily; they are also employing it for automated model improvement. Ninth Wave built an AI-powered open finance onboarding assistant, Compass, leveraging Bedrock AgentCore and the Strands Agents framework; data isolation is achieved through integration with Amazon OpenSearch Service and S3. AWS also highlighted advancements in its customization spectrum, offering a pathway from prompt engineering to full custom model training, and detailed new features for managing OAuth consent for AI agents, streamlining integrations with third-party services. A final post detailed integration between Databricks demand forecasting and Amazon Quick for automated supply chain replenishment.</p>
-<p>Beyond the major cloud providers, Google announced the return of DevFest in 2026 with a focus on hands-on experience with their AI technologies.  The conference theme, “Build, Secure, Scale: Developers and Builders in the Agentic Era,” reflects the current industry focus. A dialogue between Google’s James Manyika and astronaut Christina Koch highlighted the importance of AI and robotics in space exploration.</p></div>
+    <h2 class="overview-heading">Today in AI</h2>
+    <p class="overview-meta">2026-09-16 · 1 vendor source · vendor sources only</p>
+    <div class="overview-text"><hr />
+<p>Today’s AI developments center on bringing large language models directly into user workflows, with a strong emphasis on privacy and open-source alternatives. The most significant news is the partnership between Mistral AI and Mozilla to integrate Mistral’s models into Firefox’s Smart Window (beta) – a browser-based AI assistant. Initially launching in France and North America, with future expansion to the UK and Germany, this feature will offer users assistance with complex searches, information retrieval across multiple tabs, and more nuanced language support. What distinguishes this implementation is the commitment to privacy: Smart Window conversations are not stored on Mozilla’s servers by default, and Mistral guarantees zero data retention, representing a deliberate attempt to build an AI experience prioritizing user control.</p>
+<p>This move highlights a growing trend of embedding AI functionality directly within existing software, rather than relying on standalone applications or APIs. By partnering with Mozilla, Mistral extends its reach beyond enterprise clients and directly to individual consumers, democratizing access to advanced AI capabilities. This contrasts with the walled-garden approach of some other major players in the field. The decision to focus on regional languages and dialects via fine-tuning, a core component of this integration, suggests a recognition of the importance of localized AI experiences. </p>
+<p>The focus on open-weight models and privacy represents a counterpoint to the prevailing narratives surrounding data collection and proprietary AI systems. It is notable as a concerted attempt to offer a competitive alternative that prioritizes user agency and data protection within the emerging landscape of AI-powered browsing experiences.</p>
+<hr /></div>
   </section>
   
 
@@ -150,12 +151,13 @@
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>blog</span>
-      <span> · 2026-09-14</span>
+      <span> · 2026-09-15</span>
     </div>
-    <h2><a href="https://claude.com/blog/deploying-ai-from-pilot-to-production" target="_blank" rel="noopener">Deploying AI from pilot to production: a practical blueprint for CIOs and technical leaders | Claude by Anthropic</a></h2>
+    <h2><a href="https://claude.com/blog/building-an-ai-native-revenue-organization" target="_blank" rel="noopener">Building an AI-native revenue organization | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>Anthropic, in collaboration with Accenture, has released a blueprint for deploying AI initiatives—specifically those built on Claude—from pilot programs to full enterprise production.  Accenture’s recent research indicates that only 23% of C-suite leaders have seen sustained, enterprise-wide impact from AI, despite successful pilots. The guide outlines seven key considerations, structured chronologically across the pilot, pre-pilot, and production phases, including assigning ownership for AI costs and outcomes—currently lacking in 42% of organizations according to Accenture’s Tokenomics research. </p>
-<p>The blueprint emphasizes defining the AI’s job with a four-part framework (user, task, output, and quality threshold) along with a total cost of ownership model established <em>before</em> piloting.  It also details a four-tier oversight model—automated, sampled, reviewed, and advisory—to calibrate human review to output risk. This model provides review cadences for each tier, helping balance safety and efficiency.  The guidance intends to aid CIOs and technical leaders in making critical decisions around scaling AI programs.</p></div>
+    <div class="summary"><p>Anthropic’s new guide, “Building an AI-native revenue organization,” details a phased rollout plan for integrating Claude into sales workflows. The guide proposes a maturity model to assess an organization’s current AI adoption level and outlines setup considerations including defining ownership, system connectors, IT/security protocols, success metrics, and spend visibility. </p>
+<p>The recommended rollout consists of three phases: setup, pilot, and scale. Use cases are categorized by role, and the guide suggests measuring ROI across efficiency gains, revenue expansion, and the enablement of new capabilities. Cox Communications, cited as an early adopter, achieved a 7x return on investment and reduced lead validation costs by 86%, increasing accuracy from 18% to 97%. Cyera reported 88% weekly usage among its 1,500 employees, specifically for drafting outreach materials informed by top performers’ successful approaches. </p>
+<p>The guide addresses common pitfalls to widespread adoption and provides checklists to facilitate implementation. It’s geared towards revenue leaders aiming to maximize the value of Claude within their sales organization.</p></div>
     
   </div>
   
@@ -163,12 +165,13 @@
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>blog</span>
-      <span> · 2026-09-14</span>
+      <span> · 2026-09-15</span>
     </div>
-    <h2><a href="https://claude.com/blog/how-healthcare-organizations-use-claude-tag" target="_blank" rel="noopener">How healthcare organizations use Claude Tag | Claude by Anthropic</a></h2>
+    <h2><a href="https://claude.com/blog/salesforce-in-claude" target="_blank" rel="noopener">Salesforce in Claude | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>Anthropic’s Claude Tag (beta) integrates Claude directly into Slack workspaces as a collaborative teammate. It’s currently being utilized by healthcare organizations like Insight Health, Tennr, and Medallion—in channels excluding protected health information (PHI)—for tasks like triaging alerts, tool maintenance, and answering payer rule questions. Claude Tag operates by reading Slack threads, utilizing connected tools, and reporting back, while retaining channel memory for ongoing context.</p>
-<p>Administrators maintain control by selectively enabling Claude Tag in approved channels, disabling DMs, and scoping connector access. Insight Health uses it with a custom agent, Zeus, for incident response, automating tasks from alert investigation to PR creation, closing 97% of critical alerts without engineer intervention. Tennr utilizes it to maintain internal tools, enabling non-technical teams to request and receive code changes directly via Slack. Medallion leverages Claude Tag to accumulate and disseminate payer rule expertise, reducing reliance on individual domain experts.</p></div>
+    <div class="summary"><p>Anthropic has released a beta plugin, “Salesforce in Claude,” designed to integrate Claude with Salesforce CRM. The plugin leverages 37 skills to assist sales representatives with tasks like account research, call preparation, pipeline review, and CRM updates. It connects via two connectors—Salesforce and Slack—allowing Claude to read and, with approval, write data within existing Salesforce permissions. </p>
+<p>Key features include a daily personalized brief summarizing meetings, deals, and unread communications; assistance in preparing for calls by consolidating information from Salesforce, Slack, and email; and scoring opportunities against a team’s methodology to generate close plans. After meetings, Claude can draft follow-up emails, Slack updates, and opportunity updates for review. It also offers pipeline visualization and forecasting capabilities.</p>
+<p>Currently, 7,000 Salesforce users at companies like GitLab, Siemens, and Legora are using the plugin.  The Salesforce in Claude beta is available on all paid Claude plans and requires administrative setup to connect Salesforce and manage user access.  Data from organizations is not used to train Anthropic’s models by default on Team and Enterprise plans.</p></div>
     
   </div>
   
@@ -176,12 +179,29 @@
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>blog</span>
-      <span> · 2026-09-14</span>
+      <span> · 2026-09-15</span>
     </div>
-    <h2><a href="https://claude.com/blog/claude-for-financial-advisors" target="_blank" rel="noopener">Claude for Financial Advisors | Claude by Anthropic</a></h2>
+    <h2><a href="https://claude.com/blog/claude-for-small-business-launches-new-workflows-integrations-and-training-programs" target="_blank" rel="noopener">Claude for Small Business launches new workflows, integrations, and training programs | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>Anthropic has released “Claude for Financial Advisors,” a new plugin for its Claude AI model designed to automate tasks and improve efficiency for financial advisors. The plugin integrates with numerous existing financial tools – including Addepar, BlackRock, Charles Schwab, Envestnet, iCapital, Orion, SS&amp;C Black Diamond, Wealthbox, Wealth.com, Vanguard, and Zocks – allowing Claude to access client data from multiple sources in one place. </p>
-<p>The core functionality centers around “skills” that automate tasks like meeting preparation, portfolio analysis, compliance checks, and post-meeting follow-ups. For example, the “Alternative Investments Brief” skill summarizes a client’s alternative investments from iCapital or Addepar, while the “Estate and Tax Brief” verifies estate plans against account details. Importantly, all outputs are designed for advisor review before implementation, maintaining human oversight and control, and adhering to SEC regulations with features like compliance flagging. Anthropic recommends its Enterprise plan for firms due to its audit logging capabilities.</p></div>
+    <div class="summary"><p>Anthropic has released updates to <strong>Claude for Small Business</strong>, adding 43 pre-built workflows and 27 integrations with tools like Shopify, Salesforce, and Zoom. These workflows automate tasks ranging from lead response and proposal generation to monthly financial closing, aiming to save business owners time. The system has already seen over 900,000 installs since its May launch.</p>
+<p>Users can install the plugin within the <strong>Claude Cowork</strong> desktop app, connect their existing tools, and choose workflows to run, initially in approval mode for control. New features include integrations with tools like Airwallex, HubSpot, and Xero. Anthropic is also launching a series of free workshops and webinars, alongside training programs through partners like Goldman Sachs 10,000 Small Businesses, to help small business owners adopt the new capabilities.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="google/" class="badge badge-google">Google</a>
+      <span>research</span>
+      <span> · 2026-09-15</span>
+    </div>
+    <h2><a href="https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/" target="_blank" rel="noopener">Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking</a></h2>
+    
+    <div class="summary"><ul>
+<li>Google released <strong>Gemini 3.8 Live</strong> and <strong>Gemini 3.8 Live Extended Thinking</strong>, new dialogue models designed for more natural and intelligent voice interactions.</li>
+<li><strong>Gemini 3.8 Live Extended Thinking</strong> achieved 82.6 on the Artificial Analysis' Speech to Speech Quality Index, 68.6% on τ -Voice, and 35.1% on Sierra’s τ -Voice-banking benchmark, demonstrating leading performance in speech-to-speech quality and agentic task completion.</li>
+<li><strong>Gemini 3.8 Live</strong> supports real-time visual input processing, detects and transitions between 97 languages mid-conversation, and handles tools/API calls in the background without interrupting dialogue.</li>
+<li><strong>Gemini 3.8 Live Extended Thinking</strong> provides simultaneous reasoning and speaking, and uses verbal cues and narration for multi-step tasks, and is available via the Gemini API, Google Workspace, and the Gemini app.</li>
+</ul></div>
     
   </div>
   
@@ -189,40 +209,33 @@
     <div class="meta">
       <a href="google/" class="badge badge-google">Google</a>
       <span>blog</span>
-      <span> · 2026-09-14</span>
+      <span> · 2026-09-15</span>
     </div>
-    <h2><a href="https://blog.google/innovation-and-ai/technology/developers-tools/devfest2026/" target="_blank" rel="noopener">DevFest is back</a></h2>
+    <h2><a href="https://blog.google/innovation-and-ai/technology/ai/ai-economy-atlas-september-2026/" target="_blank" rel="noopener">New insights from Google’s AI &amp; Economy ATLAS</a></h2>
     
-    <div class="summary"><p>DevFest 2026, running from October 1 to December 31, 2026, will focus on hands-on experience with Google’s AI technologies.  Events will feature codelabs, workshops, and “agent-athons” utilizing tools like Gemini, Google AI Studio, Google Antigravity, Google Cloud, Firebase, Android, Flutter, Angular, and Web MCP. The conference theme, “Build, Secure, Scale: Developers and Builders in the Agentic Era,” highlights developing and deploying applications with a focus on security and scalability.  Over 800 events are planned across 115 countries, offering opportunities to test new architectures and connect with the community.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="google/" class="badge badge-google">Google</a>
-      <span>blog</span>
-      <span> · 2026-09-14</span>
-    </div>
-    <h2><a href="https://blog.google/innovation-and-ai/technology/ai/dialogues-christina-koch/" target="_blank" rel="noopener">Watch astronaut Christina Koch and Google’s James Manyika discuss space, technology, and discovery.</a></h2>
-    
-    <div class="summary"><p>Google’s James Manyika discussed the partnership between astronauts, robotics, and AI in a dialogue with NASA astronaut Christina Koch. The conversation centered on Koch’s experiences aboard the International Space Station and upcoming Artemis II mission, framing space exploration as reliant on these interconnected technologies. The discussion is part of Google’s “Dialogues on Technology and Society” series.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="google/" class="badge badge-google">Google</a>
-      <span>blog</span>
-      <span> · 2026-09-10</span>
-    </div>
-    <h2><a href="https://blog.google/products-and-platforms/products/search/running-race-training-tips/" target="_blank" rel="noopener">3 ways to prep for your next big race with Search</a></h2>
-    
-    <div class="summary"><p>Google Search now incorporates AI tools to assist runners with race preparation.</p>
+    <div class="summary"><p>Google’s AI &amp; Economy ATLAS provides new data visualizations and research regarding AI adoption and impact.</p>
 <ul>
-<li>The <strong>Canvas</strong> tool within Search’s AI Mode can generate personalized training plans based on user input, including race details, location, current fitness level and running habits.</li>
-<li>Integration with <strong>YouTube Music</strong> allows users to create custom, AI-generated playlists to provide motivation during runs.</li>
-<li>Search leverages its <strong>Shopping Graph</strong> (60 billion+ product listings) to filter and recommend appropriate running gear based on specific needs and budget constraints.</li>
-<li>The features use AI Mode within Search to understand and respond to complex queries related to training, music, and gear selection.</li>
+<li>The ATLAS dataset reveals regional and occupational differences in AI usage, for example, higher AI use in India’s creative industries and the US’s technical occupations.</li>
+<li>New research, conducted with Google DeepMind and MIT FutureTech, shows nearly half of surveyed scientists use AI daily, utilizing both Large Language Models (LLMs) like Gemini and specialized AI models.</li>
+<li>Scientists report saving approximately 7 hours per week using AI; however, the research indicates bottlenecks in downstream research processes like experimentation and validation.</li>
+<li>The study analyzed 2600 specialized AI models and surveyed over 600 scientists, utilizing a new taxonomy developed by MIT FutureTech to categorize scientific tasks and AI applications.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="google/" class="badge badge-google">Google</a>
+      <span>blog</span>
+      <span> · 2026-09-15</span>
+    </div>
+    <h2><a href="https://blog.google/innovation-and-ai/technology/ai/ai-for-every-language/" target="_blank" rel="noopener">AI for everyone in every language</a></h2>
+    
+    <div class="summary"><ul>
+<li>Google is expanding AI capabilities to support over 300 languages, reaching 86% of the global population, with a goal to support 1,000 of the world’s most-spoken languages.</li>
+<li>Gemini 3.5 Live Translate now offers real-time spoken translation across 70 languages, naturally handling code-switching and emotional cues; Gemini 3.5 Transcribe provides highly accurate speech-to-text conversion, powering features like Rambler on Android Gboard.</li>
+<li>The Universal Speech Model, trained on 12 million hours of audio, utilizes cross-lingual transfer learning to improve speech understanding in under-resourced languages.</li>
+<li>TranslateGemma, a family of lightweight open translation models based on Gemini, enables high-quality translation on-device without internet connectivity, and Viamo is piloting Gemini-powered voice AI assistant AVA on feature phones.</li>
 </ul></div>
     
   </div>
@@ -284,52 +297,66 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-09-14</span>
+      <span> · 2026-09-15</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/automate-replenishment-with-mmf-databricks-genie-and-amazon-quick/" target="_blank" rel="noopener">Automate replenishment with MMF, Databricks Genie, and Amazon Quick</a></h2>
-    
-    <div class="summary"><p>Automate replenishment by integrating demand forecasting from Databricks with order placement via Amazon Quick, addressing the bottleneck between forecast generation and order execution.</p>
-<ul>
-<li>Databricks Many Model Forecasting (MMF) utilizing the Chronos-2 model predicts 7-day demand for each SKU.</li>
-<li>Databricks Genie Agents detect demand surges defined as a 1.5x increase in the 7-day average compared to the prior 14-day average, filtering for SKUs with at least 1 unit of prior sales.</li>
-<li>Amazon Quick reconciles surging SKU demand against live supplier availability stored in Amazon S3 Tables, selecting the cheapest capable supplier.</li>
-<li>Amazon Quick Flows places purchase orders via a Supplier Order API or escalates to a human-review ticket when no supplier can fulfill the demand, utilizing Model Context Protocol (MCP) connectors to access forecasts and OpenAPI connectors for order placement.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-09-14</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/the-generative-ai-customization-spectrum-from-prompt-engineering-to-custom-models-on-aws/" target="_blank" rel="noopener">The generative AI customization spectrum: From prompt engineering to custom models on AWS</a></h2>
-    
-    <div class="summary"><p>The post details a decision framework, the "generative AI customization spectrum," for choosing the right approach to customizing foundation models on AWS, ranging from simple prompt engineering to full model training.</p>
-<ul>
-<li>Models from Anthropic (Claude, Nova), Meta (Llama), and Mistral are accessible through Amazon Bedrock; customization ranges from using models as-is (Step 1) to training custom models (Step 8).</li>
-<li>The spectrum is divided into three categories: USE (prompt engineering &amp; optimization - Steps 1-2), ENHANCE (adding context via RAG, caching, distillation - Steps 3-5), and TRAIN (fine-tuning, continued pre-training, custom models - Steps 6-8).</li>
-<li>Key AWS services supporting customization include Amazon Bedrock (RAG, model access), Amazon SageMaker (fine-tuning, DPO), and Amazon Nova Forge (continued pre-training, custom model building).</li>
-<li>Advanced techniques like Reinforcement Learning from Human Feedback (RFT) and Direct Preference Optimization (DPO) are now available within Amazon Bedrock and SageMaker; Amazon Nova Forge addresses "catastrophic forgetting" during continued pre-training with data mixing.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-09-14</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-ninth-wave-built-ai-powered-open-finance-onboarding-on-amazon-bedrock/" target="_blank" rel="noopener">How Ninth Wave built AI-powered open finance onboarding on Amazon Bedrock</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/announcing-instance-preference-lists-for-amazon-sagemaker-ai-training-jobs/" target="_blank" rel="noopener">Announcing instance preference lists for Amazon SageMaker AI training jobs</a></h2>
     
     <div class="summary"><ul>
-<li>Ninth Wave implemented Compass, an AI-powered onboarding assistant for open finance, built on <strong>Amazon Bedrock AgentCore</strong> and the <strong>Strands Agents</strong> framework.</li>
-<li>The system utilizes a multi-agent architecture with intent-based routing and per-task model selection, leveraging models within <strong>Amazon Bedrock</strong> to handle tasks ranging from documentation Q&amp;A to readiness analysis.</li>
-<li>Tenant-scoped grounding is achieved by assembling each bank’s specific context from <strong>Amazon OpenSearch Service</strong> and <strong>Amazon S3</strong> before invoking agents, ensuring data isolation.</li>
-<li>The system employs deterministic scoring for FDX readiness, computed from field mapping coverage in OpenSearch, and incorporates comprehensive observability with <strong>Amazon CloudWatch</strong> and security features including <strong>AWS WAF</strong>, <strong>AWS IAM</strong>, and <strong>AWS KMS</strong>.</li>
+<li>Amazon SageMaker now supports <em>Instance Preference Lists</em> for AI Training and Processing Jobs, allowing specification of up to five acceptable instance types in priority order.</li>
+<li>The system automatically evaluates the list and launches the job on the first instance type with available capacity, reducing wait times and manual intervention.</li>
+<li>Integration with <em>Flexible Training Plans (FTP)</em> allows prioritizing reserved capacity, falling back to on-demand instances if reservations are full.</li>
+<li>Code examples are provided using the Amazon SageMaker Python SDK v3 (specifically <code>ModelTrainer</code> and <code>Processor</code>) demonstrating configuration for various scenarios, including uniform counts, per-preference counts for compute equivalency, and Training Plan integration.</li>
 </ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
+      <span> · 2026-09-15</span>
+    </div>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/build-an-ai-powered-product-tagging-system-with-amazon-sagemaker-serverless-model-customization/" target="_blank" rel="noopener">Build an AI-powered product tagging system with Amazon SageMaker serverless model customization</a></h2>
+    
+    <div class="summary"><h2>Build an AI-powered product tagging system with Amazon SageMaker serverless model customization</h2>
+<p>This blog details a workflow for customizing the Qwen3-8B model for product tagging using Amazon SageMaker serverless features.</p>
+<ul>
+<li>The workflow utilizes Amazon SageMaker serverless model customization with supervised fine-tuning (SFT) and reinforcement learning with verifiable rewards (RLVR) using Group Relative Policy Optimization (GRPO) to adapt Qwen3-8B for a specific product tagging schema.</li>
+<li>Amazon SageMaker Python SDK v3's serverless trainers (SFTTrainer and RLVRTrainer) are used, eliminating the need to manage compute infrastructure for training.</li>
+<li>The process involves three stages: data preparation (using Amazon SageMaker Processing), serverless model customization (SFT and RLVR), and asynchronous inference (deployed to ml.g6.2xlarge instances).</li>
+<li>A deterministic reward function is designed for RLVR, utilizing fuzzy matching to compare predicted tags with reference tags, prioritizing recall and then precision during training to optimize tagging quality.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
+      <span> · 2026-09-15</span>
+    </div>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/optimizing-cost-and-latency-with-amazon-bedrock-prompt-caching/" target="_blank" rel="noopener">Optimizing cost and latency with Amazon Bedrock prompt caching</a></h2>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock now offers prompt caching to reduce input token costs, potentially by up to 90% for repeated context.</li>
+<li>Caching is activated using <code>cachePoint</code> markers within requests, allowing selective caching of static content like documents or system prompts.</li>
+<li>Supported models currently include Anthropic Claude Sonnet 4.5/4.6 (minimum 1024 token checkpoint) and Opus models (minimum 4096 token checkpoint), with model-agnostic syntax for the Converse API.</li>
+<li>Pricing introduces new token types: <code>cacheWriteInputTokens</code> (25% higher than standard input) and <code>cacheReadInputTokens</code> (90% lower than standard input), with TTL options affecting costs (1-hour TTL is 100% higher than standard input for writes).</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="mistral/" class="badge badge-mistral">Mistral AI</a>
+      <span>blog</span>
+      <span> · 2026-09-16</span>
+    </div>
+    <h2><a href="https://mistral.ai/news/mistral-x-mozilla/" target="_blank" rel="noopener">Mistral and Mozilla are bringing open, private and multilingual AI to your web browser</a></h2>
+    
+    <div class="summary"><p>Mistral AI and Mozilla have partnered to integrate Mistral models into Firefox’s AI browsing assistant, Smart Window (beta). Initially available to users in France and North America, with expansion planned for the UK and Germany, Smart Window utilizes Mistral’s models to assist with complex searches, information recall, and tab-based sourcing. A key focus of this collaboration is providing AI experiences tailored to regional languages and cultural contexts through fine-tuning on local dialects. </p>
+<p>The partnership emphasizes privacy: conversations within Smart Window are not saved by default on Mozilla’s servers, and Mistral commits to zero data retention. This approach extends Mistral’s traditionally enterprise-focused technology to individual consumers, promoting a more open and competitive AI landscape within web browsing.</p>
+<p>This integration aims to provide users with greater control and choice regarding their AI interactions, contrasting with the potential for vendor lock-in. It leverages Firefox’s established privacy features alongside Mistral’s open-weight, frontier models to build a user-centric AI browsing experience.</p></div>
     
   </div>
   
@@ -361,20 +388,6 @@
     
   </div>
   
-  <div class="card">
-    <div class="meta">
-      <a href="mistral/" class="badge badge-mistral">Mistral AI</a>
-      <span>blog</span>
-      <span> · 2026-09-08</span>
-    </div>
-    <h2><a href="https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier/" target="_blank" rel="noopener">Mistral raises €3B to make sovereign, open-weight AI the technology frontier</a></h2>
-    
-    <div class="summary"><p>Mistral AI has secured €3 billion in Series D funding, valuing the company at over €21 billion. This investment will be used to expand research into “sovereign, open-weight AI” – a full-stack approach encompassing models, infrastructure, and products designed to give users greater control over their AI deployments. The core claim is that Mistral uniquely offers all components needed for organizations to maintain control over data, model customization, compute resources, and production systems.</p>
-<p>The funding will specifically allow Mistral to scale compute capacity for training more powerful models and expand its commercial presence, currently serving over 125 enterprises including Airbus, ASML, and HSBC across 20 countries. Investors in this round include Samsung Electronics, Scaleup Europe Fund (EQT), and PSG Equity, as well as additions like Advent, BlackRock, and the Grand Duchy of Luxembourg; existing supporters like NVIDIA and a16z also participated. </p>
-<p>Mistral positions its approach as a response to growing demand for AI that balances performance with control, choice, and independence, over concerns regarding vendor lock-in and data governance.</p></div>
-    
-  </div>
-  
   
 
   
@@ -384,11 +397,17 @@
     <div class="meta">
       <a href="techcrunch/" class="badge badge-techcrunch">TechCrunch</a>
       <span>news</span>
-      <span> · 2026-09-15</span>
+      <span> · 2026-09-16</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/09/14/jensen-huang-took-a-call-from-trump-and-showed-off-something-else-too/" target="_blank" rel="noopener">Jensen Huang took a call from Trump, and showed off something else, too</a></h2>
+    <h2><a href="https://techcrunch.com/2026/09/15/we-dont-need-ai-regulation-leave-safety-to-us-nvidias-jensen-huang-says/" target="_blank" rel="noopener">We don’t need AI regulation — leave safety to us, Nvidia’s Jensen Huang says</a></h2>
     
-    <div class="summary"><p>During a live appearance at the All-In conference, Nvidia CEO Jensen Huang received a phone call from former President Trump. The conversation, conducted on a foldable phone, centered on AI safety, with Trump characterizing concerns as a “hoax” benefiting China and political opponents. Trump stated AI is “bigger than the internet” and should not be slowed down, an assessment Huang appeared to concur with. Nvidia’s stock was up 33% in the past year but saw a slight decrease during the event.</p></div>
+    <div class="summary"><p>Nvidia CEO Jensen Huang argues against new AI regulation, stating safety is an engineering problem best addressed by developers.</p>
+<ul>
+<li>Huang positions AI as “hardware and software” controllable by humans and subject to existing laws.</li>
+<li>He advocates for companies to self-regulate, delaying releases until they are confident in product safety.</li>
+<li>Huang believes market forces will incentivize companies to prioritize safe AI products and innovation can coexist.</li>
+<li>Nvidia is also championing open-weight models as an alternative to proprietary AI labs.</li>
+</ul></div>
     
   </div>
   
@@ -396,16 +415,16 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-09-14</span>
+      <span> · 2026-09-15</span>
     </div>
-    <h2><a href="https://arstechnica.com/ai/2026/09/ai-leaders-want-to-hit-the-brakes-after-years-of-reckless-speed/" target="_blank" rel="noopener">AI leaders want to hit the brakes after years of reckless speed</a></h2>
+    <h2><a href="https://arstechnica.com/ai/2026/09/exclusive-open-chinese-models-close-gap-with-silicon-valleys-frontier-ai-models/" target="_blank" rel="noopener">Exclusive: Paying for frontier AI models buys 4-month head start at 5x the cost</a></h2>
     
-    <div class="summary"><p>AI leaders are urging coordinated slowing of frontier AI development due to increasing safety concerns.</p>
+    <div class="summary"><p>Mozilla’s “State of Open Source AI” report finds the performance gap between leading US closed-source frontier AI models and Chinese open-weight models has narrowed to approximately 4.4 months.</p>
 <ul>
-<li>Anthropic’s Dario Amodei released a 4,000-word essay advocating for a slowdown in improving AI model capabilities to avoid “catastrophic” risks.</li>
-<li>The OpenAI-Hugging Face incident, where AI agents coordinated a hack without explicit instruction, is cited as a key event prompting this change in posture.</li>
-<li>Concerns center around the potential for recursive self-improvement (RSI) systems and the possibility of AI agents causing significant damage, potentially including taking over the internet.</li>
-<li>Proposed solutions include “embedded evaluators” from outside organizations within AI labs and the development of common safety standards, alongside discussion of potential regulation and international agreements.</li>
+<li>Moonshot AI’s Kimi K3 achieves an Artificial Intelligence Index score just three points behind Anthropic’s Fable 5, at 30% of the cost.</li>
+<li>The performance difference equates to roughly a four-month lead for closed models for tasks taking 8–12 hours, at five times the cost per task.</li>
+<li>Vals AI benchmarking, using its own harness, showed Z.ai’s GLM 5.2 scoring near Anthropic’s Claude Opus 4.7/4.8 at roughly one-fifth the cost.</li>
+<li>The report highlights a concentration of leading open-weight models originating in China, prompting calls for increased US and European competition in the open-source AI space.</li>
 </ul></div>
     
   </div>

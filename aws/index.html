@@ -80,13 +80,66 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-15 10:16 UTC</p>
+  <p class="generated-at">Generated 2026-09-16 10:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-15</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/announcing-instance-preference-lists-for-amazon-sagemaker-ai-training-jobs/" target="_blank" rel="noopener">Announcing instance preference lists for Amazon SageMaker AI training jobs</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon SageMaker now supports <em>Instance Preference Lists</em> for AI Training and Processing Jobs, allowing specification of up to five acceptable instance types in priority order.</li>
+<li>The system automatically evaluates the list and launches the job on the first instance type with available capacity, reducing wait times and manual intervention.</li>
+<li>Integration with <em>Flexible Training Plans (FTP)</em> allows prioritizing reserved capacity, falling back to on-demand instances if reservations are full.</li>
+<li>Code examples are provided using the Amazon SageMaker Python SDK v3 (specifically <code>ModelTrainer</code> and <code>Processor</code>) demonstrating configuration for various scenarios, including uniform counts, per-preference counts for compute equivalency, and Training Plan integration.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-15</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-an-ai-powered-product-tagging-system-with-amazon-sagemaker-serverless-model-customization/" target="_blank" rel="noopener">Build an AI-powered product tagging system with Amazon SageMaker serverless model customization</a></h3>
+    
+    <div class="summary"><h2>Build an AI-powered product tagging system with Amazon SageMaker serverless model customization</h2>
+<p>This blog details a workflow for customizing the Qwen3-8B model for product tagging using Amazon SageMaker serverless features.</p>
+<ul>
+<li>The workflow utilizes Amazon SageMaker serverless model customization with supervised fine-tuning (SFT) and reinforcement learning with verifiable rewards (RLVR) using Group Relative Policy Optimization (GRPO) to adapt Qwen3-8B for a specific product tagging schema.</li>
+<li>Amazon SageMaker Python SDK v3's serverless trainers (SFTTrainer and RLVRTrainer) are used, eliminating the need to manage compute infrastructure for training.</li>
+<li>The process involves three stages: data preparation (using Amazon SageMaker Processing), serverless model customization (SFT and RLVR), and asynchronous inference (deployed to ml.g6.2xlarge instances).</li>
+<li>A deterministic reward function is designed for RLVR, utilizing fuzzy matching to compare predicted tags with reference tags, prioritizing recall and then precision during training to optimize tagging quality.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-15</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/optimizing-cost-and-latency-with-amazon-bedrock-prompt-caching/" target="_blank" rel="noopener">Optimizing cost and latency with Amazon Bedrock prompt caching</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock now offers prompt caching to reduce input token costs, potentially by up to 90% for repeated context.</li>
+<li>Caching is activated using <code>cachePoint</code> markers within requests, allowing selective caching of static content like documents or system prompts.</li>
+<li>Supported models currently include Anthropic Claude Sonnet 4.5/4.6 (minimum 1024 token checkpoint) and Opus models (minimum 4096 token checkpoint), with model-agnostic syntax for the Converse API.</li>
+<li>Pricing introduces new token types: <code>cacheWriteInputTokens</code> (25% higher than standard input) and <code>cacheReadInputTokens</code> (90% lower than standard input), with TTL options affecting costs (1-hour TTL is 100% higher than standard input for writes).</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -560,58 +613,6 @@
 <li>The hub-and-spoke model shares an MLflow app across development accounts via AWS RAM, allowing central approval and CI/CD deployment from a central hub account.</li>
 <li>The hybrid model keeps development fully isolated; local approval triggers a copy workflow to the hub for re-validation and governance, avoiding direct writes to the hub.</li>
 <li>Both topologies leverage automatic model registration, lifecycle staging, and IAM condition keys, with the core difference lying in how models cross account boundaries – directly through RAM sharing or via an approval-triggered copy mechanism.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-08</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-feature-store-introduces-updaterecord-for-feature-level-writes/" target="_blank" rel="noopener">Amazon SageMaker Feature Store introduces UpdateRecord for feature-level writes</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon SageMaker Feature Store now offers <code>UpdateRecord</code> API for feature-level writes, eliminating the read-modify-write cycle previously required with <code>PutRecord</code>.</li>
-<li><code>UpdateRecord</code> supports atomic updates to specific features within a record, preserving existing values and preventing race conditions; requires either the Standard_V2 storage format (DynamoDB-backed) or works directly with the existing In-Memory (ElastiCache-backed) tier.</li>
-<li>Migration to the new <code>Standard_V2</code> storage format can be achieved via bulk migration using the Feature Processor SDK (Strategy A) or an in-place update using the <code>UpdateFeatureGroup</code> API (Strategy B - recommended).</li>
-<li>New IAM condition keys, <code>sagemaker:IsUpdateRecord</code> and <code>sagemaker:UpdatableFeatures</code>, allow for fine-grained access control over which features can be updated by specific principals.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-08</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/pathways-brain-inspired-architecture-development-on-amazon-sagemaker-hyperpod/" target="_blank" rel="noopener">Pathway’s brain-inspired architecture development on Amazon SageMaker HyperPod</a></h3>
-    
-    <div class="summary"><ul>
-<li>Pathway has developed BDH (Brain Dynamics Hatchling), a new AI architecture inspired by brain structure, as an alternative to the transformer model, focusing on latent space reasoning rather than token generation.</li>
-<li>BDH-CQ, built on BDH, achieved 29.2% pass@2 on the ARC-AGI benchmark at a cost of $0.0007 per task, demonstrating a new state-of-the-art in cost efficiency for this benchmark as of August 2026.</li>
-<li>The BDH architecture utilizes Hebbian learning and sparse, local interactions between "neuron particles," scaling with a single neuron dimension (n) and aiming for more efficient computation compared to transformers.</li>
-<li>Pathway leveraged Amazon SageMaker HyperPod, utilizing EC2 p5en.48xlarge instances with NVIDIA H200 GPUs and Elastic Fabric Adapter (EFA), to scale training and achieve performance gains, alongside Amazon Managed Service for Prometheus and Grafana for observability.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-08</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/take-on-your-most-ambitious-work-with-gpt-6-astra-on-amazon-bedrock/" target="_blank" rel="noopener">Take on your most ambitious work with GPT-6 Astra on Amazon Bedrock</a></h3>
-    
-    <div class="summary"><p>GPT-6 Astra, OpenAI’s latest model, is now generally available on Amazon Bedrock offering enhanced reasoning and judgment capabilities.</p>
-<ul>
-<li>GPT-6 Astra features a 1 million token context window for processing large documents and codebases.</li>
-<li>The model supports both implicit and explicit prompt caching to reduce latency and cost for recurring tasks.</li>
-<li>GPT-6 Astra has been evaluated via OpenAI’s Preparedness Framework, achieving a “Critical” classification for cybersecurity—with automated safeguards and real-time misuse monitoring.</li>
-<li>It can be accessed directly via Amazon Bedrock APIs or integrated with ChatGPT Work and Codex, and new enterprise plugins extend ChatGPT Work's browser capabilities to applications like Workday and Avalara.</li>
 </ul></div>
     
   </div>
