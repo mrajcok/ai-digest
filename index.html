@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-09-16T10:17:03.021101+00:00">Generated 2026-09-16 10:17 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-09-17T10:17:24.198349+00:00">Generated 2026-09-17 10:17 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,7 +132,7 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI</h2>
+    <h2 class="overview-heading">Today in AI — Overview for 2026-09-16</h2>
     <p class="overview-meta">2026-09-16 · 1 vendor source · vendor sources only</p>
     <div class="overview-text"><hr />
 <p>Today’s AI developments center on bringing large language models directly into user workflows, with a strong emphasis on privacy and open-source alternatives. The most significant news is the partnership between Mistral AI and Mozilla to integrate Mistral’s models into Firefox’s Smart Window (beta) – a browser-based AI assistant. Initially launching in France and North America, with future expansion to the UK and Germany, this feature will offer users assistance with complex searches, information retrieval across multiple tabs, and more nuanced language support. What distinguishes this implementation is the commitment to privacy: Smart Window conversations are not stored on Mozilla’s servers by default, and Mistral guarantees zero data retention, representing a deliberate attempt to build an AI experience prioritizing user control.</p>
@@ -146,6 +146,19 @@
 
   
   <h2 class="section">Vendors</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>blog</span>
+      <span> · 2026-09-16</span>
+    </div>
+    <h2><a href="https://claude.com/blog/cowork-is-now-claude" target="_blank" rel="noopener">Claude Cowork and chat are now one Claude | Claude by Anthropic</a></h2>
+    
+    <div class="summary"><p>Anthropic has unified Claude Cowork and chat into a single Claude experience, rolling out initially to Pro and Max subscription plans. This update aims to eliminate the need to choose between interfaces based on task complexity; Claude now dynamically determines the appropriate tools and skills needed for any given conversation. New features include Claude Docs and Claude Slides, both currently in beta, allowing for collaborative document and presentation creation directly within the interface – and Claude Design now operates within conversations.</p>
+<p>Users can initiate tasks like report writing or slide generation within a chat, with Claude requesting clarification as needed. Completed work is accessible via a shareable link and can be edited or downloaded in formats like PowerPoint or PDF. Users maintain control and can adjust Claude’s level of autonomy, opting for proactive check-ins or allowing it to proceed independently. Existing Cowork projects and artifacts will be accessible as before.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -172,19 +185,6 @@
     <div class="summary"><p>Anthropic has released a beta plugin, “Salesforce in Claude,” designed to integrate Claude with Salesforce CRM. The plugin leverages 37 skills to assist sales representatives with tasks like account research, call preparation, pipeline review, and CRM updates. It connects via two connectors—Salesforce and Slack—allowing Claude to read and, with approval, write data within existing Salesforce permissions. </p>
 <p>Key features include a daily personalized brief summarizing meetings, deals, and unread communications; assistance in preparing for calls by consolidating information from Salesforce, Slack, and email; and scoring opportunities against a team’s methodology to generate close plans. After meetings, Claude can draft follow-up emails, Slack updates, and opportunity updates for review. It also offers pipeline visualization and forecasting capabilities.</p>
 <p>Currently, 7,000 Salesforce users at companies like GitLab, Siemens, and Legora are using the plugin.  The Salesforce in Claude beta is available on all paid Claude plans and requires administrative setup to connect Salesforce and manage user access.  Data from organizations is not used to train Anthropic’s models by default on Team and Enterprise plans.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>blog</span>
-      <span> · 2026-09-15</span>
-    </div>
-    <h2><a href="https://claude.com/blog/claude-for-small-business-launches-new-workflows-integrations-and-training-programs" target="_blank" rel="noopener">Claude for Small Business launches new workflows, integrations, and training programs | Claude by Anthropic</a></h2>
-    
-    <div class="summary"><p>Anthropic has released updates to <strong>Claude for Small Business</strong>, adding 43 pre-built workflows and 27 integrations with tools like Shopify, Salesforce, and Zoom. These workflows automate tasks ranging from lead response and proposal generation to monthly financial closing, aiming to save business owners time. The system has already seen over 900,000 installs since its May launch.</p>
-<p>Users can install the plugin within the <strong>Claude Cowork</strong> desktop app, connect their existing tools, and choose workflows to run, initially in approval mode for control. New features include integrations with tools like Airwallex, HubSpot, and Xero. Anthropic is also launching a series of free workshops and webinars, alongside training programs through partners like Goldman Sachs 10,000 Small Businesses, to help small business owners adopt the new capabilities.</p></div>
     
   </div>
   
@@ -297,34 +297,16 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-09-15</span>
+      <span> · 2026-09-16</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/announcing-instance-preference-lists-for-amazon-sagemaker-ai-training-jobs/" target="_blank" rel="noopener">Announcing instance preference lists for Amazon SageMaker AI training jobs</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/build-a-serverless-pii-redaction-pipeline-with-amazon-bedrock-data-automation/" target="_blank" rel="noopener">Build a serverless PII redaction pipeline with Amazon Bedrock Data Automation</a></h2>
     
-    <div class="summary"><ul>
-<li>Amazon SageMaker now supports <em>Instance Preference Lists</em> for AI Training and Processing Jobs, allowing specification of up to five acceptable instance types in priority order.</li>
-<li>The system automatically evaluates the list and launches the job on the first instance type with available capacity, reducing wait times and manual intervention.</li>
-<li>Integration with <em>Flexible Training Plans (FTP)</em> allows prioritizing reserved capacity, falling back to on-demand instances if reservations are full.</li>
-<li>Code examples are provided using the Amazon SageMaker Python SDK v3 (specifically <code>ModelTrainer</code> and <code>Processor</code>) demonstrating configuration for various scenarios, including uniform counts, per-preference counts for compute equivalency, and Training Plan integration.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-09-15</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/build-an-ai-powered-product-tagging-system-with-amazon-sagemaker-serverless-model-customization/" target="_blank" rel="noopener">Build an AI-powered product tagging system with Amazon SageMaker serverless model customization</a></h2>
-    
-    <div class="summary"><h2>Build an AI-powered product tagging system with Amazon SageMaker serverless model customization</h2>
-<p>This blog details a workflow for customizing the Qwen3-8B model for product tagging using Amazon SageMaker serverless features.</p>
+    <div class="summary"><p>Organizations can automate PII redaction from documents and images at scale using Amazon Bedrock Data Automation (BDA).</p>
 <ul>
-<li>The workflow utilizes Amazon SageMaker serverless model customization with supervised fine-tuning (SFT) and reinforcement learning with verifiable rewards (RLVR) using Group Relative Policy Optimization (GRPO) to adapt Qwen3-8B for a specific product tagging schema.</li>
-<li>Amazon SageMaker Python SDK v3's serverless trainers (SFTTrainer and RLVRTrainer) are used, eliminating the need to manage compute infrastructure for training.</li>
-<li>The process involves three stages: data preparation (using Amazon SageMaker Processing), serverless model customization (SFT and RLVR), and asynchronous inference (deployed to ml.g6.2xlarge instances).</li>
-<li>A deterministic reward function is designed for RLVR, utilizing fuzzy matching to compare predicted tags with reference tags, prioritizing recall and then precision during training to optimize tagging quality.</li>
+<li>BDA’s custom blueprint feature allows defining named document fields and using plain-language instructions for precise extraction of data to redact, instead of relying on traditional OCR and pattern matching.</li>
+<li>Blueprints are designed by scoping sensitive information, identifying its location on the page, and defining how to remove it – in this case, converting PDFs to PNGs and applying black box redaction based on bounding box coordinates obtained from BDA.</li>
+<li>Combining BDA’s custom output (blueprint-driven PII detection) with its standard output (complete extraction with bounding boxes) and token matching improves redaction recall from 89.3% to 95.2%, with a minor trade-off in precision.</li>
+<li>A serverless pipeline using AWS Step Functions and Lambda functions orchestrates the process, handling document input from S3, preprocessing (PDF to PNG conversion), redaction via BDA, reassembly into redacted PDFs, and reporting.</li>
 </ul></div>
     
   </div>
@@ -333,15 +315,32 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-09-15</span>
+      <span> · 2026-09-16</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/optimizing-cost-and-latency-with-amazon-bedrock-prompt-caching/" target="_blank" rel="noopener">Optimizing cost and latency with Amazon Bedrock prompt caching</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/optimizing-agent-system-prompts-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Optimizing agent system prompts with Amazon Bedrock AgentCore</a></h2>
     
     <div class="summary"><ul>
-<li>Amazon Bedrock now offers prompt caching to reduce input token costs, potentially by up to 90% for repeated context.</li>
-<li>Caching is activated using <code>cachePoint</code> markers within requests, allowing selective caching of static content like documents or system prompts.</li>
-<li>Supported models currently include Anthropic Claude Sonnet 4.5/4.6 (minimum 1024 token checkpoint) and Opus models (minimum 4096 token checkpoint), with model-agnostic syntax for the Converse API.</li>
-<li>Pricing introduces new token types: <code>cacheWriteInputTokens</code> (25% higher than standard input) and <code>cacheReadInputTokens</code> (90% lower than standard input), with TTL options affecting costs (1-hour TTL is 100% higher than standard input for writes).</li>
+<li>Amazon Bedrock AgentCore introduces AgentCore optimization, using production traces to propose and validate improvements to agent configurations (prompts, tool descriptions, skills).</li>
+<li>The system prompt optimizer uses an “agentic reflector” to analyze traces and propose revisions, explaining the reasoning behind changes, accessible through a filesystem-based workflow to handle large trace corpora.</li>
+<li>Two reflector agents are available: the Single Agent Reflector for speed and the Sub-Agent Reflector, which uses a swarm of agents for higher quality analysis of individual traces, with findings aggregated by an orchestrator.</li>
+<li>Evaluation results on AppWorld and WebShop benchmarks show the Single Agent Reflector offers the best quality-per-cost trade-off, while the Sub-Agent Reflector achieves the highest overall quality, both outperforming GEPA and MIPROv2.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
+      <span> · 2026-09-16</span>
+    </div>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/fault-tolerant-distributed-training-on-amazon-eks-using-nvrx/" target="_blank" rel="noopener">Fault tolerant distributed training on Amazon EKS using NVRx</a></h2>
+    
+    <div class="summary"><ul>
+<li>NVIDIA Resiliency Extension (NVRx) 0.4.1 (and recommended v0.6.0) integrates with PyTorch Fully Sharded Data Parallel (FSDP) on Amazon EKS to improve fault tolerance and training speed.</li>
+<li>Async checkpointing, using <code>TorchAsyncCheckpoint</code>, decouples I/O from training, allowing overlapping operations and reducing checkpointing-related idle time, particularly with FSDP’s <code>LOCAL_STATE_DICT</code>.</li>
+<li>In-process restart, via <code>inprocess.Wrapper</code>, restarts failed ranks within seconds by handling transient faults (exceptions, NCCL hangs) without impacting the container lifecycle, leveraging health checks and restart control.</li>
+<li><code>ft_launcher</code> provides in-job restart capabilities by monitoring rank heartbeats and automatically respawning workers after hard crashes (SIGKILL, OOM) using a Kubernetes Job, reloading from the latest checkpoint.</li>
 </ul></div>
     
   </div>
@@ -397,16 +396,16 @@
     <div class="meta">
       <a href="techcrunch/" class="badge badge-techcrunch">TechCrunch</a>
       <span>news</span>
-      <span> · 2026-09-16</span>
+      <span> · 2026-09-17</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/09/15/we-dont-need-ai-regulation-leave-safety-to-us-nvidias-jensen-huang-says/" target="_blank" rel="noopener">We don’t need AI regulation — leave safety to us, Nvidia’s Jensen Huang says</a></h2>
+    <h2><a href="https://techcrunch.com/2026/09/16/snap-tries-to-make-the-case-again-for-its-2200-smart-glasses/" target="_blank" rel="noopener">Snap tries to make the case again for its $2,200 smart glasses</a></h2>
     
-    <div class="summary"><p>Nvidia CEO Jensen Huang argues against new AI regulation, stating safety is an engineering problem best addressed by developers.</p>
+    <div class="summary"><p>Snap announced updates and new features for its $2,200 smart glasses, Specs.</p>
 <ul>
-<li>Huang positions AI as “hardware and software” controllable by humans and subject to existing laws.</li>
-<li>He advocates for companies to self-regulate, delaying releases until they are confident in product safety.</li>
-<li>Huang believes market forces will incentivize companies to prioritize safe AI products and innovation can coexist.</li>
-<li>Nvidia is also championing open-weight models as an alternative to proprietary AI labs.</li>
+<li>Specs can now connect with HBO Max and Spotify for entertainment options.</li>
+<li>“Specs Intelligence” was launched – described as an “anticipatory AI” system designed to understand user goals and routines, working with Specs and other devices.</li>
+<li>A “Specs for Enterprise” program was announced, with partnerships including Amazon, Salesforce, and Nvidia, focused on use cases like IT technician support.</li>
+<li>A separate connectivity package, offering cellular data through Verizon, is available for $10/month (Verizon customers) or $20/month (non-Verizon customers).</li>
 </ul></div>
     
   </div>
@@ -415,17 +414,11 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-09-15</span>
+      <span> · 2026-09-16</span>
     </div>
-    <h2><a href="https://arstechnica.com/ai/2026/09/exclusive-open-chinese-models-close-gap-with-silicon-valleys-frontier-ai-models/" target="_blank" rel="noopener">Exclusive: Paying for frontier AI models buys 4-month head start at 5x the cost</a></h2>
+    <h2><a href="https://arstechnica.com/ai/2026/09/apple-reportedly-building-server-packed-with-m-series-ultra-chips-for-ai/" target="_blank" rel="noopener">Apple reportedly building server packed with M-series Ultra chips for AI</a></h2>
     
-    <div class="summary"><p>Mozilla’s “State of Open Source AI” report finds the performance gap between leading US closed-source frontier AI models and Chinese open-weight models has narrowed to approximately 4.4 months.</p>
-<ul>
-<li>Moonshot AI’s Kimi K3 achieves an Artificial Intelligence Index score just three points behind Anthropic’s Fable 5, at 30% of the cost.</li>
-<li>The performance difference equates to roughly a four-month lead for closed models for tasks taking 8–12 hours, at five times the cost per task.</li>
-<li>Vals AI benchmarking, using its own harness, showed Z.ai’s GLM 5.2 scoring near Anthropic’s Claude Opus 4.7/4.8 at roughly one-fifth the cost.</li>
-<li>The report highlights a concentration of leading open-weight models originating in China, prompting calls for increased US and European competition in the open-source AI space.</li>
-</ul></div>
+    <div class="summary"><p>Apple is reportedly developing a server, expected in 2029, that will utilize future M8 Ultra chips – either two or four per configuration – marking its return to the server market after nearly two decades. According to <em>The Information</em>, this development began a year ago with support from Apple CEO John Ternus amid growing demand for Apple's M-series Ultra chips from AI companies like OpenAI and Anthropic for AI training.  Apple is also considering incorporating Nvidia’s NVLink Fusion technology, though this is not confirmed. The project faces potential challenges due to current industry-wide memory chip shortages.</p></div>
     
   </div>
   

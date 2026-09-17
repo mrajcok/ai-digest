@@ -80,13 +80,82 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-16 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-09-17 10:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-16</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-a-serverless-pii-redaction-pipeline-with-amazon-bedrock-data-automation/" target="_blank" rel="noopener">Build a serverless PII redaction pipeline with Amazon Bedrock Data Automation</a></h3>
+    
+    <div class="summary"><p>Organizations can automate PII redaction from documents and images at scale using Amazon Bedrock Data Automation (BDA).</p>
+<ul>
+<li>BDA’s custom blueprint feature allows defining named document fields and using plain-language instructions for precise extraction of data to redact, instead of relying on traditional OCR and pattern matching.</li>
+<li>Blueprints are designed by scoping sensitive information, identifying its location on the page, and defining how to remove it – in this case, converting PDFs to PNGs and applying black box redaction based on bounding box coordinates obtained from BDA.</li>
+<li>Combining BDA’s custom output (blueprint-driven PII detection) with its standard output (complete extraction with bounding boxes) and token matching improves redaction recall from 89.3% to 95.2%, with a minor trade-off in precision.</li>
+<li>A serverless pipeline using AWS Step Functions and Lambda functions orchestrates the process, handling document input from S3, preprocessing (PDF to PNG conversion), redaction via BDA, reassembly into redacted PDFs, and reporting.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-16</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/optimizing-agent-system-prompts-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Optimizing agent system prompts with Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock AgentCore introduces AgentCore optimization, using production traces to propose and validate improvements to agent configurations (prompts, tool descriptions, skills).</li>
+<li>The system prompt optimizer uses an “agentic reflector” to analyze traces and propose revisions, explaining the reasoning behind changes, accessible through a filesystem-based workflow to handle large trace corpora.</li>
+<li>Two reflector agents are available: the Single Agent Reflector for speed and the Sub-Agent Reflector, which uses a swarm of agents for higher quality analysis of individual traces, with findings aggregated by an orchestrator.</li>
+<li>Evaluation results on AppWorld and WebShop benchmarks show the Single Agent Reflector offers the best quality-per-cost trade-off, while the Sub-Agent Reflector achieves the highest overall quality, both outperforming GEPA and MIPROv2.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-16</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/fault-tolerant-distributed-training-on-amazon-eks-using-nvrx/" target="_blank" rel="noopener">Fault tolerant distributed training on Amazon EKS using NVRx</a></h3>
+    
+    <div class="summary"><ul>
+<li>NVIDIA Resiliency Extension (NVRx) 0.4.1 (and recommended v0.6.0) integrates with PyTorch Fully Sharded Data Parallel (FSDP) on Amazon EKS to improve fault tolerance and training speed.</li>
+<li>Async checkpointing, using <code>TorchAsyncCheckpoint</code>, decouples I/O from training, allowing overlapping operations and reducing checkpointing-related idle time, particularly with FSDP’s <code>LOCAL_STATE_DICT</code>.</li>
+<li>In-process restart, via <code>inprocess.Wrapper</code>, restarts failed ranks within seconds by handling transient faults (exceptions, NCCL hangs) without impacting the container lifecycle, leveraging health checks and restart control.</li>
+<li><code>ft_launcher</code> provides in-job restart capabilities by monitoring rank heartbeats and automatically respawning workers after hard crashes (SIGKILL, OOM) using a Kubernetes Job, reloading from the latest checkpoint.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-16</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/improving-hcls-ai-reasoning-with-open-source-agent-skills/" target="_blank" rel="noopener">Improving HCLS AI reasoning with open-source agent skills</a></h3>
+    
+    <div class="summary"><ul>
+<li>AWS released a collection of 38 open-source agent skills, spanning 11 HCLS domains, designed to improve the reasoning capabilities of AI agents in healthcare and life sciences applications.</li>
+<li>These “skills” are structured markdown documents (SKILL.md) that encode domain-specific decision procedures, utilizing YAML frontmatter for triggers, dependencies, and metadata, and are distinct from RAG or fine-tuning approaches.</li>
+<li>Evaluation results indicate equipped agents achieve a 70-86% win rate compared to those without skills, with the strongest improvements (78-85%) in critical thinking, across drug discovery, healthcare operations, and medical imaging.</li>
+<li>The skills are compatible with over 20 agent services including Amazon Bedrock AgentCore, AWS Strands Agents SDK, Kiro, Amazon Quick Desktop, Claude Code, and OpenAI Codex, and can be customized or extended for specific use cases.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -542,77 +611,6 @@
 <li>The architecture consists of a UI layer, an agentic layer built with the Strands Agents framework (running on-premises), and an intelligence layer leveraging Amazon Bedrock for inference and security, with observability provided through AWS CloudWatch.</li>
 <li>A multi-agent approach with an Orchestrator and specialized agents (ZVM, VRA) is used, decomposing tasks for improved reliability and performance, with agents accessing live data via a Model Context Protocol (MCP) server.</li>
 <li>The system utilizes PyTest and the Strands Agents Evals SDK for systematic agent evaluation, employing basic query, multi-turn, and dynamic tests with response, trajectory, latency, and token evaluators.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-08</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/benchmarking-small-llm-inference-on-sagemaker-ai-g7-vs-g5-and-g6/" target="_blank" rel="noopener">Benchmarking small LLM inference on SageMaker AI: G7 vs G5 and G6</a></h3>
-    
-    <div class="summary"><ul>
-<li>AWS SageMaker AI now benchmarks small LLM inference on G7 instances (powered by NVIDIA Blackwell GPUs) against G5 and G6 instances, demonstrating potential gains in throughput, latency, and cost-per-token.</li>
-<li>Benchmarking Qwen3-Coder-30B showed G7 (ml.g7.12xlarge) delivered approximately 60.8% higher throughput and 37.6% lower average latency compared to G6 (ml.g6.12xlarge). Streaming performance showed a median Time To First Token (TTFT) of 118ms and an Inter-Token Latency (ITL) of 8.9ms.</li>
-<li>Amazon SageMaker AI Generative AI Inference Recommendations can automate configuration selection; evaluating NVIDIA Nemotron-3-Nano-30B-A3B-NVFP4 with vLLM showed g7.48xlarge providing the highest throughput (2,397 output tokens/second) for a shorter workload while g7.2xlarge offered the lowest cost ($0.90/million tokens).</li>
-<li>Key technical advantages of G7 instances include native support for low-precision formats like FP8 and NVFP4, and improved memory bandwidth which is critical for Mixture-of-Experts (MoE) model performance; G7 instances use two GPUs, while G5/G6 use four, offering performance gains with less hardware.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-08</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/automated-agent-evaluation-with-amazon-bedrock-agentcore-and-github-actions/" target="_blank" rel="noopener">Automated agent evaluation with Amazon Bedrock AgentCore and GitHub Actions</a></h3>
-    
-    <div class="summary"><p>Automated agent evaluation is now possible using Amazon Bedrock AgentCore and GitHub Actions, enabling CI/CD quality gates for AI agents.</p>
-<ul>
-<li>The solution deploys agents and MCP servers to AgentCore runtime using CDK, supporting role-based access control via a three-layer authentication pattern.</li>
-<li>It utilizes OAuth to authenticate CI pipelines against agents, offering three approaches: evaluating stored traces, using a service account with pre-authorized consent, or employing M2M (machine-to-machine) authentication.</li>
-<li>AgentCore Evaluations scores agent behavior using LLMs or custom code against OpenTelemetry traces from CloudWatch, with options for on-demand, online, and batch evaluation modes.</li>
-<li>A quality gate blocks PR merges if evaluation scores fall below a defined threshold, ensuring agent quality before deployment to production.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-08</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/govern-models-with-mlflow-and-amazon-sagemaker-ai-model-registry-sync-part-1/" target="_blank" rel="noopener">Govern models with MLflow and Amazon SageMaker AI Model Registry sync: Part 1</a></h3>
-    
-    <div class="summary"><p>Governs models using MLflow and Amazon SageMaker AI Model Registry with enhanced synchronization capabilities.</p>
-<ul>
-<li>Enables automatic synchronization of MLflow models to the SageMaker AI Model Registry, including training/evaluation metrics, lineage, and lifecycle stage promotion.</li>
-<li>Utilizes <code>AutoModelRegistrationEnabled</code> mode when creating or updating an MLflow app via the AWS CLI to activate the synchronization.</li>
-<li>Supports logging inference specifications and evaluation metrics directly from MLflow using <code>sagemaker_mlflow</code>, enabling deployable models directly from the registry.</li>
-<li>Implements lifecycle stage control via MLflow aliases (e.g., <code>sagemakerlifecycle-staging-pending</code>) which automatically updates the corresponding SageMaker AI Model Package lifecycle, managed by IAM condition keys and resource-tag conditions.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-08</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/govern-models-with-mlflow-and-amazon-sagemaker-ai-model-registry-sync-part-2/" target="_blank" rel="noopener">Govern models with MLflow and Amazon SageMaker AI Model Registry sync: Part 2</a></h3>
-    
-    <div class="summary"><p>Governing models across multiple accounts is enabled through synchronization between MLflow and the Amazon SageMaker AI Model Registry.</p>
-<ul>
-<li>Two cross-account governance patterns are detailed: a hub-and-spoke pattern using AWS Resource Access Manager (AWS RAM) for centralized governance and a hybrid pattern for isolated development environments.</li>
-<li>The hub-and-spoke model shares an MLflow app across development accounts via AWS RAM, allowing central approval and CI/CD deployment from a central hub account.</li>
-<li>The hybrid model keeps development fully isolated; local approval triggers a copy workflow to the hub for re-validation and governance, avoiding direct writes to the hub.</li>
-<li>Both topologies leverage automatic model registration, lifecycle staging, and IAM condition keys, with the core difference lying in how models cross account boundaries – directly through RAM sharing or via an approval-triggered copy mechanism.</li>
 </ul></div>
     
   </div>
