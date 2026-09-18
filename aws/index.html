@@ -80,13 +80,136 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-17 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-09-18 10:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-17</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/enhancing-industrial-safety-ai-with-synthetic-data-on-amazon-sagemaker-ai/" target="_blank" rel="noopener">Enhancing industrial safety AI with synthetic data on Amazon SageMaker AI</a></h3>
+    
+    <div class="summary"><p>AWS introduces a synthetic data augmentation pipeline for improving industrial safety AI, specifically person detection near heavy machinery.</p>
+<ul>
+<li>The pipeline utilizes the Qwen-Image-Edit-2509 diffusion model, deployed on an ml.g5.12xlarge instance (4x NVIDIA A10G GPUs), to insert synthetic people into real-world images.</li>
+<li>Amazon Rekognition's DetectLabels API automatically generates bounding box annotations for the inserted people, eliminating manual labeling.</li>
+<li>Experiments incorporating up to 1,000 synthetic images with "hazardous placement" showed up to a 160% improvement in person detection mAP50 and doubled person recall.</li>
+<li>Optimal synthetic data volume is a hyperparameter – performance peaked at 750 images in testing, and model capacity should be matched to dataset size to avoid overfitting.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-17</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/implementing-defense-in-depth-authorization-for-mcp-tools-on-amazon-quick/" target="_blank" rel="noopener">Implementing defense-in-depth authorization for MCP tools on Amazon Quick</a></h3>
+    
+    <div class="summary"><p>This blog post details implementing a multi-gate authorization pattern for Model Context Protocol (MCP) tools on Amazon Quick, enhancing security beyond basic SSO.</p>
+<ul>
+<li>The pattern uses a Lambda interceptor with four sequential authorization gates: MFA verification, geographic restriction, group-based role-based access control (RBAC), and tool-level permission checks.</li>
+<li>It leverages OpenID Connect (OIDC) JSON Web Token (JWT) claims, evaluated against policies configured through environment variables, using Microsoft Entra ID as the identity provider.</li>
+<li>The solution integrates with Amazon Bedrock AgentCore Gateway, utilizing a CUSTOM_JWT authorizer for JWT validation between clients and MCP tools.</li>
+<li>The described setup requires pre-existing AWS components (gateway, interceptor Lambda, tool Lambdas, DynamoDB tables) and involves configuring Entra ID applications, permissions, and policies, with detailed steps provided for a sample deployment scenario.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-17</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-mrh-trowe-enabled-secure-self-service-ai-agents-in-financial-services/" target="_blank" rel="noopener">How MRH Trowe enabled secure self-service AI agents in financial services</a></h3>
+    
+    <div class="summary"><p>MRH Trowe implemented secure, self-service AI agents for approximately 400 employees using a framework combining Strands Agents, Amazon Bedrock AgentCore, and LibreChat.</p>
+<ul>
+<li>Strands Agents, an open-source SDK, is used for agent creation and orchestration, scaling from development to production.</li>
+<li>Amazon Bedrock AgentCore provides a platform for building, connecting, and optimizing agents at scale, offering session isolation and a consumption-based cost model.</li>
+<li>LibreChat, an open-source AI chat interface, delivers a familiar and brandable experience with user management, token budgets, and multi-model support.</li>
+<li>The initial cost was approximately $14 per seat per month, with potential for 40% infrastructure cost reduction through optimization, and all processing remains within the AWS Europe (Frankfurt) region for data residency.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-17</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/a-shared-agentic-platform-for-wood-mackenzie-on-amazon-bedrock-agentcore/" target="_blank" rel="noopener">A shared agentic platform for Wood Mackenzie, on Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock AgentCore, generally available since October 2025, provides a managed platform for building, connecting, and scaling agents with support for any framework (Strands Agents, LangChain, CrewAI, etc.) and model (Claude, GPT-4.1, Amazon Nova, Mistral, Llama).</li>
+<li>APEX, built on AgentCore, uses a layered architecture with components including AgentCore Runtime, Identity, Gateway, Memory, and Observability to handle orchestration, safety, observability, identity, and connectivity for multiple Wood Mackenzie applications (Woody, Lens AI, ST Trading App).</li>
+<li>AgentCore features include automatic scaling to thousands of concurrent invocations with session isolation, native guardrails and identity via Amazon IAM and VPC isolation, and consumption-based pricing based on active CPU and memory usage.</li>
+<li>APEX Studio offers a control plane for building, deploying, and monitoring agents, encompassing Agent Builder, Workflow Designer, Connector Registry, Live Chat Testing, App Deployment, and a Monitoring Dashboard, simplifying the agent lifecycle.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-17</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/a-serverless-data-driven-git-metrics-dashboard-using-amazon-quick-sight/" target="_blank" rel="noopener">A serverless, data-driven Git metrics dashboard using Amazon Quick Sight</a></h3>
+    
+    <div class="summary"><p>A serverless pipeline automates Git metrics collection from GitHub and GitLab, surfacing analytics in Amazon QuickSight for development observability and AI tool impact assessment.</p>
+<ul>
+<li>The solution uses Amazon EventBridge Scheduler to trigger a Step Functions workflow for collecting Git metrics.</li>
+<li>Intelligent change detection skips processing if no changes are detected in GitHub or GitLab since the last collection run.</li>
+<li>Adaptive chunking parallelizes workload processing using Step Functions Map states for organizations with over 20 repositories.</li>
+<li>Collected metrics, including commits, pull requests, and issues, are stored in Amazon S3 and visualized in Amazon QuickSight dashboards.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-17</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/selecting-a-vector-store-for-amazon-bedrock-knowledge-bases/" target="_blank" rel="noopener">Selecting a vector store for Amazon Bedrock Knowledge Bases</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock Knowledge Bases supports customer-managed vector stores, including Amazon OpenSearch Service, Amazon Aurora PostgreSQL with pgvector, and Amazon S3 Vectors.</li>
+<li>Amazon OpenSearch Service offers high-speed results and supports hybrid search (keyword and vector) with options for managed clusters and serverless deployments. Configuration options like embedding size, data type, and disk-optimized storage impact performance and cost.</li>
+<li>Amazon Aurora PostgreSQL with pgvector combines relational database capabilities with vector similarity search, supporting multiple indexing methods and distance metrics for vectors up to 2,000 dimensions.</li>
+<li>Amazon S3 Vectors provides cost-effective storage and querying of vector embeddings at scale, achieving sub-second query performance with up to 90% storage cost reduction compared to traditional databases.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-17</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/reduce-time-to-hire-for-quality-candidates-with-ai-powered-amazon-connect-talent/" target="_blank" rel="noopener">Reduce time-to-hire for quality candidates with AI-powered Amazon Connect Talent</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Connect Talent is an AI-powered hiring solution designed to streamline recruitment for large-scale hiring needs.</li>
+<li>The solution uses AI agents to conduct interviews and assessments, configurable by recruiters based on job requirements, and available 24/7 for candidates.</li>
+<li>Candidate evaluation focuses on job-related competencies – problem-solving, logic, listening, and role-specific capabilities – with anonymized data to reduce bias, and scores are tied to specific evidence from the interview.</li>
+<li>Recruiters retain full control, receiving scored candidate summaries, transcripts, and evaluation reasoning within a dashboard for final hiring decisions, maintaining human oversight throughout the process.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -485,132 +608,6 @@
 <li>The feature routes requests with identical prompt prefixes to the same instance, enabling KV cache reuse and improving performance with frameworks like vLLM and TensorRT-LLM.</li>
 <li>Benchmarks using Llama 3.1 70B Instruct showed P50 TTFT reductions of up to 77% and throughput increases up to 16% with longer context workloads.</li>
 <li>Configuration involves setting <code>PrefixLength</code> (1024-65536) and <code>ConcurrencyThreshold</code> (1-1024) within the endpoint configuration, with no changes required to the model container or serving framework.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-09</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/automate-user-level-custom-permissions-for-amazon-quick/" target="_blank" rel="noopener">Automate user-level custom permissions for Amazon Quick</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Quick now allows for automated, user-level custom permissions to enforce least privilege access, controlling feature access like data export or sharing controls.</li>
-<li>The <code>RegisterUser</code> API can apply custom permissions during user creation with the <code>--custom-permissions-name</code> parameter, suitable for organizations with custom onboarding portals.</li>
-<li><code>UpdateAccountCustomPermission</code> and <code>UpdateRoleCustomPermission</code> APIs set default custom permission profiles at the account or role level, applying to existing and future users without automation.</li>
-<li>Integration with Amazon EventBridge and AWS Lambda enables event-driven permission updates based on group membership changes (both Quick and IAM Identity Center groups) using the <code>UpdateUserCustomPermission</code> API.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-09</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/simplify-and-support-your-torchserve-workloads-using-ray-serve-deep-learning-containers/" target="_blank" rel="noopener">Simplify and support your TorchServe workloads using Ray Serve Deep Learning Containers</a></h3>
-    
-    <div class="summary"><ul>
-<li>AWS introduced Ray Serve Deep Learning Containers (DLCs) to simplify and support model inference, addressing the issues of maintaining the inference stack (CUDA, drivers, frameworks) after TorchServe's end-of-life.</li>
-<li>Ray Serve DLCs are pre-built, performance-optimized Docker images including a deep learning framework (PyTorch), Ray Serve, and common utilities for vision, audio, and multimodal workloads, with validated dependencies and security patches.</li>
-<li>The example deployment utilizes the GPU version of the Ray Serve DLC with the Qwen3-VL-2B vision-language model, served via a Python class decorated with <code>@serve.deployment</code> and deployed on Amazon EKS using a ConfigMap for flexible code updates.</li>
-<li>Deployment is automated using scripts to provision an EKS cluster, a GPU node group (g5.xlarge with A10G), and deploy Ray Serve, with the ability to scale beyond a single node using KubeRay for distributed serving.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-09</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-heurist-finance-built-an-ai-native-investment-workbench-on-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How Heurist Finance built an AI-native investment workbench on Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><ul>
-<li>Heurist Finance leverages <strong>Amazon Bedrock AgentCore</strong> to build an AI-native investment workbench, integrating institutional-style financial workflows into a chat experience.</li>
-<li>The system utilizes <strong>Anthropic Claude</strong> (via Amazon Bedrock) orchestrated by <strong>Strands</strong>, and incorporates <strong>AgentCore payments</strong> to dynamically purchase premium data on a per-query basis using <strong>USDC</strong> stablecoin on the <strong>Base</strong> blockchain network through the <strong>x402</strong> protocol.</li>
-<li><strong>AgentCore Identity</strong> and <strong>AgentCore Memory</strong> are used to maintain user context and preferences across sessions, while <strong>AgentCore Code Interpreter</strong> provides a sandboxed environment for analysis without network egress.</li>
-<li>The architecture integrates multiple AWS services including <strong>Amazon Aurora PostgreSQL</strong>, <strong>Amazon S3</strong>, <strong>Amazon CloudWatch</strong>, and <strong>AWS Secrets Manager</strong> to provide a secure, auditable, and observable system, estimating an 80% reduction in engineering effort compared to building a similar stack in-house.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-09</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/icymi-what-landed-for-ai-builders-in-august-2026/" target="_blank" rel="noopener">ICYMI: What landed for AI builders in August 2026</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock now supports million-token context windows with prompt caching for GPT-5.6 Sol, Terra, and Luna models, reducing cost and latency. It also includes a Web Search capability providing citations and access to current information beyond model training data.</li>
-<li>Cross-Region inference is available for GPT-5.6 Sol, Terra, and Luna across 25+ AWS Regions, offering Global and Geo profiles for capacity and data locality.</li>
-<li>IAM principal cost allocation and AWS Cost Anomaly Detection now monitor and provide breakdowns for third-party foundation model spend within Amazon Bedrock. OpenAI GPT-5.6 family pricing (Luna, Terra, Sol) has been reduced.</li>
-<li>AgentCore runtime instances now support up to 14-day sessions on dedicated EC2 compute, including GPU-accelerated instances, and expanded to US West (N. California) and Asia Pacific (Hyderabad). Temporal policies and AgentCore payments provide control over agent actions and spending.</li>
-<li>Daybreak Red and Daybreak Blue from OpenAI are available on Amazon Bedrock for cyber defense workflows, supporting both offensive and defensive security tasks.</li>
-<li>Claude Opus 5, GPT-5.6 Terra, and Luna are now available in AWS GovCloud (US) Regions, alongside Amazon Nova Multimodal Embeddings and AgentCore capabilities, enabling regulated AI workloads.</li>
-<li>Strands Robots connects Strands Agents, LeRobot, and Hugging Face Storage Buckets for a unified robotics workflow, from simulation to physical deployment, and supports multi-robot coordination via Zenoh and AWS IoT Core.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-09</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/deploying-qwen3-8-2-4t-a95b-on-amazon-sagemaker-hyperpod-with-vllm/" target="_blank" rel="noopener">Deploying Qwen3.8-2.4T-A95B on Amazon SageMaker HyperPod with vLLM</a></h3>
-    
-    <div class="summary"><h2>Deploying Qwen3.8-2.4T-A95B on Amazon SageMaker HyperPod with vLLM</h2>
-<p>This post details deploying Alibaba’s open-weight Qwen3.8-2.4T-A95B model on Amazon SageMaker HyperPod using vLLM.</p>
-<ul>
-<li>Qwen3.8-2.4T-A95B is a 2.4 trillion parameter model with 95 billion activated parameters per token, featuring a hybrid linear-plus-full-attention architecture and a native context window of 262K tokens (expandable to 1M).</li>
-<li>Deployment utilizes ml.p6-b300.48xlarge instances (8x NVIDIA B300 Blackwell Ultra GPUs) and NVFP4 quantization to fit the model within the available GPU memory.</li>
-<li>vLLM is configured with parameters for NVFP4 quantization, reasoning control, tool calling, and native Multi-Token Prediction (MTP) speculative decoding for optimized performance.</li>
-<li>The deployment leverages the SageMaker HyperPod Inference Operator for automated model download, container scheduling, health monitoring, and autoscaling managed through Kubernetes custom resource definitions.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-08</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-didi-built-intelligent-contact-center-qa-with-amazon-bedrock/" target="_blank" rel="noopener">How DiDi built intelligent contact center QA with Amazon Bedrock</a></h3>
-    
-    <div class="summary"><p>DiDi built an intelligent contact center QA system using Amazon Bedrock to replace an opaque third-party solution, improving accuracy and transparency.</p>
-<ul>
-<li>The system consists of three pipelines: intent verification (improved accuracy from 38% to 86%), compliance evaluation (exceeding 90% accuracy), and Voice of Customer (VOC) analysis which significantly reduced manual summarization time.</li>
-<li>Amazon Bedrock was chosen for its model-agnostic access, built-in governance/security (including VPC endpoints, encryption, and IAM), and Amazon Bedrock Guardrails for responsible AI.</li>
-<li>The intent pipeline uses task and information isolation to improve accuracy – verifying existing labels before suggesting alternatives, and separating “Other” label analysis.</li>
-<li>The evaluation pipeline dynamically assembles prompts from external configurations for multilingual and multi-business-line support, leveraging Amazon Bedrock’s Tool Use capability to enforce schema-validated JSON output and programmatic post-validation for deterministic criteria.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-08</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-hpe-zerto-built-an-agentic-troubleshooting-system-with-amazon-bedrock/" target="_blank" rel="noopener">How HPE Zerto built an agentic troubleshooting system with Amazon Bedrock</a></h3>
-    
-    <div class="summary"><p>HPE Zerto built an agentic troubleshooting system using Amazon Bedrock to assist with hybrid and multi-cloud infrastructure management, focusing on faster issue resolution and improved recovery decisions.</p>
-<ul>
-<li>The system uses Amazon Bedrock for secure model access, flexibility in model selection, and integration with AWS services like Guardrails and Knowledge Bases for RAG.</li>
-<li>The architecture consists of a UI layer, an agentic layer built with the Strands Agents framework (running on-premises), and an intelligence layer leveraging Amazon Bedrock for inference and security, with observability provided through AWS CloudWatch.</li>
-<li>A multi-agent approach with an Orchestrator and specialized agents (ZVM, VRA) is used, decomposing tasks for improved reliability and performance, with agents accessing live data via a Model Context Protocol (MCP) server.</li>
-<li>The system utilizes PyTest and the Strands Agents Evals SDK for systematic agent evaluation, employing basic query, multi-turn, and dynamic tests with response, trajectory, latency, and token evaluators.</li>
 </ul></div>
     
   </div>

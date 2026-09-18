@@ -80,13 +80,68 @@
     </label>
   </div>
   <h1>Anthropic News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-17 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-09-18 10:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-09-17</span>
+    </div>
+    <h3><a href="https://claude.com/blog/projects-redesigned" target="_blank" rel="noopener">Projects redesigned: from folder to conversation | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic has redesigned Projects within Claude Code, shifting from a folder-based organization to a conversational model, now available in beta.  The system allows users to define a goal—like reducing app latency or migrating endpoints—and Claude autonomously breaks down the work, delegates it to parallel “threads” (which are individual Claude Code cloud sessions with their own branches and repos), and coordinates the resulting pull requests. Users can monitor and steer the process via a central project chat, or dive into individual threads for detail.</p>
+<p>This new approach leverages a shared memory, allowing Claude to retain context across longer-running tasks and learn project specifics, reducing prompt engineering.  Projects also include a library for managing files and generated artifacts. Users can adjust Claude’s behavior, such as check-in frequency and thread creation. Usage is tracked per-project, allowing control over model and effort levels and is subject to usage limits. Local execution is planned. </p>
+<p>Currently, the updated Projects feature is in beta for select Claude Pro and Max subscribers using cloud sessions in Claude Code; broader access will follow. Existing projects remain functional and will be upgraded during the rollout.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-09-17</span>
+    </div>
+    <h3><a href="https://claude.com/blog/working-at-the-frontier-how-balyasny-asset-management-evaluates-and-governs-claude-fable-5" target="_blank" rel="noopener">Working at the frontier: How Balyasny Asset Management evaluates and governs Claude Fable 5 | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Balyasny Asset Management (BAM) has transitioned to using AI systems that “do work” rather than simply search, with Claude Fable 5 being central to this change. Fable 5, coupled with Anthropic’s Claude Code, enables the firm to tackle more complex, longer-running tasks – such as merger-arbitrage analysis – reducing processes that once took 3-5 days to under an hour. BAM built its own agent execution harness, BAMAgent, to manage these workflows, focusing on data access control and human review.</p>
+<p>Before deploying Fable 5, BAM rigorously evaluated the model against thousands of real-world financial tasks, achieving an 89.4% success rate compared to 86.1% for the prior model, with particularly significant gains in complex planning and analysis. The firm treats safety as a core product requirement, employing data boundaries, least-privilege access, and logging to govern model behavior, ensuring human oversight remains paramount. BAMAgent currently supports thousands of autonomous agents operating 24/7, illustrating a move toward AI as a collaborative "teammate."</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>research</span>
+      <span> · 2026-09-17</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling" target="_blank" rel="noopener">How Claude is uplifting biomolecular modeling</a></h3>
+    
+    <div class="summary"><p>Anthropic’s Claude Mythos 5.1 model, and subsequent iterations, significantly accelerates biomolecular modeling. By developing FlashPairformer kernels and model-specific optimizations, Claude sped up over 30 open-source models—for structure prediction, protein design, genomics, and protein language modeling—by an average of 4x, with up to 2.7-2.9x improvement in triangle attention. </p>
+<p>Critically, Claude created a “Big” mode enabling accurate prediction of biomolecular systems exceeding 10,000 tokens on a single NVIDIA GPU, previously requiring multiple nodes.  This advancement allows modeling of large molecular machines like ribosomes and viral capsids. Claude also demonstrated comparable <em>in silico</em> protein binder design performance to prior work utilizing two orders of magnitude fewer GPU hours. </p>
+<p>To promote broader access, Anthropic open-sources the optimized code and co-sponsors a protein design competition with Adaptyv Bio, offering up to $1 million in Claude credits and wet lab validation for over 5,000 designs.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>news</span>
+      <span> · 2026-09-17</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/news/life-sciences-verification-program" target="_blank" rel="noopener">Introducing the Life Sciences Verification Program</a></h3>
+    
+    <div class="summary"><p>Anthropic has launched the Life Sciences Verification Program (LSVP) in beta, offering access to its Mythos, Opus, and Sonnet models—versions 5.1, 5, and 5 respectively—with modified safeguards for biology-related work. The program aims to address challenges in distinguishing between beneficial and harmful use of AI in life sciences, such as drug discovery and research biology. LSVP access is granted via “Standard Use” or “High-risk Use” grants, with the latter requiring more vetting and applying to specific research projects. </p>
+<p>The program utilizes a “shared responsibility” model, monitoring usage against pre-defined safe use cases specified by verified organizations. Anthropic is shifting from real-time blocking of potentially harmful requests to offline monitoring to allow legitimate research to proceed more freely, requiring 30 days of data retention for this purpose. While Standard Use grants are widely applicable, High-risk Use grants for Mythos remain limited to a select group due to ongoing collaboration with the US government.</p>
+<p>Several organizations, including Xaira, Edison and Manifold Bio, have expressed enthusiasm for the program, highlighting its potential to accelerate scientific discovery. Applications are now open to teams and institutions, with plans to extend access to individual Pro and Max plans in the future; the LSVP is currently available through Anthropic’s API, Claude for Enterprise and Team plans, but not yet on third-party platforms or for organizations requiring BAA enablement.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -441,60 +496,6 @@
     <div class="summary"><p>Warp has developed a self-improvement loop for agents built on the Claude Platform, utilizing a “skills”-based framework. Skills are file-based encodings of knowledge, keeping instructions separate from the prompt itself. This system employs two primary skills: a “base skill” containing domain knowledge for a specific task (like code review), and an “improver skill” that periodically analyzes human feedback on the base skill’s output. </p>
 <p>The process involves capturing human feedback – ideally detailed explanations, not just simple approvals – and using the improver skill to propose small, focused edits to the base skill. These edits are submitted as pull requests, allowing for review and approval before being merged, thus continuously refining the agent’s performance. Warp has deployed this pattern across its open-source repo, for tasks like issue triage and spec writing.</p>
 <p>Key recommendations from Warp include writing skills as guiding principles rather than rigid rules, explaining the rationale behind them, minimizing friction for providing feedback, and prioritizing quality feedback over quantity. They emphasize the reusability of the “improver skill” across different agent applications and the importance of maintaining human oversight in the loop.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-08-26</span>
-    </div>
-    <h3><a href="https://claude.com/blog/cowork-built-in-browser" target="_blank" rel="noopener">Claude Cowork gets a built-in browser: nothing to install | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic has added a built-in browser to Claude Cowork within the desktop application, eliminating the need for extensions. This allows Claude to independently navigate websites, read content, and complete forms directly within the interface—handling tasks like data extraction or form filling without accessing the user’s existing browser profile. The browser is isolated; it does not share tabs, bookmarks, or passwords, though users can selectively import logins from Chrome, Edge, or Firefox. </p>
-<p>The built-in browser is initially rolling out to Pro, Max, and Team plan users, with Enterprise admins gaining control via Organization settings as of today. A key distinction is made between the new browser and the existing "Claude in Chrome" extension: the built-in browser tackles new web tasks while the extension works with already-authenticated sessions. Users can switch their preferred method in settings.</p>
-<p>The new capability includes existing safety measures to mitigate prompt injection attacks, but Anthropic recommends beginning with trusted websites. The built-in browser is currently in beta on macOS, Windows and Linux desktop apps. Availability on the web or mobile devices requires an active desktop application.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-08-26</span>
-    </div>
-    <h3><a href="https://claude.com/blog/claude-in-chrome-generally-available" target="_blank" rel="noopener">Claude in Chrome is generally available | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic has generally released Claude in Chrome for all paid plans, enabling the model to interact directly with webpages. This allows Claude to perform actions within the browser – reading, typing, clicking, form filling – without requiring manual approval for each step, though a safety classifier validates actions before execution. </p>
-<p>A core focus of this release is improved resilience against prompt injection attacks, where malicious instructions are hidden within web content. Anthropic has expanded its training datasets and implemented probes to scan web content, as well as a safety classifier to verify actions against the user’s original request. Testing shows Claude Fable 5, Opus 5, and Sonnet 5 successfully resisted attacks in their Cowork harness, with a 0.3% success rate for Fable 5 when using stronger, professionally sourced attacks. </p>
-<p>The feature is available as a Chrome Web Store extension and is manageable within Organization Settings for Enterprise plans. It currently does not support other Chromium browsers or mobile devices.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Anthropic</span> · 
-      <span>research</span>
-      <span> · 2026-08-26</span>
-    </div>
-    <h3><a href="https://www.anthropic.com/research/enabling-independent-research" target="_blank" rel="noopener">Enabling independent research on how people use Claude</a></h3>
-    
-    <div class="summary"><p>Anthropic piloted a program granting three external research groups—Stanford’s SALT Lab, Oxford’s Human Information Processing Lab, and the non-profit METR—independent access to analyze roughly 250,000 Claude.ai and Claude Code conversations from April-May 2026 via Anthropic Insights, a privacy-preserving tool. The goal was to enable research on real-world AI usage, addressing the limitations of lab-internal studies and public datasets. The SALT Lab found people delegate consequential tasks to Claude more often than previously thought, typically directing and adapting its output, and that friction during collaboration can improve results. </p>
-<p>The Human Information Processing Lab observed a link between Claude’s behavior and user sentiment, finding patterns similar to those on the broader web. METR’s ongoing work suggests newer Claude models yield greater productivity gains for coders and reliably estimate task completion times. Anthropic emphasizes this is the first time external researchers have independently studied an AI company’s usage data, noting the program’s complexity and resource intensity as challenges for future scaling. The full datasets and detailed findings are publicly available.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-08-25</span>
-    </div>
-    <h3><a href="https://claude.com/blog/claudes-memory-works-everywhere-and-you-decide-whats-in-it" target="_blank" rel="noopener">Claude&#39;s memory works everywhere, and you decide what&#39;s in it | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic has unified the memory function across Claude chat and Claude Cowork. This means a single memory persists between the two interfaces—context established in chat is immediately available in Cowork, and vice versa—reducing the need for repeated explanations. Claude now updates memory <em>during</em> conversations, reacting to new information immediately, rather than summarizing and storing it after a chat concludes.</p>
-<p>Users can view and edit their saved memories as a list of topic-based files within the settings, enabling quick corrections to persistent data (like a company name change). By default, Claude does not store memories about sensitive topics (health, religion, politics, etc.), but a user-controlled setting allows inclusion of these, with notification each time a sensitive topic is saved.  Information like SSNs or criminal history is explicitly excluded, even with the sensitive topics setting enabled. The feature is available on Free, Pro, and Max plans, and is controllable by administrators for Team and Enterprise accounts.</p></div>
     
   </div>
   
