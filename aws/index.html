@@ -80,13 +80,120 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-18 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-09-19 10:16 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-18</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-amazon-sagemaker-hyperpod-inference-gateway/" target="_blank" rel="noopener">Introducing Amazon SageMaker HyperPod Inference Gateway</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon SageMaker HyperPod Inference Gateway is a Kubernetes-native GPU-aware routing system, deployed as an EKS managed addon, designed to reduce GPU waste and improve LLM inference performance.</li>
+<li>The system uses a two-tier architecture: a per-cluster gateway leveraging the Gateway API Inference Extension with components like Envoy Gateway, a Body-Based Router (BBR) for multi-model routing, and an Endpoint Picker (EPP) that utilizes real-time GPU metrics (KV cache utilization, queue depth, LoRA adapter residency, prefix cache hit rate, running requests) to optimize request routing.</li>
+<li>Version v2.0.0-eksbuild.1 is available, requiring installation via <code>aws eks create-addon</code> and configuration through an <code>InferenceGatewayConfig</code> custom resource, with support for OpenAI-compatible endpoints and no application code changes.</li>
+<li>Benchmarks show up to 82% reduction in first-token latency and throughput improvements of up to 50% in scenarios with mixed GPU generations and bursty traffic, by intelligently routing requests based on GPU utilization and workload characteristics.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-18</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/deploy-hugging-face-models-on-amazon-sagemaker-ai-with-coding-agents/" target="_blank" rel="noopener">Deploy Hugging Face models on Amazon SageMaker AI with coding agents</a></h3>
+    
+    <div class="summary"><ul>
+<li>New agent skills from Hugging Face Skills allow for automated, production-ready deployment of Hugging Face models on Amazon SageMaker AI, handling tasks like container selection, autoscaling, and CloudWatch alarm setup.</li>
+<li>The skills address a key issue with unguided coding agents – a lack of up-to-date deployment knowledge – by providing editable skill files containing current best practices (e.g., using vLLM for Qwen models instead of the outdated TGI).</li>
+<li>Six skills are available: a planner skill to orchestrate the others, plus skills for AWS context discovery, Python environment setup, IAM preflight checks, serving image selection, and production defaults application.</li>
+<li>The skills utilize Python and the AWS CLI, working across macOS, Linux, and Windows and integrate with services like SageMaker AI, IAM, ECR, and CloudWatch via Boto3.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-18</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/the-new-agentcore-runtime-elastic-optimized-and-consistently-fast-starts/" target="_blank" rel="noopener">The new AgentCore runtime: Elastic, optimized, and consistently fast starts</a></h3>
+    
+    <div class="summary"><h2>New AgentCore Runtime for Amazon Bedrock: Elastic, Optimized, and Fast</h2>
+<p>The new AgentCore runtime for Amazon Bedrock improves performance and cost efficiency for production agents by addressing memory management and cold start times.</p>
+<ul>
+<li>The runtime now dynamically allocates and reclaims memory as needed during a session, billing only for memory actively used instead of peak allocation.</li>
+<li>Cold start times are now consistent – approximately 2 seconds regardless of image size (from 200MB to 2GB) – achieved through snapshotting and restoring pre-initialized environments.</li>
+<li>The runtime loads agents once and then snapshots them, restoring the snapshot for each new instance, avoiding repeated initialization.</li>
+<li>Upcoming features include committed baseline discounts, expanded compute/storage options, x86 support, lifecycle control (suspend/resume), and scoped identity for unattended agents.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-18</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/migrating-multi-model-ai-agents-to-amazon-bedrock-agentcore-runtime/" target="_blank" rel="noopener">Migrating multi-model AI agents to Amazon Bedrock AgentCore runtime</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock AgentCore runtime provides a managed environment for deploying and scaling AI agents, handling container lifecycle, scaling, identity, and observability.</li>
+<li>The solution demonstrates migrating a multi-model healthcare agent – previously deployed on Amazon ECS with AWS Fargate – to AgentCore runtime with no changes to core agent logic, utilizing a decorator pattern.</li>
+<li>The agent orchestrates across three model backends: Llama 3.1 70B Instruct (Amazon Bedrock), BioM-ELECTRA-Large-SQuAD2 (Amazon SageMaker AI), and a containerized BioM-ELECTRA model, with Amazon OpenSearch Service for vector-enhanced knowledge retrieval.</li>
+<li>AgentCore runtime supports a “bring-your-own-agent” approach, working with existing agent code implemented in frameworks like Hugging Face smolagents via an HTTP protocol, without requiring code rewriting.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-18</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-kimi-k3-on-amazon-bedrock/" target="_blank" rel="noopener">Introducing Kimi K3 on Amazon Bedrock</a></h3>
+    
+    <div class="summary"><ul>
+<li>Kimi K3, a 2.8 trillion parameter model from Moonshot AI, is now available on Amazon Bedrock, offering improved capabilities for coding and knowledge work.</li>
+<li>Kimi K3 features a 1-million-token context window and is approximately 2.5x more scaling efficient than Kimi K2, suitable for long-running tasks with large datasets.</li>
+<li>Amazon Bedrock now supports explicit prompt caching for Kimi K3, reducing latency and input costs by reusing cached prompt prefixes with a defined breakpoint after 1,024 tokens.</li>
+<li>The model is accessible via the Bedrock runtime endpoint using OpenAI-compatible APIs (Responses, Chat Completions, Invoke, Converse) and can be deployed using either US geographic (us.moonshotai.kimi-k3) or global (global.moonshotai.kimi-k3) inference profiles.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-18</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-inference-2026-year-to-date-launches-in-review/" target="_blank" rel="noopener">Amazon SageMaker Inference: 2026 year-to-date launches in review</a></h3>
+    
+    <div class="summary"><ul>
+<li><strong>Inference Recommendations (April 2026):</strong> SageMaker AI now automates the process of finding optimal instance types, serving containers, and optimization settings for generative AI models, reducing benchmarking time from weeks to minutes using a three-step process (Narrow, Optimize, Benchmark) and providing a validated SageMaker Model Package.</li>
+<li><strong>Capacity-Aware Instance Pools (May 2026):</strong> SageMaker endpoints can now be configured with prioritized lists of up to five instance types, automatically falling back to available instances if the preferred type is at capacity, improving endpoint reliability and utilizing heterogeneous fleets.</li>
+<li><strong>OpenAI-Compatible APIs (May 2026):</strong> SageMaker endpoints now support an <code>/openai/v1</code> path for Chat Completions with streaming, enabling applications built on the OpenAI SDK (LangChain, etc.) to migrate to SageMaker with minimal code changes.</li>
+<li><strong>Container Caching (June 2026):</strong> Automatically pre-pulls container images for SageMaker AI endpoints, reducing instance startup latency by up to 51% (e.g., dropping Qwen3-8B startup time from 525s to 258s) during autoscaling events.</li>
+<li><strong>Prefix-Aware Routing (June 2026):</strong> Reduces LLM latency by routing requests with shared prompt prefixes to the same instance for increased KV cache reuse, achieving up to 37% reduction in P90 TTFT for long-context workloads.</li>
+<li><strong>HyperPod Inference Simplified Operator (April 2026):</strong> A new EKS add-on simplifies LLM deployment on HyperPod clusters using custom resource definitions to manage deployments, autoscaling, and multi-instance type fallbacks.</li>
+<li><strong>HyperPod Inference Tiered KV Cache (June 2026):</strong> HyperPod Inference offers a two-tier KV cache (L1 in CPU memory, L2 in Redis) with intelligent routing to reduce latency for long-context and multi-turn workloads by up to 40%.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -505,109 +612,6 @@
 <li>AEM decomposes correctness into two sub-metrics: Truthfulness (factual consistency of values) and Completeness (presence of all required elements), applying these to both response and action turns.</li>
 <li>The evaluation utilizes semantic comparison for both responses and parameter values – assessing semantic equivalence rather than requiring exact matches – using either embedding-based similarity or LLM-as-judge scoring.</li>
 <li>AEM identifies root causes of failure using a failure taxonomy, labeling turns as either root causes or cascading effects from prior errors, enabling targeted fixes instead of investigating every failed turn.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-10</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/model-agnostic-pii-detection-with-llms/" target="_blank" rel="noopener">Model-agnostic PII detection with LLMs</a></h3>
-    
-    <div class="summary"><ul>
-<li>This post details a configurable, model-agnostic PII (Personally Identifiable Information) detector built on Large Language Models (LLMs) and designed to run on Amazon Bedrock or custom infrastructure.</li>
-<li>The detector uses instruction-driven detection, relying on prompts to define PII entities and expected output, and a uniform inference interface called "Inferencer," supporting models like Mistral and OSS-GPT.</li>
-<li>Customization is achieved by editing the instruction prompt to modify the entity set (what counts as PII) without requiring retraining or redeployment of the model.</li>
-<li>Benchmarking against eight other LLM-based detectors (including OpenAI’s PrivacyFilter) on five public PII corpora showed Core F1 scores ranging from 74.9% to 83.1%, with latency varying depending on the chosen LLM and backend (Amazon Bedrock vs. Amazon EC2).</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-10</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-an-end-to-end-rfi-questionnaire-workflow-using-amazon-quick-automate/" target="_blank" rel="noopener">Build an end-to-end RFI questionnaire workflow using Amazon Quick Automate</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Quick Automate can now process multi-tab RFI (Request for Information) workbooks from Amazon S3, extracting and structuring questionnaire data without custom code.</li>
-<li>The workflow is described using natural language prompts, which the AI assistant translates into an executable workflow covering ingestion, transformation, validation, and output.</li>
-<li>Users can refine the workflow through conversational updates, validate results, and then promote validated versions across AWS Regions using Import/Export functionality.</li>
-<li>The solution utilizes Amazon S3 action connectors, automation groups, and projects within Quick Automate, and outputs structured data as a CSV file.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-10</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/amazon-quick-is-now-generally-available-on-desktop/" target="_blank" rel="noopener">Amazon Quick is now generally available on desktop</a></h3>
-    
-    <div class="summary"><p>Amazon Quick is now generally available, providing an AI assistant integrated with existing enterprise systems.</p>
-<ul>
-<li>Quick is available as a desktop application for macOS and Windows, and an updated mobile experience for iOS and Android includes a prioritized activity feed consolidating email, calendar, CRM, and messaging.</li>
-<li>The application runs on AWS infrastructure, inheriting its security and compliance certifications (HIPAA, FedRAMP, SOC 2, ISO 27001), and offers full audit trails via Amazon CloudWatch and AWS CloudTrail.</li>
-<li>Quick focuses on completing tasks, not just answering questions, by synthesizing information and drafting deliverables across connected systems, aiming to improve worker capacity.</li>
-<li>The system creates a shared workspace allowing teams to share dashboards, agents, and automations, and learns user priorities to surface relevant information.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-10</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/video-and-image-search-in-amazon-bedrock-knowledge-base-using-marengo-3-0/" target="_blank" rel="noopener">Video and image search in Amazon Bedrock Knowledge Base using Marengo 3.0</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock Knowledge Bases now generally supports TwelveLabs Marengo Embed 3.0, a multimodal embedding model.</li>
-<li>Marengo 3.0 encodes video, audio, images, and text into a 512-dimensional vector space, enabling semantic search across media types.</li>
-<li>Managed Knowledge Bases automatically handles segmentation, frame sampling, transcription, and embedding generation using Marengo 3.0.</li>
-<li>The service supports ingestion from Amazon S3, SharePoint, and Confluence, and retrieval via the Amazon Bedrock Retrieve API.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-10</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/reduce-inference-cold-starts-on-amazon-sagemaker-hyperpod-with-model-caching/" target="_blank" rel="noopener">Reduce inference cold starts on Amazon SageMaker HyperPod with model caching</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon SageMaker HyperPod now supports model caching to reduce inference cold starts by pre-loading model weights and container images onto cluster nodes.</li>
-<li>The weights cache downloads model weights to local NVMe storage from sources like Amazon S3, Amazon FSx for Lustre, HuggingFace Hub, or JumpStart, achieving read speeds of approximately 7 GB/s.</li>
-<li>The image cache pre-pulls inference server container images (like vLLM or LMI) onto nodes, saving 5–7 minutes of download time from Amazon ECR.</li>
-<li>Benchmarks show up to 60% faster scale-out with weights caching and a 97% reduction in image pull time, especially benefitting models exceeding 600GB like DeepSeek-R1, with configuration managed via new Custom Resource Definitions (CRDs) <code>ModelDataCacheConfig</code> and <code>InferenceImageCache</code>.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-10</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/reduce-llm-latency-with-prefix-aware-routing-on-amazon-sagemaker-inference/" target="_blank" rel="noopener">Reduce LLM latency with prefix-aware routing on Amazon SageMaker Inference</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon SageMaker Inference now offers prefix-aware routing, a new routing strategy designed to reduce LLM latency.</li>
-<li>The feature routes requests with identical prompt prefixes to the same instance, enabling KV cache reuse and improving performance with frameworks like vLLM and TensorRT-LLM.</li>
-<li>Benchmarks using Llama 3.1 70B Instruct showed P50 TTFT reductions of up to 77% and throughput increases up to 16% with longer context workloads.</li>
-<li>Configuration involves setting <code>PrefixLength</code> (1024-65536) and <code>ConcurrencyThreshold</code> (1-1024) within the endpoint configuration, with no changes required to the model container or serving framework.</li>
 </ul></div>
     
   </div>
