@@ -80,13 +80,102 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-21 10:15 UTC</p>
+  <p class="generated-at">Generated 2026-09-22 10:16 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-21</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/reducing-medical-claims-review-time-with-ai-on-aws-the-exl-medical-idp-solution/" target="_blank" rel="noopener">Reducing medical claims review time with AI on AWS: The EXL Medical IDP solution</a></h3>
+    
+    <div class="summary"><ul>
+<li>The EXL Medical IDP solution combines the Xtrakto.AI IDP application with the EXL Insurance LLM, a domain-specific large language model, to automate medical record review for insurance claims.</li>
+<li>The EXL Insurance LLM was fine-tuned on Amazon SageMaker AI using Parameter-Efficient Fine-Tuning (PEFT) with Low-Rank Adaptation (LoRA) and nine years of insurance claims data (over 13,500 records) to improve performance on insurance-specific NLP tasks.</li>
+<li>The solution leverages multiple AWS services including Amazon API Gateway, Amazon Cognito, AWS Step Functions, Amazon Textract, Amazon SageMaker AI, Amazon Bedrock, Amazon DynamoDB, Amazon RDS, and Amazon S3 in an 11-step pipeline.</li>
+<li>Benchmarking indicates the fine-tuned EXL Insurance LLM outperforms general-purpose LLMs on insurance-specific tasks like tagging, summarization, question answering, and reasoning, ultimately reducing record review time from days to hours.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-21</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-benchling-secured-multi-tenant-ai-agents-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How Benchling secured multi-tenant AI agents with Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><p>Benchling secured multi-tenant AI agents using Amazon Bedrock AgentCore to address security concerns around executing untrusted code at scale.</p>
+<ul>
+<li>Benchling uses Amazon Bedrock AgentCore Code Interpreter (ACCI) in VPC mode, combining account-level isolation with Amazon Route 53 Resolver DNS Firewall and VPC endpoint policies to prevent data exfiltration.</li>
+<li>The solution employs a “nothing unless explicitly allowed” network approach with no internet or NAT gateway, leveraging Route 53 Resolver DNS Firewall with a three-priority policy: block known malicious domains, allow only listed endpoints (primarily S3), and deny all other queries.</li>
+<li>VPC endpoints (Gateway for in-region S3, Interface for cross-region S3) with attached policies restrict access to explicitly authorized S3 buckets, independent of IAM permissions.</li>
+<li>Per-job data access is controlled by dynamically injecting temporary, scoped credentials via AWS STS, avoiding the need for a separate IAM role per tenant and utilizing gVisor for compute isolation.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-21</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/run-positron-on-amazon-sagemaker-ai-for-data-science-workflows/" target="_blank" rel="noopener">Run Positron on Amazon SageMaker AI for data science workflows</a></h3>
+    
+    <div class="summary"><p>Positron, Posit’s data science IDE, is now available on Amazon SageMaker AI, enabling a unified workflow for data science tasks.</p>
+<ul>
+<li>Positron runs under the Space execution role, providing direct access to Amazon Athena, AWS Glue Data Catalog, and Amazon S3 without managing credentials.</li>
+<li>Posit Assistant can leverage Amazon Bedrock as its model provider, running AI assistance models within the user's AWS account and region, with data protection features like encryption and private connectivity.</li>
+<li>Users can launch Spaces with specific instance sizes and reserve capacity using SageMaker AI training plans to ensure compute availability.</li>
+<li>The solution supports parallel work via multiple Spaces and collaborative projects within a shared Space, with deployment via a custom image built on the Amazon SageMaker Distribution image.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-21</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-bmw-group-detects-cost-anomalies-across-14000-cloud-accounts/" target="_blank" rel="noopener">How BMW Group detects cost anomalies across 14,000 cloud accounts</a></h3>
+    
+    <div class="summary"><p>BMW Group uses AWS to detect cost anomalies across 14,000 cloud accounts with a system called Cloud Efficiency Analytics (CLEA).</p>
+<ul>
+<li>CLEA utilizes AWS Cost and Usage Reports (CUR) data, aggregating it to daily cost per account per service, and forecasts expected spend using the Prophet forecasting library from Meta with additive seasonality.</li>
+<li>The anomaly detection pipeline is orchestrated using AWS Step Functions in Distributed Map mode, processing accounts concurrently with up to 500 Lambda functions and completing in approximately 20 minutes.</li>
+<li>Filtering logic includes excluding low-spend services (&lt;$0.10/day), services with insufficient history (&lt;10 days), and applying deviation thresholds (40% initially, adjustable to 60% for known variable services) and cluster-based minimum impact amounts.</li>
+<li>Alerts are generated for anomalies persisting for at least four days, providing details like account ID, affected service, expected vs. actual spend, and a link to a QuickSight dashboard for drill-down analysis – leveraging services like Amazon EC2, Amazon S3, AWS Lambda, and Amazon RDS.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-21</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/xais-grok-4-6-is-now-available-in-amazon-bedrock/" target="_blank" rel="noopener">xAI’s Grok 4.6 is now available in Amazon Bedrock</a></h3>
+    
+    <div class="summary"><p>xAI’s Grok 4.6 model is now available in Amazon Bedrock, designed for long-running agents, coding, and knowledge work.</p>
+<ul>
+<li>Grok 4.6 offers a 500K token context window and configurable reasoning effort levels: low, medium, high, and xhigh.</li>
+<li>The model is accessible through both bedrock-mantle and bedrock-runtime endpoints, and supports the Converse API alongside Chat Completions and Responses.</li>
+<li>xAI reports benchmark results indicating frontier intelligence in agentic coding and knowledge work, including an AA Intelligence Index score of 61.</li>
+<li>Availability varies by endpoint; bedrock-mantle is available in US West (Oregon), while bedrock-runtime utilizes cross-Region inference with options for US geography (data residency) or global routing.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -523,95 +612,6 @@
 <li>Code Interpreter offers security through host operating system-level sandboxing and configurable networking (VPC mode or public internet access) with file handling up to 100 MB via API or Amazon S3 integration.</li>
 <li>Abnormal AI uses Code Interpreter within a three-tiered email security pipeline, reserving agent-driven code execution for the most difficult cases (Tier 3) – processing tens of thousands of messages daily – after initial filtering by heuristics (Tier 1) and machine learning models (Tier 2).</li>
 <li>Abnormal AI also employs an “analyst agent” utilizing Code Interpreter in batch mode to ingest misclassifications, identify patterns, and autonomously generate draft heuristics and improve models, leveraging the file system for checkpointing during long-running tasks.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-11</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-interactive-mcp-apps-using-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Build interactive MCP Apps using Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock AgentCore now supports building interactive MCP Apps with HTML widgets rendered directly within AI hosts like ChatGPT and Claude.</li>
-<li>AgentCore runtime provides a secure, serverless, session-isolated host with native MCP support, and AgentCore Gateway exposes it via a single secure endpoint.</li>
-<li>The example application, Unicorn Rentals, demonstrates browsing, booking, viewing, and returning unicorns, with a TypeScript-based MCP App using the <code>@modelcontextprotocol/sdk</code> and <code>@modelcontextprotocol/ext-apps</code> extension.</li>
-<li>Deployment utilizes an AWS Lambda function for business logic connected to Amazon DynamoDB, and a deployment script simplifies setup, offering production considerations like CloudWatch monitoring and Bedrock Guardrails for responsible AI.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-11</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/beyond-the-price-per-token-choosing-the-right-openai-model-on-amazon-bedrock-for-your-workload/" target="_blank" rel="noopener">Beyond the price per token: Choosing the right OpenAI model on Amazon Bedrock for your workload</a></h3>
-    
-    <div class="summary"><h3>Beyond the Price Per Token: Choosing the Right OpenAI Model on Amazon Bedrock</h3>
-<p>This post details benchmarking results comparing OpenAI models available on Amazon Bedrock (gpt-5.6-luna, gpt-5.6-terra, and gpt-5.6-sol) against cost-optimized OpenAI API models (gpt-5.4-mini and gpt-5.4-nano), emphasizing cost <em>per successful outcome</em> rather than solely price per token.</p>
-<ul>
-<li>The benchmarking harness, <code>openai-on-aws/benchmarks-openai</code>, evaluates models using the OpenAI Responses API and assesses single-call accuracy (AIME, GPQA Diamond, MMLU-Pro), multi-turn agent trajectories (DeepSearchQA), and rubric-graded professional deliverables (GDPval).</li>
-<li>Results indicate that after the July 2026 price reduction, gpt-5.6-luna on Amazon Bedrock often offers the lowest cost per correct answer, even compared to nano, despite nano's lower nominal token price.</li>
-<li>Agent trajectory cost (influenced by turn count - more turns = more tokens sent) is a significant factor; Luna and Terra demonstrated higher F1 scores and fewer turns in DeepSearchQA than mini, resulting in lower costs per passing answer.</li>
-<li>For professional deliverables evaluated with GDPval, Luna achieved the highest pass rate among cost-efficient models and the lowest cost per passing deliverable post-repricing, while Sol offers a different capability/price tier for genuinely difficult tasks needing higher accuracy.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-11</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/monitoring-production-agent-lifecycle-with-aws-devops-agent-and-agentcore-evaluations/" target="_blank" rel="noopener">Monitoring production agent lifecycle with AWS DevOps Agent and AgentCore Evaluations</a></h3>
-    
-    <div class="summary"><p>AWS introduces a dual-layer monitoring system for production multi-agent systems, combining quality assessment with infrastructure health checks.</p>
-<ul>
-<li><strong>Amazon Bedrock AgentCore Evaluations</strong> continuously scores agent interactions (helpfulness, correctness, goal completion) using LLM-as-a-Judge methodology and provides pattern analysis to identify failure modes and suggest improvements.</li>
-<li><strong>AWS DevOps Agent</strong> autonomously investigates incidents by analyzing CloudWatch logs, correlating errors across services (IAM, Bedrock), tracing failure paths, and delivering remediation recommendations.</li>
-<li>The system utilizes <strong>Amazon Bedrock</strong> for foundation models, <strong>AgentCore runtime</strong> for orchestration and observability (via OpenTelemetry), and the <strong>Swarm pattern</strong> for dynamic multi-agent collaboration.</li>
-<li>A sample airline reservation system, built with four specialized agents, demonstrates the architecture and highlights challenges in monitoring complex, dynamic agent interactions; source code is available on GitHub via the FAST template.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-10</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-aviobook-uses-generative-ai-to-drive-airline-turnaround-insights/" target="_blank" rel="noopener">How AvioBook builds turnaround insights from operational data with Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><p>AvioBook is using Amazon Bedrock AgentCore to build Connected Analytics, enabling airlines to gain insights from operational data and improve turnaround times.</p>
-<ul>
-<li>The solution utilizes two agents – one for airline managers focused on historical analysis and delay code validation, and another for OCC dispatchers focused on live operational queries – built using Amazon Bedrock AgentCore runtime and memory.</li>
-<li>AgentCore Gateway provides secure access to tools, enabling agents to query data from Amazon Athena, which accesses partitioned Parquet data in Amazon S3 using the AWS Glue Data Catalog.</li>
-<li>The architecture leverages JWT authentication via Amazon Cognito and AWS Lambda functions for data processing and agent invocation.</li>
-<li>AvioBook estimates that reducing average turnaround time by 2 minutes could be worth roughly $240,000 a month for a mid-size carrier, with potential for significantly higher savings through improved process compliance and proactive anomaly alerting.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-10</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/agent-evaluation-metric-for-multi-turn-conversations/" target="_blank" rel="noopener">Agent Evaluation Metric for multi-turn conversations</a></h3>
-    
-    <div class="summary"><ul>
-<li>AWS introduces the Agent Evaluation Metric (AEM), a turn-level metric designed to pinpoint the specific turn causing failures in multi-turn agent conversations, unlike holistic evaluation methods.</li>
-<li>AEM decomposes correctness into two sub-metrics: Truthfulness (factual consistency of values) and Completeness (presence of all required elements), applying these to both response and action turns.</li>
-<li>The evaluation utilizes semantic comparison for both responses and parameter values – assessing semantic equivalence rather than requiring exact matches – using either embedding-based similarity or LLM-as-judge scoring.</li>
-<li>AEM identifies root causes of failure using a failure taxonomy, labeling turns as either root causes or cascading effects from prior errors, enabling targeted fixes instead of investigating every failed turn.</li>
 </ul></div>
     
   </div>
