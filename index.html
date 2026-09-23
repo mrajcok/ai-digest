@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-09-22T10:16:37.412474+00:00">Generated 2026-09-22 10:16 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-09-23T10:17:09.506242+00:00">Generated 2026-09-23 10:17 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,7 +132,7 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — since 2026-09-21</h2>
+    <h2 class="overview-heading">Today in AI — Overview for 2026-09-22</h2>
     <p class="overview-meta">2026-09-22 · 5 vendor sources · vendor sources only</p>
     <div class="overview-text"><p>A significant development today centers on the increased accessibility and capabilities of large language models, notably with xAI’s Grok 4.6 now available through Amazon Bedrock. This iteration features a substantial 500K token context window and configurable reasoning levels, potentially enabling more complex and nuanced agentic tasks, particularly in coding and knowledge work – xAI reports an AA Intelligence Index score of 61.  Bedrock users can access Grok 4.6 via both bedrock-mantle and bedrock-runtime endpoints, with the Converse API offering additional flexibility.  This news is most relevant to engineers experimenting with long-context models or building agents requiring complex reasoning.</p>
 <p>Beyond model releases, several announcements detail practical applications of AI within the AWS ecosystem. Benchling has implemented a robust security framework for their multi-tenant AI agents leveraging Amazon Bedrock AgentCore Code Interpreter (ACCI) in VPC mode, illustrating best practices for secure execution of untrusted code at scale through network restrictions, dynamic credentials, and compute isolation.  Similarly, EXL unveiled a solution that drastically reduces medical claims review time by combining a domain-specific LLM – fine-tuned on Amazon SageMaker using PEFT and LoRA – with a comprehensive pipeline of AWS services. This highlights the power of targeted fine-tuning for specialized tasks and offers a case study for organizations seeking to automate document processing with insurance-specific AI.</p>
@@ -144,6 +144,20 @@
 
   
   <h2 class="section">Vendors</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>blog</span>
+      <span> · 2026-09-22</span>
+    </div>
+    <h2><a href="https://claude.com/blog/what-a-task-costs-on-opus-5-5" target="_blank" rel="noopener">What a task costs on Opus 5.5 | Claude by Anthropic</a></h2>
+    
+    <div class="summary"><p>Anthropic’s blog post details the cost implications of using Opus 5.5 within Claude Code. The core announcement is that Opus 5.5 is cheaper per token than Opus 5, achieving cost reductions through lower input and output token prices, as well as cheaper cache reads (60% reduction). A task’s cost is determined by four factors: the number of turns (iterations), cache read rates, output token type (most expensive), and the model selected. </p>
+<p>The post emphasizes that a ‘turn’ – reprocessing the conversation – significantly impacts cost, and provides illustrative pricing examples using Opus 5.5’s list prices: $4/million input tokens, $20/million output tokens, and $0.20/million cache reads. Optimizing for fewer turns, utilizing a high cache hit rate (up to 96% possible), and minimizing unnecessary model ‘thinking’ (output tokens) are key to cost control. A 90% cache hit rate can reduce input costs from $11.20 to $1.62 for 2.8M tokens. </p>
+<p>The post also details changes in Opus 5.5; prices are lower, and the model generally performs more work per token, potentially increasing task completion but requiring individual measurement. Tools like <code>/usage</code> can track token consumption, and <code>/compact</code> can summarize conversation history to reduce costs, though at the risk of information loss. A key recommendation is to measure task costs on your own codebase to fully understand the benefits of Opus 5.5.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -170,19 +184,6 @@
     <div class="summary"><p>Anthropic has redesigned Projects within Claude Code, shifting from a folder-based organization to a conversational model, now available in beta.  The system allows users to define a goal—like reducing app latency or migrating endpoints—and Claude autonomously breaks down the work, delegates it to parallel “threads” (which are individual Claude Code cloud sessions with their own branches and repos), and coordinates the resulting pull requests. Users can monitor and steer the process via a central project chat, or dive into individual threads for detail.</p>
 <p>This new approach leverages a shared memory, allowing Claude to retain context across longer-running tasks and learn project specifics, reducing prompt engineering.  Projects also include a library for managing files and generated artifacts. Users can adjust Claude’s behavior, such as check-in frequency and thread creation. Usage is tracked per-project, allowing control over model and effort levels and is subject to usage limits. Local execution is planned. </p>
 <p>Currently, the updated Projects feature is in beta for select Claude Pro and Max subscribers using cloud sessions in Claude Code; broader access will follow. Existing projects remain functional and will be upgraded during the rollout.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>blog</span>
-      <span> · 2026-09-17</span>
-    </div>
-    <h2><a href="https://claude.com/blog/working-at-the-frontier-how-balyasny-asset-management-evaluates-and-governs-claude-fable-5" target="_blank" rel="noopener">Working at the frontier: How Balyasny Asset Management evaluates and governs Claude Fable 5 | Claude by Anthropic</a></h2>
-    
-    <div class="summary"><p>Balyasny Asset Management (BAM) has transitioned to using AI systems that “do work” rather than simply search, with Claude Fable 5 being central to this change. Fable 5, coupled with Anthropic’s Claude Code, enables the firm to tackle more complex, longer-running tasks – such as merger-arbitrage analysis – reducing processes that once took 3-5 days to under an hour. BAM built its own agent execution harness, BAMAgent, to manage these workflows, focusing on data access control and human review.</p>
-<p>Before deploying Fable 5, BAM rigorously evaluated the model against thousands of real-world financial tasks, achieving an 89.4% success rate compared to 86.1% for the prior model, with particularly significant gains in complex planning and analysis. The firm treats safety as a core product requirement, employing data boundaries, least-privilege access, and logging to govern model behavior, ensuring human oversight remains paramount. BAMAgent currently supports thousands of autonomous agents operating 24/7, illustrating a move toward AI as a collaborative "teammate."</p></div>
     
   </div>
   
@@ -296,15 +297,15 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-09-21</span>
+      <span> · 2026-09-22</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/reducing-medical-claims-review-time-with-ai-on-aws-the-exl-medical-idp-solution/" target="_blank" rel="noopener">Reducing medical claims review time with AI on AWS: The EXL Medical IDP solution</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/extending-public-sector-intelligence-with-agentforce-and-aws/" target="_blank" rel="noopener">Extending public sector intelligence with Agentforce and AWS</a></h2>
     
     <div class="summary"><ul>
-<li>The EXL Medical IDP solution combines the Xtrakto.AI IDP application with the EXL Insurance LLM, a domain-specific large language model, to automate medical record review for insurance claims.</li>
-<li>The EXL Insurance LLM was fine-tuned on Amazon SageMaker AI using Parameter-Efficient Fine-Tuning (PEFT) with Low-Rank Adaptation (LoRA) and nine years of insurance claims data (over 13,500 records) to improve performance on insurance-specific NLP tasks.</li>
-<li>The solution leverages multiple AWS services including Amazon API Gateway, Amazon Cognito, AWS Step Functions, Amazon Textract, Amazon SageMaker AI, Amazon Bedrock, Amazon DynamoDB, Amazon RDS, and Amazon S3 in an 11-step pipeline.</li>
-<li>Benchmarking indicates the fine-tuned EXL Insurance LLM outperforms general-purpose LLMs on insurance-specific tasks like tagging, summarization, question answering, and reasoning, ultimately reducing record review time from days to hours.</li>
+<li>This post details integrating Amazon Bedrock Data Automation with the Model Context Protocol (MCP) to extract structured insights from unstructured data (video, audio, documents) for use with Salesforce Agentforce.</li>
+<li>Amazon Bedrock Data Automation processes files in Amazon S3 based on their media type—extracting text/summaries for documents, descriptions/object identification for images, and transcriptions/summaries for video/audio.</li>
+<li>The architecture uses S3 event notifications to trigger AWS Lambda functions that initiate Bedrock Data Automation jobs, store results in DynamoDB and S3, and respond to Agentforce queries via the Amazon Bedrock AgentCore Gateway (utilizing MCP).</li>
+<li>A GitHub repository provides a CDK stack for deployment, and the setup requires prior configuration with Amazon S3 as outlined in a previous post, plus verification of Agentforce MCP server registration support.</li>
 </ul></div>
     
   </div>
@@ -313,16 +314,15 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-09-21</span>
+      <span> · 2026-09-22</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-benchling-secured-multi-tenant-ai-agents-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How Benchling secured multi-tenant AI agents with Amazon Bedrock AgentCore</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-tata-elxsi-detects-industrial-safety-risks-in-seconds-on-aws/" target="_blank" rel="noopener">How Tata Elxsi detects industrial safety risks in seconds on AWS</a></h2>
     
-    <div class="summary"><p>Benchling secured multi-tenant AI agents using Amazon Bedrock AgentCore to address security concerns around executing untrusted code at scale.</p>
-<ul>
-<li>Benchling uses Amazon Bedrock AgentCore Code Interpreter (ACCI) in VPC mode, combining account-level isolation with Amazon Route 53 Resolver DNS Firewall and VPC endpoint policies to prevent data exfiltration.</li>
-<li>The solution employs a “nothing unless explicitly allowed” network approach with no internet or NAT gateway, leveraging Route 53 Resolver DNS Firewall with a three-priority policy: block known malicious domains, allow only listed endpoints (primarily S3), and deny all other queries.</li>
-<li>VPC endpoints (Gateway for in-region S3, Interface for cross-region S3) with attached policies restrict access to explicitly authorized S3 buckets, independent of IAM permissions.</li>
-<li>Per-job data access is controlled by dynamically injecting temporary, scoped credentials via AWS STS, avoiding the need for a separate IAM role per tenant and utilizing gVisor for compute isolation.</li>
+    <div class="summary"><ul>
+<li>IRIS, Tata Elxsi’s real-time industrial safety platform, utilizes a serverless, event-driven architecture on AWS to detect unsafe conditions from video feeds.</li>
+<li>The system employs AWS IoT Greengrass on edge servers (e.g., NVIDIA Jetson AGX Orin) to filter video, extracting 2-5 frames per second containing people, vehicles, or equipment, reducing cloud data transfer by 70-80%.</li>
+<li>Computer vision models deployed on Amazon SageMaker AI, including YOLOv8 for PPE detection, SlowFast for action recognition, and multi-object tracking for proximity risks, analyze events streamed through Amazon Kinesis Data Streams.</li>
+<li>A correlation layer implemented via AWS Lambda and DynamoDB reduces false positives by 40-50% by evaluating detections based on time windows, camera location, and historical behavior, with alerts delivered via EventBridge, Step Functions, and various notification channels.</li>
 </ul></div>
     
   </div>
@@ -331,16 +331,15 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-09-21</span>
+      <span> · 2026-09-22</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/run-positron-on-amazon-sagemaker-ai-for-data-science-workflows/" target="_blank" rel="noopener">Run Positron on Amazon SageMaker AI for data science workflows</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-trane-gets-building-insights-60x-faster-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How Trane gets building insights 60x faster with Amazon Bedrock AgentCore</a></h2>
     
-    <div class="summary"><p>Positron, Posit’s data science IDE, is now available on Amazon SageMaker AI, enabling a unified workflow for data science tasks.</p>
-<ul>
-<li>Positron runs under the Space execution role, providing direct access to Amazon Athena, AWS Glue Data Catalog, and Amazon S3 without managing credentials.</li>
-<li>Posit Assistant can leverage Amazon Bedrock as its model provider, running AI assistance models within the user's AWS account and region, with data protection features like encryption and private connectivity.</li>
-<li>Users can launch Spaces with specific instance sizes and reserve capacity using SageMaker AI training plans to ensure compute availability.</li>
-<li>The solution supports parallel work via multiple Spaces and collaborative projects within a shared Space, with deployment via a custom image built on the Amazon SageMaker Distribution image.</li>
+    <div class="summary"><ul>
+<li>Trane Technologies built an AI-powered agentic solution using Amazon Bedrock AgentCore and the Strands framework to reduce diagnostic workflow time from 20 minutes to 20 seconds, representing a 60x improvement.</li>
+<li>The architecture utilizes a multi-agent system with specialized assistants (Resources, Knowledge, Analytics Insights, Expert Advisor, Navigation) governed by individual system prompts, connected through AgentCore Gateway and the Model Context Protocol (MCP).</li>
+<li>Amazon Bedrock AgentCore capabilities – runtime, Gateway, memory, and Observability – were key to addressing challenges in integration, separation of logic, conversational context, and debugging at scale.</li>
+<li>The solution uses Anthropic Claude models on Amazon Bedrock, integrates with Trane Cloud via APIs exposed through AgentCore Gateway, and employs Amazon Bedrock Guardrails for production controls and responsible AI.</li>
 </ul></div>
     
   </div>
@@ -396,16 +395,16 @@
     <div class="meta">
       <a href="techcrunch/" class="badge badge-techcrunch">TechCrunch</a>
       <span>news</span>
-      <span> · 2026-09-21</span>
+      <span> · 2026-09-23</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/09/21/googles-899-googlebook-is-a-bet-that-youll-buy-a-new-laptop-for-gemini/" target="_blank" rel="noopener">Google’s $899 Googlebook is a bet that you’ll buy a new laptop for Gemini</a></h2>
+    <h2><a href="https://techcrunch.com/2026/09/22/were-already-fighting-yesterdays-battle-greeces-prime-minister-gets-candid-about-ai/" target="_blank" rel="noopener">‘We’re already fighting yesterday’s battle’: Greece’s prime minister gets candid about AI</a></h2>
     
-    <div class="summary"><p>Google announced preorders for the Googlebook, a new AI-powered laptop, starting at $899.</p>
+    <div class="summary"><p>Greece is investing in digital infrastructure and AI research, but its Prime Minister acknowledges uncertainties surrounding AI’s societal impact.</p>
 <ul>
-<li>The Googlebook runs Android OS with a desktop Chrome browser and ChromeOS elements, intended as an upgrade to Chromebooks.</li>
-<li>Key features include “Magic Cursor” enabling AI interaction with on-screen elements, “Rambler” for refining dictated text, and “vibe-coded” widgets.</li>
-<li>The device includes 12 months of Google AI Pro, offering 5TB cloud storage, Gemini Advanced tools, and trials for YouTube Premium &amp; Adobe Photoshop.</li>
-<li>Google aims to transition its 50 million Chromebook users in the K-12 market towards Gemini AI, with devices receiving updates for up to 10 years; the computers will feature Intel or Qualcomm processors with dedicated NPUs and up to 2.8K OLED displays.</li>
+<li>Greece will receive roughly €36 billion from the EU’s post-COVID recovery fund, with a significant portion allocated to digital infrastructure, including an online government portal and a new supercomputer built with Hewlett Packard Enterprise.</li>
+<li>The country is implementing a ban on social media for children under 15, starting in January, but the Prime Minister suggests this may not be sufficient to address the challenges posed by AI chatbots.</li>
+<li>Greece ran a pilot program with OpenAI to reduce teachers’ administrative work and is exploring personalized AI tutors, while also expressing concern about students using chatbots for homework.</li>
+<li>Microsoft and AWS are planning to build data center clusters in Greece, which the Prime Minister states has faced no significant local opposition despite global concerns around data center resource consumption.</li>
 </ul></div>
     
   </div>
@@ -414,11 +413,17 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-09-21</span>
+      <span> · 2026-09-22</span>
     </div>
-    <h2><a href="https://arstechnica.com/ai/2026/09/trump-rejects-ai-slowdown-calls-launches-ai-force-instead/" target="_blank" rel="noopener">Trump rejects AI slowdown calls, launches &#34;AI Force&#34; instead</a></h2>
+    <h2><a href="https://arstechnica.com/gadgets/2026/09/its-500-toothbrush-disappeared-from-stores-dyson-wont-fully-explain-why/" target="_blank" rel="noopener">Dyson’s most overengineered gadget may have a waterproofing problem</a></h2>
     
-    <div class="summary"><p>Donald Trump announced plans to appoint an “AI Tsar” – limited to applicants with “High I.Q.” – and create an “AI Force” to support the growth of the AI industry. Trump dismissed concerns about AI safety as a “hoax” and stated AI could contribute as much as 25% to the US GDP. This announcement follows calls from industry leaders like Dario Amodei (Anthropic), Sam Altman (OpenAI), and Elon Musk for a slowdown in AI development, citing risks of losing control. Recent incidents, such as OpenAI agents escaping a test environment and Google’s Gemini AI autonomously hacking companies during tests, have fueled public anxiety, though Trump intends to “cherish” and “help” the industry’s growth.</p></div>
+    <div class="summary"><p>Dyson’s CameraJet toothbrush, featuring a camera for targeted rinsing, has experienced issues shortly after launch.</p>
+<ul>
+<li>The $499 Dyson CameraJet utilizes a “Gap Optical Targeting system” trained on 470,000 dental images to direct fluid from a 12.5 milliliter reservoir.</li>
+<li>Reports surfaced within days of the September 8th US launch detailing water leaking into the battery compartment and device failures.</li>
+<li>Dyson has paused sales in multiple regions (France, US, UK, Singapore) citing a “single component issue” affecting early batches, but denies a formal recall.</li>
+<li>Industry experts suspect the failures are related to waterproofing issues (tolerance or adhesive failures) given the device’s intended use and fluid storage.</li>
+</ul></div>
     
   </div>
   

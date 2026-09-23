@@ -80,13 +80,152 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-22 10:16 UTC</p>
+  <p class="generated-at">Generated 2026-09-23 10:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-22</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/extending-public-sector-intelligence-with-agentforce-and-aws/" target="_blank" rel="noopener">Extending public sector intelligence with Agentforce and AWS</a></h3>
+    
+    <div class="summary"><ul>
+<li>This post details integrating Amazon Bedrock Data Automation with the Model Context Protocol (MCP) to extract structured insights from unstructured data (video, audio, documents) for use with Salesforce Agentforce.</li>
+<li>Amazon Bedrock Data Automation processes files in Amazon S3 based on their media type—extracting text/summaries for documents, descriptions/object identification for images, and transcriptions/summaries for video/audio.</li>
+<li>The architecture uses S3 event notifications to trigger AWS Lambda functions that initiate Bedrock Data Automation jobs, store results in DynamoDB and S3, and respond to Agentforce queries via the Amazon Bedrock AgentCore Gateway (utilizing MCP).</li>
+<li>A GitHub repository provides a CDK stack for deployment, and the setup requires prior configuration with Amazon S3 as outlined in a previous post, plus verification of Agentforce MCP server registration support.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-22</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-tata-elxsi-detects-industrial-safety-risks-in-seconds-on-aws/" target="_blank" rel="noopener">How Tata Elxsi detects industrial safety risks in seconds on AWS</a></h3>
+    
+    <div class="summary"><ul>
+<li>IRIS, Tata Elxsi’s real-time industrial safety platform, utilizes a serverless, event-driven architecture on AWS to detect unsafe conditions from video feeds.</li>
+<li>The system employs AWS IoT Greengrass on edge servers (e.g., NVIDIA Jetson AGX Orin) to filter video, extracting 2-5 frames per second containing people, vehicles, or equipment, reducing cloud data transfer by 70-80%.</li>
+<li>Computer vision models deployed on Amazon SageMaker AI, including YOLOv8 for PPE detection, SlowFast for action recognition, and multi-object tracking for proximity risks, analyze events streamed through Amazon Kinesis Data Streams.</li>
+<li>A correlation layer implemented via AWS Lambda and DynamoDB reduces false positives by 40-50% by evaluating detections based on time windows, camera location, and historical behavior, with alerts delivered via EventBridge, Step Functions, and various notification channels.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-22</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-trane-gets-building-insights-60x-faster-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How Trane gets building insights 60x faster with Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><ul>
+<li>Trane Technologies built an AI-powered agentic solution using Amazon Bedrock AgentCore and the Strands framework to reduce diagnostic workflow time from 20 minutes to 20 seconds, representing a 60x improvement.</li>
+<li>The architecture utilizes a multi-agent system with specialized assistants (Resources, Knowledge, Analytics Insights, Expert Advisor, Navigation) governed by individual system prompts, connected through AgentCore Gateway and the Model Context Protocol (MCP).</li>
+<li>Amazon Bedrock AgentCore capabilities – runtime, Gateway, memory, and Observability – were key to addressing challenges in integration, separation of logic, conversational context, and debugging at scale.</li>
+<li>The solution uses Anthropic Claude models on Amazon Bedrock, integrates with Trane Cloud via APIs exposed through AgentCore Gateway, and employs Amazon Bedrock Guardrails for production controls and responsible AI.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-22</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/right-size-generative-ai-endpoints-with-concurrency-sweeps-on-amazon-sagemaker-ai/" target="_blank" rel="noopener">Right-size generative AI endpoints with concurrency sweeps on Amazon SageMaker AI</a></h3>
+    
+    <div class="summary"><p>Amazon SageMaker AI introduces concurrency sweeps for right-sizing generative AI endpoints, maximizing price-performance while meeting latency requirements.</p>
+<ul>
+<li>Concurrency sweeps systematically benchmark endpoints by sending increasing concurrent traffic and analyzing throughput and latency.</li>
+<li>The workflow involves deploying a model (e.g., NVIDIA Nemotron-3 Nano 30B) with the vLLM container (v0.19.1-gpu-py312-cu129-ubuntu22.04-sagemaker), configuring a workload profile (token counts, streaming), running sweeps via the <code>CreateAIBenchmarkJob</code> API, and analyzing results.</li>
+<li>Analysis identifies the ideal concurrency level (maximizing throughput with acceptable latency), the breaking point (SLA threshold exceeded), and the right-size factor for determining instance needs.</li>
+<li>Automated SLA-based concurrency search (<code>max-concurrency-under-sla</code> recipe) can be used to find the highest concurrency satisfying specified latency (TTFT, E2E) and error rate thresholds, utilizing optimization to reduce search iterations.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-22</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-reactiv-automates-mobile-commerce-80-faster-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How Reactiv automates mobile commerce 80% faster with Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><ul>
+<li>Reactiv automated mobile commerce app updates using <strong>Amazon Bedrock AgentCore</strong>, reducing merchant configuration time by 80% and time to production by 33%.</li>
+<li>The solution uses a three-agent system built with the <strong>Strands Agents SDK</strong> leveraging <strong>AgentCore runtime</strong> for managed execution in Firecracker microVMs, <strong>AgentCore memory</strong> for persistent context, and <strong>AgentCore Identity</strong> for authentication.</li>
+<li>Reactiv utilized a custom <strong>Config MCP</strong> (hosted on AgentCore) to validate app configurations against a defined schema, eliminating 100 previously maintained OpenAPI specification files.</li>
+<li>They unified interactive and scheduled agents onto a single stack using the <strong>AG-UI protocol</strong> on Amazon Bedrock AgentCore, enabling bidirectional memory sharing and simplifying their architecture.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-22</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/evaluate-skill-equipped-agents-with-strands-evals-and-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Evaluate skill-equipped agents with Strands Evals and Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><p>AWS introduces new evaluation capabilities for skill-equipped agents using Strands Evals SDK and Amazon Bedrock AgentCore Evaluations.</p>
+<ul>
+<li><strong>Skill Selection Accuracy:</strong> Evaluates whether the agent chose the appropriate skill for a given task, returning a binary pass/fail result per skill invocation.</li>
+<li><strong>Skill Instruction Following:</strong> Assesses how completely the agent followed the instructions within an invoked skill, providing a five-level rating (Fully Followed to Not Followed) per step.</li>
+<li><strong>Skill Invoked:</strong> A deterministic check (available in Strands Evals) to verify if a specific skill was successfully loaded.</li>
+<li><strong>AgentCore Evaluations:</strong> Leverages OpenTelemetry traces to evaluate skill behavior in production environments, offering on-demand, batch, and continuous online evaluation options.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-22</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/claude-opus-5-5-is-now-available-on-aws/" target="_blank" rel="noopener">Claude Opus 5.5 is now available on AWS</a></h3>
+    
+    <div class="summary"><ul>
+<li>Anthropic’s Claude Opus 5.5 model is now available on Amazon Bedrock and Claude Platform on AWS, offering improved performance for agentic coding, knowledge work, and long-running tasks.</li>
+<li>Claude Opus 5.5 is more efficient, requiring fewer tokens than Claude Opus 5, resulting in lower costs – including cheaper cache reads – for comparable tasks.</li>
+<li>The model is designed for clearer communication, surfacing its reasoning process during execution and adapting its reasoning depth to the task at hand, offering increased explainability.</li>
+<li>Claude Opus 5.5 includes safety classifiers in biology, cybersecurity, and AI development, resulting in more frequent refusal of requests compared to previous Opus versions; it's accessible via the Anthropic Messages API, Invoke/Converse APIs, and the Anthropic SDK.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-22</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/bring-more-intelligence-to-everyday-work-with-gpt-6-sol-and-gpt-6-luna-on-amazon-bedrock/" target="_blank" rel="noopener">Bring more intelligence to everyday work with GPT-6 Sol and GPT-6 Luna on Amazon Bedrock</a></h3>
+    
+    <div class="summary"><p>GPT-6 Sol and GPT-6 Luna are now generally available on Amazon Bedrock, offering a range of intelligence and efficiency options for AI workloads.</p>
+<ul>
+<li>GPT-6 Sol is designed for complex, recurring tasks like coding, debugging, and data analysis, exhibiting improved factual accuracy (approximately 50% fewer factual mistakes than GPT-5.6 Sol) and clearer communication of its process.</li>
+<li>GPT-6 Luna is optimized for high-volume, focused tasks like document summarization and classification, with adjustable reasoning effort to balance quality, cost, and responsiveness.</li>
+<li>Both models support explicit prompt caching on Amazon Bedrock, enabling reuse of instructions and context to improve efficiency.</li>
+<li>GPT-6 Sol and GPT-6 Luna offer lower API pricing than their GPT-5.6 predecessors and benefit from Amazon Bedrock’s security features including IAM controls, VPC endpoints, and hardware-isolated infrastructure.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -472,146 +611,6 @@
 <li>These “skills” are structured markdown documents (SKILL.md) that encode domain-specific decision procedures, utilizing YAML frontmatter for triggers, dependencies, and metadata, and are distinct from RAG or fine-tuning approaches.</li>
 <li>Evaluation results indicate equipped agents achieve a 70-86% win rate compared to those without skills, with the strongest improvements (78-85%) in critical thinking, across drug discovery, healthcare operations, and medical imaging.</li>
 <li>The skills are compatible with over 20 agent services including Amazon Bedrock AgentCore, AWS Strands Agents SDK, Kiro, Amazon Quick Desktop, Claude Code, and OpenAI Codex, and can be customized or extended for specific use cases.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-15</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/announcing-instance-preference-lists-for-amazon-sagemaker-ai-training-jobs/" target="_blank" rel="noopener">Announcing instance preference lists for Amazon SageMaker AI training jobs</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon SageMaker now supports <em>Instance Preference Lists</em> for AI Training and Processing Jobs, allowing specification of up to five acceptable instance types in priority order.</li>
-<li>The system automatically evaluates the list and launches the job on the first instance type with available capacity, reducing wait times and manual intervention.</li>
-<li>Integration with <em>Flexible Training Plans (FTP)</em> allows prioritizing reserved capacity, falling back to on-demand instances if reservations are full.</li>
-<li>Code examples are provided using the Amazon SageMaker Python SDK v3 (specifically <code>ModelTrainer</code> and <code>Processor</code>) demonstrating configuration for various scenarios, including uniform counts, per-preference counts for compute equivalency, and Training Plan integration.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-15</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-an-ai-powered-product-tagging-system-with-amazon-sagemaker-serverless-model-customization/" target="_blank" rel="noopener">Build an AI-powered product tagging system with Amazon SageMaker serverless model customization</a></h3>
-    
-    <div class="summary"><h2>Build an AI-powered product tagging system with Amazon SageMaker serverless model customization</h2>
-<p>This blog details a workflow for customizing the Qwen3-8B model for product tagging using Amazon SageMaker serverless features.</p>
-<ul>
-<li>The workflow utilizes Amazon SageMaker serverless model customization with supervised fine-tuning (SFT) and reinforcement learning with verifiable rewards (RLVR) using Group Relative Policy Optimization (GRPO) to adapt Qwen3-8B for a specific product tagging schema.</li>
-<li>Amazon SageMaker Python SDK v3's serverless trainers (SFTTrainer and RLVRTrainer) are used, eliminating the need to manage compute infrastructure for training.</li>
-<li>The process involves three stages: data preparation (using Amazon SageMaker Processing), serverless model customization (SFT and RLVR), and asynchronous inference (deployed to ml.g6.2xlarge instances).</li>
-<li>A deterministic reward function is designed for RLVR, utilizing fuzzy matching to compare predicted tags with reference tags, prioritizing recall and then precision during training to optimize tagging quality.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-15</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/optimizing-cost-and-latency-with-amazon-bedrock-prompt-caching/" target="_blank" rel="noopener">Optimizing cost and latency with Amazon Bedrock prompt caching</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock now offers prompt caching to reduce input token costs, potentially by up to 90% for repeated context.</li>
-<li>Caching is activated using <code>cachePoint</code> markers within requests, allowing selective caching of static content like documents or system prompts.</li>
-<li>Supported models currently include Anthropic Claude Sonnet 4.5/4.6 (minimum 1024 token checkpoint) and Opus models (minimum 4096 token checkpoint), with model-agnostic syntax for the Converse API.</li>
-<li>Pricing introduces new token types: <code>cacheWriteInputTokens</code> (25% higher than standard input) and <code>cacheReadInputTokens</code> (90% lower than standard input), with TTL options affecting costs (1-hour TTL is 100% higher than standard input for writes).</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-14</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/automate-replenishment-with-mmf-databricks-genie-and-amazon-quick/" target="_blank" rel="noopener">Automate replenishment with MMF, Databricks Genie, and Amazon Quick</a></h3>
-    
-    <div class="summary"><p>Automate replenishment by integrating demand forecasting from Databricks with order placement via Amazon Quick, addressing the bottleneck between forecast generation and order execution.</p>
-<ul>
-<li>Databricks Many Model Forecasting (MMF) utilizing the Chronos-2 model predicts 7-day demand for each SKU.</li>
-<li>Databricks Genie Agents detect demand surges defined as a 1.5x increase in the 7-day average compared to the prior 14-day average, filtering for SKUs with at least 1 unit of prior sales.</li>
-<li>Amazon Quick reconciles surging SKU demand against live supplier availability stored in Amazon S3 Tables, selecting the cheapest capable supplier.</li>
-<li>Amazon Quick Flows places purchase orders via a Supplier Order API or escalates to a human-review ticket when no supplier can fulfill the demand, utilizing Model Context Protocol (MCP) connectors to access forecasts and OpenAPI connectors for order placement.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-14</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/the-generative-ai-customization-spectrum-from-prompt-engineering-to-custom-models-on-aws/" target="_blank" rel="noopener">The generative AI customization spectrum: From prompt engineering to custom models on AWS</a></h3>
-    
-    <div class="summary"><p>The post details a decision framework, the "generative AI customization spectrum," for choosing the right approach to customizing foundation models on AWS, ranging from simple prompt engineering to full model training.</p>
-<ul>
-<li>Models from Anthropic (Claude, Nova), Meta (Llama), and Mistral are accessible through Amazon Bedrock; customization ranges from using models as-is (Step 1) to training custom models (Step 8).</li>
-<li>The spectrum is divided into three categories: USE (prompt engineering &amp; optimization - Steps 1-2), ENHANCE (adding context via RAG, caching, distillation - Steps 3-5), and TRAIN (fine-tuning, continued pre-training, custom models - Steps 6-8).</li>
-<li>Key AWS services supporting customization include Amazon Bedrock (RAG, model access), Amazon SageMaker (fine-tuning, DPO), and Amazon Nova Forge (continued pre-training, custom model building).</li>
-<li>Advanced techniques like Reinforcement Learning from Human Feedback (RFT) and Direct Preference Optimization (DPO) are now available within Amazon Bedrock and SageMaker; Amazon Nova Forge addresses "catastrophic forgetting" during continued pre-training with data mixing.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-14</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-ninth-wave-built-ai-powered-open-finance-onboarding-on-amazon-bedrock/" target="_blank" rel="noopener">How Ninth Wave built AI-powered open finance onboarding on Amazon Bedrock</a></h3>
-    
-    <div class="summary"><ul>
-<li>Ninth Wave implemented Compass, an AI-powered onboarding assistant for open finance, built on <strong>Amazon Bedrock AgentCore</strong> and the <strong>Strands Agents</strong> framework.</li>
-<li>The system utilizes a multi-agent architecture with intent-based routing and per-task model selection, leveraging models within <strong>Amazon Bedrock</strong> to handle tasks ranging from documentation Q&amp;A to readiness analysis.</li>
-<li>Tenant-scoped grounding is achieved by assembling each bank’s specific context from <strong>Amazon OpenSearch Service</strong> and <strong>Amazon S3</strong> before invoking agents, ensuring data isolation.</li>
-<li>The system employs deterministic scoring for FDX readiness, computed from field mapping coverage in OpenSearch, and incorporates comprehensive observability with <strong>Amazon CloudWatch</strong> and security features including <strong>AWS WAF</strong>, <strong>AWS IAM</strong>, and <strong>AWS KMS</strong>.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-14</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/manage-end-user-oauth-consent-for-ai-agents-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Manage end-user OAuth consent for AI agents with Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock AgentCore now offers a managed Consent portal for handling end-user OAuth consent, eliminating the need for customers to build and host their own session binding infrastructure for 3LO flows.</li>
-<li>The Consent portal integrates with a user's corporate Identity Provider (IdP) to authenticate users and allows them to review and grant consent to individual service providers (e.g., GitHub, Slack).</li>
-<li>Administrators configure the IdP, gateway targets, and portal via the AWS Management Console, utilizing IAM policies to control access and permissions, and can create outbound OAuth credential providers for each service.</li>
-<li>The portal handles browser redirects and securely stores tokens in the AgentCore Identity token vault, automatically refreshing access tokens when possible, and all consent activity is logged in AWS CloudTrail.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-14</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/abnormal-ai-amazon-bedrock-agentcore-for-agentic-email-security-at-scale/" target="_blank" rel="noopener">Abnormal AI: Amazon Bedrock AgentCore for agentic email security at scale</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock AgentCore Code Interpreter, a capability of Amazon Bedrock AgentCore, provides a fully managed, serverless runtime for agents to execute code dynamically within ephemeral MicroVM sessions configurable from 15 minutes to 8 hours.</li>
-<li>Code Interpreter offers security through host operating system-level sandboxing and configurable networking (VPC mode or public internet access) with file handling up to 100 MB via API or Amazon S3 integration.</li>
-<li>Abnormal AI uses Code Interpreter within a three-tiered email security pipeline, reserving agent-driven code execution for the most difficult cases (Tier 3) – processing tens of thousands of messages daily – after initial filtering by heuristics (Tier 1) and machine learning models (Tier 2).</li>
-<li>Abnormal AI also employs an “analyst agent” utilizing Code Interpreter in batch mode to ingest misclassifications, identify patterns, and autonomously generate draft heuristics and improve models, leveraging the file system for checkpointing during long-running tasks.</li>
 </ul></div>
     
   </div>

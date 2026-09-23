@@ -80,13 +80,27 @@
     </label>
   </div>
   <h1>Anthropic News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-22 10:16 UTC</p>
+  <p class="generated-at">Generated 2026-09-23 10:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-09-22</span>
+    </div>
+    <h3><a href="https://claude.com/blog/what-a-task-costs-on-opus-5-5" target="_blank" rel="noopener">What a task costs on Opus 5.5 | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic’s blog post details the cost implications of using Opus 5.5 within Claude Code. The core announcement is that Opus 5.5 is cheaper per token than Opus 5, achieving cost reductions through lower input and output token prices, as well as cheaper cache reads (60% reduction). A task’s cost is determined by four factors: the number of turns (iterations), cache read rates, output token type (most expensive), and the model selected. </p>
+<p>The post emphasizes that a ‘turn’ – reprocessing the conversation – significantly impacts cost, and provides illustrative pricing examples using Opus 5.5’s list prices: $4/million input tokens, $20/million output tokens, and $0.20/million cache reads. Optimizing for fewer turns, utilizing a high cache hit rate (up to 96% possible), and minimizing unnecessary model ‘thinking’ (output tokens) are key to cost control. A 90% cache hit rate can reduce input costs from $11.20 to $1.62 for 2.8M tokens. </p>
+<p>The post also details changes in Opus 5.5; prices are lower, and the model generally performs more work per token, potentially increasing task completion but requiring individual measurement. Tools like <code>/usage</code> can track token consumption, and <code>/compact</code> can summarize conversation history to reduce costs, though at the risk of information loss. A key recommendation is to measure task costs on your own codebase to fully understand the benefits of Opus 5.5.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -482,20 +496,6 @@
     <div class="summary"><p>Anthropic has announced a research preview of the Model Hardware Standard (MHS), a specification designed to allow AI agents to safely and efficiently operate physical devices. Developed in collaboration with HHMI Janelia Research Campus, MHS aims to reduce integration time for lab and manufacturing equipment—currently weeks or months—to hours or minutes by standardizing communication between devices. </p>
 <p>The standard introduces a universal “driver” that translates commands like “read” and “write” for any programmable device, using a simple set of primitives and enabling discoverability across networks.  The driver also incorporates natural language descriptions of device characteristics, automatically creating reference files for AI agent understanding. Anthropic reports early tests with Claude demonstrate the AI can learn to operate devices, and even write deterministic scripts for automated tasks, such as laser alignment.</p>
 <p>Initial partners including Genentech, QuEra Computing, and Carnegie Mellon University have tested MHS, reporting speed increases in experiments and simplified automation. Anthropic is inviting stakeholders to join the research preview, with plans to eventually open-source the standard after further safety evaluations and developer input, and is already seeing support from companies like Amazon Web Services, Automata, and Raspberry Pi.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Anthropic</span> · 
-      <span>news</span>
-      <span> · 2026-08-27</span>
-    </div>
-    <h3><a href="https://www.anthropic.com/news/expanding-support-for-scientists" target="_blank" rel="noopener">Expanding our support for scientists</a></h3>
-    
-    <div class="summary"><p>Anthropic announced expansions to its support for the scientific community on August 27, 2026. The company is offering 10,000 free or discounted subscriptions to its Claude team plan for scientists for one year. Standard seats are free, while premium seats, offering five times the usage limits, are priced at $15 per month. Anthropic intends to expand the program beyond the initial 10,000 seats in the coming months.</p>
-<p>Alongside the team plan, Anthropic is broadening the scope of its AI for Science program, which currently supports biological sciences research with free credits. The program will now include researchers in other fields, particularly those undertaking computationally intensive projects. Individual projects can apply for up to $50,000 in credits. Access to Opus-class models remains limited for biology and chemistry researchers, while Fable models block relevant queries due to dual-use concerns. </p>
-<p>Anthropic is also partnering with the US government to give life science professionals access to its Mythos-class models and has begun enrolling initial participants. A research preview of the Model Hardware Standard (MHS) is being offered to select labs and manufacturers. Additionally, a $5 million grant program was launched to research AI's impact on user wellbeing.</p></div>
     
   </div>
   
