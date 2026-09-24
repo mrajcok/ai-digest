@@ -80,13 +80,66 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-23 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-09-24 10:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-23</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/use-open-weight-models-as-your-ai-coding-agent-with-amazon-bedrock/" target="_blank" rel="noopener">Use open weight models as your AI coding agent with Amazon Bedrock</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock now supports using open weight models (like Moonshot AI Kimi K3, OpenAI GPT-OSS 120B, and NVIDIA Nemotron 3 Super 120B) as a backend for AI coding agents, specifically utilizing the OpenCode agent.</li>
+<li>OpenCode is a terminal-native AI coding agent built in Go that connects to LLMs (including Bedrock) and can read/edit files, run commands, and understand project structure via LSP.</li>
+<li>The architecture allows for multi-model workflows, assigning different models to specific roles (e.g., Kimi K3 for planning/reasoning, Nemotron for code generation) within a single session, configurable via <code>opencode.json</code>.</li>
+<li>Bedrock offers data residency, security controls (IAM, CloudTrail, VPCs), and flexible pricing tiers (Priority, Standard, Flex) for these workloads, with the Flex tier offering a 50% cost reduction for latency-tolerant tasks.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-23</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/agentic-conversational-video-intelligence-built-on-aws/" target="_blank" rel="noopener">Agentic conversational video intelligence built on AWS</a></h3>
+    
+    <div class="summary"><p>Agentic conversational video intelligence solution built on AWS enables natural language querying of video content, reducing manual review time.</p>
+<ul>
+<li>The solution uses an agentic architecture with the Strands Agents SDK to orchestrate Amazon Bedrock (Claude Sonnet), Amazon Rekognition, and Amazon Transcribe based on user queries.</li>
+<li>Initial video analysis takes 5–10 minutes, while subsequent queries against processed content return responses in under a second due to caching.</li>
+<li>The system accepts video files and allows querying through a chat interface, supporting tasks like identifying decisions made in meetings or detecting individuals in security footage.</li>
+<li>Tools are implemented as Python functions decorated with <code>@tool</code>, with docstrings guiding the agent's use of each AWS service, allowing for easy extensibility.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-23</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/from-portal-hopping-to-instant-answers-hemas-journey-with-mcp-and-amazon-bedrock/" target="_blank" rel="noopener">From portal-hopping to instant answers: HEMA’s journey with MCP and Amazon Bedrock</a></h3>
+    
+    <div class="summary"><p>HEMA built an internal AI assistant, HAL, to consolidate fragmented internal knowledge and provide instant answers to employees.</p>
+<ul>
+<li>HAL leverages Amazon Bedrock AgentCore and the Model Context Protocol (MCP) to deliver knowledge within existing tools like Kiro and Claude, avoiding the need for users to navigate multiple portals.</li>
+<li>The solution consists of two AgentCore Gateways: one IAM-authenticated for internal use and one Entra ID-authenticated for external clients, enabling secure access without AWS credentials.</li>
+<li>HAL utilizes Amazon Bedrock Knowledge Bases for semantic search and retrieval augmented generation (RAG), alongside AgentCore Gateway for accessing live APIs via OpenAPI specifications and Lambda functions.</li>
+<li>Authentication for external clients is handled by an MCP auth proxy with emulated Dynamic Client Registration (DCR), simplifying configuration and maintaining security through Microsoft Entra ID.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -560,57 +613,6 @@
 <li>Blueprints are designed by scoping sensitive information, identifying its location on the page, and defining how to remove it – in this case, converting PDFs to PNGs and applying black box redaction based on bounding box coordinates obtained from BDA.</li>
 <li>Combining BDA’s custom output (blueprint-driven PII detection) with its standard output (complete extraction with bounding boxes) and token matching improves redaction recall from 89.3% to 95.2%, with a minor trade-off in precision.</li>
 <li>A serverless pipeline using AWS Step Functions and Lambda functions orchestrates the process, handling document input from S3, preprocessing (PDF to PNG conversion), redaction via BDA, reassembly into redacted PDFs, and reporting.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-16</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/optimizing-agent-system-prompts-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Optimizing agent system prompts with Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock AgentCore introduces AgentCore optimization, using production traces to propose and validate improvements to agent configurations (prompts, tool descriptions, skills).</li>
-<li>The system prompt optimizer uses an “agentic reflector” to analyze traces and propose revisions, explaining the reasoning behind changes, accessible through a filesystem-based workflow to handle large trace corpora.</li>
-<li>Two reflector agents are available: the Single Agent Reflector for speed and the Sub-Agent Reflector, which uses a swarm of agents for higher quality analysis of individual traces, with findings aggregated by an orchestrator.</li>
-<li>Evaluation results on AppWorld and WebShop benchmarks show the Single Agent Reflector offers the best quality-per-cost trade-off, while the Sub-Agent Reflector achieves the highest overall quality, both outperforming GEPA and MIPROv2.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-16</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/fault-tolerant-distributed-training-on-amazon-eks-using-nvrx/" target="_blank" rel="noopener">Fault tolerant distributed training on Amazon EKS using NVRx</a></h3>
-    
-    <div class="summary"><ul>
-<li>NVIDIA Resiliency Extension (NVRx) 0.4.1 (and recommended v0.6.0) integrates with PyTorch Fully Sharded Data Parallel (FSDP) on Amazon EKS to improve fault tolerance and training speed.</li>
-<li>Async checkpointing, using <code>TorchAsyncCheckpoint</code>, decouples I/O from training, allowing overlapping operations and reducing checkpointing-related idle time, particularly with FSDP’s <code>LOCAL_STATE_DICT</code>.</li>
-<li>In-process restart, via <code>inprocess.Wrapper</code>, restarts failed ranks within seconds by handling transient faults (exceptions, NCCL hangs) without impacting the container lifecycle, leveraging health checks and restart control.</li>
-<li><code>ft_launcher</code> provides in-job restart capabilities by monitoring rank heartbeats and automatically respawning workers after hard crashes (SIGKILL, OOM) using a Kubernetes Job, reloading from the latest checkpoint.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-16</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/improving-hcls-ai-reasoning-with-open-source-agent-skills/" target="_blank" rel="noopener">Improving HCLS AI reasoning with open-source agent skills</a></h3>
-    
-    <div class="summary"><ul>
-<li>AWS released a collection of 38 open-source agent skills, spanning 11 HCLS domains, designed to improve the reasoning capabilities of AI agents in healthcare and life sciences applications.</li>
-<li>These “skills” are structured markdown documents (SKILL.md) that encode domain-specific decision procedures, utilizing YAML frontmatter for triggers, dependencies, and metadata, and are distinct from RAG or fine-tuning approaches.</li>
-<li>Evaluation results indicate equipped agents achieve a 70-86% win rate compared to those without skills, with the strongest improvements (78-85%) in critical thinking, across drug discovery, healthcare operations, and medical imaging.</li>
-<li>The skills are compatible with over 20 agent services including Amazon Bedrock AgentCore, AWS Strands Agents SDK, Kiro, Amazon Quick Desktop, Claude Code, and OpenAI Codex, and can be customized or extended for specific use cases.</li>
 </ul></div>
     
   </div>

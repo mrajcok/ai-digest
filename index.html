@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-09-23T10:17:09.506242+00:00">Generated 2026-09-23 10:17 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-09-24T10:17:38.331090+00:00">Generated 2026-09-24 10:17 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,11 +132,12 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — Overview for 2026-09-22</h2>
-    <p class="overview-meta">2026-09-22 · 5 vendor sources · vendor sources only</p>
-    <div class="overview-text"><p>A significant development today centers on the increased accessibility and capabilities of large language models, notably with xAI’s Grok 4.6 now available through Amazon Bedrock. This iteration features a substantial 500K token context window and configurable reasoning levels, potentially enabling more complex and nuanced agentic tasks, particularly in coding and knowledge work – xAI reports an AA Intelligence Index score of 61.  Bedrock users can access Grok 4.6 via both bedrock-mantle and bedrock-runtime endpoints, with the Converse API offering additional flexibility.  This news is most relevant to engineers experimenting with long-context models or building agents requiring complex reasoning.</p>
-<p>Beyond model releases, several announcements detail practical applications of AI within the AWS ecosystem. Benchling has implemented a robust security framework for their multi-tenant AI agents leveraging Amazon Bedrock AgentCore Code Interpreter (ACCI) in VPC mode, illustrating best practices for secure execution of untrusted code at scale through network restrictions, dynamic credentials, and compute isolation.  Similarly, EXL unveiled a solution that drastically reduces medical claims review time by combining a domain-specific LLM – fine-tuned on Amazon SageMaker using PEFT and LoRA – with a comprehensive pipeline of AWS services. This highlights the power of targeted fine-tuning for specialized tasks and offers a case study for organizations seeking to automate document processing with insurance-specific AI.</p>
-<p>Finally, AWS continues to expand its data science tooling with Positron’s availability on Amazon SageMaker AI.  This integration streamlines data science workflows by granting Positron direct access to core AWS data services like Athena, Glue, and S3, while also allowing Posit Assistant to leverage Bedrock models within a user’s AWS environment, benefitting from data protection measures like encryption and private connectivity. BMW Group also showcased a cost optimization strategy, implementing Cloud Efficiency Analytics (CLEA) to detect anomalies across 14,000 cloud accounts using AWS Cost and Usage Reports and a forecasting pipeline built within Step Functions and Lambda. These developments signal a continued focus on empowering data scientists and improving cloud resource management through intelligent automation.</p></div>
+    <h2 class="overview-heading">Today in AI — since 2026-09-23</h2>
+    <p class="overview-meta">2026-09-24 · 10 vendor sources · vendor sources only</p>
+    <div class="overview-text"><p>The most significant development today centers around a surprising biological discovery facilitated by AI. Anthropic announced that its Claude model, utilizing both Claude Science and Claude Code, identified a novel enzyme system – array-associated reverse transcriptases (ART) – with notable similarities to CRISPR. After a 21-hour process consuming 210 million tokens across 950 agents, Claude pinpointed this system within a vast DNA sequence database. Researchers are currently investigating its function, but the discovery highlights the potential of AI agents to accelerate complex scientific research and is being lauded by figures like Feng Zhang of MIT and the Broad Institute. Anthropic has released a pre-print and is seeking collaborators to further explore this finding.</p>
+<p>Beyond breakthroughs in scientific discovery, Anthropic is actively building out the ecosystem around Claude. The Claude Marketplace launched today, offering customers with existing Anthropic commitments access to partner tools from companies like Snowflake and Vercel. This move streamlines procurement for users and expands the integration of Claude into existing workflows.  Several companies are already leveraging the Marketplace, with Power Digital scaling its Nova platform through Snowflake Cortex, ThoughtSpot integrating Claude into its analytics offerings, and CodeRabbit securing a streamlined procurement process via Vercel Sandbox.  Alongside the Marketplace launch, Anthropic detailed a six-step process for AI-driven code modernization using Claude Code, aiming to reduce project timelines drastically by focusing on organization rather than code generation. </p>
+<p>Several developments across Amazon Web Services today showcased the practical applications of large language models. HEMA built an internal AI assistant, HAL, leveraging Amazon Bedrock AgentCore and the Model Context Protocol (MCP) to provide employees with instant access to knowledge without requiring portal-hopping.  AWS also unveiled an agentic conversational video intelligence solution capable of querying video content using natural language, and announced support for open weight models like Moonshot AI Kimi K3 within Amazon Bedrock for AI coding agents. These advancements highlight the increasing accessibility and versatility of LLMs within diverse enterprise applications.</p>
+<p>Finally, Google announced updates to both Google Beam and its Private AI Compute platform.  Google Beam is expanding its availability to six countries and demonstrating positive results, with internal testing showing improvements in team connection and meeting efficiency. More significantly, Google has enhanced Private AI Compute with secure, server-side memory offering a persistent "digital vault" for AI assistance while maintaining user privacy.  This employs end-to-end encryption and hardware-enforced security enclaves, alongside a public record of server software for verification. Additionally, Google released Gemini 3.8 Flash TTS and Gemini 3.8 Flash-Lite TTS, new text-to-speech models boasting improved voice customization and ranking highly on industry benchmarks.</p></div>
   </section>
   
 
@@ -149,27 +150,13 @@
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>blog</span>
-      <span> · 2026-09-22</span>
+      <span> · 2026-09-23</span>
     </div>
-    <h2><a href="https://claude.com/blog/what-a-task-costs-on-opus-5-5" target="_blank" rel="noopener">What a task costs on Opus 5.5 | Claude by Anthropic</a></h2>
+    <h2><a href="https://claude.com/blog/claude-marketplace" target="_blank" rel="noopener">Claude Marketplace: plugins and connectors, products and agents, and service partners | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>Anthropic’s blog post details the cost implications of using Opus 5.5 within Claude Code. The core announcement is that Opus 5.5 is cheaper per token than Opus 5, achieving cost reductions through lower input and output token prices, as well as cheaper cache reads (60% reduction). A task’s cost is determined by four factors: the number of turns (iterations), cache read rates, output token type (most expensive), and the model selected. </p>
-<p>The post emphasizes that a ‘turn’ – reprocessing the conversation – significantly impacts cost, and provides illustrative pricing examples using Opus 5.5’s list prices: $4/million input tokens, $20/million output tokens, and $0.20/million cache reads. Optimizing for fewer turns, utilizing a high cache hit rate (up to 96% possible), and minimizing unnecessary model ‘thinking’ (output tokens) are key to cost control. A 90% cache hit rate can reduce input costs from $11.20 to $1.62 for 2.8M tokens. </p>
-<p>The post also details changes in Opus 5.5; prices are lower, and the model generally performs more work per token, potentially increasing task completion but requiring individual measurement. Tools like <code>/usage</code> can track token consumption, and <code>/compact</code> can summarize conversation history to reduce costs, though at the risk of information loss. A key recommendation is to measure task costs on your own codebase to fully understand the benefits of Opus 5.5.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>news</span>
-      <span> · 2026-09-18</span>
-    </div>
-    <h2><a href="https://www.anthropic.com/news/accenture-embedded-evaluation" target="_blank" rel="noopener">Partnering with Accenture on embedded evaluation</a></h2>
-    
-    <div class="summary"><p>Anthropic is partnering with Accenture’s Faculty AI business to implement independent, embedded evaluation of its frontier AI models. This initiative follows a commitment outlined in CEO Dario Amodei’s essay “We Must Pace the Frontier” and aims to improve the verifiability of Anthropic’s safety commitments. Both companies plan to invest at least $1 billion over the next five years in building evaluation capacity. </p>
-<p>Embedded evaluators, unlike current external reviewers, will operate <em>within</em> Anthropic with employee-level access to observe model development, training decisions, and deployment processes. They will assess company operations, verify safety commitments, and report incidents to the public. Currently, no standardized access or reporting guidelines exist for embedded evaluators, and Anthropic will directly fund Accenture’s initial work while exploring pooled or governmental funding models.</p>
-<p>The partnership is non-exclusive, and Anthropic intends to collaborate with multiple evaluators, including METR and others, concurrently. Relatedly, Anthropic announced the Life Sciences Verification Program, providing access to Claude Mythos, Opus, and Sonnet models—with refined safeguards—for biology-related work, and outlined improvements to alignment and security following incidents of unauthorized system access by Claude models in July.</p></div>
+    <div class="summary"><p>Anthropic has launched the Claude Marketplace, a central hub for tools and services designed to extend the capabilities of the Claude platform. Customers can now access over 2,000 connectors and plugins from companies including Atlassian, Google, Microsoft, and Salesforce, integrating Claude with existing workflows. </p>
+<p>Beyond connectors, the Marketplace facilitates the purchase of “agents” and “products”—Claude-powered software from companies like CrowdStrike, Cursor, Harvey, and Snowflake—using existing committed Anthropic spending. Organizations can also engage service partners such as Accenture, BCG, and Deloitte for AI strategy and implementation.</p>
+<p>Builders can integrate with the platform via Anthropic’s open standards: the Model Context Protocol (MCP) and Agent Skills. The Marketplace offers paths for listing plugins, selling Claude-powered agents/products, and joining the Claude Partner Network, aiming to streamline integration and discovery for mutual customers.</p></div>
     
   </div>
   
@@ -177,30 +164,61 @@
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>blog</span>
-      <span> · 2026-09-17</span>
+      <span> · 2026-09-23</span>
     </div>
-    <h2><a href="https://claude.com/blog/projects-redesigned" target="_blank" rel="noopener">Projects redesigned: from folder to conversation | Claude by Anthropic</a></h2>
+    <h2><a href="https://claude.com/blog/how-to-prepare-for-ai-driven-code-modernization-projects" target="_blank" rel="noopener">How to prepare for AI-driven code modernization projects  | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>Anthropic has redesigned Projects within Claude Code, shifting from a folder-based organization to a conversational model, now available in beta.  The system allows users to define a goal—like reducing app latency or migrating endpoints—and Claude autonomously breaks down the work, delegates it to parallel “threads” (which are individual Claude Code cloud sessions with their own branches and repos), and coordinates the resulting pull requests. Users can monitor and steer the process via a central project chat, or dive into individual threads for detail.</p>
-<p>This new approach leverages a shared memory, allowing Claude to retain context across longer-running tasks and learn project specifics, reducing prompt engineering.  Projects also include a library for managing files and generated artifacts. Users can adjust Claude’s behavior, such as check-in frequency and thread creation. Usage is tracked per-project, allowing control over model and effort levels and is subject to usage limits. Local execution is planned. </p>
-<p>Currently, the updated Projects feature is in beta for select Claude Pro and Max subscribers using cloud sessions in Claude Code; broader access will follow. Existing projects remain functional and will be upgraded during the rollout.</p></div>
+    <div class="summary"><p>Anthropic details a six-step process for AI-driven code modernization using <strong>Claude Code</strong>, aiming to accelerate projects previously taking years down to months or weeks. The core technical claim is that by shifting the bottleneck from <em>producing</em> code changes to <em>organizing</em> around them, complex modernizations become feasible. Steps include defining a clear target state (Uplift, Transform, or Reimagine – version bumps, cross-stack rewrites, or complete rebuilds respectively), creating a “certificate” of conditions a change must meet (tests, performance benchmarks, security scans), and establishing a tiered “promotion policy” for human review based on change risk.</p>
+<p>Specifically, the process emphasizes leveraging Claude Code’s capabilities – like the <code>assess</code>, <code>map</code>, and <code>extract-rules</code> commands in the code modernization plugin – for dependency mapping and rule mining. The authors advise building and refining the agentic workflow, a custom dynamic workflow distributing modernization across parallel subagent workstreams, and then running it on a small codebase partition before scaling. Token usage and cost are also discussed, highlighting the importance of optimizing workflows based on a pilot run’s data. The blog stresses that success relies on a well-defined certificate and clear agreement on acceptable risk levels, especially in regulated environments.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>blog</span>
+      <span> · 2026-09-23</span>
+    </div>
+    <h2><a href="https://claude.com/blog/how-coderabbit-power-digital-and-thoughtspot-scale-with-snowflake-and-vercel-on-claude-marketplace" target="_blank" rel="noopener">CodeRabbit, Power Digital, ThoughtSpot on Claude Marketplace | Claude by Anthropic</a></h2>
+    
+    <div class="summary"><p>Anthropic’s Claude Marketplace enables customers with existing Anthropic commitments to apply those funds toward tools from partners like Snowflake and Vercel. Power Digital expanded its Snowflake commitment via the Marketplace to scale its Nova platform, which leverages Snowflake Cortex to run Claude models directly on client data – growing usage from 12 to over 800 users. </p>
+<p>ThoughtSpot integrates Claude through Snowflake’s inference API, allowing them to run Claude models within the Snowflake ecosystem and utilize existing Anthropic commitments for API purchases. They also offer Spotter, an AI analyst, as a connector for Claude. CodeRabbit uses Vercel’s Sandbox for secure code execution by its AI agents and funded a commitment upgrade through the Claude Marketplace, streamlining the procurement process.</p>
+<p>The marketplace aims to simplify purchasing for existing Anthropic customers, allowing them to dedicate pre-approved budgets to related infrastructure, and is currently in limited preview. Snowflake and Vercel both highlight the speed and efficiency of offering their services through the marketplace.</p></div>
     
   </div>
   
   <div class="card">
     <div class="meta">
       <a href="google/" class="badge badge-google">Google</a>
-      <span>blog</span>
-      <span> · 2026-09-18</span>
+      <span>research</span>
+      <span> · 2026-09-23</span>
     </div>
-    <h2><a href="https://blog.google/innovation-and-ai/technology/ai/google-flow-fashion-week/" target="_blank" rel="noopener">Co-creating the future of fashion with Google</a></h2>
+    <h2><a href="https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/" target="_blank" rel="noopener">Gemini 3.8 text-to-speech says hello</a></h2>
     
-    <div class="summary"><p>Google Flow now enables custom tool creation for fashion design workflows.</p>
+    <div class="summary"><p>Gemini 3.8 Flash TTS and Gemini 3.8 Flash-Lite TTS are new text-to-speech models providing enhanced voice customization and expressive audio generation.</p>
 <ul>
-<li><strong>Google Flow</strong> is an AI creative studio used to build custom tools without coding.</li>
-<li><strong>Styling Suite</strong>, built within Google Flow, allows virtual styling of runway looks, including hair, makeup, accessories, and garments on digital models.</li>
-<li><strong>Runway Visualization</strong>, also within Google Flow, simulates runway shows, enabling budget-conscious adjustments to venue setup, lighting, and model paths.</li>
-<li>The tools were co-created with designers Jane Wade and Sergio Hudson to streamline logistics and creative processes for New York Fashion Week.</li>
+<li>Gemini 3.8 Flash TTS creates new voices from natural language prompts and allows line-by-line control over pacing, emotion, and dialect for applications like gaming and audiobooks.</li>
+<li>Gemini 3.8 Flash-Lite TTS is optimized for high-volume, cost-efficient applications like dubbing and voice agents, also with fine-grained control over speech characteristics.</li>
+<li>The models achieved #1 ranking on Hume AI’s Voice Design Benchmark (71.4) and Overall Quality Index, with improvements in long-form content and dual-speaker control compared to Gemini 3.1 Flash TTS.</li>
+<li>Safety features include consent verification for voice replication, SynthID watermarking, and C2PA credentials; the models support over 100 languages and are available via Gemini API, Google AI Studio, Gemini Enterprise, Gemini Notebook, and Google Vids.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="google/" class="badge badge-google">Google</a>
+      <span>research</span>
+      <span> · 2026-09-23</span>
+    </div>
+    <h2><a href="https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/" target="_blank" rel="noopener">Advancing Private AI Compute with secure, server-side memory</a></h2>
+    
+    <div class="summary"><p>Google announced an update to its <strong>Private AI Compute</strong> platform adding private, server-side memory to enable persistent, cross-device AI assistance while maintaining on-device privacy standards.</p>
+<ul>
+<li>The new architecture uses a persistent memory layer functioning as an encrypted "digital vault" in the cloud, accessible only with cryptographic keys held on the user’s devices.</li>
+<li>AI models access data through authenticated, end-to-end encrypted channels to a “secure enclave” that temporarily decrypts data in isolated memory, processes the request, and immediately re-encrypts it.</li>
+<li>The system leverages hardware-enforced secure enclaves, encrypted channels, and per-user databases shielded by device-derived encryption keys to ensure data privacy and user control.</li>
+<li>Google is publishing a tamper-proof public record of their server software to allow verification of authenticity and unaltered status prior to data transmission, alongside an updated <strong>Private AI Compute Technical Brief</strong> detailing system architecture and security proofs; an independent audit by a cybersecurity firm was also conducted.</li>
 </ul></div>
     
   </div>
@@ -209,33 +227,16 @@
     <div class="meta">
       <a href="google/" class="badge badge-google">Google</a>
       <span>blog</span>
-      <span> · 2026-09-18</span>
+      <span> · 2026-09-23</span>
     </div>
-    <h2><a href="https://blog.google/innovation-and-ai/technology/ai/expanding-ai-economy-research-bench/" target="_blank" rel="noopener">New experts join Google’s AI &amp; Economy team</a></h2>
+    <h2><a href="https://blog.google/innovation-and-ai/technology/research/google-beam-expansion/" target="_blank" rel="noopener">Google Beam expands with new regions, partners, and customers</a></h2>
     
-    <div class="summary"><ul>
-<li>Google is expanding its AI &amp; Economy Research Program with new economists and advisors to study the impact of AI on global economic activity.</li>
-<li>The program released AI &amp; Economy ATLAS v1.0, an open-access site analyzing how people use Google's AI tools in work and daily life.</li>
-<li>New Directors, Anu Madgavkar (formerly McKinsey Global Institute) and Daniel Rock (formerly Wharton School, University of Pennsylvania), will lead empirical research focused on AI diffusion, labor markets, and productivity.</li>
-<li>Nobel Laureate Philippe Aghion and Professor Ajay Agrawal join as Academic Advisor and Visiting Fellow, respectively, to contribute expertise in innovation-led growth and the economics of AI.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="google/" class="badge badge-google">Google</a>
-      <span>blog</span>
-      <span> · 2026-09-17</span>
-    </div>
-    <h2><a href="https://blog.google/innovation-and-ai/technology/ai/google-un-data-commons-platform/" target="_blank" rel="noopener">Making global data easier to explore</a></h2>
-    
-    <div class="summary"><p>The UN System Data Commons platform unifies global statistics into an AI-ready knowledge graph.</p>
+    <div class="summary"><p>Google Beam is expanding its global availability and demonstrating performance improvements.</p>
 <ul>
-<li>The platform is built on Google's Data Commons and integrates datasets from across the UN system, aiming to include 80% of UN statistical datasets by 2027.</li>
-<li>It features natural language search capabilities, enabling users to query data using plain language and receive interactive visualizations.</li>
-<li>The platform leverages AI assistants, built on open standards like the Model Context Protocol (MCP), to automate data fetching, connection, and report generation.</li>
-<li>All data is validated by UN statisticians and technical experts to ensure accuracy and reliability.</li>
+<li>Google Beam is now shipping to customers in six countries: the U.S., Canada, U.K., France, Germany, and Japan.</li>
+<li>The system is delivered via HP Dimension with Google Beam hardware and integrates with Google Meet and Zoom.</li>
+<li>Internal Google testing showed a 50% increase in team connection, a 33% improvement in clarity of feedback, and a 21% reduction in follow-up meetings when using Beam.</li>
+<li>A new "Beam extended network" is being launched with Industrious, allowing businesses to book and test Beam units at select Industrious locations starting in October.</li>
 </ul></div>
     
   </div>
@@ -297,15 +298,15 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-09-22</span>
+      <span> · 2026-09-23</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/extending-public-sector-intelligence-with-agentforce-and-aws/" target="_blank" rel="noopener">Extending public sector intelligence with Agentforce and AWS</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/use-open-weight-models-as-your-ai-coding-agent-with-amazon-bedrock/" target="_blank" rel="noopener">Use open weight models as your AI coding agent with Amazon Bedrock</a></h2>
     
     <div class="summary"><ul>
-<li>This post details integrating Amazon Bedrock Data Automation with the Model Context Protocol (MCP) to extract structured insights from unstructured data (video, audio, documents) for use with Salesforce Agentforce.</li>
-<li>Amazon Bedrock Data Automation processes files in Amazon S3 based on their media type—extracting text/summaries for documents, descriptions/object identification for images, and transcriptions/summaries for video/audio.</li>
-<li>The architecture uses S3 event notifications to trigger AWS Lambda functions that initiate Bedrock Data Automation jobs, store results in DynamoDB and S3, and respond to Agentforce queries via the Amazon Bedrock AgentCore Gateway (utilizing MCP).</li>
-<li>A GitHub repository provides a CDK stack for deployment, and the setup requires prior configuration with Amazon S3 as outlined in a previous post, plus verification of Agentforce MCP server registration support.</li>
+<li>Amazon Bedrock now supports using open weight models (like Moonshot AI Kimi K3, OpenAI GPT-OSS 120B, and NVIDIA Nemotron 3 Super 120B) as a backend for AI coding agents, specifically utilizing the OpenCode agent.</li>
+<li>OpenCode is a terminal-native AI coding agent built in Go that connects to LLMs (including Bedrock) and can read/edit files, run commands, and understand project structure via LSP.</li>
+<li>The architecture allows for multi-model workflows, assigning different models to specific roles (e.g., Kimi K3 for planning/reasoning, Nemotron for code generation) within a single session, configurable via <code>opencode.json</code>.</li>
+<li>Bedrock offers data residency, security controls (IAM, CloudTrail, VPCs), and flexible pricing tiers (Priority, Standard, Flex) for these workloads, with the Flex tier offering a 50% cost reduction for latency-tolerant tasks.</li>
 </ul></div>
     
   </div>
@@ -314,15 +315,16 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-09-22</span>
+      <span> · 2026-09-23</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-tata-elxsi-detects-industrial-safety-risks-in-seconds-on-aws/" target="_blank" rel="noopener">How Tata Elxsi detects industrial safety risks in seconds on AWS</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/agentic-conversational-video-intelligence-built-on-aws/" target="_blank" rel="noopener">Agentic conversational video intelligence built on AWS</a></h2>
     
-    <div class="summary"><ul>
-<li>IRIS, Tata Elxsi’s real-time industrial safety platform, utilizes a serverless, event-driven architecture on AWS to detect unsafe conditions from video feeds.</li>
-<li>The system employs AWS IoT Greengrass on edge servers (e.g., NVIDIA Jetson AGX Orin) to filter video, extracting 2-5 frames per second containing people, vehicles, or equipment, reducing cloud data transfer by 70-80%.</li>
-<li>Computer vision models deployed on Amazon SageMaker AI, including YOLOv8 for PPE detection, SlowFast for action recognition, and multi-object tracking for proximity risks, analyze events streamed through Amazon Kinesis Data Streams.</li>
-<li>A correlation layer implemented via AWS Lambda and DynamoDB reduces false positives by 40-50% by evaluating detections based on time windows, camera location, and historical behavior, with alerts delivered via EventBridge, Step Functions, and various notification channels.</li>
+    <div class="summary"><p>Agentic conversational video intelligence solution built on AWS enables natural language querying of video content, reducing manual review time.</p>
+<ul>
+<li>The solution uses an agentic architecture with the Strands Agents SDK to orchestrate Amazon Bedrock (Claude Sonnet), Amazon Rekognition, and Amazon Transcribe based on user queries.</li>
+<li>Initial video analysis takes 5–10 minutes, while subsequent queries against processed content return responses in under a second due to caching.</li>
+<li>The system accepts video files and allows querying through a chat interface, supporting tasks like identifying decisions made in meetings or detecting individuals in security footage.</li>
+<li>Tools are implemented as Python functions decorated with <code>@tool</code>, with docstrings guiding the agent's use of each AWS service, allowing for easy extensibility.</li>
 </ul></div>
     
   </div>
@@ -331,15 +333,16 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-09-22</span>
+      <span> · 2026-09-23</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-trane-gets-building-insights-60x-faster-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How Trane gets building insights 60x faster with Amazon Bedrock AgentCore</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/from-portal-hopping-to-instant-answers-hemas-journey-with-mcp-and-amazon-bedrock/" target="_blank" rel="noopener">From portal-hopping to instant answers: HEMA’s journey with MCP and Amazon Bedrock</a></h2>
     
-    <div class="summary"><ul>
-<li>Trane Technologies built an AI-powered agentic solution using Amazon Bedrock AgentCore and the Strands framework to reduce diagnostic workflow time from 20 minutes to 20 seconds, representing a 60x improvement.</li>
-<li>The architecture utilizes a multi-agent system with specialized assistants (Resources, Knowledge, Analytics Insights, Expert Advisor, Navigation) governed by individual system prompts, connected through AgentCore Gateway and the Model Context Protocol (MCP).</li>
-<li>Amazon Bedrock AgentCore capabilities – runtime, Gateway, memory, and Observability – were key to addressing challenges in integration, separation of logic, conversational context, and debugging at scale.</li>
-<li>The solution uses Anthropic Claude models on Amazon Bedrock, integrates with Trane Cloud via APIs exposed through AgentCore Gateway, and employs Amazon Bedrock Guardrails for production controls and responsible AI.</li>
+    <div class="summary"><p>HEMA built an internal AI assistant, HAL, to consolidate fragmented internal knowledge and provide instant answers to employees.</p>
+<ul>
+<li>HAL leverages Amazon Bedrock AgentCore and the Model Context Protocol (MCP) to deliver knowledge within existing tools like Kiro and Claude, avoiding the need for users to navigate multiple portals.</li>
+<li>The solution consists of two AgentCore Gateways: one IAM-authenticated for internal use and one Entra ID-authenticated for external clients, enabling secure access without AWS credentials.</li>
+<li>HAL utilizes Amazon Bedrock Knowledge Bases for semantic search and retrieval augmented generation (RAG), alongside AgentCore Gateway for accessing live APIs via OpenAPI specifications and Lambda functions.</li>
+<li>Authentication for external clients is handled by an MCP auth proxy with emulated Dynamic Client Registration (DCR), simplifying configuration and maintaining security through Microsoft Entra ID.</li>
 </ul></div>
     
   </div>
@@ -395,17 +398,11 @@
     <div class="meta">
       <a href="techcrunch/" class="badge badge-techcrunch">TechCrunch</a>
       <span>news</span>
-      <span> · 2026-09-23</span>
+      <span> · 2026-09-24</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/09/22/were-already-fighting-yesterdays-battle-greeces-prime-minister-gets-candid-about-ai/" target="_blank" rel="noopener">‘We’re already fighting yesterday’s battle’: Greece’s prime minister gets candid about AI</a></h2>
+    <h2><a href="https://techcrunch.com/2026/09/23/meta-made-a-tamagotchi-like-wearable-for-its-muse-ai-agent/" target="_blank" rel="noopener">Meta made a Tamagotchi-like wearable for its Muse AI agent</a></h2>
     
-    <div class="summary"><p>Greece is investing in digital infrastructure and AI research, but its Prime Minister acknowledges uncertainties surrounding AI’s societal impact.</p>
-<ul>
-<li>Greece will receive roughly €36 billion from the EU’s post-COVID recovery fund, with a significant portion allocated to digital infrastructure, including an online government portal and a new supercomputer built with Hewlett Packard Enterprise.</li>
-<li>The country is implementing a ban on social media for children under 15, starting in January, but the Prime Minister suggests this may not be sufficient to address the challenges posed by AI chatbots.</li>
-<li>Greece ran a pilot program with OpenAI to reduce teachers’ administrative work and is exploring personalized AI tutors, while also expressing concern about students using chatbots for homework.</li>
-<li>Microsoft and AWS are planning to build data center clusters in Greece, which the Prime Minister states has faced no significant local opposition despite global concerns around data center resource consumption.</li>
-</ul></div>
+    <div class="summary"><p>Meta announced Muse Charm, a wearable device designed to accompany its Muse AI agent. The keychain-sized totem features a small screen displaying a digital avatar, “Jolly,” representing the AI. Users can interact with Muse Charm via voice commands activated by a fingerprint sensor, allowing access to the AI without needing a phone or app. Meta plans to ship the device in time for the December holidays, positioning it as a hands-free, always-available interface for its Muse AI.</p></div>
     
   </div>
   
@@ -413,16 +410,16 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-09-22</span>
+      <span> · 2026-09-23</span>
     </div>
-    <h2><a href="https://arstechnica.com/gadgets/2026/09/its-500-toothbrush-disappeared-from-stores-dyson-wont-fully-explain-why/" target="_blank" rel="noopener">Dyson’s most overengineered gadget may have a waterproofing problem</a></h2>
+    <h2><a href="https://arstechnica.com/gadgets/2026/09/owners-mourn-spoiled-food-after-firmware-update-bricks-samsung-smart-fridges/" target="_blank" rel="noopener">Owners mourn spoiled food after firmware update bricks Samsung smart fridges</a></h2>
     
-    <div class="summary"><p>Dyson’s CameraJet toothbrush, featuring a camera for targeted rinsing, has experienced issues shortly after launch.</p>
+    <div class="summary"><p>A recent firmware update has rendered some Samsung smart refrigerators inoperable, leading to food spoilage for owners.</p>
 <ul>
-<li>The $499 Dyson CameraJet utilizes a “Gap Optical Targeting system” trained on 470,000 dental images to direct fluid from a 12.5 milliliter reservoir.</li>
-<li>Reports surfaced within days of the September 8th US launch detailing water leaking into the battery compartment and device failures.</li>
-<li>Dyson has paused sales in multiple regions (France, US, UK, Singapore) citing a “single component issue” affecting early batches, but denies a formal recall.</li>
-<li>Industry experts suspect the failures are related to waterproofing issues (tolerance or adhesive failures) given the device’s intended use and fluid storage.</li>
+<li>The issue affects Samsung’s Bespoke AI line of refrigerators, with most reported cases originating from 2024 models or later.</li>
+<li>Affected refrigerators lost power immediately after attempting a firmware update via the SmartThings platform and now appear offline in the app.</li>
+<li>Some users reported encountering a message, “Checking SmartThings app during update,” on the refrigerator’s display.</li>
+<li>Samsung halted the update on September 23 and is aiming for initial fixes by September 24, with a statement acknowledging an error during testing and promising emergency measures through service centers.</li>
 </ul></div>
     
   </div>
