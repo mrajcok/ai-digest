@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-09-24T10:17:38.331090+00:00">Generated 2026-09-24 10:17 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-09-25T10:17:24.734929+00:00">Generated 2026-09-25 10:17 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,7 +132,7 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — since 2026-09-23</h2>
+    <h2 class="overview-heading">Today in AI — Overview for 2026-09-24</h2>
     <p class="overview-meta">2026-09-24 · 10 vendor sources · vendor sources only</p>
     <div class="overview-text"><p>The most significant development today centers around a surprising biological discovery facilitated by AI. Anthropic announced that its Claude model, utilizing both Claude Science and Claude Code, identified a novel enzyme system – array-associated reverse transcriptases (ART) – with notable similarities to CRISPR. After a 21-hour process consuming 210 million tokens across 950 agents, Claude pinpointed this system within a vast DNA sequence database. Researchers are currently investigating its function, but the discovery highlights the potential of AI agents to accelerate complex scientific research and is being lauded by figures like Feng Zhang of MIT and the Broad Institute. Anthropic has released a pre-print and is seeking collaborators to further explore this finding.</p>
 <p>Beyond breakthroughs in scientific discovery, Anthropic is actively building out the ecosystem around Claude. The Claude Marketplace launched today, offering customers with existing Anthropic commitments access to partner tools from companies like Snowflake and Vercel. This move streamlines procurement for users and expands the integration of Claude into existing workflows.  Several companies are already leveraging the Marketplace, with Power Digital scaling its Nova platform through Snowflake Cortex, ThoughtSpot integrating Claude into its analytics offerings, and CodeRabbit securing a streamlined procurement process via Vercel Sandbox.  Alongside the Marketplace launch, Anthropic detailed a six-step process for AI-driven code modernization using Claude Code, aiming to reduce project timelines drastically by focusing on organization rather than code generation. </p>
@@ -150,13 +150,13 @@
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>blog</span>
-      <span> · 2026-09-23</span>
+      <span> · 2026-09-24</span>
     </div>
-    <h2><a href="https://claude.com/blog/claude-marketplace" target="_blank" rel="noopener">Claude Marketplace: plugins and connectors, products and agents, and service partners | Claude by Anthropic</a></h2>
+    <h2><a href="https://claude.com/blog/claude-opus-5-5-built-for-coding-sessions-that-use-more-context" target="_blank" rel="noopener">Coding sessions are longer and use more context. Claude Opus 5.5 is built with that in mind. | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>Anthropic has launched the Claude Marketplace, a central hub for tools and services designed to extend the capabilities of the Claude platform. Customers can now access over 2,000 connectors and plugins from companies including Atlassian, Google, Microsoft, and Salesforce, integrating Claude with existing workflows. </p>
-<p>Beyond connectors, the Marketplace facilitates the purchase of “agents” and “products”—Claude-powered software from companies like CrowdStrike, Cursor, Harvey, and Snowflake—using existing committed Anthropic spending. Organizations can also engage service partners such as Accenture, BCG, and Deloitte for AI strategy and implementation.</p>
-<p>Builders can integrate with the platform via Anthropic’s open standards: the Model Context Protocol (MCP) and Agent Skills. The Marketplace offers paths for listing plugins, selling Claude-powered agents/products, and joining the Claude Partner Network, aiming to streamline integration and discovery for mutual customers.</p></div>
+    <div class="summary"><p>Anthropic has released Claude Opus 5.5, optimized for the evolving patterns of developer coding sessions. Analysis of Claude Code usage from March to September 2026 shows sessions are becoming longer and more context-heavy – 2.6x more context per request, with a token ratio of 324:1 (input to output). Despite more model calls per prompt (40% increase) and longer session durations (3.3x), interruptions are down 68%.</p>
+<p>Opus 5.5 addresses these trends with three key improvements. First, input and output token costs are reduced by 20%, and cached token costs by 60%. Second, improvements to the Claude Code harness boost cache hit rates, decreasing cache misses by over 50% and allowing longer cache lifetimes (now available to API key and cloud provider users). Finally, Opus 5.5 demonstrates a reduction in the number of turns needed to complete tasks – Zeta Labs saw nearly half the cost and twice the completion rate on harder tasks compared to Opus 5 – with a 30% increased output speed. </p>
+<p>Users are advised to monitor cached read usage within Claude Code and adopt practices like choosing a model at the start of a session and compacting context to maximize cost efficiency. Detailed cost comparisons for specific tasks can be found in the related post, "What a task costs on Opus 5.5."</p></div>
     
   </div>
   
@@ -164,26 +164,44 @@
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>blog</span>
-      <span> · 2026-09-23</span>
+      <span> · 2026-09-24</span>
     </div>
-    <h2><a href="https://claude.com/blog/how-to-prepare-for-ai-driven-code-modernization-projects" target="_blank" rel="noopener">How to prepare for AI-driven code modernization projects  | Claude by Anthropic</a></h2>
+    <h2><a href="https://claude.com/blog/claude-tag-now-supports-personal-connectors-in-channels" target="_blank" rel="noopener">Claude Tag now supports personal connectors in channels | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>Anthropic details a six-step process for AI-driven code modernization using <strong>Claude Code</strong>, aiming to accelerate projects previously taking years down to months or weeks. The core technical claim is that by shifting the bottleneck from <em>producing</em> code changes to <em>organizing</em> around them, complex modernizations become feasible. Steps include defining a clear target state (Uplift, Transform, or Reimagine – version bumps, cross-stack rewrites, or complete rebuilds respectively), creating a “certificate” of conditions a change must meet (tests, performance benchmarks, security scans), and establishing a tiered “promotion policy” for human review based on change risk.</p>
-<p>Specifically, the process emphasizes leveraging Claude Code’s capabilities – like the <code>assess</code>, <code>map</code>, and <code>extract-rules</code> commands in the code modernization plugin – for dependency mapping and rule mining. The authors advise building and refining the agentic workflow, a custom dynamic workflow distributing modernization across parallel subagent workstreams, and then running it on a small codebase partition before scaling. Token usage and cost are also discussed, highlighting the importance of optimizing workflows based on a pilot run’s data. The blog stresses that success relies on a well-defined certificate and clear agreement on acceptable risk levels, especially in regulated environments.</p></div>
+    <div class="summary"><p>Anthropic has added support for “personal connectors” to Claude Tag, currently in beta. This allows Claude, when accessed within a Slack channel, to utilize connectors linked to an individual user’s account – such as their calendar, Google Drive, or CRM – in addition to the channel’s pre-approved, admin-managed connectors.  The user controls how information from these personal connectors is surfaced, choosing between automatic posting (with sensitive content review) or manual review before publication to the channel.</p>
+<p>This feature expands Claude’s access to information typically behind individual logins. For example, a user can ask Claude to compare a personal Google Doc to recent GitHub commits, with Claude accessing the document via the user’s drive connection and the commits via the channel’s GitHub connection. Importantly, all activity through a personal connector is logged under the user’s account, while channel activity remains under the channel’s service account. </p>
+<p>The rollout begins now for Team plan users, with Enterprise access to follow.  Administrators on Enterprise plans will be able to require review of all responses utilizing personal connectors.  Connectors used for unattended actions, or those requiring cross-channel access, should still be managed at the channel level by administrators.</p></div>
     
   </div>
   
   <div class="card">
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>blog</span>
-      <span> · 2026-09-23</span>
+      <span>research</span>
+      <span> · 2026-09-24</span>
     </div>
-    <h2><a href="https://claude.com/blog/how-coderabbit-power-digital-and-thoughtspot-scale-with-snowflake-and-vercel-on-claude-marketplace" target="_blank" rel="noopener">CodeRabbit, Power Digital, ThoughtSpot on Claude Marketplace | Claude by Anthropic</a></h2>
+    <h2><a href="https://www.anthropic.com/research/project-swap" target="_blank" rel="noopener">Project Swap: What happens when agents trade for us?</a></h2>
     
-    <div class="summary"><p>Anthropic’s Claude Marketplace enables customers with existing Anthropic commitments to apply those funds toward tools from partners like Snowflake and Vercel. Power Digital expanded its Snowflake commitment via the Marketplace to scale its Nova platform, which leverages Snowflake Cortex to run Claude models directly on client data – growing usage from 12 to over 800 users. </p>
-<p>ThoughtSpot integrates Claude through Snowflake’s inference API, allowing them to run Claude models within the Snowflake ecosystem and utilize existing Anthropic commitments for API purchases. They also offer Spotter, an AI analyst, as a connector for Claude. CodeRabbit uses Vercel’s Sandbox for secure code execution by its AI agents and funded a commitment upgrade through the Claude Marketplace, streamlining the procurement process.</p>
-<p>The marketplace aims to simplify purchasing for existing Anthropic customers, allowing them to dedicate pre-approved budgets to related infrastructure, and is currently in limited preview. Snowflake and Vercel both highlight the speed and efficiency of offering their services through the marketplace.</p></div>
+    <div class="summary"><p>Anthropic’s Project Swap investigated how well AI agents – specifically those powered by Claude – can trade on behalf of people. The experiment involved 201 Anthropic employees trading books, with each employee first chatting with Claude to determine their reading preferences. Agents then negotiated with each other on a digital trading floor. The study found that agents were surprisingly good at representing their participants’ preferences based on a short (averaging 216 words) conversation, matching their rankings 61% of the time. However, the market’s efficiency was limited more by the agents’ imperfect understanding of participant preferences than by the negotiation process itself. </p>
+<p>Further analysis revealed that the model powering the agent (Haiku, Sonnet, Opus, or Fable) had a greater impact on negotiating outcomes than the specific instructions given to the agent ("ruthless" vs. "prosocial"). Stronger models led to more efficient markets. Participants indicated they would trust such an agent with roughly 30% of their yearly book budget, about 75% of what they’d trust a human friend with. The researchers highlight the importance of verifying agent understanding of user preferences – proposing a "test" where agents demonstrate their understanding before acting on behalf of a user – and establishing clear rules for agent marketplaces to ensure positive outcomes for all involved.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="google/" class="badge badge-google">Google</a>
+      <span>research</span>
+      <span> · 2026-09-24</span>
+    </div>
+    <h2><a href="https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/" target="_blank" rel="noopener">Introducing Gemini 3.8 Live with Live Avatar</a></h2>
+    
+    <div class="summary"><p>Gemini 3.8 Live with Live Avatar adds real-time visual presence to conversational AI for enterprise applications.</p>
+<ul>
+<li>The feature combines low-latency streaming video with live dialogue capabilities from the Gemini 3.8 Live model.</li>
+<li>Live Avatar supports asynchronous tool execution, allowing tool calls and data fetching in the background during active dialogue.</li>
+<li>It offers native multilingual speech-to-speech synchronization, adapting lip-sync and expressions across 97 languages without impacting video quality.</li>
+<li>Custom avatars can be generated from reference images, preserving likeness and brand styling, currently available through enterprise allowlisting; all generated content is watermarked with SynthID.</li>
+</ul></div>
     
   </div>
   
@@ -225,18 +243,17 @@
   
   <div class="card">
     <div class="meta">
-      <a href="google/" class="badge badge-google">Google</a>
+      <a href="microsoft/" class="badge badge-microsoft">Microsoft</a>
       <span>blog</span>
       <span> · 2026-09-23</span>
     </div>
-    <h2><a href="https://blog.google/innovation-and-ai/technology/research/google-beam-expansion/" target="_blank" rel="noopener">Google Beam expands with new regions, partners, and customers</a></h2>
+    <h2><a href="https://azure.microsoft.com/en-us/blog/designing-agent-first-platforms-what-changes-when-agents-do-the-work/" target="_blank" rel="noopener">Designing agent-first platforms: What changes when agents do the work</a></h2>
     
-    <div class="summary"><p>Google Beam is expanding its global availability and demonstrating performance improvements.</p>
-<ul>
-<li>Google Beam is now shipping to customers in six countries: the U.S., Canada, U.K., France, Germany, and Japan.</li>
-<li>The system is delivered via HP Dimension with Google Beam hardware and integrates with Google Meet and Zoom.</li>
-<li>Internal Google testing showed a 50% increase in team connection, a 33% improvement in clarity of feedback, and a 21% reduction in follow-up meetings when using Beam.</li>
-<li>A new "Beam extended network" is being launched with Industrious, allowing businesses to book and test Beam units at select Industrious locations starting in October.</li>
+    <div class="summary"><ul>
+<li>Microsoft Foundry provides a platform for building and governing agents, offering first-class identity through Entra Agent ID, tracing, and evaluation capabilities.</li>
+<li>Azure Container Apps Sandboxes delivers isolated runtime environments for agent execution, created in seconds, with its own identity and controlled access to systems, and supports pausing and resuming tasks.</li>
+<li>Each sandbox runs inside a hardware-isolated microVM, enabling strong separation and sub-second startup times while maintaining full oversight through Foundry.</li>
+<li>A recommended architecture involves building and governing agents in Microsoft Foundry and extending their execution into isolated sandboxes on Azure Container Apps, separating governance from the runtime environment.</li>
 </ul></div>
     
   </div>
@@ -279,17 +296,35 @@
   
   <div class="card">
     <div class="meta">
-      <a href="microsoft/" class="badge badge-microsoft">Microsoft</a>
+      <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-09-02</span>
+      <span> · 2026-09-24</span>
     </div>
-    <h2><a href="https://azure.microsoft.com/en-us/blog/the-economics-of-agent-optimization-context-engineering-for-enterprise-ai-agents/" target="_blank" rel="noopener">The Economics of Agent Optimization: Context engineering for enterprise AI agents</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/aderant-builds-intelligent-ticket-triage-with-amazon-nova/" target="_blank" rel="noopener">Aderant builds intelligent ticket triage with Amazon Nova</a></h2>
+    
+    <div class="summary"><p>Aderant implemented an intelligent ticket triage system using <strong>Amazon Nova Lite</strong> via <strong>Amazon Bedrock</strong> to automate support ticket processing for their 268 clients.</p>
+<ul>
+<li>The system, built with a <strong>Lambda</strong> function triggered by <strong>Amazon EventBridge</strong>, enriches tickets with data from <strong>Jira, Confluence, Amazon Athena,</strong> and <strong>Microsoft SharePoint</strong>.</li>
+<li><strong>Amazon Nova Lite</strong> through the <strong>Amazon Bedrock Converse API</strong> is used to classify tickets and recommend next steps, achieving approximately 96% routing accuracy in initial testing.</li>
+<li>The workflow includes autonomous actions (routing, notifications) for high-confidence classifications and flags lower-confidence tickets for human review, with operational metrics tracked in <strong>Amazon CloudWatch</strong>.</li>
+<li>The solution recovered an estimated 8-14 engineering hours per week at a monthly operating cost of under $30, and Bedrock inference cost remained under $1 per month.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
+      <span> · 2026-09-24</span>
+    </div>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/build-a-multi-account-ai-agent-with-agentcore-gateway-and-mcp/" target="_blank" rel="noopener">Build a multi-account AI agent with AgentCore Gateway and MCP</a></h2>
     
     <div class="summary"><ul>
-<li>Foundry IQ introduces a managed knowledge layer that decomposes queries, searches connected sources (Work IQ, Fabric IQ, Web IQ, Azure Blob Storage, SharePoint, OneLake, Azure SQL), and semantically reranks results to provide relevant passages with citations, improving evidence recall by up to 54% and reducing retrieval token costs by 34%.</li>
-<li>Foundry Toolboxes provide a single Model Context Protocol (MCP) endpoint for tools (built-in and custom APIs) with centralized management of authentication, access policies, and versions, reducing input-token consumption by up to 97% for large tool libraries.</li>
-<li>Skills in Foundry centralize reusable procedures, allowing agents to access guidance without embedding copies in every request; agents initially see only skill names and descriptions, loading full instructions only when relevant.</li>
-<li>Foundry Agent Service includes Session, User, and Procedural memory types to retain important context across interactions, improving task completion and personalization, with user-level isolation and retention policies for data control.</li>
+<li>This post details an architecture for building multi-account AI agents using Amazon Bedrock AgentCore Gateway and Model Context Protocol (MCP), enabling agents to query data across AWS accounts without data replication.</li>
+<li>AgentCore Gateway acts as a central integration point, providing a single endpoint for tool discovery and invocation across Line-of-Business (LOB) accounts, utilizing semantic search, centralized authentication via AgentCore Identity, and fine-grained authorization with Policy in AgentCore.</li>
+<li>LOB teams expose their data and tools as MCP servers running on AgentCore Runtime, maintaining ownership and control over their data while allowing agents access through a standardized interface.</li>
+<li>The architecture uses OAuth 2.0 machine-to-machine (M2M) authentication with AgentCore Identity and integrates with identity providers like Okta for secure, cross-account access, and utilizes Amazon Bedrock Guardrails for content safety.</li>
 </ul></div>
     
   </div>
@@ -298,51 +333,15 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-09-23</span>
+      <span> · 2026-09-24</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/use-open-weight-models-as-your-ai-coding-agent-with-amazon-bedrock/" target="_blank" rel="noopener">Use open weight models as your AI coding agent with Amazon Bedrock</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/speaker-labeled-transcription-with-whisperx-on-sagemaker-ai/" target="_blank" rel="noopener">Speaker-labeled transcription with WhisperX on SageMaker AI</a></h2>
     
     <div class="summary"><ul>
-<li>Amazon Bedrock now supports using open weight models (like Moonshot AI Kimi K3, OpenAI GPT-OSS 120B, and NVIDIA Nemotron 3 Super 120B) as a backend for AI coding agents, specifically utilizing the OpenCode agent.</li>
-<li>OpenCode is a terminal-native AI coding agent built in Go that connects to LLMs (including Bedrock) and can read/edit files, run commands, and understand project structure via LSP.</li>
-<li>The architecture allows for multi-model workflows, assigning different models to specific roles (e.g., Kimi K3 for planning/reasoning, Nemotron for code generation) within a single session, configurable via <code>opencode.json</code>.</li>
-<li>Bedrock offers data residency, security controls (IAM, CloudTrail, VPCs), and flexible pricing tiers (Priority, Standard, Flex) for these workloads, with the Flex tier offering a 50% cost reduction for latency-tolerant tasks.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-09-23</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/agentic-conversational-video-intelligence-built-on-aws/" target="_blank" rel="noopener">Agentic conversational video intelligence built on AWS</a></h2>
-    
-    <div class="summary"><p>Agentic conversational video intelligence solution built on AWS enables natural language querying of video content, reducing manual review time.</p>
-<ul>
-<li>The solution uses an agentic architecture with the Strands Agents SDK to orchestrate Amazon Bedrock (Claude Sonnet), Amazon Rekognition, and Amazon Transcribe based on user queries.</li>
-<li>Initial video analysis takes 5–10 minutes, while subsequent queries against processed content return responses in under a second due to caching.</li>
-<li>The system accepts video files and allows querying through a chat interface, supporting tasks like identifying decisions made in meetings or detecting individuals in security footage.</li>
-<li>Tools are implemented as Python functions decorated with <code>@tool</code>, with docstrings guiding the agent's use of each AWS service, allowing for easy extensibility.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-09-23</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/from-portal-hopping-to-instant-answers-hemas-journey-with-mcp-and-amazon-bedrock/" target="_blank" rel="noopener">From portal-hopping to instant answers: HEMA’s journey with MCP and Amazon Bedrock</a></h2>
-    
-    <div class="summary"><p>HEMA built an internal AI assistant, HAL, to consolidate fragmented internal knowledge and provide instant answers to employees.</p>
-<ul>
-<li>HAL leverages Amazon Bedrock AgentCore and the Model Context Protocol (MCP) to deliver knowledge within existing tools like Kiro and Claude, avoiding the need for users to navigate multiple portals.</li>
-<li>The solution consists of two AgentCore Gateways: one IAM-authenticated for internal use and one Entra ID-authenticated for external clients, enabling secure access without AWS credentials.</li>
-<li>HAL utilizes Amazon Bedrock Knowledge Bases for semantic search and retrieval augmented generation (RAG), alongside AgentCore Gateway for accessing live APIs via OpenAPI specifications and Lambda functions.</li>
-<li>Authentication for external clients is handled by an MCP auth proxy with emulated Dynamic Client Registration (DCR), simplifying configuration and maintaining security through Microsoft Entra ID.</li>
+<li>AWS has released a Deep Learning Container (DLC) for WhisperX, an open-source project extending OpenAI’s Whisper model, for use with Amazon SageMaker AI.</li>
+<li>WhisperX adds per-word timestamps, speaker diarization, and faster transcription to Whisper, addressing limitations in standard speech-to-text for applications like contact centers, meetings, and media captioning.</li>
+<li>The DLC is available for both real-time (for short, interactive clips under 60 seconds) and asynchronous (for long audio) SageMaker endpoints, utilizing the standard serving contract on port 8080 with <code>multipart/form-data</code> input and outputs in <code>json</code>, <code>srt</code>, or <code>vtt</code> formats.</li>
+<li>The image URI for the DLC is <code>763104351884.dkr.ecr.&lt;region&gt;.amazonaws.com/whisperx:3.8.6-cu128-amzn2023-sagemaker</code> and requires setting <code>InferenceAmiVersion</code> to <code>al2-ami-sagemaker-inference-gpu-3-1</code> during endpoint configuration.</li>
 </ul></div>
     
   </div>
@@ -398,11 +397,17 @@
     <div class="meta">
       <a href="techcrunch/" class="badge badge-techcrunch">TechCrunch</a>
       <span>news</span>
-      <span> · 2026-09-24</span>
+      <span> · 2026-09-25</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/09/23/meta-made-a-tamagotchi-like-wearable-for-its-muse-ai-agent/" target="_blank" rel="noopener">Meta made a Tamagotchi-like wearable for its Muse AI agent</a></h2>
+    <h2><a href="https://techcrunch.com/2026/09/24/lightspeed-targets-250m-for-new-india-fund-focusing-on-early-stage-ai/" target="_blank" rel="noopener">Lightspeed targets $250M for new India fund, focusing on early-stage AI</a></h2>
     
-    <div class="summary"><p>Meta announced Muse Charm, a wearable device designed to accompany its Muse AI agent. The keychain-sized totem features a small screen displaying a digital avatar, “Jolly,” representing the AI. Users can interact with Muse Charm via voice commands activated by a fingerprint sensor, allowing access to the AI without needing a phone or app. Meta plans to ship the device in time for the December holidays, positioning it as a hands-free, always-available interface for its Muse AI.</p></div>
+    <div class="summary"><p>Lightspeed Venture Partners is launching a new $250 million fund, Lightspeed India Partners V, focused on early-stage AI companies in India and Southeast Asia.</p>
+<ul>
+<li>The fund is half the size of its $500 million predecessor fund (raised in 2022), with 80% of the $250 million target already committed.</li>
+<li>Lightspeed plans to begin investing from the new fund within two months, with a roughly 2.5-year investment period.</li>
+<li>The fund’s thesis anticipates AI creating more value in India than the internet, focusing on application-layer AI opportunities.</li>
+<li>Lightspeed has previously invested in AI companies including Anthropic, xAI, Databricks, and Sarvam AI.</li>
+</ul></div>
     
   </div>
   
@@ -410,16 +415,16 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-09-23</span>
+      <span> · 2026-09-24</span>
     </div>
-    <h2><a href="https://arstechnica.com/gadgets/2026/09/owners-mourn-spoiled-food-after-firmware-update-bricks-samsung-smart-fridges/" target="_blank" rel="noopener">Owners mourn spoiled food after firmware update bricks Samsung smart fridges</a></h2>
+    <h2><a href="https://arstechnica.com/ai/2026/09/meta-puts-its-ai-assistant-on-a-keychain/" target="_blank" rel="noopener">Meta puts its AI assistant on a keychain</a></h2>
     
-    <div class="summary"><p>A recent firmware update has rendered some Samsung smart refrigerators inoperable, leading to food spoilage for owners.</p>
+    <div class="summary"><p>Meta announced Muse Charm, a handheld device featuring its AI assistant, Muse.</p>
 <ul>
-<li>The issue affects Samsung’s Bespoke AI line of refrigerators, with most reported cases originating from 2024 models or later.</li>
-<li>Affected refrigerators lost power immediately after attempting a firmware update via the SmartThings platform and now appear offline in the app.</li>
-<li>Some users reported encountering a message, “Checking SmartThings app during update,” on the refrigerator’s display.</li>
-<li>Samsung halted the update on September 23 and is aiming for initial fixes by September 24, with a statement acknowledging an error during testing and promising emergency measures through service centers.</li>
+<li>Muse Charm is a keychain-sized pendant activated by a fingerprint sensor, featuring a screen displaying the Muse avatar and enabling real-time voice interaction.</li>
+<li>The Muse AI assistant itself has become the most downloaded app on both Apple and Android app stores in the US since its launch two weeks prior, offering autonomous bots for tasks like ordering groceries and booking travel.</li>
+<li>New capabilities for Muse include the ability to have live conversations and integration with Meta’s new virtual reality glasses (priced at $1,300 and five times lighter than the Quest 3).</li>
+<li>Meta also released camera-less Ray-Ban audio interaction glasses and updated existing Ray-Ban/Meta glasses with a more visible recording indicator light, alongside plans to monetize Muse through transaction fees.</li>
 </ul></div>
     
   </div>

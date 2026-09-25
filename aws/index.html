@@ -80,13 +80,65 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-24 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-09-25 10:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-24</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/aderant-builds-intelligent-ticket-triage-with-amazon-nova/" target="_blank" rel="noopener">Aderant builds intelligent ticket triage with Amazon Nova</a></h3>
+    
+    <div class="summary"><p>Aderant implemented an intelligent ticket triage system using <strong>Amazon Nova Lite</strong> via <strong>Amazon Bedrock</strong> to automate support ticket processing for their 268 clients.</p>
+<ul>
+<li>The system, built with a <strong>Lambda</strong> function triggered by <strong>Amazon EventBridge</strong>, enriches tickets with data from <strong>Jira, Confluence, Amazon Athena,</strong> and <strong>Microsoft SharePoint</strong>.</li>
+<li><strong>Amazon Nova Lite</strong> through the <strong>Amazon Bedrock Converse API</strong> is used to classify tickets and recommend next steps, achieving approximately 96% routing accuracy in initial testing.</li>
+<li>The workflow includes autonomous actions (routing, notifications) for high-confidence classifications and flags lower-confidence tickets for human review, with operational metrics tracked in <strong>Amazon CloudWatch</strong>.</li>
+<li>The solution recovered an estimated 8-14 engineering hours per week at a monthly operating cost of under $30, and Bedrock inference cost remained under $1 per month.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-24</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-a-multi-account-ai-agent-with-agentcore-gateway-and-mcp/" target="_blank" rel="noopener">Build a multi-account AI agent with AgentCore Gateway and MCP</a></h3>
+    
+    <div class="summary"><ul>
+<li>This post details an architecture for building multi-account AI agents using Amazon Bedrock AgentCore Gateway and Model Context Protocol (MCP), enabling agents to query data across AWS accounts without data replication.</li>
+<li>AgentCore Gateway acts as a central integration point, providing a single endpoint for tool discovery and invocation across Line-of-Business (LOB) accounts, utilizing semantic search, centralized authentication via AgentCore Identity, and fine-grained authorization with Policy in AgentCore.</li>
+<li>LOB teams expose their data and tools as MCP servers running on AgentCore Runtime, maintaining ownership and control over their data while allowing agents access through a standardized interface.</li>
+<li>The architecture uses OAuth 2.0 machine-to-machine (M2M) authentication with AgentCore Identity and integrates with identity providers like Okta for secure, cross-account access, and utilizes Amazon Bedrock Guardrails for content safety.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-24</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/speaker-labeled-transcription-with-whisperx-on-sagemaker-ai/" target="_blank" rel="noopener">Speaker-labeled transcription with WhisperX on SageMaker AI</a></h3>
+    
+    <div class="summary"><ul>
+<li>AWS has released a Deep Learning Container (DLC) for WhisperX, an open-source project extending OpenAI’s Whisper model, for use with Amazon SageMaker AI.</li>
+<li>WhisperX adds per-word timestamps, speaker diarization, and faster transcription to Whisper, addressing limitations in standard speech-to-text for applications like contact centers, meetings, and media captioning.</li>
+<li>The DLC is available for both real-time (for short, interactive clips under 60 seconds) and asynchronous (for long audio) SageMaker endpoints, utilizing the standard serving contract on port 8080 with <code>multipart/form-data</code> input and outputs in <code>json</code>, <code>srt</code>, or <code>vtt</code> formats.</li>
+<li>The image URI for the DLC is <code>763104351884.dkr.ecr.&lt;region&gt;.amazonaws.com/whisperx:3.8.6-cu128-amzn2023-sagemaker</code> and requires setting <code>InferenceAmiVersion</code> to <code>al2-ami-sagemaker-inference-gpu-3-1</code> during endpoint configuration.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -561,58 +613,6 @@
 <li>Intelligent change detection skips processing if no changes are detected in GitHub or GitLab since the last collection run.</li>
 <li>Adaptive chunking parallelizes workload processing using Step Functions Map states for organizations with over 20 repositories.</li>
 <li>Collected metrics, including commits, pull requests, and issues, are stored in Amazon S3 and visualized in Amazon QuickSight dashboards.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-17</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/selecting-a-vector-store-for-amazon-bedrock-knowledge-bases/" target="_blank" rel="noopener">Selecting a vector store for Amazon Bedrock Knowledge Bases</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock Knowledge Bases supports customer-managed vector stores, including Amazon OpenSearch Service, Amazon Aurora PostgreSQL with pgvector, and Amazon S3 Vectors.</li>
-<li>Amazon OpenSearch Service offers high-speed results and supports hybrid search (keyword and vector) with options for managed clusters and serverless deployments. Configuration options like embedding size, data type, and disk-optimized storage impact performance and cost.</li>
-<li>Amazon Aurora PostgreSQL with pgvector combines relational database capabilities with vector similarity search, supporting multiple indexing methods and distance metrics for vectors up to 2,000 dimensions.</li>
-<li>Amazon S3 Vectors provides cost-effective storage and querying of vector embeddings at scale, achieving sub-second query performance with up to 90% storage cost reduction compared to traditional databases.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-17</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/reduce-time-to-hire-for-quality-candidates-with-ai-powered-amazon-connect-talent/" target="_blank" rel="noopener">Reduce time-to-hire for quality candidates with AI-powered Amazon Connect Talent</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Connect Talent is an AI-powered hiring solution designed to streamline recruitment for large-scale hiring needs.</li>
-<li>The solution uses AI agents to conduct interviews and assessments, configurable by recruiters based on job requirements, and available 24/7 for candidates.</li>
-<li>Candidate evaluation focuses on job-related competencies – problem-solving, logic, listening, and role-specific capabilities – with anonymized data to reduce bias, and scores are tied to specific evidence from the interview.</li>
-<li>Recruiters retain full control, receiving scored candidate summaries, transcripts, and evaluation reasoning within a dashboard for final hiring decisions, maintaining human oversight throughout the process.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-16</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-a-serverless-pii-redaction-pipeline-with-amazon-bedrock-data-automation/" target="_blank" rel="noopener">Build a serverless PII redaction pipeline with Amazon Bedrock Data Automation</a></h3>
-    
-    <div class="summary"><p>Organizations can automate PII redaction from documents and images at scale using Amazon Bedrock Data Automation (BDA).</p>
-<ul>
-<li>BDA’s custom blueprint feature allows defining named document fields and using plain-language instructions for precise extraction of data to redact, instead of relying on traditional OCR and pattern matching.</li>
-<li>Blueprints are designed by scoping sensitive information, identifying its location on the page, and defining how to remove it – in this case, converting PDFs to PNGs and applying black box redaction based on bounding box coordinates obtained from BDA.</li>
-<li>Combining BDA’s custom output (blueprint-driven PII detection) with its standard output (complete extraction with bounding boxes) and token matching improves redaction recall from 89.3% to 95.2%, with a minor trade-off in precision.</li>
-<li>A serverless pipeline using AWS Step Functions and Lambda functions orchestrates the process, handling document input from S3, preprocessing (PDF to PNG conversion), redaction via BDA, reassembly into redacted PDFs, and reporting.</li>
 </ul></div>
     
   </div>
