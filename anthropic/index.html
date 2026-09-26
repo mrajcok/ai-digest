@@ -80,13 +80,41 @@
     </label>
   </div>
   <h1>Anthropic News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-25 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-09-26 10:30 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-09-25</span>
+    </div>
+    <h3><a href="https://claude.com/blog/build-plugins-for-claude" target="_blank" rel="noopener">Build plugins for Claude with the directory submission portal | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic has launched a directory submission portal for developers to publish plugins for Claude. These plugins can incorporate MCP connectors, Agent Skills, or both, and are intended to extend Claude’s functionality. Developers on paid Claude plans can submit either a single MCP connector pointing to a remote server, or a plugin bundle hosted on GitHub combining connectors and skills. </p>
+<p>The portal features automated validation and safety scanning upon submission, with developers receiving review status, feedback, and control over publication timing. Once live, developers gain access to usage analytics including install counts and search data, enabling iterative improvements. Claude now fully supports MCP 2.0, featuring a stateless core and extensions like MCP Apps for interactive UIs, and Enterprise Managed Auth for simplified OAuth integration.</p>
+<p>Notably, existing Skills and connectors will transition to the new plugin format over time. The company intends to unify the discovery experience for plugins and agents across Claude and Claude Code in the coming weeks.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>research</span>
+      <span> · 2026-09-25</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/research/yes-claude-can-do-nine-loops" target="_blank" rel="noopener">Claude computes a nine-loop amplitude in N=4 super-Yang-Mills</a></h3>
+    
+    <div class="summary"><p>Anthropic’s Claude model has computed the nine-loop amplitude for N=4 super Yang-Mills, a complex calculation in theoretical particle physics previously considered computationally challenging. This was achieved using the Claude Science platform (built on the Claude LLM), specifically version Fable 5.1, and required approximately $100 in compute costs—96 CPUs running for a week. The calculation was performed using the Python programming language with the SymPy package, employing both the original bootstrap method and an indirect form-factor approach.  </p>
+<p>This result surpasses prior work which had reached eight loops with significant effort; the method leverages a “bootstrap” technique for scattering amplitudes. Notably, a team in China, led by Song He, independently obtained a similar result using GPT-6 assisted methods around the same time.  </p>
+<p>The achievement demonstrates Claude’s ability to handle complex scientific computation autonomously with minimal oversight, and suggests that there may be more readily solvable problems in the field than previously assumed. While this doesn’t represent a fundamental breakthrough in methodology, it showcases AI’s increasing capacity to execute established techniques efficiently.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -464,33 +492,6 @@
     
     <div class="summary"><p>Anthropic’s blog post details techniques for reducing costs and improving performance when using the Claude Platform. The core of the announcement revolves around optimizing three key areas: prompt caching, instruction refinement, and effort calibration. For prompt caching, the article stresses the importance of byte-exact matches for cache hits, avoiding changes to settings like ‘effort’ mid-conversation (though this is possible with Claude Opus 5 and Fable 5.1), and keeping dynamic values out of the prompt prefix to maintain cache validity.</p>
 <p>Regarding instructions, the post identifies common “anti-patterns” in prompts – like excessive verification requests or overly thoroughness instructions – that can lead to increased token usage and reduced performance with newer Claude models (Opus 5 and Fable 5.1). Anthropic provides a <code>claude-api</code> skill (<code>/claude-api prompt-audit</code>) to automatically detect and remove these problematic instructions. Finally, the post discusses the ‘effort’ parameter, noting that performance gains diminish at very high effort levels and that stronger models can achieve comparable results at lower effort settings. <code>/claude-api hillclimb</code> and <code>/claude-api cost-optimize</code> are new tools for automating these optimizations.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Anthropic</span> · 
-      <span>research</span>
-      <span> · 2026-09-04</span>
-    </div>
-    <h3><a href="https://www.anthropic.com/research/formalizing-fermats-last-theorem" target="_blank" rel="noopener">Formalizing Fermat&#39;s Last Theorem</a></h3>
-    
-    <div class="summary"><p>Anthropic reports that its Claude model autonomously produced the first complete, computer-checked proof of Fermat’s Last Theorem in 11 days. This involved writing 13 million lines of code in the Lean programming language and proving 29,500 intermediate theorems. The work builds upon, and exceeds, a multi-year community formalization effort initiated in 2024 by Kevin Buzzard at Imperial College London.</p>
-<p>The proof was achieved using a multi-agent system coordinated by the Prove2Me platform, and consumed approximately six billion output tokens from a research model comparable to Claude Fable 5.1.  Unlike recent AI work generating <em>new</em> mathematics, this accomplishment focuses on rigorously <em>verifying</em> an existing, complex proof against established axioms. This advancement suggests the potential for automating the formalization of large portions of mathematics, aiding in error detection and reducing verification burdens.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-09-02</span>
-    </div>
-    <h3><a href="https://claude.com/blog/claude-for-commerce-agents" target="_blank" rel="noopener">Building Commerce Agents with Claude | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic has released a “blueprint” for building commerce agents powered by their Claude models, intended to accelerate development for retail, travel, and other e-commerce businesses. The blueprint provides pre-built implementations of both shopping and merchant agents, accessible via the Claude API, Amazon Bedrock, Microsoft Foundry, or Google Cloud Vertex AI. </p>
-<p>The shopping agent can handle complex requests – like assembling a camping gear list – and integrates with catalogs, carts, and customer data to provide personalized suggestions and complete purchases within a conversational interface. Safeguards are included to ensure accuracy and avoid manipulative sales tactics. The merchant agent supports internal business users by analyzing sales data, managing inventory, and even drafting marketing copy, always requiring human approval before implementing changes. </p>
-<p>Reference implementations, demos, and an engineering deep-dive are available, alongside integrations with partners like Accenture, Mastercard and Visa, to reduce initial setup time to days. The blueprint leverages Claude’s Messages API, Agent SDK, or Claude Managed Agents (beta).</p></div>
     
   </div>
   

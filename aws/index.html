@@ -80,13 +80,117 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-25 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-09-26 10:30 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-25</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/multi-region-training-with-amazon-sagemaker-hyperpod-and-qumulo/" target="_blank" rel="noopener">Multi-Region training with Amazon SageMaker HyperPod and Qumulo</a></h3>
+    
+    <div class="summary"><p>Amazon SageMaker HyperPod can now leverage Qumulo’s Cloud Data Fabric (CDF) and Cloud Native Qumulo (CNQ) to enable training large AI models across AWS Regions without data replication.</p>
+<ul>
+<li>SageMaker HyperPod, paired with CNQ and CDF, allows training jobs to access datasets in a different Region or on-premises without data copying or code changes.</li>
+<li>CDF utilizes NeuralCache, an AI-powered predictive caching layer, to learn data access patterns and serve data from local NVMe storage, minimizing cross-Region latency after an initial warmup.</li>
+<li>Validation with a 1.02 billion-parameter LLaMA v3 model using ml.p5.48xlarge instances showed that a spoke cluster (US West) matched the performance (115–117 samples/sec) of a hub cluster (US East) after a short warmup period.</li>
+<li>CNQ provides scalable performance independently of storage size, achieving 99% GPU utilization and network saturation with sub-3ms data operations in a single Region.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-25</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-datacor-built-self-service-rental-analytics-with-amazon-quick-sight/" target="_blank" rel="noopener">How Datacor built self-service rental analytics with Amazon Quick Sight</a></h3>
+    
+    <div class="summary"><ul>
+<li>Datacor integrated Amazon QuickSight, including its generative BI capability (Amazon Q in QuickSight), into its TrackAbout solution for gas and welding distributors.</li>
+<li>The solution provides self-service analytics with interactive dashboards and natural language querying of rental performance data, eliminating the need for custom IT reports.</li>
+<li>A cross-cloud data pipeline ingests data from Azure SQL databases into Amazon S3, processes it with AWS Glue and Lambda, and loads it into Amazon QuickSight SPICE for analysis.</li>
+<li>Amazon QuickSight Row-Level Security (RLS) is used to ensure multi-tenant data isolation, automatically scoping queries and dashboards to individual customer data.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-25</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/deploying-real-time-personalized-speech-with-qwen3-tts-on-amazon-sagemaker-ai/" target="_blank" rel="noopener">Deploying real-time personalized speech with Qwen3-TTS on Amazon SageMaker AI</a></h3>
+    
+    <div class="summary"><ul>
+<li>The Qwen3-TTS-12Hz-1.7B-Base text-to-speech model is now deployable via Amazon SageMaker JumpStart for real-time inference, enabling voice cloning from short audio references without retraining.</li>
+<li>The model supports voice cloning in 10 languages (including English, Chinese, Japanese, and German) and allows for cross-lingual cloning, preserving speaker identity when generating speech in different languages.</li>
+<li>Deployment on SageMaker AI manages infrastructure, scaling, and health monitoring; successful deployment requires setting <code>SM_VLLM_GPU_MEMORY_UTILIZATION</code> to 0.45 on an instance with at least 24GB of GPU memory (e.g., ml.g6.4xlarge).</li>
+<li>The endpoint requires routing to the text-to-speech handler using the custom attribute <code>route=/v1/audio/speech</code> in the request, and accepts input following the OpenAI speech schema with the <code>task_type</code> set to "Base".</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-25</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/narrateai-production-ready-llm-quality-assurance-on-amazon-bedrock/" target="_blank" rel="noopener">NarrateAI: production-ready LLM quality assurance on Amazon Bedrock</a></h3>
+    
+    <div class="summary"><ul>
+<li>NarrateAI utilizes five techniques for production-ready LLM quality assurance on Amazon Bedrock, achieving approximately 99% numerical accuracy with real-time streaming responses.</li>
+<li>Adaptive Pipeline Orchestration routes queries based on data volume – single-pass processing for smaller datasets (≤ θ tokens) and parallel batch processing for larger ones, optimizing for speed and quality.</li>
+<li>Cross-Account Multi-Model Failover expands inference capacity by leveraging independent model-account quotas, reducing throttling through randomized account selection and model ranking.</li>
+<li>Real-Time Streaming Evaluation validates each generated paragraph as it’s produced, overlapping quality checks with generation to minimize latency and is built on a producer-consumer concurrency pattern.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-25</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/accelerate-multimodal-rl-training-with-skyrl-on-amazon-sagemaker-hyperpod/" target="_blank" rel="noopener">Accelerate multimodal RL training with SkyRL on Amazon SageMaker HyperPod</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon SageMaker HyperPod is used to accelerate multimodal reinforcement learning (RL) training with SkyRL, specifically for a Qwen3-VL-8B vision-language model.</li>
+<li>The solution leverages Group Relative Policy Optimization (GRPO) to improve maze solve rates, increasing them from 43.75% to over 95% on a 64-maze evaluation set when post-training a Qwen3-VL-8B model.</li>
+<li>The training setup includes 3 ml.g7e.12xlarge instances (with NVIDIA RTX PRO 6000 Blackwell GPUs) for workers and 1 ml.r5d.16xlarge instance for the head node, utilizing Amazon FSx for Lustre shared storage and PyTorch FSDP for model sharding.</li>
+<li>Key components include colocated vLLM inference engines and FSDP policy workers on the same GPUs, LoRA adapter synchronization via Amazon FSx for Lustre, and checkpointing for resilience against hardware failures and job resumption.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-25</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/scaling-moe-reinforcement-learning-on-amazon-eks-with-efa-and-deepep-with-40-more-throughput/" target="_blank" rel="noopener">Scaling MoE reinforcement learning on Amazon EKS with EFA and DeepEP with 40% more throughput</a></h3>
+    
+    <div class="summary"><p>Scaling MoE reinforcement learning on Amazon EKS leverages EFA and DeepEP to achieve 40% more throughput.</p>
+<ul>
+<li>The architecture combines Amazon EKS for orchestration, Elastic Fabric Adapter (EFA) for high-performance networking, and Amazon S3 for durable storage to address challenges in scaling Mixture-of-Experts (MoE) RL training.</li>
+<li>DeepEP v2 introduces native EFA support, replacing standard all-to-all collectives with specialized dispatch and combine kernels to optimize sparse, fine-grained traffic generated by Expert Parallelism.</li>
+<li>The system utilizes separate EKS node groups optimized for rollout generation, reward-model inference, and policy training, alongside CPU instances for environments and memory-optimized instances for experience buffers.</li>
+<li>Amazon EC2 Spot Instances can reduce rollout-generation costs due to the interruption-tolerant nature of distributed inference tasks in that phase of the RL loop.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -504,115 +608,6 @@
 <li>Kimi K3 features a 1-million-token context window and is approximately 2.5x more scaling efficient than Kimi K2, suitable for long-running tasks with large datasets.</li>
 <li>Amazon Bedrock now supports explicit prompt caching for Kimi K3, reducing latency and input costs by reusing cached prompt prefixes with a defined breakpoint after 1,024 tokens.</li>
 <li>The model is accessible via the Bedrock runtime endpoint using OpenAI-compatible APIs (Responses, Chat Completions, Invoke, Converse) and can be deployed using either US geographic (us.moonshotai.kimi-k3) or global (global.moonshotai.kimi-k3) inference profiles.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-18</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-inference-2026-year-to-date-launches-in-review/" target="_blank" rel="noopener">Amazon SageMaker Inference: 2026 year-to-date launches in review</a></h3>
-    
-    <div class="summary"><ul>
-<li><strong>Inference Recommendations (April 2026):</strong> SageMaker AI now automates the process of finding optimal instance types, serving containers, and optimization settings for generative AI models, reducing benchmarking time from weeks to minutes using a three-step process (Narrow, Optimize, Benchmark) and providing a validated SageMaker Model Package.</li>
-<li><strong>Capacity-Aware Instance Pools (May 2026):</strong> SageMaker endpoints can now be configured with prioritized lists of up to five instance types, automatically falling back to available instances if the preferred type is at capacity, improving endpoint reliability and utilizing heterogeneous fleets.</li>
-<li><strong>OpenAI-Compatible APIs (May 2026):</strong> SageMaker endpoints now support an <code>/openai/v1</code> path for Chat Completions with streaming, enabling applications built on the OpenAI SDK (LangChain, etc.) to migrate to SageMaker with minimal code changes.</li>
-<li><strong>Container Caching (June 2026):</strong> Automatically pre-pulls container images for SageMaker AI endpoints, reducing instance startup latency by up to 51% (e.g., dropping Qwen3-8B startup time from 525s to 258s) during autoscaling events.</li>
-<li><strong>Prefix-Aware Routing (June 2026):</strong> Reduces LLM latency by routing requests with shared prompt prefixes to the same instance for increased KV cache reuse, achieving up to 37% reduction in P90 TTFT for long-context workloads.</li>
-<li><strong>HyperPod Inference Simplified Operator (April 2026):</strong> A new EKS add-on simplifies LLM deployment on HyperPod clusters using custom resource definitions to manage deployments, autoscaling, and multi-instance type fallbacks.</li>
-<li><strong>HyperPod Inference Tiered KV Cache (June 2026):</strong> HyperPod Inference offers a two-tier KV cache (L1 in CPU memory, L2 in Redis) with intelligent routing to reduce latency for long-context and multi-turn workloads by up to 40%.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-17</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/enhancing-industrial-safety-ai-with-synthetic-data-on-amazon-sagemaker-ai/" target="_blank" rel="noopener">Enhancing industrial safety AI with synthetic data on Amazon SageMaker AI</a></h3>
-    
-    <div class="summary"><p>AWS introduces a synthetic data augmentation pipeline for improving industrial safety AI, specifically person detection near heavy machinery.</p>
-<ul>
-<li>The pipeline utilizes the Qwen-Image-Edit-2509 diffusion model, deployed on an ml.g5.12xlarge instance (4x NVIDIA A10G GPUs), to insert synthetic people into real-world images.</li>
-<li>Amazon Rekognition's DetectLabels API automatically generates bounding box annotations for the inserted people, eliminating manual labeling.</li>
-<li>Experiments incorporating up to 1,000 synthetic images with "hazardous placement" showed up to a 160% improvement in person detection mAP50 and doubled person recall.</li>
-<li>Optimal synthetic data volume is a hyperparameter – performance peaked at 750 images in testing, and model capacity should be matched to dataset size to avoid overfitting.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-17</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/implementing-defense-in-depth-authorization-for-mcp-tools-on-amazon-quick/" target="_blank" rel="noopener">Implementing defense-in-depth authorization for MCP tools on Amazon Quick</a></h3>
-    
-    <div class="summary"><p>This blog post details implementing a multi-gate authorization pattern for Model Context Protocol (MCP) tools on Amazon Quick, enhancing security beyond basic SSO.</p>
-<ul>
-<li>The pattern uses a Lambda interceptor with four sequential authorization gates: MFA verification, geographic restriction, group-based role-based access control (RBAC), and tool-level permission checks.</li>
-<li>It leverages OpenID Connect (OIDC) JSON Web Token (JWT) claims, evaluated against policies configured through environment variables, using Microsoft Entra ID as the identity provider.</li>
-<li>The solution integrates with Amazon Bedrock AgentCore Gateway, utilizing a CUSTOM_JWT authorizer for JWT validation between clients and MCP tools.</li>
-<li>The described setup requires pre-existing AWS components (gateway, interceptor Lambda, tool Lambdas, DynamoDB tables) and involves configuring Entra ID applications, permissions, and policies, with detailed steps provided for a sample deployment scenario.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-17</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-mrh-trowe-enabled-secure-self-service-ai-agents-in-financial-services/" target="_blank" rel="noopener">How MRH Trowe enabled secure self-service AI agents in financial services</a></h3>
-    
-    <div class="summary"><p>MRH Trowe implemented secure, self-service AI agents for approximately 400 employees using a framework combining Strands Agents, Amazon Bedrock AgentCore, and LibreChat.</p>
-<ul>
-<li>Strands Agents, an open-source SDK, is used for agent creation and orchestration, scaling from development to production.</li>
-<li>Amazon Bedrock AgentCore provides a platform for building, connecting, and optimizing agents at scale, offering session isolation and a consumption-based cost model.</li>
-<li>LibreChat, an open-source AI chat interface, delivers a familiar and brandable experience with user management, token budgets, and multi-model support.</li>
-<li>The initial cost was approximately $14 per seat per month, with potential for 40% infrastructure cost reduction through optimization, and all processing remains within the AWS Europe (Frankfurt) region for data residency.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-17</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/a-shared-agentic-platform-for-wood-mackenzie-on-amazon-bedrock-agentcore/" target="_blank" rel="noopener">A shared agentic platform for Wood Mackenzie, on Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock AgentCore, generally available since October 2025, provides a managed platform for building, connecting, and scaling agents with support for any framework (Strands Agents, LangChain, CrewAI, etc.) and model (Claude, GPT-4.1, Amazon Nova, Mistral, Llama).</li>
-<li>APEX, built on AgentCore, uses a layered architecture with components including AgentCore Runtime, Identity, Gateway, Memory, and Observability to handle orchestration, safety, observability, identity, and connectivity for multiple Wood Mackenzie applications (Woody, Lens AI, ST Trading App).</li>
-<li>AgentCore features include automatic scaling to thousands of concurrent invocations with session isolation, native guardrails and identity via Amazon IAM and VPC isolation, and consumption-based pricing based on active CPU and memory usage.</li>
-<li>APEX Studio offers a control plane for building, deploying, and monitoring agents, encompassing Agent Builder, Workflow Designer, Connector Registry, Live Chat Testing, App Deployment, and a Monitoring Dashboard, simplifying the agent lifecycle.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-17</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/a-serverless-data-driven-git-metrics-dashboard-using-amazon-quick-sight/" target="_blank" rel="noopener">A serverless, data-driven Git metrics dashboard using Amazon Quick Sight</a></h3>
-    
-    <div class="summary"><p>A serverless pipeline automates Git metrics collection from GitHub and GitLab, surfacing analytics in Amazon QuickSight for development observability and AI tool impact assessment.</p>
-<ul>
-<li>The solution uses Amazon EventBridge Scheduler to trigger a Step Functions workflow for collecting Git metrics.</li>
-<li>Intelligent change detection skips processing if no changes are detected in GitHub or GitLab since the last collection run.</li>
-<li>Adaptive chunking parallelizes workload processing using Step Functions Map states for organizations with over 20 repositories.</li>
-<li>Collected metrics, including commits, pull requests, and issues, are stored in Amazon S3 and visualized in Amazon QuickSight dashboards.</li>
 </ul></div>
     
   </div>

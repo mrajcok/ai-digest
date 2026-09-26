@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-09-25T10:17:24.734929+00:00">Generated 2026-09-25 10:17 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-09-26T10:30:52.190251+00:00">Generated 2026-09-26 10:30 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,12 +132,12 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — Overview for 2026-09-24</h2>
-    <p class="overview-meta">2026-09-24 · 10 vendor sources · vendor sources only</p>
-    <div class="overview-text"><p>The most significant development today centers around a surprising biological discovery facilitated by AI. Anthropic announced that its Claude model, utilizing both Claude Science and Claude Code, identified a novel enzyme system – array-associated reverse transcriptases (ART) – with notable similarities to CRISPR. After a 21-hour process consuming 210 million tokens across 950 agents, Claude pinpointed this system within a vast DNA sequence database. Researchers are currently investigating its function, but the discovery highlights the potential of AI agents to accelerate complex scientific research and is being lauded by figures like Feng Zhang of MIT and the Broad Institute. Anthropic has released a pre-print and is seeking collaborators to further explore this finding.</p>
-<p>Beyond breakthroughs in scientific discovery, Anthropic is actively building out the ecosystem around Claude. The Claude Marketplace launched today, offering customers with existing Anthropic commitments access to partner tools from companies like Snowflake and Vercel. This move streamlines procurement for users and expands the integration of Claude into existing workflows.  Several companies are already leveraging the Marketplace, with Power Digital scaling its Nova platform through Snowflake Cortex, ThoughtSpot integrating Claude into its analytics offerings, and CodeRabbit securing a streamlined procurement process via Vercel Sandbox.  Alongside the Marketplace launch, Anthropic detailed a six-step process for AI-driven code modernization using Claude Code, aiming to reduce project timelines drastically by focusing on organization rather than code generation. </p>
-<p>Several developments across Amazon Web Services today showcased the practical applications of large language models. HEMA built an internal AI assistant, HAL, leveraging Amazon Bedrock AgentCore and the Model Context Protocol (MCP) to provide employees with instant access to knowledge without requiring portal-hopping.  AWS also unveiled an agentic conversational video intelligence solution capable of querying video content using natural language, and announced support for open weight models like Moonshot AI Kimi K3 within Amazon Bedrock for AI coding agents. These advancements highlight the increasing accessibility and versatility of LLMs within diverse enterprise applications.</p>
-<p>Finally, Google announced updates to both Google Beam and its Private AI Compute platform.  Google Beam is expanding its availability to six countries and demonstrating positive results, with internal testing showing improvements in team connection and meeting efficiency. More significantly, Google has enhanced Private AI Compute with secure, server-side memory offering a persistent "digital vault" for AI assistance while maintaining user privacy.  This employs end-to-end encryption and hardware-enforced security enclaves, alongside a public record of server software for verification. Additionally, Google released Gemini 3.8 Flash TTS and Gemini 3.8 Flash-Lite TTS, new text-to-speech models boasting improved voice customization and ranking highly on industry benchmarks.</p></div>
+    <h2 class="overview-heading">Today in AI — since 2026-09-25</h2>
+    <p class="overview-meta">2026-09-26 · 8 vendor sources · vendor sources only</p>
+    <div class="overview-text"><p>Recent advancements showcase the growing capability of large language models (LLMs) in scientific computation and the broadening ecosystem of tools to extend their functionality. Most notably, Anthropic’s Claude 3 Opus model, specifically version Fable 5.1, has successfully computed the nine-loop amplitude for N=4 super Yang-Mills, a historically difficult problem in theoretical particle physics, for a modest compute cost of around $100. This achievement, mirroring an independent result obtained using GPT-6-assisted methods, suggests that AI is increasingly capable of efficiently executing established scientific techniques, potentially unlocking the solvability of more complex problems.</p>
+<p>Alongside these breakthroughs in core model capabilities, significant work is being done to improve model extensibility and infrastructure. Anthropic has launched a plugin directory for Claude, enabling developers to incorporate MCP connectors and Agent Skills, and fully supports MCP 2.0. Amazon Web Services (AWS) is focused on scaling and accelerating reinforcement learning (RL) workflows with features like DeepEP v2, which boosts throughput by 40% on EKS, and SkyRL on SageMaker HyperPod, improving maze solve rates within multimodal RL training.  AWS is also expanding its quality assurance tools with NarrateAI for LLM evaluation on Bedrock and making specialized models, such as Qwen3-TTS for real-time personalized speech, easily deployable via SageMaker JumpStart.</p>
+<p>The emphasis on infrastructure extends to data management as well. AWS is offering solutions for multi-region training using SageMaker HyperPod integrated with Qumulo’s data fabric, eliminating the need for data replication across regions. Further enhancements in data handling are exemplified by Datacor’s integration of QuickSight – including its generative BI capabilities – into its solution for gas and welding distributors, and Amazon QuickSight Row-Level Security for multi-tenant data isolation. These developments underscore a broader trend towards optimizing the entire AI lifecycle, from model training and deployment to data management and quality assurance.</p>
+<p>Today’s announcements overall paint a picture of a maturing AI landscape, with both fundamental research and applied engineering seeing consistent progress.</p></div>
   </section>
   
 
@@ -150,13 +150,27 @@
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>blog</span>
-      <span> · 2026-09-24</span>
+      <span> · 2026-09-25</span>
     </div>
-    <h2><a href="https://claude.com/blog/claude-opus-5-5-built-for-coding-sessions-that-use-more-context" target="_blank" rel="noopener">Coding sessions are longer and use more context. Claude Opus 5.5 is built with that in mind. | Claude by Anthropic</a></h2>
+    <h2><a href="https://claude.com/blog/build-plugins-for-claude" target="_blank" rel="noopener">Build plugins for Claude with the directory submission portal | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>Anthropic has released Claude Opus 5.5, optimized for the evolving patterns of developer coding sessions. Analysis of Claude Code usage from March to September 2026 shows sessions are becoming longer and more context-heavy – 2.6x more context per request, with a token ratio of 324:1 (input to output). Despite more model calls per prompt (40% increase) and longer session durations (3.3x), interruptions are down 68%.</p>
-<p>Opus 5.5 addresses these trends with three key improvements. First, input and output token costs are reduced by 20%, and cached token costs by 60%. Second, improvements to the Claude Code harness boost cache hit rates, decreasing cache misses by over 50% and allowing longer cache lifetimes (now available to API key and cloud provider users). Finally, Opus 5.5 demonstrates a reduction in the number of turns needed to complete tasks – Zeta Labs saw nearly half the cost and twice the completion rate on harder tasks compared to Opus 5 – with a 30% increased output speed. </p>
-<p>Users are advised to monitor cached read usage within Claude Code and adopt practices like choosing a model at the start of a session and compacting context to maximize cost efficiency. Detailed cost comparisons for specific tasks can be found in the related post, "What a task costs on Opus 5.5."</p></div>
+    <div class="summary"><p>Anthropic has launched a directory submission portal for developers to publish plugins for Claude. These plugins can incorporate MCP connectors, Agent Skills, or both, and are intended to extend Claude’s functionality. Developers on paid Claude plans can submit either a single MCP connector pointing to a remote server, or a plugin bundle hosted on GitHub combining connectors and skills. </p>
+<p>The portal features automated validation and safety scanning upon submission, with developers receiving review status, feedback, and control over publication timing. Once live, developers gain access to usage analytics including install counts and search data, enabling iterative improvements. Claude now fully supports MCP 2.0, featuring a stateless core and extensions like MCP Apps for interactive UIs, and Enterprise Managed Auth for simplified OAuth integration.</p>
+<p>Notably, existing Skills and connectors will transition to the new plugin format over time. The company intends to unify the discovery experience for plugins and agents across Claude and Claude Code in the coming weeks.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>research</span>
+      <span> · 2026-09-25</span>
+    </div>
+    <h2><a href="https://www.anthropic.com/research/yes-claude-can-do-nine-loops" target="_blank" rel="noopener">Claude computes a nine-loop amplitude in N=4 super-Yang-Mills</a></h2>
+    
+    <div class="summary"><p>Anthropic’s Claude model has computed the nine-loop amplitude for N=4 super Yang-Mills, a complex calculation in theoretical particle physics previously considered computationally challenging. This was achieved using the Claude Science platform (built on the Claude LLM), specifically version Fable 5.1, and required approximately $100 in compute costs—96 CPUs running for a week. The calculation was performed using the Python programming language with the SymPy package, employing both the original bootstrap method and an indirect form-factor approach.  </p>
+<p>This result surpasses prior work which had reached eight loops with significant effort; the method leverages a “bootstrap” technique for scattering amplitudes. Notably, a team in China, led by Song He, independently obtained a similar result using GPT-6 assisted methods around the same time.  </p>
+<p>The achievement demonstrates Claude’s ability to handle complex scientific computation autonomously with minimal oversight, and suggests that there may be more readily solvable problems in the field than previously assumed. While this doesn’t represent a fundamental breakthrough in methodology, it showcases AI’s increasing capacity to execute established techniques efficiently.</p></div>
     
   </div>
   
@@ -166,24 +180,11 @@
       <span>blog</span>
       <span> · 2026-09-24</span>
     </div>
-    <h2><a href="https://claude.com/blog/claude-tag-now-supports-personal-connectors-in-channels" target="_blank" rel="noopener">Claude Tag now supports personal connectors in channels | Claude by Anthropic</a></h2>
+    <h2><a href="https://claude.com/blog/claude-opus-5-5-built-for-coding-sessions-that-use-more-context" target="_blank" rel="noopener">Coding sessions are longer and use more context. Claude Opus 5.5 is built with that in mind. | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>Anthropic has added support for “personal connectors” to Claude Tag, currently in beta. This allows Claude, when accessed within a Slack channel, to utilize connectors linked to an individual user’s account – such as their calendar, Google Drive, or CRM – in addition to the channel’s pre-approved, admin-managed connectors.  The user controls how information from these personal connectors is surfaced, choosing between automatic posting (with sensitive content review) or manual review before publication to the channel.</p>
-<p>This feature expands Claude’s access to information typically behind individual logins. For example, a user can ask Claude to compare a personal Google Doc to recent GitHub commits, with Claude accessing the document via the user’s drive connection and the commits via the channel’s GitHub connection. Importantly, all activity through a personal connector is logged under the user’s account, while channel activity remains under the channel’s service account. </p>
-<p>The rollout begins now for Team plan users, with Enterprise access to follow.  Administrators on Enterprise plans will be able to require review of all responses utilizing personal connectors.  Connectors used for unattended actions, or those requiring cross-channel access, should still be managed at the channel level by administrators.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>research</span>
-      <span> · 2026-09-24</span>
-    </div>
-    <h2><a href="https://www.anthropic.com/research/project-swap" target="_blank" rel="noopener">Project Swap: What happens when agents trade for us?</a></h2>
-    
-    <div class="summary"><p>Anthropic’s Project Swap investigated how well AI agents – specifically those powered by Claude – can trade on behalf of people. The experiment involved 201 Anthropic employees trading books, with each employee first chatting with Claude to determine their reading preferences. Agents then negotiated with each other on a digital trading floor. The study found that agents were surprisingly good at representing their participants’ preferences based on a short (averaging 216 words) conversation, matching their rankings 61% of the time. However, the market’s efficiency was limited more by the agents’ imperfect understanding of participant preferences than by the negotiation process itself. </p>
-<p>Further analysis revealed that the model powering the agent (Haiku, Sonnet, Opus, or Fable) had a greater impact on negotiating outcomes than the specific instructions given to the agent ("ruthless" vs. "prosocial"). Stronger models led to more efficient markets. Participants indicated they would trust such an agent with roughly 30% of their yearly book budget, about 75% of what they’d trust a human friend with. The researchers highlight the importance of verifying agent understanding of user preferences – proposing a "test" where agents demonstrate their understanding before acting on behalf of a user – and establishing clear rules for agent marketplaces to ensure positive outcomes for all involved.</p></div>
+    <div class="summary"><p>Anthropic has released Claude Opus 5.5, optimized for the evolving patterns of developer coding sessions. Analysis of Claude Code usage from March to September 2026 shows sessions are becoming longer and more context-heavy – 2.6x more context per request, with a token ratio of 324:1 (input to output). Despite more model calls per prompt (40% increase) and longer session durations (3.3x), interruptions are down 68%.</p>
+<p>Opus 5.5 addresses these trends with three key improvements. First, input and output token costs are reduced by 20%, and cached token costs by 60%. Second, improvements to the Claude Code harness boost cache hit rates, decreasing cache misses by over 50% and allowing longer cache lifetimes (now available to API key and cloud provider users). Finally, Opus 5.5 demonstrates a reduction in the number of turns needed to complete tasks – Zeta Labs saw nearly half the cost and twice the completion rate on harder tasks compared to Opus 5 – with a 30% increased output speed. </p>
+<p>Users are advised to monitor cached read usage within Claude Code and adopt practices like choosing a model at the start of a session and compacting context to maximize cost efficiency. Detailed cost comparisons for specific tasks can be found in the related post, "What a task costs on Opus 5.5."</p></div>
     
   </div>
   
@@ -298,16 +299,16 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-09-24</span>
+      <span> · 2026-09-25</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/aderant-builds-intelligent-ticket-triage-with-amazon-nova/" target="_blank" rel="noopener">Aderant builds intelligent ticket triage with Amazon Nova</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/multi-region-training-with-amazon-sagemaker-hyperpod-and-qumulo/" target="_blank" rel="noopener">Multi-Region training with Amazon SageMaker HyperPod and Qumulo</a></h2>
     
-    <div class="summary"><p>Aderant implemented an intelligent ticket triage system using <strong>Amazon Nova Lite</strong> via <strong>Amazon Bedrock</strong> to automate support ticket processing for their 268 clients.</p>
+    <div class="summary"><p>Amazon SageMaker HyperPod can now leverage Qumulo’s Cloud Data Fabric (CDF) and Cloud Native Qumulo (CNQ) to enable training large AI models across AWS Regions without data replication.</p>
 <ul>
-<li>The system, built with a <strong>Lambda</strong> function triggered by <strong>Amazon EventBridge</strong>, enriches tickets with data from <strong>Jira, Confluence, Amazon Athena,</strong> and <strong>Microsoft SharePoint</strong>.</li>
-<li><strong>Amazon Nova Lite</strong> through the <strong>Amazon Bedrock Converse API</strong> is used to classify tickets and recommend next steps, achieving approximately 96% routing accuracy in initial testing.</li>
-<li>The workflow includes autonomous actions (routing, notifications) for high-confidence classifications and flags lower-confidence tickets for human review, with operational metrics tracked in <strong>Amazon CloudWatch</strong>.</li>
-<li>The solution recovered an estimated 8-14 engineering hours per week at a monthly operating cost of under $30, and Bedrock inference cost remained under $1 per month.</li>
+<li>SageMaker HyperPod, paired with CNQ and CDF, allows training jobs to access datasets in a different Region or on-premises without data copying or code changes.</li>
+<li>CDF utilizes NeuralCache, an AI-powered predictive caching layer, to learn data access patterns and serve data from local NVMe storage, minimizing cross-Region latency after an initial warmup.</li>
+<li>Validation with a 1.02 billion-parameter LLaMA v3 model using ml.p5.48xlarge instances showed that a spoke cluster (US West) matched the performance (115–117 samples/sec) of a hub cluster (US East) after a short warmup period.</li>
+<li>CNQ provides scalable performance independently of storage size, achieving 99% GPU utilization and network saturation with sub-3ms data operations in a single Region.</li>
 </ul></div>
     
   </div>
@@ -316,15 +317,15 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-09-24</span>
+      <span> · 2026-09-25</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/build-a-multi-account-ai-agent-with-agentcore-gateway-and-mcp/" target="_blank" rel="noopener">Build a multi-account AI agent with AgentCore Gateway and MCP</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-datacor-built-self-service-rental-analytics-with-amazon-quick-sight/" target="_blank" rel="noopener">How Datacor built self-service rental analytics with Amazon Quick Sight</a></h2>
     
     <div class="summary"><ul>
-<li>This post details an architecture for building multi-account AI agents using Amazon Bedrock AgentCore Gateway and Model Context Protocol (MCP), enabling agents to query data across AWS accounts without data replication.</li>
-<li>AgentCore Gateway acts as a central integration point, providing a single endpoint for tool discovery and invocation across Line-of-Business (LOB) accounts, utilizing semantic search, centralized authentication via AgentCore Identity, and fine-grained authorization with Policy in AgentCore.</li>
-<li>LOB teams expose their data and tools as MCP servers running on AgentCore Runtime, maintaining ownership and control over their data while allowing agents access through a standardized interface.</li>
-<li>The architecture uses OAuth 2.0 machine-to-machine (M2M) authentication with AgentCore Identity and integrates with identity providers like Okta for secure, cross-account access, and utilizes Amazon Bedrock Guardrails for content safety.</li>
+<li>Datacor integrated Amazon QuickSight, including its generative BI capability (Amazon Q in QuickSight), into its TrackAbout solution for gas and welding distributors.</li>
+<li>The solution provides self-service analytics with interactive dashboards and natural language querying of rental performance data, eliminating the need for custom IT reports.</li>
+<li>A cross-cloud data pipeline ingests data from Azure SQL databases into Amazon S3, processes it with AWS Glue and Lambda, and loads it into Amazon QuickSight SPICE for analysis.</li>
+<li>Amazon QuickSight Row-Level Security (RLS) is used to ensure multi-tenant data isolation, automatically scoping queries and dashboards to individual customer data.</li>
 </ul></div>
     
   </div>
@@ -333,15 +334,15 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-09-24</span>
+      <span> · 2026-09-25</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/speaker-labeled-transcription-with-whisperx-on-sagemaker-ai/" target="_blank" rel="noopener">Speaker-labeled transcription with WhisperX on SageMaker AI</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/deploying-real-time-personalized-speech-with-qwen3-tts-on-amazon-sagemaker-ai/" target="_blank" rel="noopener">Deploying real-time personalized speech with Qwen3-TTS on Amazon SageMaker AI</a></h2>
     
     <div class="summary"><ul>
-<li>AWS has released a Deep Learning Container (DLC) for WhisperX, an open-source project extending OpenAI’s Whisper model, for use with Amazon SageMaker AI.</li>
-<li>WhisperX adds per-word timestamps, speaker diarization, and faster transcription to Whisper, addressing limitations in standard speech-to-text for applications like contact centers, meetings, and media captioning.</li>
-<li>The DLC is available for both real-time (for short, interactive clips under 60 seconds) and asynchronous (for long audio) SageMaker endpoints, utilizing the standard serving contract on port 8080 with <code>multipart/form-data</code> input and outputs in <code>json</code>, <code>srt</code>, or <code>vtt</code> formats.</li>
-<li>The image URI for the DLC is <code>763104351884.dkr.ecr.&lt;region&gt;.amazonaws.com/whisperx:3.8.6-cu128-amzn2023-sagemaker</code> and requires setting <code>InferenceAmiVersion</code> to <code>al2-ami-sagemaker-inference-gpu-3-1</code> during endpoint configuration.</li>
+<li>The Qwen3-TTS-12Hz-1.7B-Base text-to-speech model is now deployable via Amazon SageMaker JumpStart for real-time inference, enabling voice cloning from short audio references without retraining.</li>
+<li>The model supports voice cloning in 10 languages (including English, Chinese, Japanese, and German) and allows for cross-lingual cloning, preserving speaker identity when generating speech in different languages.</li>
+<li>Deployment on SageMaker AI manages infrastructure, scaling, and health monitoring; successful deployment requires setting <code>SM_VLLM_GPU_MEMORY_UTILIZATION</code> to 0.45 on an instance with at least 24GB of GPU memory (e.g., ml.g6.4xlarge).</li>
+<li>The endpoint requires routing to the text-to-speech handler using the custom attribute <code>route=/v1/audio/speech</code> in the request, and accepts input following the OpenAI speech schema with the <code>task_type</code> set to "Base".</li>
 </ul></div>
     
   </div>
@@ -397,16 +398,16 @@
     <div class="meta">
       <a href="techcrunch/" class="badge badge-techcrunch">TechCrunch</a>
       <span>news</span>
-      <span> · 2026-09-25</span>
+      <span> · 2026-09-26</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/09/24/lightspeed-targets-250m-for-new-india-fund-focusing-on-early-stage-ai/" target="_blank" rel="noopener">Lightspeed targets $250M for new India fund, focusing on early-stage AI</a></h2>
+    <h2><a href="https://techcrunch.com/2026/09/25/at-meta-connect-the-companys-smart-glasses-were-everywhere/" target="_blank" rel="noopener">At Meta Connect, the company’s smart glasses were everywhere</a></h2>
     
-    <div class="summary"><p>Lightspeed Venture Partners is launching a new $250 million fund, Lightspeed India Partners V, focused on early-stage AI companies in India and Southeast Asia.</p>
+    <div class="summary"><p>Meta announced new smart glasses at Meta Connect 2026, focusing on both consumer and accessibility applications.</p>
 <ul>
-<li>The fund is half the size of its $500 million predecessor fund (raised in 2022), with 80% of the $250 million target already committed.</li>
-<li>Lightspeed plans to begin investing from the new fund within two months, with a roughly 2.5-year investment period.</li>
-<li>The fund’s thesis anticipates AI creating more value in India than the internet, focusing on application-layer AI opportunities.</li>
-<li>Lightspeed has previously invested in AI companies including Anthropic, xAI, Databricks, and Sarvam AI.</li>
+<li>Meta is developing audio-only smart glasses with six microphones but no camera, intended to address privacy concerns raised by previous camera-equipped models.</li>
+<li>These audio glasses will integrate with Meta’s agentic AI system, Muse, allowing voice commands and task completion, and will offer customizable digital avatars to represent the agent.</li>
+<li>A second pair of audio-only glasses are designed for the hearing impaired, offering amplification at a price point of $150, significantly lower than typical hearing aids (up to $1,600).</li>
+<li>The glasses for the hearing impaired feature switchable amplification modes – focused and omnidirectional – to customize the user’s audio experience.</li>
 </ul></div>
     
   </div>
@@ -415,16 +416,15 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-09-24</span>
+      <span> · 2026-09-25</span>
     </div>
-    <h2><a href="https://arstechnica.com/ai/2026/09/meta-puts-its-ai-assistant-on-a-keychain/" target="_blank" rel="noopener">Meta puts its AI assistant on a keychain</a></h2>
+    <h2><a href="https://arstechnica.com/health/2026/09/trump-admin-using-ai-to-deny-medical-care-for-seniors-in-disastrous-experiment/" target="_blank" rel="noopener">Trump admin using AI to deny medical care for seniors in disastrous experiment</a></h2>
     
-    <div class="summary"><p>Meta announced Muse Charm, a handheld device featuring its AI assistant, Muse.</p>
-<ul>
-<li>Muse Charm is a keychain-sized pendant activated by a fingerprint sensor, featuring a screen displaying the Muse avatar and enabling real-time voice interaction.</li>
-<li>The Muse AI assistant itself has become the most downloaded app on both Apple and Android app stores in the US since its launch two weeks prior, offering autonomous bots for tasks like ordering groceries and booking travel.</li>
-<li>New capabilities for Muse include the ability to have live conversations and integration with Meta’s new virtual reality glasses (priced at $1,300 and five times lighter than the Quest 3).</li>
-<li>Meta also released camera-less Ray-Ban audio interaction glasses and updated existing Ray-Ban/Meta glasses with a more visible recording indicator light, alongside plans to monetize Muse through transaction fees.</li>
+    <div class="summary"><ul>
+<li>The Trump administration launched the WISeR (Wasteful and Inappropriate Service Reduction) program in January, piloting the use of AI to require prior authorization for certain Medicare services in six states (NJ, OH, OK, TX, AZ, WA).</li>
+<li>The program utilizes contracted vendors—Innovaccer, Zyter, and Virtix—to assess the medical necessity of procedures like nerve stimulation, spinal fusions, and treatments for incontinence, with the stated goal of reducing fraud, waste, and abuse.</li>
+<li>Implementation faced immediate issues, including technical difficulties leading Innovaccer to temporarily auto-approve requests, data discrepancies at Zyter due to misunderstanding Medicare Parts A &amp; B, and a higher denial rate than approval rate from Virtix (53% denials as of March 30).</li>
+<li>CMS documents reveal that the contracted companies are financially incentivized to deny claims, receiving 25% of the cost savings from denied procedures, despite claims from a nominee for Deputy Secretary of HHS that they are not incentivized to deny care.</li>
 </ul></div>
     
   </div>
