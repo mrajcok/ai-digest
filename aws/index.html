@@ -80,13 +80,116 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-28 10:15 UTC</p>
+  <p class="generated-at">Generated 2026-09-29 10:19 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-28</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/automating-amazon-textract-adapter-lifecycle-management-across-accounts/" target="_blank" rel="noopener">Automating Amazon Textract adapter lifecycle management across accounts</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Textract adapter lifecycle management is automated across accounts using AWS Systems Manager Parameter Store to decouple adapter management from application logic, enabling updates with zero downtime.</li>
+<li>The solution utilizes a multi-stage processing pipeline—ingestion, pre-classification (using DetectDocumentText for version identification), adapter selection from Parameter Store, processing via AnalyzeDocument/StartDocumentAnalysis, and results delivery—with options for network isolation with AWS PrivateLink.</li>
+<li>Two adapter promotion strategies are available: a standard cross-account copy via AWS Support (suitable for few adapters) and a centralized hub account approach reducing operational overhead for many adapters.</li>
+<li>Infrastructure deployment and management are supported via AWS CloudFormation and Terraform (version 1.4+), leveraging the <code>terraform_data</code> resource as a temporary solution for adapter creation until native Terraform provider support is added, requiring specific IAM permissions detailed in the post.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-28</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/implementing-synthetic-monitoring-using-amazon-nova-act/" target="_blank" rel="noopener">Implementing synthetic monitoring using Amazon Nova Act</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Nova Act, combined with Amazon Bedrock AgentCore, enables agent-driven synthetic monitoring using natural language actions instead of brittle DOM selectors, improving resilience to UI changes with &gt;90% accuracy in early testing.</li>
+<li>The solution utilizes Amazon EventBridge Scheduler for scheduling, Amazon SNS for alerting, and AgentCore Browser tool for secure, isolated browser environments, offering a fully managed synthetic monitoring approach.</li>
+<li>Agent definition involves grouping natural-language actions into journey steps with assertions to validate outcomes, publishing failure details when journeys fail; sample code and deployment scripts are available.</li>
+<li>Cost is driven by AgentCore Runtime invocations, Browser tool sessions, Nova Act inference, and AWS service usage; a sample ecommerce journey running every 5 minutes is estimated to cost approximately $20-40/month.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-28</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/generate-images-and-video-with-vllm-omni-on-sagemaker-ai-part-2/" target="_blank" rel="noopener">Generate images and video with vLLM-Omni on SageMaker AI – Part 2</a></h3>
+    
+    <div class="summary"><ul>
+<li>This blog demonstrates deploying two SageMaker AI endpoints from the same AWS vLLM-Omni Deep Learning Container (DLC) for image and video generation.</li>
+<li>It utilizes FLUX.2-klein-4B for real-time image generation and Wan2.1-VACE-1.3B for asynchronous video generation, chained together via Amazon S3.</li>
+<li>vLLM-Omni extends vLLM to models processing/generating various media types via OpenAI-compatible APIs, with routing middleware for SageMaker AI.</li>
+<li>The setup employs real-time inference for images (direct response) and asynchronous inference for videos (S3 output), adapting to workload characteristics.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-28</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-real-time-voice-applications-with-vllm-omni-on-sagemaker-ai-part-1/" target="_blank" rel="noopener">Build real-time voice applications with vLLM-Omni on SageMaker AI – Part 1</a></h3>
+    
+    <div class="summary"><ul>
+<li>AWS released the vLLM-Omni Deep Learning Container (DLC) to enable real-time, bidirectional streaming for multimodal models on SageMaker AI.</li>
+<li>The initial example utilizes Qwen3-TTS to stream audio output while the model generates speech, connected via a persistent WebSocket over HTTP/2.</li>
+<li>vLLM-Omni version 1.5 introduces the routing middleware and capability label for bidirectional streaming, using the <code>/v1/audio/speech/stream</code> native WebSocket route.</li>
+<li>Instance pools are supported with fallback options (ml.g6.xlarge, ml.g6e.xlarge, ml.g5.xlarge, ml.g4dn.xlarge) for redundancy; however, endpoint configuration validation requires quota for <em>all</em> pooled instance types.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-28</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-claude-sonnet-5-5-on-aws/" target="_blank" rel="noopener">Introducing Claude Sonnet 5.5 on AWS</a></h3>
+    
+    <div class="summary"><p>Claude Sonnet 5.5 is now available on Amazon Bedrock and Claude Platform on AWS, offering improved performance and efficiency for focused tasks.</p>
+<ul>
+<li>The model, <strong>Claude Sonnet 5.5</strong>, is optimized for coding and knowledge work, demonstrating improvements in code completion, document creation, and visual generation compared to Sonnet 5.</li>
+<li>It offers a lower cost per task and faster speed than its predecessor, making it suitable for continuous or large-scale workloads like alert response, monitoring, and UI/UX testing.</li>
+<li><strong>Amazon Bedrock</strong> integration provides access to Sonnet 5.5 with existing AWS security and monitoring tools like IAM, CloudTrail, and CloudWatch, and billing via AWS.</li>
+<li>The model is accessible via the Amazon Bedrock console, Anthropic SDK, AWS CLI, and AWS SDK, requiring an active AWS account, configured AWS CLI, and appropriate IAM permissions ( <code>bedrock:InvokeModel</code>, <code>bedrock:InvokeModelWithResponseStream</code>).</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-28</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/grok-4-7-is-now-available-on-amazon-bedrock/" target="_blank" rel="noopener">Grok 4.7 is now available on Amazon Bedrock</a></h3>
+    
+    <div class="summary"><ul>
+<li>xAI’s Grok 4.7 model is now available on Amazon Bedrock, designed for coding, long-running agents, and knowledge work, emphasizing endurance and self-verification.</li>
+<li>Grok 4.7 features a 500K token context window and supports four configurable reasoning effort levels: low, medium, high, and xhigh, impacting both cost and output quality.</li>
+<li>The model is accessible via the Responses, Chat Completions, and Converse APIs using the <code>us.xai.grok-4.7</code> or <code>global.xai.grok-4.7</code> model ID, with cross-Region inference profiles for deployment.</li>
+<li>Features such as implicit prompt caching, Amazon Bedrock Guardrails, and structured outputs can be leveraged with Grok 4.7, and reasoning content can be optionally included in API requests for context in multi-turn conversations.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -503,111 +606,6 @@
 <li>The anomaly detection pipeline is orchestrated using AWS Step Functions in Distributed Map mode, processing accounts concurrently with up to 500 Lambda functions and completing in approximately 20 minutes.</li>
 <li>Filtering logic includes excluding low-spend services (&lt;$0.10/day), services with insufficient history (&lt;10 days), and applying deviation thresholds (40% initially, adjustable to 60% for known variable services) and cluster-based minimum impact amounts.</li>
 <li>Alerts are generated for anomalies persisting for at least four days, providing details like account ID, affected service, expected vs. actual spend, and a link to a QuickSight dashboard for drill-down analysis – leveraging services like Amazon EC2, Amazon S3, AWS Lambda, and Amazon RDS.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-21</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/xais-grok-4-6-is-now-available-in-amazon-bedrock/" target="_blank" rel="noopener">xAI’s Grok 4.6 is now available in Amazon Bedrock</a></h3>
-    
-    <div class="summary"><p>xAI’s Grok 4.6 model is now available in Amazon Bedrock, designed for long-running agents, coding, and knowledge work.</p>
-<ul>
-<li>Grok 4.6 offers a 500K token context window and configurable reasoning effort levels: low, medium, high, and xhigh.</li>
-<li>The model is accessible through both bedrock-mantle and bedrock-runtime endpoints, and supports the Converse API alongside Chat Completions and Responses.</li>
-<li>xAI reports benchmark results indicating frontier intelligence in agentic coding and knowledge work, including an AA Intelligence Index score of 61.</li>
-<li>Availability varies by endpoint; bedrock-mantle is available in US West (Oregon), while bedrock-runtime utilizes cross-Region inference with options for US geography (data residency) or global routing.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-18</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-amazon-sagemaker-hyperpod-inference-gateway/" target="_blank" rel="noopener">Introducing Amazon SageMaker HyperPod Inference Gateway</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon SageMaker HyperPod Inference Gateway is a Kubernetes-native GPU-aware routing system, deployed as an EKS managed addon, designed to reduce GPU waste and improve LLM inference performance.</li>
-<li>The system uses a two-tier architecture: a per-cluster gateway leveraging the Gateway API Inference Extension with components like Envoy Gateway, a Body-Based Router (BBR) for multi-model routing, and an Endpoint Picker (EPP) that utilizes real-time GPU metrics (KV cache utilization, queue depth, LoRA adapter residency, prefix cache hit rate, running requests) to optimize request routing.</li>
-<li>Version v2.0.0-eksbuild.1 is available, requiring installation via <code>aws eks create-addon</code> and configuration through an <code>InferenceGatewayConfig</code> custom resource, with support for OpenAI-compatible endpoints and no application code changes.</li>
-<li>Benchmarks show up to 82% reduction in first-token latency and throughput improvements of up to 50% in scenarios with mixed GPU generations and bursty traffic, by intelligently routing requests based on GPU utilization and workload characteristics.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-18</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/deploy-hugging-face-models-on-amazon-sagemaker-ai-with-coding-agents/" target="_blank" rel="noopener">Deploy Hugging Face models on Amazon SageMaker AI with coding agents</a></h3>
-    
-    <div class="summary"><ul>
-<li>New agent skills from Hugging Face Skills allow for automated, production-ready deployment of Hugging Face models on Amazon SageMaker AI, handling tasks like container selection, autoscaling, and CloudWatch alarm setup.</li>
-<li>The skills address a key issue with unguided coding agents – a lack of up-to-date deployment knowledge – by providing editable skill files containing current best practices (e.g., using vLLM for Qwen models instead of the outdated TGI).</li>
-<li>Six skills are available: a planner skill to orchestrate the others, plus skills for AWS context discovery, Python environment setup, IAM preflight checks, serving image selection, and production defaults application.</li>
-<li>The skills utilize Python and the AWS CLI, working across macOS, Linux, and Windows and integrate with services like SageMaker AI, IAM, ECR, and CloudWatch via Boto3.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-18</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/the-new-agentcore-runtime-elastic-optimized-and-consistently-fast-starts/" target="_blank" rel="noopener">The new AgentCore runtime: Elastic, optimized, and consistently fast starts</a></h3>
-    
-    <div class="summary"><h2>New AgentCore Runtime for Amazon Bedrock: Elastic, Optimized, and Fast</h2>
-<p>The new AgentCore runtime for Amazon Bedrock improves performance and cost efficiency for production agents by addressing memory management and cold start times.</p>
-<ul>
-<li>The runtime now dynamically allocates and reclaims memory as needed during a session, billing only for memory actively used instead of peak allocation.</li>
-<li>Cold start times are now consistent – approximately 2 seconds regardless of image size (from 200MB to 2GB) – achieved through snapshotting and restoring pre-initialized environments.</li>
-<li>The runtime loads agents once and then snapshots them, restoring the snapshot for each new instance, avoiding repeated initialization.</li>
-<li>Upcoming features include committed baseline discounts, expanded compute/storage options, x86 support, lifecycle control (suspend/resume), and scoped identity for unattended agents.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-18</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/migrating-multi-model-ai-agents-to-amazon-bedrock-agentcore-runtime/" target="_blank" rel="noopener">Migrating multi-model AI agents to Amazon Bedrock AgentCore runtime</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock AgentCore runtime provides a managed environment for deploying and scaling AI agents, handling container lifecycle, scaling, identity, and observability.</li>
-<li>The solution demonstrates migrating a multi-model healthcare agent – previously deployed on Amazon ECS with AWS Fargate – to AgentCore runtime with no changes to core agent logic, utilizing a decorator pattern.</li>
-<li>The agent orchestrates across three model backends: Llama 3.1 70B Instruct (Amazon Bedrock), BioM-ELECTRA-Large-SQuAD2 (Amazon SageMaker AI), and a containerized BioM-ELECTRA model, with Amazon OpenSearch Service for vector-enhanced knowledge retrieval.</li>
-<li>AgentCore runtime supports a “bring-your-own-agent” approach, working with existing agent code implemented in frameworks like Hugging Face smolagents via an HTTP protocol, without requiring code rewriting.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-18</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-kimi-k3-on-amazon-bedrock/" target="_blank" rel="noopener">Introducing Kimi K3 on Amazon Bedrock</a></h3>
-    
-    <div class="summary"><ul>
-<li>Kimi K3, a 2.8 trillion parameter model from Moonshot AI, is now available on Amazon Bedrock, offering improved capabilities for coding and knowledge work.</li>
-<li>Kimi K3 features a 1-million-token context window and is approximately 2.5x more scaling efficient than Kimi K2, suitable for long-running tasks with large datasets.</li>
-<li>Amazon Bedrock now supports explicit prompt caching for Kimi K3, reducing latency and input costs by reusing cached prompt prefixes with a defined breakpoint after 1,024 tokens.</li>
-<li>The model is accessible via the Bedrock runtime endpoint using OpenAI-compatible APIs (Responses, Chat Completions, Invoke, Converse) and can be deployed using either US geographic (us.moonshotai.kimi-k3) or global (global.moonshotai.kimi-k3) inference profiles.</li>
 </ul></div>
     
   </div>
