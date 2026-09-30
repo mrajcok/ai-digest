@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-09-29T10:19:27.139797+00:00">Generated 2026-09-29 10:19 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-09-30T10:20:25.028574+00:00">Generated 2026-09-30 10:20 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,11 +132,11 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — since 2026-09-28</h2>
-    <p class="overview-meta">2026-09-29 · 9 vendor sources · vendor sources only</p>
-    <div class="overview-text"><p>A significant wave of updates focused on agent capabilities and model availability landed today, with a clear trend towards greater control, efficiency, and specialization. Anthropic, in partnership with NVIDIA, released Claude Managed Agents coupled with NVIDIA’s OpenShell runtime environment, providing a layered approach to agent security and governance. This offers companies a way to define strict rules around agent behavior, monitor access to resources, and maintain audit trails – a critical step for enterprise adoption. Simultaneously, xAI’s Grok 4.7 became available on Amazon Bedrock, distinguished by its substantial 500K token context window and configurable reasoning levels to balance cost and quality, well-suited for complex coding and knowledge work. </p>
-<p>Amazon Bedrock also saw the release of Claude Sonnet 5.5, positioned as an optimized and more cost-effective alternative in the Claude family, showing improvements in coding, document creation, and image generation compared to Sonnet 5. Furthering Bedrock’s multimodal capabilities, AWS has launched vLLM-Omni, enabling real-time bidirectional streaming for models like Qwen3-TTS and supporting image and video generation via FLUX.2-klein-4B and Wan2.1-VACE-1.3B respectively. This integration with SageMaker AI provides infrastructure for deploying and scaling these applications. These advancements are likely to lower the barrier to entry for developers interested in integrating real-time multimodal streams into their applications. </p>
-<p>Beyond model releases, AWS showcased practical applications of its AI services, including a synthetic monitoring tool combining Nova Act with Bedrock AgentCore for more reliable UI testing via natural language actions, and automated lifecycle management for Amazon Textract adapters to minimize downtime during updates. In other news, Mistral AI expanded its footprint with a new research hub in Munich, Germany, focused on “Physics AI” aimed at accelerating simulations within industrial sectors, emphasizing data sovereignty and collaboration with European partners like BMW and Siemens Energy. Finally, a filmmaker won Google’s Future Vision XPRIZE with a project that used AI to recreate his mother’s voice, highlighting the potential for emotive and community-focused applications of the technology.</p></div>
+    <h2 class="overview-heading">Today in AI</h2>
+    <p class="overview-meta">2026-09-30 · 2 vendor sources · vendor sources only</p>
+    <div class="overview-text"><p>Amazon Web Services has significantly expanded the geographic availability of Anthropic’s Claude models through Amazon Bedrock.  Most notably, Claude Opus 5, Claude Sonnet 5, and Claude Haiku 4.5 are now available with in-country inferencing in India, utilizing cross-Region inference between the Mumbai (<code>ap-south-1</code>) and Hyderabad (<code>ap-south-2</code>) regions while maintaining data residency and end-to-end encryption with a zero data retention model.  Access is provided via the Bedrock console, Anthropic’s Messages API, and Bedrock’s InvokeModel and Converse APIs, distinguished by “in.” prefixed model IDs like <code>in.anthropic.claude-sonnet-5</code>.  This offering is critical for applications subject to Indian data sovereignty regulations.</p>
+<p>Expanding on this theme of regional accessibility, Amazon Bedrock added in-region inference for Anthropic models in Seoul (<code>ap-northeast-2</code>) and Singapore (<code>ap-southeast-1</code>).  Specifically, Claude Opus 5 and Claude Sonnet 5 are supported with in-region inference in Seoul, while Claude Sonnet 5 is available in Singapore. This in-region processing keeps all data within the specified AWS region, crucial for companies with strict data residency requirements in those areas. Model access is provided via the <code>bedrock-runtime</code> endpoint using the Anthropic Messages API, InvokeModel API, and Amazon Bedrock Converse API, using standard model IDs (<code>anthropic.claude-opus-5</code> or <code>anthropic.claude-sonnet-5</code>).</p>
+<p>These updates are broadly relevant to software engineers and architects building applications that leverage large language models and require adherence to specific data residency regulations. The addition of in-country and in-region inference options provides greater control over data location, potentially simplifying compliance efforts and reducing latency for users within those regions.  The availability of Claude Opus 5, the highest performing model in the Claude suite, in these locations is particularly noteworthy.</p></div>
   </section>
   
 
@@ -149,26 +149,13 @@
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>blog</span>
-      <span> · 2026-09-28</span>
+      <span> · 2026-09-29</span>
     </div>
-    <h2><a href="https://claude.com/blog/giving-companies-more-control-over-their-ai-agents-with-nvidia" target="_blank" rel="noopener">Giving companies more control over their AI agents, with NVIDIA | Claude by Anthropic</a></h2>
+    <h2><a href="https://claude.com/blog/agents-you-can-coach-how-asana-builds-human-agent-teams-with-claude" target="_blank" rel="noopener">Agents you can coach: how Asana builds human-agent teams with Claude | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>Anthropic and NVIDIA have collaborated to enhance AI agent security through a layered approach. Claude Managed Agents provide a secure environment for running agents, handling credentials in a vault inaccessible to the agent itself, and offering audit trails alongside integration with existing access controls. These agents support long-running, autonomous sessions and orchestration of multiple agents in parallel.</p>
-<p>Complementing this, NVIDIA’s open-source OpenShell software acts as a runtime environment that governs agent behavior, blocking actions unless explicitly permitted by defined rules.  OpenShell verifies access to tools, files, network connections, and data, logging all decisions. The system also includes a policy prover that mathematically confirms agent access limitations based on configured rules. Both Claude Managed Agents and NVIDIA OpenShell are available now, with OpenShell licensed under Apache 2.0 and hosted on GitHub.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>blog</span>
-      <span> · 2026-09-25</span>
-    </div>
-    <h2><a href="https://claude.com/blog/build-plugins-for-claude" target="_blank" rel="noopener">Build plugins for Claude with the directory submission portal | Claude by Anthropic</a></h2>
-    
-    <div class="summary"><p>Anthropic has launched a directory submission portal for developers to publish plugins for Claude. These plugins can incorporate MCP connectors, Agent Skills, or both, and are intended to extend Claude’s functionality. Developers on paid Claude plans can submit either a single MCP connector pointing to a remote server, or a plugin bundle hosted on GitHub combining connectors and skills. </p>
-<p>The portal features automated validation and safety scanning upon submission, with developers receiving review status, feedback, and control over publication timing. Once live, developers gain access to usage analytics including install counts and search data, enabling iterative improvements. Claude now fully supports MCP 2.0, featuring a stateless core and extensions like MCP Apps for interactive UIs, and Enterprise Managed Auth for simplified OAuth integration.</p>
-<p>Notably, existing Skills and connectors will transition to the new plugin format over time. The company intends to unify the discovery experience for plugins and agents across Claude and Claude Code in the coming weeks.</p></div>
+    <div class="summary"><p>Asana is integrating Claude models to create “AI teammates” that function within its existing Work Graph® structure — a model mapping tasks, projects, and relationships. Rather than building separate AI contexts, Asana’s approach treats agents as collaborators with defined roles, assigned tasks, and visible activity within the platform. </p>
+<p>Employees can use Claude to structure their work by debating ideas and logging actionable items into projects and tasks, which agents can then execute. These agents have pre-built skills and integrations, with access scoped by administrators who control permissions, mirroring human user access controls but with an additional safeguard: an agent’s access is limited by the user who initiated the task. </p>
+<p>A key feature is “shared memory,” allowing agents to retain information and improve over time. However, only designated administrators can commit feedback to permanent memory, while general user feedback is task-specific. Asana highlights three example applications: automating responses to product questions in Slack, briefing executives on at-risk customer renewals, and planning engineering cycles using Command by Asana, demonstrating Claude’s ability to handle document generation and complex tasks.</p></div>
     
   </div>
   
@@ -176,13 +163,26 @@
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>research</span>
-      <span> · 2026-09-25</span>
+      <span> · 2026-09-29</span>
     </div>
-    <h2><a href="https://www.anthropic.com/research/yes-claude-can-do-nine-loops" target="_blank" rel="noopener">Claude computes a nine-loop amplitude in N=4 super-Yang-Mills</a></h2>
+    <h2><a href="https://www.anthropic.com/research/your-thoughts-on-ai" target="_blank" rel="noopener">What do you want from AI?</a></h2>
     
-    <div class="summary"><p>Anthropic’s Claude model has computed the nine-loop amplitude for N=4 super Yang-Mills, a complex calculation in theoretical particle physics previously considered computationally challenging. This was achieved using the Claude Science platform (built on the Claude LLM), specifically version Fable 5.1, and required approximately $100 in compute costs—96 CPUs running for a week. The calculation was performed using the Python programming language with the SymPy package, employing both the original bootstrap method and an indirect form-factor approach.  </p>
-<p>This result surpasses prior work which had reached eight loops with significant effort; the method leverages a “bootstrap” technique for scattering amplitudes. Notably, a team in China, led by Song He, independently obtained a similar result using GPT-6 assisted methods around the same time.  </p>
-<p>The achievement demonstrates Claude’s ability to handle complex scientific computation autonomously with minimal oversight, and suggests that there may be more readily solvable problems in the field than previously assumed. While this doesn’t represent a fundamental breakthrough in methodology, it showcases AI’s increasing capacity to execute established techniques efficiently.</p></div>
+    <div class="summary"><p>Anthropic is launching a study using <strong>Anthropic Interviewer</strong> to gather user experiences with AI, aiming to inform the development of AI and guide policy. The study asks participants about their positive and negative experiences with AI, desired changes AI could bring to various aspects of life, and expectations for AI developers like Anthropic. Unlike a similar study from December 2025 involving 81,000 participants, this iteration allows users to opt-in to make their full interview publicly available for broader research and scrutiny.</p>
+<p>The interviews, estimated to take around 15 minutes, are open to Claude and Claude Code users with accounts at least two weeks old, running from September 29 to October 6, 2026. Anthropic emphasizes transparency, noting the interviews will be published unedited (with limited exceptions for policy violations) and acknowledging the risks of re-identification despite not publishing account information. Participants are advised to avoid sharing personally identifying details during the interview. </p>
+<p>This study builds on prior work which influenced Anthropic's research agenda and was presented at the World Economic Forum; however, it differs by providing a publicly accessible dataset of individual interviews, intending to foster wider research and public understanding of AI's impact.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>research</span>
+      <span> · 2026-09-29</span>
+    </div>
+    <h2><a href="https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities" target="_blank" rel="noopener">GLM-5.3 and the spread of advanced cyber capabilities</a></h2>
+    
+    <div class="summary"><p>Zhipu AI’s GLM-5.3 demonstrates capabilities comparable to Anthropic’s Claude Mythos Preview in autonomously developing end-to-end cyber exploits. Testing on ExploitBench showed GLM-5.3 successfully created exploits in 50 of 410 attempts, mirroring the 56 of 410 successes achieved by Claude Mythos Preview. On a separate internal benchmark focusing on control-flow hijacks, GLM-5.3 succeeded in 4% of trials, slightly below Mythos Preview’s 6%, but a significant improvement over previous models like Claude Opus 4.6 and GLM-5.2 which achieved zero successes.</p>
+<p>Crucially, GLM-5.3 differs from safeguarded US models by being released with easily bypassed safeguards; attackers can overcome these protections 64%-100% of the time using simple techniques like deceptive prompting or “abliteration” – a process of removing refusal mechanisms – while the same techniques fail against Claude models.  Abliteration reduced GLM-5.3’s refusal rate to approximately 2-12% across several benchmarks and required roughly 2,200 GPU hours (around $4,400) to complete. NIST recently assessed GLM-5.3 as “the most cyber-capable open-weight model” to date, lagging US frontier models by about four months. Researchers successfully used GLM-5.3 to discover and chain together previously unknown vulnerabilities in a web browser, demonstrating its potential for real-world exploitation.</p></div>
     
   </div>
   
@@ -238,6 +238,24 @@
     <div class="meta">
       <a href="microsoft/" class="badge badge-microsoft">Microsoft</a>
       <span>blog</span>
+      <span> · 2026-09-29</span>
+    </div>
+    <h2><a href="https://azure.microsoft.com/en-us/blog/fabcon-and-sqlcon-2026-in-barcelona-building-the-data-foundation-for-microsoft-copilot-and-agents/" target="_blank" rel="noopener">FabCon and SQLCon 2026 in Barcelona: Building the data foundation for Microsoft Copilot and agents</a></h2>
+    
+    <div class="summary"><p>Microsoft is integrating Microsoft Copilot and Microsoft IQ with Microsoft Fabric and SQL Server to enhance AI capabilities within enterprise workflows.</p>
+<ul>
+<li>Fabric IQ provides a shared intelligence layer connecting data, metrics, and context across the Microsoft ecosystem and is now integrated into Microsoft Copilot Chat and Cowork, available generally today, with Code integration coming via Frontier program.</li>
+<li>Power BI is expanding with agentic app creation, allowing users to build data applications via natural language, using Fabric Apps for backend infrastructure and database support, available soon in preview for Power BI Pro/Premium and Fabric customers.</li>
+<li>Fabric Apps are enhanced with tools like the Rayfin SDK, TypeScript backend functions, and PostgreSQL support to accelerate application development and deployment on a governed platform.</li>
+<li>Microsoft OneLake is introducing IQ sharing (currently in preview) to enable secure sharing of governed data, ontologies, and agent instructions across organizations and expanding its ecosystem with integrations for Salesforce Data Cloud, Google BigQuery, and Dynamics 365 Business Central.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="microsoft/" class="badge badge-microsoft">Microsoft</a>
+      <span>blog</span>
       <span> · 2026-09-23</span>
     </div>
     <h2><a href="https://azure.microsoft.com/en-us/blog/designing-agent-first-platforms-what-changes-when-agents-do-the-work/" target="_blank" rel="noopener">Designing agent-first platforms: What changes when agents do the work</a></h2>
@@ -271,18 +289,18 @@
   
   <div class="card">
     <div class="meta">
-      <a href="microsoft/" class="badge badge-microsoft">Microsoft</a>
+      <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-09-08</span>
+      <span> · 2026-09-30</span>
     </div>
-    <h2><a href="https://azure.microsoft.com/en-us/blog/beyond-the-benchmark-how-an-adaptive-approach-drives-scientific-discovery/" target="_blank" rel="noopener">Beyond the benchmark: How an adaptive approach drives scientific discovery</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/introducing-anthropic-models-on-amazon-bedrock-for-in-region-inference-in-seoul-and-singapore/" target="_blank" rel="noopener">Introducing Anthropic models on Amazon Bedrock for in-region inference in Seoul and Singapore</a></h2>
     
-    <div class="summary"><p>Microsoft Discovery, a platform for Frontier R&amp;D, utilizes an adaptive approach to scientific discovery, achieving strong results on the Agent’s Last Exam benchmark.</p>
+    <div class="summary"><p>Amazon Bedrock now offers in-region inference for Anthropic Claude models in Seoul and Singapore.</p>
 <ul>
-<li>The Microsoft Discovery Engine with CLIO (Cognitive Loop via In-Situ Optimization) achieved 61.6% in health &amp; medicine, 75.2% in physical sciences, and 64.6% in life sciences on the Agent’s Last Exam benchmark.</li>
-<li>CLIO enables independent reasoning paths, comparison of learning, and selection of the strongest, evidence-backed result—including determining when to change strategy or use a different model.</li>
-<li>Microsoft Discovery is designed as an enterprise platform supporting hypothesis-driven experimentation and combining it with engineering rigor for reproducibility.</li>
-<li>The system has already been used to discover a novel organic redox flow battery and has potential applications in areas like materials discovery and lab automation.</li>
+<li>Claude Opus 5 and Claude Sonnet 5 are available with in-region inference in Seoul (ap-northeast-2).</li>
+<li>Claude Sonnet 5 is available with in-region inference in Singapore (ap-southeast-1).</li>
+<li>In-region inference keeps all processing and data within the specified AWS Region, adhering to strict data residency requirements.</li>
+<li>The models are accessible via the <code>bedrock-runtime</code> endpoint using the Anthropic Messages API, the InvokeModel API, and the Amazon Bedrock Converse API; model IDs are in the format <code>anthropic.claude-opus-5</code> or <code>anthropic.claude-sonnet-5</code>.</li>
 </ul></div>
     
   </div>
@@ -291,15 +309,15 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-09-28</span>
+      <span> · 2026-09-30</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/automating-amazon-textract-adapter-lifecycle-management-across-accounts/" target="_blank" rel="noopener">Automating Amazon Textract adapter lifecycle management across accounts</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-expands-claude-model-availability-to-india-cross-region-inference/" target="_blank" rel="noopener">Amazon Bedrock expands Claude model availability to in-country inferencing in India</a></h2>
     
     <div class="summary"><ul>
-<li>Amazon Textract adapter lifecycle management is automated across accounts using AWS Systems Manager Parameter Store to decouple adapter management from application logic, enabling updates with zero downtime.</li>
-<li>The solution utilizes a multi-stage processing pipeline—ingestion, pre-classification (using DetectDocumentText for version identification), adapter selection from Parameter Store, processing via AnalyzeDocument/StartDocumentAnalysis, and results delivery—with options for network isolation with AWS PrivateLink.</li>
-<li>Two adapter promotion strategies are available: a standard cross-account copy via AWS Support (suitable for few adapters) and a centralized hub account approach reducing operational overhead for many adapters.</li>
-<li>Infrastructure deployment and management are supported via AWS CloudFormation and Terraform (version 1.4+), leveraging the <code>terraform_data</code> resource as a temporary solution for adapter creation until native Terraform provider support is added, requiring specific IAM permissions detailed in the post.</li>
+<li>Amazon Bedrock now supports Anthropic’s Claude Opus 5, Claude Sonnet 5, and Claude Haiku 4.5 models with in-country inferencing in India.</li>
+<li>This is achieved through geographic cross-Region inference, routing requests between the <code>ap-south-1</code> (Mumbai) and <code>ap-south-2</code> (Hyderabad) Regions.</li>
+<li>Data remains within the source Region (ap-south-1 or ap-south-2) and is end-to-end encrypted; Amazon Bedrock uses a zero data retention (ZDR) model.</li>
+<li>Access is available through the Amazon Bedrock console, Anthropic’s Messages API, and the Amazon Bedrock InvokeModel and Converse APIs—using the "in." prefixed model IDs (e.g., <code>in.anthropic.claude-sonnet-5</code>).</li>
 </ul></div>
     
   </div>
@@ -308,32 +326,15 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-09-28</span>
+      <span> · 2026-09-29</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/implementing-synthetic-monitoring-using-amazon-nova-act/" target="_blank" rel="noopener">Implementing synthetic monitoring using Amazon Nova Act</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-conde-nast-built-multimodal-video-discovery-with-amazon-bedrock/" target="_blank" rel="noopener">How Condé Nast built multimodal video discovery with Amazon Bedrock</a></h2>
     
     <div class="summary"><ul>
-<li>Amazon Nova Act, combined with Amazon Bedrock AgentCore, enables agent-driven synthetic monitoring using natural language actions instead of brittle DOM selectors, improving resilience to UI changes with &gt;90% accuracy in early testing.</li>
-<li>The solution utilizes Amazon EventBridge Scheduler for scheduling, Amazon SNS for alerting, and AgentCore Browser tool for secure, isolated browser environments, offering a fully managed synthetic monitoring approach.</li>
-<li>Agent definition involves grouping natural-language actions into journey steps with assertions to validate outcomes, publishing failure details when journeys fail; sample code and deployment scripts are available.</li>
-<li>Cost is driven by AgentCore Runtime invocations, Browser tool sessions, Nova Act inference, and AWS service usage; a sample ecommerce journey running every 5 minutes is estimated to cost approximately $20-40/month.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-09-28</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/generate-images-and-video-with-vllm-omni-on-sagemaker-ai-part-2/" target="_blank" rel="noopener">Generate images and video with vLLM-Omni on SageMaker AI – Part 2</a></h2>
-    
-    <div class="summary"><ul>
-<li>This blog demonstrates deploying two SageMaker AI endpoints from the same AWS vLLM-Omni Deep Learning Container (DLC) for image and video generation.</li>
-<li>It utilizes FLUX.2-klein-4B for real-time image generation and Wan2.1-VACE-1.3B for asynchronous video generation, chained together via Amazon S3.</li>
-<li>vLLM-Omni extends vLLM to models processing/generating various media types via OpenAI-compatible APIs, with routing middleware for SageMaker AI.</li>
-<li>The setup employs real-time inference for images (direct response) and asynchronous inference for videos (S3 output), adapting to workload characteristics.</li>
+<li>Condé Nast partnered with AWS to build a multimodal video discovery solution using Amazon Bedrock and Amazon OpenSearch Service, reducing video discovery time from 250 minutes to under 2 minutes.</li>
+<li>The solution leverages the TwelveLabs Marengo embedding model, accessed through Amazon Bedrock, to jointly encode visual, audio, and transcript signals for semantic search.</li>
+<li>A decoupled architecture separates ingestion (embedding generation via Marengo and indexing into OpenSearch) from serving (querying and returning timestamped results), enabling scalability and resilience.</li>
+<li>The system achieves high availability through multi-AZ deployment of Amazon OpenSearch Service, Amazon DocumentDB, and compute tiers utilizing Auto Scaling groups, resulting in an estimated $800,000 in annual operational savings.</li>
 </ul></div>
     
   </div>
@@ -391,15 +392,9 @@
       <span>news</span>
       <span> · 2026-09-29</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/09/28/peak-xv-goes-bigger-at-seed-with-new-surge-cohort-as-series-a-bar-rises/" target="_blank" rel="noopener">Peak XV ups Surge seed investment ceiling to $5M, unveils 18-startup cohort</a></h2>
+    <h2><a href="https://techcrunch.com/2026/09/29/openai-launches-dots-its-bubbly-agentic-avatar/" target="_blank" rel="noopener">OpenAI launches Dots, its bubbly agentic avatar</a></h2>
     
-    <div class="summary"><p>Peak XV Partners increased the investment ceiling of its Surge seed-stage platform to $5 million per company, up from $3 million, and announced a new cohort of 18 startups (Surge 12).</p>
-<ul>
-<li>The firm invested over $50 million across the cohort, which has collectively raised over $90 million in seed funding.</li>
-<li>Surge 12 includes startups working across AI, robotics, space, consumer products, healthcare, music, and fintech, with specific ventures including: Alma (personal computing), August AI (AI-powered healthcare), Ditto (AI dating via iMessage), HiLoop (AI model adaptation), and Reinforce Labs (enterprise AI system evaluation).</li>
-<li>Five of the 18 startups are focused on the Indian market, while thirteen target global markets.</li>
-<li>Peak XV views Surge as its primary seed-stage investment route, intending to continue investing in these companies through later funding rounds.</li>
-</ul></div>
+    <div class="summary"><p>OpenAI announced Dots, a new agentic assistant powered by GPT-6 Astra, at its DevDay event. Unlike previous tools like Codex, Dots are designed to operate independently in the background to pursue user-defined goals with minimal oversight. TechCrunch reports that OpenAI envisions Dots working both individually and in teams, handling tasks such as monitoring customer feedback or rerunning scientific analyses. The feature is rolling out Tuesday within ChatGPT for Pro and Business Premium users, with integration planned for platforms like Slack and Teams.</p></div>
     
   </div>
   
@@ -407,16 +402,16 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-09-28</span>
+      <span> · 2026-09-29</span>
     </div>
-    <h2><a href="https://arstechnica.com/tech-policy/2026/09/microsoft-goes-quiet-after-church-groups-ask-for-1-of-data-center-costs/" target="_blank" rel="noopener">Microsoft goes quiet after church groups ask for 1% of data center costs</a></h2>
+    <h2><a href="https://arstechnica.com/ai/2026/09/anthropics-ipo-pitch-includes-a-warning-about-human-extinction/" target="_blank" rel="noopener">Anthropic’s IPO pitch includes a warning about human extinction</a></h2>
     
-    <div class="summary"><p>Microsoft is facing pressure from community groups in Indiana to invest more substantially in local services related to its new data center.</p>
+    <div class="summary"><p>Anthropic’s IPO prospectus details potential “existential risks to humanity” associated with its AI technology.</p>
 <ul>
-<li>We Make Indiana proposed a “Fair Share Agreement” where Microsoft would contribute a percentage of its data center costs to a community fund, initially suggesting 1-2% (potentially up to 10%), which could total $30-$40 million annually at 1%.</li>
-<li>The proposal followed concerns that Microsoft’s initial commitments of up to $1 million in one-time donations were insufficient given the scale of the project and associated tax breaks, with the group arguing this appeared as "buying silence."</li>
-<li>Microsoft has paused substantive discussions, stating it is still gathering community input, despite previously promising to be a "good neighbor."</li>
-<li>A parallel effort in Pennsylvania has resulted in the Data Center Fair Share Act, which would legally require data center developers to contribute at least 10% of project costs to community benefit funds.</li>
+<li>The filing warns of risks including increasingly advanced AI models potentially being used for manipulation and exhibiting unpredictable behaviors.</li>
+<li>Anthropic projects spending $518 billion on cloud, computing, and infrastructure in coming years.</li>
+<li>The company reported $4.6 billion in revenue and an operating loss of over $8 billion in the last year, with Q2 2024 revenue reaching $11.5 billion.</li>
+<li>Anthropic’s models, including <strong>Claude</strong>, are noted in the context of industry-wide safety concerns, prompting calls to “pace the frontier” of AI development and a delay in OpenAI’s latest model release.</li>
 </ul></div>
     
   </div>

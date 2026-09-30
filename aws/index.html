@@ -80,13 +80,136 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-29 10:19 UTC</p>
+  <p class="generated-at">Generated 2026-09-30 10:20 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-30</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-anthropic-models-on-amazon-bedrock-for-in-region-inference-in-seoul-and-singapore/" target="_blank" rel="noopener">Introducing Anthropic models on Amazon Bedrock for in-region inference in Seoul and Singapore</a></h3>
+    
+    <div class="summary"><p>Amazon Bedrock now offers in-region inference for Anthropic Claude models in Seoul and Singapore.</p>
+<ul>
+<li>Claude Opus 5 and Claude Sonnet 5 are available with in-region inference in Seoul (ap-northeast-2).</li>
+<li>Claude Sonnet 5 is available with in-region inference in Singapore (ap-southeast-1).</li>
+<li>In-region inference keeps all processing and data within the specified AWS Region, adhering to strict data residency requirements.</li>
+<li>The models are accessible via the <code>bedrock-runtime</code> endpoint using the Anthropic Messages API, the InvokeModel API, and the Amazon Bedrock Converse API; model IDs are in the format <code>anthropic.claude-opus-5</code> or <code>anthropic.claude-sonnet-5</code>.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-30</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-expands-claude-model-availability-to-india-cross-region-inference/" target="_blank" rel="noopener">Amazon Bedrock expands Claude model availability to in-country inferencing in India</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock now supports Anthropic’s Claude Opus 5, Claude Sonnet 5, and Claude Haiku 4.5 models with in-country inferencing in India.</li>
+<li>This is achieved through geographic cross-Region inference, routing requests between the <code>ap-south-1</code> (Mumbai) and <code>ap-south-2</code> (Hyderabad) Regions.</li>
+<li>Data remains within the source Region (ap-south-1 or ap-south-2) and is end-to-end encrypted; Amazon Bedrock uses a zero data retention (ZDR) model.</li>
+<li>Access is available through the Amazon Bedrock console, Anthropic’s Messages API, and the Amazon Bedrock InvokeModel and Converse APIs—using the "in." prefixed model IDs (e.g., <code>in.anthropic.claude-sonnet-5</code>).</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-29</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-conde-nast-built-multimodal-video-discovery-with-amazon-bedrock/" target="_blank" rel="noopener">How Condé Nast built multimodal video discovery with Amazon Bedrock</a></h3>
+    
+    <div class="summary"><ul>
+<li>Condé Nast partnered with AWS to build a multimodal video discovery solution using Amazon Bedrock and Amazon OpenSearch Service, reducing video discovery time from 250 minutes to under 2 minutes.</li>
+<li>The solution leverages the TwelveLabs Marengo embedding model, accessed through Amazon Bedrock, to jointly encode visual, audio, and transcript signals for semantic search.</li>
+<li>A decoupled architecture separates ingestion (embedding generation via Marengo and indexing into OpenSearch) from serving (querying and returning timestamped results), enabling scalability and resilience.</li>
+<li>The system achieves high availability through multi-AZ deployment of Amazon OpenSearch Service, Amazon DocumentDB, and compute tiers utilizing Auto Scaling groups, resulting in an estimated $800,000 in annual operational savings.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-29</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/building-an-ai-powered-contract-intelligence-platform-with-amazon-quick-and-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Building an AI-powered contract intelligence platform with Amazon Quick and Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><ul>
+<li>This post details an AI-powered contract intelligence platform built on AWS, addressing the challenge of scaling AI chat tools for portfolio-wide contract analysis which RAG struggles with due to its chunk-based retrieval.</li>
+<li>The solution utilizes a dual-model approach with Claude Sonnet 4.6 for extraction and Claude Haiku 4.5 for verification of contract data, deployed on Amazon Bedrock AgentCore with Strands Agent SDK, and incorporates Amazon Textract for signature detection tie-breaking.</li>
+<li>Key components include storing contracts in Amazon S3, extracting data into Amazon Aurora PostgreSQL, and querying the data through Amazon Quick, offering both embedded dashboards powered by Amazon QuickSight and a natural language chat agent.</li>
+<li>The architecture prioritizes structured extraction for aggregation queries and leverages RAG for single-document lookups, achieving a cost of approximately $349/month for 1,000 contracts, predominantly driven by Amazon Quick licensing.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-29</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/prompt-engineering-by-quick-component-patterns-and-pitfalls/" target="_blank" rel="noopener">Prompt engineering by Quick component: Patterns and pitfalls</a></h3>
+    
+    <div class="summary"><p>Prompt engineering for AWS Quick components requires careful construction to achieve desired results.</p>
+<ul>
+<li><strong>Quick Research:</strong> Effective objectives define the goal, audience, focus areas, and should decompose complex topics into sub-questions, while scoping sources to reduce noise.</li>
+<li><strong>Quick Flows:</strong> Specificity regarding <em>what</em>, <em>when</em>, and <em>where</em> is crucial; complex logic should be structured as numbered steps and can be iteratively refined through conversation.</li>
+<li><strong>Quick Sight:</strong> Queries should include a business question, metrics, dimensions, a time period, visualization type, and any additional analysis for effective data exploration.</li>
+<li><strong>Quick Chat Agents:</strong> Defining a clear agent identity, connecting relevant knowledge sources, setting behavioral guardrails, and designing suggested prompts are key to a quality conversational experience; action integrations require clear intent, all parameters, and proper sequencing.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-29</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/prompt-engineering-fundamentals-for-amazon-quick/" target="_blank" rel="noopener">Prompt engineering fundamentals for Amazon Quick</a></h3>
+    
+    <div class="summary"><p>Prompt engineering for Amazon Quick focuses on maximizing the accuracy and reliability of AI responses.</p>
+<ul>
+<li><strong>Specificity is key:</strong> Detailed prompts, defining metrics, timeframes, and scope, yield better results than vague requests.</li>
+<li><strong>Contextual awareness:</strong> Providing business context, including intended audience and decision-making needs, calibrates the AI's responses for relevance.</li>
+<li><strong>Few-shot learning:</strong> Demonstrating desired output formats with examples (“show, don’t tell”) improves accuracy and reduces ambiguity.</li>
+<li><strong>CRISPE framework:</strong> A structured approach (Context, Role, Intent, Steps, Perspective, Evaluation) provides a comprehensive template for complex prompts across Quick components.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-29</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/bring-near-astra-intelligence-to-everyday-work-with-gpt-6-1-sol-on-amazon-bedrock/" target="_blank" rel="noopener">Bring near-Astra intelligence to everyday work with GPT-6.1 Sol on Amazon Bedrock</a></h3>
+    
+    <div class="summary"><p>GPT-6.1 Sol, offering near-Astra intelligence, is now generally available on Amazon Bedrock.</p>
+<ul>
+<li>GPT-6.1 Sol is a major upgrade to GPT-6 Sol, demonstrating strong performance in agentic coding, computer use, and professional workloads.</li>
+<li>OpenAI reports GPT-6.1 Sol matches GPT-6 Astra's performance on DeepSWE v1.1 at approximately one-fifth the cost and exceeds GPT-6 Sol by 6.4 percentage points.</li>
+<li>Codex can be configured to utilize GPT-6.1 Sol via the desktop app, CLI, and IDEs, and integrates with the Agent Toolkit for AWS for AWS-specific development.</li>
+<li>GPT-6.1 Sol shows improvements in transparency, understanding user intent, and respecting restrictions compared to GPT-6 Sol, alongside enhanced security and data governance via Amazon Bedrock features like IAM, VPC endpoints, and zero data retention options.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -482,130 +605,6 @@
 <li>The solution uses a three-agent system built with the <strong>Strands Agents SDK</strong> leveraging <strong>AgentCore runtime</strong> for managed execution in Firecracker microVMs, <strong>AgentCore memory</strong> for persistent context, and <strong>AgentCore Identity</strong> for authentication.</li>
 <li>Reactiv utilized a custom <strong>Config MCP</strong> (hosted on AgentCore) to validate app configurations against a defined schema, eliminating 100 previously maintained OpenAPI specification files.</li>
 <li>They unified interactive and scheduled agents onto a single stack using the <strong>AG-UI protocol</strong> on Amazon Bedrock AgentCore, enabling bidirectional memory sharing and simplifying their architecture.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-22</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/evaluate-skill-equipped-agents-with-strands-evals-and-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Evaluate skill-equipped agents with Strands Evals and Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><p>AWS introduces new evaluation capabilities for skill-equipped agents using Strands Evals SDK and Amazon Bedrock AgentCore Evaluations.</p>
-<ul>
-<li><strong>Skill Selection Accuracy:</strong> Evaluates whether the agent chose the appropriate skill for a given task, returning a binary pass/fail result per skill invocation.</li>
-<li><strong>Skill Instruction Following:</strong> Assesses how completely the agent followed the instructions within an invoked skill, providing a five-level rating (Fully Followed to Not Followed) per step.</li>
-<li><strong>Skill Invoked:</strong> A deterministic check (available in Strands Evals) to verify if a specific skill was successfully loaded.</li>
-<li><strong>AgentCore Evaluations:</strong> Leverages OpenTelemetry traces to evaluate skill behavior in production environments, offering on-demand, batch, and continuous online evaluation options.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-22</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/claude-opus-5-5-is-now-available-on-aws/" target="_blank" rel="noopener">Claude Opus 5.5 is now available on AWS</a></h3>
-    
-    <div class="summary"><ul>
-<li>Anthropic’s Claude Opus 5.5 model is now available on Amazon Bedrock and Claude Platform on AWS, offering improved performance for agentic coding, knowledge work, and long-running tasks.</li>
-<li>Claude Opus 5.5 is more efficient, requiring fewer tokens than Claude Opus 5, resulting in lower costs – including cheaper cache reads – for comparable tasks.</li>
-<li>The model is designed for clearer communication, surfacing its reasoning process during execution and adapting its reasoning depth to the task at hand, offering increased explainability.</li>
-<li>Claude Opus 5.5 includes safety classifiers in biology, cybersecurity, and AI development, resulting in more frequent refusal of requests compared to previous Opus versions; it's accessible via the Anthropic Messages API, Invoke/Converse APIs, and the Anthropic SDK.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-22</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/bring-more-intelligence-to-everyday-work-with-gpt-6-sol-and-gpt-6-luna-on-amazon-bedrock/" target="_blank" rel="noopener">Bring more intelligence to everyday work with GPT-6 Sol and GPT-6 Luna on Amazon Bedrock</a></h3>
-    
-    <div class="summary"><p>GPT-6 Sol and GPT-6 Luna are now generally available on Amazon Bedrock, offering a range of intelligence and efficiency options for AI workloads.</p>
-<ul>
-<li>GPT-6 Sol is designed for complex, recurring tasks like coding, debugging, and data analysis, exhibiting improved factual accuracy (approximately 50% fewer factual mistakes than GPT-5.6 Sol) and clearer communication of its process.</li>
-<li>GPT-6 Luna is optimized for high-volume, focused tasks like document summarization and classification, with adjustable reasoning effort to balance quality, cost, and responsiveness.</li>
-<li>Both models support explicit prompt caching on Amazon Bedrock, enabling reuse of instructions and context to improve efficiency.</li>
-<li>GPT-6 Sol and GPT-6 Luna offer lower API pricing than their GPT-5.6 predecessors and benefit from Amazon Bedrock’s security features including IAM controls, VPC endpoints, and hardware-isolated infrastructure.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-21</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/reducing-medical-claims-review-time-with-ai-on-aws-the-exl-medical-idp-solution/" target="_blank" rel="noopener">Reducing medical claims review time with AI on AWS: The EXL Medical IDP solution</a></h3>
-    
-    <div class="summary"><ul>
-<li>The EXL Medical IDP solution combines the Xtrakto.AI IDP application with the EXL Insurance LLM, a domain-specific large language model, to automate medical record review for insurance claims.</li>
-<li>The EXL Insurance LLM was fine-tuned on Amazon SageMaker AI using Parameter-Efficient Fine-Tuning (PEFT) with Low-Rank Adaptation (LoRA) and nine years of insurance claims data (over 13,500 records) to improve performance on insurance-specific NLP tasks.</li>
-<li>The solution leverages multiple AWS services including Amazon API Gateway, Amazon Cognito, AWS Step Functions, Amazon Textract, Amazon SageMaker AI, Amazon Bedrock, Amazon DynamoDB, Amazon RDS, and Amazon S3 in an 11-step pipeline.</li>
-<li>Benchmarking indicates the fine-tuned EXL Insurance LLM outperforms general-purpose LLMs on insurance-specific tasks like tagging, summarization, question answering, and reasoning, ultimately reducing record review time from days to hours.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-21</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-benchling-secured-multi-tenant-ai-agents-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How Benchling secured multi-tenant AI agents with Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><p>Benchling secured multi-tenant AI agents using Amazon Bedrock AgentCore to address security concerns around executing untrusted code at scale.</p>
-<ul>
-<li>Benchling uses Amazon Bedrock AgentCore Code Interpreter (ACCI) in VPC mode, combining account-level isolation with Amazon Route 53 Resolver DNS Firewall and VPC endpoint policies to prevent data exfiltration.</li>
-<li>The solution employs a “nothing unless explicitly allowed” network approach with no internet or NAT gateway, leveraging Route 53 Resolver DNS Firewall with a three-priority policy: block known malicious domains, allow only listed endpoints (primarily S3), and deny all other queries.</li>
-<li>VPC endpoints (Gateway for in-region S3, Interface for cross-region S3) with attached policies restrict access to explicitly authorized S3 buckets, independent of IAM permissions.</li>
-<li>Per-job data access is controlled by dynamically injecting temporary, scoped credentials via AWS STS, avoiding the need for a separate IAM role per tenant and utilizing gVisor for compute isolation.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-21</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/run-positron-on-amazon-sagemaker-ai-for-data-science-workflows/" target="_blank" rel="noopener">Run Positron on Amazon SageMaker AI for data science workflows</a></h3>
-    
-    <div class="summary"><p>Positron, Posit’s data science IDE, is now available on Amazon SageMaker AI, enabling a unified workflow for data science tasks.</p>
-<ul>
-<li>Positron runs under the Space execution role, providing direct access to Amazon Athena, AWS Glue Data Catalog, and Amazon S3 without managing credentials.</li>
-<li>Posit Assistant can leverage Amazon Bedrock as its model provider, running AI assistance models within the user's AWS account and region, with data protection features like encryption and private connectivity.</li>
-<li>Users can launch Spaces with specific instance sizes and reserve capacity using SageMaker AI training plans to ensure compute availability.</li>
-<li>The solution supports parallel work via multiple Spaces and collaborative projects within a shared Space, with deployment via a custom image built on the Amazon SageMaker Distribution image.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-21</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-bmw-group-detects-cost-anomalies-across-14000-cloud-accounts/" target="_blank" rel="noopener">How BMW Group detects cost anomalies across 14,000 cloud accounts</a></h3>
-    
-    <div class="summary"><p>BMW Group uses AWS to detect cost anomalies across 14,000 cloud accounts with a system called Cloud Efficiency Analytics (CLEA).</p>
-<ul>
-<li>CLEA utilizes AWS Cost and Usage Reports (CUR) data, aggregating it to daily cost per account per service, and forecasts expected spend using the Prophet forecasting library from Meta with additive seasonality.</li>
-<li>The anomaly detection pipeline is orchestrated using AWS Step Functions in Distributed Map mode, processing accounts concurrently with up to 500 Lambda functions and completing in approximately 20 minutes.</li>
-<li>Filtering logic includes excluding low-spend services (&lt;$0.10/day), services with insufficient history (&lt;10 days), and applying deviation thresholds (40% initially, adjustable to 60% for known variable services) and cluster-based minimum impact amounts.</li>
-<li>Alerts are generated for anomalies persisting for at least four days, providing details like account ID, affected service, expected vs. actual spend, and a link to a QuickSight dashboard for drill-down analysis – leveraging services like Amazon EC2, Amazon S3, AWS Lambda, and Amazon RDS.</li>
 </ul></div>
     
   </div>
