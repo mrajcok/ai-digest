@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-09-30T10:20:25.028574+00:00">Generated 2026-09-30 10:20 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-10-01T10:17:49.697563+00:00">Generated 2026-10-01 10:17 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -133,10 +133,11 @@
   
   <section class="overview">
     <h2 class="overview-heading">Today in AI</h2>
-    <p class="overview-meta">2026-09-30 · 2 vendor sources · vendor sources only</p>
-    <div class="overview-text"><p>Amazon Web Services has significantly expanded the geographic availability of Anthropic’s Claude models through Amazon Bedrock.  Most notably, Claude Opus 5, Claude Sonnet 5, and Claude Haiku 4.5 are now available with in-country inferencing in India, utilizing cross-Region inference between the Mumbai (<code>ap-south-1</code>) and Hyderabad (<code>ap-south-2</code>) regions while maintaining data residency and end-to-end encryption with a zero data retention model.  Access is provided via the Bedrock console, Anthropic’s Messages API, and Bedrock’s InvokeModel and Converse APIs, distinguished by “in.” prefixed model IDs like <code>in.anthropic.claude-sonnet-5</code>.  This offering is critical for applications subject to Indian data sovereignty regulations.</p>
-<p>Expanding on this theme of regional accessibility, Amazon Bedrock added in-region inference for Anthropic models in Seoul (<code>ap-northeast-2</code>) and Singapore (<code>ap-southeast-1</code>).  Specifically, Claude Opus 5 and Claude Sonnet 5 are supported with in-region inference in Seoul, while Claude Sonnet 5 is available in Singapore. This in-region processing keeps all data within the specified AWS region, crucial for companies with strict data residency requirements in those areas. Model access is provided via the <code>bedrock-runtime</code> endpoint using the Anthropic Messages API, InvokeModel API, and Amazon Bedrock Converse API, using standard model IDs (<code>anthropic.claude-opus-5</code> or <code>anthropic.claude-sonnet-5</code>).</p>
-<p>These updates are broadly relevant to software engineers and architects building applications that leverage large language models and require adherence to specific data residency regulations. The addition of in-country and in-region inference options provides greater control over data location, potentially simplifying compliance efforts and reducing latency for users within those regions.  The availability of Claude Opus 5, the highest performing model in the Claude suite, in these locations is particularly noteworthy.</p></div>
+    <p class="overview-meta">2026-10-01 · 1 vendor source · vendor sources only</p>
+    <div class="overview-text"><h2>Today's AI News Synthesis</h2>
+<p>A major development today centers on enterprise AI adoption, as Barclays is significantly expanding its integration of Anthropic’s Claude across multiple divisions. The bank projects 50% adoption of Claude Code among its developer base by the end of 2026, rising to a majority by 2027, and is currently leveraging Claude 3 models within a retrieval-augmented generation system serving over 16,000 employees and, indirectly, more than 20 million UK retail customers via the “Colleague Knowledge Assistant,” which has already processed over one million searches since 2025. This illustrates a practical application of large language models for internal knowledge management at scale within a heavily regulated industry. </p>
+<p>Beyond internal tooling, Barclays is also applying Claude 3 to automate client communication processing within its Global Markets division. The system currently handles roughly 120,000 client emails daily, automating classification and routing to expedite response times – a compelling use case for LLMs in high-volume transactional contexts. Anthropic emphasized Barclays' commitment to responsible AI implementation with strong security measures and human oversight, positioning the partnership as a key benchmark for AI deployment within the UK financial services sector.</p>
+<p>This news is notable for the specific figures provided regarding adoption and processing volume, giving concrete insight into the potential for LLMs to impact internal operations and client services within a large financial institution. The emphasis on security and governance is also a crucial takeaway, reflecting the growing importance of responsible AI practices, particularly in regulated industries.</p></div>
   </section>
   
 
@@ -148,41 +149,76 @@
   <div class="card">
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>news</span>
+      <span> · 2026-10-01</span>
+    </div>
+    <h2><a href="https://www.anthropic.com/news/barclays-scales-claude" target="_blank" rel="noopener">Barclays scales Claude to upgrade operations and improve client experience</a></h2>
+    
+    <div class="summary"><p>Barclays is expanding its collaboration with Anthropic to integrate Anthropic’s Claude AI system across its global operations, with the goal of improving efficiency and customer experience. The bank anticipates 50% adoption of Claude Code among its developers by the end of 2026, increasing to a majority in 2027. They are already utilizing Claude through a retrieval-augmented generation architecture in the “Colleague Knowledge Assistant,” which has handled over one million searches since 2025 from more than 16,000 employees supporting over 20 million UK retail customers. </p>
+<p>Additionally, Claude models are being used in Barclays’ Global Markets division to process approximately 120,000 client emails daily, automating classification and routing to improve response times. Anthropic’s Paul Smith notes that Barclays is deploying Claude with “strong security and oversight,” reflecting a high standard for AI implementation. The partnership emphasizes responsible AI deployment with robust governance and human oversight, and Anthropic highlights this as a significant milestone for AI adoption in the UK financial sector.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>blog</span>
-      <span> · 2026-09-29</span>
+      <span> · 2026-09-30</span>
     </div>
-    <h2><a href="https://claude.com/blog/agents-you-can-coach-how-asana-builds-human-agent-teams-with-claude" target="_blank" rel="noopener">Agents you can coach: how Asana builds human-agent teams with Claude | Claude by Anthropic</a></h2>
+    <h2><a href="https://claude.com/blog/how-anthropics-sales-team-rebuilt-inbound-with-claude-managed-agents" target="_blank" rel="noopener">How Anthropic&#39;s sales team rebuilt inbound with Claude Managed Agents | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>Asana is integrating Claude models to create “AI teammates” that function within its existing Work Graph® structure — a model mapping tasks, projects, and relationships. Rather than building separate AI contexts, Asana’s approach treats agents as collaborators with defined roles, assigned tasks, and visible activity within the platform. </p>
-<p>Employees can use Claude to structure their work by debating ideas and logging actionable items into projects and tasks, which agents can then execute. These agents have pre-built skills and integrations, with access scoped by administrators who control permissions, mirroring human user access controls but with an additional safeguard: an agent’s access is limited by the user who initiated the task. </p>
-<p>A key feature is “shared memory,” allowing agents to retain information and improve over time. However, only designated administrators can commit feedback to permanent memory, while general user feedback is task-specific. Asana highlights three example applications: automating responses to product questions in Slack, briefing executives on at-risk customer renewals, and planning engineering cycles using Command by Asana, demonstrating Claude’s ability to handle document generation and complex tasks.</p></div>
+    <div class="summary"><p>Anthropic’s sales team has deployed a buying agent built on <strong>Claude Managed Agents (beta)</strong> to handle inbound customer inquiries. This agent now manages thousands of daily conversations, answering questions about pricing, security, and plan recommendations, and even enabling direct purchases. The agent uses a simple prompt-based approach, leveraging the platform’s capabilities for hosting and tool orchestration – an initial version was built in just a few weeks by a single engineer.</p>
+<p>The system prioritizes understanding customer needs and recommending appropriate plans, often directing smaller teams to the Team plan rather than upselling to Enterprise. Leads escalated to sales representatives are reportedly more qualified, resulting in a 2.5x increase in closed-won deals for some reps and a five-day faster sales cycle. The agent operates on an opt-in basis, allowing customers to choose between interacting with the agent or a human representative, and Anthropic emphasizes giving the AI a high-level goal rather than strict rules. </p>
+<p>Key to the success of this agent was the use of Managed Agents to bypass infrastructure work, allowing the team to focus on prompt engineering and knowledge base development. Versioning within the platform enabled rapid iteration – the team was on version 7 within a week of internal testing, with edits continuously deployed. The architecture relies on a prompt, a set of tools, and Claude itself, and the team found a “less is more” approach to prompting most effective.</p></div>
     
   </div>
   
   <div class="card">
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>research</span>
-      <span> · 2026-09-29</span>
+      <span>blog</span>
+      <span> · 2026-09-30</span>
     </div>
-    <h2><a href="https://www.anthropic.com/research/your-thoughts-on-ai" target="_blank" rel="noopener">What do you want from AI?</a></h2>
+    <h2><a href="https://claude.com/blog/claude-for-government-is-now-generally-available" target="_blank" rel="noopener">Claude for Government is now generally available | Claude by Anthropic</a></h2>
     
-    <div class="summary"><p>Anthropic is launching a study using <strong>Anthropic Interviewer</strong> to gather user experiences with AI, aiming to inform the development of AI and guide policy. The study asks participants about their positive and negative experiences with AI, desired changes AI could bring to various aspects of life, and expectations for AI developers like Anthropic. Unlike a similar study from December 2025 involving 81,000 participants, this iteration allows users to opt-in to make their full interview publicly available for broader research and scrutiny.</p>
-<p>The interviews, estimated to take around 15 minutes, are open to Claude and Claude Code users with accounts at least two weeks old, running from September 29 to October 6, 2026. Anthropic emphasizes transparency, noting the interviews will be published unedited (with limited exceptions for policy violations) and acknowledging the risks of re-identification despite not publishing account information. Participants are advised to avoid sharing personally identifying details during the interview. </p>
-<p>This study builds on prior work which influenced Anthropic's research agenda and was presented at the World Economic Forum; however, it differs by providing a publicly accessible dataset of individual interviews, intending to foster wider research and public understanding of AI's impact.</p></div>
+    <div class="summary"><p>Anthropic has generally released Claude for Government, a version of their AI platform authorized under FedRAMP High. This provides federal and state agencies access to Claude’s core coding and agentic capabilities while meeting stringent compliance requirements. Capabilities are updated at the same pace as Anthropic’s commercial offerings. </p>
+<p>The platform allows direct work with desktop files for tasks like memo creation and RFP review, and includes new tools: Claude Code, for software development and modernization, and Claude for Microsoft 365, both currently in early access. Agencies can manage costs with prepaid usage increments and hard caps, tiered user access with spend/model limits, and department-level administration.</p>
+<p>Administrators have oversight via audit logs, configuration controls, and usage analytics; conversation history remains local to agency-managed devices. Existing customers can migrate conversation histories, and the application integrates with standard Mobile Device Management (MDM) platforms. Access is available through <a href="claude.com/solutions/government">claude.com/solutions/government</a>.</p></div>
     
   </div>
   
   <div class="card">
     <div class="meta">
-      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <a href="google/" class="badge badge-google">Google</a>
       <span>research</span>
-      <span> · 2026-09-29</span>
+      <span> · 2026-09-30</span>
     </div>
-    <h2><a href="https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities" target="_blank" rel="noopener">GLM-5.3 and the spread of advanced cyber capabilities</a></h2>
+    <h2><a href="https://deepmind.google/blog/introducing-synthid-bio/" target="_blank" rel="noopener">Introducing SynthID Bio</a></h2>
     
-    <div class="summary"><p>Zhipu AI’s GLM-5.3 demonstrates capabilities comparable to Anthropic’s Claude Mythos Preview in autonomously developing end-to-end cyber exploits. Testing on ExploitBench showed GLM-5.3 successfully created exploits in 50 of 410 attempts, mirroring the 56 of 410 successes achieved by Claude Mythos Preview. On a separate internal benchmark focusing on control-flow hijacks, GLM-5.3 succeeded in 4% of trials, slightly below Mythos Preview’s 6%, but a significant improvement over previous models like Claude Opus 4.6 and GLM-5.2 which achieved zero successes.</p>
-<p>Crucially, GLM-5.3 differs from safeguarded US models by being released with easily bypassed safeguards; attackers can overcome these protections 64%-100% of the time using simple techniques like deceptive prompting or “abliteration” – a process of removing refusal mechanisms – while the same techniques fail against Claude models.  Abliteration reduced GLM-5.3’s refusal rate to approximately 2-12% across several benchmarks and required roughly 2,200 GPU hours (around $4,400) to complete. NIST recently assessed GLM-5.3 as “the most cyber-capable open-weight model” to date, lagging US frontier models by about four months. Researchers successfully used GLM-5.3 to discover and chain together previously unknown vulnerabilities in a web browser, demonstrating its potential for real-world exploitation.</p></div>
+    <div class="summary"><p>SynthID Bio introduces a watermarking system for AI-generated biological data to enhance biosecurity and scientific integrity.</p>
+<ul>
+<li>SynthID Bio embeds imperceptible signatures into protein sequences and 3D structures, preserving biological function, using adjustments to amino acid choices and atomic coordinates.</li>
+<li>The system was validated with AlphaProteo and a SynthID-enabled ProteinMPNN, demonstrating comparable hit rates and binding affinities (KD measurements) to unwatermarked proteins for VEGF-A, SARS-CoV-2 spike protein RBD, and PD-L1.</li>
+<li>For protein folding, SynthID Bio fine-tunes AlphaFold 3’s diffusion network for watermark integration, maintaining prediction accuracy and detectability even with digital noise.</li>
+<li>The approach is being extended to watermark entire genomes using Evo 2, and code, weights, and <em>in vitro</em> data are being open-sourced to encourage community collaboration.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="google/" class="badge badge-google">Google</a>
+      <span>research</span>
+      <span> · 2026-09-30</span>
+    </div>
+    <h2><a href="https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/" target="_blank" rel="noopener">Gemini 4 Argon: our next era of frontier intelligence</a></h2>
+    
+    <div class="summary"><ul>
+<li>Gemini 4 Argon is a new frontier model excelling in complex workflows across software engineering, enterprise knowledge work, and cybersecurity defense.</li>
+<li>The model achieves an industry-leading 1 million token limit, significantly expanding its capacity for deep reasoning and multi-step problem solving compared to the previous 64K token limit.</li>
+<li>Gemini 4 Argon achieves state-of-the-art performance on benchmarks including DeepSWE v1.1 (77.9%), Vals Index, AutomationBench (51.3%), LVBench (91.7%), and CWE-bench v1 (68% tie).</li>
+<li>Pricing will initially be $2 per million input tokens and $10 per million output tokens, with cached input tokens at 95% off, before reverting to $4/$20 per million.</li>
+</ul></div>
     
   </div>
   
@@ -195,42 +231,6 @@
     <h2><a href="https://blog.google/innovation-and-ai/technology/ai/winner-future-vision-xprize/" target="_blank" rel="noopener">Watch the winning trailer from the Future Vision XPRIZE, The Gifted.</a></h2>
     
     <div class="summary"><p>Filmmaker Jeff Synthesized won the Future Vision XPRIZE for <em>The Gifted</em>, a film depicting an 11-year-old recreating his mother’s voice and essence using code. The project, selected from over 2,500 entries, highlights the potential of technology for empathy and community care, and will receive $100,000 and $2.5 million in production funding via Google’s 100 ZEROS initiative. The article does not detail specific technical implementations or AI models used in the film’s creation.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="google/" class="badge badge-google">Google</a>
-      <span>research</span>
-      <span> · 2026-09-24</span>
-    </div>
-    <h2><a href="https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/" target="_blank" rel="noopener">Introducing Gemini 3.8 Live with Live Avatar</a></h2>
-    
-    <div class="summary"><p>Gemini 3.8 Live with Live Avatar adds real-time visual presence to conversational AI for enterprise applications.</p>
-<ul>
-<li>The feature combines low-latency streaming video with live dialogue capabilities from the Gemini 3.8 Live model.</li>
-<li>Live Avatar supports asynchronous tool execution, allowing tool calls and data fetching in the background during active dialogue.</li>
-<li>It offers native multilingual speech-to-speech synchronization, adapting lip-sync and expressions across 97 languages without impacting video quality.</li>
-<li>Custom avatars can be generated from reference images, preserving likeness and brand styling, currently available through enterprise allowlisting; all generated content is watermarked with SynthID.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="google/" class="badge badge-google">Google</a>
-      <span>research</span>
-      <span> · 2026-09-23</span>
-    </div>
-    <h2><a href="https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/" target="_blank" rel="noopener">Gemini 3.8 text-to-speech says hello</a></h2>
-    
-    <div class="summary"><p>Gemini 3.8 Flash TTS and Gemini 3.8 Flash-Lite TTS are new text-to-speech models providing enhanced voice customization and expressive audio generation.</p>
-<ul>
-<li>Gemini 3.8 Flash TTS creates new voices from natural language prompts and allows line-by-line control over pacing, emotion, and dialect for applications like gaming and audiobooks.</li>
-<li>Gemini 3.8 Flash-Lite TTS is optimized for high-volume, cost-efficient applications like dubbing and voice agents, also with fine-grained control over speech characteristics.</li>
-<li>The models achieved #1 ranking on Hume AI’s Voice Design Benchmark (71.4) and Overall Quality Index, with improvements in long-form content and dual-speaker control compared to Gemini 3.1 Flash TTS.</li>
-<li>Safety features include consent verification for voice replication, SynthID watermarking, and C2PA credentials; the models support over 100 languages and are available via Gemini API, Google AI Studio, Gemini Enterprise, Gemini Notebook, and Google Vids.</li>
-</ul></div>
     
   </div>
   
@@ -293,14 +293,14 @@
       <span>blog</span>
       <span> · 2026-09-30</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/introducing-anthropic-models-on-amazon-bedrock-for-in-region-inference-in-seoul-and-singapore/" target="_blank" rel="noopener">Introducing Anthropic models on Amazon Bedrock for in-region inference in Seoul and Singapore</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/build-a-multi-agent-music-production-pipeline-on-amazon-bedrock-agentcore-runtime-instances/" target="_blank" rel="noopener">Build a multi-agent music production pipeline on Amazon Bedrock AgentCore Runtime Instances</a></h2>
     
-    <div class="summary"><p>Amazon Bedrock now offers in-region inference for Anthropic Claude models in Seoul and Singapore.</p>
+    <div class="summary"><p>Build a multi-agent music production pipeline leveraging Amazon Bedrock AgentCore Runtime Instances.</p>
 <ul>
-<li>Claude Opus 5 and Claude Sonnet 5 are available with in-region inference in Seoul (ap-northeast-2).</li>
-<li>Claude Sonnet 5 is available with in-region inference in Singapore (ap-southeast-1).</li>
-<li>In-region inference keeps all processing and data within the specified AWS Region, adhering to strict data residency requirements.</li>
-<li>The models are accessible via the <code>bedrock-runtime</code> endpoint using the Anthropic Messages API, the InvokeModel API, and the Amazon Bedrock Converse API; model IDs are in the format <code>anthropic.claude-opus-5</code> or <code>anthropic.claude-sonnet-5</code>.</li>
+<li>The post details how to deploy a music production pipeline with three agents (Composition, Delivery, and Compliance) using Amazon Bedrock AgentCore Runtime Instances for persistent, long-running workflows.</li>
+<li>Runtime Instances offer features like multi-day sessions, GPU access (utilizing NVIDIA L4 GPUs), persistent volumes (Amazon EBS), and the ability to host multiple agents on a single instance (1:N), differing from MicroVMs which are serverless and host one agent.</li>
+<li>The three agents – Composition (using Claude Sonnet 4.6 &amp; ACE-Step for audio generation), Delivery (using Claude Sonnet 4.6 for signal processing chain creation), and Compliance (for quality control) – collaborate by sharing a filesystem accessible via a shared <code>runtimeSessionId</code>.</li>
+<li>The solution highlights independent deployment of agents (packaged as container images or code packages) and the ability to resume workflows across multiple days, enabling a collaborative music production process with persistent state on the designated instance.</li>
 </ul></div>
     
   </div>
@@ -311,13 +311,13 @@
       <span>blog</span>
       <span> · 2026-09-30</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-expands-claude-model-availability-to-india-cross-region-inference/" target="_blank" rel="noopener">Amazon Bedrock expands Claude model availability to in-country inferencing in India</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/query-claims-in-natural-language-with-amazon-bedrock-knowledge-bases/" target="_blank" rel="noopener">Query claims in natural language with Amazon Bedrock Knowledge Bases</a></h2>
     
     <div class="summary"><ul>
-<li>Amazon Bedrock now supports Anthropic’s Claude Opus 5, Claude Sonnet 5, and Claude Haiku 4.5 models with in-country inferencing in India.</li>
-<li>This is achieved through geographic cross-Region inference, routing requests between the <code>ap-south-1</code> (Mumbai) and <code>ap-south-2</code> (Hyderabad) Regions.</li>
-<li>Data remains within the source Region (ap-south-1 or ap-south-2) and is end-to-end encrypted; Amazon Bedrock uses a zero data retention (ZDR) model.</li>
-<li>Access is available through the Amazon Bedrock console, Anthropic’s Messages API, and the Amazon Bedrock InvokeModel and Converse APIs—using the "in." prefixed model IDs (e.g., <code>in.anthropic.claude-sonnet-5</code>).</li>
+<li>Amazon Bedrock Knowledge Bases provides a fully managed RAG (Retrieval Augmented Generation) capability for documents, handling parsing, chunking, embeddings, and vector storage.</li>
+<li>The AgenticRetrieveStream API is used to query documents in natural language, enabling multi-turn conversations and metadata filtering (e.g., by claim ID, claim type).</li>
+<li>The service supports document formats including PDF, Word, and text, and ingests data from Amazon S3, with an option to use customer-managed AWS KMS keys for encryption.</li>
+<li>The API streams events, answer text, and citations, providing transparency into the retrieval plan and source documents used to generate responses, and supports a contextual grounding guardrail.</li>
 </ul></div>
     
   </div>
@@ -326,15 +326,16 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-09-29</span>
+      <span> · 2026-09-30</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-conde-nast-built-multimodal-video-discovery-with-amazon-bedrock/" target="_blank" rel="noopener">How Condé Nast built multimodal video discovery with Amazon Bedrock</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/introducing-anthropic-models-on-amazon-bedrock-for-in-region-inference-in-seoul-and-singapore/" target="_blank" rel="noopener">Introducing Anthropic models on Amazon Bedrock for in-region inference in Seoul and Singapore</a></h2>
     
-    <div class="summary"><ul>
-<li>Condé Nast partnered with AWS to build a multimodal video discovery solution using Amazon Bedrock and Amazon OpenSearch Service, reducing video discovery time from 250 minutes to under 2 minutes.</li>
-<li>The solution leverages the TwelveLabs Marengo embedding model, accessed through Amazon Bedrock, to jointly encode visual, audio, and transcript signals for semantic search.</li>
-<li>A decoupled architecture separates ingestion (embedding generation via Marengo and indexing into OpenSearch) from serving (querying and returning timestamped results), enabling scalability and resilience.</li>
-<li>The system achieves high availability through multi-AZ deployment of Amazon OpenSearch Service, Amazon DocumentDB, and compute tiers utilizing Auto Scaling groups, resulting in an estimated $800,000 in annual operational savings.</li>
+    <div class="summary"><p>Amazon Bedrock now offers in-region inference for Anthropic Claude models in Seoul and Singapore.</p>
+<ul>
+<li>Claude Opus 5 and Claude Sonnet 5 are available with in-region inference in Seoul (ap-northeast-2).</li>
+<li>Claude Sonnet 5 is available with in-region inference in Singapore (ap-southeast-1).</li>
+<li>In-region inference keeps all processing and data within the specified AWS Region, adhering to strict data residency requirements.</li>
+<li>The models are accessible via the <code>bedrock-runtime</code> endpoint using the Anthropic Messages API, the InvokeModel API, and the Amazon Bedrock Converse API; model IDs are in the format <code>anthropic.claude-opus-5</code> or <code>anthropic.claude-sonnet-5</code>.</li>
 </ul></div>
     
   </div>
@@ -390,11 +391,11 @@
     <div class="meta">
       <a href="techcrunch/" class="badge badge-techcrunch">TechCrunch</a>
       <span>news</span>
-      <span> · 2026-09-29</span>
+      <span> · 2026-09-30</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/09/29/openai-launches-dots-its-bubbly-agentic-avatar/" target="_blank" rel="noopener">OpenAI launches Dots, its bubbly agentic avatar</a></h2>
+    <h2><a href="https://techcrunch.com/2026/09/30/doordash-launches-an-ai-agent-you-can-text-to-order-food/" target="_blank" rel="noopener">DoorDash launches an AI agent you can text to order food</a></h2>
     
-    <div class="summary"><p>OpenAI announced Dots, a new agentic assistant powered by GPT-6 Astra, at its DevDay event. Unlike previous tools like Codex, Dots are designed to operate independently in the background to pursue user-defined goals with minimal oversight. TechCrunch reports that OpenAI envisions Dots working both individually and in teams, handling tasks such as monitoring customer feedback or rerunning scientific analyses. The feature is rolling out Tuesday within ChatGPT for Pro and Business Premium users, with integration planned for platforms like Slack and Teams.</p></div>
+    <div class="summary"><p>DoorDash announced an AI agent accessible via Apple Messages, allowing users to place orders through text prompts. The agent understands requests like “order my usual” and can provide recommendations with photos based on specific dish requests or local searches. It is also designed to handle group orders with varying dietary needs and quantities. DoorDash is currently accepting sign-ups for a waitlist in the U.S. to test the feature, aiming to compete with Uber Eats and Grubhub, and is concurrently testing delivery drones in Northern California.</p></div>
     
   </div>
   
@@ -402,16 +403,16 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-09-29</span>
+      <span> · 2026-09-30</span>
     </div>
-    <h2><a href="https://arstechnica.com/ai/2026/09/anthropics-ipo-pitch-includes-a-warning-about-human-extinction/" target="_blank" rel="noopener">Anthropic’s IPO pitch includes a warning about human extinction</a></h2>
+    <h2><a href="https://arstechnica.com/google/2026/09/google-is-paying-100-websites-for-contributions-to-ai-overviews-but-the-amounts-are-tiny/" target="_blank" rel="noopener">Google&#39;s early attempt to pay websites for AI answers is struggling</a></h2>
     
-    <div class="summary"><p>Anthropic’s IPO prospectus details potential “existential risks to humanity” associated with its AI technology.</p>
+    <div class="summary"><p>Google’s AI contribution pilot program, designed to compensate websites for content used in AI-powered search results, is reportedly yielding minimal payouts for most participants.</p>
 <ul>
-<li>The filing warns of risks including increasingly advanced AI models potentially being used for manipulation and exhibiting unpredictable behaviors.</li>
-<li>Anthropic projects spending $518 billion on cloud, computing, and infrastructure in coming years.</li>
-<li>The company reported $4.6 billion in revenue and an operating loss of over $8 billion in the last year, with Q2 2024 revenue reaching $11.5 billion.</li>
-<li>Anthropic’s models, including <strong>Claude</strong>, are noted in the context of industry-wide safety concerns, prompting calls to “pace the frontier” of AI development and a delay in OpenAI’s latest model release.</li>
+<li>The pilot program, involving approximately 100 publishers, aims to pay websites when their content contributes to search results generated by Google’s Gemini AI.</li>
+<li>Many small and mid-sized publishers report receiving payments equivalent to roughly one-tenth of one percent of their advertising revenue.</li>
+<li>Early participants in niche areas like anime and gaming are seeing more substantial revenue (over $1 million annually for one), but recent additions report significantly lower earnings ($50,000 - $60,000).</li>
+<li>Publishers have expressed confusion regarding how “meaningful contribution” is measured and are concerned about the program's ability to provide predictable revenue, leading some larger publishers to decline participation.</li>
 </ul></div>
     
   </div>

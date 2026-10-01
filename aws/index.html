@@ -80,13 +80,48 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-09-30 10:20 UTC</p>
+  <p class="generated-at">Generated 2026-10-01 10:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">September 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-30</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-a-multi-agent-music-production-pipeline-on-amazon-bedrock-agentcore-runtime-instances/" target="_blank" rel="noopener">Build a multi-agent music production pipeline on Amazon Bedrock AgentCore Runtime Instances</a></h3>
+    
+    <div class="summary"><p>Build a multi-agent music production pipeline leveraging Amazon Bedrock AgentCore Runtime Instances.</p>
+<ul>
+<li>The post details how to deploy a music production pipeline with three agents (Composition, Delivery, and Compliance) using Amazon Bedrock AgentCore Runtime Instances for persistent, long-running workflows.</li>
+<li>Runtime Instances offer features like multi-day sessions, GPU access (utilizing NVIDIA L4 GPUs), persistent volumes (Amazon EBS), and the ability to host multiple agents on a single instance (1:N), differing from MicroVMs which are serverless and host one agent.</li>
+<li>The three agents – Composition (using Claude Sonnet 4.6 &amp; ACE-Step for audio generation), Delivery (using Claude Sonnet 4.6 for signal processing chain creation), and Compliance (for quality control) – collaborate by sharing a filesystem accessible via a shared <code>runtimeSessionId</code>.</li>
+<li>The solution highlights independent deployment of agents (packaged as container images or code packages) and the ability to resume workflows across multiple days, enabling a collaborative music production process with persistent state on the designated instance.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-09-30</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/query-claims-in-natural-language-with-amazon-bedrock-knowledge-bases/" target="_blank" rel="noopener">Query claims in natural language with Amazon Bedrock Knowledge Bases</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock Knowledge Bases provides a fully managed RAG (Retrieval Augmented Generation) capability for documents, handling parsing, chunking, embeddings, and vector storage.</li>
+<li>The AgenticRetrieveStream API is used to query documents in natural language, enabling multi-turn conversations and metadata filtering (e.g., by claim ID, claim type).</li>
+<li>The service supports document formats including PDF, Word, and text, and ingests data from Amazon S3, with an option to use customer-managed AWS KMS keys for encryption.</li>
+<li>The API streams events, answer text, and citations, providing transparency into the retrieval plan and source documents used to generate responses, and supports a contextual grounding guardrail.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -570,41 +605,6 @@
 <li>The architecture utilizes a multi-agent system with specialized assistants (Resources, Knowledge, Analytics Insights, Expert Advisor, Navigation) governed by individual system prompts, connected through AgentCore Gateway and the Model Context Protocol (MCP).</li>
 <li>Amazon Bedrock AgentCore capabilities – runtime, Gateway, memory, and Observability – were key to addressing challenges in integration, separation of logic, conversational context, and debugging at scale.</li>
 <li>The solution uses Anthropic Claude models on Amazon Bedrock, integrates with Trane Cloud via APIs exposed through AgentCore Gateway, and employs Amazon Bedrock Guardrails for production controls and responsible AI.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-22</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/right-size-generative-ai-endpoints-with-concurrency-sweeps-on-amazon-sagemaker-ai/" target="_blank" rel="noopener">Right-size generative AI endpoints with concurrency sweeps on Amazon SageMaker AI</a></h3>
-    
-    <div class="summary"><p>Amazon SageMaker AI introduces concurrency sweeps for right-sizing generative AI endpoints, maximizing price-performance while meeting latency requirements.</p>
-<ul>
-<li>Concurrency sweeps systematically benchmark endpoints by sending increasing concurrent traffic and analyzing throughput and latency.</li>
-<li>The workflow involves deploying a model (e.g., NVIDIA Nemotron-3 Nano 30B) with the vLLM container (v0.19.1-gpu-py312-cu129-ubuntu22.04-sagemaker), configuring a workload profile (token counts, streaming), running sweeps via the <code>CreateAIBenchmarkJob</code> API, and analyzing results.</li>
-<li>Analysis identifies the ideal concurrency level (maximizing throughput with acceptable latency), the breaking point (SLA threshold exceeded), and the right-size factor for determining instance needs.</li>
-<li>Automated SLA-based concurrency search (<code>max-concurrency-under-sla</code> recipe) can be used to find the highest concurrency satisfying specified latency (TTFT, E2E) and error rate thresholds, utilizing optimization to reduce search iterations.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-22</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-reactiv-automates-mobile-commerce-80-faster-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How Reactiv automates mobile commerce 80% faster with Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><ul>
-<li>Reactiv automated mobile commerce app updates using <strong>Amazon Bedrock AgentCore</strong>, reducing merchant configuration time by 80% and time to production by 33%.</li>
-<li>The solution uses a three-agent system built with the <strong>Strands Agents SDK</strong> leveraging <strong>AgentCore runtime</strong> for managed execution in Firecracker microVMs, <strong>AgentCore memory</strong> for persistent context, and <strong>AgentCore Identity</strong> for authentication.</li>
-<li>Reactiv utilized a custom <strong>Config MCP</strong> (hosted on AgentCore) to validate app configurations against a defined schema, eliminating 100 previously maintained OpenAPI specification files.</li>
-<li>They unified interactive and scheduled agents onto a single stack using the <strong>AG-UI protocol</strong> on Amazon Bedrock AgentCore, enabling bidirectional memory sharing and simplifying their architecture.</li>
 </ul></div>
     
   </div>
