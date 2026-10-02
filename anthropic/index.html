@@ -80,13 +80,41 @@
     </label>
   </div>
   <h1>Anthropic News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-10-01 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-10-02 10:16 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">October 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-10-01</span>
+    </div>
+    <h3><a href="https://claude.com/blog/claude-code-mods" target="_blank" rel="noopener">Customize Claude Code with mods in TypeScript | Claude by Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic has introduced “mods” for Claude Code, enabling users to customize the tool's behavior with small TypeScript functions. These mods function as event hooks – intercepting actions like tool calls or UI rendering – and can rewrite prompts, alter the interface, replace built-in features, or add new functionality. Mods are packaged and distributed as plugins, installing and updating like any other plugin within the Claude Code CLI and desktop app.</p>
+<p>Importantly, mods run with the same system access as Claude Code itself, requiring trust in the source. Existing features like <code>/diff</code> are now implemented as mods, signaling a move to make more of Claude Code customizable in this way.  Team and Enterprise plans include security features like <code>sec-default</code> which can restrict mod behavior, and allow administrators to define custom mod loading order and restrictions.  </p>
+<p>Users can author mods themselves, or instruct Claude Code to generate them.  The full documentation and a getting started guide are available; admins can manage plugin access through existing controls.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>research</span>
+      <span> · 2026-10-01</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/research/claude-shaped-science" target="_blank" rel="noopener">Claude-shaped science</a></h3>
+    
+    <div class="summary"><p>Anthropic’s new toolkit, BootLoops, leverages the capabilities of Claude to tackle “Claude-shaped” problems – quantitative scientific questions particularly well-suited to AI’s strengths in coding, mathematical manipulation, and broad knowledge access.  Researcher Matthew Schwartz found that by allowing Claude to identify these problems, rather than forcing it into pre-defined research paths, significant progress could be made across diverse fields. Initial experiments with Claude Opus 4.5 demonstrated performance comparable to a graduate student, but required extensive hand-holding; BootLoops aims to overcome that impedance mismatch.</p>
+<p>BootLoops has already facilitated novel findings in areas like ecology (revealing discrepancies in tree species change rates compared to neutral theory) and population genetics (identifying a mechanism called gene conversion). The toolkit functions as a harness, streamlining code porting and enabling exact calculations, particularly with semi-numerical bootstrap methods.  The project involved 36 manuscripts with 19 co-authors across 18 fields developed in three months, with the source code available on GitHub.</p>
+<p>The key takeaway is that focusing on problems aligned with current AI capabilities—those requiring extensive computation and drawing on interdisciplinary knowledge—can unlock valuable scientific insights. While AI won't replace the need for human scientists to guide research and interpret results, it provides a powerful new tool for accelerating discovery, especially where existing expertise is fragmented across disciplines.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -469,32 +497,6 @@
     
     <div class="summary"><p>Anthropic, in collaboration with Accenture, has released a blueprint for deploying AI initiatives—specifically those built on Claude—from pilot programs to full enterprise production.  Accenture’s recent research indicates that only 23% of C-suite leaders have seen sustained, enterprise-wide impact from AI, despite successful pilots. The guide outlines seven key considerations, structured chronologically across the pilot, pre-pilot, and production phases, including assigning ownership for AI costs and outcomes—currently lacking in 42% of organizations according to Accenture’s Tokenomics research. </p>
 <p>The blueprint emphasizes defining the AI’s job with a four-part framework (user, task, output, and quality threshold) along with a total cost of ownership model established <em>before</em> piloting.  It also details a four-tier oversight model—automated, sampled, reviewed, and advisory—to calibrate human review to output risk. This model provides review cadences for each tier, helping balance safety and efficiency.  The guidance intends to aid CIOs and technical leaders in making critical decisions around scaling AI programs.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-09-14</span>
-    </div>
-    <h3><a href="https://claude.com/blog/how-healthcare-organizations-use-claude-tag" target="_blank" rel="noopener">How healthcare organizations use Claude Tag | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic’s Claude Tag (beta) integrates Claude directly into Slack workspaces as a collaborative teammate. It’s currently being utilized by healthcare organizations like Insight Health, Tennr, and Medallion—in channels excluding protected health information (PHI)—for tasks like triaging alerts, tool maintenance, and answering payer rule questions. Claude Tag operates by reading Slack threads, utilizing connected tools, and reporting back, while retaining channel memory for ongoing context.</p>
-<p>Administrators maintain control by selectively enabling Claude Tag in approved channels, disabling DMs, and scoping connector access. Insight Health uses it with a custom agent, Zeus, for incident response, automating tasks from alert investigation to PR creation, closing 97% of critical alerts without engineer intervention. Tennr utilizes it to maintain internal tools, enabling non-technical teams to request and receive code changes directly via Slack. Medallion leverages Claude Tag to accumulate and disseminate payer rule expertise, reducing reliance on individual domain experts.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-09-14</span>
-    </div>
-    <h3><a href="https://claude.com/blog/claude-for-financial-advisors" target="_blank" rel="noopener">Claude for Financial Advisors | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic has released “Claude for Financial Advisors,” a new plugin for its Claude AI model designed to automate tasks and improve efficiency for financial advisors. The plugin integrates with numerous existing financial tools – including Addepar, BlackRock, Charles Schwab, Envestnet, iCapital, Orion, SS&amp;C Black Diamond, Wealthbox, Wealth.com, Vanguard, and Zocks – allowing Claude to access client data from multiple sources in one place. </p>
-<p>The core functionality centers around “skills” that automate tasks like meeting preparation, portfolio analysis, compliance checks, and post-meeting follow-ups. For example, the “Alternative Investments Brief” skill summarizes a client’s alternative investments from iCapital or Addepar, while the “Estate and Tax Brief” verifies estate plans against account details. Importantly, all outputs are designed for advisor review before implementation, maintaining human oversight and control, and adhering to SEC regulations with features like compliance flagging. Anthropic recommends its Enterprise plan for firms due to its audit logging capabilities.</p></div>
     
   </div>
   

@@ -80,11 +80,154 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-10-01 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-10-02 10:16 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
+  
+  <h2 class="month">October 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-01</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-uniopen-customized-amazon-nova-to-their-retail-moderation-policies-for-production-deployment/" target="_blank" rel="noopener">How uniopen customized Amazon Nova to their retail moderation policies for production deployment</a></h3>
+    
+    <div class="summary"><ul>
+<li>uniopen customized <strong>Amazon Nova 2 Lite</strong> using supervised fine-tuning with <strong>Low-Rank Adaptation (LoRA)</strong> in <strong>Amazon SageMaker AI</strong> to improve retail content moderation accuracy.</li>
+<li>Fine-tuning increased <strong>Per Behavior Macro F1</strong> from 0.5852 to 0.8364 and <strong>Subject Type Macro F1</strong> from 0.4162 to 0.8302, demonstrating substantial improvements in understanding uniopen’s specific moderation policies.</li>
+<li>Further <strong>prompt optimization</strong> – simplifying the output format – increased <strong>Per Behavior Macro F1</strong> to 0.8550 and <strong>Subject Type Macro F1</strong> to 0.8491, exceeding production targets of 0.8500 and 0.8200 respectively.</li>
+<li>The solution employs a workflow using <strong>Amazon S3</strong> for data storage, <strong>Amazon DynamoDB</strong> for model configuration tracking, <strong>Argo Workflows on Amazon EKS</strong> for orchestration, and <strong>Amazon SNS/CloudWatch</strong> for alerting, with human review remaining a critical component through the process.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-01</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/simplify-dashboard-drill-down-with-the-amazon-quick-sight-hierarchy-filter/" target="_blank" rel="noopener">Simplify dashboard drill-down with the Amazon Quick Sight hierarchy filter</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon QuickSight now includes a hierarchy filter, enabling multi-level filtering within a single control to reduce dashboard clutter.</li>
+<li>The hierarchy filter supports up to five levels of dimension fields (e.g., Region → Country → City) and automatically manages drill-down paths for users.</li>
+<li>Selection behavior within the filter auto-selects parent levels when a lower level is chosen, ensuring a coherent filter state and visibility of the selected path.</li>
+<li>The filter includes search functionality, with a top-level search for the highest hierarchy and individual search boxes appearing for levels with over 10 unique values; levels with over 1,000 values display only a search box.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-01</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/implementing-multi-environment-access-for-claude-platform-on-aws/" target="_blank" rel="noopener">Implementing Multi-Environment Access for Claude Platform on AWS</a></h3>
+    
+    <div class="summary"><p>Implementing Multi-Environment Access for Claude Platform on AWS details a three-account architecture for accessing Claude Platform on AWS (CPonAWS) from production, development, and external environments.</p>
+<ul>
+<li>The architecture uses a dedicated AI Services account to host the CPonAWS subscription and workspaces, isolating it from workload and payer accounts.</li>
+<li>AWS workloads can access CPonAWS via cross-account SigV4, assuming roles in the AI Services account without storing credentials.</li>
+<li>Developers can use workspace-scoped API keys for local iteration, with policies restricting access to specific development workspaces.</li>
+<li>External environments can authenticate using OpenID Connect (OIDC) federation to obtain temporary AWS credentials for short-lived token-based access.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-01</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/building-ambient-agents-with-amazon-bedrock-agentcore-from-event-driven-signals-to-human-in-the-loop-workflows/" target="_blank" rel="noopener">Building ambient agents with Amazon Bedrock AgentCore: From event-driven signals to human-in-the-loop workflows</a></h3>
+    
+    <div class="summary"><h2>Building ambient agents with Amazon Bedrock AgentCore: From event-driven signals to human-in-the-loop workflows</h2>
+<p>This blog post details Amazon Bedrock AgentCore, a platform for building agents that respond to event streams and incorporate human-in-the-loop (HITL) workflows.</p>
+<ul>
+<li>AgentCore introduces a new paradigm of “ambient agents” that react to events (like file uploads or system alerts) rather than requiring user-initiated chats, utilizing event-driven signals to trigger actions.</li>
+<li>The core interaction with humans is facilitated through a single <code>ask_human</code> tool and a standardized response envelope, supporting patterns like notification, clarification, review, and error handling—all surfaced through a unified job view.</li>
+<li>The platform leverages a serverless architecture using Amazon S3, Amazon EventBridge, AWS Lambda, Amazon DynamoDB, and Amazon Bedrock AgentCore Runtime for container-based agent hosting, supporting long-running workloads and session isolation.</li>
+<li>The reference implementation supports S3 file uploads and scheduled events as triggers, with extension points for API webhooks and database changes, and requires access to the Anthropic Claude Sonnet 4.5 model in Amazon Bedrock.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-01</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/uplifting-conversion-across-the-acquisition-funnel-with-personalization-using-contextual-bandits-on-aws/" target="_blank" rel="noopener">Uplifting conversion across the acquisition funnel with personalization using contextual bandits on AWS</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Payments implemented a multi-objective contextual multi-armed bandit (MAB) on Amazon SageMaker AI to personalize content across an acquisition funnel (application start, submission, and approval).</li>
+<li>The system utilizes Linear UCB (LinUCB), balancing exploration and exploitation by estimating rewards based on a linear function of context vectors representing customer attributes; exploration is adjusted based on visitor history.</li>
+<li>A multi-stage approach optimizes the entire funnel simultaneously by combining UCB scores from models at each stage (start, submit, approve) using weighted sums, addressing the “seesaw problem” of optimizing individual steps.</li>
+<li>Content variations are built from pre-approved “building blocks” (images and taglines) to ensure brand safety and scalability, with the bandit selecting combinations and a Jupyter notebook available for testing on Amazon SageMaker AI.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-01</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-agent-memory-with-nvidia-nemo-agent-toolkit-and-amazon-s3-vectors/" target="_blank" rel="noopener">Build agent memory with NVIDIA NeMo Agent Toolkit and Amazon S3 Vectors</a></h3>
+    
+    <div class="summary"><ul>
+<li>The blog details how to use Amazon S3 Vectors as a persistent memory layer within the NVIDIA NeMo Agent Toolkit (NAT), deployed on Amazon EKS, for building multi-agent systems.</li>
+<li>NVIDIA NeMo Agent Toolkit (NAT) is an open-source framework enabling agent orchestration, profiling, evaluation and optimization of AI agents, and includes a memory module with a plugin interface for custom backends.</li>
+<li>A custom <code>MemoryEditor</code> plugin is implemented to interface with Amazon S3 Vectors, handling adding items (embedding text with Amazon Titan Text Embeddings V2 and storing vectors with metadata), searching (querying vectors with filters), and removing items.</li>
+<li>The implementation utilizes Amazon Titan Text Embeddings V2 to generate 1024-dimensional embeddings and emphasizes data handling considerations like retention policies, PII redaction, and access control with IAM policies and per-tenant indexes.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-01</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/serve-live-governed-data-in-ai-built-apps-with-amazon-quick/" target="_blank" rel="noopener">Serve live, governed data in AI-built apps with Amazon Quick</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Quick now supports “Live Data in Apps,” enabling Quick Apps to query governed QuickSight datasets (SPICE &amp; Direct Query) in real-time instead of relying on static build-time snapshots.</li>
+<li>The feature leverages natural language prompts to build apps; the AI agent discovers relevant datasets and writes SQL queries, which are then re-run for each user to ensure current data based on their permissions (RLS/CLS).</li>
+<li>Users are required to provide one-time consent for Quick to access datasets, and the system enforces this consent on the server side for every query, maintaining data governance.</li>
+<li>Limitations exist regarding dataset combinations (Direct Query from different sources not supported), row limits during app build, and the need to rebuild queries after column modifications; see documentation for details.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-01</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/scaling-cloud-migrations-with-agentic-ai-on-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Scaling cloud migrations with agentic AI on Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><p>AWS introduces a four-agent pattern built on Amazon Bedrock AgentCore to scale cloud migrations, reducing IaC development time from weeks to minutes in a specific enterprise program.</p>
+<ul>
+<li>The pattern leverages Amazon Bedrock AgentCore, Strands Agents SDK, and Model Context Protocol (MCP) tools for custom automation alongside services like AWS Transform and AWS DMS.</li>
+<li>Four agents are utilized: Intake Agent (reads migration inputs), IaC Agent (generates infrastructure as code), Migration Intelligence and Governance Agent (reporting/governance), and SRE Agent (post-cutover operations).</li>
+<li>Agents use foundation models from Amazon Bedrock, with actions secured via AgentCore Identity (IAM roles) and enforced by Policy in AgentCore (Cedar rules).</li>
+<li>The IaC Agent specifically generates code composing approved internal modules, with a demonstrated impact of significantly reducing manual IaC development effort.</li>
+</ul></div>
+    
+  </div>
+  
   
   <h2 class="month">September 2026</h2>
   
@@ -467,144 +610,6 @@
 <li><strong>Amazon Nova Lite</strong> through the <strong>Amazon Bedrock Converse API</strong> is used to classify tickets and recommend next steps, achieving approximately 96% routing accuracy in initial testing.</li>
 <li>The workflow includes autonomous actions (routing, notifications) for high-confidence classifications and flags lower-confidence tickets for human review, with operational metrics tracked in <strong>Amazon CloudWatch</strong>.</li>
 <li>The solution recovered an estimated 8-14 engineering hours per week at a monthly operating cost of under $30, and Bedrock inference cost remained under $1 per month.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-24</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-a-multi-account-ai-agent-with-agentcore-gateway-and-mcp/" target="_blank" rel="noopener">Build a multi-account AI agent with AgentCore Gateway and MCP</a></h3>
-    
-    <div class="summary"><ul>
-<li>This post details an architecture for building multi-account AI agents using Amazon Bedrock AgentCore Gateway and Model Context Protocol (MCP), enabling agents to query data across AWS accounts without data replication.</li>
-<li>AgentCore Gateway acts as a central integration point, providing a single endpoint for tool discovery and invocation across Line-of-Business (LOB) accounts, utilizing semantic search, centralized authentication via AgentCore Identity, and fine-grained authorization with Policy in AgentCore.</li>
-<li>LOB teams expose their data and tools as MCP servers running on AgentCore Runtime, maintaining ownership and control over their data while allowing agents access through a standardized interface.</li>
-<li>The architecture uses OAuth 2.0 machine-to-machine (M2M) authentication with AgentCore Identity and integrates with identity providers like Okta for secure, cross-account access, and utilizes Amazon Bedrock Guardrails for content safety.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-24</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/speaker-labeled-transcription-with-whisperx-on-sagemaker-ai/" target="_blank" rel="noopener">Speaker-labeled transcription with WhisperX on SageMaker AI</a></h3>
-    
-    <div class="summary"><ul>
-<li>AWS has released a Deep Learning Container (DLC) for WhisperX, an open-source project extending OpenAI’s Whisper model, for use with Amazon SageMaker AI.</li>
-<li>WhisperX adds per-word timestamps, speaker diarization, and faster transcription to Whisper, addressing limitations in standard speech-to-text for applications like contact centers, meetings, and media captioning.</li>
-<li>The DLC is available for both real-time (for short, interactive clips under 60 seconds) and asynchronous (for long audio) SageMaker endpoints, utilizing the standard serving contract on port 8080 with <code>multipart/form-data</code> input and outputs in <code>json</code>, <code>srt</code>, or <code>vtt</code> formats.</li>
-<li>The image URI for the DLC is <code>763104351884.dkr.ecr.&lt;region&gt;.amazonaws.com/whisperx:3.8.6-cu128-amzn2023-sagemaker</code> and requires setting <code>InferenceAmiVersion</code> to <code>al2-ami-sagemaker-inference-gpu-3-1</code> during endpoint configuration.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-23</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/use-open-weight-models-as-your-ai-coding-agent-with-amazon-bedrock/" target="_blank" rel="noopener">Use open weight models as your AI coding agent with Amazon Bedrock</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock now supports using open weight models (like Moonshot AI Kimi K3, OpenAI GPT-OSS 120B, and NVIDIA Nemotron 3 Super 120B) as a backend for AI coding agents, specifically utilizing the OpenCode agent.</li>
-<li>OpenCode is a terminal-native AI coding agent built in Go that connects to LLMs (including Bedrock) and can read/edit files, run commands, and understand project structure via LSP.</li>
-<li>The architecture allows for multi-model workflows, assigning different models to specific roles (e.g., Kimi K3 for planning/reasoning, Nemotron for code generation) within a single session, configurable via <code>opencode.json</code>.</li>
-<li>Bedrock offers data residency, security controls (IAM, CloudTrail, VPCs), and flexible pricing tiers (Priority, Standard, Flex) for these workloads, with the Flex tier offering a 50% cost reduction for latency-tolerant tasks.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-23</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/agentic-conversational-video-intelligence-built-on-aws/" target="_blank" rel="noopener">Agentic conversational video intelligence built on AWS</a></h3>
-    
-    <div class="summary"><p>Agentic conversational video intelligence solution built on AWS enables natural language querying of video content, reducing manual review time.</p>
-<ul>
-<li>The solution uses an agentic architecture with the Strands Agents SDK to orchestrate Amazon Bedrock (Claude Sonnet), Amazon Rekognition, and Amazon Transcribe based on user queries.</li>
-<li>Initial video analysis takes 5–10 minutes, while subsequent queries against processed content return responses in under a second due to caching.</li>
-<li>The system accepts video files and allows querying through a chat interface, supporting tasks like identifying decisions made in meetings or detecting individuals in security footage.</li>
-<li>Tools are implemented as Python functions decorated with <code>@tool</code>, with docstrings guiding the agent's use of each AWS service, allowing for easy extensibility.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-23</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/from-portal-hopping-to-instant-answers-hemas-journey-with-mcp-and-amazon-bedrock/" target="_blank" rel="noopener">From portal-hopping to instant answers: HEMA’s journey with MCP and Amazon Bedrock</a></h3>
-    
-    <div class="summary"><p>HEMA built an internal AI assistant, HAL, to consolidate fragmented internal knowledge and provide instant answers to employees.</p>
-<ul>
-<li>HAL leverages Amazon Bedrock AgentCore and the Model Context Protocol (MCP) to deliver knowledge within existing tools like Kiro and Claude, avoiding the need for users to navigate multiple portals.</li>
-<li>The solution consists of two AgentCore Gateways: one IAM-authenticated for internal use and one Entra ID-authenticated for external clients, enabling secure access without AWS credentials.</li>
-<li>HAL utilizes Amazon Bedrock Knowledge Bases for semantic search and retrieval augmented generation (RAG), alongside AgentCore Gateway for accessing live APIs via OpenAPI specifications and Lambda functions.</li>
-<li>Authentication for external clients is handled by an MCP auth proxy with emulated Dynamic Client Registration (DCR), simplifying configuration and maintaining security through Microsoft Entra ID.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-22</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/extending-public-sector-intelligence-with-agentforce-and-aws/" target="_blank" rel="noopener">Extending public sector intelligence with Agentforce and AWS</a></h3>
-    
-    <div class="summary"><ul>
-<li>This post details integrating Amazon Bedrock Data Automation with the Model Context Protocol (MCP) to extract structured insights from unstructured data (video, audio, documents) for use with Salesforce Agentforce.</li>
-<li>Amazon Bedrock Data Automation processes files in Amazon S3 based on their media type—extracting text/summaries for documents, descriptions/object identification for images, and transcriptions/summaries for video/audio.</li>
-<li>The architecture uses S3 event notifications to trigger AWS Lambda functions that initiate Bedrock Data Automation jobs, store results in DynamoDB and S3, and respond to Agentforce queries via the Amazon Bedrock AgentCore Gateway (utilizing MCP).</li>
-<li>A GitHub repository provides a CDK stack for deployment, and the setup requires prior configuration with Amazon S3 as outlined in a previous post, plus verification of Agentforce MCP server registration support.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-22</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-tata-elxsi-detects-industrial-safety-risks-in-seconds-on-aws/" target="_blank" rel="noopener">How Tata Elxsi detects industrial safety risks in seconds on AWS</a></h3>
-    
-    <div class="summary"><ul>
-<li>IRIS, Tata Elxsi’s real-time industrial safety platform, utilizes a serverless, event-driven architecture on AWS to detect unsafe conditions from video feeds.</li>
-<li>The system employs AWS IoT Greengrass on edge servers (e.g., NVIDIA Jetson AGX Orin) to filter video, extracting 2-5 frames per second containing people, vehicles, or equipment, reducing cloud data transfer by 70-80%.</li>
-<li>Computer vision models deployed on Amazon SageMaker AI, including YOLOv8 for PPE detection, SlowFast for action recognition, and multi-object tracking for proximity risks, analyze events streamed through Amazon Kinesis Data Streams.</li>
-<li>A correlation layer implemented via AWS Lambda and DynamoDB reduces false positives by 40-50% by evaluating detections based on time windows, camera location, and historical behavior, with alerts delivered via EventBridge, Step Functions, and various notification channels.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-22</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-trane-gets-building-insights-60x-faster-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How Trane gets building insights 60x faster with Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><ul>
-<li>Trane Technologies built an AI-powered agentic solution using Amazon Bedrock AgentCore and the Strands framework to reduce diagnostic workflow time from 20 minutes to 20 seconds, representing a 60x improvement.</li>
-<li>The architecture utilizes a multi-agent system with specialized assistants (Resources, Knowledge, Analytics Insights, Expert Advisor, Navigation) governed by individual system prompts, connected through AgentCore Gateway and the Model Context Protocol (MCP).</li>
-<li>Amazon Bedrock AgentCore capabilities – runtime, Gateway, memory, and Observability – were key to addressing challenges in integration, separation of logic, conversational context, and debugging at scale.</li>
-<li>The solution uses Anthropic Claude models on Amazon Bedrock, integrates with Trane Cloud via APIs exposed through AgentCore Gateway, and employs Amazon Bedrock Guardrails for production controls and responsible AI.</li>
 </ul></div>
     
   </div>
