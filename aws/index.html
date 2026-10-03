@@ -80,13 +80,66 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-10-02 10:16 UTC</p>
+  <p class="generated-at">Generated 2026-10-03 10:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">October 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-02</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/fine-tune-a-search-agent-with-multi-turn-rl-on-amazon-sagemaker-ai/" target="_blank" rel="noopener">Fine-tune a search agent with multi-turn RL on Amazon SageMaker AI</a></h3>
+    
+    <div class="summary"><p>AWS has introduced multi-turn reinforcement learning (MTRL) within Amazon SageMaker AI to fine-tune Large Language Models (LLMs) for search agents.</p>
+<ul>
+<li>MTRL optimizes LLMs across full conversational sequences, addressing limitations of supervised fine-tuning and single-turn RL by rewarding final outcomes.</li>
+<li>The service offers a modular agent-environment interface, serverless execution with per-token pricing, asynchronous rollout, and a native algorithm library including PPO, CISPO, and IS losses.</li>
+<li>The demonstration involved fine-tuning a Qwen3.6-27B model using datasets like FRAMES, BRIGHT, and WixQA, with a reward function based on nDCG@10 to improve search retrieval quality.</li>
+<li>Results showed improvements in nDCG@10 on benchmarks like WixQA (+18.4%) and BrowseComp-Plus (+23.7%), along with a significant reduction in agent failures, particularly on BrowseComp-Plus (failure rate reduced from 22.89% to 0.68%).</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-02</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/add-secure-web-search-to-claude-desktop-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Add secure Web Search to Claude Desktop with Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><p>Amazon Bedrock AgentCore now enables secure web search integration for Claude Desktop, overcoming knowledge cutoff limitations.</p>
+<ul>
+<li>AgentCore Gateway, a component of Amazon Bedrock AgentCore, connects Claude Desktop to a web search capability backed by an Amazon web index spanning tens of billions of documents.</li>
+<li>The integration uses JSON Web Token (JWT)-based authentication, federating AWS IAM Identity Center with Amazon Cognito to manage access without requiring external API keys or third-party identity providers.</li>
+<li>Configuration involves creating an Amazon Cognito user pool, configuring IAM Identity Center as a SAML application, registering IAM Identity Center as a SAML IdP in Cognito, and creating a Cognito app client.</li>
+<li>A Python script is provided to create the AgentCore Gateway with the Web Search tool attached, and further steps detail configuring Claude Desktop to utilize the new gateway and authentication details; currently available in us-east-1, eu-west-1, and ap-northeast-1 regions.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-02</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/sweep-thousands-of-leases-for-compliance-using-amazon-quick-and-the-adjudicated-query-pattern/" target="_blank" rel="noopener">Sweep thousands of leases for compliance using Amazon Quick and the Adjudicated Query pattern</a></h3>
+    
+    <div class="summary"><ul>
+<li>The Adjudicated Query pattern combines a natural language chat interface (Amazon Quick) with a deterministic rules engine to perform high-stakes compliance checks, such as verifying lease agreements against landlord-tenant laws.</li>
+<li>The pattern prioritizes "provable completeness" and "defensibility" by ensuring all records are assessed and providing a clear audit trail of applied rules and data.</li>
+<li>The architecture utilizes Amazon Quick, Amazon API Gateway, AWS Lambda (hosting the MCP server and rules engine), Amazon Aurora Serverless v2 (PostgreSQL with pgvector), and Amazon Bedrock (for exploratory clause search, not compliance sweeps). Specifically, it employs Amazon Titan Text Embeddings V2 and Anthropic Claude Sonnet 5.</li>
+<li>The system enforces strict design rules – rules are data, not code; natural language doesn’t reach SQL; and filtering is exact for completeness, with vectors used only for ranking – to prevent silent errors and maintain data integrity.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -557,59 +610,6 @@
 <li>Adaptive Pipeline Orchestration routes queries based on data volume – single-pass processing for smaller datasets (≤ θ tokens) and parallel batch processing for larger ones, optimizing for speed and quality.</li>
 <li>Cross-Account Multi-Model Failover expands inference capacity by leveraging independent model-account quotas, reducing throttling through randomized account selection and model ranking.</li>
 <li>Real-Time Streaming Evaluation validates each generated paragraph as it’s produced, overlapping quality checks with generation to minimize latency and is built on a producer-consumer concurrency pattern.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-25</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/accelerate-multimodal-rl-training-with-skyrl-on-amazon-sagemaker-hyperpod/" target="_blank" rel="noopener">Accelerate multimodal RL training with SkyRL on Amazon SageMaker HyperPod</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon SageMaker HyperPod is used to accelerate multimodal reinforcement learning (RL) training with SkyRL, specifically for a Qwen3-VL-8B vision-language model.</li>
-<li>The solution leverages Group Relative Policy Optimization (GRPO) to improve maze solve rates, increasing them from 43.75% to over 95% on a 64-maze evaluation set when post-training a Qwen3-VL-8B model.</li>
-<li>The training setup includes 3 ml.g7e.12xlarge instances (with NVIDIA RTX PRO 6000 Blackwell GPUs) for workers and 1 ml.r5d.16xlarge instance for the head node, utilizing Amazon FSx for Lustre shared storage and PyTorch FSDP for model sharding.</li>
-<li>Key components include colocated vLLM inference engines and FSDP policy workers on the same GPUs, LoRA adapter synchronization via Amazon FSx for Lustre, and checkpointing for resilience against hardware failures and job resumption.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-25</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/scaling-moe-reinforcement-learning-on-amazon-eks-with-efa-and-deepep-with-40-more-throughput/" target="_blank" rel="noopener">Scaling MoE reinforcement learning on Amazon EKS with EFA and DeepEP with 40% more throughput</a></h3>
-    
-    <div class="summary"><p>Scaling MoE reinforcement learning on Amazon EKS leverages EFA and DeepEP to achieve 40% more throughput.</p>
-<ul>
-<li>The architecture combines Amazon EKS for orchestration, Elastic Fabric Adapter (EFA) for high-performance networking, and Amazon S3 for durable storage to address challenges in scaling Mixture-of-Experts (MoE) RL training.</li>
-<li>DeepEP v2 introduces native EFA support, replacing standard all-to-all collectives with specialized dispatch and combine kernels to optimize sparse, fine-grained traffic generated by Expert Parallelism.</li>
-<li>The system utilizes separate EKS node groups optimized for rollout generation, reward-model inference, and policy training, alongside CPU instances for environments and memory-optimized instances for experience buffers.</li>
-<li>Amazon EC2 Spot Instances can reduce rollout-generation costs due to the interruption-tolerant nature of distributed inference tasks in that phase of the RL loop.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-24</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/aderant-builds-intelligent-ticket-triage-with-amazon-nova/" target="_blank" rel="noopener">Aderant builds intelligent ticket triage with Amazon Nova</a></h3>
-    
-    <div class="summary"><p>Aderant implemented an intelligent ticket triage system using <strong>Amazon Nova Lite</strong> via <strong>Amazon Bedrock</strong> to automate support ticket processing for their 268 clients.</p>
-<ul>
-<li>The system, built with a <strong>Lambda</strong> function triggered by <strong>Amazon EventBridge</strong>, enriches tickets with data from <strong>Jira, Confluence, Amazon Athena,</strong> and <strong>Microsoft SharePoint</strong>.</li>
-<li><strong>Amazon Nova Lite</strong> through the <strong>Amazon Bedrock Converse API</strong> is used to classify tickets and recommend next steps, achieving approximately 96% routing accuracy in initial testing.</li>
-<li>The workflow includes autonomous actions (routing, notifications) for high-confidence classifications and flags lower-confidence tickets for human review, with operational metrics tracked in <strong>Amazon CloudWatch</strong>.</li>
-<li>The solution recovered an estimated 8-14 engineering hours per week at a monthly operating cost of under $30, and Bedrock inference cost remained under $1 per month.</li>
 </ul></div>
     
   </div>
