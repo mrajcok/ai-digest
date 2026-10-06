@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-10-05T10:15:37.367786+00:00">Generated 2026-10-05 10:15 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-10-06T10:21:20.532240+00:00">Generated 2026-10-06 10:21 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,12 +132,12 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — Overview for 2026-10-03</h2>
-    <p class="overview-meta">2026-10-03 · 5 vendor sources · vendor sources only</p>
-    <div class="overview-text"><p>The most significant development today centers on efforts to enhance LLM performance for complex tasks, specifically in search and compliance. AWS announced the availability of multi-turn reinforcement learning (MTRL) within Amazon SageMaker AI, enabling developers to fine-tune LLMs – the example used a Qwen3.6-27B model – for search agents via full conversational sequences. Benchmarks showed substantial improvements in search retrieval quality, with up to 23.7% gains on BrowseComp-Plus and a dramatic reduction in agent failure rates. Simultaneously, AWS released the Adjudicated Query pattern, which pairs Amazon Quick with a deterministic rules engine to enable provably complete, auditable compliance checks against large document sets like lease agreements. This pattern, built on Amazon Bedrock (utilizing Titan Text Embeddings V2 and Claude Sonnet 5), emphasizes data integrity through strict design rules to prevent silent errors, and will be of particular interest to those working in regulated industries.</p>
-<p>Beyond search-focused improvements, access to information for LLMs is also being addressed. AWS unveiled AgentCore, an Amazon Bedrock feature allowing Claude Desktop to access a secure, tens-of-billions-of-documents web index via JWT-based authentication. This integration sidesteps the need for external API keys and expands Claude’s knowledge base beyond its training data cutoff. The system is currently available in us-east-1, eu-west-1, and ap-northeast-1 regions. </p>
-<p>Looking further ahead – to September 2026, according to Google’s announcements – Gemini 4 Argon is set to debut, featuring a massive 1-million-token output limit and advanced reasoning capabilities, initially targeting cyber defenders through the Fairwind Program. Accompanying this will be Gemini 3.8 Flash and Flash Cyber models, optimized for reasoning and coding, with the Cyber variant focused on proactive vulnerability management. New natural language audio models, Gemini 3.8 Live and Live Extended Thinking, and customizable text-to-speech models, Gemini 3.8 Flash-Lite TTS and Flash TTS, are also planned, furthering Google’s expansion into multimodal AI applications.</p>
-<p>Finally, Anthropic is investing heavily in addressing the AI skills gap with the launch of the $100 million Claude Frontier Academy. This initiative aims to train 10,000 “Frontier Deployed Engineers” (FDEs) by 2027 through a residency program mirroring medical training, combining instruction with hands-on project work for organizations like Accenture, Deloitte, and Morgan Stanley. This program is targeted at experienced software engineers already possessing foundational LLM knowledge and could represent a significant opportunity for individual development and organizational upskilling.</p></div>
+    <h2 class="overview-heading">Today in AI — since 2026-10-05</h2>
+    <p class="overview-meta">2026-10-06 · 8 vendor sources · vendor sources only</p>
+    <div class="overview-text"><p>Recent activity centers heavily on expanding the capabilities and reach of AI agents, particularly within the AWS ecosystem and leveraging models from Anthropic and Z.ai. Several announcements focus on making these agents more suitable for enterprise environments, including those with strict regulatory requirements. Anthropic’s Claude 3 Opus 5.5, Sonnet 5.5, and Sonnet 5 models are now available on Amazon Bedrock in AWS GovCloud (US) Regions with FedRAMP Class D and DoD IL4/IL5 authorizations, alongside Claude Code for coding tasks directly within IDEs and through the Agent SDK. </p>
+<p>Alongside these deployments, new tools are emerging to optimize agent performance and integration. The release of GLM 5.3, a 753B-parameter mixture-of-experts model from Z.ai on Bedrock, offers improved coding performance, while a new Amazon SageMaker skill for the Agent Toolkit enables agents to benchmark and recommend optimal configurations for SageMaker AI endpoints. Agentic retrieval with Amazon Bedrock Managed Knowledge Bases, improving RAG applications by dynamically breaking down complex queries, is now accessible through the <code>langchain-aws</code> package.  Improvements to Amazon Quick build on these themes, providing automated, auditable cross-account resource promotion functionality for managing agents and related resources.</p>
+<p>A significant trend is improving the development and evaluation of agents themselves. Anthropic’s Cresta released Conductor, a builder utilizing the Claude Agent SDK focused on CX applications and promoting reusable agent “skills”. AWS announced AgentCore Evaluations, a managed capability for assessing multi-agent system performance, offering both built-in and custom evaluators, and demonstrating a three-layer evaluation approach encompassing accuracy, task success, and explainability. These tools collectively point towards a growing emphasis on quantifiable agent performance and robust deployment procedures.</p>
+<p>Finally, refinements to Amazon Quick include automating user role downgrades for least privilege access and cost optimization, alongside a new capability to automate resource promotion between AWS accounts. These changes illustrate a commitment to making AI agent technologies more practical and manageable within enterprise workflows.</p></div>
   </section>
   
 
@@ -145,6 +145,20 @@
 
   
   <h2 class="section">Vendors</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>blog</span>
+      <span> · 2026-10-05</span>
+    </div>
+    <h2><a href="https://claude.com/blog/how-cresta-turned-cx-expertise-into-an-agent-builder-on-the-claude-agent-sdk" target="_blank" rel="noopener">How Cresta turned CX expertise into an agent builder on the Claude Agent SDK | Claude by Anthropic</a></h2>
+    
+    <div class="summary"><p>Cresta has released Conductor, a natural language agent builder leveraging the Claude Agent SDK, designed to streamline the creation of AI agents for customer experience (CX) applications. Originally built internally using Claude Sonnet and Opus, Conductor guides users through agent development – from blueprinting to implementation and optimization – aiming to halve initial deployment time. </p>
+<p>Conductor utilizes the Claude Agent SDK for tasks requiring adaptability, code execution, and iterative refinement, combined with Cresta’s proprietary conversation intelligence and CX expertise.  It focuses on balancing deterministic workflows—crucial for regulated industries—with flexible, adaptive conversation handling. The platform emphasizes evaluation with specific metrics covering artifact usability, execution path, quality, and resource usage, and includes a system to rerun those evaluations after updates to Claude or Conductor itself.</p>
+<p>Cresta emphasizes a “dogfooding” approach, internally validating Conductor before release, and focusing development on areas where they possess unique expertise, leveraging the Claude Agent SDK for core functionality. Conductor also allows teams to capture proven agent development patterns as reusable “skills”, fostering a knowledge flywheel for continuous improvement.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -171,20 +185,6 @@
     <div class="summary"><p>Anthropic has introduced “mods” for Claude Code, enabling users to customize the tool's behavior with small TypeScript functions. These mods function as event hooks – intercepting actions like tool calls or UI rendering – and can rewrite prompts, alter the interface, replace built-in features, or add new functionality. Mods are packaged and distributed as plugins, installing and updating like any other plugin within the Claude Code CLI and desktop app.</p>
 <p>Importantly, mods run with the same system access as Claude Code itself, requiring trust in the source. Existing features like <code>/diff</code> are now implemented as mods, signaling a move to make more of Claude Code customizable in this way.  Team and Enterprise plans include security features like <code>sec-default</code> which can restrict mod behavior, and allow administrators to define custom mod loading order and restrictions.  </p>
 <p>Users can author mods themselves, or instruct Claude Code to generate them.  The full documentation and a getting started guide are available; admins can manage plugin access through existing controls.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>research</span>
-      <span> · 2026-10-01</span>
-    </div>
-    <h2><a href="https://www.anthropic.com/research/claude-shaped-science" target="_blank" rel="noopener">Claude-shaped science</a></h2>
-    
-    <div class="summary"><p>Anthropic’s new toolkit, BootLoops, leverages the capabilities of Claude to tackle “Claude-shaped” problems – quantitative scientific questions particularly well-suited to AI’s strengths in coding, mathematical manipulation, and broad knowledge access.  Researcher Matthew Schwartz found that by allowing Claude to identify these problems, rather than forcing it into pre-defined research paths, significant progress could be made across diverse fields. Initial experiments with Claude Opus 4.5 demonstrated performance comparable to a graduate student, but required extensive hand-holding; BootLoops aims to overcome that impedance mismatch.</p>
-<p>BootLoops has already facilitated novel findings in areas like ecology (revealing discrepancies in tree species change rates compared to neutral theory) and population genetics (identifying a mechanism called gene conversion). The toolkit functions as a harness, streamlining code porting and enabling exact calculations, particularly with semi-numerical bootstrap methods.  The project involved 36 manuscripts with 19 co-authors across 18 fields developed in three months, with the source code available on GitHub.</p>
-<p>The key takeaway is that focusing on problems aligned with current AI capabilities—those requiring extensive computation and drawing on interdisciplinary knowledge—can unlock valuable scientific insights. While AI won't replace the need for human scientists to guide research and interpret results, it provides a powerful new tool for accelerating discovery, especially where existing expertise is fragmented across disciplines.</p></div>
     
   </div>
   
@@ -297,51 +297,51 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-10-02</span>
+      <span> · 2026-10-05</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/fine-tune-a-search-agent-with-multi-turn-rl-on-amazon-sagemaker-ai/" target="_blank" rel="noopener">Fine-tune a search agent with multi-turn RL on Amazon SageMaker AI</a></h2>
-    
-    <div class="summary"><p>AWS has introduced multi-turn reinforcement learning (MTRL) within Amazon SageMaker AI to fine-tune Large Language Models (LLMs) for search agents.</p>
-<ul>
-<li>MTRL optimizes LLMs across full conversational sequences, addressing limitations of supervised fine-tuning and single-turn RL by rewarding final outcomes.</li>
-<li>The service offers a modular agent-environment interface, serverless execution with per-token pricing, asynchronous rollout, and a native algorithm library including PPO, CISPO, and IS losses.</li>
-<li>The demonstration involved fine-tuning a Qwen3.6-27B model using datasets like FRAMES, BRIGHT, and WixQA, with a reward function based on nDCG@10 to improve search retrieval quality.</li>
-<li>Results showed improvements in nDCG@10 on benchmarks like WixQA (+18.4%) and BrowseComp-Plus (+23.7%), along with a significant reduction in agent failures, particularly on BrowseComp-Plus (failure rate reduced from 22.89% to 0.68%).</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-10-02</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/add-secure-web-search-to-claude-desktop-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Add secure Web Search to Claude Desktop with Amazon Bedrock AgentCore</a></h2>
-    
-    <div class="summary"><p>Amazon Bedrock AgentCore now enables secure web search integration for Claude Desktop, overcoming knowledge cutoff limitations.</p>
-<ul>
-<li>AgentCore Gateway, a component of Amazon Bedrock AgentCore, connects Claude Desktop to a web search capability backed by an Amazon web index spanning tens of billions of documents.</li>
-<li>The integration uses JSON Web Token (JWT)-based authentication, federating AWS IAM Identity Center with Amazon Cognito to manage access without requiring external API keys or third-party identity providers.</li>
-<li>Configuration involves creating an Amazon Cognito user pool, configuring IAM Identity Center as a SAML application, registering IAM Identity Center as a SAML IdP in Cognito, and creating a Cognito app client.</li>
-<li>A Python script is provided to create the AgentCore Gateway with the Web Search tool attached, and further steps detail configuring Claude Desktop to utilize the new gateway and authentication details; currently available in us-east-1, eu-west-1, and ap-northeast-1 regions.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-10-02</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/sweep-thousands-of-leases-for-compliance-using-amazon-quick-and-the-adjudicated-query-pattern/" target="_blank" rel="noopener">Sweep thousands of leases for compliance using Amazon Quick and the Adjudicated Query pattern</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/evaluating-multi-agent-systems-for-explainability-and-helpfulness-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Evaluating multi-agent systems for explainability and helpfulness with Amazon Bedrock AgentCore</a></h2>
     
     <div class="summary"><ul>
-<li>The Adjudicated Query pattern combines a natural language chat interface (Amazon Quick) with a deterministic rules engine to perform high-stakes compliance checks, such as verifying lease agreements against landlord-tenant laws.</li>
-<li>The pattern prioritizes "provable completeness" and "defensibility" by ensuring all records are assessed and providing a clear audit trail of applied rules and data.</li>
-<li>The architecture utilizes Amazon Quick, Amazon API Gateway, AWS Lambda (hosting the MCP server and rules engine), Amazon Aurora Serverless v2 (PostgreSQL with pgvector), and Amazon Bedrock (for exploratory clause search, not compliance sweeps). Specifically, it employs Amazon Titan Text Embeddings V2 and Anthropic Claude Sonnet 5.</li>
-<li>The system enforces strict design rules – rules are data, not code; natural language doesn’t reach SQL; and filtering is exact for completeness, with vectors used only for ranking – to prevent silent errors and maintain data integrity.</li>
+<li>Amazon Bedrock AgentCore Evaluations is a fully managed capability for assessing multi-agent system performance across accuracy, task success, and behavior.</li>
+<li>The solution supports both built-in evaluators for general quality dimensions (helpfulness, task completion) and custom evaluators for domain-specific validation (constraint satisfaction, route feasibility, SQL correctness, explainability).</li>
+<li>A three-layer evaluation approach is demonstrated: built-in evaluators, custom evaluators for business accuracy, and explainability evaluators assessing rationale articulation and evidence citation.</li>
+<li>The reference architecture uses Strands Agents SDK, Amazon Bedrock AgentCore, and evaluates a multi-agent supply chain system for inventory optimization, utilizing both on-demand and online evaluation modes with integration into Amazon CloudWatch.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
+      <span> · 2026-10-05</span>
+    </div>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/downgrading-user-roles-in-amazon-quick/" target="_blank" rel="noopener">Downgrading user roles in Amazon Quick</a></h2>
+    
+    <div class="summary"><p>Amazon Quick offers methods for downgrading user roles to enforce least privilege and potentially reduce costs.</p>
+<ul>
+<li>Quick supports user management via Quick Identity, AWS IAM Identity Center, or Active Directory, with roles including Admin, Author, and Reader.</li>
+<li>Direct downgrades from Admin/Author to Reader are not supported in the console or via the API; a step-down sequence is required (Admin &gt; Author &gt; Restricted Reader &gt; Reader or Author Pro &gt; Author &gt; Restricted Reader &gt; Reader Pro).</li>
+<li>Downgrades can be achieved through a manual deletion-and-recreation process or via the AWS CLI using the <code>update-user</code> command with a specific role sequence.</li>
+<li>A provided script automates the CLI-based step-down process for multiple users, reading usernames and emails from a file and handling error conditions during the transition.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
+      <span> · 2026-10-05</span>
+    </div>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/agentic-retrieval-with-langchain-and-amazon-bedrock-knowledge-bases/" target="_blank" rel="noopener">Agentic retrieval with LangChain and Amazon Bedrock Knowledge Bases</a></h2>
+    
+    <div class="summary"><p>Agentic retrieval with Amazon Bedrock Managed Knowledge Bases improves RAG applications by addressing limitations of standard retrieval when handling multi-faceted questions.</p>
+<ul>
+<li>Amazon Bedrock Managed Knowledge Bases removes the need for self-managed vector stores, embeddings, and re-ranking models, handling chunking, embedding, storage, and retrieval automatically.</li>
+<li>Agentic retrieval, available through the <code>AgenticRetrieveStream</code> API, plans retrieval by breaking down complex questions into sub-queries, iteratively searching, and evaluating evidence sufficiency.</li>
+<li>The <code>langchain-aws</code> package provides access to both standard (<code>AmazonKnowledgeBasesRetriever</code>) and agentic retrieval (<code>agentic_retrieve</code>) methods for LangChain applications, requiring <code>langchain-aws&gt;=1.6.3</code> and <code>boto3&gt;=1.43.32</code>.</li>
+<li>To observe the agentic retrieval process, the <code>agentic_retrieve_stream</code> function in <code>bedrock-agent-runtime</code> can be used to stream trace events, revealing the planning steps and sub-queries generated by the model.</li>
 </ul></div>
     
   </div>
@@ -397,16 +397,16 @@
     <div class="meta">
       <a href="techcrunch/" class="badge badge-techcrunch">TechCrunch</a>
       <span>news</span>
-      <span> · 2026-10-04</span>
+      <span> · 2026-10-05</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/10/04/trump-unveils-his-new-super-intelligence-force/" target="_blank" rel="noopener">Trump unveils his new Super Intelligence Force</a></h2>
+    <h2><a href="https://techcrunch.com/2026/10/05/open-or-closed-ai-how-founders-are-choosing-what-to-build-on-at-techcrunch-disrupt-2026/" target="_blank" rel="noopener">Open or closed AI? How founders are choosing what to build on at TechCrunch Disrupt 2026</a></h2>
     
-    <div class="summary"><p>President Trump announced the formation of the "Super Intelligence Force" to coordinate federal government efforts regarding AI.</p>
+    <div class="summary"><p>TechCrunch Disrupt 2026 will feature sessions discussing AI model selection and architectural choices.</p>
 <ul>
-<li>The Force will be led by National Intelligence Director Jay Clayton, with Federal Trade Commission Chair Andrew Ferguson, Undersecretary of War for Research and Engineering Emil Michael, and Office of Personnel Management Director Scott Kupor serving as vice chairs.</li>
-<li>The task force was created following an executive order to rebrand “AI” as “super intelligence”.</li>
-<li>The Force has 120 days to produce a report detailing the risks and opportunities presented by AI/SI.</li>
-<li>A core goal, as stated by Jay Clayton, is to ensure the U.S. remains competitive with countries like China in the development of “super intelligence.”</li>
+<li>A session titled “The Real Tokenmaxxing: How the Best AI Companies Navigate a Multi-Model World” will feature Mo Jomaa (CapitalG), Vipul Ved Prakash (Together AI), and Zuzanna Stamirowska (Pathway) discussing the use of multiple AI models for cost, performance and flexibility.</li>
+<li>Manos Koukoumidis (Oumi) will present “Which AI Should Your Company Actually Deploy: Rent, Customize, or Build,” exploring the tradeoffs between building, customizing, and utilizing existing models, with a framework for decision-making.</li>
+<li>Nader Khalil and Sydney Sykes (Nvidia) will discuss current founder choices between frontier APIs and open-weight models in “Building AI Startups Worth Betting On”, along with implications on product strategy and differentiation.</li>
+<li>Anna Goldie and Azalia Mirhoseini (Ricursive Intelligence) will present “When AI Starts Designing Its Own Hardware”, examining how AI is optimizing chip and hardware development and influencing the infrastructure for AI products.</li>
 </ul></div>
     
   </div>
@@ -415,17 +415,11 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-10-02</span>
+      <span> · 2026-10-05</span>
     </div>
-    <h2><a href="https://arstechnica.com/gadgets/2026/10/the-7-year-old-nvidia-shield-tv-is-now-100-more-expensive-thanks-to-ai/" target="_blank" rel="noopener">The 7-year-old Nvidia Shield TV is now $100 more expensive due to AI</a></h2>
+    <h2><a href="https://arstechnica.com/ai/2026/10/ai-glasses-face-their-first-major-government-crackdown/" target="_blank" rel="noopener">AI glasses face their first major government crackdown</a></h2>
     
-    <div class="summary"><p>The Nvidia Shield TV Pro price has increased by $100, effective October 2, 2024.</p>
-<ul>
-<li>The Shield TV Pro now costs $299.99, up from its original $199.99 launch price in 2019.</li>
-<li>Nvidia attributes the price increase to substantially higher component costs, specifically memory, driven by demand related to AI.</li>
-<li>The device continues to run on the Tegra X1+ processor and Android TV, offering hardware decoding and AI upscaling.</li>
-<li>Despite being a “passion project”, Nvidia states it actively manufactures and sells every Shield TV Pro unit it produces, and increased costs necessitate the price adjustment.</li>
-</ul></div>
+    <div class="summary"><p>Norway’s government intends to propose a temporary ban on the use of AI glasses in public spaces like parks, beaches, schools, and kindergartens due to privacy concerns. Digitalization Minister Torgeir Micaelsen expressed concern over the potential for unconsented recording via these devices. While not seeking a total ban, the government will establish an expert group to propose permanent national rules, with a draft law coming soon to parliament. Industry analysts at Counterpoint Research estimate $1 trillion will be spent on wearable devices between 2026 and 2032, though concerns exist regarding their potential for misuse and privacy violations, leading some to label them “pervert technology.”</p></div>
     
   </div>
   
