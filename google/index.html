@@ -80,13 +80,31 @@
     </label>
   </div>
   <h1>Google News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-10-06 10:21 UTC</p>
+  <p class="generated-at">Generated 2026-10-07 10:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">October 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">DeepMind Blog</span> · 
+      <span>research</span>
+      <span> · 2026-10-06</span>
+    </div>
+    <h3><a href="https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/" target="_blank" rel="noopener">EmbeddingGemma 2: an open, lightweight multimodal embedding model</a></h3>
+    
+    <div class="summary"><p>EmbeddingGemma 2 is a new, open-source model for creating multimodal embeddings, unifying text, images, audio, and video into a single vector space.</p>
+<ul>
+<li>Built on the Gemma 4 architecture with 740 million parameters, it achieves leading scores among sub-1B multimodal embedders on benchmarks like MTEB (Massive Text Embedding Benchmark) Code, MAEB (Massive Audio Embedding Benchmark) and others.</li>
+<li>The model is modular, allowing developers to use as few as 270M parameters for text-only tasks, with optional encoders for vision (170M) and audio (300M) for full multimodal support.</li>
+<li>EmbeddingGemma 2 uses Matryoshka Representation Learning (MRL) to reduce storage requirements, allowing dynamic truncation of output vectors to 768, 512, 256, or 128 dimensions, resulting in up to 6x storage reduction.</li>
+<li>It features an 8K token context window and requires as little as ~191MB RAM (text-only) or ~567MB (full multimodal) on a Google Pixel 11 Pro with quantization, and demonstrates a 9.92-point improvement on code performance (MTEB Code, 68.76 to 78.68).</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -579,21 +597,6 @@
 <li>Gemini 3.5 Transcribe provides accurate, real-time speech-to-text transcription for developers, specifically designed to handle noisy audio and specialized jargon.</li>
 <li>Gemini Omni 1.1 Flash was introduced, enabling more precise video generation with features like scene extension and 4K upscaling, and is available across Google Flow, AI Studio, and the Gemini Enterprise Agent Platform.</li>
 </ul></div>
-    
-  </div>
-  
-  
-  <h2 class="month">August 2026</h2>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">DeepMind Blog</span> · 
-      <span>research</span>
-      <span> · 2026-08-27</span>
-    </div>
-    <h3><a href="https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/" target="_blank" rel="noopener">Piloting the world&#39;s first double-blind AI evaluations</a></h3>
-    
-    <div class="summary"><p>Google DeepMind piloted the first double-blind evaluation of a proprietary AI model, addressing the problem of benchmark contamination where models may have seen test questions during training. The evaluation utilized Confidential Space within Google Cloud’s Confidential Computing to cryptographically ensure the Gemini Flash Lite model and external evaluation data remained private to their owners, preventing either party from accessing the other’s information. This method eliminates the traditional trade-off between sharing prompts or model weights for external evaluation, and was conducted in partnership with the Singapore AI Safety Institute, OpenMined, AVERI, and MLCommons. This approach intends to increase trust in AI benchmarks and enable rigorous testing without compromising data security or intellectual property, and details of the methodology are available in a technical report.</p></div>
     
   </div>
   

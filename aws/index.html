@@ -80,13 +80,99 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-10-06 10:21 UTC</p>
+  <p class="generated-at">Generated 2026-10-07 10:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">October 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-06</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-a-voice-travel-concierge-with-amazon-bedrock-agentcore-managed-knowledge-base-and-nova-sonic/" target="_blank" rel="noopener">Build a voice travel concierge with Amazon Bedrock AgentCore, Managed Knowledge Base and Nova Sonic</a></h3>
+    
+    <div class="summary"><ul>
+<li>This post details building a voice-based travel concierge using Amazon Bedrock AgentCore, Nova Sonic, and Managed Knowledge Base for tasks like flight changes and policy questions.</li>
+<li>Amazon Nova 2.5 Sonic, a speech-to-speech model on Bedrock, is used for real-time voice interaction with features like accurate tool calling, instruction following, and responsible AI handling.</li>
+<li>The architecture utilizes the Model Context Protocol (MCP) for loosely coupled integration between the agent and backend services, exposing APIs as discoverable tools via AgentCore Gateway.</li>
+<li>Amazon Bedrock Knowledge Bases provides RAG capabilities to answer policy questions grounded in supplied documents, leveraging Amazon S3 Vectors for storage and Smart Parsing for accurate retrieval.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-06</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/manage-amazon-sagemaker-hyperpod-spaces-directly-from-sagemaker-studio/" target="_blank" rel="noopener">Manage Amazon SageMaker HyperPod Spaces directly from SageMaker Studio</a></h3>
+    
+    <div class="summary"><ul>
+<li>SageMaker Studio now allows direct creation and management of SageMaker Spaces on Amazon SageMaker HyperPod EKS clusters, eliminating the need for CLI or kubectl commands.</li>
+<li>Spaces can be configured with options for compute, namespaces, storage, HyperPod Task Governance, and custom images through a guided form within Studio.</li>
+<li>Administrators install the Spaces add-on via the SageMaker AI console, configuring EKS access and potentially enabling per-user identity propagation for secure Space ownership tracking.</li>
+<li>Optional capabilities include Space templates, task governance with Kueue, Karpenter autoscaling &amp; over-provisioning, persistent volumes (EFS/FSx), custom images (ECR), idle shutdown, and NVIDIA MIG for fractional GPU allocation.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-06</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/best-practices-for-amazon-sagemaker-hyperpod-administration-and-governance/" target="_blank" rel="noopener">Best practices for Amazon SageMaker HyperPod administration and governance</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon SageMaker HyperPod administration is enhanced through integration with SageMaker Unified Studio, requiring a layered governance approach across organization, project, cluster, and workload levels.</li>
+<li>Key controls include SageMaker Unified Studio domains/policies (organization), project membership/connections (project), HyperPod cluster roles/RBAC/Slurm controls (cluster), and compute allocations/priority classes (workload).</li>
+<li>For Amazon EKS clusters, the guidance recommends using namespaces per tenant with RBAC, EKS Pod Identity, and network policies; for Slurm clusters, hierarchical accounts, QoS, and file permissions are suggested.</li>
+<li>A "connection contract" – a customer-managed record – is recommended to document key details for each project-to-cluster connection, including owners, roles, access policies, and scheduling information.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-06</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/responsible-ai-governance-how-aws-positions-customers-to-align-with-iso-iec-420052025/" target="_blank" rel="noopener">Responsible AI governance: How AWS positions customers to align with ISO/IEC 42005:2025</a></h3>
+    
+    <div class="summary"><p>AWS details support for aligning with the upcoming ISO/IEC 42005:2025 standard for responsible AI governance.</p>
+<ul>
+<li>The post focuses on AI system impact assessments, a documented process for identifying risks to organizations, individuals, and society from AI systems, as outlined in ISO/IEC 42005.</li>
+<li>AWS offers tools including the Well-Architected Framework: Responsible AI Lens and an ISO/IEC 42001:2023 AIMS implementation guide to aid in integrating these assessments into existing risk management ecosystems.</li>
+<li>The standard provides templates (Annex D &amp; E) for both integrating with existing impact assessments and for standalone implementation of AI system impact assessments.</li>
+<li>AWS services – Amazon Bedrock, Amazon Q Business, Amazon Textract, and Amazon Transcribe – have achieved ISO/IEC 42001 accreditation and support Responsible AI journey.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-06</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/building-a-context-aware-ai-assistant-on-agentcore-and-openclaw/" target="_blank" rel="noopener">Building a context-aware AI assistant on AgentCore and OpenClaw</a></h3>
+    
+    <div class="summary"><ul>
+<li>This post details building a context-aware AI assistant, "Sprout," a gardening assistant, utilizing Amazon Bedrock AgentCore and OpenClaw to address the limitations of stateless AI assistants.</li>
+<li>AgentCore Memory enables durable knowledge by turning chat histories into long-term, structured records, categorized by user namespaces (e.g., <code>sprout/{chat_id}/long_term</code>) and searchable metadata (type, section, plants).</li>
+<li>The system employs two Claude models – Haiku 4.5 (for text) and Sonnet 4.5 (for vision) – routed based on task type, incorporating skills defined in a <code>community-skills.json</code> manifest for reusability.</li>
+<li>The architecture is serverless, utilizing AgentCore runtime for consumption-based pricing and features asynchronous extraction strategies (USER_PREFERENCE, SEMANTIC, SUMMARIZATION) from conversation events to enrich long-term knowledge through <code>CreateEvent</code> calls.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -526,93 +612,6 @@
 <li><strong>Quick Flows:</strong> Specificity regarding <em>what</em>, <em>when</em>, and <em>where</em> is crucial; complex logic should be structured as numbered steps and can be iteratively refined through conversation.</li>
 <li><strong>Quick Sight:</strong> Queries should include a business question, metrics, dimensions, a time period, visualization type, and any additional analysis for effective data exploration.</li>
 <li><strong>Quick Chat Agents:</strong> Defining a clear agent identity, connecting relevant knowledge sources, setting behavioral guardrails, and designing suggested prompts are key to a quality conversational experience; action integrations require clear intent, all parameters, and proper sequencing.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-29</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/prompt-engineering-fundamentals-for-amazon-quick/" target="_blank" rel="noopener">Prompt engineering fundamentals for Amazon Quick</a></h3>
-    
-    <div class="summary"><p>Prompt engineering for Amazon Quick focuses on maximizing the accuracy and reliability of AI responses.</p>
-<ul>
-<li><strong>Specificity is key:</strong> Detailed prompts, defining metrics, timeframes, and scope, yield better results than vague requests.</li>
-<li><strong>Contextual awareness:</strong> Providing business context, including intended audience and decision-making needs, calibrates the AI's responses for relevance.</li>
-<li><strong>Few-shot learning:</strong> Demonstrating desired output formats with examples (“show, don’t tell”) improves accuracy and reduces ambiguity.</li>
-<li><strong>CRISPE framework:</strong> A structured approach (Context, Role, Intent, Steps, Perspective, Evaluation) provides a comprehensive template for complex prompts across Quick components.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-29</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/bring-near-astra-intelligence-to-everyday-work-with-gpt-6-1-sol-on-amazon-bedrock/" target="_blank" rel="noopener">Bring near-Astra intelligence to everyday work with GPT-6.1 Sol on Amazon Bedrock</a></h3>
-    
-    <div class="summary"><p>GPT-6.1 Sol, offering near-Astra intelligence, is now generally available on Amazon Bedrock.</p>
-<ul>
-<li>GPT-6.1 Sol is a major upgrade to GPT-6 Sol, demonstrating strong performance in agentic coding, computer use, and professional workloads.</li>
-<li>OpenAI reports GPT-6.1 Sol matches GPT-6 Astra's performance on DeepSWE v1.1 at approximately one-fifth the cost and exceeds GPT-6 Sol by 6.4 percentage points.</li>
-<li>Codex can be configured to utilize GPT-6.1 Sol via the desktop app, CLI, and IDEs, and integrates with the Agent Toolkit for AWS for AWS-specific development.</li>
-<li>GPT-6.1 Sol shows improvements in transparency, understanding user intent, and respecting restrictions compared to GPT-6 Sol, alongside enhanced security and data governance via Amazon Bedrock features like IAM, VPC endpoints, and zero data retention options.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-28</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/automating-amazon-textract-adapter-lifecycle-management-across-accounts/" target="_blank" rel="noopener">Automating Amazon Textract adapter lifecycle management across accounts</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Textract adapter lifecycle management is automated across accounts using AWS Systems Manager Parameter Store to decouple adapter management from application logic, enabling updates with zero downtime.</li>
-<li>The solution utilizes a multi-stage processing pipeline—ingestion, pre-classification (using DetectDocumentText for version identification), adapter selection from Parameter Store, processing via AnalyzeDocument/StartDocumentAnalysis, and results delivery—with options for network isolation with AWS PrivateLink.</li>
-<li>Two adapter promotion strategies are available: a standard cross-account copy via AWS Support (suitable for few adapters) and a centralized hub account approach reducing operational overhead for many adapters.</li>
-<li>Infrastructure deployment and management are supported via AWS CloudFormation and Terraform (version 1.4+), leveraging the <code>terraform_data</code> resource as a temporary solution for adapter creation until native Terraform provider support is added, requiring specific IAM permissions detailed in the post.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-28</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/implementing-synthetic-monitoring-using-amazon-nova-act/" target="_blank" rel="noopener">Implementing synthetic monitoring using Amazon Nova Act</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Nova Act, combined with Amazon Bedrock AgentCore, enables agent-driven synthetic monitoring using natural language actions instead of brittle DOM selectors, improving resilience to UI changes with &gt;90% accuracy in early testing.</li>
-<li>The solution utilizes Amazon EventBridge Scheduler for scheduling, Amazon SNS for alerting, and AgentCore Browser tool for secure, isolated browser environments, offering a fully managed synthetic monitoring approach.</li>
-<li>Agent definition involves grouping natural-language actions into journey steps with assertions to validate outcomes, publishing failure details when journeys fail; sample code and deployment scripts are available.</li>
-<li>Cost is driven by AgentCore Runtime invocations, Browser tool sessions, Nova Act inference, and AWS service usage; a sample ecommerce journey running every 5 minutes is estimated to cost approximately $20-40/month.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-28</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/generate-images-and-video-with-vllm-omni-on-sagemaker-ai-part-2/" target="_blank" rel="noopener">Generate images and video with vLLM-Omni on SageMaker AI – Part 2</a></h3>
-    
-    <div class="summary"><ul>
-<li>This blog demonstrates deploying two SageMaker AI endpoints from the same AWS vLLM-Omni Deep Learning Container (DLC) for image and video generation.</li>
-<li>It utilizes FLUX.2-klein-4B for real-time image generation and Wan2.1-VACE-1.3B for asynchronous video generation, chained together via Amazon S3.</li>
-<li>vLLM-Omni extends vLLM to models processing/generating various media types via OpenAI-compatible APIs, with routing middleware for SageMaker AI.</li>
-<li>The setup employs real-time inference for images (direct response) and asynchronous inference for videos (S3 output), adapting to workload characteristics.</li>
 </ul></div>
     
   </div>
