@@ -80,13 +80,137 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-10-07 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-10-08 10:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">October 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-07</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-cornerstone-ondemand-cut-database-diagnosis-by-78-with-amazon-bedrock/" target="_blank" rel="noopener">How Cornerstone OnDemand cut database diagnosis by 78% with Amazon Bedrock</a></h3>
+    
+    <div class="summary"><ul>
+<li>Cornerstone OnDemand built Orion AI, a multi-agent system using Amazon Bedrock and Strands Agents to automate database operations, reducing diagnosis time by 78% (from 45 to 10 minutes).</li>
+<li>Orion AI employs a hub-and-spoke architecture with a meta-orchestrator coordinating specialized agents for tasks like database diagnostics, lifecycle management, and alerting.</li>
+<li>The system utilizes hybrid routing, prioritizing keyword matching for speed and falling back to semantic search powered by Amazon Titan Text Embeddings V2 for complex queries.</li>
+<li>Orion AI leverages Amazon Bedrock AgentCore for conversational memory, utilizing a tiered approach with short-term (DynamoDB), long-term (AgentCore memory) and inter-agent memory, while bypassing memory for live metrics to ensure accuracy.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-07</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/building-ai-builders-playbook-for-closing-the-ai-knowledge-capability-gap/" target="_blank" rel="noopener">Building AI builders: Playbook for closing the AI knowledge-capability gap</a></h3>
+    
+    <div class="summary"><p>Building AI builders: Playbook for closing the AI knowledge-capability gap</p>
+<p>This document details a six-week program designed to enable non-technical professionals to build AI prototypes, bridging the gap between AI awareness and practical implementation.</p>
+<ul>
+<li>The program utilized a phased approach, spanning six weeks with approximately four hours of commitment per week, focused on building a working prototype to accelerate skills retention.</li>
+<li>Participants built “WealthWise”, a multi-agent AI financial advisory tool leveraging Amazon Nova models, Strands Agents SDK, Node.js, Python Flask, and Amazon DynamoDB, achieving sub-5-second response times.</li>
+<li>Key tools selected for usability included Kiro IDE for natural-language development, Amazon Bedrock for foundation models, Strands Agents SDK for agent composition, and AWS Lambda for production-grade architecture.</li>
+<li>Participant self-assessments showed significant increases, from 27% to 82% reporting a "Strong or Expert" understanding of agentic AI, and a decrease from 34% to 0% identifying with only theoretical AI experience.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-07</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/automate-remediation-post-aws-devops-agent-investigation/" target="_blank" rel="noopener">Automate remediation post AWS DevOps Agent investigation</a></h3>
+    
+    <div class="summary"><p>Automates remediation of issues detected by AWS DevOps Agent using AI-driven workflows and human approval for infrastructure changes.</p>
+<ul>
+<li>Leverages AWS Lambda Durable Functions, Amazon EventBridge, and Amazon Bedrock to orchestrate remediation workflows triggered by AWS DevOps Agent incident investigations.</li>
+<li>Amazon Bedrock analyzes investigation findings and proposes remediations from a curated allowlist of Lambda-based tools (e.g., <code>devops-agent-lambda-tool</code>).</li>
+<li>Distinguishes between read-only and mutating actions; mutating actions requiring human approval before execution via a durable function checkpointing mechanism.</li>
+<li>The solution uses an “agentic loop” where Bedrock iteratively calls tools, executes approved actions, and incorporates results to complete remediation.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-07</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-qlik-built-grounded-enterprise-scale-ai-with-amazon-bedrock/" target="_blank" rel="noopener">How Qlik built grounded, enterprise-scale AI with Amazon Bedrock</a></h3>
+    
+    <div class="summary"><ul>
+<li>Qlik built Qlik Answers, an AI-powered tool for grounded, sourced answers to employee questions, leveraging Amazon Bedrock for scalability and flexibility.</li>
+<li>The system architecture includes distinct layers for entry, routing, answering, specialist agents, conversational analytics, retrieval (using Amazon OpenSearch Service), and model access (through Qlik’s LLM gateway to Amazon Bedrock).</li>
+<li>Amazon Bedrock Guardrails are applied to all requests and responses for content filtering (PII, injection) and grounding validation, with Amazon SageMaker AI used as a fallback when Bedrock models aren't regionally available.</li>
+<li>Qlik utilizes Amazon Bedrock’s cross-Region inference (CRIS) for data sovereignty and forecasts model capacity 3-6 months in advance, validating projections against actual usage to manage scaling.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-07</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/beyond-hours-saved-building-the-business-case-for-agentic-automation/" target="_blank" rel="noopener">Beyond hours saved: Building the business case for agentic automation</a></h3>
+    
+    <div class="summary"><p>Agentic automation business cases require a new framework beyond traditional ROI calculations focused on hours saved, as most value lies <em>around</em> the automated task rather than in the task itself.</p>
+<ul>
+<li>The <strong>Agentic Value Model</strong> measures four key dimensions: time savings (extending RPA capabilities), exception handling (cost of corrections and errors – potentially 1.5–4x original transaction cost, with errors accounting for 2–15% of operational cost), decision quality (consistent policy application with logged rationale), and change resilience/maintenance (avoiding brittle script maintenance).</li>
+<li>Value realization—converting operational improvements into economic gains—is critical; simply freeing capacity doesn't guarantee savings without a clear mechanism for redirecting capacity or reducing spend.</li>
+<li><strong>Amazon Quick Automate</strong> (within Amazon Quick) is highlighted as a service providing execution data to measure these value pools alongside operational and financial KPIs.</li>
+<li>Workflow prioritization should be based on task complexity (reasoning required) and decision risk (cost of errors), using a two-by-two matrix to guide whether to use RPA, full automation, human-in-the-loop agents, or improved controls.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-07</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/rethinking-access-control-for-rag-with-amazon-quick-and-amazon-bedrock/" target="_blank" rel="noopener">Rethinking access control for RAG with Amazon Quick and Amazon Bedrock</a></h3>
+    
+    <div class="summary"><p>Amazon Quick and Amazon Bedrock now offer real-time Access Control List (ACL) enforcement for Retrieval Augmented Generation (RAG) applications.</p>
+<ul>
+<li>This feature addresses security concerns when using RAG with sensitive enterprise data sources like SharePoint, Google Drive, and Confluence.</li>
+<li>The system employs a two-stage approach: pre-retrieval filtering using cached ACLs, followed by real-time verification against the authoritative data source via API calls using service account impersonation.</li>
+<li>Real-time ACL checks verify user permissions with the source of truth <em>at query time</em>, eliminating security gaps caused by stale data or inaccurate replication of ACLs.</li>
+<li>This capability is available within Amazon Quick agents and Amazon Bedrock Knowledge Bases, and complements existing responsible AI controls like content filtering and grounding checks.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-07</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-claude-haiku-5-5-on-aws/" target="_blank" rel="noopener">Introducing Claude Haiku 5.5 on AWS</a></h3>
+    
+    <div class="summary"><ul>
+<li>Claude Haiku 5.5 is Anthropic’s fastest and most efficient model, specifically designed for high-volume, cost-sensitive tasks like subagents and quick workflows.</li>
+<li>It’s the first Haiku model with “effort controls,” allowing tunable cost vs. intelligence trade-offs per task, rather than per workload.</li>
+<li>Haiku 5.5 excels at coding tasks (subagent routing, code review), knowledge work (information extraction from documents), and NLP tasks (classification, summarization). It also supports agentic coding and high-resolution images.</li>
+<li>Available on Amazon Bedrock (via APIs like Invoke and Converse) and Claude Platform on AWS across multiple AWS Regions (US, EU, AU, JP, Global, and GovCloud) with standard AWS monitoring, security, and billing controls.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -487,131 +611,6 @@
 <li>Four agents are utilized: Intake Agent (reads migration inputs), IaC Agent (generates infrastructure as code), Migration Intelligence and Governance Agent (reporting/governance), and SRE Agent (post-cutover operations).</li>
 <li>Agents use foundation models from Amazon Bedrock, with actions secured via AgentCore Identity (IAM roles) and enforced by Policy in AgentCore (Cedar rules).</li>
 <li>The IaC Agent specifically generates code composing approved internal modules, with a demonstrated impact of significantly reducing manual IaC development effort.</li>
-</ul></div>
-    
-  </div>
-  
-  
-  <h2 class="month">September 2026</h2>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-30</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-a-multi-agent-music-production-pipeline-on-amazon-bedrock-agentcore-runtime-instances/" target="_blank" rel="noopener">Build a multi-agent music production pipeline on Amazon Bedrock AgentCore Runtime Instances</a></h3>
-    
-    <div class="summary"><p>Build a multi-agent music production pipeline leveraging Amazon Bedrock AgentCore Runtime Instances.</p>
-<ul>
-<li>The post details how to deploy a music production pipeline with three agents (Composition, Delivery, and Compliance) using Amazon Bedrock AgentCore Runtime Instances for persistent, long-running workflows.</li>
-<li>Runtime Instances offer features like multi-day sessions, GPU access (utilizing NVIDIA L4 GPUs), persistent volumes (Amazon EBS), and the ability to host multiple agents on a single instance (1:N), differing from MicroVMs which are serverless and host one agent.</li>
-<li>The three agents – Composition (using Claude Sonnet 4.6 &amp; ACE-Step for audio generation), Delivery (using Claude Sonnet 4.6 for signal processing chain creation), and Compliance (for quality control) – collaborate by sharing a filesystem accessible via a shared <code>runtimeSessionId</code>.</li>
-<li>The solution highlights independent deployment of agents (packaged as container images or code packages) and the ability to resume workflows across multiple days, enabling a collaborative music production process with persistent state on the designated instance.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-30</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/query-claims-in-natural-language-with-amazon-bedrock-knowledge-bases/" target="_blank" rel="noopener">Query claims in natural language with Amazon Bedrock Knowledge Bases</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock Knowledge Bases provides a fully managed RAG (Retrieval Augmented Generation) capability for documents, handling parsing, chunking, embeddings, and vector storage.</li>
-<li>The AgenticRetrieveStream API is used to query documents in natural language, enabling multi-turn conversations and metadata filtering (e.g., by claim ID, claim type).</li>
-<li>The service supports document formats including PDF, Word, and text, and ingests data from Amazon S3, with an option to use customer-managed AWS KMS keys for encryption.</li>
-<li>The API streams events, answer text, and citations, providing transparency into the retrieval plan and source documents used to generate responses, and supports a contextual grounding guardrail.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-30</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-anthropic-models-on-amazon-bedrock-for-in-region-inference-in-seoul-and-singapore/" target="_blank" rel="noopener">Introducing Anthropic models on Amazon Bedrock for in-region inference in Seoul and Singapore</a></h3>
-    
-    <div class="summary"><p>Amazon Bedrock now offers in-region inference for Anthropic Claude models in Seoul and Singapore.</p>
-<ul>
-<li>Claude Opus 5 and Claude Sonnet 5 are available with in-region inference in Seoul (ap-northeast-2).</li>
-<li>Claude Sonnet 5 is available with in-region inference in Singapore (ap-southeast-1).</li>
-<li>In-region inference keeps all processing and data within the specified AWS Region, adhering to strict data residency requirements.</li>
-<li>The models are accessible via the <code>bedrock-runtime</code> endpoint using the Anthropic Messages API, the InvokeModel API, and the Amazon Bedrock Converse API; model IDs are in the format <code>anthropic.claude-opus-5</code> or <code>anthropic.claude-sonnet-5</code>.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-30</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-expands-claude-model-availability-to-india-cross-region-inference/" target="_blank" rel="noopener">Amazon Bedrock expands Claude model availability to in-country inferencing in India</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock now supports Anthropic’s Claude Opus 5, Claude Sonnet 5, and Claude Haiku 4.5 models with in-country inferencing in India.</li>
-<li>This is achieved through geographic cross-Region inference, routing requests between the <code>ap-south-1</code> (Mumbai) and <code>ap-south-2</code> (Hyderabad) Regions.</li>
-<li>Data remains within the source Region (ap-south-1 or ap-south-2) and is end-to-end encrypted; Amazon Bedrock uses a zero data retention (ZDR) model.</li>
-<li>Access is available through the Amazon Bedrock console, Anthropic’s Messages API, and the Amazon Bedrock InvokeModel and Converse APIs—using the "in." prefixed model IDs (e.g., <code>in.anthropic.claude-sonnet-5</code>).</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-29</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-conde-nast-built-multimodal-video-discovery-with-amazon-bedrock/" target="_blank" rel="noopener">How Condé Nast built multimodal video discovery with Amazon Bedrock</a></h3>
-    
-    <div class="summary"><ul>
-<li>Condé Nast partnered with AWS to build a multimodal video discovery solution using Amazon Bedrock and Amazon OpenSearch Service, reducing video discovery time from 250 minutes to under 2 minutes.</li>
-<li>The solution leverages the TwelveLabs Marengo embedding model, accessed through Amazon Bedrock, to jointly encode visual, audio, and transcript signals for semantic search.</li>
-<li>A decoupled architecture separates ingestion (embedding generation via Marengo and indexing into OpenSearch) from serving (querying and returning timestamped results), enabling scalability and resilience.</li>
-<li>The system achieves high availability through multi-AZ deployment of Amazon OpenSearch Service, Amazon DocumentDB, and compute tiers utilizing Auto Scaling groups, resulting in an estimated $800,000 in annual operational savings.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-29</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/building-an-ai-powered-contract-intelligence-platform-with-amazon-quick-and-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Building an AI-powered contract intelligence platform with Amazon Quick and Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><ul>
-<li>This post details an AI-powered contract intelligence platform built on AWS, addressing the challenge of scaling AI chat tools for portfolio-wide contract analysis which RAG struggles with due to its chunk-based retrieval.</li>
-<li>The solution utilizes a dual-model approach with Claude Sonnet 4.6 for extraction and Claude Haiku 4.5 for verification of contract data, deployed on Amazon Bedrock AgentCore with Strands Agent SDK, and incorporates Amazon Textract for signature detection tie-breaking.</li>
-<li>Key components include storing contracts in Amazon S3, extracting data into Amazon Aurora PostgreSQL, and querying the data through Amazon Quick, offering both embedded dashboards powered by Amazon QuickSight and a natural language chat agent.</li>
-<li>The architecture prioritizes structured extraction for aggregation queries and leverages RAG for single-document lookups, achieving a cost of approximately $349/month for 1,000 contracts, predominantly driven by Amazon Quick licensing.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-09-29</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/prompt-engineering-by-quick-component-patterns-and-pitfalls/" target="_blank" rel="noopener">Prompt engineering by Quick component: Patterns and pitfalls</a></h3>
-    
-    <div class="summary"><p>Prompt engineering for AWS Quick components requires careful construction to achieve desired results.</p>
-<ul>
-<li><strong>Quick Research:</strong> Effective objectives define the goal, audience, focus areas, and should decompose complex topics into sub-questions, while scoping sources to reduce noise.</li>
-<li><strong>Quick Flows:</strong> Specificity regarding <em>what</em>, <em>when</em>, and <em>where</em> is crucial; complex logic should be structured as numbered steps and can be iteratively refined through conversation.</li>
-<li><strong>Quick Sight:</strong> Queries should include a business question, metrics, dimensions, a time period, visualization type, and any additional analysis for effective data exploration.</li>
-<li><strong>Quick Chat Agents:</strong> Defining a clear agent identity, connecting relevant knowledge sources, setting behavioral guardrails, and designing suggested prompts are key to a quality conversational experience; action integrations require clear intent, all parameters, and proper sequencing.</li>
 </ul></div>
     
   </div>
