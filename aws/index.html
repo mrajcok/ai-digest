@@ -80,13 +80,48 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-10-08 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-10-09 10:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">October 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-08</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/share-gpu-clusters-across-teams-with-isolation-and-fairness-using-amazon-sagemaker-hyperpod/" target="_blank" rel="noopener">Share GPU clusters across teams with isolation and fairness using Amazon SageMaker HyperPod</a></h3>
+    
+    <div class="summary"><p>Amazon SageMaker HyperPod enables sharing GPU clusters across teams with isolation and fairness.</p>
+<ul>
+<li>Leverages Amazon IAM Identity Center for centralized authentication, federating with existing identity providers like Microsoft Entra ID.</li>
+<li>Utilizes per-team SageMaker AI domains with tailored execution roles for dedicated user workspaces and access control.</li>
+<li>Employs Kubernetes namespaces for workload isolation within a shared HyperPod EKS cluster.</li>
+<li>Implements HyperPod Task Governance for fair resource allocation and namespace-level cost allocation for visibility and chargeback.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-08</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/pay-per-inference-for-ai-agents-how-blockrun-and-incarna-use-amazon-bedrock-agentcore-payments/" target="_blank" rel="noopener">Pay-per-inference for AI agents: How BlockRun and Incarna use Amazon Bedrock AgentCore payments</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock AgentCore payments provides a managed solution for AI agents to pay for services like model inference on demand, addressing challenges with high-frequency, low-value transactions.</li>
+<li>The system leverages the x402 payment protocol, offering both "exact" and "upto" schemes for pricing, and integrates with wallets like Coinbase CDP via a stablecoin (USDC on the Base network) for auditable settlement.</li>
+<li>Incarna successfully integrated AgentCore payments with BlockRun, enabling agents to pay for inference requests—ranging from $0.001 to $0.05—with a deployment timeline reduced from months to days (approximately 200 lines of code).</li>
+<li>Key features include managed wallets, native x402 protocol handling, infrastructure-level spending governance, and session-based budgets to prevent overspending, even if the agent's prompt is compromised.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -576,41 +611,6 @@
 <li>NVIDIA NeMo Agent Toolkit (NAT) is an open-source framework enabling agent orchestration, profiling, evaluation and optimization of AI agents, and includes a memory module with a plugin interface for custom backends.</li>
 <li>A custom <code>MemoryEditor</code> plugin is implemented to interface with Amazon S3 Vectors, handling adding items (embedding text with Amazon Titan Text Embeddings V2 and storing vectors with metadata), searching (querying vectors with filters), and removing items.</li>
 <li>The implementation utilizes Amazon Titan Text Embeddings V2 to generate 1024-dimensional embeddings and emphasizes data handling considerations like retention policies, PII redaction, and access control with IAM policies and per-tenant indexes.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-01</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/serve-live-governed-data-in-ai-built-apps-with-amazon-quick/" target="_blank" rel="noopener">Serve live, governed data in AI-built apps with Amazon Quick</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Quick now supports “Live Data in Apps,” enabling Quick Apps to query governed QuickSight datasets (SPICE &amp; Direct Query) in real-time instead of relying on static build-time snapshots.</li>
-<li>The feature leverages natural language prompts to build apps; the AI agent discovers relevant datasets and writes SQL queries, which are then re-run for each user to ensure current data based on their permissions (RLS/CLS).</li>
-<li>Users are required to provide one-time consent for Quick to access datasets, and the system enforces this consent on the server side for every query, maintaining data governance.</li>
-<li>Limitations exist regarding dataset combinations (Direct Query from different sources not supported), row limits during app build, and the need to rebuild queries after column modifications; see documentation for details.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-01</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/scaling-cloud-migrations-with-agentic-ai-on-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Scaling cloud migrations with agentic AI on Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><p>AWS introduces a four-agent pattern built on Amazon Bedrock AgentCore to scale cloud migrations, reducing IaC development time from weeks to minutes in a specific enterprise program.</p>
-<ul>
-<li>The pattern leverages Amazon Bedrock AgentCore, Strands Agents SDK, and Model Context Protocol (MCP) tools for custom automation alongside services like AWS Transform and AWS DMS.</li>
-<li>Four agents are utilized: Intake Agent (reads migration inputs), IaC Agent (generates infrastructure as code), Migration Intelligence and Governance Agent (reporting/governance), and SRE Agent (post-cutover operations).</li>
-<li>Agents use foundation models from Amazon Bedrock, with actions secured via AgentCore Identity (IAM roles) and enforced by Policy in AgentCore (Cedar rules).</li>
-<li>The IaC Agent specifically generates code composing approved internal modules, with a demonstrated impact of significantly reducing manual IaC development effort.</li>
 </ul></div>
     
   </div>

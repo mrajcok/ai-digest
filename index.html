@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-10-08T10:17:33.730429+00:00">Generated 2026-10-08 10:17 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-10-09T10:17:08.868559+00:00">Generated 2026-10-09 10:17 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,7 +132,7 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — since 2026-10-07</h2>
+    <h2 class="overview-heading">Today in AI — Overview for 2026-10-08</h2>
     <p class="overview-meta">2026-10-08 · 9 vendor sources · vendor sources only</p>
     <div class="overview-text"><p>Today’s AI news is heavily focused on practical applications of large language models, particularly within enterprise workflows and infrastructure management. The most significant development is the release of Claude Haiku 5.5 on AWS, Anthropic’s fastest and most cost-effective model to date, featuring tunable “effort controls” allowing developers to optimize for speed or intelligence on a per-task basis. This model is particularly well-suited to high-volume tasks like code routing, information extraction, and agentic workflows, and its availability across multiple AWS Regions expands its reach.</p>
 <p>Beyond model releases, a key theme is improving the security and reliability of Retrieval Augmented Generation (RAG) systems. AWS announced real-time Access Control List (ACL) enforcement for Amazon Quick and Bedrock, guaranteeing that RAG applications respect data permissions <em>at query time</em>, a crucial step for sensitive enterprise data. Simultaneously, several case studies demonstrate successful enterprise implementations, including Qlik leveraging Bedrock for knowledge management, Cornerstone OnDemand achieving a 78% reduction in database diagnosis time with a Bedrock-powered system, and a 55% reduction in fulfillment investigation time through intelligent assistants offered by Microsoft. These deployments highlight the importance of robust architectures, incorporating elements like tiered memory systems, hybrid routing approaches, and responsible AI controls through Bedrock Guardrails.</p>
@@ -148,14 +148,28 @@
   <div class="card">
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>blog</span>
-      <span> · 2026-10-06</span>
+      <span>research</span>
+      <span> · 2026-10-08</span>
     </div>
-    <h2><a href="https://claude.dev/blog/claude-code-in-the-cloud/" target="_blank" rel="noopener">Claude Code in the cloud: a field guide to cloud sessions / claude.dev Blog</a></h2>
+    <h2><a href="https://www.anthropic.com/research/the-missing-map-of-the-sky" target="_blank" rel="noopener">Using Claude Science to produce the first complete map of the sky in UV light</a></h2>
     
-    <div class="summary"><p>Claude Code now supports running sessions on Anthropic-managed virtual machines, called “cloud sessions.” Instead of relying on your local machine’s resources and potentially conflicting with other processes, each task gets a dedicated VM with your repository cloned onto a new branch. This is accessible via claude.ai/code, the Claude mobile app, Desktop app, terminal, and Slack, and supports existing Pro, Max, Team, and Enterprise plans without additional charges (though usage limits apply).</p>
-<p>Key benefits include parallel task execution without resource contention, uninterrupted operation even when your laptop is offline, and a clean branch ready for a pull request upon completion. The system handles GitHub authentication via a proxy, never exposing your credentials directly to the VM, and allows for customizable environments with setup scripts and network access controls. </p>
-<p>The announcement details several workflows where cloud sessions excel—clearing backlogs, running lengthy tests, offloading compute-intensive tasks, and enhancing security—and provides guidance on connecting to GitHub and configuring environments to maximize effectiveness.  A one-time credit of $100 (Pro) or $250 (Max) is available for existing subscribers through October 7th to try the new functionality.</p></div>
+    <div class="summary"><p>Anthropic researchers, led by astrophysicist Brice Ménard, used <strong>Claude Science</strong> to generate the first complete ultraviolet (UV) map of the sky. This was achieved by combining existing data from telescopes like NASA’s <strong>GALEX</strong>, Swift, and Korea’s FIMS/SPEAR with AI-driven inpainting to fill in approximately one-third of the sky never before observed in UV.</p>
+<p>The process involved Claude orchestrating a team of AI agents to download, calibrate, and merge data from various sources.  Specifically, Claude employed inpainting—a machine learning technique—to predict UV brightness in unobserved regions, guided by relationships learned from areas with existing UV and other wavelength data (visible, infrared, radio). The model's predictions were validated to be within about 10% of real UV measurements. </p>
+<p>The resulting map reveals structures like dust clouds around young stars and faint filaments of dust, and incorporates UV light estimates for over 100 million stars using data from the European Space Agency’s <strong>Gaia</strong> satellite.  The collaboration demonstrated a significant reduction in the time required for complex astronomical data processing, enabling completion of a long-standing project previously hampered by the tediousness of manual calibration and analysis.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>research</span>
+      <span> · 2026-10-08</span>
+    </div>
+    <h2><a href="https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source" target="_blank" rel="noopener">An opt-in vulnerability-finding service for open-source software</a></h2>
+    
+    <div class="summary"><p>Anthropic is launching <strong>OSS Scanner</strong>, an opt-in vulnerability scanner for open-source software, inspired by Google’s OSS-Fuzz.  This service uses Anthropic’s strongest language models – including <strong>Claude Mythos</strong> – to scan code and deliver vulnerability reports directly to maintainers, potentially much faster than traditional methods.  The reports include a self-contained reproducer, an explanation of the vulnerability (with a bisection when possible), and a candidate patch. </p>
+<p>Recent LLM advances have dramatically improved vulnerability discovery; LLMs now find over 85% of vulnerabilities on the <strong>CyberGym</strong> benchmark, versus under 20% last year. Anthropic has already discovered over 29,000 candidate vulnerabilities, including findings that led to unauthenticated remote code execution exploits in projects like <strong>PostgreSQL</strong>, <strong>OpenSSL</strong>, <strong>curl</strong>, <strong>wolfSSL</strong>, and <strong>HotCRP</strong>.  A validation study of 97 critical/high-severity reports showed 88% met Anthropic’s CVD process standards. </p>
+<p>Because OSS Scanner delivers model-generated outputs without human review, reports may contain inaccuracies; however, maintainers can opt-in for fast-track access to unverified reports. Eligible open-source projects – those with “critical impact on infrastructure and user security” – can enroll via a pull request to a specified GitHub repository.</p></div>
     
   </div>
   
@@ -163,27 +177,13 @@
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>news</span>
-      <span> · 2026-10-06</span>
+      <span> · 2026-10-08</span>
     </div>
-    <h2><a href="https://www.anthropic.com/news/cyber-verification-program" target="_blank" rel="noopener">Expanding the Cyber Verification Program</a></h2>
+    <h2><a href="https://www.anthropic.com/news/genesis-mission-commitment" target="_blank" rel="noopener">Building on our commitment to American scientific discovery</a></h2>
     
-    <div class="summary"><p>Anthropic has expanded its Cyber Verification Program (CVP), integrating Project Glasswing and the original CVP into a tiered system granting security professionals access to advanced AI models with reduced safeguards. The program now offers three tiers: Defense Access (for general security tasks), Red Team Access (adding authorized penetration testing), and Specialized Access (for critical system testing, currently limited to verified organizations and in collaboration with the US government). </p>
-<p>All tiers include access to Claude Opus 5.5, Claude Sonnet 5.5, and Claude Mythos 5.1—and future models—with varying levels of cyber blocks. Testing with CyScenarioBench showed that Defense Access blocked 46 of 50 tasks, while Red Team Access allowed completion of 34 of 50—equivalent to performance with no safeguards. Anthropic reports that through Glasswing, partners identified at least 129,000 verified software vulnerabilities between April and July 2026. </p>
-<p>Organizations can apply for CVP access, with varying review times depending on the tier, and data retention is required—though Enterprise Frontier Safeguards will offer a zero-data-retention option later this fall.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>blog</span>
-      <span> · 2026-10-05</span>
-    </div>
-    <h2><a href="https://claude.com/blog/how-cresta-turned-cx-expertise-into-an-agent-builder-on-the-claude-agent-sdk" target="_blank" rel="noopener">How Cresta turned CX expertise into an agent builder on the Claude Agent SDK | Claude by Anthropic</a></h2>
-    
-    <div class="summary"><p>Cresta has released Conductor, a natural language agent builder leveraging the Claude Agent SDK, designed to streamline the creation of AI agents for customer experience (CX) applications. Originally built internally using Claude Sonnet and Opus, Conductor guides users through agent development – from blueprinting to implementation and optimization – aiming to halve initial deployment time. </p>
-<p>Conductor utilizes the Claude Agent SDK for tasks requiring adaptability, code execution, and iterative refinement, combined with Cresta’s proprietary conversation intelligence and CX expertise.  It focuses on balancing deterministic workflows—crucial for regulated industries—with flexible, adaptive conversation handling. The platform emphasizes evaluation with specific metrics covering artifact usability, execution path, quality, and resource usage, and includes a system to rerun those evaluations after updates to Claude or Conductor itself.</p>
-<p>Cresta emphasizes a “dogfooding” approach, internally validating Conductor before release, and focusing development on areas where they possess unique expertise, leveraging the Claude Agent SDK for core functionality. Conductor also allows teams to capture proven agent development patterns as reusable “skills”, fostering a knowledge flywheel for continuous improvement.</p></div>
+    <div class="summary"><p>Anthropic announced a $150 million commitment over three years to support the Genesis Mission, a federal initiative designed to accelerate scientific discovery using AI. This funding will make Anthropic’s Claude, Claude Code, and related API credits available to over 15 US federal agencies participating in the Genesis Mission – including NASA, the National Institutes of Health, and the National Science Foundation. Anthropic initially partnered with the Department of Energy on this project in December of the prior year.</p>
+<p>The commitment, announced at the White House Office of Science and Technology Policy’s “Science: A New Golden Age” Summit, will support several hundred research projects. Anthropic will also collaborate with agencies on priorities such as fusion energy and quantum computing, coupled with training and technical support for scientists. This builds on earlier initiatives, including the launch of Claude Science – an AI workbench for researchers – and expansion of the AI for Science program offering research credits.</p>
+<p>Additionally, Anthropic highlighted ongoing endeavors like the research preview of the Model Hardware Standard, a specification for AI agents operating lab equipment, and announced updates to their Usage Policy alongside the launch of the Anthropic Cyber Mission and an expanded Cyber Verification Program.</p></div>
     
   </div>
   
@@ -297,6 +297,41 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
+      <span> · 2026-10-08</span>
+    </div>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/share-gpu-clusters-across-teams-with-isolation-and-fairness-using-amazon-sagemaker-hyperpod/" target="_blank" rel="noopener">Share GPU clusters across teams with isolation and fairness using Amazon SageMaker HyperPod</a></h2>
+    
+    <div class="summary"><p>Amazon SageMaker HyperPod enables sharing GPU clusters across teams with isolation and fairness.</p>
+<ul>
+<li>Leverages Amazon IAM Identity Center for centralized authentication, federating with existing identity providers like Microsoft Entra ID.</li>
+<li>Utilizes per-team SageMaker AI domains with tailored execution roles for dedicated user workspaces and access control.</li>
+<li>Employs Kubernetes namespaces for workload isolation within a shared HyperPod EKS cluster.</li>
+<li>Implements HyperPod Task Governance for fair resource allocation and namespace-level cost allocation for visibility and chargeback.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
+      <span> · 2026-10-08</span>
+    </div>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/pay-per-inference-for-ai-agents-how-blockrun-and-incarna-use-amazon-bedrock-agentcore-payments/" target="_blank" rel="noopener">Pay-per-inference for AI agents: How BlockRun and Incarna use Amazon Bedrock AgentCore payments</a></h2>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock AgentCore payments provides a managed solution for AI agents to pay for services like model inference on demand, addressing challenges with high-frequency, low-value transactions.</li>
+<li>The system leverages the x402 payment protocol, offering both "exact" and "upto" schemes for pricing, and integrates with wallets like Coinbase CDP via a stablecoin (USDC on the Base network) for auditable settlement.</li>
+<li>Incarna successfully integrated AgentCore payments with BlockRun, enabling agents to pay for inference requests—ranging from $0.001 to $0.05—with a deployment timeline reduced from months to days (approximately 200 lines of code).</li>
+<li>Key features include managed wallets, native x402 protocol handling, infrastructure-level spending governance, and session-based budgets to prevent overspending, even if the agent's prompt is compromised.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
       <span> · 2026-10-07</span>
     </div>
     <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-cornerstone-ondemand-cut-database-diagnosis-by-78-with-amazon-bedrock/" target="_blank" rel="noopener">How Cornerstone OnDemand cut database diagnosis by 78% with Amazon Bedrock</a></h2>
@@ -306,43 +341,6 @@
 <li>Orion AI employs a hub-and-spoke architecture with a meta-orchestrator coordinating specialized agents for tasks like database diagnostics, lifecycle management, and alerting.</li>
 <li>The system utilizes hybrid routing, prioritizing keyword matching for speed and falling back to semantic search powered by Amazon Titan Text Embeddings V2 for complex queries.</li>
 <li>Orion AI leverages Amazon Bedrock AgentCore for conversational memory, utilizing a tiered approach with short-term (DynamoDB), long-term (AgentCore memory) and inter-agent memory, while bypassing memory for live metrics to ensure accuracy.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-10-07</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/building-ai-builders-playbook-for-closing-the-ai-knowledge-capability-gap/" target="_blank" rel="noopener">Building AI builders: Playbook for closing the AI knowledge-capability gap</a></h2>
-    
-    <div class="summary"><p>Building AI builders: Playbook for closing the AI knowledge-capability gap</p>
-<p>This document details a six-week program designed to enable non-technical professionals to build AI prototypes, bridging the gap between AI awareness and practical implementation.</p>
-<ul>
-<li>The program utilized a phased approach, spanning six weeks with approximately four hours of commitment per week, focused on building a working prototype to accelerate skills retention.</li>
-<li>Participants built “WealthWise”, a multi-agent AI financial advisory tool leveraging Amazon Nova models, Strands Agents SDK, Node.js, Python Flask, and Amazon DynamoDB, achieving sub-5-second response times.</li>
-<li>Key tools selected for usability included Kiro IDE for natural-language development, Amazon Bedrock for foundation models, Strands Agents SDK for agent composition, and AWS Lambda for production-grade architecture.</li>
-<li>Participant self-assessments showed significant increases, from 27% to 82% reporting a "Strong or Expert" understanding of agentic AI, and a decrease from 34% to 0% identifying with only theoretical AI experience.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-10-07</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/automate-remediation-post-aws-devops-agent-investigation/" target="_blank" rel="noopener">Automate remediation post AWS DevOps Agent investigation</a></h2>
-    
-    <div class="summary"><p>Automates remediation of issues detected by AWS DevOps Agent using AI-driven workflows and human approval for infrastructure changes.</p>
-<ul>
-<li>Leverages AWS Lambda Durable Functions, Amazon EventBridge, and Amazon Bedrock to orchestrate remediation workflows triggered by AWS DevOps Agent incident investigations.</li>
-<li>Amazon Bedrock analyzes investigation findings and proposes remediations from a curated allowlist of Lambda-based tools (e.g., <code>devops-agent-lambda-tool</code>).</li>
-<li>Distinguishes between read-only and mutating actions; mutating actions requiring human approval before execution via a durable function checkpointing mechanism.</li>
-<li>The solution uses an “agentic loop” where Bedrock iteratively calls tools, executes approved actions, and incorporates results to complete remediation.</li>
 </ul></div>
     
   </div>
@@ -398,16 +396,16 @@
     <div class="meta">
       <a href="techcrunch/" class="badge badge-techcrunch">TechCrunch</a>
       <span>news</span>
-      <span> · 2026-10-07</span>
+      <span> · 2026-10-08</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/10/07/healthleap-raises-38m-for-its-ai-that-flags-hospital-patients-who-may-need-a-closer-look/" target="_blank" rel="noopener">Healthleap raises $38M for its AI that flags hospital patients who may need a closer look</a></h2>
+    <h2><a href="https://techcrunch.com/2026/10/08/openais-math-solutions-arent-meeting-the-fields-standards-yet/" target="_blank" rel="noopener">OpenAI’s math solutions aren’t meeting the field’s standards yet</a></h2>
     
-    <div class="summary"><p>Healthleap, a startup applying AI to healthcare, raised $38 million in seed and Series A funding.</p>
+    <div class="summary"><p>OpenAI recently released claimed solutions to difficult math problems, but their adherence to community standards is being questioned.</p>
 <ul>
-<li>The funding round includes an $8 million seed round co-led by Sequoia Capital and First Round Capital, and a $30 million Series A led by Hummingbird Ventures.</li>
-<li>Healthleap’s platform analyzes patient data from electronic health records—including structured data and clinician notes—using language models to identify patients at risk of undiagnosed conditions like malnutrition or delirium.</li>
-<li>The system provides a risk score and dashboard to care teams, highlighting patients for further review, but does not provide diagnoses.</li>
-<li>Currently deployed in over 50 hospitals (including Penn Medicine, Cedars-Sinai, and Emory Healthcare), Healthleap claims its malnutrition program resulted in $23.8 million annualized financial impact at the Hospital of the University of Pennsylvania.</li>
+<li>OpenAI released 719 manuscripts detailing claimed solutions, but only 10 included the model’s chain of thought.</li>
+<li>Only 42% of the released proofs had been formally verified – a process mathematicians recommend to ensure rigor.</li>
+<li>A paper from the University of Cambridge and King’s College London identified discrepancies between the “natural language” explanation and the formal code (Lean) for a solution related to Navier-Stokes equations.</li>
+<li>The Advisory Group on Mathematics and Artificial Intelligence (AGMAI) has asked OpenAI to stop testing on proprietary models and to fund human mathematicians to validate their findings, recommendations not fully addressed in this release.</li>
 </ul></div>
     
   </div>
@@ -418,14 +416,14 @@
       <span>news</span>
       <span> · 2026-10-08</span>
     </div>
-    <h2><a href="https://arstechnica.com/gadgets/2026/10/microsoft-event-debuts-new-ai-friendly-hardware-and-windows-changes/" target="_blank" rel="noopener">Microsoft event debuts new AI-friendly hardware and Windows changes</a></h2>
+    <h2><a href="https://arstechnica.com/ai/2026/10/nvidias-big-bet-on-physical-ai-aims-for-safer-robotaxis-humanoid-robots/" target="_blank" rel="noopener">Nvidia&#39;s big bet on physical AI aims for safer robotaxis, humanoid robots</a></h2>
     
-    <div class="summary"><p>Microsoft announced new AI-focused hardware and Windows 11 updates at a recent event.</p>
+    <div class="summary"><p>Nvidia is expanding its AI safety system, Halos, to robotics applications beyond autonomous vehicles.</p>
 <ul>
-<li>The <strong>Surface Laptop Ultra</strong> will be the first Microsoft device featuring the <strong>Nvidia RTX Spark SoC</strong>, starting at $2,599 and shipping October 16, with configurations up to 128GB LPDDR5x unified memory and a 6144-core Blackwell GPU.</li>
-<li>The <strong>Surface RTX Spark Dev Box</strong>, priced at $5,999, offers 128GB unified memory and claims 1 petaflop of AI compute performance with a developer-optimized build of Windows 11.</li>
-<li><strong>Windows 11</strong> is receiving a Copilot overhaul with new “Home,” “Code,” and “Autopilot” tabs, plus a new search experience allowing direct execution of system-level tasks.</li>
-<li><strong>Microsoft Execution Containers (MXC)</strong>, now available to developers, provide a security framework for sandboxing AI agent activity, supporting various isolation backends like process, session, WSL containers, and MicroVM.</li>
+<li>Nvidia announced <strong>Halos for Robotics</strong> in June 2026, building upon the initial <strong>Halos system</strong> launched in 2025, with the goal of securing deployments of robots in various settings.</li>
+<li>The system utilizes the <strong>IGX Thor</strong> computing module, featuring dedicated processors for safety-related workloads, and the <strong>Holoscan Sensor Bridge</strong> for data integrity.</li>
+<li><strong>Halos</strong> includes an operating system designed for constant hardware and software monitoring, workload isolation, simulation tools, and an inspection lab program for feedback on safety.</li>
+<li>Early adopters of <strong>Nvidia Halos</strong> include Agility Robotics with its <strong>Digit 5</strong> humanoid robot, Boston Dynamics (Spot, Stretch, Atlas), KION Group, and LG, with potential deployment timelines extending to 2028.</li>
 </ul></div>
     
   </div>
