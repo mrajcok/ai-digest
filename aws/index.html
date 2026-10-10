@@ -80,13 +80,49 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-10-09 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-10-10 10:16 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">October 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-09</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-postman-runs-agent-mode-for-40-million-developers-on-amazon-bedrock/" target="_blank" rel="noopener">How Postman runs Agent Mode for 40 million developers on Amazon Bedrock</a></h3>
+    
+    <div class="summary"><p>Postman integrated AI capabilities into its platform with Agent Mode, powered by Amazon Bedrock, to assist 40 million developers with API tasks.</p>
+<ul>
+<li>Agent Mode utilizes Amazon Bedrock for model flexibility, allowing Postman to switch between Anthropic Claude models (supported by AWS Region) to optimize for speed or complexity based on the task.</li>
+<li>To handle high and variable demand, Postman employs Amazon Bedrock’s cross-Region inference, routing requests across AWS Regions based on defined inference profiles (geographic or global) to maximize throughput.</li>
+<li>Postman addresses data residency concerns by utilizing Amazon Bedrock geographic inference profiles, restricting processing to specific regions, and has configured zero data retention where supported by models.</li>
+<li>To manage costs and reduce latency, Agent Mode leverages Amazon Bedrock's prompt caching, reusing stable prompt prefixes (like system instructions) for up to one hour.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-09</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/icymi-what-landed-for-ai-builders-in-september-2026/" target="_blank" rel="noopener">ICYMI: What landed for AI builders in September 2026</a></h3>
+    
+    <div class="summary"><p>AWS announced several updates to its AI services in September 2026, focused on expanding model choice, improving agent efficiency, and enhancing enterprise data connectivity.</p>
+<ul>
+<li><strong>Amazon Bedrock Managed Agents</strong> (powered by OpenAI) are now in public preview, allowing secure use of OpenAI models within AWS with existing IAM permissions and auditability.</li>
+<li>The <strong>AgentCore runtime</strong> now features more efficient memory management and reduced cold start latency for serverless agents, offering pay-as-you-go pricing.</li>
+<li><strong>Strands Harness</strong>, an open-source agent harness, achieves accuracy comparable to popular alternatives while reducing token usage by 28%, and <strong>Strands Decider 2B</strong> provides a 2B-parameter open-source decision model for fast, local tool selection and guardrails (~115ms).</li>
+<li>New models available on Amazon Bedrock include OpenAI’s <strong>Astra, Sol, and Luna</strong> (GPT-6 family), Claude’s <strong>Fable 5.1, Opus 5.5, and Sonnet 5.5</strong>, Moonshot AI's <strong>Kimi K3</strong>, and xAI’s <strong>Grok 4.6 and 4.7</strong>, alongside increased scheduling options for <strong>Amazon Bedrock Managed Knowledge Base</strong> and new native connectors for ServiceNow, Confluence Data Center, Salesforce, and Zendesk.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -577,40 +613,6 @@
 <li>The core interaction with humans is facilitated through a single <code>ask_human</code> tool and a standardized response envelope, supporting patterns like notification, clarification, review, and error handling—all surfaced through a unified job view.</li>
 <li>The platform leverages a serverless architecture using Amazon S3, Amazon EventBridge, AWS Lambda, Amazon DynamoDB, and Amazon Bedrock AgentCore Runtime for container-based agent hosting, supporting long-running workloads and session isolation.</li>
 <li>The reference implementation supports S3 file uploads and scheduled events as triggers, with extension points for API webhooks and database changes, and requires access to the Anthropic Claude Sonnet 4.5 model in Amazon Bedrock.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-01</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/uplifting-conversion-across-the-acquisition-funnel-with-personalization-using-contextual-bandits-on-aws/" target="_blank" rel="noopener">Uplifting conversion across the acquisition funnel with personalization using contextual bandits on AWS</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Payments implemented a multi-objective contextual multi-armed bandit (MAB) on Amazon SageMaker AI to personalize content across an acquisition funnel (application start, submission, and approval).</li>
-<li>The system utilizes Linear UCB (LinUCB), balancing exploration and exploitation by estimating rewards based on a linear function of context vectors representing customer attributes; exploration is adjusted based on visitor history.</li>
-<li>A multi-stage approach optimizes the entire funnel simultaneously by combining UCB scores from models at each stage (start, submit, approve) using weighted sums, addressing the “seesaw problem” of optimizing individual steps.</li>
-<li>Content variations are built from pre-approved “building blocks” (images and taglines) to ensure brand safety and scalability, with the bandit selecting combinations and a Jupyter notebook available for testing on Amazon SageMaker AI.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-01</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-agent-memory-with-nvidia-nemo-agent-toolkit-and-amazon-s3-vectors/" target="_blank" rel="noopener">Build agent memory with NVIDIA NeMo Agent Toolkit and Amazon S3 Vectors</a></h3>
-    
-    <div class="summary"><ul>
-<li>The blog details how to use Amazon S3 Vectors as a persistent memory layer within the NVIDIA NeMo Agent Toolkit (NAT), deployed on Amazon EKS, for building multi-agent systems.</li>
-<li>NVIDIA NeMo Agent Toolkit (NAT) is an open-source framework enabling agent orchestration, profiling, evaluation and optimization of AI agents, and includes a memory module with a plugin interface for custom backends.</li>
-<li>A custom <code>MemoryEditor</code> plugin is implemented to interface with Amazon S3 Vectors, handling adding items (embedding text with Amazon Titan Text Embeddings V2 and storing vectors with metadata), searching (querying vectors with filters), and removing items.</li>
-<li>The implementation utilizes Amazon Titan Text Embeddings V2 to generate 1024-dimensional embeddings and emphasizes data handling considerations like retention policies, PII redaction, and access control with IAM policies and per-tenant indexes.</li>
 </ul></div>
     
   </div>
