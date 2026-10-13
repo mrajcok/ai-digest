@@ -80,13 +80,65 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-10-12 10:15 UTC</p>
+  <p class="generated-at">Generated 2026-10-13 10:16 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">October 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-12</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/run-multi-node-inference-workloads-using-ray-llm-deep-learning-containers/" target="_blank" rel="noopener">Run multi-node inference workloads using Ray LLM Deep Learning Containers</a></h3>
+    
+    <div class="summary"><ul>
+<li>The post details deploying a large language model (LLM) across two GPU nodes on Amazon EKS using the multi-node Ray LLM Deep Learning Containers, separating prefill and decode phases behind a single OpenAI-compatible endpoint.</li>
+<li>The Ray LLM DLC includes Ray Serve LLM, NVIDIA Inference Transfer Library (NIXL), and the Elastic Fabric Adapter (EFA) stack, simplifying deployment and maintaining compatibility across the GPU stack.</li>
+<li>Prefill/decode disaggregation improves performance by isolating the compute-intensive prefill phase from the latency-sensitive decode phase, enabling independent scaling and optimized hardware selection for each.</li>
+<li>The deployment utilizes a declarative YAML configuration with <code>build_pd_openai_app</code> to establish the KV-cache transfer between the prefill and decode stages, requiring minimal application code.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-12</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/deploy-decision-models-with-llama-cpp-on-amazon-sagemaker-ai/" target="_blank" rel="noopener">Deploy decision models with llama.cpp on Amazon SageMaker AI</a></h3>
+    
+    <div class="summary"><p>AWS introduces deploying decision models using <code>llama.cpp</code> on Amazon SageMaker AI, offering a managed path for serving quantized models on CPU or GPU infrastructure.</p>
+<ul>
+<li>The AWS Deep Learning Container (DLC) for <code>llama.cpp</code> enables serving OpenAI-compatible chat completions via SageMaker AI InvokeEndpoint.</li>
+<li>The solution extends the runtime with SemIf (formerly OpenJev) to return probabilities over a set of defined options, avoiding text decoding.</li>
+<li>The system supports both CPU and GPU deployment options, utilizing instance pools for GPU configurations with options like <code>ml.g6e.xlarge</code>.</li>
+<li>Benchmarks show GPU endpoints are up to 32.2x faster than CPU endpoints for the SemIf extension (Qwen3.5-4B Q4_K_M on a ml.g6e.xlarge), though accuracy differences were observed between CPU and GPU builds.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-12</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/accessing-openai-gpt-models-on-amazon-bedrock-with-global-cross-region-inference-in-thailand-malaysia-singapore-indonesia-and-taiwan/" target="_blank" rel="noopener">Accessing OpenAI GPT models on Amazon Bedrock with global cross-Region inference in Thailand, Malaysia, Singapore, Indonesia, and Taiwan</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock now supports global cross-Region inference for OpenAI’s GPT-6 Sol, GPT-6 Luna, and GPT-6 Astra models from Thailand, Malaysia, Singapore, Indonesia, and Taiwan.</li>
+<li>GPT-6 Sol and GPT-6 Luna support reasoning effort levels of none, low, medium, high, xhigh and max, while GPT-6 Astra supports none, low, medium, high and xhigh.</li>
+<li>Inference is invoked using global cross-Region inference profile IDs (e.g., <code>global.openai.gpt-6-sol</code>) instead of model IDs; billing, quota tracking, and logging remain in the source Region.</li>
+<li>IAM permissions must be configured to allow access to the inference profile, the foundation model, and <code>bedrock:CallWithBearerToken</code> for API key authentication; SCPs can be used to scope exceptions to Region allowlists.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -559,60 +611,6 @@
 <li>Fine-tuning increased <strong>Per Behavior Macro F1</strong> from 0.5852 to 0.8364 and <strong>Subject Type Macro F1</strong> from 0.4162 to 0.8302, demonstrating substantial improvements in understanding uniopen’s specific moderation policies.</li>
 <li>Further <strong>prompt optimization</strong> – simplifying the output format – increased <strong>Per Behavior Macro F1</strong> to 0.8550 and <strong>Subject Type Macro F1</strong> to 0.8491, exceeding production targets of 0.8500 and 0.8200 respectively.</li>
 <li>The solution employs a workflow using <strong>Amazon S3</strong> for data storage, <strong>Amazon DynamoDB</strong> for model configuration tracking, <strong>Argo Workflows on Amazon EKS</strong> for orchestration, and <strong>Amazon SNS/CloudWatch</strong> for alerting, with human review remaining a critical component through the process.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-01</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/simplify-dashboard-drill-down-with-the-amazon-quick-sight-hierarchy-filter/" target="_blank" rel="noopener">Simplify dashboard drill-down with the Amazon Quick Sight hierarchy filter</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon QuickSight now includes a hierarchy filter, enabling multi-level filtering within a single control to reduce dashboard clutter.</li>
-<li>The hierarchy filter supports up to five levels of dimension fields (e.g., Region → Country → City) and automatically manages drill-down paths for users.</li>
-<li>Selection behavior within the filter auto-selects parent levels when a lower level is chosen, ensuring a coherent filter state and visibility of the selected path.</li>
-<li>The filter includes search functionality, with a top-level search for the highest hierarchy and individual search boxes appearing for levels with over 10 unique values; levels with over 1,000 values display only a search box.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-01</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/implementing-multi-environment-access-for-claude-platform-on-aws/" target="_blank" rel="noopener">Implementing Multi-Environment Access for Claude Platform on AWS</a></h3>
-    
-    <div class="summary"><p>Implementing Multi-Environment Access for Claude Platform on AWS details a three-account architecture for accessing Claude Platform on AWS (CPonAWS) from production, development, and external environments.</p>
-<ul>
-<li>The architecture uses a dedicated AI Services account to host the CPonAWS subscription and workspaces, isolating it from workload and payer accounts.</li>
-<li>AWS workloads can access CPonAWS via cross-account SigV4, assuming roles in the AI Services account without storing credentials.</li>
-<li>Developers can use workspace-scoped API keys for local iteration, with policies restricting access to specific development workspaces.</li>
-<li>External environments can authenticate using OpenID Connect (OIDC) federation to obtain temporary AWS credentials for short-lived token-based access.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-01</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/building-ambient-agents-with-amazon-bedrock-agentcore-from-event-driven-signals-to-human-in-the-loop-workflows/" target="_blank" rel="noopener">Building ambient agents with Amazon Bedrock AgentCore: From event-driven signals to human-in-the-loop workflows</a></h3>
-    
-    <div class="summary"><h2>Building ambient agents with Amazon Bedrock AgentCore: From event-driven signals to human-in-the-loop workflows</h2>
-<p>This blog post details Amazon Bedrock AgentCore, a platform for building agents that respond to event streams and incorporate human-in-the-loop (HITL) workflows.</p>
-<ul>
-<li>AgentCore introduces a new paradigm of “ambient agents” that react to events (like file uploads or system alerts) rather than requiring user-initiated chats, utilizing event-driven signals to trigger actions.</li>
-<li>The core interaction with humans is facilitated through a single <code>ask_human</code> tool and a standardized response envelope, supporting patterns like notification, clarification, review, and error handling—all surfaced through a unified job view.</li>
-<li>The platform leverages a serverless architecture using Amazon S3, Amazon EventBridge, AWS Lambda, Amazon DynamoDB, and Amazon Bedrock AgentCore Runtime for container-based agent hosting, supporting long-running workloads and session isolation.</li>
-<li>The reference implementation supports S3 file uploads and scheduled events as triggers, with extension points for API webhooks and database changes, and requires access to the Anthropic Claude Sonnet 4.5 model in Amazon Bedrock.</li>
 </ul></div>
     
   </div>

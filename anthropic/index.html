@@ -80,13 +80,40 @@
     </label>
   </div>
   <h1>Anthropic News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-10-12 10:15 UTC</p>
+  <p class="generated-at">Generated 2026-10-13 10:16 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">October 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>research</span>
+      <span> · 2026-10-12</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/research/self-replicating-ai" target="_blank" rel="noopener">AI models may be capable of self-replicating without access to a datacenter</a></h3>
+    
+    <div class="summary"><p>Anthropic’s Frontier Red Team finds that AI models are approaching the capability to autonomously replicate themselves on common IoT devices. Their experiments show that a 9B parameter model can run inference on 8 out of 9 hardware types tested, and models of 30B parameters or fewer can perform the individual steps for replication, though composing those steps end-to-end remains challenging. Specifically, GLM-5.2 and stronger models demonstrate end-to-end replication ability.  If current improvement rates continue, models at this capability level are projected by the end of 2026.</p>
+<p>The research decomposes replication into finding targets, gaining execution, establishing inference, and propagating—focusing on the relatively unstudied inference setup stage. They demonstrated a 26B Gemma model running across 15 smart TVs (~$55 each), achieving 0.39 tokens per second.  While replication is slow (days for a doubling time), the distributed nature and potential for adaptation—with models learning from previous attempts—present new cybersecurity challenges distinct from traditional malware. Their tests with Qwen3.5-9B show a 61-84% success rate in subsequent generations through inherited notes.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>research</span>
+      <span> · 2026-10-12</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/research/distillation-defenses" target="_blank" rel="noopener">Strengthening our defenses against distillation attacks</a></h3>
+    
+    <div class="summary"><p>Anthropic has significantly strengthened its defenses against “distillation attacks”—covert, large-scale efforts to replicate Claude’s capabilities in other models—reducing data harvesting by distillers by 90-99%. Distillation poses risks as it allows creation of powerful models without equivalent safeguards, and can aid foreign intelligence operations. Anthropic's approach focuses on hindering access to Claude’s reasoning process, rather than just its output.</p>
+<p>Initial defenses, like summarizing reasoning, were bypassed by attackers employing tactics to elicit full reasoning.  New methods introduced in Claude models 5.1 and 5.5 include “preserved thinking” preventing editing of prior context, a two-stage classifier comparable to safeguards against harmful outputs (with &lt;0.1% false positive rate) applied to Claude Sonnet, Opus, and Fable, and stricter limits/bans for suspicious accounts.  Testing with the SWE-bench Verified coding benchmark showed that a distilled model trained on summarized reasoning achieved 71.8% compared to 80.4% with full reasoning transcripts.  </p>
+<p>While these measures involve trade-offs for legitimate users (integration updates, occasional false positives, and charges for blocked requests), Anthropic believes the benefits—protecting national security and responsible AI deployment—outweigh the costs. They encourage other developers and platforms to adopt similar defenses to collectively combat this ongoing threat.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -472,33 +499,6 @@
     
     <div class="summary"><p>Anthropic details a six-step process for AI-driven code modernization using <strong>Claude Code</strong>, aiming to accelerate projects previously taking years down to months or weeks. The core technical claim is that by shifting the bottleneck from <em>producing</em> code changes to <em>organizing</em> around them, complex modernizations become feasible. Steps include defining a clear target state (Uplift, Transform, or Reimagine – version bumps, cross-stack rewrites, or complete rebuilds respectively), creating a “certificate” of conditions a change must meet (tests, performance benchmarks, security scans), and establishing a tiered “promotion policy” for human review based on change risk.</p>
 <p>Specifically, the process emphasizes leveraging Claude Code’s capabilities – like the <code>assess</code>, <code>map</code>, and <code>extract-rules</code> commands in the code modernization plugin – for dependency mapping and rule mining. The authors advise building and refining the agentic workflow, a custom dynamic workflow distributing modernization across parallel subagent workstreams, and then running it on a small codebase partition before scaling. Token usage and cost are also discussed, highlighting the importance of optimizing workflows based on a pilot run’s data. The blog stresses that success relies on a well-defined certificate and clear agreement on acceptable risk levels, especially in regulated environments.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-09-23</span>
-    </div>
-    <h3><a href="https://claude.com/blog/how-coderabbit-power-digital-and-thoughtspot-scale-with-snowflake-and-vercel-on-claude-marketplace" target="_blank" rel="noopener">CodeRabbit, Power Digital, ThoughtSpot on Claude Marketplace | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic’s Claude Marketplace enables customers with existing Anthropic commitments to apply those funds toward tools from partners like Snowflake and Vercel. Power Digital expanded its Snowflake commitment via the Marketplace to scale its Nova platform, which leverages Snowflake Cortex to run Claude models directly on client data – growing usage from 12 to over 800 users. </p>
-<p>ThoughtSpot integrates Claude through Snowflake’s inference API, allowing them to run Claude models within the Snowflake ecosystem and utilize existing Anthropic commitments for API purchases. They also offer Spotter, an AI analyst, as a connector for Claude. CodeRabbit uses Vercel’s Sandbox for secure code execution by its AI agents and funded a commitment upgrade through the Claude Marketplace, streamlining the procurement process.</p>
-<p>The marketplace aims to simplify purchasing for existing Anthropic customers, allowing them to dedicate pre-approved budgets to related infrastructure, and is currently in limited preview. Snowflake and Vercel both highlight the speed and efficiency of offering their services through the marketplace.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Anthropic</span> · 
-      <span>news</span>
-      <span> · 2026-09-23</span>
-    </div>
-    <h3><a href="https://www.anthropic.com/news/claude-discovers-novel-enzyme-system" target="_blank" rel="noopener">Claude discovers a novel enzyme system</a></h3>
-    
-    <div class="summary"><p>In September 2026, Anthropic announced that its Claude model discovered a novel enzyme system, dubbed array-associated reverse transcriptases (ART), with characteristics reminiscent of CRISPR. Utilizing Claude Science and Claude Code, researchers prompted the AI to search a massive DNA sequence database. After 21 hours and the use of 210 million tokens across 950 agents, Claude identified a repeating DNA pattern alongside a previously identified reverse transcriptase found in jumbo phages. </p>
-<p>The system consists of the RT enzyme, an associated gene, and an array of DNA repeat sequences. Initial experiments suggest this array is expressed as distinct RNA sequences. While its function remains under investigation, the identified pattern – a CRISPR-like repeat array – has only been found in a small number of programmable systems capable of manipulating DNA. Anthropic has released a pre-print detailing the discovery and is seeking collaboration with other scientists to apply this AI-driven approach to further research. Feng Zhang of MIT and the Broad Institute commented positively on the finding, calling it an “exciting example of how AI agents can contribute to biological discovery.”</p></div>
     
   </div>
   
