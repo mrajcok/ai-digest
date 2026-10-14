@@ -80,13 +80,40 @@
     </label>
   </div>
   <h1>Anthropic News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-10-13 10:16 UTC</p>
+  <p class="generated-at">Generated 2026-10-14 10:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">October 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>news</span>
+      <span> · 2026-10-14</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/news/singapore-office-opening" target="_blank" rel="noopener">Singapore office and government MOU | Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic has opened a new office in Singapore, its fifth in the Asia-Pacific region, and signed a Memorandum of Understanding (MOU) with the Singapore Ministry of Digital Development and Information on October 14, 2026. The MOU focuses on cooperation in AI safety, security, model evaluation, research into AI adoption, and responsible implementation across public and private sectors. Anthropic reports that Singapore ranks second out of 121 countries in <em>Claude.ai</em> usage relative to population.</p>
+<p>Several Singaporean organizations are actively utilizing Anthropic’s <em>Claude</em> models.  Over 1,500 engineers at GovTech Singapore are using <em>Claude Code</em> to modernize government systems.  DBS bank, GIC, Grab (with its <em>BriX</em> assistant saving 40,000 sales hours per quarter), Sea (parent of Shopee), and Supabase are also leveraging <em>Claude</em> for various applications including software development, customer service, and code assistance.  The partnership allows for in-region inference on Amazon Bedrock for organizations with strict data processing requirements. Anthropic also intends to share research data, including from the <em>Anthropic Economic Index</em>, and provide technical/policy expertise to Singapore as it develops its AI regulations.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>engineering</span>
+      <span> · 2026-10-13</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/engineering/redesigning-source-control" target="_blank" rel="noopener">Redesigning source control at Anthropic</a></h3>
+    
+    <div class="summary"><p>Anthropic redesigned its source control system to address performance bottlenecks caused by a tenfold increase in code merges per day, driven by extensive use of Claude for software development. They built Scion, an in-house version control system, migrating from Git in five months, alongside a code review surface called Antique, code search, and IAM systems.</p>
+<p>Scion operates on the principle that clients are always online, differing from Git’s design for offline use. It's a client-server system where the server handles commits, merges, and history, while clients maintain a minimal local cache.  Scion uses "changesets" – entries in a write-ahead log containing modified files and content-addressed pointers to blob storage – eschewing Git’s packfiles for faster processing.  The system utilizes derived data structures for features like blame and history, computed recursively and optimized dynamically.  The infrastructure now requires 200x less CPU/memory than their previous Git mirroring setup and accelerates checkouts by two orders of magnitude.</p>
+<p>The project highlights the power of AI-assisted development; Claude significantly accelerated development and optimization, even automating substantial portions of the codebase. Anthropic plans to share learnings to benefit the wider developer community, recognizing that similar scaling challenges will become more common as AI coding tools proliferate.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -472,33 +499,6 @@
     
     <div class="summary"><p>Anthropic’s Project Swap investigated how well AI agents – specifically those powered by Claude – can trade on behalf of people. The experiment involved 201 Anthropic employees trading books, with each employee first chatting with Claude to determine their reading preferences. Agents then negotiated with each other on a digital trading floor. The study found that agents were surprisingly good at representing their participants’ preferences based on a short (averaging 216 words) conversation, matching their rankings 61% of the time. However, the market’s efficiency was limited more by the agents’ imperfect understanding of participant preferences than by the negotiation process itself. </p>
 <p>Further analysis revealed that the model powering the agent (Haiku, Sonnet, Opus, or Fable) had a greater impact on negotiating outcomes than the specific instructions given to the agent ("ruthless" vs. "prosocial"). Stronger models led to more efficient markets. Participants indicated they would trust such an agent with roughly 30% of their yearly book budget, about 75% of what they’d trust a human friend with. The researchers highlight the importance of verifying agent understanding of user preferences – proposing a "test" where agents demonstrate their understanding before acting on behalf of a user – and establishing clear rules for agent marketplaces to ensure positive outcomes for all involved.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-09-23</span>
-    </div>
-    <h3><a href="https://claude.com/blog/claude-marketplace" target="_blank" rel="noopener">Claude Marketplace: plugins and connectors, products and agents, and service partners | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic has launched the Claude Marketplace, a central hub for tools and services designed to extend the capabilities of the Claude platform. Customers can now access over 2,000 connectors and plugins from companies including Atlassian, Google, Microsoft, and Salesforce, integrating Claude with existing workflows. </p>
-<p>Beyond connectors, the Marketplace facilitates the purchase of “agents” and “products”—Claude-powered software from companies like CrowdStrike, Cursor, Harvey, and Snowflake—using existing committed Anthropic spending. Organizations can also engage service partners such as Accenture, BCG, and Deloitte for AI strategy and implementation.</p>
-<p>Builders can integrate with the platform via Anthropic’s open standards: the Model Context Protocol (MCP) and Agent Skills. The Marketplace offers paths for listing plugins, selling Claude-powered agents/products, and joining the Claude Partner Network, aiming to streamline integration and discovery for mutual customers.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-09-23</span>
-    </div>
-    <h3><a href="https://claude.com/blog/how-to-prepare-for-ai-driven-code-modernization-projects" target="_blank" rel="noopener">How to prepare for AI-driven code modernization projects  | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic details a six-step process for AI-driven code modernization using <strong>Claude Code</strong>, aiming to accelerate projects previously taking years down to months or weeks. The core technical claim is that by shifting the bottleneck from <em>producing</em> code changes to <em>organizing</em> around them, complex modernizations become feasible. Steps include defining a clear target state (Uplift, Transform, or Reimagine – version bumps, cross-stack rewrites, or complete rebuilds respectively), creating a “certificate” of conditions a change must meet (tests, performance benchmarks, security scans), and establishing a tiered “promotion policy” for human review based on change risk.</p>
-<p>Specifically, the process emphasizes leveraging Claude Code’s capabilities – like the <code>assess</code>, <code>map</code>, and <code>extract-rules</code> commands in the code modernization plugin – for dependency mapping and rule mining. The authors advise building and refining the agentic workflow, a custom dynamic workflow distributing modernization across parallel subagent workstreams, and then running it on a small codebase partition before scaling. Token usage and cost are also discussed, highlighting the importance of optimizing workflows based on a pilot run’s data. The blog stresses that success relies on a well-defined certificate and clear agreement on acceptable risk levels, especially in regulated environments.</p></div>
     
   </div>
   

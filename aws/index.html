@@ -80,13 +80,117 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-10-13 10:16 UTC</p>
+  <p class="generated-at">Generated 2026-10-14 10:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">October 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-13</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/mixture-of-experts-kernel-engineering-on-amazon-sagemaker-ai/" target="_blank" rel="noopener">Mixture-of-Experts kernel engineering on Amazon SageMaker AI</a></h3>
+    
+    <div class="summary"><ul>
+<li>The blog details kernel optimizations for Mixture-of-Experts (MoE) models on NVIDIA Hopper architecture, specifically focusing on improving performance and reducing latency.</li>
+<li>A “Swap-AB” technique was implemented to address WGMMA instruction limitations by transposing matrices to better utilize Tensor Cores, resulting in a 2-4% throughput improvement and is available in vLLM v0.24.0+.</li>
+<li>Routing FP8 tensor-quantized models to the Triton backend instead of FLASHINFER_CUTLASS yielded a 10% throughput improvement on H200 GPUs, delivered in AWS Large Model Inference (LMI) v28.</li>
+<li>Eliminating unnecessary JIT recompilation in the Triton compiler—specifically for the <code>fused_inv_rope_fp8_quant_per_head</code> kernel—improved Time to First Token (TTFT) by 9% and is available in vLLM v0.22.0+.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-13</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-long-horizon-agents-with-grok-4-7-on-amazon-bedrock/" target="_blank" rel="noopener">Build long-horizon agents with Grok 4.7 on Amazon Bedrock</a></h3>
+    
+    <div class="summary"><ul>
+<li>SpaceXAI’s Grok 4.7 is now available on Amazon Bedrock, offering improved performance in sustained reasoning and self-verification compared to Grok 4.6.</li>
+<li>Grok 4.7 introduces a <code>reasoning effort</code> setting that controls the deliberation level before each response, allowing for a tunable trade-off between accuracy and cost (token usage).  Testing showed all 18 tasks completed correctly at “xhigh” effort, and 15 of 18 at “low” effort, using approximately 1/8th the tokens.</li>
+<li>The model supports a 500K token context window with text and image input and text output, and integrates with the OpenAI-compatible Chat Completions and Responses APIs, and the Amazon Bedrock Converse API.</li>
+<li>Access to Grok 4.7 on Bedrock is managed via cross-Region inference profiles (<code>us.xai.grok-4.7</code> or <code>global.xai.grok-4.7</code>) and requires specific IAM permissions for both the inference profile and the default project.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-13</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-shipstation-global-built-an-ai-it-help-desk-on-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How ShipStation Global built an AI IT help desk on Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><p>ShipStation Global built Deckhand, an AI-powered IT help desk agent for Slack, using Amazon Bedrock AgentCore to automate responses to frequently asked questions and streamline Jira ticket creation.</p>
+<ul>
+<li>Deckhand is built on Amazon Bedrock AgentCore runtime, hosting a Strands agent powered by Anthropic’s Claude via Amazon Bedrock.</li>
+<li>The system uses a combination of an Amazon Bedrock knowledge base (indexing Confluence, intranet pages, Slack, and marketing content stored in Amazon S3) and custom tools exposed via AgentCore Gateway, implemented as AWS Lambda functions, for tasks like ticket creation and image analysis.</li>
+<li>A three-stage pipeline utilizing DSPy’s Recursive Language Models (RLMs) and Claude on Amazon Bedrock is used to extract structured data from historical Slack conversations to populate the knowledge base.</li>
+<li>Deckhand achieved 97.5% message resolution and a 96% positive feedback rating, while deflecting approximately 67% of potential Jira tickets (812 conversations resolved vs. 409 tickets created) over three months.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-13</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/natural-language-security-queries-at-orca-security-using-amazon-bedrock/" target="_blank" rel="noopener">Natural language security queries at Orca Security using Amazon Bedrock</a></h3>
+    
+    <div class="summary"><p>Orca Security built Discovery AI, a natural language interface for querying cloud security data, using Amazon Bedrock, significantly improving performance and reducing costs.</p>
+<ul>
+<li>Discovery AI uses a nine-stage pipeline combining Retrieval Augmented Generation (RAG) with schema-aware query construction on Amazon Bedrock.</li>
+<li>The system leverages multiple foundation models: Anthropic Claude Haiku 4.5 for model selection and generation, Amazon Nova 2 Lite for guardrails and validation, Amazon Titan for embeddings, and Cohere Rerank 3.5 for reranking retrieved examples.</li>
+<li>Key improvements include a 93% reduction in input tokens, a 90% reduction in query costs, and a 75% reduction in query latency compared to an initial proof-of-concept.</li>
+<li>A continuous evaluation and labeling system, with human-in-the-loop feedback, allows for ongoing model improvement and adaptation to evolving environments.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-13</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/manage-private-pricing-offers-for-amazon-bedrock-with-managed-entitlements/" target="_blank" rel="noopener">Manage private pricing offers for Amazon Bedrock with managed entitlements</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock now supports managed entitlements via AWS License Manager to simplify multi-account access to third-party AI models offered through AWS Marketplace Private Pricing Offers (MPPOs).</li>
+<li>Two methods are provided: a lightweight script for one-time activation of trusted licenses and a CDK-based automation for ongoing, event-driven processing of new private pricing agreements.</li>
+<li>The CDK automation utilizes Amazon EventBridge to listen for AWS Marketplace agreement events, a Lambda function to verify sellers against an allow-list and activate grants, and License Manager entitlements to distribute access.</li>
+<li>The solution offers faster application of negotiated pricing, consistent handling across accounts, and a built-in audit trail via CloudWatch Logs, requiring prerequisites like AWS Organizations “all features” enabled and operation from the management account in <code>us-east-1</code>.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-13</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/building-agents-that-transact-with-anchor-browser-and-agentcore-payments/" target="_blank" rel="noopener">Building agents that transact with Anchor Browser and AgentCore payments</a></h3>
+    
+    <div class="summary"><ul>
+<li>Anchor Browser now integrates with Amazon Bedrock AgentCore payments to enable autonomous payments for resources protected by the x402 protocol (HTTP 402 Payment Required).</li>
+<li>AgentCore payments manages wallet connectivity, enforces spending limits, processes payments via x402, and provides observability through Amazon CloudWatch – removing the need for developers to build and secure a payment stack.</li>
+<li>The solution moves payment stack components (authentication, wallet secrets, payment limits, proof signing) into a managed service layer, leaving only a budget session and x402 tool within the Anchor Agent.</li>
+<li>Enabling automatic x402 payments within an Anchor Browser session is done via the <code>session.x402 = true</code> property; existing automation code (Playwright, Puppeteer) remains unchanged as the browser handles payments transparently.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -506,111 +610,6 @@
 <li>Agents can recommend optimal instance types for deploying models from Amazon S3, SageMaker JumpStart, or the Hugging Face Hub, providing ranked deployment options with associated performance metrics.</li>
 <li>The skill can compare the results of multiple benchmark runs, calculating percentage changes in key metrics (throughput, latency) to assess performance improvements or regressions.</li>
 <li>All actions generate executable SageMaker Python SDK v3 code, allowing for review, modification, and execution within the user’s environment.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-05</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/supercharge-regulated-workloads-with-claude-code-and-amazon-bedrock/" target="_blank" rel="noopener">Supercharge regulated workloads with Claude Code and Amazon Bedrock</a></h3>
-    
-    <div class="summary"><p>AWS now offers Anthropic’s Claude Opus 5.5, Claude Sonnet 5.5 and Claude Sonnet 5 models, including those with FedRAMP Class D and DoD IL4/IL5 authorizations, on Amazon Bedrock in AWS GovCloud (US) Regions to support regulated workloads.</p>
-<ul>
-<li>Claude Code, Anthropic’s agentic coding tool, can be used with these models on Bedrock in GovCloud, operating in terminals, IDEs (like VS Code &amp; JetBrains) and via the Agent SDK.</li>
-<li>Amazon Bedrock in GovCloud (US) offers two endpoints: <code>bedrock-runtime</code> (recommended for most apps, with Guardrails &amp; logging) and <code>bedrock-mantle</code> (native Anthropic Messages API, features like server-side tools). Both support Claude Opus 5.5, Sonnet 5.5, and Sonnet 5.</li>
-<li>Claude Code can write/fix code, answer questions about code, execute tests, manage Git, and connect to external tools (AWS CLI, Terraform, Kubernetes) via the Model Context Protocol (MCP).</li>
-<li>Configuration options for Claude Code include interactive setup, manual environment variables, and selecting either the <code>bedrock-runtime</code> or <code>bedrock-mantle</code> endpoint; organizations should consider IAM Identity Center, automated configuration, model version pinning, and cost monitoring for deployment.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-05</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/" target="_blank" rel="noopener">Introducing GLM 5.3 on Amazon Bedrock</a></h3>
-    
-    <div class="summary"><ul>
-<li>GLM 5.3, a 753B-parameter mixture-of-experts model from Z.ai, is now available on Amazon Bedrock, optimized for coding and long-horizon agentic tasks, including potential cybersecurity applications.</li>
-<li>GLM 5.3 demonstrates improved coding performance over GLM 5.2, with Z.ai reporting a 50% gain on their internal benchmark and competitive results on DeepSWE, Terminal Bench 3.0, and FrontierSWE.</li>
-<li>The model supports OpenAI-compatible Responses and Chat Completions APIs, and Amazon Bedrock’s Invoke and Converse APIs, along with cross-Region inference and prompt caching for reduced latency and cost.</li>
-<li>GLM 5.3 supports explicit prompt caching using breakpoint markers allowing for selective caching of prompt prefixes; this can improve latency and cost savings for agentic workflows.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-02</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/fine-tune-a-search-agent-with-multi-turn-rl-on-amazon-sagemaker-ai/" target="_blank" rel="noopener">Fine-tune a search agent with multi-turn RL on Amazon SageMaker AI</a></h3>
-    
-    <div class="summary"><p>AWS has introduced multi-turn reinforcement learning (MTRL) within Amazon SageMaker AI to fine-tune Large Language Models (LLMs) for search agents.</p>
-<ul>
-<li>MTRL optimizes LLMs across full conversational sequences, addressing limitations of supervised fine-tuning and single-turn RL by rewarding final outcomes.</li>
-<li>The service offers a modular agent-environment interface, serverless execution with per-token pricing, asynchronous rollout, and a native algorithm library including PPO, CISPO, and IS losses.</li>
-<li>The demonstration involved fine-tuning a Qwen3.6-27B model using datasets like FRAMES, BRIGHT, and WixQA, with a reward function based on nDCG@10 to improve search retrieval quality.</li>
-<li>Results showed improvements in nDCG@10 on benchmarks like WixQA (+18.4%) and BrowseComp-Plus (+23.7%), along with a significant reduction in agent failures, particularly on BrowseComp-Plus (failure rate reduced from 22.89% to 0.68%).</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-02</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/add-secure-web-search-to-claude-desktop-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Add secure Web Search to Claude Desktop with Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><p>Amazon Bedrock AgentCore now enables secure web search integration for Claude Desktop, overcoming knowledge cutoff limitations.</p>
-<ul>
-<li>AgentCore Gateway, a component of Amazon Bedrock AgentCore, connects Claude Desktop to a web search capability backed by an Amazon web index spanning tens of billions of documents.</li>
-<li>The integration uses JSON Web Token (JWT)-based authentication, federating AWS IAM Identity Center with Amazon Cognito to manage access without requiring external API keys or third-party identity providers.</li>
-<li>Configuration involves creating an Amazon Cognito user pool, configuring IAM Identity Center as a SAML application, registering IAM Identity Center as a SAML IdP in Cognito, and creating a Cognito app client.</li>
-<li>A Python script is provided to create the AgentCore Gateway with the Web Search tool attached, and further steps detail configuring Claude Desktop to utilize the new gateway and authentication details; currently available in us-east-1, eu-west-1, and ap-northeast-1 regions.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-02</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/sweep-thousands-of-leases-for-compliance-using-amazon-quick-and-the-adjudicated-query-pattern/" target="_blank" rel="noopener">Sweep thousands of leases for compliance using Amazon Quick and the Adjudicated Query pattern</a></h3>
-    
-    <div class="summary"><ul>
-<li>The Adjudicated Query pattern combines a natural language chat interface (Amazon Quick) with a deterministic rules engine to perform high-stakes compliance checks, such as verifying lease agreements against landlord-tenant laws.</li>
-<li>The pattern prioritizes "provable completeness" and "defensibility" by ensuring all records are assessed and providing a clear audit trail of applied rules and data.</li>
-<li>The architecture utilizes Amazon Quick, Amazon API Gateway, AWS Lambda (hosting the MCP server and rules engine), Amazon Aurora Serverless v2 (PostgreSQL with pgvector), and Amazon Bedrock (for exploratory clause search, not compliance sweeps). Specifically, it employs Amazon Titan Text Embeddings V2 and Anthropic Claude Sonnet 5.</li>
-<li>The system enforces strict design rules – rules are data, not code; natural language doesn’t reach SQL; and filtering is exact for completeness, with vectors used only for ranking – to prevent silent errors and maintain data integrity.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-01</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-uniopen-customized-amazon-nova-to-their-retail-moderation-policies-for-production-deployment/" target="_blank" rel="noopener">How uniopen customized Amazon Nova to their retail moderation policies for production deployment</a></h3>
-    
-    <div class="summary"><ul>
-<li>uniopen customized <strong>Amazon Nova 2 Lite</strong> using supervised fine-tuning with <strong>Low-Rank Adaptation (LoRA)</strong> in <strong>Amazon SageMaker AI</strong> to improve retail content moderation accuracy.</li>
-<li>Fine-tuning increased <strong>Per Behavior Macro F1</strong> from 0.5852 to 0.8364 and <strong>Subject Type Macro F1</strong> from 0.4162 to 0.8302, demonstrating substantial improvements in understanding uniopen’s specific moderation policies.</li>
-<li>Further <strong>prompt optimization</strong> – simplifying the output format – increased <strong>Per Behavior Macro F1</strong> to 0.8550 and <strong>Subject Type Macro F1</strong> to 0.8491, exceeding production targets of 0.8500 and 0.8200 respectively.</li>
-<li>The solution employs a workflow using <strong>Amazon S3</strong> for data storage, <strong>Amazon DynamoDB</strong> for model configuration tracking, <strong>Argo Workflows on Amazon EKS</strong> for orchestration, and <strong>Amazon SNS/CloudWatch</strong> for alerting, with human review remaining a critical component through the process.</li>
 </ul></div>
     
   </div>
