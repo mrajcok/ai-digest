@@ -80,13 +80,83 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-10-14 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-10-15 10:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">October 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-14</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/deploy-and-evaluate-models-with-amazon-sagemaker-jumpstart/" target="_blank" rel="noopener">Deploy and evaluate models with Amazon SageMaker JumpStart</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon SageMaker JumpStart now includes a Model Hub within the SageMaker AI console for browsing models and accessing sample notebooks.</li>
+<li>New deep link integration allows one-click deployment of models directly from Hugging Face to SageMaker AI.</li>
+<li>A Python script automates model discovery, deployment, performance testing (measuring latency, output length, and generation rate), and endpoint cleanup using the SageMaker Python SDK v3.</li>
+<li>The workflow supports many SageMaker JumpStart models, including those optimized for Neuron, but may require adjustments to payloads, instance types, and response parsing depending on the specific model (e.g., <code>huggingface-vlm-qwen3-5-27b</code> version <code>1.13.0</code>).</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-14</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-tamnoon-built-ai-powered-cloud-security-remediation-with-amazon-bedrock/" target="_blank" rel="noopener">How Tamnoon built AI-powered cloud security remediation with Amazon Bedrock</a></h3>
+    
+    <div class="summary"><p>Tamnoon built Tami, an agentic cloud remediation orchestrator, using Amazon Bedrock to autonomously address cloud security findings.</p>
+<ul>
+<li>Tami leverages four specialized agents running on AWS – investigation, safety-scoring, remediation, and code-generation – to move from finding ingestion to validated fixes.</li>
+<li>Amazon Bedrock was chosen to allow each agent to utilize the most suitable foundation model (FM) via a single API, supporting tasks ranging from deep reasoning to high-throughput validation.</li>
+<li>Tamnoon utilizes Amazon Bedrock AgentCore and Guardrails to govern agent actions and review generated code, ensuring safety and adherence to policies.</li>
+<li>The platform integrates with CNAPPs (Wiz, CrowdStrike, etc.) and cloud-native tools (AWS Security Hub, GuardDuty) through APIs, normalizing findings and assigning a Remediation Confidence Indicator (RCI).</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-14</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/generate-presentations-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Generate presentations with Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><ul>
+<li>This post details building an AI agent system with Amazon Bedrock AgentCore to automate PowerPoint presentation creation from documents, achieving generation in under 90 seconds in testing.</li>
+<li>The solution utilizes Anthropic Claude Sonnet 4.6 (via Amazon Bedrock) for content, Amazon Titan Text Embeddings v2 for vector search using Amazon OpenSearch Serverless, and Stability AI Stable Image Inpaint (via Amazon Bedrock) for image generation.</li>
+<li>A supervisor agent, orchestrated with the Strands Agents framework on AgentCore runtime, selects between document generation and summarization tools via a REST API built on .NET 8 and AWS Lambda.</li>
+<li>The system employs Retrieval Augmented Generation (RAG) with Amazon Bedrock Knowledge Bases, and incorporates Amazon Bedrock Guardrails for content safety, featuring input filtering, output monitoring, and PII handling.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-14</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-self-improving-document-processing-using-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Build self-improving document processing using Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><p>Build self-improving document processing using Amazon Bedrock AgentCore introduces an agentic IDP system for automating document processing tasks with minimal manual configuration.</p>
+<ul>
+<li>The solution utilizes Amazon Bedrock AgentCore, in conjunction with Strands Agents, Amazon Textract, Amazon S3 Vectors, and Amazon Aurora DSQL to classify, extract, validate, and learn from business documents.</li>
+<li>A multi-agent workflow consists of identification and training phases: the identification workflow matches documents to existing schemas using vector similarity; if no match is found, a training workflow generates and refines extraction instructions.</li>
+<li>The system employs a combination of agents – Analyzer, Matcher, Instructions, Extractor, Validator, Instructions Fixer, Save Instructions, and Troubleshooter – working collaboratively within graph-based workflows.</li>
+<li>Deployment is automated via AWS CDK and requires access to Amazon Bedrock, Amazon Bedrock AgentCore components (Runtime, Gateway, Identity), S3 Vectors, and Amazon Aurora DSQL; estimated costs for processing 1,000 documents/month are ~$58.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -538,78 +608,6 @@
 <li>The solution supports both built-in evaluators for general quality dimensions (helpfulness, task completion) and custom evaluators for domain-specific validation (constraint satisfaction, route feasibility, SQL correctness, explainability).</li>
 <li>A three-layer evaluation approach is demonstrated: built-in evaluators, custom evaluators for business accuracy, and explainability evaluators assessing rationale articulation and evidence citation.</li>
 <li>The reference architecture uses Strands Agents SDK, Amazon Bedrock AgentCore, and evaluates a multi-agent supply chain system for inventory optimization, utilizing both on-demand and online evaluation modes with integration into Amazon CloudWatch.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-05</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/downgrading-user-roles-in-amazon-quick/" target="_blank" rel="noopener">Downgrading user roles in Amazon Quick</a></h3>
-    
-    <div class="summary"><p>Amazon Quick offers methods for downgrading user roles to enforce least privilege and potentially reduce costs.</p>
-<ul>
-<li>Quick supports user management via Quick Identity, AWS IAM Identity Center, or Active Directory, with roles including Admin, Author, and Reader.</li>
-<li>Direct downgrades from Admin/Author to Reader are not supported in the console or via the API; a step-down sequence is required (Admin &gt; Author &gt; Restricted Reader &gt; Reader or Author Pro &gt; Author &gt; Restricted Reader &gt; Reader Pro).</li>
-<li>Downgrades can be achieved through a manual deletion-and-recreation process or via the AWS CLI using the <code>update-user</code> command with a specific role sequence.</li>
-<li>A provided script automates the CLI-based step-down process for multiple users, reading usernames and emails from a file and handling error conditions during the transition.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-05</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/agentic-retrieval-with-langchain-and-amazon-bedrock-knowledge-bases/" target="_blank" rel="noopener">Agentic retrieval with LangChain and Amazon Bedrock Knowledge Bases</a></h3>
-    
-    <div class="summary"><p>Agentic retrieval with Amazon Bedrock Managed Knowledge Bases improves RAG applications by addressing limitations of standard retrieval when handling multi-faceted questions.</p>
-<ul>
-<li>Amazon Bedrock Managed Knowledge Bases removes the need for self-managed vector stores, embeddings, and re-ranking models, handling chunking, embedding, storage, and retrieval automatically.</li>
-<li>Agentic retrieval, available through the <code>AgenticRetrieveStream</code> API, plans retrieval by breaking down complex questions into sub-queries, iteratively searching, and evaluating evidence sufficiency.</li>
-<li>The <code>langchain-aws</code> package provides access to both standard (<code>AmazonKnowledgeBasesRetriever</code>) and agentic retrieval (<code>agentic_retrieve</code>) methods for LangChain applications, requiring <code>langchain-aws&gt;=1.6.3</code> and <code>boto3&gt;=1.43.32</code>.</li>
-<li>To observe the agentic retrieval process, the <code>agentic_retrieve_stream</code> function in <code>bedrock-agent-runtime</code> can be used to stream trace events, revealing the planning steps and sub-queries generated by the model.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-05</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/making-amazon-quick-enterprise-ready-automated-auditable-cross-account-resource-promotion/" target="_blank" rel="noopener">Making Amazon Quick enterprise-ready: Automated, auditable cross-account resource promotion</a></h3>
-    
-    <div class="summary"><p>Amazon Quick now supports automated, auditable cross-account resource promotion using a Model Context Protocol (MCP) server on Amazon Bedrock AgentCore.</p>
-<ul>
-<li>Amazon Quick resources (agents, action connectors, knowledge bases, flows, and spaces) can be programmatically managed via the Amazon Quick API, enabling automated promotion between AWS accounts.</li>
-<li>The Quick Resource Migrator, an MCP server hosted on Amazon Bedrock AgentCore, automates promotion by reading resource configurations and permissions from the source account and reapplying them in the target account.</li>
-<li>The solution is resource-driven (promoting by type and ID/name/all), idempotent (safe to re-run), and includes versioned backups to S3 for safe, reversible updates.</li>
-<li>A Quick App can be automatically generated from a prompt, providing a user-friendly interface for driving the migration workflow and reviewing a full audit history.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-05</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/new-agent-skill-amazon-sagemaker-optimized-generative-ai-inference-for-your-coding-agent/" target="_blank" rel="noopener">New agent skill: Amazon SageMaker optimized generative AI inference for your coding agent</a></h3>
-    
-    <div class="summary"><p>The new <code>aws-ai-ml</code> skill for the Agent Toolkit for AWS transforms coding agents (Kiro, Claude Code, Codex, and MCP-compatible agents) into SageMaker AI inference optimization experts.</p>
-<ul>
-<li>The skill allows agents to benchmark SageMaker AI endpoints, generating performance reports including throughput, latency, and concurrency metrics using the <code>Workload.synthetic()</code> and <code>start_benchmark()</code> APIs from the SageMaker Python SDK.</li>
-<li>Agents can recommend optimal instance types for deploying models from Amazon S3, SageMaker JumpStart, or the Hugging Face Hub, providing ranked deployment options with associated performance metrics.</li>
-<li>The skill can compare the results of multiple benchmark runs, calculating percentage changes in key metrics (throughput, latency) to assess performance improvements or regressions.</li>
-<li>All actions generate executable SageMaker Python SDK v3 code, allowing for review, modification, and execution within the user’s environment.</li>
 </ul></div>
     
   </div>

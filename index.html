@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-10-14T10:17:43.750321+00:00">Generated 2026-10-14 10:17 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-10-15T10:17:09.628153+00:00">Generated 2026-10-15 10:17 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,7 +132,7 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI</h2>
+    <h2 class="overview-heading">Today in AI — Overview for 2026-10-14</h2>
     <p class="overview-meta">2026-10-14 · 2 vendor sources · vendor sources only</p>
     <div class="overview-text"><p>The most significant development today concerns efforts to combat increasingly sophisticated scams, as Google DeepMind and GovTech Singapore announced a collaboration to fine-tune the Gemma model for on-device scam detection. This locally-run system analyzes conversational patterns in real-time to warn users of potential manipulation, a critical advantage over cloud-based solutions, and addresses a significant problem, as 80% of scam losses in Singapore are attributed to social engineering. The deployment utilizes a two-stage pipeline with a lightweight classifier and the fine-tuned Gemma model, optimized for smartphone battery life, and was built using anonymized data within a secure GCP environment to protect user privacy.</p>
 <p>Further strengthening AI ties within the Asia-Pacific region, Anthropic has established a new office in Singapore, marking its fifth location in the area and accompanied by a Memorandum of Understanding with the Singapore Ministry of Digital Development and Information. This partnership will focus on collaborative research into AI safety, security, and responsible implementation across both public and private sectors. Singapore’s high per-capita usage of <em>Claude.ai</em> indicates strong existing adoption, and the MOU details data-sharing—including insights from the <em>Anthropic Economic Index</em>—and policy expertise contributions as Singapore develops its own AI regulatory frameworks.</p>
@@ -144,6 +144,20 @@
 
   
   <h2 class="section">Vendors</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>news</span>
+      <span> · 2026-10-14</span>
+    </div>
+    <h2><a href="https://www.anthropic.com/news/2026-us-midterms" target="_blank" rel="noopener">Preparing for the 2026 US midterms</a></h2>
+    
+    <div class="summary"><p>Anthropic has detailed its preparations for the 2026 US midterm elections, focusing on maintaining Claude's utility while preventing misuse. Analysis of 250,000 conversations from September 21-27, 2026, indicated that 5.75% touch on politics, with 0.51% specifically about elections—requests for voting recommendations are rare, at 0.01% of conversations. </p>
+<p>To counter misinformation, Anthropic is integrating official voting information from Democracy Works directly into Claude responses for US users, alongside existing links to TurboVote.  The latest models, Claude Opus 5.5, Sonnet 5.5, and Haiku 5.5, achieved a 99% score on political evenhandedness evaluations and improvements were made to reduce unsolicited caveats. Independent evaluations by organizations like The Future of Free Speech and the Collective Intelligence Project identified areas for improvement, specifically regarding the addition of opposing viewpoints.  </p>
+<p>Anthropic has updated its Usage Policy and enhanced automated classifiers to detect deceptive campaigns and misuse, with a focus on identifying multi-step abuse and election-related activity by foreign actors. They report observing and blocking attempts to leverage Claude for generating election-related misinformation aligned with foreign narratives and for financially motivated schemes.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -169,19 +183,6 @@
     <div class="summary"><p>Anthropic redesigned its source control system to address performance bottlenecks caused by a tenfold increase in code merges per day, driven by extensive use of Claude for software development. They built Scion, an in-house version control system, migrating from Git in five months, alongside a code review surface called Antique, code search, and IAM systems.</p>
 <p>Scion operates on the principle that clients are always online, differing from Git’s design for offline use. It's a client-server system where the server handles commits, merges, and history, while clients maintain a minimal local cache.  Scion uses "changesets" – entries in a write-ahead log containing modified files and content-addressed pointers to blob storage – eschewing Git’s packfiles for faster processing.  The system utilizes derived data structures for features like blame and history, computed recursively and optimized dynamically.  The infrastructure now requires 200x less CPU/memory than their previous Git mirroring setup and accelerates checkouts by two orders of magnitude.</p>
 <p>The project highlights the power of AI-assisted development; Claude significantly accelerated development and optimization, even automating substantial portions of the codebase. Anthropic plans to share learnings to benefit the wider developer community, recognizing that similar scaling challenges will become more common as AI coding tools proliferate.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>research</span>
-      <span> · 2026-10-12</span>
-    </div>
-    <h2><a href="https://www.anthropic.com/research/self-replicating-ai" target="_blank" rel="noopener">AI models may be capable of self-replicating without access to a datacenter</a></h2>
-    
-    <div class="summary"><p>Anthropic’s Frontier Red Team finds that AI models are approaching the capability to autonomously replicate themselves on common IoT devices. Their experiments show that a 9B parameter model can run inference on 8 out of 9 hardware types tested, and models of 30B parameters or fewer can perform the individual steps for replication, though composing those steps end-to-end remains challenging. Specifically, GLM-5.2 and stronger models demonstrate end-to-end replication ability.  If current improvement rates continue, models at this capability level are projected by the end of 2026.</p>
-<p>The research decomposes replication into finding targets, gaining execution, establishing inference, and propagating—focusing on the relatively unstudied inference setup stage. They demonstrated a 26B Gemma model running across 15 smart TVs (~$55 each), achieving 0.39 tokens per second.  While replication is slow (days for a doubling time), the distributed nature and potential for adaptation—with models learning from previous attempts—present new cybersecurity challenges distinct from traditional malware. Their tests with Qwen3.5-9B show a 61-84% success rate in subsequent generations through inherited notes.</p></div>
     
   </div>
   
@@ -243,6 +244,23 @@
   <div class="card">
     <div class="meta">
       <a href="microsoft/" class="badge badge-microsoft">Microsoft</a>
+      <span>blog</span>
+      <span> · 2026-10-13</span>
+    </div>
+    <h2><a href="https://azure.microsoft.com/en-us/blog/infrastructure-for-the-frontier-era-scaling-intelligence-through-open-industry-collaboration/" target="_blank" rel="noopener">Infrastructure for the frontier era: Scaling intelligence through open industry collaboration</a></h2>
+    
+    <div class="summary"><ul>
+<li>Microsoft is advancing its infrastructure to support "frontier-era" AI, focusing on scaling intelligence through open industry collaboration via initiatives like the Open Compute Project Foundation.</li>
+<li>Azure Maia 300, the next generation AI accelerator, is designed to improve inference efficiency, delivering 40% more tokens per watt compared to leading GPU systems and up to seven times the rack-scale throughput of Maia 200.</li>
+<li>Cobalt 200, a new agent-native CPU, offers over 50% performance improvement over Cobalt 100 and reduces agent call latency by 33%, with a 23% increase in throughput for agentic workloads.</li>
+<li>Innovations include the Azure Boost Data Processing Unit for offloading tasks from the CPU, Azure Integrated HSM for hardware-based security, Multipath Reliable Connection (MRC) for AI networking, and advancements in power delivery with 800VDC infrastructure and cooling technologies like Mt. Atlas.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="microsoft/" class="badge badge-microsoft">Microsoft</a>
       <span>news</span>
       <span> · 2026-10-12</span>
     </div>
@@ -272,35 +290,17 @@
   
   <div class="card">
     <div class="meta">
-      <a href="microsoft/" class="badge badge-microsoft">Microsoft</a>
-      <span>blog</span>
-      <span> · 2026-10-06</span>
-    </div>
-    <h2><a href="https://azure.microsoft.com/en-us/blog/microsoft-named-a-leader-in-the-2026-gartner-magic-quadrant-for-global-industrial-aiot-platforms/" target="_blank" rel="noopener">Microsoft named a Leader in the 2026 Gartner® Magic Quadrant™ for Global Industrial AIoT Platforms</a></h2>
-    
-    <div class="summary"><p>Microsoft has been recognized as a Leader in the 2026 Gartner® Magic Quadrant™ for Global Industrial AIoT Platforms, driven by its vision for intelligent, learning industrial systems.</p>
-<ul>
-<li>The platform leverages Azure IoT, Azure Arc, Azure Local, Microsoft Fabric, and Microsoft Foundry to connect operational assets and apply AI-powered reasoning.</li>
-<li>Microsoft is focusing on transitioning from connected operations to “learning operations” through Industrial AI and Physical AI, creating a loop of understanding, reasoning, action, and measurement.</li>
-<li>The platform provides a unified management and security plane built on Azure Resource Manager for industrial devices and assets, with a Zero Trust security roadmap.</li>
-<li>Capabilities include agentic AI operating in both cloud and edge environments, using ontologies and semantic models for real-time reasoning and decision support in industrial settings.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-10-13</span>
+      <span> · 2026-10-14</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/mixture-of-experts-kernel-engineering-on-amazon-sagemaker-ai/" target="_blank" rel="noopener">Mixture-of-Experts kernel engineering on Amazon SageMaker AI</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/deploy-and-evaluate-models-with-amazon-sagemaker-jumpstart/" target="_blank" rel="noopener">Deploy and evaluate models with Amazon SageMaker JumpStart</a></h2>
     
     <div class="summary"><ul>
-<li>The blog details kernel optimizations for Mixture-of-Experts (MoE) models on NVIDIA Hopper architecture, specifically focusing on improving performance and reducing latency.</li>
-<li>A “Swap-AB” technique was implemented to address WGMMA instruction limitations by transposing matrices to better utilize Tensor Cores, resulting in a 2-4% throughput improvement and is available in vLLM v0.24.0+.</li>
-<li>Routing FP8 tensor-quantized models to the Triton backend instead of FLASHINFER_CUTLASS yielded a 10% throughput improvement on H200 GPUs, delivered in AWS Large Model Inference (LMI) v28.</li>
-<li>Eliminating unnecessary JIT recompilation in the Triton compiler—specifically for the <code>fused_inv_rope_fp8_quant_per_head</code> kernel—improved Time to First Token (TTFT) by 9% and is available in vLLM v0.22.0+.</li>
+<li>Amazon SageMaker JumpStart now includes a Model Hub within the SageMaker AI console for browsing models and accessing sample notebooks.</li>
+<li>New deep link integration allows one-click deployment of models directly from Hugging Face to SageMaker AI.</li>
+<li>A Python script automates model discovery, deployment, performance testing (measuring latency, output length, and generation rate), and endpoint cleanup using the SageMaker Python SDK v3.</li>
+<li>The workflow supports many SageMaker JumpStart models, including those optimized for Neuron, but may require adjustments to payloads, instance types, and response parsing depending on the specific model (e.g., <code>huggingface-vlm-qwen3-5-27b</code> version <code>1.13.0</code>).</li>
 </ul></div>
     
   </div>
@@ -309,33 +309,33 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-10-13</span>
+      <span> · 2026-10-14</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/build-long-horizon-agents-with-grok-4-7-on-amazon-bedrock/" target="_blank" rel="noopener">Build long-horizon agents with Grok 4.7 on Amazon Bedrock</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-tamnoon-built-ai-powered-cloud-security-remediation-with-amazon-bedrock/" target="_blank" rel="noopener">How Tamnoon built AI-powered cloud security remediation with Amazon Bedrock</a></h2>
+    
+    <div class="summary"><p>Tamnoon built Tami, an agentic cloud remediation orchestrator, using Amazon Bedrock to autonomously address cloud security findings.</p>
+<ul>
+<li>Tami leverages four specialized agents running on AWS – investigation, safety-scoring, remediation, and code-generation – to move from finding ingestion to validated fixes.</li>
+<li>Amazon Bedrock was chosen to allow each agent to utilize the most suitable foundation model (FM) via a single API, supporting tasks ranging from deep reasoning to high-throughput validation.</li>
+<li>Tamnoon utilizes Amazon Bedrock AgentCore and Guardrails to govern agent actions and review generated code, ensuring safety and adherence to policies.</li>
+<li>The platform integrates with CNAPPs (Wiz, CrowdStrike, etc.) and cloud-native tools (AWS Security Hub, GuardDuty) through APIs, normalizing findings and assigning a Remediation Confidence Indicator (RCI).</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
+      <span> · 2026-10-14</span>
+    </div>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/generate-presentations-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Generate presentations with Amazon Bedrock AgentCore</a></h2>
     
     <div class="summary"><ul>
-<li>SpaceXAI’s Grok 4.7 is now available on Amazon Bedrock, offering improved performance in sustained reasoning and self-verification compared to Grok 4.6.</li>
-<li>Grok 4.7 introduces a <code>reasoning effort</code> setting that controls the deliberation level before each response, allowing for a tunable trade-off between accuracy and cost (token usage).  Testing showed all 18 tasks completed correctly at “xhigh” effort, and 15 of 18 at “low” effort, using approximately 1/8th the tokens.</li>
-<li>The model supports a 500K token context window with text and image input and text output, and integrates with the OpenAI-compatible Chat Completions and Responses APIs, and the Amazon Bedrock Converse API.</li>
-<li>Access to Grok 4.7 on Bedrock is managed via cross-Region inference profiles (<code>us.xai.grok-4.7</code> or <code>global.xai.grok-4.7</code>) and requires specific IAM permissions for both the inference profile and the default project.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-10-13</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-shipstation-global-built-an-ai-it-help-desk-on-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How ShipStation Global built an AI IT help desk on Amazon Bedrock AgentCore</a></h2>
-    
-    <div class="summary"><p>ShipStation Global built Deckhand, an AI-powered IT help desk agent for Slack, using Amazon Bedrock AgentCore to automate responses to frequently asked questions and streamline Jira ticket creation.</p>
-<ul>
-<li>Deckhand is built on Amazon Bedrock AgentCore runtime, hosting a Strands agent powered by Anthropic’s Claude via Amazon Bedrock.</li>
-<li>The system uses a combination of an Amazon Bedrock knowledge base (indexing Confluence, intranet pages, Slack, and marketing content stored in Amazon S3) and custom tools exposed via AgentCore Gateway, implemented as AWS Lambda functions, for tasks like ticket creation and image analysis.</li>
-<li>A three-stage pipeline utilizing DSPy’s Recursive Language Models (RLMs) and Claude on Amazon Bedrock is used to extract structured data from historical Slack conversations to populate the knowledge base.</li>
-<li>Deckhand achieved 97.5% message resolution and a 96% positive feedback rating, while deflecting approximately 67% of potential Jira tickets (812 conversations resolved vs. 409 tickets created) over three months.</li>
+<li>This post details building an AI agent system with Amazon Bedrock AgentCore to automate PowerPoint presentation creation from documents, achieving generation in under 90 seconds in testing.</li>
+<li>The solution utilizes Anthropic Claude Sonnet 4.6 (via Amazon Bedrock) for content, Amazon Titan Text Embeddings v2 for vector search using Amazon OpenSearch Serverless, and Stability AI Stable Image Inpaint (via Amazon Bedrock) for image generation.</li>
+<li>A supervisor agent, orchestrated with the Strands Agents framework on AgentCore runtime, selects between document generation and summarization tools via a REST API built on .NET 8 and AWS Lambda.</li>
+<li>The system employs Retrieval Augmented Generation (RAG) with Amazon Bedrock Knowledge Bases, and incorporates Amazon Bedrock Guardrails for content safety, featuring input filtering, output monitoring, and PII handling.</li>
 </ul></div>
     
   </div>
@@ -391,16 +391,16 @@
     <div class="meta">
       <a href="techcrunch/" class="badge badge-techcrunch">TechCrunch</a>
       <span>news</span>
-      <span> · 2026-10-13</span>
+      <span> · 2026-10-15</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/10/13/laplace-intelligence-red-teams-robots-and-self-driving-cars-before-they-hit-the-real-world/" target="_blank" rel="noopener">Laplace Intelligence red-teams robots and self-driving cars before they hit the real world</a></h2>
+    <h2><a href="https://techcrunch.com/2026/10/14/gudea-leverages-ai-to-help-organizations-prevent-social-media-crises-before-they-erupt/" target="_blank" rel="noopener">Gudea leverages AI to help organizations prevent social media crises before they erupt</a></h2>
     
-    <div class="summary"><p>Laplace Intelligence is developing automated red-teaming for robotics and self-driving cars using AI-driven simulation.</p>
+    <div class="summary"><p>Gudea uses AI to proactively identify and track potentially damaging narratives online before they escalate into full-blown crises.</p>
 <ul>
-<li>The company’s core product utilizes a high-fidelity simulation environment reconstructed from real-world data, built on a post-trained version of Nvidia's Cosmos platform.</li>
-<li>Laplace’s system employs AI agents to automatically generate challenging “corner case” scenarios for testing, aiming to reduce reliance on human-designed tests.</li>
-<li>Current customers include Isuzu, Bot Auto, and Nvidia, with applications in autonomous driving and early work in humanoid robotics for warehouses.</li>
-<li>Founded in 2025 by researchers from the University of Michigan, Laplace Intelligence is actively seeking funding to scale and compete with companies like Applied Intuition.</li>
+<li>Gudea’s AI analyzes behavior, relationships, and information pathways across over 500 websites and platforms (including X, Reddit, and TikTok) to understand <em>how</em> information is spreading, not just <em>that</em> it is.</li>
+<li>The company is developing geolocation technology, slated for release next year, to pinpoint narratives down to the city-block level.</li>
+<li>Gudea plans to allow users to test advertising campaigns through their AI model to predict potential negative outcomes before launch.</li>
+<li>The company recently raised $7 million in seed funding, bringing its total funding to approximately $15 million, and currently serves nearly 40 clients including Fortune 50 companies and a major AI lab.</li>
 </ul></div>
     
   </div>
@@ -409,15 +409,16 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-10-13</span>
+      <span> · 2026-10-14</span>
     </div>
-    <h2><a href="https://arstechnica.com/science/2026/10/they-war-gamed-dimming-the-sun-it-went-even-worse-than-you-think/" target="_blank" rel="noopener">They war-gamed dimming the Sun. It went even worse than you think.</a></h2>
+    <h2><a href="https://arstechnica.com/tech-policy/2026/10/openai-google-pushing-new-ai-models-easily-tricked-into-making-nudes-researchers-say/" target="_blank" rel="noopener">OpenAI, Google pushing new AI models easily tricked into making nudes, researchers say</a></h2>
     
-    <div class="summary"><ul>
-<li>A war game simulation, “Exploring Geopolitical Tipping Points and Climate Cooling Strategies,” explored international responses to solar radiation modification (SRM) technologies designed to reflect sunlight and cool the planet.</li>
-<li>The simulation, run by Leeds University’s Danielle Young, involved experts playing roles representing nations, NGOs, and companies, and highlighted pervasive distrust and a likely “geoengineering arms race” driven by national interests.</li>
-<li>Stardust Solutions, a US-Israeli startup, is developing SRM technologies and raised $60 million in funding last year, while Elon Musk has publicly supported the idea of using satellites for temperature control.</li>
-<li>Participants in the simulation consistently prioritized national interests over collaborative climate solutions, with a final report concluding that “strategic competition and state sovereignty” were the primary drivers, not climate concerns.</li>
+    <div class="summary"><p>OpenAI and Google’s new AI image models (DALL·E 3, Nano Banana 2/2.1, and GPT-Image-2) are reportedly becoming easier to manipulate into generating explicit content, according to research from White Circle.</p>
+<ul>
+<li>White Circle researchers developed a new attack method called “Red-teaming via Iterative Strategy Evolution” (RISE) utilizing publicly available models (Qwen3-32B and Gemini 2.5 Flash) to identify reusable jailbreaks.</li>
+<li>Testing with RISE showed that approximately 13% of prompts targeting DALL·E 3 produced explicit images, with Nano Banana 2 at under 10% and GPT-Image-2 at about 3%.</li>
+<li>The researchers found that ChatGPT Images 2.5 and Nano Banana 2.1 are “significantly more breakable” than previous versions.</li>
+<li>White Circle plans to open-source the RISE attack pipeline at NeurIPS 2026 to aid in third-party evaluation and advocate for mandatory independent safety audits of AI models.</li>
 </ul></div>
     
   </div>
