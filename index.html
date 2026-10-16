@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-10-15T10:17:09.628153+00:00">Generated 2026-10-15 10:17 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-10-16T10:18:02.983907+00:00">Generated 2026-10-16 10:18 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,11 +132,12 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — Overview for 2026-10-14</h2>
-    <p class="overview-meta">2026-10-14 · 2 vendor sources · vendor sources only</p>
-    <div class="overview-text"><p>The most significant development today concerns efforts to combat increasingly sophisticated scams, as Google DeepMind and GovTech Singapore announced a collaboration to fine-tune the Gemma model for on-device scam detection. This locally-run system analyzes conversational patterns in real-time to warn users of potential manipulation, a critical advantage over cloud-based solutions, and addresses a significant problem, as 80% of scam losses in Singapore are attributed to social engineering. The deployment utilizes a two-stage pipeline with a lightweight classifier and the fine-tuned Gemma model, optimized for smartphone battery life, and was built using anonymized data within a secure GCP environment to protect user privacy.</p>
-<p>Further strengthening AI ties within the Asia-Pacific region, Anthropic has established a new office in Singapore, marking its fifth location in the area and accompanied by a Memorandum of Understanding with the Singapore Ministry of Digital Development and Information. This partnership will focus on collaborative research into AI safety, security, and responsible implementation across both public and private sectors. Singapore’s high per-capita usage of <em>Claude.ai</em> indicates strong existing adoption, and the MOU details data-sharing—including insights from the <em>Anthropic Economic Index</em>—and policy expertise contributions as Singapore develops its own AI regulatory frameworks.</p>
-<p>The practical applications of Anthropic’s models are already substantial within Singapore. Over 1,500 GovTech Singapore engineers are leveraging <em>Claude Code</em> for system modernization, while prominent organizations such as DBS bank, GIC, Grab (who report 40,000 sales hours saved per quarter using <em>BriX</em>), Sea (Shopee’s parent company) and Supabase are employing <em>Claude</em> for a range of tasks including software development, customer service and code assistance. Crucially, the partnership also facilitates in-region inference on Amazon Bedrock, addressing data residency concerns for organizations operating within strict compliance requirements.</p></div>
+    <h2 class="overview-heading">Today in AI — since 2026-10-15</h2>
+    <p class="overview-meta">2026-10-16 · 7 vendor sources · vendor sources only</p>
+    <div class="overview-text"><p>The most significant development today concerns the availability of Meta’s Muse Spark Open model within Amazon SageMaker JumpStart. This 816 billion parameter mixture-of-experts model, with a 1 million token context window, is specifically designed for agentic coding tasks—including generation, debugging, and refactoring—and offers accompanying reasoning for transparency. AWS provides both a standard BF16 version and a more efficient NVFP4 quantized option, signaling a push to make powerful models more widely accessible despite their computational demands.</p>
+<p>Alongside model releases, a clear trend toward increasing agent autonomy, coupled with robust safety mechanisms, took shape today. AWS unveiled “Trust in Depth,” a framework focusing on scoping agent actions, verifying identity, bounding behavior, and observing performance. Microsoft echoed this theme, detailing cloud infrastructure updates designed to handle the dynamic demands of AI agents and using AI itself to proactively optimize cloud operations. These efforts reflect an industry-wide acknowledgment that operationalizing agents requires more than simply increasing model capabilities—it demands careful control and observability.</p>
+<p>Beyond agents, progress continued in specialized AI applications. Google’s release of Antigravity, an agentic science workbench coupled with the ProtNLM protein language model, demonstrated the potential for AI to accelerate scientific discovery, in this case the identification of novel antimicrobial peptides. Mistral AI contributed Timestral, a new family of time-series forecasting models, focusing on probabilistic, multivariate predictions and designed for efficiency even on CPU-based systems. Finally, Bar-Ilan University piloted an AI-powered student assistant built using Microsoft’s Copilot Studio and Azure AI services, highlighting the practical application of AI in education. </p>
+<p>Anthropic announced a major step towards increasing the transparency and accountability of its AI models by collaborating with independent evaluators, including granting substantial access to a team from the nonprofit METR. This represents a significant departure towards open assessment of AI risk, with METR having the power to publish analyses independently.</p></div>
   </section>
   
 
@@ -144,6 +145,19 @@
 
   
   <h2 class="section">Vendors</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>news</span>
+      <span> · 2026-10-15</span>
+    </div>
+    <h2><a href="https://www.anthropic.com/news/an-update-on-independent-evaluators" target="_blank" rel="noopener">Anthropic update on independent evaluators</a></h2>
+    
+    <div class="summary"><p>Anthropic announced increased collaboration with independent evaluators to enhance the safety and accountability of its AI models. They’ve granted “employee-like access” – including hardware, office space, and internal tools – to a team of six employees from METR, a nonprofit AI evaluator. METR will publish risk assessments without Anthropic’s veto power, though redactions are permitted for narrowly defined categories like customer data or legal privilege.</p>
+<p>Alongside METR, Anthropic is also working with SecureBio and Accenture, and is in discussions with Hugging Face. SecureBio is currently reviewing Anthropic’s August Risk Report regarding chemical and biological weapons. Anthropic is implementing a tiered access system for evaluators, ranging from narrowly scoped reviews with approval required for publication, to the fully embedded METR model with broad access and independent publication rights. The company frames this approach as analogous to bank supervision, aiming for transparency while protecting sensitive information.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -174,15 +188,19 @@
   
   <div class="card">
     <div class="meta">
-      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>engineering</span>
-      <span> · 2026-10-13</span>
+      <a href="google/" class="badge badge-google">Google</a>
+      <span>research</span>
+      <span> · 2026-10-15</span>
     </div>
-    <h2><a href="https://www.anthropic.com/engineering/redesigning-source-control" target="_blank" rel="noopener">Redesigning source control at Anthropic</a></h2>
+    <h2><a href="https://deepmind.google/blog/accelerating-antimicrobial-discovery/" target="_blank" rel="noopener">Accelerating the search for antimicrobial peptides with Google Antigravity</a></h2>
     
-    <div class="summary"><p>Anthropic redesigned its source control system to address performance bottlenecks caused by a tenfold increase in code merges per day, driven by extensive use of Claude for software development. They built Scion, an in-house version control system, migrating from Git in five months, alongside a code review surface called Antique, code search, and IAM systems.</p>
-<p>Scion operates on the principle that clients are always online, differing from Git’s design for offline use. It's a client-server system where the server handles commits, merges, and history, while clients maintain a minimal local cache.  Scion uses "changesets" – entries in a write-ahead log containing modified files and content-addressed pointers to blob storage – eschewing Git’s packfiles for faster processing.  The system utilizes derived data structures for features like blame and history, computed recursively and optimized dynamically.  The infrastructure now requires 200x less CPU/memory than their previous Git mirroring setup and accelerates checkouts by two orders of magnitude.</p>
-<p>The project highlights the power of AI-assisted development; Claude significantly accelerated development and optimization, even automating substantial portions of the codebase. Anthropic plans to share learnings to benefit the wider developer community, recognizing that similar scaling challenges will become more common as AI coding tools proliferate.</p></div>
+    <div class="summary"><p>Google has released <strong>Google Antigravity</strong>, an agentic science workbench, and <strong>ProtNLM</strong> (Protein Natural Language Model) to accelerate the discovery of antimicrobial peptides (AMPs).</p>
+<ul>
+<li>Antigravity integrates cross-database searches, structural analysis (using the <strong>AlphaFold Protein Structure Database</strong>), and literature review into a single workflow, guided by researcher input and powered by an AI agent.</li>
+<li>ProtNLM, a deep learning model, predicts biological function directly from amino acid sequences, annotating millions of uncharacterized proteins in the <strong>UniProt</strong> database with functional labels.</li>
+<li>The system identified a novel AMP candidate (UniProt ID: A0A0U0D591, 97 amino acids, Lactococcin 972 family) with predicted activity against pathogens involved in respiratory tract infections, which is currently undergoing wet-lab validation.</li>
+<li>Antigravity includes a <strong>Biomolecular Structure Viewer</strong> for interactive 3D protein analysis, allowing synchronous collaboration between researchers and the AI agent and annotation of key regions.</li>
+</ul></div>
     
   </div>
   
@@ -224,19 +242,35 @@
   
   <div class="card">
     <div class="meta">
-      <a href="google/" class="badge badge-google">Google</a>
-      <span>research</span>
-      <span> · 2026-10-13</span>
+      <a href="microsoft/" class="badge badge-microsoft">Microsoft</a>
+      <span>blog</span>
+      <span> · 2026-10-15</span>
     </div>
-    <h2><a href="https://deepmind.google/blog/gemini-4-argon-for-robotics/" target="_blank" rel="noopener">Gemini 4 Argon for Robotics</a></h2>
+    <h2><a href="https://azure.microsoft.com/en-us/blog/evolving-the-cloud-native-foundation-for-the-next-generation-of-ai/" target="_blank" rel="noopener">Evolving the cloud-native foundation for the next generation of AI</a></h2>
     
-    <div class="summary"><h2>Gemini 4 Argon for Robotics</h2>
-<p>Gemini 4 Argon achieves state-of-the-art performance in physical reasoning and unlocks new capabilities across the robotics lifecycle.</p>
+    <div class="summary"><ul>
+<li>Microsoft is evolving its Azure cloud platform to better support the demands of AI workloads, particularly those driven by “agents” which exhibit more dynamic and unpredictable behavior than traditional applications.</li>
+<li>Key technical areas of focus include coordinated compute, storage, and networking to match resources to workload needs, leveraging open-source technologies like Kubernetes (with Azure Kubernetes Service), and optimizing infrastructure costs against business value using FinOps practices.</li>
+<li>Azure SRE Agent and features like AKS Flex Nodes, Azure Container Apps Sandboxes, and Azure Container Apps Express are being introduced to automate operations and improve resilience.</li>
+<li>The company emphasizes a holistic approach, aligning AI infrastructure costs with business outcomes and improving cloud operations through "agentic AI" – using AI to proactively manage and optimize the cloud environment itself.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="microsoft/" class="badge badge-microsoft">Microsoft</a>
+      <span>news</span>
+      <span> · 2026-10-15</span>
+    </div>
+    <h2><a href="https://news.microsoft.com/source/emea/features/missed-a-lecture-this-ai-agent-at-bar-ilan-university-helps-students-catch-up/" target="_blank" rel="noopener">Missed a lecture? This AI agent at Bar-Ilan University helps students catch up</a></h2>
+    
+    <div class="summary"><p>Bar-Ilan University piloted an AI agent to assist students with course materials.</p>
 <ul>
-<li>Argon scores 87% on the Embodied Reasoning (ERQA) benchmark, outperforming other frontier models in understanding and solving physical, spatial problems in 3D environments.</li>
-<li>The model demonstrates capabilities in robot control, including mobile manipulation with a Boston Dynamics Spot® quadruped (12-DoF legs + 6-DoF arm) using MuJoCo practice and zero-shot control of a robotic arm to reorient and place objects.</li>
-<li>Argon enables Real2Sim transfer by reconstructing physically calibrated simulation twins from real robot camera feeds, human videos, or sketches, leveraging MuJoCo for physics simulation.</li>
-<li>The model provides detailed multimodal hindsight labeling, including understanding dexterity and progress estimation, enabling automated quality control and reweighting of data from videos like an ALOHA 2 robot folding origami.</li>
+<li>The agent, developed by KPMG and OpenApp using Microsoft Copilot Studio and powered by Azure AI Services, allows students to search and summarize course content via natural language queries.</li>
+<li>The initial pilot in February 2026 covered 71 courses and approximately 2,400 students, offering support in Hebrew, Arabic, and English.</li>
+<li>The agent is grounded in course materials uploaded by BIU’s teaching staff, including lectures, transcripts, presentations and articles; it also features a quiz function for self-testing.</li>
+<li>The university plans to expand the AI agent to an additional 100 courses starting in the 2026/27 academic year and operates within a secure Microsoft Azure environment.</li>
 </ul></div>
     
   </div>
@@ -260,30 +294,36 @@
   
   <div class="card">
     <div class="meta">
-      <a href="microsoft/" class="badge badge-microsoft">Microsoft</a>
-      <span>news</span>
-      <span> · 2026-10-12</span>
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
+      <span> · 2026-10-15</span>
     </div>
-    <h2><a href="https://news.microsoft.com/maia-2026/" target="_blank" rel="noopener">Introducing Microsoft’s latest custom chip: Maia 300</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/trust-in-depth-giving-agents-more-autonomy-without-losing-control/" target="_blank" rel="noopener">Trust in Depth: Giving agents more autonomy without losing control</a></h2>
     
-    <div class="summary"><p>Microsoft announced the <strong>Maia 300</strong>, a custom chip designed for AI inference, with Scott Guthrie, EVP of Cloud + AI Group, highlighting its role in Microsoft’s AI advantage.  According to Rani Borkar, President of Azure Hardware Systems and Infrastructure, the company plans to expand the <strong>Azure Maia</strong> system to multi-gigawatt deployments. The chip is reportedly optimized for performance and efficiency, and will power AI experiences within Microsoft 365, as stated by Jim Kleewein, Technical Fellow.  Mustafa Suleyman, CEO of Microsoft AI, noted the chip was designed alongside models to achieve “frontier superintelligence.”</p></div>
+    <div class="summary"><p>AWS introduces “Trust in Depth,” a framework for increasing agent autonomy while maintaining control, focusing on four key areas: Scope, Know, Bound, and Observe.</p>
+<ul>
+<li><strong>Scope</strong> defines an agent’s permitted actions and data access through policies, utilizing tools like Kiro for rigorous build practices and Amazon Bedrock AgentCore for governance controls and automated reasoning to identify policy gaps or contradictions.</li>
+<li><strong>Know</strong> ensures every agent has a verifiable identity tracked through the AWS Agent Registry and enforced by AgentCore, linking every action to a specific authorized agent.</li>
+<li><strong>Bound</strong> enforces policy limits on agent behavior using AgentCore Gateway and Amazon Bedrock Guardrails, preventing unintended outcomes even with potential agent manipulation, and supports temporal policies that adjust access based on task progress.</li>
+<li><strong>Observe</strong> uses Amazon CloudWatch Omni to capture detailed execution traces, evaluate agent performance, and facilitate continuous improvement based on real-world behavior, enabling investigation and refinement of agent actions.</li>
+</ul></div>
     
   </div>
   
   <div class="card">
     <div class="meta">
-      <a href="microsoft/" class="badge badge-microsoft">Microsoft</a>
+      <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-10-07</span>
+      <span> · 2026-10-15</span>
     </div>
-    <h2><a href="https://azure.microsoft.com/en-us/blog/ai-transformation-across-the-infrastructure-lifecycle-from-supply-chain-to-fleet-operations/" target="_blank" rel="noopener">AI transformation across the infrastructure lifecycle: From supply chain to fleet operations</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/metas-muse-spark-open-now-available-in-amazon-sagemaker-jumpstart/" target="_blank" rel="noopener">Meta’s Muse Spark Open now available in Amazon SageMaker JumpStart</a></h2>
     
-    <div class="summary"><p>AI is being integrated across Microsoft’s infrastructure lifecycle, from supply chain to fleet operations, to accelerate learning and improve decision-making.</p>
+    <div class="summary"><p>Meta’s Muse Spark Open, a coding-optimized model utilizing a mixture-of-experts (MoE) architecture, is now available in Amazon SageMaker JumpStart.</p>
 <ul>
-<li>Demand planning utilizes a multi-agent workflow analyzing signals like installed-base shifts and regional demand, reducing investigation time from days to minutes and improving team efficiency by up to 75% in selected workflows.</li>
-<li>Intelligent assistants in fulfillment automate information gathering, reducing investigation time by up to 55% for rack delivery blockers.</li>
-<li>AI-powered logistics agents evaluate speed, cost, and carbon tradeoffs in shipping, forecasting emissions across air, land, and sea options.</li>
-<li>Fleet management uses AI to analyze telemetry, predicting hardware failures with 92% reduction in disk-related VM interruptions and cutting repair time on out-of-service nodes by 53%, while also proactively identifying hardware vulnerable to silent data corruption.</li>
+<li>The model, with 816 billion total parameters (42B active), supports a 1 million token context window and accepts text, image, document, audio, and video input to generate text output.</li>
+<li>SageMaker JumpStart provides two variants: BF16 (Muse-Spark-Open-816B-A42B) running on ml.p6-b300.48xlarge instances, and an NVFP4 quantized version (Muse-Spark-Open-816B-A42B-NVFP4) running on ml.p5e.48xlarge instances.</li>
+<li>Muse Spark Open is designed for agentic coding workflows—code generation, debugging, and multi-file refactors—and provides reasoning alongside answers for transparency.</li>
+<li>Deployment is available through SageMaker Studio or the SageMaker Python SDK (v3 or later), requiring acceptance of the Muse Model License and a suitable execution role/service quotas.</li>
 </ul></div>
     
   </div>
@@ -307,36 +347,15 @@
   
   <div class="card">
     <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
+      <a href="mistral/" class="badge badge-mistral">Mistral AI</a>
       <span>blog</span>
-      <span> · 2026-10-14</span>
+      <span> · 2026-10-15</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-tamnoon-built-ai-powered-cloud-security-remediation-with-amazon-bedrock/" target="_blank" rel="noopener">How Tamnoon built AI-powered cloud security remediation with Amazon Bedrock</a></h2>
+    <h2><a href="https://mistral.ai/news/timestral/" target="_blank" rel="noopener">Introducing Timestral</a></h2>
     
-    <div class="summary"><p>Tamnoon built Tami, an agentic cloud remediation orchestrator, using Amazon Bedrock to autonomously address cloud security findings.</p>
-<ul>
-<li>Tami leverages four specialized agents running on AWS – investigation, safety-scoring, remediation, and code-generation – to move from finding ingestion to validated fixes.</li>
-<li>Amazon Bedrock was chosen to allow each agent to utilize the most suitable foundation model (FM) via a single API, supporting tasks ranging from deep reasoning to high-throughput validation.</li>
-<li>Tamnoon utilizes Amazon Bedrock AgentCore and Guardrails to govern agent actions and review generated code, ensuring safety and adherence to policies.</li>
-<li>The platform integrates with CNAPPs (Wiz, CrowdStrike, etc.) and cloud-native tools (AWS Security Hub, GuardDuty) through APIs, normalizing findings and assigning a Remediation Confidence Indicator (RCI).</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-10-14</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/generate-presentations-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Generate presentations with Amazon Bedrock AgentCore</a></h2>
-    
-    <div class="summary"><ul>
-<li>This post details building an AI agent system with Amazon Bedrock AgentCore to automate PowerPoint presentation creation from documents, achieving generation in under 90 seconds in testing.</li>
-<li>The solution utilizes Anthropic Claude Sonnet 4.6 (via Amazon Bedrock) for content, Amazon Titan Text Embeddings v2 for vector search using Amazon OpenSearch Serverless, and Stability AI Stable Image Inpaint (via Amazon Bedrock) for image generation.</li>
-<li>A supervisor agent, orchestrated with the Strands Agents framework on AgentCore runtime, selects between document generation and summarization tools via a REST API built on .NET 8 and AWS Lambda.</li>
-<li>The system employs Retrieval Augmented Generation (RAG) with Amazon Bedrock Knowledge Bases, and incorporates Amazon Bedrock Guardrails for content safety, featuring input filtering, output monitoring, and PII handling.</li>
-</ul></div>
+    <div class="summary"><p>Mistral AI has released Timestral, a family of time-series foundation models designed for probabilistic, multivariate forecasting. The models come in four sizes – 5M, 28M, 123M, and 209M parameters – and achieve state-of-the-art results on the GIFT-Eval, TIME, and fev-bench benchmarks, even surpassing larger models with only two-thirds the parameters. Importantly, Timestral can run efficiently on CPUs, with the 209M parameter model forecasting one day ahead in 140ms on a standard 8-thread server. </p>
+<p>The models incorporate several key technical innovations, including decoupled horizon forecasting (DHF) – which preserves the full historical context during training – and covariate-aware attention, allowing the model to effectively utilize past, present and future information. Timestral was initially pre-trained on synthetic data and then post-trained on a mix of real and synthetic data, utilizing a pinball loss function over 21 quantiles.</p>
+<p>For organizations requiring customization, Timestral is accessible via Mistral Forge, enabling fine-tuning on proprietary data, control over training data mix, and deployment in various environments, including air-gapped setups. The models accept multivariate time series, past and known future covariates, outputs probabilistic forecasts with 21 quantiles, and support context lengths up to 32,768 time steps.</p></div>
     
   </div>
   
@@ -368,20 +387,6 @@
     
   </div>
   
-  <div class="card">
-    <div class="meta">
-      <a href="mistral/" class="badge badge-mistral">Mistral AI</a>
-      <span>blog</span>
-      <span> · 2026-09-16</span>
-    </div>
-    <h2><a href="https://mistral.ai/news/mistral-x-mozilla/" target="_blank" rel="noopener">Mistral and Mozilla are bringing open, private and multilingual AI to your web browser</a></h2>
-    
-    <div class="summary"><p>Mistral AI and Mozilla have partnered to integrate Mistral models into Firefox’s AI browsing assistant, Smart Window (beta). Initially available to users in France and North America, with expansion planned for the UK and Germany, Smart Window utilizes Mistral’s models to assist with complex searches, information recall, and tab-based sourcing. A key focus of this collaboration is providing AI experiences tailored to regional languages and cultural contexts through fine-tuning on local dialects. </p>
-<p>The partnership emphasizes privacy: conversations within Smart Window are not saved by default on Mozilla’s servers, and Mistral commits to zero data retention. This approach extends Mistral’s traditionally enterprise-focused technology to individual consumers, promoting a more open and competitive AI landscape within web browsing.</p>
-<p>This integration aims to provide users with greater control and choice regarding their AI interactions, contrasting with the potential for vendor lock-in. It leverages Firefox’s established privacy features alongside Mistral’s open-weight, frontier models to build a user-centric AI browsing experience.</p></div>
-    
-  </div>
-  
   
 
   
@@ -393,15 +398,9 @@
       <span>news</span>
       <span> · 2026-10-15</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/10/14/gudea-leverages-ai-to-help-organizations-prevent-social-media-crises-before-they-erupt/" target="_blank" rel="noopener">Gudea leverages AI to help organizations prevent social media crises before they erupt</a></h2>
+    <h2><a href="https://techcrunch.com/2026/10/15/googles-universal-cart-shopping-tool-launches-in-the-us/" target="_blank" rel="noopener">Google’s Universal Cart shopping tool launches in the US</a></h2>
     
-    <div class="summary"><p>Gudea uses AI to proactively identify and track potentially damaging narratives online before they escalate into full-blown crises.</p>
-<ul>
-<li>Gudea’s AI analyzes behavior, relationships, and information pathways across over 500 websites and platforms (including X, Reddit, and TikTok) to understand <em>how</em> information is spreading, not just <em>that</em> it is.</li>
-<li>The company is developing geolocation technology, slated for release next year, to pinpoint narratives down to the city-block level.</li>
-<li>Gudea plans to allow users to test advertising campaigns through their AI model to predict potential negative outcomes before launch.</li>
-<li>The company recently raised $7 million in seed funding, bringing its total funding to approximately $15 million, and currently serves nearly 40 clients including Fortune 50 companies and a major AI lab.</li>
-</ul></div>
+    <div class="summary"><p>Google has launched “Universal Cart” in the U.S., a tool first previewed in May, that allows users to collect and monitor products across Google Search and the Gemini app. The tool aims to simplify online shopping by saving items from multiple retailers in a central location, and provides notifications for price drops or restocks. Universal Cart utilizes Google’s Universal Commerce Protocol (UCP) for checkout and can incorporate credit card perks and promo codes to assist users. TechCrunch reports this launch expands Google’s AI-powered shopping features, alongside existing tools like conversational product discovery and the “Let Google Call” service.</p></div>
     
   </div>
   
@@ -409,17 +408,11 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-10-14</span>
+      <span> · 2026-10-15</span>
     </div>
-    <h2><a href="https://arstechnica.com/tech-policy/2026/10/openai-google-pushing-new-ai-models-easily-tricked-into-making-nudes-researchers-say/" target="_blank" rel="noopener">OpenAI, Google pushing new AI models easily tricked into making nudes, researchers say</a></h2>
+    <h2><a href="https://arstechnica.com/ai/2026/10/youtube-music-begins-labeling-ai-songs/" target="_blank" rel="noopener">Singer or clanker? YouTube Music will tell you with new gen AI labeling.</a></h2>
     
-    <div class="summary"><p>OpenAI and Google’s new AI image models (DALL·E 3, Nano Banana 2/2.1, and GPT-Image-2) are reportedly becoming easier to manipulate into generating explicit content, according to research from White Circle.</p>
-<ul>
-<li>White Circle researchers developed a new attack method called “Red-teaming via Iterative Strategy Evolution” (RISE) utilizing publicly available models (Qwen3-32B and Gemini 2.5 Flash) to identify reusable jailbreaks.</li>
-<li>Testing with RISE showed that approximately 13% of prompts targeting DALL·E 3 produced explicit images, with Nano Banana 2 at under 10% and GPT-Image-2 at about 3%.</li>
-<li>The researchers found that ChatGPT Images 2.5 and Nano Banana 2.1 are “significantly more breakable” than previous versions.</li>
-<li>White Circle plans to open-source the RISE attack pipeline at NeurIPS 2026 to aid in third-party evaluation and advocate for mandatory independent safety audits of AI models.</li>
-</ul></div>
+    <div class="summary"><p>YouTube Music is implementing new labels to identify music tracks created or significantly altered using generative AI. The labeling system, mirroring one already in place on the main YouTube app, will categorize songs as “fully gen AI,” “partially gen AI,” or “no gen AI,” with publishers optionally self-reporting AI usage. Google will also utilize its own detection tools, including SynthID watermarking and C2PA metadata, to identify AI-generated music. While rolling out now, Google cautions that the absence of a label does not guarantee human creation and does not currently offer a way to filter out AI-generated tracks.</p></div>
     
   </div>
   

@@ -80,11 +80,25 @@
     </label>
   </div>
   <h1>Mistral AI News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-10-15 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-10-16 10:18 UTC</p>
   
 
   
   <h2 class="month">October 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-15</span>
+    </div>
+    <h3><a href="https://mistral.ai/news/timestral/" target="_blank" rel="noopener">Introducing Timestral</a></h3>
+    
+    <div class="summary"><p>Mistral AI has released Timestral, a family of time-series foundation models designed for probabilistic, multivariate forecasting. The models come in four sizes – 5M, 28M, 123M, and 209M parameters – and achieve state-of-the-art results on the GIFT-Eval, TIME, and fev-bench benchmarks, even surpassing larger models with only two-thirds the parameters. Importantly, Timestral can run efficiently on CPUs, with the 209M parameter model forecasting one day ahead in 140ms on a standard 8-thread server. </p>
+<p>The models incorporate several key technical innovations, including decoupled horizon forecasting (DHF) – which preserves the full historical context during training – and covariate-aware attention, allowing the model to effectively utilize past, present and future information. Timestral was initially pre-trained on synthetic data and then post-trained on a mix of real and synthetic data, utilizing a pinball loss function over 21 quantiles.</p>
+<p>For organizations requiring customization, Timestral is accessible via Mistral Forge, enabling fine-tuning on proprietary data, control over training data mix, and deployment in various environments, including air-gapped setups. The models accept multivariate time series, past and known future covariates, outputs probabilistic forecasts with 21 quantiles, and support context lengths up to 32,768 time steps.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
