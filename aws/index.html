@@ -80,13 +80,49 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-10-16 10:18 UTC</p>
+  <p class="generated-at">Generated 2026-10-17 10:18 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">October 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-16</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-reflection-beam-an-open-weight-model-for-agentic-coding-on-aws/" target="_blank" rel="noopener">Introducing Reflection Beam: an open-weight model for agentic coding on AWS</a></h3>
+    
+    <div class="summary"><ul>
+<li>Reflection AI’s Beam 1.0, a 501 billion parameter sparse mixture-of-experts model with 23 billion active parameters, is now available on AWS, designed for agentic coding and long-horizon tasks with an effective context length of 1 million tokens.</li>
+<li>Beam model weights are released under the Apache 2.0 license through Hugging Face and are available in BF16, FP8, and NVFP4 checkpoint variants for differing memory footprints and hardware compatibility.</li>
+<li>Deployment options include Amazon SageMaker JumpStart for fully managed endpoints, SageMaker HyperPod Inference with JumpStart for Kubernetes control, and SGLang or vLLM for customizable serving configurations.</li>
+<li>Optimal hardware includes ml.p5.48xlarge (FP8), ml.p5e.48xlarge/ml.p5en.48xlarge (FP8), or ml.p6-b200.48xlarge (NVFP4) instances, requiring careful planning for GPU capacity, checkpoint storage, and weight memory.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-16</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/building-trust-in-ai-agents-a-production-ready-evaluation-framework-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Building trust in AI agents: A production-ready evaluation framework with Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><h2>Building Trust in AI Agents: A Production-Ready Evaluation Framework with Amazon Bedrock AgentCore</h2>
+<p>This post details a nine-stage evaluation framework built using Amazon Bedrock AgentCore to ensure the quality and reliability of AI agents in a production environment.</p>
+<ul>
+<li><strong>Amazon Bedrock AgentCore Evaluations</strong> serves as the central component, providing a continuous evaluation surface across the agent lifecycle from development to live production.</li>
+<li>The framework addresses five key evaluation dimensions: safety, quality (accuracy, coherence, grounding), performance, cost, and operational control, applying to tools, agents, and multi-agent systems.</li>
+<li>Nine stages are defined – Foundation, Experiment, Merge (CI), Gate (CD), Canary, Adversary, Drift, Pulse, and Feedback Loop – each with specific patterns and utilizing AgentCore services like Guardrails, CloudWatch, S3, Redshift, Quick, and Lambda.</li>
+<li>The framework focuses on identifying and mitigating “silent failures” – situations where agents provide confident but incorrect responses – by tracking specific failure types (metric swap, wrong period, hallucinations, etc.) and defining clear accuracy pass rates.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -575,41 +611,6 @@
 <li>Spaces can be configured with options for compute, namespaces, storage, HyperPod Task Governance, and custom images through a guided form within Studio.</li>
 <li>Administrators install the Spaces add-on via the SageMaker AI console, configuring EKS access and potentially enabling per-user identity propagation for secure Space ownership tracking.</li>
 <li>Optional capabilities include Space templates, task governance with Kueue, Karpenter autoscaling &amp; over-provisioning, persistent volumes (EFS/FSx), custom images (ECR), idle shutdown, and NVIDIA MIG for fractional GPU allocation.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-06</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/best-practices-for-amazon-sagemaker-hyperpod-administration-and-governance/" target="_blank" rel="noopener">Best practices for Amazon SageMaker HyperPod administration and governance</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon SageMaker HyperPod administration is enhanced through integration with SageMaker Unified Studio, requiring a layered governance approach across organization, project, cluster, and workload levels.</li>
-<li>Key controls include SageMaker Unified Studio domains/policies (organization), project membership/connections (project), HyperPod cluster roles/RBAC/Slurm controls (cluster), and compute allocations/priority classes (workload).</li>
-<li>For Amazon EKS clusters, the guidance recommends using namespaces per tenant with RBAC, EKS Pod Identity, and network policies; for Slurm clusters, hierarchical accounts, QoS, and file permissions are suggested.</li>
-<li>A "connection contract" – a customer-managed record – is recommended to document key details for each project-to-cluster connection, including owners, roles, access policies, and scheduling information.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-06</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/responsible-ai-governance-how-aws-positions-customers-to-align-with-iso-iec-420052025/" target="_blank" rel="noopener">Responsible AI governance: How AWS positions customers to align with ISO/IEC 42005:2025</a></h3>
-    
-    <div class="summary"><p>AWS details support for aligning with the upcoming ISO/IEC 42005:2025 standard for responsible AI governance.</p>
-<ul>
-<li>The post focuses on AI system impact assessments, a documented process for identifying risks to organizations, individuals, and society from AI systems, as outlined in ISO/IEC 42005.</li>
-<li>AWS offers tools including the Well-Architected Framework: Responsible AI Lens and an ISO/IEC 42001:2023 AIMS implementation guide to aid in integrating these assessments into existing risk management ecosystems.</li>
-<li>The standard provides templates (Annex D &amp; E) for both integrating with existing impact assessments and for standalone implementation of AI system impact assessments.</li>
-<li>AWS services – Amazon Bedrock, Amazon Q Business, Amazon Textract, and Amazon Transcribe – have achieved ISO/IEC 42001 accreditation and support Responsible AI journey.</li>
 </ul></div>
     
   </div>
