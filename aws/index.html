@@ -80,13 +80,135 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-10-19 10:15 UTC</p>
+  <p class="generated-at">Generated 2026-10-20 10:16 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">October 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-19</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/improve-ttft-for-multi-turn-agentic-workloads-with-bi-directional-kv-transfer-in-vllm/" target="_blank" rel="noopener">Improve TTFT for multi-turn agentic workloads with bi-directional KV transfer in vLLM</a></h3>
+    
+    <div class="summary"><ul>
+<li>AWS has implemented bi-directional KV cache transfer in vLLM (v0.21.0 or later) to improve Time To First Token (TTFT) for multi-turn agentic workloads.</li>
+<li>The system allows decode nodes to return previously computed KV cache to prefill nodes, avoiding redundant recomputation of context and reducing accelerator capacity usage.</li>
+<li>Key components include enhancements to the NVIDIA Inference Xfer Library (NIXL) KV connector, a KV-cache-aware router (a lightweight, stateful control plane), configurable block retention TTL (default 480 seconds) and a KV recompute threshold (default 64 tokens).</li>
+<li>Benchmarks on Amazon EC2 P5en instances with EFA showed TTFT reductions of up to 1.6x for Qwen3-32B and 3.3x for zai-org/GLM-5-FP8 compared to not using the bidirectional transfer, especially with longer prompts.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-19</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/push-based-kv-transfer-to-improve-ttft-and-tpot-for-disaggregated-inference-in-vllm/" target="_blank" rel="noopener">Push-based KV transfer to improve TTFT and TPOT for disaggregated inference in vLLM</a></h3>
+    
+    <div class="summary"><ul>
+<li>This blog post details a new “push-based” NVIDIA Inference Xfer Library (NIXL) connector in vLLM designed to improve Time-To-First-Token (TTFT) and Time-Per-Output-Token (TPOT) for disaggregated LLM inference.</li>
+<li>The push-based connector overlaps KV cache transfer coordination with prefill computation by having the decode instance register target blocks <em>before</em> prefill completes, initiating transfer as soon as blocks are ready – eliminating a round trip present in the default “pull” mode.</li>
+<li>The implementation utilizes a dedicated background thread on the prefill instance to handle KV transfer preparation and submission, further isolating this work from the critical path, and supports different block layouts on each side.</li>
+<li>Benchmarks using the Qwen3-32B model on Amazon EC2 P5en instances with EFA show up to a 3x improvement in TTFT and a 30% improvement in TPOT with the push-based connector, particularly at higher request rates and longer input lengths.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-19</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-deepgram-optimized-voice-ai-at-scale-with-aws-trainium/" target="_blank" rel="noopener">How Deepgram optimized voice AI at scale with AWS Trainium</a></h3>
+    
+    <div class="summary"><p>Deepgram optimized its Nova-3 speech-to-text model for AWS Trainium2, achieving significant cost and performance gains.</p>
+<ul>
+<li>The Nova-3 model was ported from standard PyTorch code to AWS Trainium2 using TorchNeuron and compiled with <code>torch.compile</code> for full hardware utilization.</li>
+<li>Performance was further enhanced by replacing layers with fused kernels from the Neuron Kernel Interface Library (NKILib) and custom-written kernels, addressing bottlenecks in FFN layers, depthwise convolutions, and 2D convolutions.</li>
+<li>A data-parallel Rust runtime was built to leverage eight physical NeuronCores per Trainium2 device, improving throughput and reducing overhead compared to Python-based runtimes—achieving up to 7.5% gain.</li>
+<li>The optimized configuration processed 11–70 percent more audio per dollar compared to previously used compute options on Deepgram’s offline batch workloads.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-19</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/pegasus-1-5-from-twelvelabs-is-now-available-in-amazon-bedrock/" target="_blank" rel="noopener">Pegasus 1.5 from TwelveLabs is now available in Amazon Bedrock</a></h3>
+    
+    <div class="summary"><ul>
+<li>Pegasus 1.5, a video language model from TwelveLabs, is now available on Amazon Bedrock, enabling extraction of structured, timestamped metadata from long-form video.</li>
+<li>The model supports time-based metadata generation, allowing users to define segments, events, or cues, and receive matching video segments as JSON with start and end times.</li>
+<li>Pegasus 1.5 introduces multimodal prompting, combining text descriptions with visual references (images) to locate specific items within video, and can process videos up to two hours long.</li>
+<li>Videos can be analyzed directly from Amazon S3 using a URI or provided as a base64 string (up to 25MB), and the model supports both general text prompting and structured JSON output via a JSON Schema.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-19</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-jumpstart-2026-year-to-date-in-review/" target="_blank" rel="noopener">Amazon SageMaker JumpStart: 2026 year-to-date in review</a></h3>
+    
+    <div class="summary"><p>Amazon SageMaker JumpStart saw significant expansion through September 2026, onboarding over 100 new models from 30+ providers.</p>
+<ul>
+<li>The platform features models from Alibaba (Qwen family – including reasoning, code generation, speech, and embeddings), NVIDIA (Cosmos3, Nemotron families), Mistral, Google (Gemma 4), IBM (Granite, granite-speech), Cohere, and others.</li>
+<li>New deployment configurations offer optimized settings for balanced performance, throughput, latency, or cost, with Neuron optimization for Inferentia/Trainium instances.</li>
+<li>A Hugging Face deep link integration allows for one-click deployment into a configured SageMaker Studio environment, streamlining access and setup.</li>
+<li>Emphasis was placed on multimodal models (vision, speech, text), creative AI models (image/video generation), and quantized/compact models for cost-effectiveness, along with purpose-built models for tasks like OCR and RAG.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-19</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/developers-can-now-access-sagemaker-studio-through-the-new-aws-experience/" target="_blank" rel="noopener">Developers can now access SageMaker Studio through the new AWS experience</a></h3>
+    
+    <div class="summary"><p>AWS has simplified account creation for new Amazon SageMaker AI users.</p>
+<ul>
+<li>New users can sign up for SageMaker Studio using existing accounts from Google, GitHub, Apple, Amazon, or an email address, bypassing the standard AWS account setup.</li>
+<li>A fully configured SageMaker Studio environment is provisioned in approximately 20 seconds after sign-up.</li>
+<li>New accounts receive $100 in AWS Free Tier credits applicable to SageMaker AI services like model customization, training, and endpoint deployments, with a potential to earn an additional $100.</li>
+<li>The environment includes pre-configured permissions for model customization and access to G4dn, G5, and G6 GPU instances; the Studio UI also displays instance quota availability.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-19</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/structured-outputs-for-anthropic-claude-models-on-amazon-bedrock/" target="_blank" rel="noopener">Structured outputs for Anthropic Claude models on Amazon Bedrock</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock now supports structured JSON outputs for all Anthropic Claude models (via both bedrock-runtime and bedrock-mantle endpoints) through the use of constrained decoding, ensuring schema compliance during token generation.</li>
+<li>Two mechanisms are available: <strong>JSON Schema output format</strong> controls the model’s response structure for data extraction tasks, and <strong>strict tool use</strong> validates tool parameters against schemas for agentic workflows.</li>
+<li>The system validates JSON schemas against a JSON Schema Draft 2020-12 subset, compiles a grammar (cached for 24 hours), and then generates tokens that produce valid JSON matching the provided schema with deterministic output.</li>
+<li>Supported models include <code>claude-sonnet-5-5</code> and <code>claude-haiku-5-5</code>, and structured outputs work with batch and cross-Region inference and can be streamed as typed events.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -489,128 +611,6 @@
 <li>Participants built “WealthWise”, a multi-agent AI financial advisory tool leveraging Amazon Nova models, Strands Agents SDK, Node.js, Python Flask, and Amazon DynamoDB, achieving sub-5-second response times.</li>
 <li>Key tools selected for usability included Kiro IDE for natural-language development, Amazon Bedrock for foundation models, Strands Agents SDK for agent composition, and AWS Lambda for production-grade architecture.</li>
 <li>Participant self-assessments showed significant increases, from 27% to 82% reporting a "Strong or Expert" understanding of agentic AI, and a decrease from 34% to 0% identifying with only theoretical AI experience.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-07</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/automate-remediation-post-aws-devops-agent-investigation/" target="_blank" rel="noopener">Automate remediation post AWS DevOps Agent investigation</a></h3>
-    
-    <div class="summary"><p>Automates remediation of issues detected by AWS DevOps Agent using AI-driven workflows and human approval for infrastructure changes.</p>
-<ul>
-<li>Leverages AWS Lambda Durable Functions, Amazon EventBridge, and Amazon Bedrock to orchestrate remediation workflows triggered by AWS DevOps Agent incident investigations.</li>
-<li>Amazon Bedrock analyzes investigation findings and proposes remediations from a curated allowlist of Lambda-based tools (e.g., <code>devops-agent-lambda-tool</code>).</li>
-<li>Distinguishes between read-only and mutating actions; mutating actions requiring human approval before execution via a durable function checkpointing mechanism.</li>
-<li>The solution uses an “agentic loop” where Bedrock iteratively calls tools, executes approved actions, and incorporates results to complete remediation.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-07</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-qlik-built-grounded-enterprise-scale-ai-with-amazon-bedrock/" target="_blank" rel="noopener">How Qlik built grounded, enterprise-scale AI with Amazon Bedrock</a></h3>
-    
-    <div class="summary"><ul>
-<li>Qlik built Qlik Answers, an AI-powered tool for grounded, sourced answers to employee questions, leveraging Amazon Bedrock for scalability and flexibility.</li>
-<li>The system architecture includes distinct layers for entry, routing, answering, specialist agents, conversational analytics, retrieval (using Amazon OpenSearch Service), and model access (through Qlik’s LLM gateway to Amazon Bedrock).</li>
-<li>Amazon Bedrock Guardrails are applied to all requests and responses for content filtering (PII, injection) and grounding validation, with Amazon SageMaker AI used as a fallback when Bedrock models aren't regionally available.</li>
-<li>Qlik utilizes Amazon Bedrock’s cross-Region inference (CRIS) for data sovereignty and forecasts model capacity 3-6 months in advance, validating projections against actual usage to manage scaling.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-07</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/beyond-hours-saved-building-the-business-case-for-agentic-automation/" target="_blank" rel="noopener">Beyond hours saved: Building the business case for agentic automation</a></h3>
-    
-    <div class="summary"><p>Agentic automation business cases require a new framework beyond traditional ROI calculations focused on hours saved, as most value lies <em>around</em> the automated task rather than in the task itself.</p>
-<ul>
-<li>The <strong>Agentic Value Model</strong> measures four key dimensions: time savings (extending RPA capabilities), exception handling (cost of corrections and errors – potentially 1.5–4x original transaction cost, with errors accounting for 2–15% of operational cost), decision quality (consistent policy application with logged rationale), and change resilience/maintenance (avoiding brittle script maintenance).</li>
-<li>Value realization—converting operational improvements into economic gains—is critical; simply freeing capacity doesn't guarantee savings without a clear mechanism for redirecting capacity or reducing spend.</li>
-<li><strong>Amazon Quick Automate</strong> (within Amazon Quick) is highlighted as a service providing execution data to measure these value pools alongside operational and financial KPIs.</li>
-<li>Workflow prioritization should be based on task complexity (reasoning required) and decision risk (cost of errors), using a two-by-two matrix to guide whether to use RPA, full automation, human-in-the-loop agents, or improved controls.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-07</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/rethinking-access-control-for-rag-with-amazon-quick-and-amazon-bedrock/" target="_blank" rel="noopener">Rethinking access control for RAG with Amazon Quick and Amazon Bedrock</a></h3>
-    
-    <div class="summary"><p>Amazon Quick and Amazon Bedrock now offer real-time Access Control List (ACL) enforcement for Retrieval Augmented Generation (RAG) applications.</p>
-<ul>
-<li>This feature addresses security concerns when using RAG with sensitive enterprise data sources like SharePoint, Google Drive, and Confluence.</li>
-<li>The system employs a two-stage approach: pre-retrieval filtering using cached ACLs, followed by real-time verification against the authoritative data source via API calls using service account impersonation.</li>
-<li>Real-time ACL checks verify user permissions with the source of truth <em>at query time</em>, eliminating security gaps caused by stale data or inaccurate replication of ACLs.</li>
-<li>This capability is available within Amazon Quick agents and Amazon Bedrock Knowledge Bases, and complements existing responsible AI controls like content filtering and grounding checks.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-07</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-claude-haiku-5-5-on-aws/" target="_blank" rel="noopener">Introducing Claude Haiku 5.5 on AWS</a></h3>
-    
-    <div class="summary"><ul>
-<li>Claude Haiku 5.5 is Anthropic’s fastest and most efficient model, specifically designed for high-volume, cost-sensitive tasks like subagents and quick workflows.</li>
-<li>It’s the first Haiku model with “effort controls,” allowing tunable cost vs. intelligence trade-offs per task, rather than per workload.</li>
-<li>Haiku 5.5 excels at coding tasks (subagent routing, code review), knowledge work (information extraction from documents), and NLP tasks (classification, summarization). It also supports agentic coding and high-resolution images.</li>
-<li>Available on Amazon Bedrock (via APIs like Invoke and Converse) and Claude Platform on AWS across multiple AWS Regions (US, EU, AU, JP, Global, and GovCloud) with standard AWS monitoring, security, and billing controls.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-06</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-a-voice-travel-concierge-with-amazon-bedrock-agentcore-managed-knowledge-base-and-nova-sonic/" target="_blank" rel="noopener">Build a voice travel concierge with Amazon Bedrock AgentCore, Managed Knowledge Base and Nova Sonic</a></h3>
-    
-    <div class="summary"><ul>
-<li>This post details building a voice-based travel concierge using Amazon Bedrock AgentCore, Nova Sonic, and Managed Knowledge Base for tasks like flight changes and policy questions.</li>
-<li>Amazon Nova 2.5 Sonic, a speech-to-speech model on Bedrock, is used for real-time voice interaction with features like accurate tool calling, instruction following, and responsible AI handling.</li>
-<li>The architecture utilizes the Model Context Protocol (MCP) for loosely coupled integration between the agent and backend services, exposing APIs as discoverable tools via AgentCore Gateway.</li>
-<li>Amazon Bedrock Knowledge Bases provides RAG capabilities to answer policy questions grounded in supplied documents, leveraging Amazon S3 Vectors for storage and Smart Parsing for accurate retrieval.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-06</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/manage-amazon-sagemaker-hyperpod-spaces-directly-from-sagemaker-studio/" target="_blank" rel="noopener">Manage Amazon SageMaker HyperPod Spaces directly from SageMaker Studio</a></h3>
-    
-    <div class="summary"><ul>
-<li>SageMaker Studio now allows direct creation and management of SageMaker Spaces on Amazon SageMaker HyperPod EKS clusters, eliminating the need for CLI or kubectl commands.</li>
-<li>Spaces can be configured with options for compute, namespaces, storage, HyperPod Task Governance, and custom images through a guided form within Studio.</li>
-<li>Administrators install the Spaces add-on via the SageMaker AI console, configuring EKS access and potentially enabling per-user identity propagation for secure Space ownership tracking.</li>
-<li>Optional capabilities include Space templates, task governance with Kueue, Karpenter autoscaling &amp; over-provisioning, persistent volumes (EFS/FSx), custom images (ECR), idle shutdown, and NVIDIA MIG for fractional GPU allocation.</li>
 </ul></div>
     
   </div>
