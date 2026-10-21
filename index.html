@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-10-20T10:16:37.453448+00:00">Generated 2026-10-20 10:16 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-10-21T10:17:54.350743+00:00">Generated 2026-10-21 10:17 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,12 +132,12 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — Overview for 2026-10-19</h2>
-    <p class="overview-meta">2026-10-19 · 1 vendor source · vendor sources only</p>
-    <div class="overview-text"><h2>AI News Synthesis - October 18, 2026</h2>
-<p>A significant commitment to long-term responsible AI development emerged today with Anthropic’s announcement of the Anthropic Public Benefit Fund. Initially capitalized with 5% of the company’s shares – with the potential to rise to 7% contingent on valuation increases – the fund is designed to extend the company’s philanthropic efforts beyond their immediate operations. This encompasses ongoing investments in AI safety research, discounted access to biomedical research tools for non-profits, and a newly-pledged $200 million dedicated to mitigating potential labor market disruption caused by AI advancements. The structure, as a wholly-owned LLC, explicitly prohibits lobbying or direct political contributions, signaling a focus on grants and direct action.</p>
-<p>This move positions Anthropic as a leader in proactively addressing the societal impacts of AI, and notably, it substantially increases the portion of the company dedicated to public benefit initiatives. Combined with prior pledges from co-founders and an employee equity donation match program (currently at roughly 50% participation), approximately 20% of Anthropic’s shares are now allocated to public benefit purposes. This level of commitment is uncommon for companies of this scale and suggests a fundamental prioritization of societal impact alongside commercial goals. </p>
-<p>Beyond the core Public Benefit Fund announcement, Anthropic also detailed ongoing improvements to election safeguards and broadened its international presence with a new office opening in Singapore. Accompanying the new office is a memorandum of understanding with the Singaporean government, aimed at fostering the responsible adoption of artificial intelligence within the region. While these announcements are individually less impactful than the fund, they demonstrate a sustained commitment to responsible AI practices on multiple fronts.</p></div>
+    <h2 class="overview-heading">Today in AI — since 2026-10-20</h2>
+    <p class="overview-meta">2026-10-21 · 18 vendor sources · vendor sources only</p>
+    <div class="overview-text"><p>Southeast Asia’s digital economy is projected to exceed $1 trillion by 2035, driven by rapid growth in generative AI—expanding four times faster than mobile internet adoption—and increasing consumer trust in AI agents, with 75% of consumers willing to allow autonomous transaction completion. The region will require significant investment in data center capacity (a 3x expansion over the next five years) and a unified digital trade framework to support this expansion. </p>
+<p>Several labs are focusing intently on improving code security. Anthropic researchers demonstrated that their Claude model can reduce the “attack surface” of code by identifying default configuration issues and potential security weaknesses across multiple languages – including a fix implemented in OpenSSH version 10.6. They are productizing this capability in OSS-Scanner. Additionally, Anthropic showcased Claude's ability to design protein binders against scorpion neurotoxins, generating and validating over 17 designs with promising nanomolar affinities, releasing all 211 designs for open research. </p>
+<p>Amazon Web Services (AWS) saw considerable activity around AI agents. Multiple partners—Strategy Mosaic, AtScale, and Denodo—presented semantic layers for agentic AI applications, all integrating with Amazon Bedrock AgentCore to provide governed access to enterprise data. AWS also highlighted the AWS Agent Registry for dynamic tool discovery and ongoing developments in securing AI agent identities with X.509 PKI. Several announcements streamlined agent deployment building on the Model Context Protocol (MCP), including broader access to OpenAI GPT models in Canada and new managed services like Smartsheet MCP.  Fine-tuning of the GPT-OSS-20B model on Amazon SageMaker HyperPod showed improvements in multilingual reasoning, with Reinforcement Learning with Group Relative Policy Optimization (GRPO) yielding additional gains when a base capability already exists. </p>
+<p>Finally, Mistral AI launched Voxtral 3, a suite of speech models and a voice agent SDK for building real-time conversational AI, emphasizing multilingual transcription accuracy, low-latency interaction (under one second/turn) and support for data sovereignty with self-hosting options. Microsoft announced the expansion of its Sovereign Cloud offerings and a wider rollout of their AI agentic platform Discovery with Saint Gobain.</p></div>
   </section>
   
 
@@ -145,6 +145,33 @@
 
   
   <h2 class="section">Vendors</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>research</span>
+      <span> · 2026-10-20</span>
+    </div>
+    <h2><a href="https://www.anthropic.com/research/claude-scorpion-toxin-binder-design" target="_blank" rel="noopener">How Claude designed protein binders against scorpion neurotoxins</a></h2>
+    
+    <div class="summary"><p>Anthropic’s internal research model, operating within Claude Science, successfully designed protein binders against five scorpion neurotoxins (Cn2, Ts1, AaH I, AaH II, and LqhIII) with minimal human intervention. Prompted with a modified version of a prior protein-binder study, Claude generated 318,484 designs, selecting 180 for experimental testing.  Partners at Adaptyv Bio and Twist Bioscience validated 17 of these designs as binders—proteins that tightly attach to their target toxins—using surface plasmon resonance to measure dissociation constants (KD).</p>
+<p>The campaign, consuming roughly 10,000 GPU hours, demonstrated Claude’s ability to design binders targeting both individual toxins and groups of toxins, though multi-toxin binders were less successful. Notably, the best binders, Cn2-B1 and Cn2-B2, targeting the <em>Centruroides noxius</em> toxin, showed single-digit nanomolar affinities (KD) and appear to bind to the same site as a known neutralizing antibody (LR).  While these results are promising, the designed binders haven’t been tested for neutralizing venom <em>in vitro</em> or <em>in vivo</em>, and further research is needed to develop a functional antivenom. All 211 designs and associated data have been publicly released.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>research</span>
+      <span> · 2026-10-20</span>
+    </div>
+    <h2><a href="https://www.anthropic.com/research/attack-surface-reduction" target="_blank" rel="noopener">Using Claude to reduce the attack surface of code</a></h2>
+    
+    <div class="summary"><p>Anthropic researchers investigated using their Claude model to automatically reduce the “attack surface” of code – the amount of code accessible to potential attackers – as an alternative to solely focusing on identifying and patching individual vulnerabilities. They applied Claude to 25 open-source projects (over 5 million lines of code in C, C++, Java, PHP, and Python), identifying 493 issues across three methods: default configuration issues, problematic configuration interactions, and code reachable before essential security controls.</p>
+<p>Specifically, Claude found unnecessary pre-authentication code in 11 "gated" projects, 162 security-weakening configuration combinations, and cases where disabling security checks occurred silently. A notable case study involved OpenSSH, where Claude identified 4,500 lines of potentially reachable, experimental code for a new signature algorithm that should have been behind a configuration check; this was addressed in OpenSSH version 10.6. </p>
+<p>Anthropic is developing a reusable Claude skill leveraging these techniques for integration into OSS-Scanner to automate this attack surface reduction process, focusing on default configuration, pre-authentication reachability, and harmful configuration combinations, alongside verification via existing test suites.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -162,28 +189,18 @@
   
   <div class="card">
     <div class="meta">
-      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>research</span>
-      <span> · 2026-10-16</span>
+      <a href="google/" class="badge badge-google">Google</a>
+      <span>blog</span>
+      <span> · 2026-10-21</span>
     </div>
-    <h2><a href="https://www.anthropic.com/research/expectations-for-the-future" target="_blank" rel="noopener">Working at the frontier shapes expectations for the future</a></h2>
+    <h2><a href="https://blog.google/company-news/inside-google/around-the-globe/google-asia/e-conomy-sea-report-2026/" target="_blank" rel="noopener">Southeast Asia’s digital economy to hit $368 billion</a></h2>
     
-    <div class="summary"><p>Anthropic reports internal changes driven by AI adoption, and a divergence in expectations between its staff and the general US public regarding AI’s future impact. Within Anthropic, the proportion of junior hires and technical roles has decreased over the past year, while agent hours worked have increased significantly—exceeding employee hours by March 2026, and resulting in a 6:1 agent-to-employee ratio by August 2026. This correlated with increases in metrics like code produced per person, sales closed per representative, and contracts processed. </p>
-<p>A survey comparing Anthropic staff to a representative sample of ~11,000 US adults (via Morning Consult) revealed that staff anticipate faster AI advancements. For instance, 91% of Anthropic staff believe AI will achieve Nobel-level discoveries by 2030, compared to 39% of the general public.  Over half of Anthropic staff expect AI to perform 80% of their current tasks by 2030, while only 5% of Americans share that expectation. Both groups, however, largely agree on the economic implications of these advances, anticipating similar unemployment levels based on their respective expectations for AI capability.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>research</span>
-      <span> · 2026-10-16</span>
-    </div>
-    <h2><a href="https://www.anthropic.com/research/employment-at-anthropic" target="_blank" rel="noopener">How employment is changing at Anthropic</a></h2>
-    
-    <div class="summary"><p>Anthropic’s internal data reveals a significant shift in how AI is restructuring work. As a leading AI adopter, the company experiences changes that may foreshadow broader economic trends. Since early 2025, Anthropic has slowed hiring for junior technical positions, coinciding with a six-to-one ratio of AI agent work hours to employee hours by August 2026. </p>
-<p>Productivity has increased across all functions – engineers write more code, salespeople close more deals, and lawyers process more contracts – boosted by the adoption of coding agents. Employees are increasingly focused on “meta-work,” building tools to manage and monitor AI agents, as human attention becomes the primary bottleneck for agent output. </p>
-<p>Hiring managers now prioritize autonomy and judgment over specific technical skills. Anthropic addresses potential job displacement through internal redeployment, tracking at-risk roles, and aligning employee incentives through stock ownership, positioning itself as a case study for navigating AI’s impact on the workforce.</p></div>
+    <div class="summary"><ul>
+<li>The 11th annual "e-Conomy SEA" report, produced by Google, Temasek, and Bain &amp; Company, projects Southeast Asia’s digital economy will reach $368 billion GMV in 2026 and exceed $1 trillion by 2035.</li>
+<li>Generative AI is growing four times faster than mobile internet adoption in the region, impacting e-commerce, online travel, online media, mobility/food delivery, and digital financial services.</li>
+<li>75% of Southeast Asian consumers are willing to allow AI agents to autonomously complete transactions, driven by increasing trust in AI tools (62% report greater trust than a year ago).</li>
+<li>To support projected growth, the report identifies the need for a 3x expansion of data center capacity over the next five years, improved energy efficiency, and a unified regional digital trade framework like the upcoming ASEAN Digital Economy Framework Agreement (DEFA).</li>
+</ul></div>
     
   </div>
   
@@ -224,19 +241,34 @@
   
   <div class="card">
     <div class="meta">
-      <a href="google/" class="badge badge-google">Google</a>
-      <span>research</span>
-      <span> · 2026-10-13</span>
+      <a href="microsoft/" class="badge badge-microsoft">Microsoft</a>
+      <span>blog</span>
+      <span> · 2026-10-20</span>
     </div>
-    <h2><a href="https://deepmind.google/blog/introducing-gemini-4-argon/" target="_blank" rel="noopener">Gemini 4 Argon: Built to solve your hardest problems</a></h2>
+    <h2><a href="https://blogs.microsoft.com/blog/2026/10/20/advancing-digital-sovereignty-with-greater-control-and-choice/" target="_blank" rel="noopener">Advancing digital sovereignty with greater control and choice</a></h2>
     
-    <div class="summary"><h2>Gemini 4 Argon: New Frontier Model Now Available</h2>
-<p>Gemini 4 Argon, Google’s latest frontier model, is now broadly available, excelling at complex tasks across various domains.</p>
-<ul>
-<li>Argon is available via API in AI Studio and the Gemini platform, for Google AI Ultra subscribers in Google Antigravity, and Gemini and AI Mode in Search, at an introductory price of $2/million input tokens and $10/million output tokens.</li>
-<li>Argon achieves state-of-the-art results, ranking #1 on the Vals Index, and demonstrates improvements in coding (35%+ increase in agentic code submissions, 30% reduction in rollbacks), scientific workflows (up to 2.3x faster xTB quantum chemistry package), and cybersecurity (identifying and remediating security gaps).</li>
-<li>The model showcases advanced multimodal capabilities, including generating 3D visualizations, optimizing code, and autonomously solving complex problems, demonstrated through use cases like reconstructing Chaco Canyon from LiDAR scans and generating 3D printable sofa legs from sketches.</li>
-<li>Argon improves performance on benchmarks like Embodied Reasoning (ERQA) with 87%, RareBench (57% on rare-disease diagnosis) and LabBench (52.2% on wet-lab reasoning), and has been used to accelerate progress in quantum computing, nuclear fusion, and robotics, including a "Video-to-Sim-to-Real" pipeline for robotics training.</li>
+    <div class="summary"><ul>
+<li>Microsoft is expanding its <strong>Microsoft Sovereign Cloud</strong> offering to provide organizations with greater control over their data and operations, addressing digital sovereignty concerns.</li>
+<li><strong>Sovereign Control Panel</strong> (public preview at Microsoft Ignite) provides a unified Azure portal experience for understanding and managing sovereignty posture, controls, risks, and business continuity.</li>
+<li>New features include <strong>Data Guardian</strong> (EU/EFTA rollout) for European resident oversight of Microsoft engineer access, <strong>Production Touch Ledger</strong> for tamper-evident access records, and <strong>External key management with Azure Managed HSM</strong> allowing customer-owned key storage.</li>
+<li><strong>Azure Local</strong>, extending Azure capabilities to customer-operated environments, now supports SQL Server, DocumentDB, Blob Storage, GitHub Enterprise Local, and <strong>Foundry Local</strong> with expanded model catalog and local inference capabilities.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="microsoft/" class="badge badge-microsoft">Microsoft</a>
+      <span>news</span>
+      <span> · 2026-10-20</span>
+    </div>
+    <h2><a href="https://news.microsoft.com/source/emea/features/a-concrete-vision-saint-gobain-and-microsoft-discovery-build-for-the-future/" target="_blank" rel="noopener">A concrete vision: Saint-Gobain and Microsoft Discovery build for the future</a></h2>
+    
+    <div class="summary"><ul>
+<li>Microsoft and Saint-Gobain collaborated using <strong>Microsoft Discovery</strong>, an AI-powered agentic platform, to accelerate research into lower-carbon cement additives.</li>
+<li>The collaboration utilized Discovery to analyze <strong>62,000 patents and 44,000 abstracts</strong> in a matter of hours – a process that Saint-Gobain estimates would have taken researchers a year without AI.</li>
+<li>Saint-Gobain plans to roll out <strong>Microsoft Copilot</strong> to all employees at its Innovation Hub Europe in <strong>January 2027</strong>.</li>
+<li>The initial deployment of Discovery began in a private release in <strong>March 2026</strong>, with Microsoft engineers working with Saint-Gobain to refine the platform through the <strong>Microsoft Frontier Company</strong> operating business.</li>
 </ul></div>
     
   </div>
@@ -260,36 +292,18 @@
   
   <div class="card">
     <div class="meta">
-      <a href="microsoft/" class="badge badge-microsoft">Microsoft</a>
+      <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-10-16</span>
+      <span> · 2026-10-20</span>
     </div>
-    <h2><a href="https://azure.microsoft.com/en-us/blog/managing-open-weight-model-risk-in-enterprise-deployments/" target="_blank" rel="noopener">Managing open-weight model risk in enterprise deployments</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-atscale-and-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Build a semantic layer for agentic AI on AWS with AtScale and Amazon Bedrock AgentCore</a></h2>
     
-    <div class="summary"><p>Microsoft and NVIDIA jointly published “Risk Management for Open-Weight Models in Enterprise” to address the unique risks associated with deploying these models.</p>
+    <div class="summary"><p>AWS announces a method for building semantic layers for agentic AI using AtScale and Amazon Bedrock AgentCore, focusing on a Customer 360 (C360) use case with data from Amazon Redshift.</p>
 <ul>
-<li>The paper introduces a shared risk taxonomy encompassing Cybersecurity, Data Protection, Content, Human-AI Interaction, and Bias.</li>
-<li>It emphasizes that risk isn’t solely determined by model weight openness, but by the model, use case, deployment, and implemented safeguards.</li>
-<li>Microsoft Foundry provides built-in and custom evaluations, automated red teaming, and configurable content-safety controls to assess model quality, groundedness, safety, and mitigate harmful outputs.</li>
-<li>The guidance highlights the importance of understanding evolving risks and control responsibilities as models and deployment patterns change, with plans for future work extending across runtime, harness, and application layers. </li>
-</ul>
-<p>For more detailed information, consult the original whitepaper and related resources.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="microsoft/" class="badge badge-microsoft">Microsoft</a>
-      <span>blog</span>
-      <span> · 2026-10-15</span>
-    </div>
-    <h2><a href="https://azure.microsoft.com/en-us/blog/evolving-the-cloud-native-foundation-for-the-next-generation-of-ai/" target="_blank" rel="noopener">Evolving the cloud-native foundation for the next generation of AI</a></h2>
-    
-    <div class="summary"><ul>
-<li>Microsoft is evolving its Azure cloud platform to better support the demands of AI workloads, particularly those driven by “agents” which exhibit more dynamic and unpredictable behavior than traditional applications.</li>
-<li>Key technical areas of focus include coordinated compute, storage, and networking to match resources to workload needs, leveraging open-source technologies like Kubernetes (with Azure Kubernetes Service), and optimizing infrastructure costs against business value using FinOps practices.</li>
-<li>Azure SRE Agent and features like AKS Flex Nodes, Azure Container Apps Sandboxes, and Azure Container Apps Express are being introduced to automate operations and improve resilience.</li>
-<li>The company emphasizes a holistic approach, aligning AI infrastructure costs with business outcomes and improving cloud operations through "agentic AI" – using AI to proactively manage and optimize the cloud environment itself.</li>
+<li>AtScale utilizes the Semantic Modeling Language (SML), a YAML-based specification versioned in Git, to define a dimensional model (dimensions, hierarchies, measures) exposed via SQL, XMLA, and the Model Context Protocol (MCP).</li>
+<li>Amazon Bedrock (Anthropic Claude Sonnet 4.6) is used for planning and query generation, while Amazon Bedrock AgentCore hosts the Strands agent and manages credentials for AtScale access.</li>
+<li>The solution allows for joins, metric definitions, and filters to reside within the semantic layer, improving performance through AtScale’s autonomous aggregate management and pushing queries down to native SQL in Amazon Redshift.</li>
+<li>The architecture incorporates Amazon Bedrock AgentCore Identity for propagating user identity and enforcing role-based access control (RBAC) within AtScale, deployed on Amazon EKS via a Helm chart (AtScale C2026.7 release).</li>
 </ul></div>
     
   </div>
@@ -298,15 +312,15 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-10-19</span>
+      <span> · 2026-10-20</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/improve-ttft-for-multi-turn-agentic-workloads-with-bi-directional-kv-transfer-in-vllm/" target="_blank" rel="noopener">Improve TTFT for multi-turn agentic workloads with bi-directional KV transfer in vLLM</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-strategy-mosaic-and-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Build a semantic layer for agentic AI on AWS with Strategy Mosaic and Amazon Bedrock AgentCore</a></h2>
     
     <div class="summary"><ul>
-<li>AWS has implemented bi-directional KV cache transfer in vLLM (v0.21.0 or later) to improve Time To First Token (TTFT) for multi-turn agentic workloads.</li>
-<li>The system allows decode nodes to return previously computed KV cache to prefill nodes, avoiding redundant recomputation of context and reducing accelerator capacity usage.</li>
-<li>Key components include enhancements to the NVIDIA Inference Xfer Library (NIXL) KV connector, a KV-cache-aware router (a lightweight, stateful control plane), configurable block retention TTL (default 480 seconds) and a KV recompute threshold (default 64 tokens).</li>
-<li>Benchmarks on Amazon EC2 P5en instances with EFA showed TTFT reductions of up to 1.6x for Qwen3-32B and 3.3x for zai-org/GLM-5-FP8 compared to not using the bidirectional transfer, especially with longer prompts.</li>
+<li>Strategy Mosaic provides a semantic layer for agentic AI, offering a dimensional modeling approach with attributes, hierarchies, facts, and metrics, accessible via multiple protocols (MCP, JDBC/ODBC, XMLA, REST).</li>
+<li>The system enables querying across data sources like Amazon Redshift, Amazon Aurora, Snowflake, Databricks, and SaaS applications (Salesforce) without ETL, using linked models and pushing down native SQL to each source.</li>
+<li>Amazon Bedrock AgentCore’s Strands agents can access the semantic layer through the Model Context Protocol (MCP) endpoint, with user identity and Row-Level/Object-Level Security (RLS/OLS) maintained end-to-end.</li>
+<li>Mosaic supports both live pushdown execution to data sources and in-memory execution, and allows exporting definitions in Apache Ossie format, facilitating broad applicability beyond agentic AI.</li>
 </ul></div>
     
   </div>
@@ -315,34 +329,30 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-10-19</span>
+      <span> · 2026-10-20</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/push-based-kv-transfer-to-improve-ttft-and-tpot-for-disaggregated-inference-in-vllm/" target="_blank" rel="noopener">Push-based KV transfer to improve TTFT and TPOT for disaggregated inference in vLLM</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-denodo-and-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Build a semantic layer for agentic AI on AWS with Denodo and Amazon Bedrock AgentCore</a></h2>
     
     <div class="summary"><ul>
-<li>This blog post details a new “push-based” NVIDIA Inference Xfer Library (NIXL) connector in vLLM designed to improve Time-To-First-Token (TTFT) and Time-Per-Output-Token (TPOT) for disaggregated LLM inference.</li>
-<li>The push-based connector overlaps KV cache transfer coordination with prefill computation by having the decode instance register target blocks <em>before</em> prefill completes, initiating transfer as soon as blocks are ready – eliminating a round trip present in the default “pull” mode.</li>
-<li>The implementation utilizes a dedicated background thread on the prefill instance to handle KV transfer preparation and submission, further isolating this work from the critical path, and supports different block layouts on each side.</li>
-<li>Benchmarks using the Qwen3-32B model on Amazon EC2 P5en instances with EFA show up to a 3x improvement in TTFT and a 30% improvement in TPOT with the push-based connector, particularly at higher request rates and longer input lengths.</li>
+<li>This post details building a semantic layer for agentic AI applications using Denodo and Amazon Bedrock AgentCore, enabling governed access to live, distributed enterprise data.</li>
+<li>The solution federates Amazon Aurora, Amazon Redshift, and an on-premises PostgreSQL database into a unified customer 360 view, accessed via Denodo’s VQL through the Model Context Protocol (MCP).</li>
+<li>Denodo Platform provides the AI data layer, with Virtual DataPort (VDP) as the query engine and Design Studio for authoring, utilizing base views, derived views, metric views, and VQL.</li>
+<li>Security is enforced using Global Security Policies (GSPs) that apply row and column filters at query time, with identity propagation via JWT and On-Behalf-Of token exchange between Amazon Bedrock AgentCore and Denodo.</li>
 </ul></div>
     
   </div>
   
   <div class="card">
     <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
+      <a href="mistral/" class="badge badge-mistral">Mistral AI</a>
       <span>blog</span>
-      <span> · 2026-10-19</span>
+      <span> · 2026-10-20</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-deepgram-optimized-voice-ai-at-scale-with-aws-trainium/" target="_blank" rel="noopener">How Deepgram optimized voice AI at scale with AWS Trainium</a></h2>
+    <h2><a href="https://mistral.ai/news/voxtral-3/" target="_blank" rel="noopener">Voxtral 3</a></h2>
     
-    <div class="summary"><p>Deepgram optimized its Nova-3 speech-to-text model for AWS Trainium2, achieving significant cost and performance gains.</p>
-<ul>
-<li>The Nova-3 model was ported from standard PyTorch code to AWS Trainium2 using TorchNeuron and compiled with <code>torch.compile</code> for full hardware utilization.</li>
-<li>Performance was further enhanced by replacing layers with fused kernels from the Neuron Kernel Interface Library (NKILib) and custom-written kernels, addressing bottlenecks in FFN layers, depthwise convolutions, and 2D convolutions.</li>
-<li>A data-parallel Rust runtime was built to leverage eight physical NeuronCores per Trainium2 device, improving throughput and reducing overhead compared to Python-based runtimes—achieving up to 7.5% gain.</li>
-<li>The optimized configuration processed 11–70 percent more audio per dollar compared to previously used compute options on Deepgram’s offline batch workloads.</li>
-</ul></div>
+    <div class="summary"><p>Mistral AI has released Voxtral 3, a new family of speech models and a voice agent SDK designed for building real-time, multi-step conversational AI.  It includes Voxtral Small Transcribe 3 and Voxtral Mini Transcribe 3 for speech-to-text, achieving state-of-the-art results in multilingual transcription (50+ languages) and diarization, outperforming models like Whisper and Gemini. Context biasing improves accuracy with domain-specific vocabulary. </p>
+<p>The system also features Voxtral Mini TTS 3 for text-to-speech, offering natural-sounding speech with emotion and expression in 35+ languages and 50+ dialects.  A key component is the voice agent SDK, integrating these models into a streaming pipeline for low-latency interaction—under one second per turn— and enabling tool calling, web search, and integration with existing systems via SIP and WebRTC.  </p>
+<p>Voxtral 3 prioritizes data sovereignty, with options for deployment via Mistral’s EU-hosted API or self-hosting.  Pricing ranges from $0.0035/min for Mini Transcribe (batch) to $13/1M characters for Voxtral Speech 3.</p></div>
     
   </div>
   
@@ -374,20 +384,6 @@
     
   </div>
   
-  <div class="card">
-    <div class="meta">
-      <a href="mistral/" class="badge badge-mistral">Mistral AI</a>
-      <span>blog</span>
-      <span> · 2026-09-28</span>
-    </div>
-    <h2><a href="https://mistral.ai/news/hallo-deutschland/" target="_blank" rel="noopener">Hallo, Deutschland!</a></h2>
-    
-    <div class="summary"><p>Mistral AI has opened a new research and engineering hub in Munich, Germany, focusing on applications within industrial sectors like automotive, energy, and aerospace. This follows their May 2026 acquisition of Emmi AI, bringing onboard over 30 experts in Physics AI—specifically, AI modelling of computational fluid dynamics, structural mechanics, and multi-physics simulations. </p>
-<p>The core offering centers on “Physics AI,” aiming to accelerate complex simulations (currently taking days) crucial for German manufacturing. Initial projects include crash simulations with BMW and industrial AI applications with Siemens Energy. Mistral emphasizes a “sovereign” approach, utilizing open-weight models that run on customer infrastructure, under European law, to ensure data remains within the organization and to avoid reliance on closed vendor systems.</p>
-<p>Mistral also plans to build one gigawatt of European compute capacity by 2030, and has partnered with the Technical University Munich (TUM) to combine real-time sensor data with computational fluid dynamics for improved automotive aerodynamic predictions. This move signifies a commitment to building technology partnerships rather than simply selling software and addresses the demand for AI solutions deeply integrated with existing industrial knowledge and infrastructure.</p></div>
-    
-  </div>
-  
   
 
   
@@ -399,15 +395,9 @@
       <span>news</span>
       <span> · 2026-10-20</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/10/19/mamdani-says-feds-have-abdicated-on-ai-urges-new-yorkers-to-push-back/" target="_blank" rel="noopener">Mamdani says feds have abdicated on AI, urges New Yorkers to push back</a></h2>
+    <h2><a href="https://techcrunch.com/2026/10/20/eric-schmidt-reportedly-owns-about-half-as-much-of-anthropic-as-ceo-dario-amodei/" target="_blank" rel="noopener">Eric Schmidt reportedly owns about half as much of Anthropic as CEO Dario Amodei</a></h2>
     
-    <div class="summary"><p>New York City Mayor Zohran Mamdani is advocating for local control and regulation of AI due to perceived inaction at the federal level.</p>
-<ul>
-<li>Mamdani has banned the use of AI in New York City elementary and middle schools, citing concerns from parents like Ilana Glazer about non-consensual implementation.</li>
-<li>A new policy requires real estate platforms to disclose when listing photos or videos are AI-generated, aiming to prevent deceptive practices ("house-phishing”).</li>
-<li>Mamdani criticizes the federal focus on an “arms race with China” regarding AI, arguing it overshadows humanistic concerns and accountability.</li>
-<li>He specifically calls out President Trump’s Superintelligence Task Force for prioritizing self-regulation by AI companies (like Anthropic, expected to IPO this year, and OpenAI, planning for 2027) over new federal restrictions.</li>
-</ul></div>
+    <div class="summary"><p>According to a report by TechCrunch citing Bloomberg, Eric Schmidt owns approximately 1% of Anthropic, following a tens of millions of dollar investment in the company’s $461 million Series A round in 2021. This stake is reportedly equivalent to roughly half of the ownership held by Anthropic CEO Dario Amodei, who owns 2% of the company. With potential public offering valuations reaching $2 trillion, Schmidt’s stake could increase his net worth by as much as $20 billion. Schmidt has also invested in other AI companies including Mistral, General Intuition, and Reflection AI.</p></div>
     
   </div>
   
@@ -415,16 +405,16 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-10-19</span>
+      <span> · 2026-10-20</span>
     </div>
-    <h2><a href="https://arstechnica.com/tech-policy/2026/10/disney-found-a-way-to-buy-character-ai-without-buying-its-lawsuits/" target="_blank" rel="noopener">Disney found a way to buy Character.AI without buying its lawsuits</a></h2>
+    <h2><a href="https://arstechnica.com/security/2026/10/meta-muse-exposes-users-personal-and-business-secrets-when-they-share-conversations/" target="_blank" rel="noopener">Meta Muse exposes users&#39; personal and business secrets when they share conversations</a></h2>
     
-    <div class="summary"><p>Disney is pursuing a deal to acquire key technology and staff from Character.AI via a bankruptcy proceeding.</p>
+    <div class="summary"><p>Meta’s new AI agent, Muse, has a sharing feature that inadvertently exposes user data.</p>
 <ul>
-<li>Disney initially invested $5.5 million in Character.AI in September, with a $2 million refundable deposit, and hired a “majority” of the startup’s employees.</li>
-<li>The deal aims to grant Disney a perpetual, worldwide, nonexclusive license to Character.AI’s code, documentation, frameworks, tools, and moderation/safety technologies, potentially for an additional $12.5 million.</li>
-<li>Character.AI filed for Chapter 11 bankruptcy on October 12, designed to allow Disney to avoid existing legal liabilities and regulatory investigations—involving 46 states—related to safety concerns surrounding the chatbot platform.</li>
-<li>Prior to this, in August 2024, Google reportedly paid Character.AI $2.7 billion for a license to its technology and hired some of its staff, but argued it was not liable for subsequent lawsuits against the startup.</li>
+<li>Researchers at Claroc discovered approximately 6,800 publicly discoverable share links created by Muse users.</li>
+<li>Exposed data included sensitive information such as executive search details, internal revenue reviews, loan applications, financial records, and vacation schedules.</li>
+<li>The vulnerability stems from Muse's URL structure, which includes conversation titles in the subdomain, making them easily searchable via passive DNS records.</li>
+<li>Meta has temporarily suspended the sharing functionality while they review the issue; the findings were reported via their bug bounty program on October 8.</li>
 </ul></div>
     
   </div>

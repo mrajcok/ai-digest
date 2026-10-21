@@ -80,13 +80,225 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-10-20 10:16 UTC</p>
+  <p class="generated-at">Generated 2026-10-21 10:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">October 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-20</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-atscale-and-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Build a semantic layer for agentic AI on AWS with AtScale and Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><p>AWS announces a method for building semantic layers for agentic AI using AtScale and Amazon Bedrock AgentCore, focusing on a Customer 360 (C360) use case with data from Amazon Redshift.</p>
+<ul>
+<li>AtScale utilizes the Semantic Modeling Language (SML), a YAML-based specification versioned in Git, to define a dimensional model (dimensions, hierarchies, measures) exposed via SQL, XMLA, and the Model Context Protocol (MCP).</li>
+<li>Amazon Bedrock (Anthropic Claude Sonnet 4.6) is used for planning and query generation, while Amazon Bedrock AgentCore hosts the Strands agent and manages credentials for AtScale access.</li>
+<li>The solution allows for joins, metric definitions, and filters to reside within the semantic layer, improving performance through AtScale’s autonomous aggregate management and pushing queries down to native SQL in Amazon Redshift.</li>
+<li>The architecture incorporates Amazon Bedrock AgentCore Identity for propagating user identity and enforcing role-based access control (RBAC) within AtScale, deployed on Amazon EKS via a Helm chart (AtScale C2026.7 release).</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-20</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-strategy-mosaic-and-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Build a semantic layer for agentic AI on AWS with Strategy Mosaic and Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><ul>
+<li>Strategy Mosaic provides a semantic layer for agentic AI, offering a dimensional modeling approach with attributes, hierarchies, facts, and metrics, accessible via multiple protocols (MCP, JDBC/ODBC, XMLA, REST).</li>
+<li>The system enables querying across data sources like Amazon Redshift, Amazon Aurora, Snowflake, Databricks, and SaaS applications (Salesforce) without ETL, using linked models and pushing down native SQL to each source.</li>
+<li>Amazon Bedrock AgentCore’s Strands agents can access the semantic layer through the Model Context Protocol (MCP) endpoint, with user identity and Row-Level/Object-Level Security (RLS/OLS) maintained end-to-end.</li>
+<li>Mosaic supports both live pushdown execution to data sources and in-memory execution, and allows exporting definitions in Apache Ossie format, facilitating broad applicability beyond agentic AI.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-20</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-denodo-and-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Build a semantic layer for agentic AI on AWS with Denodo and Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><ul>
+<li>This post details building a semantic layer for agentic AI applications using Denodo and Amazon Bedrock AgentCore, enabling governed access to live, distributed enterprise data.</li>
+<li>The solution federates Amazon Aurora, Amazon Redshift, and an on-premises PostgreSQL database into a unified customer 360 view, accessed via Denodo’s VQL through the Model Context Protocol (MCP).</li>
+<li>Denodo Platform provides the AI data layer, with Virtual DataPort (VDP) as the query engine and Design Studio for authoring, utilizing base views, derived views, metric views, and VQL.</li>
+<li>Security is enforced using Global Security Policies (GSPs) that apply row and column filters at query time, with identity propagation via JWT and On-Behalf-Of token exchange between Amazon Bedrock AgentCore and Denodo.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-20</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-eon-built-multi-cloud-investigation-with-an-mcp-gateway-on-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How Eon built multi-cloud investigation with an MCP Gateway on Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><p>Eon replaced per-tool credentials and local Model Context Protocol (MCP) processes with a centralized gateway built on Amazon Bedrock AgentCore to provide unified, secure access to investigation tools across AWS, GCP, and Azure.</p>
+<ul>
+<li>The solution utilizes the <strong>Amazon Bedrock AgentCore stack</strong> – AgentCore Gateway, Policy, Runtime, and Identity – to manage access and authentication.</li>
+<li><strong>Cedar policies</strong> enforce least-privilege access control, allowing administrators to define which principals (users or agents) can invoke specific tools, with support for both read and write operations.</li>
+<li><strong>AgentCore Gateway</strong> handles authentication via JWT tokens (SSO) for humans and client_credentials for agents, and uses IAM cross-account role assumption for cross-account connectivity, eliminating the need for VPC peering or PrivateLink.</li>
+<li>Eon implemented a hybrid policy mode using both <strong>DEFAULT</strong> (pre-indexed schemas for OAuth) and <strong>DYNAMIC</strong> (on-demand listing) modes for tool catalogs to manage Cedar policy size and enable semantic tool search where needed.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-20</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/securing-ai-agent-identity-with-x-509-pki-on-aws/" target="_blank" rel="noopener">Securing AI agent identity with X.509 PKI on AWS</a></h3>
+    
+    <div class="summary"><p>Securing AI agent identity is achieved through a reference architecture utilizing X.509 PKI with AWS services and Keyfactor EJBCA.</p>
+<ul>
+<li>The architecture employs three authentication layers – User Auth, Agent-to-Agent, and MCP Auth – each leveraging signed request envelopes (proof-of-possession via RSA-PSS-SHA256), user-signed delegation assertions, RFC 8693 audience-scoped tokens, and real-time OCSP revocation checking.</li>
+<li>The solution utilizes Amazon Bedrock (via Strands Agents SDK), Amazon RDS for MySQL, Amazon SES, and AWS Secrets Manager in conjunction with Keyfactor EJBCA for certificate lifecycle management and PKI operations.</li>
+<li>Private keys are generated locally and never transmitted, with certificates issued via CSRs sent to EJBCA for signing, then stored in AWS Secrets Manager as PKCS12 bundles.</li>
+<li>Replay prevention is implemented via unique nonces within signed envelopes and a freshness window, combined with timestamp validation, preventing unauthorized access through replay attacks or stale requests.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-20</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/discover-tools-at-runtime-with-aws-agent-registry/" target="_blank" rel="noopener">Discover tools at runtime with AWS Agent Registry</a></h3>
+    
+    <div class="summary"><ul>
+<li>AWS Agent Registry is a managed service designed to enable runtime discovery of Model Context Protocol (MCP) servers, agents, and agent skills, addressing limitations of hardcoded tool integrations in large-scale systems.</li>
+<li>The system utilizes a discover → instantiate → execute loop, where an orchestrator searches the Registry, constructs clients from descriptors, and dynamically builds agents with discovered capabilities.</li>
+<li>Records within the Registry require a <code>recordType</code> of "MCP" or "AGENT" and store protocol-specific metadata (MCP server details or A2A agent cards) in descriptors, but do <em>not</em> include invocation credentials.</li>
+<li>The sample implementation uses Amazon Bedrock AgentCore Gateway, Amazon Bedrock AgentCore runtime, Amazon Bedrock (specifically Anthropic Claude Sonnet), Amazon Cognito, AWS Lambda, and AWS Secrets Manager, showcasing a reference architecture for runtime tool discovery.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-20</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/access-openai-gpt-models-on-amazon-bedrock-from-canada-with-cross-region-inference/" target="_blank" rel="noopener">Access OpenAI GPT models on Amazon Bedrock from Canada with cross-Region inference</a></h3>
+    
+    <div class="summary"><p>Access to OpenAI GPT models (GPT-6.1, GPT-6, and GPT-5.6) is now available in Canada (Central) and Canada West (Calgary) Regions via Amazon Bedrock cross-Region inference (CRIS).</p>
+<ul>
+<li>GPT-5.6 (Sol, Terra, Luna), GPT-6 (Astra, Sol, Luna), and GPT-6.1 (Sol) models are supported, offering context windows up to 1 million tokens and support for tool calling.</li>
+<li>Two CRIS profile types are available: “US geographic” (routing to Canada/US) and “Global” (routing to supported commercial AWS Regions), influencing data residency and capacity.</li>
+<li>Models can be invoked using the OpenAI Responses API, Chat Completions API, and Amazon Bedrock Converse API, with examples provided for streaming and tool use via Python.</li>
+<li>Prompt caching is supported for GPT-5.6, GPT-6, and GPT-6.1, potentially reducing costs and latency for repeated prompts; quotas for CRIS are measured in tokens per minute (TPM) and may require increases prior to production rollout.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-20</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-octave-built-a-secure-multi-tenant-ai-foundation-on-amazon-bedrock/" target="_blank" rel="noopener">How Octave built a secure multi-tenant AI foundation on Amazon Bedrock</a></h3>
+    
+    <div class="summary"><p>Octave built a secure, multi-tenant AI foundation on AWS using Amazon Bedrock to process regulated data efficiently and securely.</p>
+<ul>
+<li>The foundation utilizes Cohere Embed v4 on Amazon Bedrock to embed over 2 billion documents into per-tenant vector stores on Amazon OpenSearch Service, supporting multiple languages and formats within a 128K token context window.</li>
+<li>Secure execution is achieved using AgentCore Gateway from Amazon Bedrock AgentCore, providing isolated microVM sessions with scoped credentials and policy enforcement for each user request, preventing cross-tenant data access.</li>
+<li>Content protection leverages Amazon Bedrock Guardrails both for input filtering (identifying potential injections and PII) and output filtering, alongside bounded agency to limit tool access and prevent data exfiltration.</li>
+<li>A document processing pipeline, orchestrated by AWS Step Functions and utilizing AWS Lambda, is capable of ingesting and embedding 1.4 million documents per day per tenant, achieving fast onboarding times for large customer datasets.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-20</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/fine-tuning-gpt-oss-20b-for-multilingual-reasoning-on-amazon-sagemaker-hyperpod/" target="_blank" rel="noopener">Fine-tuning GPT-OSS-20B for multilingual reasoning on Amazon SageMaker HyperPod</a></h3>
+    
+    <div class="summary"><h2>Fine-tuning GPT-OSS-20B for Multilingual Reasoning on Amazon SageMaker HyperPod</h2>
+<p>This post details how to fine-tune the GPT-OSS-20B model for multilingual reasoning, comparing the effectiveness of Supervised Fine-Tuning (SFT) and Reinforcement Learning with Group Relative Policy Optimization (GRPO) on Amazon SageMaker HyperPod.</p>
+<ul>
+<li>GPT-OSS-20B initially reasons in English even when prompted in other languages, with only 22% accuracy on a multilingual reasoning test.</li>
+<li>SFT significantly improves performance, achieving 100% accuracy in reasoning in the requested language, but answer accuracy remains at 62%.</li>
+<li>GRPO, applied on top of SFT, further improves answer accuracy by an additional 8 percentage points, leveraging the existing reasoning capability.</li>
+<li>Experiments with Qwen2.5-7B demonstrate that GRPO is most effective when there is existing capability ("headroom") to refine; it provides no benefit when the model is already performing optimally.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-20</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/from-data-to-decisions-conversational-supply-chain-intelligence-with-amazon-quick-and-amazon-bedrock-agentcore/" target="_blank" rel="noopener">From data to decisions: Conversational supply chain intelligence with Amazon Quick and Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock AgentCore is a modular, agentic platform enabling secure and scalable agent building, deploying, and operating, utilizing a serverless runtime and standardized tool access through a gateway.</li>
+<li>The Model Context Protocol (MCP) is an open standard allowing AI models to interact with external tools via typed parameters, facilitating tool discovery and backend integration (SAP, Oracle, etc.).</li>
+<li>Amazon Quick, combined with AgentCore and the AWS Agent Registry, allows users to access and query live systems of record via natural language, simplifying complex, multi-system queries (e.g., supply chain disruptions, RFQs).</li>
+<li>Key MCP servers highlighted include Quoting Engine, Governance Engine, Invoice Processing, Disruption Alerts, and an Order Fulfillment Agent, demonstrating orchestration across systems for tasks like supplier validation and emergency RFQ processing.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-20</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/work-management-context-for-ai-agents-with-smartsheet-mcp-on-aws/" target="_blank" rel="noopener">Work management context for AI agents with Smartsheet MCP on AWS</a></h3>
+    
+    <div class="summary"><ul>
+<li>Smartsheet has launched a generally available Model Context Protocol (MCP) Server enabling AI agents to read, write, and manage Smartsheet data via a standardized protocol supporting over 40 tools.</li>
+<li>Amazon Quick and Kiro are presented as MCP clients; Quick offers a no-code interface for business users to query and update Smartsheet, while Kiro enables developers to integrate Smartsheet data into their coding workflows.</li>
+<li>The Smartsheet MCP Server utilizes Streamable HTTP transport (MCP spec versions 2025-06-18 and 2025-03-26) and authenticates with either OAuth 2.0 or a Personal Access Token, available at regional endpoints (US, EU, AU).</li>
+<li>The server is designed for efficient data transfer by delivering precisely structured context, including row relationships and column types, resulting in reduced costs and improved latency compared to raw API payloads.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-20</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/beyond-the-kv-cache-training-and-serving-i14s-laplace-3b-linear-attention-model-on-aws-trainium2-with-native-pytorch/" target="_blank" rel="noopener">Beyond the KV cache: Training and serving i14’s Laplace 3B linear attention model on AWS Trainium2 with native PyTorch</a></h3>
+    
+    <div class="summary"><p>Laplace 3B, a 3.028B parameter linear attention model from i14, was successfully trained and served on AWS Trainium2 using native PyTorch via TorchNeuron Native.</p>
+<ul>
+<li>Laplace 3B utilizes Gated Linear Attention (GLA) to maintain a fixed recurrent state of 29.5MB per sequence, independent of context length, addressing KV cache growth issues in traditional transformers.</li>
+<li>Training achieved 120,000 tokens/second on a trn2.48xlarge instance, while inference reached 11,544 output tokens/second across 1,280 concurrent sequences.</li>
+<li>Key implementation changes included rewriting the GLA kernel with standard PyTorch, optimizing Muon communication with all_to_all collectives (reducing traffic by 24x and increasing throughput by 1.63x), and statically unrolling the GLA recurrence for the Trainium2 compiler.</li>
+<li>The model's architecture features 24 decoder layers, a hidden dimension of 3,072, and a geometric decay schedule for attention heads, along with modifications to leverage the software-managed on-chip memory (SBUF) and fast interconnect of Trainium2.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -400,217 +612,6 @@
 <li>The system uses a combination of an Amazon Bedrock knowledge base (indexing Confluence, intranet pages, Slack, and marketing content stored in Amazon S3) and custom tools exposed via AgentCore Gateway, implemented as AWS Lambda functions, for tasks like ticket creation and image analysis.</li>
 <li>A three-stage pipeline utilizing DSPy’s Recursive Language Models (RLMs) and Claude on Amazon Bedrock is used to extract structured data from historical Slack conversations to populate the knowledge base.</li>
 <li>Deckhand achieved 97.5% message resolution and a 96% positive feedback rating, while deflecting approximately 67% of potential Jira tickets (812 conversations resolved vs. 409 tickets created) over three months.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-13</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/natural-language-security-queries-at-orca-security-using-amazon-bedrock/" target="_blank" rel="noopener">Natural language security queries at Orca Security using Amazon Bedrock</a></h3>
-    
-    <div class="summary"><p>Orca Security built Discovery AI, a natural language interface for querying cloud security data, using Amazon Bedrock, significantly improving performance and reducing costs.</p>
-<ul>
-<li>Discovery AI uses a nine-stage pipeline combining Retrieval Augmented Generation (RAG) with schema-aware query construction on Amazon Bedrock.</li>
-<li>The system leverages multiple foundation models: Anthropic Claude Haiku 4.5 for model selection and generation, Amazon Nova 2 Lite for guardrails and validation, Amazon Titan for embeddings, and Cohere Rerank 3.5 for reranking retrieved examples.</li>
-<li>Key improvements include a 93% reduction in input tokens, a 90% reduction in query costs, and a 75% reduction in query latency compared to an initial proof-of-concept.</li>
-<li>A continuous evaluation and labeling system, with human-in-the-loop feedback, allows for ongoing model improvement and adaptation to evolving environments.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-13</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/manage-private-pricing-offers-for-amazon-bedrock-with-managed-entitlements/" target="_blank" rel="noopener">Manage private pricing offers for Amazon Bedrock with managed entitlements</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock now supports managed entitlements via AWS License Manager to simplify multi-account access to third-party AI models offered through AWS Marketplace Private Pricing Offers (MPPOs).</li>
-<li>Two methods are provided: a lightweight script for one-time activation of trusted licenses and a CDK-based automation for ongoing, event-driven processing of new private pricing agreements.</li>
-<li>The CDK automation utilizes Amazon EventBridge to listen for AWS Marketplace agreement events, a Lambda function to verify sellers against an allow-list and activate grants, and License Manager entitlements to distribute access.</li>
-<li>The solution offers faster application of negotiated pricing, consistent handling across accounts, and a built-in audit trail via CloudWatch Logs, requiring prerequisites like AWS Organizations “all features” enabled and operation from the management account in <code>us-east-1</code>.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-13</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/building-agents-that-transact-with-anchor-browser-and-agentcore-payments/" target="_blank" rel="noopener">Building agents that transact with Anchor Browser and AgentCore payments</a></h3>
-    
-    <div class="summary"><ul>
-<li>Anchor Browser now integrates with Amazon Bedrock AgentCore payments to enable autonomous payments for resources protected by the x402 protocol (HTTP 402 Payment Required).</li>
-<li>AgentCore payments manages wallet connectivity, enforces spending limits, processes payments via x402, and provides observability through Amazon CloudWatch – removing the need for developers to build and secure a payment stack.</li>
-<li>The solution moves payment stack components (authentication, wallet secrets, payment limits, proof signing) into a managed service layer, leaving only a budget session and x402 tool within the Anchor Agent.</li>
-<li>Enabling automatic x402 payments within an Anchor Browser session is done via the <code>session.x402 = true</code> property; existing automation code (Playwright, Puppeteer) remains unchanged as the browser handles payments transparently.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-12</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/run-multi-node-inference-workloads-using-ray-llm-deep-learning-containers/" target="_blank" rel="noopener">Run multi-node inference workloads using Ray LLM Deep Learning Containers</a></h3>
-    
-    <div class="summary"><ul>
-<li>The post details deploying a large language model (LLM) across two GPU nodes on Amazon EKS using the multi-node Ray LLM Deep Learning Containers, separating prefill and decode phases behind a single OpenAI-compatible endpoint.</li>
-<li>The Ray LLM DLC includes Ray Serve LLM, NVIDIA Inference Transfer Library (NIXL), and the Elastic Fabric Adapter (EFA) stack, simplifying deployment and maintaining compatibility across the GPU stack.</li>
-<li>Prefill/decode disaggregation improves performance by isolating the compute-intensive prefill phase from the latency-sensitive decode phase, enabling independent scaling and optimized hardware selection for each.</li>
-<li>The deployment utilizes a declarative YAML configuration with <code>build_pd_openai_app</code> to establish the KV-cache transfer between the prefill and decode stages, requiring minimal application code.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-12</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/deploy-decision-models-with-llama-cpp-on-amazon-sagemaker-ai/" target="_blank" rel="noopener">Deploy decision models with llama.cpp on Amazon SageMaker AI</a></h3>
-    
-    <div class="summary"><p>AWS introduces deploying decision models using <code>llama.cpp</code> on Amazon SageMaker AI, offering a managed path for serving quantized models on CPU or GPU infrastructure.</p>
-<ul>
-<li>The AWS Deep Learning Container (DLC) for <code>llama.cpp</code> enables serving OpenAI-compatible chat completions via SageMaker AI InvokeEndpoint.</li>
-<li>The solution extends the runtime with SemIf (formerly OpenJev) to return probabilities over a set of defined options, avoiding text decoding.</li>
-<li>The system supports both CPU and GPU deployment options, utilizing instance pools for GPU configurations with options like <code>ml.g6e.xlarge</code>.</li>
-<li>Benchmarks show GPU endpoints are up to 32.2x faster than CPU endpoints for the SemIf extension (Qwen3.5-4B Q4_K_M on a ml.g6e.xlarge), though accuracy differences were observed between CPU and GPU builds.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-12</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/accessing-openai-gpt-models-on-amazon-bedrock-with-global-cross-region-inference-in-thailand-malaysia-singapore-indonesia-and-taiwan/" target="_blank" rel="noopener">Accessing OpenAI GPT models on Amazon Bedrock with global cross-Region inference in Thailand, Malaysia, Singapore, Indonesia, and Taiwan</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock now supports global cross-Region inference for OpenAI’s GPT-6 Sol, GPT-6 Luna, and GPT-6 Astra models from Thailand, Malaysia, Singapore, Indonesia, and Taiwan.</li>
-<li>GPT-6 Sol and GPT-6 Luna support reasoning effort levels of none, low, medium, high, xhigh and max, while GPT-6 Astra supports none, low, medium, high and xhigh.</li>
-<li>Inference is invoked using global cross-Region inference profile IDs (e.g., <code>global.openai.gpt-6-sol</code>) instead of model IDs; billing, quota tracking, and logging remain in the source Region.</li>
-<li>IAM permissions must be configured to allow access to the inference profile, the foundation model, and <code>bedrock:CallWithBearerToken</code> for API key authentication; SCPs can be used to scope exceptions to Region allowlists.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-09</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-postman-runs-agent-mode-for-40-million-developers-on-amazon-bedrock/" target="_blank" rel="noopener">How Postman runs Agent Mode for 40 million developers on Amazon Bedrock</a></h3>
-    
-    <div class="summary"><p>Postman integrated AI capabilities into its platform with Agent Mode, powered by Amazon Bedrock, to assist 40 million developers with API tasks.</p>
-<ul>
-<li>Agent Mode utilizes Amazon Bedrock for model flexibility, allowing Postman to switch between Anthropic Claude models (supported by AWS Region) to optimize for speed or complexity based on the task.</li>
-<li>To handle high and variable demand, Postman employs Amazon Bedrock’s cross-Region inference, routing requests across AWS Regions based on defined inference profiles (geographic or global) to maximize throughput.</li>
-<li>Postman addresses data residency concerns by utilizing Amazon Bedrock geographic inference profiles, restricting processing to specific regions, and has configured zero data retention where supported by models.</li>
-<li>To manage costs and reduce latency, Agent Mode leverages Amazon Bedrock's prompt caching, reusing stable prompt prefixes (like system instructions) for up to one hour.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-09</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/icymi-what-landed-for-ai-builders-in-september-2026/" target="_blank" rel="noopener">ICYMI: What landed for AI builders in September 2026</a></h3>
-    
-    <div class="summary"><p>AWS announced several updates to its AI services in September 2026, focused on expanding model choice, improving agent efficiency, and enhancing enterprise data connectivity.</p>
-<ul>
-<li><strong>Amazon Bedrock Managed Agents</strong> (powered by OpenAI) are now in public preview, allowing secure use of OpenAI models within AWS with existing IAM permissions and auditability.</li>
-<li>The <strong>AgentCore runtime</strong> now features more efficient memory management and reduced cold start latency for serverless agents, offering pay-as-you-go pricing.</li>
-<li><strong>Strands Harness</strong>, an open-source agent harness, achieves accuracy comparable to popular alternatives while reducing token usage by 28%, and <strong>Strands Decider 2B</strong> provides a 2B-parameter open-source decision model for fast, local tool selection and guardrails (~115ms).</li>
-<li>New models available on Amazon Bedrock include OpenAI’s <strong>Astra, Sol, and Luna</strong> (GPT-6 family), Claude’s <strong>Fable 5.1, Opus 5.5, and Sonnet 5.5</strong>, Moonshot AI's <strong>Kimi K3</strong>, and xAI’s <strong>Grok 4.6 and 4.7</strong>, alongside increased scheduling options for <strong>Amazon Bedrock Managed Knowledge Base</strong> and new native connectors for ServiceNow, Confluence Data Center, Salesforce, and Zendesk.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-08</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/share-gpu-clusters-across-teams-with-isolation-and-fairness-using-amazon-sagemaker-hyperpod/" target="_blank" rel="noopener">Share GPU clusters across teams with isolation and fairness using Amazon SageMaker HyperPod</a></h3>
-    
-    <div class="summary"><p>Amazon SageMaker HyperPod enables sharing GPU clusters across teams with isolation and fairness.</p>
-<ul>
-<li>Leverages Amazon IAM Identity Center for centralized authentication, federating with existing identity providers like Microsoft Entra ID.</li>
-<li>Utilizes per-team SageMaker AI domains with tailored execution roles for dedicated user workspaces and access control.</li>
-<li>Employs Kubernetes namespaces for workload isolation within a shared HyperPod EKS cluster.</li>
-<li>Implements HyperPod Task Governance for fair resource allocation and namespace-level cost allocation for visibility and chargeback.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-08</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/pay-per-inference-for-ai-agents-how-blockrun-and-incarna-use-amazon-bedrock-agentcore-payments/" target="_blank" rel="noopener">Pay-per-inference for AI agents: How BlockRun and Incarna use Amazon Bedrock AgentCore payments</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock AgentCore payments provides a managed solution for AI agents to pay for services like model inference on demand, addressing challenges with high-frequency, low-value transactions.</li>
-<li>The system leverages the x402 payment protocol, offering both "exact" and "upto" schemes for pricing, and integrates with wallets like Coinbase CDP via a stablecoin (USDC on the Base network) for auditable settlement.</li>
-<li>Incarna successfully integrated AgentCore payments with BlockRun, enabling agents to pay for inference requests—ranging from $0.001 to $0.05—with a deployment timeline reduced from months to days (approximately 200 lines of code).</li>
-<li>Key features include managed wallets, native x402 protocol handling, infrastructure-level spending governance, and session-based budgets to prevent overspending, even if the agent's prompt is compromised.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-07</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-cornerstone-ondemand-cut-database-diagnosis-by-78-with-amazon-bedrock/" target="_blank" rel="noopener">How Cornerstone OnDemand cut database diagnosis by 78% with Amazon Bedrock</a></h3>
-    
-    <div class="summary"><ul>
-<li>Cornerstone OnDemand built Orion AI, a multi-agent system using Amazon Bedrock and Strands Agents to automate database operations, reducing diagnosis time by 78% (from 45 to 10 minutes).</li>
-<li>Orion AI employs a hub-and-spoke architecture with a meta-orchestrator coordinating specialized agents for tasks like database diagnostics, lifecycle management, and alerting.</li>
-<li>The system utilizes hybrid routing, prioritizing keyword matching for speed and falling back to semantic search powered by Amazon Titan Text Embeddings V2 for complex queries.</li>
-<li>Orion AI leverages Amazon Bedrock AgentCore for conversational memory, utilizing a tiered approach with short-term (DynamoDB), long-term (AgentCore memory) and inter-agent memory, while bypassing memory for live metrics to ensure accuracy.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-07</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/building-ai-builders-playbook-for-closing-the-ai-knowledge-capability-gap/" target="_blank" rel="noopener">Building AI builders: Playbook for closing the AI knowledge-capability gap</a></h3>
-    
-    <div class="summary"><p>Building AI builders: Playbook for closing the AI knowledge-capability gap</p>
-<p>This document details a six-week program designed to enable non-technical professionals to build AI prototypes, bridging the gap between AI awareness and practical implementation.</p>
-<ul>
-<li>The program utilized a phased approach, spanning six weeks with approximately four hours of commitment per week, focused on building a working prototype to accelerate skills retention.</li>
-<li>Participants built “WealthWise”, a multi-agent AI financial advisory tool leveraging Amazon Nova models, Strands Agents SDK, Node.js, Python Flask, and Amazon DynamoDB, achieving sub-5-second response times.</li>
-<li>Key tools selected for usability included Kiro IDE for natural-language development, Amazon Bedrock for foundation models, Strands Agents SDK for agent composition, and AWS Lambda for production-grade architecture.</li>
-<li>Participant self-assessments showed significant increases, from 27% to 82% reporting a "Strong or Expert" understanding of agentic AI, and a decrease from 34% to 0% identifying with only theoretical AI experience.</li>
 </ul></div>
     
   </div>
