@@ -80,13 +80,82 @@
     </label>
   </div>
   <h1>Anthropic News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-10-22 10:18 UTC</p>
+  <p class="generated-at">Generated 2026-10-23 10:25 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">October 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>research</span>
+      <span> · 2026-10-22</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/research/formal-verification" target="_blank" rel="noopener">LLMs are making formal software verification feasible at a much larger scale</a></h3>
+    
+    <div class="summary"><p>Anthropic researchers demonstrated that Large Language Models (LLMs), specifically Claude, can now produce formal proofs at a large scale, enabling new software development workflows with proven security guarantees. Using Claude, they proved security properties at the assembly code level (RISC-V) for over 100 open-source libraries, a first for production software. This involved automatically converting existing compilable test suites into formal specifications – essentially proving the tests will <em>always</em> pass – and Claude successfully patched discovered bugs before completing these proofs.</p>
+<p>The process revealed bugs previously undetected despite extensive testing, including issues requiring specific input sizes or call sequences.  Crucially, Claude generated approximately 180 million lines of Rocq proof code, validated by a proof checker, reducing the need for manual review to trusting core components like the RISC-V and Linux models, the theorems, and the checker itself.  </p>
+<p>Beyond memory safety, the team also applied this approach to verifying implementations against formal specifications (like zlib) and even proving behavioral equivalence of code written in different languages (Python in Rust), finding previously unknown bugs in critical applications. They found that newer LLMs like Opus 5.5 require fewer tokens for proofs, and code reuse dramatically improves efficiency, hinting at a future where formal verification becomes broadly practical.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>news</span>
+      <span> · 2026-10-22</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/news/product" target="_blank" rel="noopener">Product</a></h3>
+    
+    <div class="summary"><p>Anthropic has been actively expanding the capabilities and accessibility of its Claude models throughout late 2025 and 2026. Key announcements include the release of specialized versions like Claude for Healthcare (HIPAA-ready), Claude for Financial Services (with Excel plugins and market connectors), Claude for Creative Work, and Claude for Life Sciences, each offering tailored connectors and skills. They’ve also launched Claude Design, a tool for visual collaboration, and Claude Tag for team workflows.</p>
+<p>Several infrastructure updates have been made, with Claude Sonnet 4.5, Haiku 4.5, and Opus 4.1 becoming available in Microsoft Foundry, and Claude receiving approval for use in highly secure government environments (FedRAMP High/DoD IL4/5) via Amazon Bedrock.  Furthermore, Anthropic donated “Agent Skills”, their open standard for specialized AI agent knowledge, to the Agentic AI Foundation, following integration into over 70 platforms.  Compute capacity was increased through a partnership with SpaceX, and usage limits have been raised. </p>
+<p>New features include a usage tracking and reflection tool for Claude, and the introduction of Claude Science, an AI workbench for researchers. Various programs offer access to Claude: verified US K-12 teachers receive free premium access, nonprofits receive discounted rates, and federal agencies can now purchase Claude through the GSA schedule.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>news</span>
+      <span> · 2026-10-22</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/news/open-call-guest-investigators-life-sciences" target="_blank" rel="noopener">Open call for guest investigators in the life sciences</a></h3>
+    
+    <div class="summary"><p>Anthropic has announced an open call for guest investigators in the life sciences, seeking proposals from principal investigators and research groups at academic, nonprofit, or government institutions. The program offers 8–12 weeks of collaboration with Anthropic researchers to investigate questions in fields including causal human biology, molecular biology, medicinal chemistry, and clinical science. Anthropic will provide model access and computing resources at no cost to participants.</p>
+<p>Investigators will work to produce analyses, artifacts, and tools collaboratively, intending to publish outputs and open-source associated data and code. Participants retain rights to their data and any independent follow-on research. Applications, which should detail clear benefits of collaboration and realistic outputs achievable within the timeframe, will be accepted for approximately 14 days, with notifications to selected participants expected within 14 days of the application deadline.</p>
+<p>Related initiatives include the Life Sciences Verification Program, offering direct access to Anthropic’s models, and the AI for Science initiative, providing Claude credits for research. The company stresses that applications should only contain publicly available information.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>news</span>
+      <span> · 2026-10-22</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation" target="_blank" rel="noopener">Donating Agent Skills to the Agentic AI Foundation</a></h3>
+    
+    <div class="summary"><p>Anthropic is donating “Agent Skills,” an open standard for providing AI agents with specialized knowledge and workflows, to the Agentic AI Foundation (AAIF) under the Linux Foundation. More than 70 agent platforms—including ChatGPT, Cursor, GitHub Copilot, and VS Code—have adopted Agent Skills since its December 2025 publication; to date, over 1 million skills have been published and nearly 280 million installed.</p>
+<p>A skill is defined as a folder containing a <code>SKILL.md</code> file detailing a specific task, along with supporting scripts and materials. Anthropic initially developed the standard while working on Claude Code, noting a need for procedural knowledge beyond general information. </p>
+<p>The donation includes the Agent Skills name, logo, GitHub organization, and domain (agentskills.io). David Soria Parra and Mahesh Murag will serve as Lead Maintainers, supported by engineers from multiple companies. Future development will prioritize versioned releases, a formal proposal process, and security guidance, with community input solicited via Discord.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>news</span>
+      <span> · 2026-10-22</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/news/announcements" target="_blank" rel="noopener">Announcements</a></h3>
+    
+    <div class="summary"><p>Anthropic has recently released several updates to its Claude model family. Claude Opus 5.5 is now available, offering leading performance in coding and knowledge work at a cost 40% lower than Opus 5. Similarly, Claude Sonnet 5.5 provides a 30%+ speed increase and up to 30% cost reduction over Claude Sonnet 5, while Claude Haiku 5.5 is positioned as the fastest, most capable small model for tasks like summarization. </p>
+<p>Beyond model improvements, Anthropic launched the Life Sciences Verification Program, granting access to Claude Mythos, Opus, and Sonnet with modified safeguards for biology-related research. They also introduced Claude Mythos and Fable 5.1, described as the most advanced models for coding and knowledge work.  Additionally, Anthropic is investing $100 million into training 10,000 engineers via the Claude Frontier Academy and offering $50,000 in Claude credits to researchers studying rare genetic diseases. The company has also established new offices in Singapore and Seoul, and is expanding into the Korean AI ecosystem.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -98,19 +167,6 @@
     
     <div class="summary"><p>Anthropic announced that Christopher Stubbs, former Dean of Science at Harvard University and an experimental physicist, has joined its Long-Term Benefit Trust. Stubbs’ expertise lies in observational cosmology and precision measurement, including work on the accelerating expansion of the universe that earned his team the Breakthrough Prize in Fundamental Physics. He has also advised the US government on national security and arms control.</p>
 <p>The Trust, which currently includes chair Neil Buddy Shah, Richard Fontaine, and Ben Bernanke, is intended to ensure Anthropic balances commercial growth with its public benefit purpose as a Public Benefit Corporation. Trustees advise on critical decisions, with the authority to appoint a majority of Anthropic’s board. Anthropic recently published its first Public Benefit Report, measuring progress against five charter pillars defined with Trustee input. A new Anthropic Public Benefit Fund, intended to grow with the company, is also planned subject to stockholder approval.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Anthropic</span> · 
-      <span>news</span>
-      <span> · 2026-10-21</span>
-    </div>
-    <h3><a href="https://www.anthropic.com/news/announcements" target="_blank" rel="noopener">Announcements</a></h3>
-    
-    <div class="summary"><p>Anthropic has recently released several updates to its Claude model family. Claude Haiku 5.5 is now available as their fastest and most capable small model, designed for tasks like summarization and use with browser extensions.  Claude Sonnet 5.5 offers a 30%+ speed increase and up to 30% cost reduction compared to Claude Sonnet 5, while Claude Opus 5.5 is positioned as leading in coding and knowledge work with a 40% cost reduction versus Opus 5.  </p>
-<p>New specialized models include Claude Mythos and Fable 5.1, focused on coding and research, and access to Claude Mythos, Opus, and Sonnet has been expanded for life science professionals via the Life Sciences Verification Program.  Additionally, Anthropic is investing $100 million to train 10,000 engineers through the Claude Frontier Academy and has launched a $5 million grant program to study AI’s impact on wellbeing. The company has also opened offices in Singapore and Seoul and filed for an S-1 with the SEC.</p></div>
     
   </div>
   
@@ -438,62 +494,6 @@
     <div class="summary"><p>Anthropic has expanded its Cyber Verification Program (CVP), integrating Project Glasswing and the original CVP into a tiered system granting security professionals access to advanced AI models with reduced safeguards. The program now offers three tiers: Defense Access (for general security tasks), Red Team Access (adding authorized penetration testing), and Specialized Access (for critical system testing, currently limited to verified organizations and in collaboration with the US government). </p>
 <p>All tiers include access to Claude Opus 5.5, Claude Sonnet 5.5, and Claude Mythos 5.1—and future models—with varying levels of cyber blocks. Testing with CyScenarioBench showed that Defense Access blocked 46 of 50 tasks, while Red Team Access allowed completion of 34 of 50—equivalent to performance with no safeguards. Anthropic reports that through Glasswing, partners identified at least 129,000 verified software vulnerabilities between April and July 2026. </p>
 <p>Organizations can apply for CVP access, with varying review times depending on the tier, and data retention is required—though Enterprise Frontier Safeguards will offer a zero-data-retention option later this fall.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-10-05</span>
-    </div>
-    <h3><a href="https://claude.com/blog/how-cresta-turned-cx-expertise-into-an-agent-builder-on-the-claude-agent-sdk" target="_blank" rel="noopener">How Cresta turned CX expertise into an agent builder on the Claude Agent SDK | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Cresta has released Conductor, a natural language agent builder leveraging the Claude Agent SDK, designed to streamline the creation of AI agents for customer experience (CX) applications. Originally built internally using Claude Sonnet and Opus, Conductor guides users through agent development – from blueprinting to implementation and optimization – aiming to halve initial deployment time. </p>
-<p>Conductor utilizes the Claude Agent SDK for tasks requiring adaptability, code execution, and iterative refinement, combined with Cresta’s proprietary conversation intelligence and CX expertise.  It focuses on balancing deterministic workflows—crucial for regulated industries—with flexible, adaptive conversation handling. The platform emphasizes evaluation with specific metrics covering artifact usability, execution path, quality, and resource usage, and includes a system to rerun those evaluations after updates to Claude or Conductor itself.</p>
-<p>Cresta emphasizes a “dogfooding” approach, internally validating Conductor before release, and focusing development on areas where they possess unique expertise, leveraging the Claude Agent SDK for core functionality. Conductor also allows teams to capture proven agent development patterns as reusable “skills”, fostering a knowledge flywheel for continuous improvement.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Anthropic</span> · 
-      <span>news</span>
-      <span> · 2026-10-02</span>
-    </div>
-    <h3><a href="https://www.anthropic.com/news/claude-frontier-academy" target="_blank" rel="noopener">Claude Frontier Academy: $100M to train 10,000 engineers</a></h3>
-    
-    <div class="summary"><p>Anthropic has announced a $100 million investment in the Claude Frontier Academy, an initiative designed to address the shortage of skilled AI engineers within enterprises. The program aims to train 10,000 “Frontier Deployed Engineers” (FDEs) by the end of 2027, with initial cohorts drawn from companies including Accenture, Bain, Capgemini, Commonwealth Bank of Australia, Deloitte, McKinsey, Morgan Stanley, and Novo Nordisk.</p>
-<p>The FDE Residency program mirrors medical training, combining learning from experienced practitioners, hands-on practice using realistic deployment scenarios, and rigorous assessment. Engineers will begin with in-person training followed by a 12-week residency leading a Claude project within their organization and supported by Anthropic engineers, culminating in a “Claude Frontier Deployed Engineer” badge upon successful completion. </p>
-<p>The Academy builds upon Anthropic’s existing Claude Partner Network, which has already seen over 175,000 Claude certifications earned by professionals across 46,000 firms. The program is targeted towards experienced software engineers with foundational LLM experience and a track record of problem-solving, with organizations nominating candidates for participation. Initial programs are currently running in San Francisco, New York, and London.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Claude Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-10-01</span>
-    </div>
-    <h3><a href="https://claude.com/blog/claude-code-mods" target="_blank" rel="noopener">Customize Claude Code with mods in TypeScript | Claude by Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic has introduced “mods” for Claude Code, enabling users to customize the tool's behavior with small TypeScript functions. These mods function as event hooks – intercepting actions like tool calls or UI rendering – and can rewrite prompts, alter the interface, replace built-in features, or add new functionality. Mods are packaged and distributed as plugins, installing and updating like any other plugin within the Claude Code CLI and desktop app.</p>
-<p>Importantly, mods run with the same system access as Claude Code itself, requiring trust in the source. Existing features like <code>/diff</code> are now implemented as mods, signaling a move to make more of Claude Code customizable in this way.  Team and Enterprise plans include security features like <code>sec-default</code> which can restrict mod behavior, and allow administrators to define custom mod loading order and restrictions.  </p>
-<p>Users can author mods themselves, or instruct Claude Code to generate them.  The full documentation and a getting started guide are available; admins can manage plugin access through existing controls.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Anthropic</span> · 
-      <span>research</span>
-      <span> · 2026-10-01</span>
-    </div>
-    <h3><a href="https://www.anthropic.com/research/claude-shaped-science" target="_blank" rel="noopener">Claude-shaped science</a></h3>
-    
-    <div class="summary"><p>Anthropic’s new toolkit, BootLoops, leverages the capabilities of Claude to tackle “Claude-shaped” problems – quantitative scientific questions particularly well-suited to AI’s strengths in coding, mathematical manipulation, and broad knowledge access.  Researcher Matthew Schwartz found that by allowing Claude to identify these problems, rather than forcing it into pre-defined research paths, significant progress could be made across diverse fields. Initial experiments with Claude Opus 4.5 demonstrated performance comparable to a graduate student, but required extensive hand-holding; BootLoops aims to overcome that impedance mismatch.</p>
-<p>BootLoops has already facilitated novel findings in areas like ecology (revealing discrepancies in tree species change rates compared to neutral theory) and population genetics (identifying a mechanism called gene conversion). The toolkit functions as a harness, streamlining code porting and enabling exact calculations, particularly with semi-numerical bootstrap methods.  The project involved 36 manuscripts with 19 co-authors across 18 fields developed in three months, with the source code available on GitHub.</p>
-<p>The key takeaway is that focusing on problems aligned with current AI capabilities—those requiring extensive computation and drawing on interdisciplinary knowledge—can unlock valuable scientific insights. While AI won't replace the need for human scientists to guide research and interpret results, it provides a powerful new tool for accelerating discovery, especially where existing expertise is fragmented across disciplines.</p></div>
     
   </div>
   
