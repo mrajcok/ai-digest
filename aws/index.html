@@ -80,13 +80,86 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-10-23 10:25 UTC</p>
+  <p class="generated-at">Generated 2026-10-24 10:18 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">October 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-23</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-bayer-crop-science-built-an-agentic-decision-engine-on-amazon-bedrock-agentcore-with-aws-unified-operations/" target="_blank" rel="noopener">How Bayer Crop Science built an agentic decision engine on Amazon Bedrock AgentCore with AWS Unified Operations</a></h3>
+    
+    <div class="summary"><p>Bayer Crop Science built the Agentic Decision Engine (ADE) to provide a natural language interface for understanding complex machine learning workflows, powered by Amazon Bedrock AgentCore.</p>
+<ul>
+<li>ADE is built on Amazon Bedrock AgentCore, utilizing a framework-agnostic design with LangGraph orchestration and leveraging features like isolated runtime sessions and IAM-scoped tool access via AgentCore Gateway.</li>
+<li>The system employs a multi-agent architecture with 22 specialist agents, each focused on a specific domain and accessing relevant data sources through tools exposed via AgentCore Gateway; these agents handle tasks like troubleshooting, providing conceptual explanations, and generating visualizations.</li>
+<li>Key design decisions included externalizing orchestration state to DynamoDB, separating identity and authorization layers, treating model selection as an interface contract, controlling the tool surface, and promoting complex capabilities to dedicated agents.</li>
+<li>Observability is enhanced through custom CloudWatch metrics tracking task failures, and cost attribution combines Amazon Bedrock application profiles, request metadata logging, and IAM principal attribution to analyze spending per interaction.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-23</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/visualize-points-and-routes-with-geojson-in-amazon-quick-sight-layer-maps/" target="_blank" rel="noopener">Visualize points and routes with GeoJSON in Amazon Quick Sight layer maps</a></h3>
+    
+    <div class="summary"><p>Amazon QuickSight layer maps now support visualizing points and lines using GeoJSON files, in addition to existing polygon support.</p>
+<ul>
+<li>Layer maps can now render Point and LineString geometries from GeoJSON files, allowing for the visualization of specific locations and routes.</li>
+<li>A GeoJSON file requires a "FeatureCollection" structure with "Feature" objects containing "geometry" (type: Point, LineString, or Polygon) and "properties" (for joining to a QuickSight dataset).</li>
+<li>Configuration involves selecting the "Geometry type" (Points, Lines, or Polygons) within QuickSight and establishing a join key between the GeoJSON file’s properties and a QuickSight dataset field.</li>
+<li>Advanced techniques include controlling the map viewport programmatically via APIs, layering multiple layer map visuals for combined geometries, and dynamically updating GeoJSON files stored in Amazon S3.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-23</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/orchestrating-sagemaker-ai-endpoint-auto-scaling-with-aws-cdk/" target="_blank" rel="noopener">Orchestrating SageMaker AI endpoint auto scaling with AWS CDK</a></h3>
+    
+    <div class="summary"><p>AWS CDK construct automates SageMaker AI endpoint auto scaling updates by orchestrating deregistration and registration of scalable targets using custom resources.</p>
+<ul>
+<li>The construct replaces native CloudFormation auto scaling resources with three custom resources: one to deregister the scalable target, one to update the endpoint, and two to register the scalable target and attach the scaling policy.</li>
+<li>It uses an asynchronous completion pattern with <code>on_event</code> and <code>is_complete</code> handlers, and AWS Step Functions state machines to wait for endpoint status and scalable target availability.</li>
+<li>A <code>ConfigHash</code> property ensures that updates to either endpoint configuration or auto scaling parameters trigger the complete orchestration sequence.</li>
+<li>The implementation involves a provider framework generating additional Lambda functions (totaling twelve) alongside the three custom resources, though only five require custom handler code.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-23</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/multi-turn-reinforcement-learning-on-amazon-sagemaker-ai-a-hands-on-guide/" target="_blank" rel="noopener">Multi-Turn Reinforcement Learning on Amazon SageMaker AI: A hands-on guide</a></h3>
+    
+    <div class="summary"><h2>Multi-Turn Reinforcement Learning on Amazon SageMaker AI: A Hands-on Guide</h2>
+<p>This blog post details how to use Amazon SageMaker AI’s Multi-Turn Reinforcement Learning (MTRL) capability to train language models for agentic tasks requiring sequential decision-making.</p>
+<ul>
+<li>MTRL trains models using a reward signal received after an entire sequence of actions, unlike standard fine-tuning or single-turn RL. It works by having an agent hosted on Amazon Bedrock AgentCore (or custom infrastructure) interact with an environment, and provides a reward at the <em>end</em> of an episode.</li>
+<li>The example uses the game Wordle to demonstrate the pipeline, showcasing training of the gpt-oss-20b model, improving its solve rate from 61% to 84% at default reasoning effort, and from 15% to 69% at low reasoning effort, for approximately $339 in training tokens.</li>
+<li>The system utilizes a two-part architecture: SageMaker AI for the training job and policy model, and AgentCore for hosting the agent, environment, and reward function; communication happens via an AWS Lambda forwarder. Group Relative Policy Optimization (GRPO) and Low-Rank Adaptation (LoRA) are used to update the policy model.</li>
+<li>Currently supported base models include Amazon Nova 2 Lite, GPT-OSS-20B, Gemma 4 31B (instruction-tuned), and Qwen 3.6 27B; pricing is based on prefill, sample, and train tokens, as well as AgentCore runtime costs.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -536,76 +609,6 @@
 <li>The system allows decode nodes to return previously computed KV cache to prefill nodes, avoiding redundant recomputation of context and reducing accelerator capacity usage.</li>
 <li>Key components include enhancements to the NVIDIA Inference Xfer Library (NIXL) KV connector, a KV-cache-aware router (a lightweight, stateful control plane), configurable block retention TTL (default 480 seconds) and a KV recompute threshold (default 64 tokens).</li>
 <li>Benchmarks on Amazon EC2 P5en instances with EFA showed TTFT reductions of up to 1.6x for Qwen3-32B and 3.3x for zai-org/GLM-5-FP8 compared to not using the bidirectional transfer, especially with longer prompts.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-19</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/push-based-kv-transfer-to-improve-ttft-and-tpot-for-disaggregated-inference-in-vllm/" target="_blank" rel="noopener">Push-based KV transfer to improve TTFT and TPOT for disaggregated inference in vLLM</a></h3>
-    
-    <div class="summary"><ul>
-<li>This blog post details a new “push-based” NVIDIA Inference Xfer Library (NIXL) connector in vLLM designed to improve Time-To-First-Token (TTFT) and Time-Per-Output-Token (TPOT) for disaggregated LLM inference.</li>
-<li>The push-based connector overlaps KV cache transfer coordination with prefill computation by having the decode instance register target blocks <em>before</em> prefill completes, initiating transfer as soon as blocks are ready – eliminating a round trip present in the default “pull” mode.</li>
-<li>The implementation utilizes a dedicated background thread on the prefill instance to handle KV transfer preparation and submission, further isolating this work from the critical path, and supports different block layouts on each side.</li>
-<li>Benchmarks using the Qwen3-32B model on Amazon EC2 P5en instances with EFA show up to a 3x improvement in TTFT and a 30% improvement in TPOT with the push-based connector, particularly at higher request rates and longer input lengths.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-19</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-deepgram-optimized-voice-ai-at-scale-with-aws-trainium/" target="_blank" rel="noopener">How Deepgram optimized voice AI at scale with AWS Trainium</a></h3>
-    
-    <div class="summary"><p>Deepgram optimized its Nova-3 speech-to-text model for AWS Trainium2, achieving significant cost and performance gains.</p>
-<ul>
-<li>The Nova-3 model was ported from standard PyTorch code to AWS Trainium2 using TorchNeuron and compiled with <code>torch.compile</code> for full hardware utilization.</li>
-<li>Performance was further enhanced by replacing layers with fused kernels from the Neuron Kernel Interface Library (NKILib) and custom-written kernels, addressing bottlenecks in FFN layers, depthwise convolutions, and 2D convolutions.</li>
-<li>A data-parallel Rust runtime was built to leverage eight physical NeuronCores per Trainium2 device, improving throughput and reducing overhead compared to Python-based runtimes—achieving up to 7.5% gain.</li>
-<li>The optimized configuration processed 11–70 percent more audio per dollar compared to previously used compute options on Deepgram’s offline batch workloads.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-19</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/pegasus-1-5-from-twelvelabs-is-now-available-in-amazon-bedrock/" target="_blank" rel="noopener">Pegasus 1.5 from TwelveLabs is now available in Amazon Bedrock</a></h3>
-    
-    <div class="summary"><ul>
-<li>Pegasus 1.5, a video language model from TwelveLabs, is now available on Amazon Bedrock, enabling extraction of structured, timestamped metadata from long-form video.</li>
-<li>The model supports time-based metadata generation, allowing users to define segments, events, or cues, and receive matching video segments as JSON with start and end times.</li>
-<li>Pegasus 1.5 introduces multimodal prompting, combining text descriptions with visual references (images) to locate specific items within video, and can process videos up to two hours long.</li>
-<li>Videos can be analyzed directly from Amazon S3 using a URI or provided as a base64 string (up to 25MB), and the model supports both general text prompting and structured JSON output via a JSON Schema.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-19</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-jumpstart-2026-year-to-date-in-review/" target="_blank" rel="noopener">Amazon SageMaker JumpStart: 2026 year-to-date in review</a></h3>
-    
-    <div class="summary"><p>Amazon SageMaker JumpStart saw significant expansion through September 2026, onboarding over 100 new models from 30+ providers.</p>
-<ul>
-<li>The platform features models from Alibaba (Qwen family – including reasoning, code generation, speech, and embeddings), NVIDIA (Cosmos3, Nemotron families), Mistral, Google (Gemma 4), IBM (Granite, granite-speech), Cohere, and others.</li>
-<li>New deployment configurations offer optimized settings for balanced performance, throughput, latency, or cost, with Neuron optimization for Inferentia/Trainium instances.</li>
-<li>A Hugging Face deep link integration allows for one-click deployment into a configured SageMaker Studio environment, streamlining access and setup.</li>
-<li>Emphasis was placed on multimodal models (vision, speech, text), creative AI models (image/video generation), and quantized/compact models for cost-effectiveness, along with purpose-built models for tasks like OCR and RAG.</li>
 </ul></div>
     
   </div>
