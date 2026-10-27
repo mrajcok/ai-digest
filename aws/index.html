@@ -80,13 +80,65 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-10-26 10:15 UTC</p>
+  <p class="generated-at">Generated 2026-10-27 10:16 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">October 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-26</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-agentic-retrieval-on-a-managed-amazon-bedrock-knowledge-base-with-cdk/" target="_blank" rel="noopener">Build agentic retrieval on a Managed Amazon Bedrock Knowledge Base with CDK</a></h3>
+    
+    <div class="summary"><ul>
+<li>AWS released a solution for building enterprise agentic retrieval using Managed Amazon Bedrock Knowledge Bases and the AWS Cloud Development Kit (CDK).</li>
+<li>The system utilizes the new AgenticRetrieveStream API within Managed Knowledge Bases, enabling multi-turn planning, tool-driven retrieval, and cited answers, differing from traditional single-shot RAG approaches.</li>
+<li>The CDK application automates the deployment of the entire system, including knowledge base ingestion from S3, an AgentCore Gateway, an agent runtime, and comprehensive observability dashboards with seven telemetry layers and evaluation metrics.</li>
+<li>Agentic retrieval and the AgentCore Gateway are currently only available on Managed Knowledge Bases, which handle ingestion, storage, indexing, and retrieval without requiring separate OpenSearch Serverless provisioning.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-26</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/groundhog-day-for-ai-agents-prompt-caching-patterns-for-using-openai-models-on-amazon-bedrock/" target="_blank" rel="noopener">Groundhog Day for AI agents: Prompt caching patterns for using OpenAI models on Amazon Bedrock</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock introduces prompt caching to reduce costs and improve responsiveness for AI agents by reusing previously processed prompt prefixes, addressing the “Groundhog Day” problem of repeatedly sending full context with each turn.</li>
+<li>Caching can be <em>implicit</em>, where Bedrock automatically determines the reusable prefix, or <em>explicit</em>, where developers define breakpoints in the prompt to delineate the cached section using <code>prompt_cache_key</code> and <code>prompt_cache_options</code> (with <code>mode</code> set to "explicit" or "implicit" and a <code>ttl</code> for cache lifetime).</li>
+<li>Combining implicit and explicit caching allows for a reusable starting point (tools and instructions) while letting Bedrock manage the growing conversational history automatically; explicit caching requires consistent serialization of instructions and tool lists, and is recommended for static content.</li>
+<li>Prompt caching is available for GPT-6 Astra (v7 using the <code>KEY = "support-agent:v7:gpt-6-astra"</code> example), GPT-6.1 Sol and GPT-5.6 Luna and can be used with new tools added mid-session via the <code>additional_tools</code> input type, enabling reuse of existing cached content.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-26</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/fleet-wide-computer-vision-lifecycle-at-the-edge-with-sagemaker-sdk-v3/" target="_blank" rel="noopener">Fleet-wide computer vision lifecycle at the edge with SageMaker SDK v3</a></h3>
+    
+    <div class="summary"><p>AWS SageMaker SDK v3 introduces a fleet-wide computer vision lifecycle management solution for edge deployments.</p>
+<ul>
+<li>The solution uses SageMaker Pipelines with dual branches—one for anomaly detection and one for defect classification—trained per camera to address variations in visual data.</li>
+<li>SageMaker Neo is integrated into the pipeline to compile models for edge devices, creating device-optimized shared libraries loaded by the DLR runtime, replacing the deprecated SageMaker Edge Manager.</li>
+<li>Quality gates, based on metrics like AUROC (&gt;=0.8 for anomaly detection) and balanced accuracy/defect recall (&gt;=0.6 &amp; 0.5 for classification), prevent underperforming models from being registered.</li>
+<li>Orchestration with AWS Step Functions and SQS manages concurrent training, and the entire pipeline is deployable with AWS CDK, with a full run on synthetic data costing approximately $0.07.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -557,58 +609,6 @@
 <li>The Model Context Protocol (MCP) is an open standard allowing AI models to interact with external tools via typed parameters, facilitating tool discovery and backend integration (SAP, Oracle, etc.).</li>
 <li>Amazon Quick, combined with AgentCore and the AWS Agent Registry, allows users to access and query live systems of record via natural language, simplifying complex, multi-system queries (e.g., supply chain disruptions, RFQs).</li>
 <li>Key MCP servers highlighted include Quoting Engine, Governance Engine, Invoice Processing, Disruption Alerts, and an Order Fulfillment Agent, demonstrating orchestration across systems for tasks like supplier validation and emergency RFQ processing.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-20</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/work-management-context-for-ai-agents-with-smartsheet-mcp-on-aws/" target="_blank" rel="noopener">Work management context for AI agents with Smartsheet MCP on AWS</a></h3>
-    
-    <div class="summary"><ul>
-<li>Smartsheet has launched a generally available Model Context Protocol (MCP) Server enabling AI agents to read, write, and manage Smartsheet data via a standardized protocol supporting over 40 tools.</li>
-<li>Amazon Quick and Kiro are presented as MCP clients; Quick offers a no-code interface for business users to query and update Smartsheet, while Kiro enables developers to integrate Smartsheet data into their coding workflows.</li>
-<li>The Smartsheet MCP Server utilizes Streamable HTTP transport (MCP spec versions 2025-06-18 and 2025-03-26) and authenticates with either OAuth 2.0 or a Personal Access Token, available at regional endpoints (US, EU, AU).</li>
-<li>The server is designed for efficient data transfer by delivering precisely structured context, including row relationships and column types, resulting in reduced costs and improved latency compared to raw API payloads.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-20</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/beyond-the-kv-cache-training-and-serving-i14s-laplace-3b-linear-attention-model-on-aws-trainium2-with-native-pytorch/" target="_blank" rel="noopener">Beyond the KV cache: Training and serving i14’s Laplace 3B linear attention model on AWS Trainium2 with native PyTorch</a></h3>
-    
-    <div class="summary"><p>Laplace 3B, a 3.028B parameter linear attention model from i14, was successfully trained and served on AWS Trainium2 using native PyTorch via TorchNeuron Native.</p>
-<ul>
-<li>Laplace 3B utilizes Gated Linear Attention (GLA) to maintain a fixed recurrent state of 29.5MB per sequence, independent of context length, addressing KV cache growth issues in traditional transformers.</li>
-<li>Training achieved 120,000 tokens/second on a trn2.48xlarge instance, while inference reached 11,544 output tokens/second across 1,280 concurrent sequences.</li>
-<li>Key implementation changes included rewriting the GLA kernel with standard PyTorch, optimizing Muon communication with all_to_all collectives (reducing traffic by 24x and increasing throughput by 1.63x), and statically unrolling the GLA recurrence for the Trainium2 compiler.</li>
-<li>The model's architecture features 24 decoder layers, a hidden dimension of 3,072, and a geometric decay schedule for attention heads, along with modifications to leverage the software-managed on-chip memory (SBUF) and fast interconnect of Trainium2.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-19</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/improve-ttft-for-multi-turn-agentic-workloads-with-bi-directional-kv-transfer-in-vllm/" target="_blank" rel="noopener">Improve TTFT for multi-turn agentic workloads with bi-directional KV transfer in vLLM</a></h3>
-    
-    <div class="summary"><ul>
-<li>AWS has implemented bi-directional KV cache transfer in vLLM (v0.21.0 or later) to improve Time To First Token (TTFT) for multi-turn agentic workloads.</li>
-<li>The system allows decode nodes to return previously computed KV cache to prefill nodes, avoiding redundant recomputation of context and reducing accelerator capacity usage.</li>
-<li>Key components include enhancements to the NVIDIA Inference Xfer Library (NIXL) KV connector, a KV-cache-aware router (a lightweight, stateful control plane), configurable block retention TTL (default 480 seconds) and a KV recompute threshold (default 64 tokens).</li>
-<li>Benchmarks on Amazon EC2 P5en instances with EFA showed TTFT reductions of up to 1.6x for Qwen3-32B and 3.3x for zai-org/GLM-5-FP8 compared to not using the bidirectional transfer, especially with longer prompts.</li>
 </ul></div>
     
   </div>
