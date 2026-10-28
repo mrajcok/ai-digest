@@ -80,13 +80,83 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-10-27 10:16 UTC</p>
+  <p class="generated-at">Generated 2026-10-28 10:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">October 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-27</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/exowatt-beats-frontier-models-on-accuracy-with-sagemaker-serverless-model-customization/" target="_blank" rel="noopener">Exowatt beats frontier models on accuracy with SageMaker serverless model customization</a></h3>
+    
+    <div class="summary"><p>Exowatt achieved higher accuracy and lower costs for AI tasks by customizing open-weight models using Amazon SageMaker AI serverless features.</p>
+<ul>
+<li>Exowatt successfully fine-tuned the Qwen3-1.7B model for edge alarm triage and the Qwen3-14B model for cloud energy-market analysis, surpassing the performance of larger frontier models.</li>
+<li>The solution leverages Amazon SageMaker AI serverless fine-tuning, evaluation, and the Model Registry, integrated with services like Amazon Bedrock and AWS Lambda, eliminating the need to manage infrastructure.</li>
+<li>Fine-tuning involved using Low-Rank Adaptation (LoRA) and supervised fine-tuning (SFT), with data augmentation using models like Claude Sonnet 4.6 and Qwen3-235B on Amazon Bedrock.</li>
+<li>The Qwen3-1.7B model runs offline on edge devices (llama.cpp, GGUF quantization) with no inference cost, while the Qwen3-14B model is served via Amazon Bedrock Custom Model Import with pay-per-use billing.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-27</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/fix-evaluation-bias-to-unlock-better-models-on-amazon-bedrock/" target="_blank" rel="noopener">Fix evaluation bias to unlock better models on Amazon Bedrock</a></h3>
+    
+    <div class="summary"><ul>
+<li>Property Finder discovered that 96.8% of their image evaluation labels were inherited from an existing model’s predictions, creating a biased dataset hindering objective model comparison on Amazon Bedrock.</li>
+<li>The team built a new, unbiased ground truth dataset annotated by human experts, initially using 356 UAE images, to accurately evaluate model performance across 11 image quality attributes.</li>
+<li>Through iterative prompt optimization, analogous to reinforcement learning and utilizing tools like MIPROv2, they significantly improved the performance of Llama 4 Maverick 17B Instruct, achieving a Micro F1 score of 0.80 on the evaluation set.</li>
+<li>Switching from their proprietary model to Llama 4 Maverick 17B Instruct, with optimized prompting, resulted in a 47% relative gain in Micro F1 score and an 86% reduction in cost per 1,000 images.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-27</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/announcing-soci-indexed-images-for-faster-sagemaker-ai-jobs/" target="_blank" rel="noopener">Announcing SOCI-indexed images for faster SageMaker AI jobs</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon SageMaker now supports Seekable OCI (SOCI) indexing for AI training and processing jobs, reducing container image download times from minutes to seconds.</li>
+<li>SOCI indexing lazy-loads container images, fetching only necessary files to start the container, and streaming the rest in the background during job execution.</li>
+<li>Users can adopt SOCI indexing by using pre-indexed AWS Deep Learning Containers (DLCs) with the <code>-soci</code> suffix or by creating an index for their own custom images.</li>
+<li>Benchmarks show download time reductions of up to 38x for larger images (35.4 GB) and minimal impact on training performance beyond a small first-epoch penalty.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-27</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/aws-named-a-leader-in-the-2026-gartner-magic-quadrant-for-contact-center-as-a-service/" target="_blank" rel="noopener">AWS named a Leader in the 2026 Gartner Magic Quadrant for Contact Center as a Service</a></h3>
+    
+    <div class="summary"><p>AWS has been recognized as a Leader in the 2026 Gartner Magic Quadrant for Contact Center as a Service (CCaaS) with <strong>Amazon Connect Customer</strong> for the fourth consecutive year.</p>
+<ul>
+<li><strong>Amazon Connect Customer</strong> focuses on building a unified customer profile to personalize interactions across channels.</li>
+<li>The platform is designed to handle complex customer issues requiring full resolution, rather than prioritizing deflection.</li>
+<li><strong>Amazon Connect Customer</strong> incorporates generative and agentic AI to understand customer needs and proactively act on them, with full auditability and human oversight options.</li>
+<li>The solution aims to provide enterprise-scale reliability while maintaining personalized customer experiences, per Gartner analysis published October 19, 2026.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -537,78 +607,6 @@
 <li>The system utilizes a discover → instantiate → execute loop, where an orchestrator searches the Registry, constructs clients from descriptors, and dynamically builds agents with discovered capabilities.</li>
 <li>Records within the Registry require a <code>recordType</code> of "MCP" or "AGENT" and store protocol-specific metadata (MCP server details or A2A agent cards) in descriptors, but do <em>not</em> include invocation credentials.</li>
 <li>The sample implementation uses Amazon Bedrock AgentCore Gateway, Amazon Bedrock AgentCore runtime, Amazon Bedrock (specifically Anthropic Claude Sonnet), Amazon Cognito, AWS Lambda, and AWS Secrets Manager, showcasing a reference architecture for runtime tool discovery.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-20</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/access-openai-gpt-models-on-amazon-bedrock-from-canada-with-cross-region-inference/" target="_blank" rel="noopener">Access OpenAI GPT models on Amazon Bedrock from Canada with cross-Region inference</a></h3>
-    
-    <div class="summary"><p>Access to OpenAI GPT models (GPT-6.1, GPT-6, and GPT-5.6) is now available in Canada (Central) and Canada West (Calgary) Regions via Amazon Bedrock cross-Region inference (CRIS).</p>
-<ul>
-<li>GPT-5.6 (Sol, Terra, Luna), GPT-6 (Astra, Sol, Luna), and GPT-6.1 (Sol) models are supported, offering context windows up to 1 million tokens and support for tool calling.</li>
-<li>Two CRIS profile types are available: “US geographic” (routing to Canada/US) and “Global” (routing to supported commercial AWS Regions), influencing data residency and capacity.</li>
-<li>Models can be invoked using the OpenAI Responses API, Chat Completions API, and Amazon Bedrock Converse API, with examples provided for streaming and tool use via Python.</li>
-<li>Prompt caching is supported for GPT-5.6, GPT-6, and GPT-6.1, potentially reducing costs and latency for repeated prompts; quotas for CRIS are measured in tokens per minute (TPM) and may require increases prior to production rollout.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-20</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-octave-built-a-secure-multi-tenant-ai-foundation-on-amazon-bedrock/" target="_blank" rel="noopener">How Octave built a secure multi-tenant AI foundation on Amazon Bedrock</a></h3>
-    
-    <div class="summary"><p>Octave built a secure, multi-tenant AI foundation on AWS using Amazon Bedrock to process regulated data efficiently and securely.</p>
-<ul>
-<li>The foundation utilizes Cohere Embed v4 on Amazon Bedrock to embed over 2 billion documents into per-tenant vector stores on Amazon OpenSearch Service, supporting multiple languages and formats within a 128K token context window.</li>
-<li>Secure execution is achieved using AgentCore Gateway from Amazon Bedrock AgentCore, providing isolated microVM sessions with scoped credentials and policy enforcement for each user request, preventing cross-tenant data access.</li>
-<li>Content protection leverages Amazon Bedrock Guardrails both for input filtering (identifying potential injections and PII) and output filtering, alongside bounded agency to limit tool access and prevent data exfiltration.</li>
-<li>A document processing pipeline, orchestrated by AWS Step Functions and utilizing AWS Lambda, is capable of ingesting and embedding 1.4 million documents per day per tenant, achieving fast onboarding times for large customer datasets.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-20</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/fine-tuning-gpt-oss-20b-for-multilingual-reasoning-on-amazon-sagemaker-hyperpod/" target="_blank" rel="noopener">Fine-tuning GPT-OSS-20B for multilingual reasoning on Amazon SageMaker HyperPod</a></h3>
-    
-    <div class="summary"><h2>Fine-tuning GPT-OSS-20B for Multilingual Reasoning on Amazon SageMaker HyperPod</h2>
-<p>This post details how to fine-tune the GPT-OSS-20B model for multilingual reasoning, comparing the effectiveness of Supervised Fine-Tuning (SFT) and Reinforcement Learning with Group Relative Policy Optimization (GRPO) on Amazon SageMaker HyperPod.</p>
-<ul>
-<li>GPT-OSS-20B initially reasons in English even when prompted in other languages, with only 22% accuracy on a multilingual reasoning test.</li>
-<li>SFT significantly improves performance, achieving 100% accuracy in reasoning in the requested language, but answer accuracy remains at 62%.</li>
-<li>GRPO, applied on top of SFT, further improves answer accuracy by an additional 8 percentage points, leveraging the existing reasoning capability.</li>
-<li>Experiments with Qwen2.5-7B demonstrate that GRPO is most effective when there is existing capability ("headroom") to refine; it provides no benefit when the model is already performing optimally.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-20</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/from-data-to-decisions-conversational-supply-chain-intelligence-with-amazon-quick-and-amazon-bedrock-agentcore/" target="_blank" rel="noopener">From data to decisions: Conversational supply chain intelligence with Amazon Quick and Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock AgentCore is a modular, agentic platform enabling secure and scalable agent building, deploying, and operating, utilizing a serverless runtime and standardized tool access through a gateway.</li>
-<li>The Model Context Protocol (MCP) is an open standard allowing AI models to interact with external tools via typed parameters, facilitating tool discovery and backend integration (SAP, Oracle, etc.).</li>
-<li>Amazon Quick, combined with AgentCore and the AWS Agent Registry, allows users to access and query live systems of record via natural language, simplifying complex, multi-system queries (e.g., supply chain disruptions, RFQs).</li>
-<li>Key MCP servers highlighted include Quoting Engine, Governance Engine, Invoice Processing, Disruption Alerts, and an Order Fulfillment Agent, demonstrating orchestration across systems for tasks like supplier validation and emergency RFQ processing.</li>
 </ul></div>
     
   </div>
