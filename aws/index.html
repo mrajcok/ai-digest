@@ -80,13 +80,66 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-10-28 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-10-29 10:16 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">October 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-28</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/accelerating-software-delivery-with-agentic-qa-automation-using-amazon-nova-act-part-3/" target="_blank" rel="noopener">Accelerating software delivery with agentic QA automation using Amazon Nova Act – Part 3</a></h3>
+    
+    <div class="summary"><ul>
+<li>QA Studio, a reference solution built with Amazon Nova Act, now includes “applications” to organize tests and report health metrics, associating tests and suites with a specific system under test and owner.</li>
+<li>Application health is tracked using Amazon CloudWatch custom metrics (pass rate, executions, failures) displayed as a health score (0-100) that penalizes flaky tests, with filtering by environment available through a metrics tab.</li>
+<li>Team-based user management, leveraging Amazon Cognito, assigns five roles (Admin, Team Lead, Editor, Executor, Viewer) with cumulative permissions to control access to applications and tests.</li>
+<li>Cross-team sharing of applications is supported with a “ceiling rule” ensuring a user’s effective permission is limited by their role, even if granted broader access by the owning team.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-28</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/distributed-training-with-ray-train-dlcs-and-efa-on-eks/" target="_blank" rel="noopener">Distributed training with Ray Train DLCs and EFA on EKS</a></h3>
+    
+    <div class="summary"><ul>
+<li>The Ray Train Deep Learning Container (DLC) simplifies distributed PyTorch training on EKS by pre-packaging the necessary runtime dependencies (CUDA, PyTorch, NCCL, EFA libraries, and Ray) into a single, tested image (public.ecr.aws/deep-learning-containers/ray:train-ml-cuda-v1.1).</li>
+<li>KubeRay, an open-source Kubernetes operator, is used to deploy and manage Ray clusters on EKS from a single RayCluster manifest, abstracting away the complexities of pod creation and management.</li>
+<li>The sample code demonstrates fine-tuning Qwen2.5-1.5B with PyTorch Fully Sharded Data Parallel (FSDP) across eight NVIDIA L4 GPUs using the DLC, requiring minimal code changes – only a training function and a RayCluster manifest.</li>
+<li>The DLC’s pre-configured networking stack (EFA, libfabric, AWS OFI NCCL plugin) ensures high-performance inter-node communication and automatically handles NVIDIA driver compatibility, reducing configuration overhead.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-28</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/building-an-agentic-ai-platform-on-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Building an Agentic AI Platform on Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><h2>Building an Agentic AI Platform on Amazon Bedrock AgentCore</h2>
+<p>This post details an architecture and implementation blueprint for building a governed, scalable, and multi-account Agentic AI Platform using Amazon Bedrock and AgentCore, designed to address the organizational challenges of deploying agents at enterprise scale.</p>
+<ul>
+<li>The architecture centers around a “federated” operating model with a central Platform team providing shared, governed services, while Workstream teams (domain/product teams) own their agents, tools, and data.</li>
+<li>The blueprint utilizes Amazon Bedrock AgentCore’s modular services (Runtime, Gateway, Identity, Memory, Policy, Registry, and Evaluations) and extends them with infrastructure-as-code for enterprise-level contracts like ownership, account boundaries, and cost governance.</li>
+<li>Key components include a Platform control plane for versioned templates, governance, and shared resources, and repeatable Workstream cells providing isolated environments with team-owned components, ensuring failure isolation and independent deployments.</li>
+<li>The solution incorporates rigorous security controls, including governed model and tool access via secure gateways, restricted deployment through pipelines, and a comprehensive evaluation pipeline to gate agent releases and ensure adherence to organizational policies.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -554,59 +607,6 @@
 <li>The solution federates Amazon Aurora, Amazon Redshift, and an on-premises PostgreSQL database into a unified customer 360 view, accessed via Denodo’s VQL through the Model Context Protocol (MCP).</li>
 <li>Denodo Platform provides the AI data layer, with Virtual DataPort (VDP) as the query engine and Design Studio for authoring, utilizing base views, derived views, metric views, and VQL.</li>
 <li>Security is enforced using Global Security Policies (GSPs) that apply row and column filters at query time, with identity propagation via JWT and On-Behalf-Of token exchange between Amazon Bedrock AgentCore and Denodo.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-20</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-eon-built-multi-cloud-investigation-with-an-mcp-gateway-on-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How Eon built multi-cloud investigation with an MCP Gateway on Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><p>Eon replaced per-tool credentials and local Model Context Protocol (MCP) processes with a centralized gateway built on Amazon Bedrock AgentCore to provide unified, secure access to investigation tools across AWS, GCP, and Azure.</p>
-<ul>
-<li>The solution utilizes the <strong>Amazon Bedrock AgentCore stack</strong> – AgentCore Gateway, Policy, Runtime, and Identity – to manage access and authentication.</li>
-<li><strong>Cedar policies</strong> enforce least-privilege access control, allowing administrators to define which principals (users or agents) can invoke specific tools, with support for both read and write operations.</li>
-<li><strong>AgentCore Gateway</strong> handles authentication via JWT tokens (SSO) for humans and client_credentials for agents, and uses IAM cross-account role assumption for cross-account connectivity, eliminating the need for VPC peering or PrivateLink.</li>
-<li>Eon implemented a hybrid policy mode using both <strong>DEFAULT</strong> (pre-indexed schemas for OAuth) and <strong>DYNAMIC</strong> (on-demand listing) modes for tool catalogs to manage Cedar policy size and enable semantic tool search where needed.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-20</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/securing-ai-agent-identity-with-x-509-pki-on-aws/" target="_blank" rel="noopener">Securing AI agent identity with X.509 PKI on AWS</a></h3>
-    
-    <div class="summary"><p>Securing AI agent identity is achieved through a reference architecture utilizing X.509 PKI with AWS services and Keyfactor EJBCA.</p>
-<ul>
-<li>The architecture employs three authentication layers – User Auth, Agent-to-Agent, and MCP Auth – each leveraging signed request envelopes (proof-of-possession via RSA-PSS-SHA256), user-signed delegation assertions, RFC 8693 audience-scoped tokens, and real-time OCSP revocation checking.</li>
-<li>The solution utilizes Amazon Bedrock (via Strands Agents SDK), Amazon RDS for MySQL, Amazon SES, and AWS Secrets Manager in conjunction with Keyfactor EJBCA for certificate lifecycle management and PKI operations.</li>
-<li>Private keys are generated locally and never transmitted, with certificates issued via CSRs sent to EJBCA for signing, then stored in AWS Secrets Manager as PKCS12 bundles.</li>
-<li>Replay prevention is implemented via unique nonces within signed envelopes and a freshness window, combined with timestamp validation, preventing unauthorized access through replay attacks or stale requests.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-20</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/discover-tools-at-runtime-with-aws-agent-registry/" target="_blank" rel="noopener">Discover tools at runtime with AWS Agent Registry</a></h3>
-    
-    <div class="summary"><ul>
-<li>AWS Agent Registry is a managed service designed to enable runtime discovery of Model Context Protocol (MCP) servers, agents, and agent skills, addressing limitations of hardcoded tool integrations in large-scale systems.</li>
-<li>The system utilizes a discover → instantiate → execute loop, where an orchestrator searches the Registry, constructs clients from descriptors, and dynamically builds agents with discovered capabilities.</li>
-<li>Records within the Registry require a <code>recordType</code> of "MCP" or "AGENT" and store protocol-specific metadata (MCP server details or A2A agent cards) in descriptors, but do <em>not</em> include invocation credentials.</li>
-<li>The sample implementation uses Amazon Bedrock AgentCore Gateway, Amazon Bedrock AgentCore runtime, Amazon Bedrock (specifically Anthropic Claude Sonnet), Amazon Cognito, AWS Lambda, and AWS Secrets Manager, showcasing a reference architecture for runtime tool discovery.</li>
 </ul></div>
     
   </div>
