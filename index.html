@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-10-29T10:16:52.517622+00:00">Generated 2026-10-29 10:16 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-10-30T10:17:23.029499+00:00">Generated 2026-10-30 10:17 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,7 +132,7 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — since 2026-10-28</h2>
+    <h2 class="overview-heading">Today in AI — Overview for 2026-10-29</h2>
     <p class="overview-meta">2026-10-29 · 7 vendor sources · vendor sources only</p>
     <div class="overview-text"><p>Recent advancements across several AI labs center on model capability, infrastructure improvements, and expanding access to AI tools for specialized fields. Anthropic released a suite of updates to its Claude family, notably positioning Claude Haiku 5.5 as its fastest small model, Claude Sonnet 5.5 with improved performance and cost reductions, and Claude Opus 5.5 as the leader for complex coding and knowledge work, also at a reduced cost. Further expanding their offerings, Anthropic introduced Claude Mythos and Fable 5.1 intended for advanced coding and scientific applications, alongside a program offering greater access to these models for life sciences research. These advancements are coupled with a significant infrastructure investment through the Claude Frontier Academy and preparations for a public IPO, signaled by an S-1 filing.</p>
 <p>Alongside these model enhancements, a clear emphasis is being placed on fostering AI’s impact on scientific discovery. Anthropic has broadened its “AI for Science” program, granting free credits to a larger network of researchers and institutions globally, enabling use of Claude for tasks like hypothesis generation, data analysis, and experimental design. This program currently supports projects spanning neuroscience, genomics, and cancer research. Similarly, Amazon Web Services is focusing on enabling enterprise-level deployment of agentic AI, with the release of AgentCore designed for governed, scalable environments, and streamlined distributed training for PyTorch utilizing Ray Train DLCs and Elastic Fabric Adapter (EFA) on EKS. </p>
@@ -296,15 +296,15 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-10-28</span>
+      <span> · 2026-10-29</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/accelerating-software-delivery-with-agentic-qa-automation-using-amazon-nova-act-part-3/" target="_blank" rel="noopener">Accelerating software delivery with agentic QA automation using Amazon Nova Act – Part 3</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/accelerate-agentic-ai-with-nvidia-nemotron-models-on-amazon-eks-and-sagemaker-hyperpod-eks/" target="_blank" rel="noopener">Accelerate agentic AI with NVIDIA Nemotron models on Amazon EKS and SageMaker HyperPod EKS</a></h2>
     
     <div class="summary"><ul>
-<li>QA Studio, a reference solution built with Amazon Nova Act, now includes “applications” to organize tests and report health metrics, associating tests and suites with a specific system under test and owner.</li>
-<li>Application health is tracked using Amazon CloudWatch custom metrics (pass rate, executions, failures) displayed as a health score (0-100) that penalizes flaky tests, with filtering by environment available through a metrics tab.</li>
-<li>Team-based user management, leveraging Amazon Cognito, assigns five roles (Admin, Team Lead, Editor, Executor, Viewer) with cumulative permissions to control access to applications and tests.</li>
-<li>Cross-team sharing of applications is supported with a “ceiling rule” ensuring a user’s effective permission is limited by their role, even if granted broader access by the owning team.</li>
+<li>NVIDIA Nemotron 3.5 Super VL, a 120B-parameter Mixture-of-Experts (MoE) model activating 12B parameters per token, is now available on Amazon EKS and SageMaker HyperPod EKS.</li>
+<li>The model features a hybrid Mamba-Transformer MoE architecture with Mamba-2, attention, and expert layers, supporting context lengths up to 1M tokens and accepting text, image, document, and video inputs for text output.</li>
+<li>Nemotron 3.5 Super VL is designed for agentic AI workflows including coding, web research, document intelligence, cybersecurity, and video understanding and integrates with major open agent frameworks.</li>
+<li>Deployment on AWS utilizes Amazon EKS, EKS Auto Mode, and SageMaker HyperPod EKS, with validation using NVIDIA Collective Communications Library (NCCL) and performance measurement via the NVIDIA aiperf tool, supporting BF16 and NVFP4 checkpoints.</li>
 </ul></div>
     
   </div>
@@ -313,35 +313,49 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-10-28</span>
+      <span> · 2026-10-29</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/distributed-training-with-ray-train-dlcs-and-efa-on-eks/" target="_blank" rel="noopener">Distributed training with Ray Train DLCs and EFA on EKS</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-moengage-turned-over-400-apis-into-agent-tools-with-agentcore-gateway/" target="_blank" rel="noopener">How MoEngage turned over 400 APIs into agent tools with AgentCore Gateway</a></h2>
     
-    <div class="summary"><ul>
-<li>The Ray Train Deep Learning Container (DLC) simplifies distributed PyTorch training on EKS by pre-packaging the necessary runtime dependencies (CUDA, PyTorch, NCCL, EFA libraries, and Ray) into a single, tested image (public.ecr.aws/deep-learning-containers/ray:train-ml-cuda-v1.1).</li>
-<li>KubeRay, an open-source Kubernetes operator, is used to deploy and manage Ray clusters on EKS from a single RayCluster manifest, abstracting away the complexities of pod creation and management.</li>
-<li>The sample code demonstrates fine-tuning Qwen2.5-1.5B with PyTorch Fully Sharded Data Parallel (FSDP) across eight NVIDIA L4 GPUs using the DLC, requiring minimal code changes – only a training function and a RayCluster manifest.</li>
-<li>The DLC’s pre-configured networking stack (EFA, libfabric, AWS OFI NCCL plugin) ensures high-performance inter-node communication and automatically handles NVIDIA driver compatibility, reducing configuration overhead.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-10-28</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/building-an-agentic-ai-platform-on-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Building an Agentic AI Platform on Amazon Bedrock AgentCore</a></h2>
-    
-    <div class="summary"><h2>Building an Agentic AI Platform on Amazon Bedrock AgentCore</h2>
-<p>This post details an architecture and implementation blueprint for building a governed, scalable, and multi-account Agentic AI Platform using Amazon Bedrock and AgentCore, designed to address the organizational challenges of deploying agents at enterprise scale.</p>
+    <div class="summary"><p>MoEngage leveraged Amazon Bedrock AgentCore Gateway to expose 400 internal APIs to AI agents without public exposure or extensive platform engineering.</p>
 <ul>
-<li>The architecture centers around a “federated” operating model with a central Platform team providing shared, governed services, while Workstream teams (domain/product teams) own their agents, tools, and data.</li>
-<li>The blueprint utilizes Amazon Bedrock AgentCore’s modular services (Runtime, Gateway, Identity, Memory, Policy, Registry, and Evaluations) and extends them with infrastructure-as-code for enterprise-level contracts like ownership, account boundaries, and cost governance.</li>
-<li>Key components include a Platform control plane for versioned templates, governance, and shared resources, and repeatable Workstream cells providing isolated environments with team-owned components, ensuring failure isolation and independent deployments.</li>
-<li>The solution incorporates rigorous security controls, including governed model and tool access via secure gateways, restricted deployment through pipelines, and a comprehensive evaluation pipeline to gate agent releases and ensure adherence to organizational policies.</li>
+<li>AgentCore Gateway, a managed MCP server, automatically generates MCP tools from OpenAPI specifications, eliminating the need for individual teams to implement MCP servers.</li>
+<li>Cedar policies are used for server-side authorization, controlling tool access based on the agent's IAM role, ensuring only permitted tools are visible in the agent’s tools list.</li>
+<li>Amazon VPC Lattice provides managed egress for private connectivity to internal services, avoiding the need for per-API networking configurations and simplifying regional deployments.</li>
+<li>Semantic search ( <code>x_amz_bedrock_agentcore_search</code> capability) allows agents to discover tools by describing the desired task, reducing reliance on exact tool names and improving usability while minimizing context window usage.</li>
 </ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
+      <span> · 2026-10-29</span>
+    </div>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/lend-and-borrow-resources-across-teams-with-aws-batchs-quota-management-for-sagemaker-training-jobs/" target="_blank" rel="noopener">Lend and borrow resources across teams with AWS Batch’s quota management for SageMaker Training jobs</a></h2>
+    
+    <div class="summary"><p>AWS Batch now supports quota management for SageMaker Training jobs, enabling resource lending and borrowing between teams.</p>
+<ul>
+<li>Administrators can define quota shares – virtual queues – organized by team or project, with configurable resource-sharing strategies: <code>RESERVE</code>, <code>LEND</code>, or <code>LEND_AND_BORROW</code>.</li>
+<li><code>LEND_AND_BORROW</code> allows idle capacity to be automatically shared and reclaimed when needed, utilizing compute more efficiently.</li>
+<li>In-share preemption can be enabled to prioritize jobs within a quota share, preempting lower-priority jobs.</li>
+<li>The SageMaker Python SDK v3 has been extended to allow submission of training jobs to these quota-managed AWS Batch job queues (using <code>TrainingQueue</code>).</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="mistral/" class="badge badge-mistral">Mistral AI</a>
+      <span>blog</span>
+      <span> · 2026-10-29</span>
+    </div>
+    <h2><a href="https://mistral.ai/news/mistral-large-4-oss/" target="_blank" rel="noopener">Le Chonk: Built for Coders, Trusted by Defenders.</a></h2>
+    
+    <div class="summary"><p>Mistral AI has released Mistral Large 4, dubbed “Le Chonk,” a 1-trillion-parameter multimodal model now available with open weights. The model demonstrates leading performance among open-weight models in coding—achieving 19.7% on Cognition’s FrontierCode 2.0 benchmark—and defensive cybersecurity, scoring 51% on the Artificial Analysis Cyber Index. </p>
+<p>To balance performance and cost, Mistral Large 4 offers three reasoning modes: Low, Medium, and High.  Improvements were achieved through reinforcement learning; gains continue with no apparent saturation. Further, the model has been validated by human preference testing (Surge Code) demonstrating performance close to Claude Opus 5.5.</p>
+<p>The model was trained on European infrastructure with a customized license, allowing commercial use with a separate license required for Model-as-a-Service offerings. Pricing is $0.70/M input tokens, $0.07/M cached input tokens, and $2.10/M output tokens. The weights are available on Hugging Face for self-hosting.</p></div>
     
   </div>
   
@@ -373,20 +387,6 @@
     
   </div>
   
-  <div class="card">
-    <div class="meta">
-      <a href="mistral/" class="badge badge-mistral">Mistral AI</a>
-      <span>blog</span>
-      <span> · 2026-10-15</span>
-    </div>
-    <h2><a href="https://mistral.ai/news/timestral/" target="_blank" rel="noopener">Introducing Timestral</a></h2>
-    
-    <div class="summary"><p>Mistral AI has released Timestral, a family of time-series foundation models designed for probabilistic, multivariate forecasting. The models come in four sizes – 5M, 28M, 123M, and 209M parameters – and achieve state-of-the-art results on the GIFT-Eval, TIME, and fev-bench benchmarks, even surpassing larger models with only two-thirds the parameters. Importantly, Timestral can run efficiently on CPUs, with the 209M parameter model forecasting one day ahead in 140ms on a standard 8-thread server. </p>
-<p>The models incorporate several key technical innovations, including decoupled horizon forecasting (DHF) – which preserves the full historical context during training – and covariate-aware attention, allowing the model to effectively utilize past, present and future information. Timestral was initially pre-trained on synthetic data and then post-trained on a mix of real and synthetic data, utilizing a pinball loss function over 21 quantiles.</p>
-<p>For organizations requiring customization, Timestral is accessible via Mistral Forge, enabling fine-tuning on proprietary data, control over training data mix, and deployment in various environments, including air-gapped setups. The models accept multivariate time series, past and known future covariates, outputs probabilistic forecasts with 21 quantiles, and support context lengths up to 32,768 time steps.</p></div>
-    
-  </div>
-  
   
 
   
@@ -396,11 +396,17 @@
     <div class="meta">
       <a href="techcrunch/" class="badge badge-techcrunch">TechCrunch</a>
       <span>news</span>
-      <span> · 2026-10-28</span>
+      <span> · 2026-10-30</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/10/28/chromes-ai-powered-autofill-can-now-dig-through-your-gmail-to-fill-out-forms/" target="_blank" rel="noopener">Chrome’s AI-powered Autofill can now dig through your Gmail to fill out forms</a></h2>
+    <h2><a href="https://techcrunch.com/2026/10/29/you-dont-need-to-believe-in-a-god-to-get-a-religious-exemption-from-using-ai-at-work/" target="_blank" rel="noopener">You don’t need to believe in a god to get a religious exemption from using AI at work</a></h2>
     
-    <div class="summary"><p>Google Chrome is receiving an update to its autofill capabilities, powered by AI and utilizing data from users’ Gmail accounts. The new feature, part of Google’s Personal Intelligence, will suggest information like confirmation numbers, addresses, and credit card details when completing online forms. This enhancement leverages the same AI technology behind Gemini to retrieve details and is currently rolling out to U.S. desktop users, as well as the iOS and Android apps for Gemini in Chrome. Users can opt-in or out of this “enhanced autofill” within Chrome settings, and Google states sensitive data will be encrypted.</p></div>
+    <div class="summary"><p>A University of Kentucky administrator secured a religious exemption to avoid using AI at work, establishing a precedent for non-theistic individuals.</p>
+<ul>
+<li>The exemption was granted to David Durman, a humanist, based on his belief that AI diminishes critical thinking and negatively impacts human well-being – principles central to humanist philosophy.</li>
+<li>Durman’s case was supported by the American Humanist Association (AHA), who argue that concerns about AI can align with various belief systems beyond traditional religion.</li>
+<li>The University of Kentucky reviews religious accommodation requests individually, determining feasibility based on job responsibilities, and confirmed the accommodation allowed Durman to fulfill his role supporting grant-applying researchers.</li>
+<li>This follows a similar exemption granted to Erin Maus, a Unitarian Universalist software engineer, highlighting a growing trend of employees seeking accommodations related to AI use.</li>
+</ul></div>
     
   </div>
   
@@ -408,16 +414,16 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-10-28</span>
+      <span> · 2026-10-29</span>
     </div>
-    <h2><a href="https://arstechnica.com/ai/2026/10/google-ai-gets-cagey-when-asked-who-won-the-2020-elections/" target="_blank" rel="noopener">Google AI gets cagey when asked who won the 2020 elections</a></h2>
+    <h2><a href="https://arstechnica.com/gadgets/2026/10/google-admits-ai-search-makes-less-money-but-its-fixing-that-with-more-ads/" target="_blank" rel="noopener">Google admits AI search makes less money, but it&#39;s fixing that with more ads</a></h2>
     
-    <div class="summary"><p>Google’s AI Mode exhibits inconsistent behavior when answering questions about US presidential election results.</p>
+    <div class="summary"><p>Google reported that its AI-powered search, utilizing Gemini models, currently generates less revenue per query than traditional web search.</p>
 <ul>
-<li>When asked “Who won the 2020 presidential election?”, AI Mode directs users to the Federal Election Commission (FEC) website for official results, rather than providing a direct answer.</li>
-<li>Similar evasive responses were observed for the 2024 election; however, responses varied by user, with some receiving direct answers for certain election cycles.</li>
-<li>The Gemini model and other chatbots (ChatGPT, Claude, America.gov) <em>do</em> provide direct answers to questions about recent US presidential elections.</li>
-<li>Google attributes the behavior to “safety filters” designed to prevent the display of unverified data, and reports a “technical gap” with 2020 election data which they are currently fixing.</li>
+<li>AI Mode queries generate less revenue due to fewer ads and lower ad costs.</li>
+<li>Google plans to expand advertising within AI Mode, including introducing multi-turn ads in the US that dynamically change with user interactions.</li>
+<li>Despite a 25% year-over-year revenue increase to $128 billion in Q3 2026, Google’s net income decreased by almost $9 billion, and its stock price dropped nearly 12%.</li>
+<li>Google reported negative cash flow of -$9.06 billion in Q3, attributed to increased AI spending, and projects over $300 billion in AI investment by 2027.</li>
 </ul></div>
     
   </div>

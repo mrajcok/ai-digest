@@ -80,13 +80,117 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-10-29 10:16 UTC</p>
+  <p class="generated-at">Generated 2026-10-30 10:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">October 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-29</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/accelerate-agentic-ai-with-nvidia-nemotron-models-on-amazon-eks-and-sagemaker-hyperpod-eks/" target="_blank" rel="noopener">Accelerate agentic AI with NVIDIA Nemotron models on Amazon EKS and SageMaker HyperPod EKS</a></h3>
+    
+    <div class="summary"><ul>
+<li>NVIDIA Nemotron 3.5 Super VL, a 120B-parameter Mixture-of-Experts (MoE) model activating 12B parameters per token, is now available on Amazon EKS and SageMaker HyperPod EKS.</li>
+<li>The model features a hybrid Mamba-Transformer MoE architecture with Mamba-2, attention, and expert layers, supporting context lengths up to 1M tokens and accepting text, image, document, and video inputs for text output.</li>
+<li>Nemotron 3.5 Super VL is designed for agentic AI workflows including coding, web research, document intelligence, cybersecurity, and video understanding and integrates with major open agent frameworks.</li>
+<li>Deployment on AWS utilizes Amazon EKS, EKS Auto Mode, and SageMaker HyperPod EKS, with validation using NVIDIA Collective Communications Library (NCCL) and performance measurement via the NVIDIA aiperf tool, supporting BF16 and NVFP4 checkpoints.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-29</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-moengage-turned-over-400-apis-into-agent-tools-with-agentcore-gateway/" target="_blank" rel="noopener">How MoEngage turned over 400 APIs into agent tools with AgentCore Gateway</a></h3>
+    
+    <div class="summary"><p>MoEngage leveraged Amazon Bedrock AgentCore Gateway to expose 400 internal APIs to AI agents without public exposure or extensive platform engineering.</p>
+<ul>
+<li>AgentCore Gateway, a managed MCP server, automatically generates MCP tools from OpenAPI specifications, eliminating the need for individual teams to implement MCP servers.</li>
+<li>Cedar policies are used for server-side authorization, controlling tool access based on the agent's IAM role, ensuring only permitted tools are visible in the agent’s tools list.</li>
+<li>Amazon VPC Lattice provides managed egress for private connectivity to internal services, avoiding the need for per-API networking configurations and simplifying regional deployments.</li>
+<li>Semantic search ( <code>x_amz_bedrock_agentcore_search</code> capability) allows agents to discover tools by describing the desired task, reducing reliance on exact tool names and improving usability while minimizing context window usage.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-29</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/lend-and-borrow-resources-across-teams-with-aws-batchs-quota-management-for-sagemaker-training-jobs/" target="_blank" rel="noopener">Lend and borrow resources across teams with AWS Batch’s quota management for SageMaker Training jobs</a></h3>
+    
+    <div class="summary"><p>AWS Batch now supports quota management for SageMaker Training jobs, enabling resource lending and borrowing between teams.</p>
+<ul>
+<li>Administrators can define quota shares – virtual queues – organized by team or project, with configurable resource-sharing strategies: <code>RESERVE</code>, <code>LEND</code>, or <code>LEND_AND_BORROW</code>.</li>
+<li><code>LEND_AND_BORROW</code> allows idle capacity to be automatically shared and reclaimed when needed, utilizing compute more efficiently.</li>
+<li>In-share preemption can be enabled to prioritize jobs within a quota share, preempting lower-priority jobs.</li>
+<li>The SageMaker Python SDK v3 has been extended to allow submission of training jobs to these quota-managed AWS Batch job queues (using <code>TrainingQueue</code>).</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-29</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-a-repeatable-php-to-java-migration-engine-with-kiro/" target="_blank" rel="noopener">Build a repeatable PHP-to-Java migration engine with Kiro</a></h3>
+    
+    <div class="summary"><ul>
+<li>AWS Kiro, an AI-integrated development environment (IDE), enables a repeatable PHP-to-Java migration process by pairing an AI agent with a codebase.</li>
+<li>The migration engine utilizes skill files (versioned Markdown capability packages) containing the migration methodology (php-to-java-migration) and discovery scanner workflow (php-model-discovery), and can be executed either interactively in Kiro or agentically via AWS Transform.</li>
+<li>A key component is a discovery scanner (discover-models.php) that analyzes PHP code (Laravel/Eloquent, Symfony/Doctrine) and emits a JSON manifest detailing models, fields, and relationships, prioritizing discovery <em>before</em> translation.</li>
+<li>The process is parity-first, building a ‘parity harness’ to verify the Java port behaves identically to the PHP original through an eight-phase workflow, with a focus on automating the translation and fixing the methodology rather than individual code patches.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-29</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/building-intent-driven-ui-testing-with-amazon-nova-act/" target="_blank" rel="noopener">Building intent-driven UI testing with Amazon Nova Act</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Nova Act is used with Amazon Bedrock AgentCore Browser to enable intent-driven UI testing, allowing test steps to be written in natural language rather than relying on brittle CSS selectors.</li>
+<li>The solution utilizes Amazon Bedrock AgentCore Browser Tool for managed, ephemeral browser sessions, eliminating the need to manage browser binaries and infrastructure.</li>
+<li>Epsilon integrated Nova Act into their existing agent platform, providing a multi-tenant service accessible via a standard API, using AWS IAM for authentication and cross-account provisioning via AWS STS AssumeRole.</li>
+<li>Benchmarks show 4-6x faster test authoring with Nova Act compared to Playwright, and 100% pass rates on replay of saved, successful test trajectories.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-29</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-the-uk-amazon-quick-user-group-grew-in-2026/" target="_blank" rel="noopener">How the UK Amazon Quick User Group grew in 2026</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Quick User Group – United Kingdom meetups demonstrated capabilities including building custom chat agents without code, connecting Amazon Quick Desktop to local files and Outlook via connectors, and generating web applications from plain-language descriptions using Amazon Quick Apps.</li>
+<li>Attendees utilized Amazon Quick Flows and Amazon Quick Automate to automate processes, and Amazon Quick Research to accelerate research tasks.</li>
+<li>Customer use cases highlighted included dynamic, role-based dashboards for real-time incident management (Arriva UK Trains), a governed data layer to eliminate dashboard sprawl and improve data consistency (Carsa), and automated support workflows handling 1 million tickets annually (Propulse Lab).</li>
+<li>The Amazon Quick chat agent was highlighted as a central assistant connecting to tools, data, and enabling automated actions.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -503,110 +607,6 @@
 <li>Three configurations are demonstrated: utilizing Hugging Face Transformers v5, employing torchtitan’s native Qwen3 model, and incorporating Neuron Kernel Interface (NKI) kernels for Mixture-of-Experts (MoE) layers.</li>
 <li>The examples use specific versions: torch/torch_neuronx 2.14.0/2.14.3, transformers 5.16.0, and torchtitan-neuron release-2.33 (0.2.2+neuron.1) and require a trn2.48xlarge instance.</li>
 <li>The blog also showcases attaching custom NKI kernels, specifically a <code>rope_hf</code> kernel from nkilib, demonstrating how to optimize operations for specific tensor shapes and integrate them into the PyTorch training process.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-21</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/adaptive-agentic-intelligence-framework-using-strands-agents/" target="_blank" rel="noopener">Adaptive agentic intelligence framework using Strands Agents</a></h3>
-    
-    <div class="summary"><ul>
-<li>The Adaptive Agentic Intelligence Framework (AAIF) uses small language models (SLMs) for routine tasks and larger models via Amazon Bedrock for complex requests, aiming to reduce costs and latency.</li>
-<li>AAIF organizes processing into three layers: a smart orchestrator using a 1B-parameter SLM (llama3.2:1b), local processing with SLMs via Ollama (including llama3.2-vision for image analysis), and cloud processing with Amazon Bedrock models.</li>
-<li>The framework uses Strands Agents and tools defined with the <code>@tool</code> decorator, including <code>get_device_telemetry</code> for local data, <code>analyze_camera_feed</code> leveraging <code>llama3.2-vision</code>, and <code>get_expert_insights</code> calling Amazon Bedrock.</li>
-<li>AAIF supports various deployment scenarios - cloud-only (using Bedrock for all processing), hybrid (local orchestrator, cloud for complex tasks), and air-gapped (all processing local), adapting to infrastructure constraints and data residency requirements.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-21</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/5-production-challenges-in-multi-agent-systems-and-how-deep-insight-solved-them/" target="_blank" rel="noopener">5 production challenges in multi-agent systems and how Deep Insight solved them</a></h3>
-    
-    <div class="summary"><p>Deep Insight is a production-grade multi-agent system designed to automate complex data analysis and insight generation from data sources like CSV files.</p>
-<ul>
-<li>It utilizes the Strands Agents SDK, specifically the Graph and Agents-as-Tools patterns, to define agent execution flow and facilitate human-in-the-loop (HITL) branching.</li>
-<li>The system employs different Claude models from Amazon Bedrock—Haiku, Sonnet, and Opus—selected based on each agent’s role, optimizing for cost and performance.</li>
-<li>Deep Insight addresses production challenges like execution control, LLM selection, reliable operation, code security, and system monitoring, leveraging Amazon Bedrock AgentCore, AWS Fargate, and Application Load Balancer (ALB).</li>
-<li>The core architecture features a hierarchy of eight specialized agents—Coordinator, Planner, Plan Reviewer, Supervisor, Coder, Validator, Reporter, and Tracker—each with a specific function in the data analysis pipeline and report generation process.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-21</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/securing-quick-access-from-corporate-networks-with-aws-privatelink/" target="_blank" rel="noopener">Securing Quick access from corporate networks with AWS PrivateLink</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Quick now supports private access to data sources via AWS PrivateLink for corporate networks, enhancing security and reducing reliance on public internet connectivity.</li>
-<li>Two connection types are used: VPC endpoints for user/API traffic (using service names like <code>com.amazonaws.&lt;region&gt;.quicksight-website</code>) and VPC connections for data source access, leveraging ENIs within your VPC.</li>
-<li>Data access paths include QuickSight queries to on-premises databases (PostgreSQL, MySQL, SQL Server, Oracle), Quick Flows/Automate accessing MCP servers, Quick Agents invoking action connectors, and Quick Research accessing private sources.</li>
-<li>Configuration requires an AWS Quick Enterprise subscription, existing VPC, AWS Direct Connect or VPN, and appropriate IAM permissions (including <code>quicksight:CreateVPCConnection</code> and related actions) along with DNS configuration for private resolution.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-20</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-atscale-and-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Build a semantic layer for agentic AI on AWS with AtScale and Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><p>AWS announces a method for building semantic layers for agentic AI using AtScale and Amazon Bedrock AgentCore, focusing on a Customer 360 (C360) use case with data from Amazon Redshift.</p>
-<ul>
-<li>AtScale utilizes the Semantic Modeling Language (SML), a YAML-based specification versioned in Git, to define a dimensional model (dimensions, hierarchies, measures) exposed via SQL, XMLA, and the Model Context Protocol (MCP).</li>
-<li>Amazon Bedrock (Anthropic Claude Sonnet 4.6) is used for planning and query generation, while Amazon Bedrock AgentCore hosts the Strands agent and manages credentials for AtScale access.</li>
-<li>The solution allows for joins, metric definitions, and filters to reside within the semantic layer, improving performance through AtScale’s autonomous aggregate management and pushing queries down to native SQL in Amazon Redshift.</li>
-<li>The architecture incorporates Amazon Bedrock AgentCore Identity for propagating user identity and enforcing role-based access control (RBAC) within AtScale, deployed on Amazon EKS via a Helm chart (AtScale C2026.7 release).</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-20</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-strategy-mosaic-and-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Build a semantic layer for agentic AI on AWS with Strategy Mosaic and Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><ul>
-<li>Strategy Mosaic provides a semantic layer for agentic AI, offering a dimensional modeling approach with attributes, hierarchies, facts, and metrics, accessible via multiple protocols (MCP, JDBC/ODBC, XMLA, REST).</li>
-<li>The system enables querying across data sources like Amazon Redshift, Amazon Aurora, Snowflake, Databricks, and SaaS applications (Salesforce) without ETL, using linked models and pushing down native SQL to each source.</li>
-<li>Amazon Bedrock AgentCore’s Strands agents can access the semantic layer through the Model Context Protocol (MCP) endpoint, with user identity and Row-Level/Object-Level Security (RLS/OLS) maintained end-to-end.</li>
-<li>Mosaic supports both live pushdown execution to data sources and in-memory execution, and allows exporting definitions in Apache Ossie format, facilitating broad applicability beyond agentic AI.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-20</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-denodo-and-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Build a semantic layer for agentic AI on AWS with Denodo and Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><ul>
-<li>This post details building a semantic layer for agentic AI applications using Denodo and Amazon Bedrock AgentCore, enabling governed access to live, distributed enterprise data.</li>
-<li>The solution federates Amazon Aurora, Amazon Redshift, and an on-premises PostgreSQL database into a unified customer 360 view, accessed via Denodo’s VQL through the Model Context Protocol (MCP).</li>
-<li>Denodo Platform provides the AI data layer, with Virtual DataPort (VDP) as the query engine and Design Studio for authoring, utilizing base views, derived views, metric views, and VQL.</li>
-<li>Security is enforced using Global Security Policies (GSPs) that apply row and column filters at query time, with identity propagation via JWT and On-Behalf-Of token exchange between Amazon Bedrock AgentCore and Denodo.</li>
 </ul></div>
     
   </div>
