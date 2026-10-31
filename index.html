@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-10-30T10:17:23.029499+00:00">Generated 2026-10-30 10:17 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-10-31T10:17:19.056818+00:00">Generated 2026-10-31 10:17 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,11 +132,11 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — Overview for 2026-10-29</h2>
-    <p class="overview-meta">2026-10-29 · 7 vendor sources · vendor sources only</p>
-    <div class="overview-text"><p>Recent advancements across several AI labs center on model capability, infrastructure improvements, and expanding access to AI tools for specialized fields. Anthropic released a suite of updates to its Claude family, notably positioning Claude Haiku 5.5 as its fastest small model, Claude Sonnet 5.5 with improved performance and cost reductions, and Claude Opus 5.5 as the leader for complex coding and knowledge work, also at a reduced cost. Further expanding their offerings, Anthropic introduced Claude Mythos and Fable 5.1 intended for advanced coding and scientific applications, alongside a program offering greater access to these models for life sciences research. These advancements are coupled with a significant infrastructure investment through the Claude Frontier Academy and preparations for a public IPO, signaled by an S-1 filing.</p>
-<p>Alongside these model enhancements, a clear emphasis is being placed on fostering AI’s impact on scientific discovery. Anthropic has broadened its “AI for Science” program, granting free credits to a larger network of researchers and institutions globally, enabling use of Claude for tasks like hypothesis generation, data analysis, and experimental design. This program currently supports projects spanning neuroscience, genomics, and cancer research. Similarly, Amazon Web Services is focusing on enabling enterprise-level deployment of agentic AI, with the release of AgentCore designed for governed, scalable environments, and streamlined distributed training for PyTorch utilizing Ray Train DLCs and Elastic Fabric Adapter (EFA) on EKS. </p>
-<p>Security-focused improvements are also prominent. Google’s Gemini 4 Carbon model achieves state-of-the-art results in cybersecurity benchmarks, demonstrating significant gains in vulnerability detection, exploitation, and patching while also reducing fabrication and misalignment rates. This model is currently available to cybersecurity professionals and partners. Microsoft is streamlining the agent building process with the Copilot harness in Foundry Agent Service, offering a managed environment alongside improvements in agent resilience through long-running checkpoints. Finally, AWS punctuated its agentic AI work with updates to Nova Act, enhancing test organization, reporting, and team-based access control.</p></div>
+    <h2 class="overview-heading">Today in AI — since 2026-10-30</h2>
+    <p class="overview-meta">2026-10-31 · 4 vendor sources · vendor sources only</p>
+    <div class="overview-text"><p>Today’s developments largely center on expanding the utility and control surrounding Amazon Bedrock, with several announcements aimed at both cost management and application integration. Most significantly, Worldwide Express achieved a 60x first-year ROI—including $1M in annual savings and a $10M free cash flow infusion—by automating freight exception handling with a multi-agentic system built on Amazon Bedrock. This implementation utilized three specialized agents, Invoice Matching, Pricing Variance, and Accessorial Validation, each operating against a carrier-specific knowledge base and integrated with the company's existing SpeedShip TMS via APIs, resulting in a 75% reduction in active exceptions and a four-week improvement in time-to-cash.</p>
+<p>Alongside this success story, AWS released detailed guidance for managing Amazon Bedrock costs, outlining a five-stage operating model focused on attribution, observation, enforcement, and optimization. The framework highlights leveraging Bedrock’s automatic cost tracking to IAM principals via the AWS Cost and Usage Report 2.0, robust logging to CloudWatch or S3 with Athena, and tiered enforcement policies—from monitoring to synchronous blocking—to control spend. Importantly, the guidance emphasizes the value of intelligent model routing and caching at the platform level as crucial optimization techniques.</p>
+<p>Further bolstering Bedrock’s functionality, AWS previewed the ability to live preview web applications built by coding agents leveraging the Bedrock AgentCore runtime. This feature utilizes isolated microVMs and session endpoints to allow direct interaction with the application in real time, promoting a more interactive development workflow. Session endpoints utilize authentication via SigV4 or JWT and support HTTP/1.1, HTTP/2, and WebSocket connections. Finally, Amazon Bedrock in AWS GovCloud (US) can now be configured with the ChatGPT desktop app, enabling access to OpenAI models within a secure, governed environment supporting Zero Data Retention and AWS SSO via IAM Identity Center.</p></div>
   </section>
   
 
@@ -296,15 +296,33 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-10-29</span>
+      <span> · 2026-10-30</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/accelerate-agentic-ai-with-nvidia-nemotron-models-on-amazon-eks-and-sagemaker-hyperpod-eks/" target="_blank" rel="noopener">Accelerate agentic AI with NVIDIA Nemotron models on Amazon EKS and SageMaker HyperPod EKS</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/configure-the-chatgpt-desktop-app-with-amazon-bedrock-in-aws-govcloud-us/" target="_blank" rel="noopener">Configure the ChatGPT desktop app with Amazon Bedrock in AWS GovCloud (US)</a></h2>
+    
+    <div class="summary"><p>The ChatGPT desktop app now supports configuration with Amazon Bedrock in AWS GovCloud (US), enabling access to OpenAI’s models within a governed environment.</p>
+<ul>
+<li>The solution utilizes the ChatGPT desktop app and Codex, routing model requests through Amazon Bedrock Mantle in the us-gov-west-1 region.</li>
+<li>Configuration relies on two key files: <code>requirements.toml</code> (admin-controlled security limits) and <code>config.toml</code> (application settings, including model provider and API key/profile details).</li>
+<li>Authentication supports both Amazon Bedrock API keys and the AWS SDK credential chain, including AWS SSO through AWS IAM Identity Center.</li>
+<li>Zero Data Retention (ZDR) is supported, processing prompts and responses without durable storage or sharing with model providers, aiding data governance and security.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
+      <span> · 2026-10-30</span>
+    </div>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-worldwide-express-automated-freight-exceptions-with-amazon-bedrock/" target="_blank" rel="noopener">How Worldwide Express automated freight exceptions with Amazon Bedrock</a></h2>
     
     <div class="summary"><ul>
-<li>NVIDIA Nemotron 3.5 Super VL, a 120B-parameter Mixture-of-Experts (MoE) model activating 12B parameters per token, is now available on Amazon EKS and SageMaker HyperPod EKS.</li>
-<li>The model features a hybrid Mamba-Transformer MoE architecture with Mamba-2, attention, and expert layers, supporting context lengths up to 1M tokens and accepting text, image, document, and video inputs for text output.</li>
-<li>Nemotron 3.5 Super VL is designed for agentic AI workflows including coding, web research, document intelligence, cybersecurity, and video understanding and integrates with major open agent frameworks.</li>
-<li>Deployment on AWS utilizes Amazon EKS, EKS Auto Mode, and SageMaker HyperPod EKS, with validation using NVIDIA Collective Communications Library (NCCL) and performance measurement via the NVIDIA aiperf tool, supporting BF16 and NVFP4 checkpoints.</li>
+<li>Worldwide Express implemented a multi-agentic AI solution using <strong>Amazon Bedrock</strong> to automate the resolution of freight billing exceptions within their SpeedShip transportation management system (TMS).</li>
+<li>The solution employs three specialized AI agents – Invoice Matching, Pricing Variance, and Accessorial Validation – each responsible for a specific exception type and grounded in carrier-specific knowledge bases.</li>
+<li>Agents utilize APIs to interact with SpeedShip, replicating the view and actions of human reviewers, and leverage <strong>Amazon Bedrock</strong> for model inference via a single API, supporting open-source agent libraries.</li>
+<li>The implementation resulted in a 75% reduction in active exceptions, a four-week improvement in time-to-cash, $1M in annual savings, and a one-time $10M free cash flow infusion, achieving 60x first-year ROI.</li>
 </ul></div>
     
   </div>
@@ -313,34 +331,16 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-10-29</span>
+      <span> · 2026-10-30</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-moengage-turned-over-400-apis-into-agent-tools-with-agentcore-gateway/" target="_blank" rel="noopener">How MoEngage turned over 400 APIs into agent tools with AgentCore Gateway</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/preview-web-apps-live-as-your-coding-agent-builds-them-with-amazon-bedrock-agentcore-runtime/" target="_blank" rel="noopener">Preview web apps live as your coding agent builds them with Amazon Bedrock AgentCore runtime</a></h2>
     
-    <div class="summary"><p>MoEngage leveraged Amazon Bedrock AgentCore Gateway to expose 400 internal APIs to AI agents without public exposure or extensive platform engineering.</p>
+    <div class="summary"><p>Amazon Bedrock AgentCore runtime now allows for live web app previews as coding agents build them.</p>
 <ul>
-<li>AgentCore Gateway, a managed MCP server, automatically generates MCP tools from OpenAPI specifications, eliminating the need for individual teams to implement MCP servers.</li>
-<li>Cedar policies are used for server-side authorization, controlling tool access based on the agent's IAM role, ensuring only permitted tools are visible in the agent’s tools list.</li>
-<li>Amazon VPC Lattice provides managed egress for private connectivity to internal services, avoiding the need for per-API networking configurations and simplifying regional deployments.</li>
-<li>Semantic search ( <code>x_amz_bedrock_agentcore_search</code> capability) allows agents to discover tools by describing the desired task, reducing reliance on exact tool names and improving usability while minimizing context window usage.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-10-29</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/lend-and-borrow-resources-across-teams-with-aws-batchs-quota-management-for-sagemaker-training-jobs/" target="_blank" rel="noopener">Lend and borrow resources across teams with AWS Batch’s quota management for SageMaker Training jobs</a></h2>
-    
-    <div class="summary"><p>AWS Batch now supports quota management for SageMaker Training jobs, enabling resource lending and borrowing between teams.</p>
-<ul>
-<li>Administrators can define quota shares – virtual queues – organized by team or project, with configurable resource-sharing strategies: <code>RESERVE</code>, <code>LEND</code>, or <code>LEND_AND_BORROW</code>.</li>
-<li><code>LEND_AND_BORROW</code> allows idle capacity to be automatically shared and reclaimed when needed, utilizing compute more efficiently.</li>
-<li>In-share preemption can be enabled to prioritize jobs within a quota share, preempting lower-priority jobs.</li>
-<li>The SageMaker Python SDK v3 has been extended to allow submission of training jobs to these quota-managed AWS Batch job queues (using <code>TrainingQueue</code>).</li>
+<li>AgentCore runtime utilizes isolated microVMs for each agent session, enabling access via Session Endpoints – authenticated URLs that forward requests to specified ports (8000-12000).</li>
+<li>Session Endpoints support HTTP/1.1, HTTP/2, WebSocket connections and require authentication via SigV4 (for IAM runtimes) or JWT (for authorizer runtimes).</li>
+<li>The example deploys a coding agent with a Vite website, demonstrating real-time updates in the browser as the agent modifies code, accessed via <code>http://localhost:8088</code>.</li>
+<li>The sample code utilizes ports 8090 (website) and 8081 (agent status), with requests to unauthorized ports or without credentials being refused by the runtime.</li>
 </ul></div>
     
   </div>
@@ -396,16 +396,16 @@
     <div class="meta">
       <a href="techcrunch/" class="badge badge-techcrunch">TechCrunch</a>
       <span>news</span>
-      <span> · 2026-10-30</span>
+      <span> · 2026-10-31</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/10/29/you-dont-need-to-believe-in-a-god-to-get-a-religious-exemption-from-using-ai-at-work/" target="_blank" rel="noopener">You don’t need to believe in a god to get a religious exemption from using AI at work</a></h2>
+    <h2><a href="https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/" target="_blank" rel="noopener">Nvidia weighs playing the cosigner for Nscale’s AI data center in West Virginia</a></h2>
     
-    <div class="summary"><p>A University of Kentucky administrator secured a religious exemption to avoid using AI at work, establishing a precedent for non-theistic individuals.</p>
+    <div class="summary"><p>Nvidia is considering guaranteeing debt financing for Nscale’s AI data center project in West Virginia.</p>
 <ul>
-<li>The exemption was granted to David Durman, a humanist, based on his belief that AI diminishes critical thinking and negatively impacts human well-being – principles central to humanist philosophy.</li>
-<li>Durman’s case was supported by the American Humanist Association (AHA), who argue that concerns about AI can align with various belief systems beyond traditional religion.</li>
-<li>The University of Kentucky reviews religious accommodation requests individually, determining feasibility based on job responsibilities, and confirmed the accommodation allowed Durman to fulfill his role supporting grant-applying researchers.</li>
-<li>This follows a similar exemption granted to Erin Maus, a Unitarian Universalist software engineer, highlighting a growing trend of employees seeking accommodations related to AI use.</li>
+<li>Nvidia is in talks to potentially co-sign loans for Nscale, a move that would involve stepping in to manage the facility if Nscale defaults on construction payments.</li>
+<li>The project centers around a data center for Anthropic, with an initial $44.6 billion contract for the first 460-megawatt building, planned to utilize Nvidia’s next-generation Vera Rubin chips.</li>
+<li>Nscale currently has approximately 25,000 advanced AI chips running, aiming for a total of nearly 500,000, and is seeking a valuation of up to $35 billion in its upcoming IPO.</li>
+<li>This proposal represents a deeper financial commitment from Nvidia beyond traditional chip purchases or leases, totaling roughly $170 billion in investments and credit support for neoclouds and customers, including a $1 billion convertible financing commitment to Nscale in September.</li>
 </ul></div>
     
   </div>
@@ -414,17 +414,11 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-10-29</span>
+      <span> · 2026-10-30</span>
     </div>
-    <h2><a href="https://arstechnica.com/gadgets/2026/10/google-admits-ai-search-makes-less-money-but-its-fixing-that-with-more-ads/" target="_blank" rel="noopener">Google admits AI search makes less money, but it&#39;s fixing that with more ads</a></h2>
+    <h2><a href="https://arstechnica.com/gadgets/2026/10/fujifilm-to-boost-tape-production-5x-as-ai-fuels-archiving-demand/" target="_blank" rel="noopener">Fujifilm to boost tape production 5x as AI fuels archiving demand</a></h2>
     
-    <div class="summary"><p>Google reported that its AI-powered search, utilizing Gemini models, currently generates less revenue per query than traditional web search.</p>
-<ul>
-<li>AI Mode queries generate less revenue due to fewer ads and lower ad costs.</li>
-<li>Google plans to expand advertising within AI Mode, including introducing multi-turn ads in the US that dynamically change with user interactions.</li>
-<li>Despite a 25% year-over-year revenue increase to $128 billion in Q3 2026, Google’s net income decreased by almost $9 billion, and its stock price dropped nearly 12%.</li>
-<li>Google reported negative cash flow of -$9.06 billion in Q3, attributed to increased AI spending, and projects over $300 billion in AI investment by 2027.</li>
-</ul></div>
+    <div class="summary"><p>Fujifilm announced a roughly $63 million investment to increase production capacity fivefold for magnetic tape, measured against fiscal year 2025 levels, with project completion planned between fiscal years 2026-2028. The company attributes rising demand to the “exponential growth” of data generated by generative AI, specifically for archiving purposes.  The investment will focus on expanding manufacturing and personnel at Fujifilm’s Kanagawa Factory, Odawara site to produce the latest <strong>FUJIFILM LTO Ultrium10</strong> tape. Fujifilm highlights magnetic tape’s low cost, high storage volume, and air-gapping capabilities as key benefits for cloud providers and data centers seeking ransomware protection.</p></div>
     
   </div>
   

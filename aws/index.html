@@ -80,13 +80,84 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-10-30 10:17 UTC</p>
+  <p class="generated-at">Generated 2026-10-31 10:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">October 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-30</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/configure-the-chatgpt-desktop-app-with-amazon-bedrock-in-aws-govcloud-us/" target="_blank" rel="noopener">Configure the ChatGPT desktop app with Amazon Bedrock in AWS GovCloud (US)</a></h3>
+    
+    <div class="summary"><p>The ChatGPT desktop app now supports configuration with Amazon Bedrock in AWS GovCloud (US), enabling access to OpenAI’s models within a governed environment.</p>
+<ul>
+<li>The solution utilizes the ChatGPT desktop app and Codex, routing model requests through Amazon Bedrock Mantle in the us-gov-west-1 region.</li>
+<li>Configuration relies on two key files: <code>requirements.toml</code> (admin-controlled security limits) and <code>config.toml</code> (application settings, including model provider and API key/profile details).</li>
+<li>Authentication supports both Amazon Bedrock API keys and the AWS SDK credential chain, including AWS SSO through AWS IAM Identity Center.</li>
+<li>Zero Data Retention (ZDR) is supported, processing prompts and responses without durable storage or sharing with model providers, aiding data governance and security.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-30</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-worldwide-express-automated-freight-exceptions-with-amazon-bedrock/" target="_blank" rel="noopener">How Worldwide Express automated freight exceptions with Amazon Bedrock</a></h3>
+    
+    <div class="summary"><ul>
+<li>Worldwide Express implemented a multi-agentic AI solution using <strong>Amazon Bedrock</strong> to automate the resolution of freight billing exceptions within their SpeedShip transportation management system (TMS).</li>
+<li>The solution employs three specialized AI agents – Invoice Matching, Pricing Variance, and Accessorial Validation – each responsible for a specific exception type and grounded in carrier-specific knowledge bases.</li>
+<li>Agents utilize APIs to interact with SpeedShip, replicating the view and actions of human reviewers, and leverage <strong>Amazon Bedrock</strong> for model inference via a single API, supporting open-source agent libraries.</li>
+<li>The implementation resulted in a 75% reduction in active exceptions, a four-week improvement in time-to-cash, $1M in annual savings, and a one-time $10M free cash flow infusion, achieving 60x first-year ROI.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-30</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/preview-web-apps-live-as-your-coding-agent-builds-them-with-amazon-bedrock-agentcore-runtime/" target="_blank" rel="noopener">Preview web apps live as your coding agent builds them with Amazon Bedrock AgentCore runtime</a></h3>
+    
+    <div class="summary"><p>Amazon Bedrock AgentCore runtime now allows for live web app previews as coding agents build them.</p>
+<ul>
+<li>AgentCore runtime utilizes isolated microVMs for each agent session, enabling access via Session Endpoints – authenticated URLs that forward requests to specified ports (8000-12000).</li>
+<li>Session Endpoints support HTTP/1.1, HTTP/2, WebSocket connections and require authentication via SigV4 (for IAM runtimes) or JWT (for authorizer runtimes).</li>
+<li>The example deploys a coding agent with a Vite website, demonstrating real-time updates in the browser as the agent modifies code, accessed via <code>http://localhost:8088</code>.</li>
+<li>The sample code utilizes ports 8090 (website) and 8081 (agent status), with requests to unauthorized ports or without credentials being refused by the runtime.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-10-30</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/managing-amazon-bedrock-costs-end-to-end-a-playbook-for-finops-and-platform-teams/" target="_blank" rel="noopener">Managing Amazon Bedrock costs end to end: A playbook for FinOps and platform teams</a></h3>
+    
+    <div class="summary"><p>Managing Amazon Bedrock costs requires a five-stage operating model built on AWS building blocks.</p>
+<ul>
+<li><strong>Attribute:</strong> Granular cost attribution is achieved using Amazon Bedrock’s automatic tracking of inference costs to IAM principals, accessible via the AWS Cost and Usage Report (CUR) 2.0. The shared-role problem can be addressed using per-user session management with <code>sts:AssumeRole</code> and session tags.</li>
+<li><strong>Observe:</strong>  Model invocation logging to Amazon CloudWatch Logs or Amazon S3 (with Athena for BI) provides detailed request metadata and enables workload-level cost analysis. Mandatory metadata should be injected centrally via SDK wrappers or gateways.</li>
+<li><strong>Enforce:</strong> Three enforcement tiers are available: monitoring and alerting (Tier 1), IAM tag enforcement with denial of access (Tier 2), and synchronous blocking via a gateway (Tier 3). Tier 3 is recommended when using the Claude apps gateway for AWS.</li>
+<li><strong>Optimize:</strong>  Platform-level optimizations, such as intelligent model routing (using cheaper models for routine tasks, reserving high-end models for complex reasoning) and caching, can significantly reduce waste.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -539,74 +610,6 @@
 <li>Training sessions provide control over the training logic, including custom loss functions and reward signals, while SageMaker AI handles GPU allocation, distributed execution, and checkpointing.</li>
 <li>The system supports algorithms like Group Relative Policy Optimization (GRPO), where a loop samples responses, scores them, and updates the model weights. Users pay only for processed tokens.</li>
 <li>Currently supported models include gpt-oss-20b, gemma-4-31B-it, Qwen3.6-27B, and Qwen3.8-27B, with data remaining within the user’s AWS environment (S3, KMS, VPC) and adherence to existing IAM roles.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-22</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-iskaypet-unified-corporate-knowledge-with-amazon-bedrock-managed-knowledge-bases/" target="_blank" rel="noopener">How IskayPet unified corporate knowledge with Amazon Bedrock Managed Knowledge Bases</a></h3>
-    
-    <div class="summary"><ul>
-<li>IskayPet deployed a corporate knowledge assistant using <strong>Amazon Bedrock Managed Knowledge Bases</strong> to answer employee questions across multiple business areas, countries, and languages.</li>
-<li>The solution leverages a native <strong>SharePoint connector</strong> for direct document ingestion and utilizes <strong>advanced indexing</strong> to extract content from images within documents, eliminating the need for data migration or pre-processing.</li>
-<li><strong>Hybrid search</strong> (semantic and keyword/BM25) and <strong>managed reranking</strong> are included at no extra cost, improving retrieval accuracy, while <strong>document-level access control</strong> enforces existing SharePoint permissions.</li>
-<li>The assistant was built using <strong>Kiro</strong> with <strong>Claude Haiku 4.5</strong> on Amazon Bedrock, allowing for rapid development and deployment, and the architecture supports easy scalability and model flexibility for future improvements.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-22</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/amazon-polly-delivers-a-major-upgrade-to-its-generative-engine/" target="_blank" rel="noopener">Amazon Polly delivers a major upgrade to its Generative engine</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Polly’s Generative engine has been upgraded for more natural and accurate speech output with low latency, and is generally available in production.</li>
-<li>14 new voices have been added across 9 locales, including the first generative voices for Hindi and Finnish (Arjun, Kiara, and Suvi).</li>
-<li>The upgrade is a drop-in replacement for existing generative voices – no code changes are needed to access the improved quality, using the standard <code>SynthesizeSpeech</code> API.</li>
-<li>The engine now supports more expressive speech based on textual context (e.g., neutral, uncertain, surprised tones) and expands voice availability to 11 AWS Regions, including AWS GovCloud (US-West).</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-21</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-u-s-hunger-connects-leaders-and-data-using-amazon-quick/" target="_blank" rel="noopener">How U.S. Hunger connects leaders and data using Amazon Quick</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Quick now integrates with SQL Server data via SPICE, with scheduled refreshes, allowing users direct data exploration without relying on technical teams for data pulls.</li>
-<li>Quick Spaces enables shared workspaces for teams to collaborate on analyses, definitions (KPIs, client tiers), and documents, fostering alignment across leadership.</li>
-<li>Amazon Quick Research facilitates investigation of current events and connections to survey data, with version history for refining analyses.</li>
-<li>U.S. Hunger is planning to integrate data from NetSuite, Salesforce, Impact Manager, and other systems into Amazon Redshift for Quick analysis via Boomi and SPICE scheduled jobs, targeted for Q4 2026.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-21</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/train-qwen3-on-aws-trainium-with-torchtitan/" target="_blank" rel="noopener">Train Qwen3 on AWS Trainium with torchtitan</a></h3>
-    
-    <div class="summary"><ul>
-<li>This blog details training the Qwen3 model on AWS Trainium using the torchtitan library, which allows PyTorch to natively recognize and utilize Trainium devices via TorchNeuron.</li>
-<li>Three configurations are demonstrated: utilizing Hugging Face Transformers v5, employing torchtitan’s native Qwen3 model, and incorporating Neuron Kernel Interface (NKI) kernels for Mixture-of-Experts (MoE) layers.</li>
-<li>The examples use specific versions: torch/torch_neuronx 2.14.0/2.14.3, transformers 5.16.0, and torchtitan-neuron release-2.33 (0.2.2+neuron.1) and require a trn2.48xlarge instance.</li>
-<li>The blog also showcases attaching custom NKI kernels, specifically a <code>rope_hf</code> kernel from nkilib, demonstrating how to optimize operations for specific tensor shapes and integrate them into the PyTorch training process.</li>
 </ul></div>
     
   </div>
