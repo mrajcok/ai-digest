@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-11-02T11:15:33.467977+00:00">Generated 2026-11-02 11:15 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-11-03T11:16:51.706333+00:00">Generated 2026-11-03 11:16 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,11 +132,11 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — Overview for 2026-10-31</h2>
-    <p class="overview-meta">2026-10-31 · 4 vendor sources · vendor sources only</p>
-    <div class="overview-text"><p>Today’s developments largely center on expanding the utility and control surrounding Amazon Bedrock, with several announcements aimed at both cost management and application integration. Most significantly, Worldwide Express achieved a 60x first-year ROI—including $1M in annual savings and a $10M free cash flow infusion—by automating freight exception handling with a multi-agentic system built on Amazon Bedrock. This implementation utilized three specialized agents, Invoice Matching, Pricing Variance, and Accessorial Validation, each operating against a carrier-specific knowledge base and integrated with the company's existing SpeedShip TMS via APIs, resulting in a 75% reduction in active exceptions and a four-week improvement in time-to-cash.</p>
-<p>Alongside this success story, AWS released detailed guidance for managing Amazon Bedrock costs, outlining a five-stage operating model focused on attribution, observation, enforcement, and optimization. The framework highlights leveraging Bedrock’s automatic cost tracking to IAM principals via the AWS Cost and Usage Report 2.0, robust logging to CloudWatch or S3 with Athena, and tiered enforcement policies—from monitoring to synchronous blocking—to control spend. Importantly, the guidance emphasizes the value of intelligent model routing and caching at the platform level as crucial optimization techniques.</p>
-<p>Further bolstering Bedrock’s functionality, AWS previewed the ability to live preview web applications built by coding agents leveraging the Bedrock AgentCore runtime. This feature utilizes isolated microVMs and session endpoints to allow direct interaction with the application in real time, promoting a more interactive development workflow. Session endpoints utilize authentication via SigV4 or JWT and support HTTP/1.1, HTTP/2, and WebSocket connections. Finally, Amazon Bedrock in AWS GovCloud (US) can now be configured with the ChatGPT desktop app, enabling access to OpenAI models within a secure, governed environment supporting Zero Data Retention and AWS SSO via IAM Identity Center.</p></div>
+    <h2 class="overview-heading">Today in AI — since 2026-11-02</h2>
+    <p class="overview-meta">2026-11-03 · 7 vendor sources · vendor sources only</p>
+    <div class="overview-text"><p>Recent developments center on improving the reliability, efficiency, and capabilities of large language models and the platforms supporting them. A significant breakthrough comes from Anthropic with the release of FlashProve, a system enabling cryptographically verifiable AI responses using zero-knowledge succinct non-interactive arguments (zkSNARKs). While currently a research prototype with limitations like support for integer models utilizing greedy decoding, FlashProve demonstrably accelerates proof generation—achieving 110 tokens per second on a single H100 GPU with a 400-billion parameter model—a considerable improvement over existing open-source alternatives. This technology addresses critical concerns around model provenance and tamper detection.</p>
+<p>Alongside advancements in model verification, several labs are focused on enhancing agentic workflows. Amazon Web Services showcased several related updates, including Crawl4AI for preparing web content for Bedrock Knowledge Bases, methods for efficient agent fine-tuning leveraging sequence-level knowledge distillation (SeqKD), and agentic engineering intelligence employing Nova Multimodal Embeddings alongside Bedrock AgentCore for automating evidence gathering. A case study highlighted Circle K's success in reducing incident triage times using a Bedrock-powered agent. These updates emphasize the growing emphasis on building practical, automated systems utilizing LLMs across diverse domains, from customer service to complex engineering tasks.</p>
+<p>Finally, Google and Microsoft both announced significant updates to their platforms. Google unveiled Gemini 4 Argon, a new frontier reasoning model now broadly available, and Gemini 4 Carbon, a cybersecurity-focused model currently in limited release through their Fairwind Program. They also expanded the global availability of SynthID Detector for identifying AI-generated content. Microsoft detailed the platform requirements to support the shift toward “agentic” AI workloads, emphasizing the necessity of co-designed infrastructure across silicon, compute, storage, and networking and provided a case study showing Levi Strauss &amp; Co. leveraging Azure to build agent-supporting infrastructure.</p></div>
   </section>
   
 
@@ -144,6 +144,20 @@
 
   
   <h2 class="section">Vendors</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>research</span>
+      <span> · 2026-11-02</span>
+    </div>
+    <h2><a href="https://www.anthropic.com/research/provable-inference" target="_blank" rel="noopener">Progress on provable inference for large language models</a></h2>
+    
+    <div class="summary"><p>Anthropic has developed FlashProve, a system for cryptographically proving that AI responses originate from a specific model – a technique known as provable inference. This addresses concerns about model substitution or tampering by allowing verification of each response without revealing the model’s weights. FlashProve leverages zkSNARKs to achieve this, demonstrating significantly faster proof generation than previous open-source systems.</p>
+<p>Specifically, using a 400-billion parameter Llama 4 Maverick model (quantized to 4-bit precision), FlashProve generates proofs at approximately 110 tokens per second on a single H100 GPU, with each 1,024-token request requiring a 19 MB proof. This is 70-95 times faster than running inference with vLLM, a common open-source library. The system includes executable code, Lean formalizations (providing auditable security guarantees), and a technical report, all released under the Apache 2.0 license. </p>
+<p>The work aims to accelerate development in provable inference and demonstrate the practicality of zero-knowledge succinct arguments for verifying AI outputs, addressing challenges in AI pacing, tamper detection, and text provenance. However, the current release is a research prototype with limitations including a focus on integer models with greedy decoding and no guarantees against side-channel attacks.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -174,15 +188,18 @@
   
   <div class="card">
     <div class="meta">
-      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>research</span>
-      <span> · 2026-10-27</span>
+      <a href="google/" class="badge badge-google">Google</a>
+      <span>blog</span>
+      <span> · 2026-11-02</span>
     </div>
-    <h2><a href="https://www.anthropic.com/research/early-progress-drug-development" target="_blank" rel="noopener">Early progress on accelerating drug development with Claude</a></h2>
+    <h2><a href="https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/" target="_blank" rel="noopener">The latest AI news we announced in October 2026</a></h2>
     
-    <div class="summary"><p>Anthropic reports early successes using Claude to accelerate various stages of drug development, partnering with six organizations – BigHat Biosciences, Bristol Myers Squibb, Divergence Labs, Enveda, Generate Biomedicines, and The Column Group – and undertaking internal research. In work with Generate Biomedicines, Claude Code generated a cancer therapy component 70% shorter than standard, demonstrating 10x greater receptor production in lab tests. Divergence Labs employed Claude to autonomously design roughly 35,000 antibody designs for a food allergy treatment, identifying designs that showed promise in dislodging IgE.</p>
-<p>BigHat Biosciences utilized Claude, integrated with their Reccy lab data system, to improve lead antibody properties, achieving over 10x tighter binding and improved stability. Enveda saw Claude reduce document review time by 89% while identifying errors missed by humans, and draft regulatory documents in hours instead of months. Additionally, Anthropic acquired Mithril Medicine, demonstrating Claude’s ability to manage a drug discovery program for muscular dystrophy, and plans to support Bristol Myers Squibb in clinical trial planning. </p>
-<p>These applications span target identification, molecule design, manufacturing, regulatory filings, and company creation, with Anthropic also introducing Claude Science and a Life Sciences Verification Program to broaden access to its models and credits for researchers.</p></div>
+    <div class="summary"><ul>
+<li>Google released <strong>Gemini 4 Argon</strong>, a frontier reasoning model, for developers, enterprises, scientists, and consumers via Google AI Studio, the Gemini API, Google Cloud, Search, and the Gemini app, including support for robotics applications.</li>
+<li><strong>Gemini 4 Carbon</strong>, the strongest model yet focused on cybersecurity and long-horizon engineering, is in pre-release testing with the U.S. government and cyber defenders through the Fairwind Program.</li>
+<li><strong>Genie 4</strong> introduces real-time interactive world simulation with native audio and natural language steering, aimed at creating safe training environments for AI agents.</li>
+<li><strong>SynthID Detector</strong> has been expanded globally in English to allow anyone to verify if images, videos, or audio were AI-generated; it also identifies AI content from partners like OpenAI and NVIDIA.</li>
+</ul></div>
     
   </div>
   
@@ -224,18 +241,17 @@
   
   <div class="card">
     <div class="meta">
-      <a href="google/" class="badge badge-google">Google</a>
+      <a href="microsoft/" class="badge badge-microsoft">Microsoft</a>
       <span>blog</span>
-      <span> · 2026-10-26</span>
+      <span> · 2026-11-02</span>
     </div>
-    <h2><a href="https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/" target="_blank" rel="noopener">Our newest AI Quest: Mapping the human brain</a></h2>
+    <h2><a href="https://www.wired.com/sponsored/story/the-platform-behind-the-next-ai-breakthrough/" target="_blank" rel="noopener">The Platform Behind the Next AI Breakthrough</a></h2>
     
-    <div class="summary"><p>Google Research and Stanford Accelerator for Learning have launched “Polar Peaks,” an interactive AI Quest for students aged 11-14.</p>
-<ul>
-<li>The quest teaches AI literacy skills by having students map neurons in a virtual brain to understand memory loss, mirroring real-world connectomics research.</li>
-<li>Students engage in tasks like data cleaning and model testing, emphasizing the importance of human oversight in AI systems.</li>
-<li>“Polar Peaks” builds upon previous quests focused on flood forecasting and diabetic retinopathy detection, with over 400,000 quests completed to date.</li>
-<li>New teacher training modules are available through the Google AI Educator Series to support classroom integration of the AI Quests program.</li>
+    <div class="summary"><ul>
+<li>The article discusses the need for a platform shift to support "agentic" AI workloads, which are long-running, dynamic, and unpredictable in their resource demands, unlike traditional request-response applications.</li>
+<li>Microsoft argues that advancements in silicon, compute, storage, and networking must be co-designed and operate as a unified system to effectively support these agentic workloads, as optimizing individual layers is insufficient.</li>
+<li>Levi Strauss &amp; Co. is presented as an example of a company leveraging Microsoft Azure to build a platform capable of supporting both existing business processes <em>and</em> a "super agent" coordinating numerous domain-specific agents.</li>
+<li>The article proposes three key questions to assess readiness for an agentic platform: availability of high-performance infrastructure, flexibility in choosing the right technology stack for each workload, and the ability to leverage agents for platform operations themselves.</li>
 </ul></div>
     
   </div>
@@ -277,70 +293,53 @@
   
   <div class="card">
     <div class="meta">
-      <a href="microsoft/" class="badge badge-microsoft">Microsoft</a>
+      <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-10-20</span>
+      <span> · 2026-11-02</span>
     </div>
-    <h2><a href="https://blogs.microsoft.com/blog/2026/10/20/advancing-digital-sovereignty-with-greater-control-and-choice/" target="_blank" rel="noopener">Advancing digital sovereignty with greater control and choice</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-circle-k-accelerated-devops-incident-triage-to-under-15-minutes-with-amazon-bedrock/" target="_blank" rel="noopener">How Circle K accelerated DevOps incident triage to under 15 minutes with Amazon Bedrock</a></h2>
+    
+    <div class="summary"><p>Circle K reduced DevOps incident triage time to under 15 minutes using Amazon Bedrock, improving response times and consistency.</p>
+<ul>
+<li>The system utilizes an agentic AI architecture built on Amazon Bedrock to autonomously investigate incidents and deliver structured summaries to Slack.</li>
+<li>Initially built with Amazon Bedrock Flows, the solution was migrated to Amazon Bedrock AgentCore to handle increasing data volumes and longer analysis times, leveraging AgentCore Runtime for session persistence and scalability.</li>
+<li>Key components include agents querying AWS resources (ECS, ALB, CloudWatch), OpenSearch Service for logs, and GitHub for code/commits, with a final analysis prompt generating a root cause summary.</li>
+<li>The solution achieved a 67-75% reduction in mean triage time, providing consistent summaries for engineers and accelerating escalation and false alarm handling, and benefits from Amazon Bedrock’s data privacy features.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
+      <span> · 2026-11-02</span>
+    </div>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/agentic-engineering-intelligence-with-amazon-nova-multimodal-embeddings-and-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Agentic engineering intelligence with Amazon Nova Multimodal Embeddings and Amazon Bedrock AgentCore</a></h2>
+    
+    <div class="summary"><p>Agentic engineering intelligence leverages Amazon Nova Multimodal Embeddings and Amazon Bedrock AgentCore to automate evidence gathering for part substitution evaluations.</p>
+<ul>
+<li>The system employs a multi-agent architecture with a planner (Claude Haiku 5.5), specialist agents (Claude Sonnet 5.5), and a supervisor (Claude Opus 5.5) orchestrated by Amazon Bedrock AgentCore.</li>
+<li>Amazon Nova Multimodal Embeddings are used for both multimodal retrieval (matching specs, paragraphs, or plots from engineering documents) and visual similarity scoring of part photos.</li>
+<li>Deterministic spec-fit evaluation is performed using Python code based on a requirements schema, ensuring reproducible results for engineering reviews.</li>
+<li>The solution utilizes Amazon Bedrock Managed Knowledge Bases and Amazon S3 Vectors for storing and querying embedded engineering data, including documents and images.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
+      <span> · 2026-11-02</span>
+    </div>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/build-efficient-agents-with-knowledge-distillation-on-amazon-sagemaker-ai/" target="_blank" rel="noopener">Build efficient agents with knowledge distillation on Amazon SageMaker AI</a></h2>
     
     <div class="summary"><ul>
-<li>Microsoft is expanding its <strong>Microsoft Sovereign Cloud</strong> offering to provide organizations with greater control over their data and operations, addressing digital sovereignty concerns.</li>
-<li><strong>Sovereign Control Panel</strong> (public preview at Microsoft Ignite) provides a unified Azure portal experience for understanding and managing sovereignty posture, controls, risks, and business continuity.</li>
-<li>New features include <strong>Data Guardian</strong> (EU/EFTA rollout) for European resident oversight of Microsoft engineer access, <strong>Production Touch Ledger</strong> for tamper-evident access records, and <strong>External key management with Azure Managed HSM</strong> allowing customer-owned key storage.</li>
-<li><strong>Azure Local</strong>, extending Azure capabilities to customer-operated environments, now supports SQL Server, DocumentDB, Blob Storage, GitHub Enterprise Local, and <strong>Foundry Local</strong> with expanded model catalog and local inference capabilities.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-10-30</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/configure-the-chatgpt-desktop-app-with-amazon-bedrock-in-aws-govcloud-us/" target="_blank" rel="noopener">Configure the ChatGPT desktop app with Amazon Bedrock in AWS GovCloud (US)</a></h2>
-    
-    <div class="summary"><p>The ChatGPT desktop app now supports configuration with Amazon Bedrock in AWS GovCloud (US), enabling access to OpenAI’s models within a governed environment.</p>
-<ul>
-<li>The solution utilizes the ChatGPT desktop app and Codex, routing model requests through Amazon Bedrock Mantle in the us-gov-west-1 region.</li>
-<li>Configuration relies on two key files: <code>requirements.toml</code> (admin-controlled security limits) and <code>config.toml</code> (application settings, including model provider and API key/profile details).</li>
-<li>Authentication supports both Amazon Bedrock API keys and the AWS SDK credential chain, including AWS SSO through AWS IAM Identity Center.</li>
-<li>Zero Data Retention (ZDR) is supported, processing prompts and responses without durable storage or sharing with model providers, aiding data governance and security.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-10-30</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-worldwide-express-automated-freight-exceptions-with-amazon-bedrock/" target="_blank" rel="noopener">How Worldwide Express automated freight exceptions with Amazon Bedrock</a></h2>
-    
-    <div class="summary"><ul>
-<li>Worldwide Express implemented a multi-agentic AI solution using <strong>Amazon Bedrock</strong> to automate the resolution of freight billing exceptions within their SpeedShip transportation management system (TMS).</li>
-<li>The solution employs three specialized AI agents – Invoice Matching, Pricing Variance, and Accessorial Validation – each responsible for a specific exception type and grounded in carrier-specific knowledge bases.</li>
-<li>Agents utilize APIs to interact with SpeedShip, replicating the view and actions of human reviewers, and leverage <strong>Amazon Bedrock</strong> for model inference via a single API, supporting open-source agent libraries.</li>
-<li>The implementation resulted in a 75% reduction in active exceptions, a four-week improvement in time-to-cash, $1M in annual savings, and a one-time $10M free cash flow infusion, achieving 60x first-year ROI.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-10-30</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/preview-web-apps-live-as-your-coding-agent-builds-them-with-amazon-bedrock-agentcore-runtime/" target="_blank" rel="noopener">Preview web apps live as your coding agent builds them with Amazon Bedrock AgentCore runtime</a></h2>
-    
-    <div class="summary"><p>Amazon Bedrock AgentCore runtime now allows for live web app previews as coding agents build them.</p>
-<ul>
-<li>AgentCore runtime utilizes isolated microVMs for each agent session, enabling access via Session Endpoints – authenticated URLs that forward requests to specified ports (8000-12000).</li>
-<li>Session Endpoints support HTTP/1.1, HTTP/2, WebSocket connections and require authentication via SigV4 (for IAM runtimes) or JWT (for authorizer runtimes).</li>
-<li>The example deploys a coding agent with a Vite website, demonstrating real-time updates in the browser as the agent modifies code, accessed via <code>http://localhost:8088</code>.</li>
-<li>The sample code utilizes ports 8090 (website) and 8081 (agent status), with requests to unauthorized ports or without credentials being refused by the runtime.</li>
+<li>This blog details how to use sequence-level knowledge distillation (SeqKD) on Amazon SageMaker AI to fine-tune a shopping agent, transferring behavior from a larger "teacher" model (GLM-5.3 on Amazon Bedrock) to a smaller "student" model (Qwen3.5-4B).</li>
+<li>SeqKD involves generating high-quality multi-step trajectories with the teacher model, filtering for successful task completion using a programmatic scorer (ShoppingBench), and then using these trajectories to train the student model with supervised fine-tuning.</li>
+<li>The process focuses on encoding trajectories as a series of chat turns, compressing tool observations to manage token limits, and leveraging SageMaker AI model customization for serverless fine-tuning and model versioning.</li>
+<li>Specific configurations for model customization are outlined, including hyperparameters like sequence length, LoRA rank, learning rate, and training epochs, with a focus on balancing performance and cost-effectiveness for agentic tasks.</li>
 </ul></div>
     
   </div>
@@ -396,16 +395,16 @@
     <div class="meta">
       <a href="techcrunch/" class="badge badge-techcrunch">TechCrunch</a>
       <span>news</span>
-      <span> · 2026-11-01</span>
+      <span> · 2026-11-03</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/11/01/ai-can-make-tech-ceos-lives-easier-what-about-everyone-else/" target="_blank" rel="noopener">AI can make tech CEOs’ lives easier. What about everyone else?</a></h2>
+    <h2><a href="https://techcrunch.com/2026/11/02/y-combinators-garry-tan-uses-ai-agents-so-much-he-spends-up-to-200k-a-year-on-tokens/" target="_blank" rel="noopener">Y Combinator’s Garry Tan uses AI agents so much, he spends up to $200K a year on tokens</a></h2>
     
-    <div class="summary"><p>AI executives are suggesting increasingly expansive uses for AI tools, sparking debate about whether these companies understand the needs of average users.</p>
+    <div class="summary"><p>Y Combinator CEO Garry Tan reportedly spends $100,000 - $200,000 annually on tokens for extensive AI agent use.</p>
 <ul>
-<li>Dazzle AI CEO Marissa Mayer suggested using AI to help with a school assignment for her daughter.</li>
-<li>OpenAI CEO Sam Altman proposed AI-generated personalized podcasts for children’s commutes and stated he cannot imagine parenting without ChatGPT.</li>
-<li>Meta CEO Mark Zuckerberg suggested AI could facilitate social and romantic connections, even handling initial "dates" through AI agents.</li>
-<li>The discussion centers on a potential disconnect between the problems AI leaders are trying to solve (like optimizing dinner reservations) and the challenges faced by most people, alongside a broader societal skepticism regarding extensive AI integration into daily life.</li>
+<li>Tan utilizes AI agents for a wide range of tasks, including work projects, coding, and personal life management—accessing emails, notes (including therapy notes), and Dropbox data.</li>
+<li>He has publicly shared a set of 23 skills for the Claude Code model, named “gstack”, on GitHub as a learning resource for AI agents.</li>
+<li>Y Combinator is internally deploying an AI agent, “Stray Light”, which maintains a comprehensive knowledge base of all founders they’ve backed and all related communications.</li>
+<li>Tan believes personal, user-controlled AI agents are the future, but acknowledges current costs are prohibitive for widespread adoption.</li>
 </ul></div>
     
   </div>
@@ -414,11 +413,17 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-10-30</span>
+      <span> · 2026-11-02</span>
     </div>
-    <h2><a href="https://arstechnica.com/gadgets/2026/10/fujifilm-to-boost-tape-production-5x-as-ai-fuels-archiving-demand/" target="_blank" rel="noopener">Fujifilm to boost tape production 5x as AI fuels archiving demand</a></h2>
+    <h2><a href="https://arstechnica.com/ai/2026/11/claudes-new-rules-against-game-cloning-wont-stop-the-ai-copying-boom/" target="_blank" rel="noopener">Claude’s new rules against game cloning won’t stop the AI copying boom</a></h2>
     
-    <div class="summary"><p>Fujifilm announced a roughly $63 million investment to increase production capacity fivefold for magnetic tape, measured against fiscal year 2025 levels, with project completion planned between fiscal years 2026-2028. The company attributes rising demand to the “exponential growth” of data generated by generative AI, specifically for archiving purposes.  The investment will focus on expanding manufacturing and personnel at Fujifilm’s Kanagawa Factory, Odawara site to produce the latest <strong>FUJIFILM LTO Ultrium10</strong> tape. Fujifilm highlights magnetic tape’s low cost, high storage volume, and air-gapping capabilities as key benefits for cloud providers and data centers seeking ransomware protection.</p></div>
+    <div class="summary"><p>Anthropic introduced a new system prompt to its Claude models to prevent the recreation of specific existing video games.</p>
+<ul>
+<li>A new rule, named “tengu_heron_brook”, instructs Claude to build original games, games in a genre, or games from user designs, but <em>not</em> to recreate existing games, even if renamed.</li>
+<li>The rule was added to version 2.1.314 of the Claude Code binary around October 27, and is also included in the Claude Opus 5.5 model's system prompt.</li>
+<li>Anthropic states this change is to discourage IP infringement, as usage of Claude for this purpose violates their policy.</li>
+<li>The company acknowledges that the new prompt may impact some legitimate game development use cases, but intends to iterate and balance restrictions.</li>
+</ul></div>
     
   </div>
   

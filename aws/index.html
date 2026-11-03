@@ -80,11 +80,85 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-11-02 11:15 UTC</p>
+  <p class="generated-at">Generated 2026-11-03 11:16 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
+  
+  <h2 class="month">November 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-02</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-circle-k-accelerated-devops-incident-triage-to-under-15-minutes-with-amazon-bedrock/" target="_blank" rel="noopener">How Circle K accelerated DevOps incident triage to under 15 minutes with Amazon Bedrock</a></h3>
+    
+    <div class="summary"><p>Circle K reduced DevOps incident triage time to under 15 minutes using Amazon Bedrock, improving response times and consistency.</p>
+<ul>
+<li>The system utilizes an agentic AI architecture built on Amazon Bedrock to autonomously investigate incidents and deliver structured summaries to Slack.</li>
+<li>Initially built with Amazon Bedrock Flows, the solution was migrated to Amazon Bedrock AgentCore to handle increasing data volumes and longer analysis times, leveraging AgentCore Runtime for session persistence and scalability.</li>
+<li>Key components include agents querying AWS resources (ECS, ALB, CloudWatch), OpenSearch Service for logs, and GitHub for code/commits, with a final analysis prompt generating a root cause summary.</li>
+<li>The solution achieved a 67-75% reduction in mean triage time, providing consistent summaries for engineers and accelerating escalation and false alarm handling, and benefits from Amazon Bedrock’s data privacy features.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-02</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/agentic-engineering-intelligence-with-amazon-nova-multimodal-embeddings-and-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Agentic engineering intelligence with Amazon Nova Multimodal Embeddings and Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><p>Agentic engineering intelligence leverages Amazon Nova Multimodal Embeddings and Amazon Bedrock AgentCore to automate evidence gathering for part substitution evaluations.</p>
+<ul>
+<li>The system employs a multi-agent architecture with a planner (Claude Haiku 5.5), specialist agents (Claude Sonnet 5.5), and a supervisor (Claude Opus 5.5) orchestrated by Amazon Bedrock AgentCore.</li>
+<li>Amazon Nova Multimodal Embeddings are used for both multimodal retrieval (matching specs, paragraphs, or plots from engineering documents) and visual similarity scoring of part photos.</li>
+<li>Deterministic spec-fit evaluation is performed using Python code based on a requirements schema, ensuring reproducible results for engineering reviews.</li>
+<li>The solution utilizes Amazon Bedrock Managed Knowledge Bases and Amazon S3 Vectors for storing and querying embedded engineering data, including documents and images.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-02</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-efficient-agents-with-knowledge-distillation-on-amazon-sagemaker-ai/" target="_blank" rel="noopener">Build efficient agents with knowledge distillation on Amazon SageMaker AI</a></h3>
+    
+    <div class="summary"><ul>
+<li>This blog details how to use sequence-level knowledge distillation (SeqKD) on Amazon SageMaker AI to fine-tune a shopping agent, transferring behavior from a larger "teacher" model (GLM-5.3 on Amazon Bedrock) to a smaller "student" model (Qwen3.5-4B).</li>
+<li>SeqKD involves generating high-quality multi-step trajectories with the teacher model, filtering for successful task completion using a programmatic scorer (ShoppingBench), and then using these trajectories to train the student model with supervised fine-tuning.</li>
+<li>The process focuses on encoding trajectories as a series of chat turns, compressing tool observations to manage token limits, and leveraging SageMaker AI model customization for serverless fine-tuning and model versioning.</li>
+<li>Specific configurations for model customization are outlined, including hyperparameters like sequence length, LoRA rank, learning rate, and training epochs, with a focus on balancing performance and cost-effectiveness for agentic tasks.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-02</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/prepare-web-content-for-amazon-bedrock-knowledge-bases-with-crawl4ai/" target="_blank" rel="noopener">Prepare web content for Amazon Bedrock Knowledge Bases with Crawl4AI</a></h3>
+    
+    <div class="summary"><p>Amazon Bedrock now supports preparation of web content for Knowledge Bases using Crawl4AI, an open-source Python crawler.</p>
+<ul>
+<li>Crawl4AI allows for custom preparation of web content before ingestion into a Knowledge Base, enabling structured Markdown preparation, targeted extraction via CSS selectors, and the addition of custom metadata.</li>
+<li>The workflow uses Amazon EventBridge to schedule an Amazon ECS task on AWS Fargate to crawl websites, prepare Markdown and metadata, upload to Amazon S3, and initiate a Bedrock Knowledge Base ingestion job.</li>
+<li>Managed Knowledge Bases support several document formats for Amazon S3 data sources, including Markdown, and offer default, fixed-size, and no-chunking strategies, while customer-managed options offer more flexibility.</li>
+<li>The solution is available as a sample implementation in the <code>aws-samples</code> repository, requiring prerequisites such as an AWS account, a Bedrock Knowledge Base (managed or customer-managed), and a deployment workstation configured with necessary tools like Git, Python, and the AWS CLI.</li>
+</ul></div>
+    
+  </div>
+  
   
   <h2 class="month">October 2026</h2>
   
@@ -542,74 +616,6 @@
 <li>The approach replaces guesswork with two measured values: Q_max (maximum concurrency per instance before breaching SLO) and T_total (total scale-out time), deriving scale-in/out thresholds and cooldowns through arithmetic.</li>
 <li>The methodology utilizes the <code>ConcurrentRequestsPerModel</code> metric native to Amazon SageMaker AI, avoiding the need for custom metric emission, and addresses the shortcomings of default auto scaling metrics for TTS due to its non-autoregressive nature.</li>
 <li>Deployment is managed via AWS CDK stacks, ensuring a measured plan exists before auto scaling resources are created, and a command-line toolchain automates the measurement process – drift check, Q_max measurement, T_total measurement, and plan generation – with a focus on accurately determining scale-out parameters.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-22</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/stream-low-latency-speech-from-ai-agents-using-kokoro-tts-on-amazon-sagemaker-ai/" target="_blank" rel="noopener">Stream low-latency speech from AI agents using Kokoro TTS on Amazon SageMaker AI</a></h3>
-    
-    <div class="summary"><ul>
-<li>This post details a solution for streaming text-to-speech (TTS) synthesis alongside AI agent text generation to reduce perceived latency, focusing on the Kokoro-82M TTS model hosted on Amazon SageMaker AI.</li>
-<li>The solution utilizes a bidirectional streaming connection to the Kokoro-82M model via a SageMaker AI real-time endpoint (ml.g5.xlarge instance) exposing both standard POST /invocations and streaming WS /invocations-bidirectional-stream routes.</li>
-<li>Key client-side components include handling WebSocket frame types (text or bytes) and an <code>IncrementalSentenceChunker</code> class that processes text fragments into complete sentences for streaming.</li>
-<li>Two transport options for delivering audio to the client are evaluated: base64-encoded audio within Server-Sent Events (SSE) and a raw binary/JSON multiplexed approach over the bidirectional connection; the latter is favored for lowest latency if not constrained by existing infrastructure.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-22</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/deploy-ai-in-a-hipaa-eligible-environment-with-amazon-quick/" target="_blank" rel="noopener">Deploy AI in a HIPAA-eligible environment with Amazon Quick</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Quick is a HIPAA-eligible service, enabling healthcare organizations to leverage AI while adhering to regulatory requirements, with the web version being the focus of this documentation.</li>
-<li>The platform utilizes building blocks like Chat, Spaces, and Integrations (including connectors to systems like Slack, Salesforce, and S3) and features like Quick Sight and Quick Flows, all operating under the same eligibility and BAA requirements.</li>
-<li>Amazon Quick provides managed infrastructure, encryption (with options for customer-managed keys), access control via IAM and SSO, and audit logs via CloudTrail and CloudWatch, mapped to specific HIPAA controls.</li>
-<li>While Amazon Quick handles access, retrieval, and interaction with PHI, it does <em>not</em> handle de-identification, data lake governance, or the administrative/physical safeguards required for HIPAA compliance—these remain the responsibility of the user.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-22</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/write-your-own-training-loop-without-managing-gpus-with-amazon-sagemaker-training-sessions/" target="_blank" rel="noopener">Write your own training loop — without managing GPUs — with Amazon SageMaker training session APIs</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon SageMaker AI introduces Training Session APIs, enabling users to define custom training loops without managing GPU infrastructure.</li>
-<li>The APIs offer fine-grained control through operations like <code>forward_backward()</code>, <code>optim_step()</code>, and <code>sample()</code>, which are executed on managed GPUs while loop control remains on the user's machine.</li>
-<li>The service supports various LLM training techniques, including supervised fine-tuning (SFT), reinforcement learning (RL) – specifically GRPO, PPO, and others – and custom objectives.</li>
-<li>Billing is per token processed, offering potential cost savings compared to traditional hourly GPU billing, especially for workloads with high local computation requirements, and includes an OpenAI-compatible chat completions endpoint.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-22</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/announcing-new-ways-to-customize-models-with-sagemaker-ai-without-managing-gpus/" target="_blank" rel="noopener">Announcing new ways to customize models with SageMaker AI, without managing GPUs</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon SageMaker AI now generally supports training sessions for serverless model customization, allowing users to define custom post-training loops (e.g., SFT, DPO, RLHF, multi-turn RL) without managing GPU infrastructure.</li>
-<li>Training sessions provide control over the training logic, including custom loss functions and reward signals, while SageMaker AI handles GPU allocation, distributed execution, and checkpointing.</li>
-<li>The system supports algorithms like Group Relative Policy Optimization (GRPO), where a loop samples responses, scores them, and updates the model weights. Users pay only for processed tokens.</li>
-<li>Currently supported models include gpt-oss-20b, gemma-4-31B-it, Qwen3.6-27B, and Qwen3.8-27B, with data remaining within the user’s AWS environment (S3, KMS, VPC) and adherence to existing IAM roles.</li>
 </ul></div>
     
   </div>
