@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-11-03T11:16:51.706333+00:00">Generated 2026-11-03 11:16 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-11-05T11:18:03.989327+00:00">Generated 2026-11-05 11:18 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,11 +132,11 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — since 2026-11-02</h2>
-    <p class="overview-meta">2026-11-03 · 7 vendor sources · vendor sources only</p>
-    <div class="overview-text"><p>Recent developments center on improving the reliability, efficiency, and capabilities of large language models and the platforms supporting them. A significant breakthrough comes from Anthropic with the release of FlashProve, a system enabling cryptographically verifiable AI responses using zero-knowledge succinct non-interactive arguments (zkSNARKs). While currently a research prototype with limitations like support for integer models utilizing greedy decoding, FlashProve demonstrably accelerates proof generation—achieving 110 tokens per second on a single H100 GPU with a 400-billion parameter model—a considerable improvement over existing open-source alternatives. This technology addresses critical concerns around model provenance and tamper detection.</p>
-<p>Alongside advancements in model verification, several labs are focused on enhancing agentic workflows. Amazon Web Services showcased several related updates, including Crawl4AI for preparing web content for Bedrock Knowledge Bases, methods for efficient agent fine-tuning leveraging sequence-level knowledge distillation (SeqKD), and agentic engineering intelligence employing Nova Multimodal Embeddings alongside Bedrock AgentCore for automating evidence gathering. A case study highlighted Circle K's success in reducing incident triage times using a Bedrock-powered agent. These updates emphasize the growing emphasis on building practical, automated systems utilizing LLMs across diverse domains, from customer service to complex engineering tasks.</p>
-<p>Finally, Google and Microsoft both announced significant updates to their platforms. Google unveiled Gemini 4 Argon, a new frontier reasoning model now broadly available, and Gemini 4 Carbon, a cybersecurity-focused model currently in limited release through their Fairwind Program. They also expanded the global availability of SynthID Detector for identifying AI-generated content. Microsoft detailed the platform requirements to support the shift toward “agentic” AI workloads, emphasizing the necessity of co-designed infrastructure across silicon, compute, storage, and networking and provided a case study showing Levi Strauss &amp; Co. leveraging Azure to build agent-supporting infrastructure.</p></div>
+    <h2 class="overview-heading">Today in AI — since 2026-11-04</h2>
+    <p class="overview-meta">2026-11-05 · 6 vendor sources · vendor sources only</p>
+    <div class="overview-text"><p>Today’s AI news is largely dominated by developments surrounding Amazon Web Services’ agentic AI offerings, with a notable exception in biological research. The most significant news comes from Anthropic, where researchers used their Claude model to determine the first 3D structure of a prokaryotic vault particle, accelerating a process that previously took weeks to just 34 hours. This demonstrates a substantial leap in applying large language models to scientific discovery, with Claude assisting in database searching, technique optimization, and microscopy data processing, and opening avenues for adapting vaults for potential biotechnological applications like targeted enzyme delivery. The research team has released their findings early in hopes of fostering collaboration.</p>
+<p>Across several posts, AWS highlighted advancements in building and evaluating AI agents with Amazon Bedrock AgentCore.  New capabilities allow for the integration of “decision models” alongside traditional LLM-based evaluation, providing more structured assessments for tasks needing specific answers, such as compliance checks.  Further features focus on agent operations: Smart Approvals automate approval of agent actions based on a classification model assessing context and user permissions, while detailed context engineering strategies—using architecture, prompt control, filesystem externalization, and verification layers—aim to overcome limitations of LLM context windows.  A reference implementation, Deep Insight, showcases these techniques built on the Strands Agents SDK.</p>
+<p>Finally, two case studies demonstrated practical deployments of AgentCore. Indegene is leveraging generative AI, powered by Bedrock, Strands Agents, and AgentCore, to generate data quality rules and code within its life sciences data platform, automating a historically manual process. Simultaneously, U Mobile deployed AiDaH, an AI-driven agentic helpdesk built on AgentCore, achieving significant reductions—up to 84.5%—in trouble ticket volumes across a broad range of operational scenarios. Both deployments emphasized AgentCore’s managed runtime, built-in memory, and scalability for real-world enterprise applications.</p></div>
   </section>
   
 
@@ -144,6 +144,20 @@
 
   
   <h2 class="section">Vendors</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>research</span>
+      <span> · 2026-11-04</span>
+    </div>
+    <h2><a href="https://www.anthropic.com/research/investigating-vault-particles-with-claude" target="_blank" rel="noopener">Investigating vault particles with Claude</a></h2>
+    
+    <div class="summary"><p>Anthropic researchers, using their Claude model, determined the first 3D structure of a vault particle found in prokaryotic cells—specifically, from a bacteriophage. Vaults are large protein shells whose function is currently unknown, but are present across most life forms. Claude assisted throughout the research by searching protein databases, optimizing particle isolation techniques, and processing microscopy data, accelerating the process from weeks to 34 hours for an initial structural model. </p>
+<p>The prokaryotic vault is built from 96 copies of a single protein, L05, and is shorter and wider than its mammalian counterpart, enclosing 25% more volume. Experiments using Claude to design altered versions of the protein revealed key structural elements necessary for shell closure, and demonstrated the potential to modify vault size via protein duplication. This work suggests opportunities for adapting vaults for biotechnology, such as nanocapsules for enzyme delivery.</p>
+<p>This research showcases a new approach to scientific discovery, with Claude substantially accelerating the research pipeline. The team has released their findings early to solicit collaboration and is actively investigating the vault’s function, with the ultimate goal of understanding its evolutionary origins and potential biological role.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -175,14 +189,19 @@
   
   <div class="card">
     <div class="meta">
-      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>news</span>
-      <span> · 2026-10-28</span>
+      <a href="google/" class="badge badge-google">Google</a>
+      <span>research</span>
+      <span> · 2026-11-03</span>
     </div>
-    <h2><a href="https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions" target="_blank" rel="noopener">AI for Science expands to foundations and institutions</a></h2>
+    <h2><a href="https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/" target="_blank" rel="noopener">Agentic cheminformatics with Google Antigravity</a></h2>
     
-    <div class="summary"><p>Anthropic has expanded its “AI for Science” program, initiated in May 2025, to include 20 scientific foundations, institutions, and research groups globally. The program provides free credits for use with the Claude AI model to researchers working on high-impact scientific projects. Scientists are reportedly utilizing Claude to generate hypotheses, design experiments, analyze data, and communicate findings. </p>
-<p>Recent partnerships include HHMI Janelia Research Campus to develop the Model Hardware Standard (MHS) — a specification for safe AI operation of lab instruments currently in research preview — and support for the Allen Institute’s use of AI agents to analyze large datasets.  The program is also supporting projects such as FlyWire (neuroscience), LEAP (Earth system modeling), AstroPath (cancer research), gnomAD (genomics), Tau Ceti (mathematics), and the Centre for Population Genomics. Anthropic intends to continue expanding the program and share its impact on scientific discovery.</p></div>
+    <div class="summary"><p>Google Antigravity now includes new Cheminformatics Skills to accelerate drug discovery workflows.</p>
+<ul>
+<li>The agent uses RDKit, ChEMBL, and PubChem to unify molecular data from various sources (IUPAC names, Markush structures, SDF files) and performs scientific reasoning.</li>
+<li>Demonstrated on lung cancer treatments, the agent retrieved thousands of compounds, performed matched molecular pair analysis (MMPA), and proposed novel macrocycles with synthetic routes in approximately one hour.</li>
+<li>MMPA results showed cyclization reduces rotatable bonds and generally increases potency, consistent with expectations, and the agent built and benchmarked multiple potency models using chronological and scaffold splits.</li>
+<li>The agent can generate synthesis plans, including electron-pushing diagrams, and predict potency, with results exportable to industry-standard chemistry software; however, experimental validation remains essential.</li>
+</ul></div>
     
   </div>
   
@@ -217,24 +236,6 @@
 <li>Carbon demonstrates a +89 Elo point improvement on WebDev Arena, reaching #4 with a score of 1768, and shows improvements in generating secure code with 2x uplift over Gemini 4 Argon on internal benchmarks.</li>
 <li>The model significantly reduces misalignment and fabrication rates in live coding environments, with high-severity alerts dropping by 80%, and unsupported claims halved compared to Argon.</li>
 <li>Gemini 4 Carbon is priced at $2 per million input tokens and $10 per million output tokens, matching Argon’s introductory pricing, and will initially be available to cyber defenders and Fairwind Program partners.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="google/" class="badge badge-google">Google</a>
-      <span>research</span>
-      <span> · 2026-10-27</span>
-    </div>
-    <h2><a href="https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/" target="_blank" rel="noopener">Genie 4: A new generation of world simulation</a></h2>
-    
-    <div class="summary"><p>Genie 4, Google DeepMind’s new world model, achieves unprecedented realism and interactive simulation with native multimodality.</p>
-<ul>
-<li>Genie 4 is built on the Gemini family, using Gemini Omni for real-world appearance and behavior, and other Gemini models for reasoning and coherence – specifically Gemini 3.8 Flash acts as a guiding agent.</li>
-<li>The model natively generates audio, including music, ambient noises, and interactive dialogue, alongside visual simulations.</li>
-<li>Genie 4 simulates physics, natural movement, and allows real-time modification of scenes through natural language prompts, adapting to user inputs and maintaining continuity.</li>
-<li>A research preview is available for trusted testers and Google AI Ultra subscribers in Project Genie, with early access via the Gemini API and Google AI Studio; the model delivers enhanced photorealism, fluid movement, and native audio.</li>
 </ul></div>
     
   </div>
@@ -295,16 +296,16 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-11-02</span>
+      <span> · 2026-11-04</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-circle-k-accelerated-devops-incident-triage-to-under-15-minutes-with-amazon-bedrock/" target="_blank" rel="noopener">How Circle K accelerated DevOps incident triage to under 15 minutes with Amazon Bedrock</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-u-mobile-built-agentic-telco-operations-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How U Mobile built agentic telco operations with Amazon Bedrock AgentCore</a></h2>
     
-    <div class="summary"><p>Circle K reduced DevOps incident triage time to under 15 minutes using Amazon Bedrock, improving response times and consistency.</p>
+    <div class="summary"><p>U Mobile built AiDaH, an AI-driven agentic helpdesk, on Amazon Bedrock AgentCore to automate telco operations and reduce reliance on manual processes.</p>
 <ul>
-<li>The system utilizes an agentic AI architecture built on Amazon Bedrock to autonomously investigate incidents and deliver structured summaries to Slack.</li>
-<li>Initially built with Amazon Bedrock Flows, the solution was migrated to Amazon Bedrock AgentCore to handle increasing data volumes and longer analysis times, leveraging AgentCore Runtime for session persistence and scalability.</li>
-<li>Key components include agents querying AWS resources (ECS, ALB, CloudWatch), OpenSearch Service for logs, and GitHub for code/commits, with a final analysis prompt generating a root cause summary.</li>
-<li>The solution achieved a 67-75% reduction in mean triage time, providing consistent summaries for engineers and accelerating escalation and false alarm handling, and benefits from Amazon Bedrock’s data privacy features.</li>
+<li>AiDaH leverages Amazon Bedrock AgentCore’s managed agent runtime, eliminating the need for agent infrastructure management, and built-in memory for maintaining conversational context.</li>
+<li>The system handles over 150 operational scenarios across six business divisions, resulting in up to 84.5% reduction in trouble ticket volumes in key categories.</li>
+<li>AiDaH's architecture features six layers: staff interface (Microsoft Teams), orchestration (Amazon Bedrock AgentCore), specialist agents, gateways/APIs (AgentCore Gateway), data/knowledge (Amazon Bedrock Knowledge Bases &amp; AgentCore memory), and operational systems.</li>
+<li>Key Amazon Bedrock AgentCore capabilities used include Runtime, Memory, Identity, Gateway, and Observability to provide a secure and scalable agentic AI platform.</li>
 </ul></div>
     
   </div>
@@ -313,16 +314,16 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-11-02</span>
+      <span> · 2026-11-04</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/agentic-engineering-intelligence-with-amazon-nova-multimodal-embeddings-and-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Agentic engineering intelligence with Amazon Nova Multimodal Embeddings and Amazon Bedrock AgentCore</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-indegene-is-modernizing-and-scaling-enterprise-data-quality-in-life-sciences/" target="_blank" rel="noopener">How Indegene is modernizing and scaling enterprise data quality in life sciences</a></h2>
     
-    <div class="summary"><p>Agentic engineering intelligence leverages Amazon Nova Multimodal Embeddings and Amazon Bedrock AgentCore to automate evidence gathering for part substitution evaluations.</p>
+    <div class="summary"><p>Indegene has built a Data Quality Agent within its NEXT Unified Data Platform (NEXT UDP) leveraging generative AI to modernize enterprise data quality in life sciences.</p>
 <ul>
-<li>The system employs a multi-agent architecture with a planner (Claude Haiku 5.5), specialist agents (Claude Sonnet 5.5), and a supervisor (Claude Opus 5.5) orchestrated by Amazon Bedrock AgentCore.</li>
-<li>Amazon Nova Multimodal Embeddings are used for both multimodal retrieval (matching specs, paragraphs, or plots from engineering documents) and visual similarity scoring of part photos.</li>
-<li>Deterministic spec-fit evaluation is performed using Python code based on a requirements schema, ensuring reproducible results for engineering reviews.</li>
-<li>The solution utilizes Amazon Bedrock Managed Knowledge Bases and Amazon S3 Vectors for storing and querying embedded engineering data, including documents and images.</li>
+<li>The agent uses Amazon Bedrock, Strands Agents, and Amazon Bedrock AgentCore to generate context-aware data quality rules and produce SQL/Python code.</li>
+<li>It leverages two knowledge bases: an Internal Enterprise knowledge base (business glossaries, SOPs, historical anomalies) and an External Reference knowledge base (standardized data quality frameworks).</li>
+<li>The agent's workflow includes data profiling, anomaly detection, rule creation (Column Level, Table Level, or Custom Query), rule refinement, code generation, and validation.</li>
+<li>The solution integrates with AWS services like Amazon Redshift, Snowflake, AWS Glue Data Catalog, AWS Lambda, Amazon DynamoDB, and Amazon S3 for various functions from data sourcing to rule execution and monitoring.</li>
 </ul></div>
     
   </div>
@@ -331,15 +332,17 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-11-02</span>
+      <span> · 2026-11-04</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/build-efficient-agents-with-knowledge-distillation-on-amazon-sagemaker-ai/" target="_blank" rel="noopener">Build efficient agents with knowledge distillation on Amazon SageMaker AI</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/four-layers-of-context-engineering-for-production-ai-agents-how-deep-insight-applies-them-in-working-code/" target="_blank" rel="noopener">Four layers of context engineering for production AI agents: How Deep Insight applies them in working code</a></h2>
     
-    <div class="summary"><ul>
-<li>This blog details how to use sequence-level knowledge distillation (SeqKD) on Amazon SageMaker AI to fine-tune a shopping agent, transferring behavior from a larger "teacher" model (GLM-5.3 on Amazon Bedrock) to a smaller "student" model (Qwen3.5-4B).</li>
-<li>SeqKD involves generating high-quality multi-step trajectories with the teacher model, filtering for successful task completion using a programmatic scorer (ShoppingBench), and then using these trajectories to train the student model with supervised fine-tuning.</li>
-<li>The process focuses on encoding trajectories as a series of chat turns, compressing tool observations to manage token limits, and leveraging SageMaker AI model customization for serverless fine-tuning and model versioning.</li>
-<li>Specific configurations for model customization are outlined, including hyperparameters like sequence length, LoRA rank, learning rate, and training epochs, with a focus on balancing performance and cost-effectiveness for agentic tasks.</li>
+    <div class="summary"><h2>Four layers of context engineering for production AI agents: How Deep Insight applies them in working code</h2>
+<p>This post details a four-layer approach to context engineering for AI agents, addressing limitations of large language model (LLM) context windows, using the Deep Insight open-source solution as a reference implementation built on the Strands Agents SDK and Amazon Bedrock AgentCore.</p>
+<ul>
+<li><strong>Layer 1: Architecture - Isolate Context:</strong> Each agent operates with its own independent context, passing only compressed results to an orchestrator, minimizing shared information using a <code>shared_state</code> dictionary (messages, clues, full_plan, history).</li>
+<li><strong>Layer 2: Prompt Control - Limit Intake:</strong>  Prompts are used to limit each agent’s output through explicit token budgets (e.g., Coder: 1,000-1,500 tokens) and standardized response formats (Status, Completed Tasks, Key Insights, Generated Files). A "self-contained code" principle ensures scripts include all necessary imports, avoiding reliance on prior context.</li>
+<li><strong>Layer 3: Tools - Externalize to Filesystem:</strong> Heavy content is moved out of the context window and into the filesystem using tools like a <code>write_and_execute_tool</code> which writes code to a file and only returns a summary; common logic is reused as modules to avoid code duplication.</li>
+<li><strong>Layer 4: Verification - Independent Agents/Safeguards:</strong> This layer provides a final line of defense with independent verification and safeguards to catch errors and prevent context overflow, though details of this layer are not as thoroughly illustrated in this post.</li>
 </ul></div>
     
   </div>
@@ -395,16 +398,15 @@
     <div class="meta">
       <a href="techcrunch/" class="badge badge-techcrunch">TechCrunch</a>
       <span>news</span>
-      <span> · 2026-11-03</span>
+      <span> · 2026-11-05</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/11/02/y-combinators-garry-tan-uses-ai-agents-so-much-he-spends-up-to-200k-a-year-on-tokens/" target="_blank" rel="noopener">Y Combinator’s Garry Tan uses AI agents so much, he spends up to $200K a year on tokens</a></h2>
+    <h2><a href="https://techcrunch.com/2026/11/04/after-the-midterms-a-bigger-clash-over-data-centers-could-be-coming/" target="_blank" rel="noopener">After the midterms, a bigger clash over data centers could be coming</a></h2>
     
-    <div class="summary"><p>Y Combinator CEO Garry Tan reportedly spends $100,000 - $200,000 annually on tokens for extensive AI agent use.</p>
-<ul>
-<li>Tan utilizes AI agents for a wide range of tasks, including work projects, coding, and personal life management—accessing emails, notes (including therapy notes), and Dropbox data.</li>
-<li>He has publicly shared a set of 23 skills for the Claude Code model, named “gstack”, on GitHub as a learning resource for AI agents.</li>
-<li>Y Combinator is internally deploying an AI agent, “Stray Light”, which maintains a comprehensive knowledge base of all founders they’ve backed and all related communications.</li>
-<li>Tan believes personal, user-controlled AI agents are the future, but acknowledges current costs are prohibitive for widespread adoption.</li>
+    <div class="summary"><ul>
+<li>The article discusses potential political and regulatory backlash against the rapid buildout of data centers, particularly those powering AI, following the November 3rd midterm elections which resulted in Democratic control of Congress and a Republican White House.</li>
+<li>Voter concerns regarding AI and data centers, including environmental impact and local community disruption, appear to have influenced the midterms, with exit polls showing over half of respondents believe AI will do more harm than good and almost 80% opposing data center construction in their neighborhoods.</li>
+<li>Specific projects facing resistance include OpenAI’s planned $500 billion data center in Ohio (backed by $100 billion from Nvidia) and a Meta facility previously planned for Ohio, with one county enacting a complete ban on data centers. xAI's data center in Memphis, Tennessee, utilizing gas turbines, has also drawn scrutiny.</li>
+<li>Proposed legislation, such as bills from Senators Sanders &amp; Ocasio-Cortez and Senator Heinrich (the GRID Savings Act), aim to impose moratoria or shift infrastructure costs away from local communities, while analysts predict potential construction delays in states like Georgia and Texas.</li>
 </ul></div>
     
   </div>
@@ -413,16 +415,15 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-11-02</span>
+      <span> · 2026-11-04</span>
     </div>
-    <h2><a href="https://arstechnica.com/ai/2026/11/claudes-new-rules-against-game-cloning-wont-stop-the-ai-copying-boom/" target="_blank" rel="noopener">Claude’s new rules against game cloning won’t stop the AI copying boom</a></h2>
+    <h2><a href="https://arstechnica.com/tech-policy/2026/11/big-tech-claims-voters-ai-backlash-is-anti-trump-not-anti-tech/" target="_blank" rel="noopener">Big Tech claims voters’ AI backlash is “anti-Trump” not “anti-tech”</a></h2>
     
-    <div class="summary"><p>Anthropic introduced a new system prompt to its Claude models to prevent the recreation of specific existing video games.</p>
-<ul>
-<li>A new rule, named “tengu_heron_brook”, instructs Claude to build original games, games in a genre, or games from user designs, but <em>not</em> to recreate existing games, even if renamed.</li>
-<li>The rule was added to version 2.1.314 of the Claude Code binary around October 27, and is also included in the Claude Opus 5.5 model's system prompt.</li>
-<li>Anthropic states this change is to discourage IP infringement, as usage of Claude for this purpose violates their policy.</li>
-<li>The company acknowledges that the new prompt may impact some legitimate game development use cases, but intends to iterate and balance restrictions.</li>
+    <div class="summary"><ul>
+<li>Recent US elections saw voters in multiple states support candidates and measures increasing restrictions on AI and data centers, with 38 out of 44 data center restriction measures passing across 10 states.</li>
+<li>The election of Texas Governor Gina Hinojosa is projected to impact approximately 13 gigawatts of planned data center capacity in the state, as she intends to delay projects until legislation addressing environmental and community concerns is passed.</li>
+<li>Industry group Chamber of Progress, led by former Google executive Adam Kovacevich, attributes the election results to an "anti-Trump wave" rather than an "anti-tech mandate," citing the higher success rate of Democratic gubernatorial candidates who did <em>not</em> oppose data centers.</li>
+<li>A slowdown in US AI infrastructure development could benefit China, potentially allowing them to export cost-effective AI inference services due to lower electricity costs and fewer regulatory constraints.</li>
 </ul></div>
     
   </div>
