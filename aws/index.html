@@ -80,13 +80,48 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-11-05 11:18 UTC</p>
+  <p class="generated-at">Generated 2026-11-06 11:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">November 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-05</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-amazon-marketplace-evaluates-content-quality-with-amazon-sagemaker-ai/" target="_blank" rel="noopener">How Amazon Marketplace evaluates content quality with Amazon SageMaker AI</a></h3>
+    
+    <div class="summary"><p>Amazon Marketplace uses Amazon SageMaker AI to evaluate A+ Content quality using a multi-model fusion approach.</p>
+<ul>
+<li>A Vision-Language Model (VLM) evaluates complete ecommerce content snapshots holistically, using a rubric across four quality dimensions: Visual Storytelling, Feature Presentation, A+ Layout, and Conversion Optimization.</li>
+<li>Optical Character Recognition (OCR) extracts text and calculates readability signals (Text Density, Character Density, Spacing, Overall Readability) to complement the VLM's semantic assessment.</li>
+<li>A CatBoost classifier is trained on expert annotations and VLM/OCR features, outperforming both standalone VLM and OCR models, achieving 0.94 accuracy and 0.95 F1 score.</li>
+<li>SHAP values are used to explain quality decisions and generate prioritized improvement recommendations via a Large Language Model (LLM), resulting in a 1.4-point increase in average post-revision quality scores.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-05</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/getting-started-with-web-answer-on-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Getting started with Web Answer on Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock AgentCore’s Web Answer is now generally available, providing a synthesized, source-cited answer to natural language questions with a single tool call.</li>
+<li>Web Answer performs agentic search, meaning it plans searches, runs them in parallel, verifies facts, and determines when enough evidence is gathered to produce an answer with citations.</li>
+<li>It differs from Web Search in that Web Search returns ranked URLs while Web Answer runs the entire retrieval, synthesis, and attribution pipeline for a finished, cited answer.</li>
+<li>Setup involves granting the AgentCore Gateway service role <code>bedrock-agentcore:InvokeWebAnswer</code> permission and creating a Web Answer target via the API or console; it's priced at $10 per 1,000 tool calls and available in us-east-1.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -580,41 +615,6 @@
 <li>The blueprint utilizes Amazon Bedrock AgentCore’s modular services (Runtime, Gateway, Identity, Memory, Policy, Registry, and Evaluations) and extends them with infrastructure-as-code for enterprise-level contracts like ownership, account boundaries, and cost governance.</li>
 <li>Key components include a Platform control plane for versioned templates, governance, and shared resources, and repeatable Workstream cells providing isolated environments with team-owned components, ensuring failure isolation and independent deployments.</li>
 <li>The solution incorporates rigorous security controls, including governed model and tool access via secure gateways, restricted deployment through pipelines, and a comprehensive evaluation pipeline to gate agent releases and ensure adherence to organizational policies.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-27</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/exowatt-beats-frontier-models-on-accuracy-with-sagemaker-serverless-model-customization/" target="_blank" rel="noopener">Exowatt beats frontier models on accuracy with SageMaker serverless model customization</a></h3>
-    
-    <div class="summary"><p>Exowatt achieved higher accuracy and lower costs for AI tasks by customizing open-weight models using Amazon SageMaker AI serverless features.</p>
-<ul>
-<li>Exowatt successfully fine-tuned the Qwen3-1.7B model for edge alarm triage and the Qwen3-14B model for cloud energy-market analysis, surpassing the performance of larger frontier models.</li>
-<li>The solution leverages Amazon SageMaker AI serverless fine-tuning, evaluation, and the Model Registry, integrated with services like Amazon Bedrock and AWS Lambda, eliminating the need to manage infrastructure.</li>
-<li>Fine-tuning involved using Low-Rank Adaptation (LoRA) and supervised fine-tuning (SFT), with data augmentation using models like Claude Sonnet 4.6 and Qwen3-235B on Amazon Bedrock.</li>
-<li>The Qwen3-1.7B model runs offline on edge devices (llama.cpp, GGUF quantization) with no inference cost, while the Qwen3-14B model is served via Amazon Bedrock Custom Model Import with pay-per-use billing.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-27</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/fix-evaluation-bias-to-unlock-better-models-on-amazon-bedrock/" target="_blank" rel="noopener">Fix evaluation bias to unlock better models on Amazon Bedrock</a></h3>
-    
-    <div class="summary"><ul>
-<li>Property Finder discovered that 96.8% of their image evaluation labels were inherited from an existing model’s predictions, creating a biased dataset hindering objective model comparison on Amazon Bedrock.</li>
-<li>The team built a new, unbiased ground truth dataset annotated by human experts, initially using 356 UAE images, to accurately evaluate model performance across 11 image quality attributes.</li>
-<li>Through iterative prompt optimization, analogous to reinforcement learning and utilizing tools like MIPROv2, they significantly improved the performance of Llama 4 Maverick 17B Instruct, achieving a Micro F1 score of 0.80 on the evaluation set.</li>
-<li>Switching from their proprietary model to Llama 4 Maverick 17B Instruct, with optimized prompting, resulted in a 47% relative gain in Micro F1 score and an 86% reduction in cost per 1,000 images.</li>
 </ul></div>
     
   </div>

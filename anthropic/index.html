@@ -80,7 +80,7 @@
     </label>
   </div>
   <h1>Anthropic News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-11-05 11:18 UTC</p>
+  <p class="generated-at">Generated 2026-11-06 11:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
@@ -92,13 +92,26 @@
     <div class="meta">
       <span class="source">Anthropic</span> · 
       <span>research</span>
+      <span> · 2026-11-05</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/research/how-researchers-use-claude" target="_blank" rel="noopener">How scientists use Claude</a></h3>
+    
+    <div class="summary"><p>Anthropic researchers analyzed 207,049 Claude and Claude Code research sessions to understand AI’s impact on scientific discovery. They found Claude is used more in formal sciences like computer science and less in lab-based fields like chemistry. Scientists primarily use Claude for data analysis and writing (33.7% and 32.0% of sessions respectively), less for ideation or data gathering, despite ranking those as most important.</p>
+<p>AI use closely tracks its capabilities; tasks AI is best suited for receive 2-4x more usage than expected, while those it struggles with receive very little.  Fields where AI excels, like computer science and statistics, show greater Claude adoption.  A model suggests AI could double research output in some fields with current capabilities, and potentially increase it 15-fold in highly cognitive fields if AI could automate all non-physical work.  Claude Science sessions demonstrate increased use for specialized tasks, with longer, more sophisticated work requiring higher-level training and greater AI autonomy.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>research</span>
       <span> · 2026-11-04</span>
     </div>
     <h3><a href="https://www.anthropic.com/research/investigating-vault-particles-with-claude" target="_blank" rel="noopener">Investigating vault particles with Claude</a></h3>
     
-    <div class="summary"><p>Anthropic researchers, using their Claude model, determined the first 3D structure of a vault particle found in prokaryotic cells—specifically, from a bacteriophage. Vaults are large protein shells whose function is currently unknown, but are present across most life forms. Claude assisted throughout the research by searching protein databases, optimizing particle isolation techniques, and processing microscopy data, accelerating the process from weeks to 34 hours for an initial structural model. </p>
-<p>The prokaryotic vault is built from 96 copies of a single protein, L05, and is shorter and wider than its mammalian counterpart, enclosing 25% more volume. Experiments using Claude to design altered versions of the protein revealed key structural elements necessary for shell closure, and demonstrated the potential to modify vault size via protein duplication. This work suggests opportunities for adapting vaults for biotechnology, such as nanocapsules for enzyme delivery.</p>
-<p>This research showcases a new approach to scientific discovery, with Claude substantially accelerating the research pipeline. The team has released their findings early to solicit collaboration and is actively investigating the vault’s function, with the ultimate goal of understanding its evolutionary origins and potential biological role.</p></div>
+    <div class="summary"><p>Anthropic researchers, utilizing Claude, have determined the first 3D structure of a vault particle found in prokaryotic cells – specifically, a bacteriophage called L05. Vaults are large protein shells whose function remains unknown, but are present across most life. This work demonstrates that these prokaryotic vaults, assembled from 96 copies of a single L05 protein (9.5 megadaltons), can form complete structures, unlike previous indications from genomic data. The L05 vault is roughly 54nm long and 45nm wide, enclosing 25% more volume than mammalian vaults due to its spherical shape.</p>
+<p>Claude accelerated research significantly by assisting with literature searches, DNA construct design, optimizing particle isolation (reducing purification time from three days to 90 minutes), and processing cryo-electron microscopy (cryo-EM) data, resulting in a preliminary structural model within 34 hours. Alterations to the L05 protein were also engineered, demonstrating opportunities to modify vault size and assembly. The team identified an unidentified small molecule pocket within the structure, potentially coenzyme A, hinting at possible function. </p>
+<p>This success highlights a new collaborative workflow with Claude, and has already informed improvements to the model’s performance. Structures and additional data will be released soon, and the team invites collaboration to investigate the function of these newly discovered vaults.</p></div>
     
   </div>
   
@@ -483,19 +496,6 @@
     <div class="summary"><p>Anthropic redesigned its source control system to address performance bottlenecks caused by a tenfold increase in code merges per day, driven by extensive use of Claude for software development. They built Scion, an in-house version control system, migrating from Git in five months, alongside a code review surface called Antique, code search, and IAM systems.</p>
 <p>Scion operates on the principle that clients are always online, differing from Git’s design for offline use. It's a client-server system where the server handles commits, merges, and history, while clients maintain a minimal local cache.  Scion uses "changesets" – entries in a write-ahead log containing modified files and content-addressed pointers to blob storage – eschewing Git’s packfiles for faster processing.  The system utilizes derived data structures for features like blame and history, computed recursively and optimized dynamically.  The infrastructure now requires 200x less CPU/memory than their previous Git mirroring setup and accelerates checkouts by two orders of magnitude.</p>
 <p>The project highlights the power of AI-assisted development; Claude significantly accelerated development and optimization, even automating substantial portions of the codebase. Anthropic plans to share learnings to benefit the wider developer community, recognizing that similar scaling challenges will become more common as AI coding tools proliferate.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Anthropic</span> · 
-      <span>research</span>
-      <span> · 2026-10-12</span>
-    </div>
-    <h3><a href="https://www.anthropic.com/research/self-replicating-ai" target="_blank" rel="noopener">AI models may be capable of self-replicating without access to a datacenter</a></h3>
-    
-    <div class="summary"><p>Anthropic’s Frontier Red Team finds that AI models are approaching the capability to autonomously replicate themselves on common IoT devices. Their experiments show that a 9B parameter model can run inference on 8 out of 9 hardware types tested, and models of 30B parameters or fewer can perform the individual steps for replication, though composing those steps end-to-end remains challenging. Specifically, GLM-5.2 and stronger models demonstrate end-to-end replication ability.  If current improvement rates continue, models at this capability level are projected by the end of 2026.</p>
-<p>The research decomposes replication into finding targets, gaining execution, establishing inference, and propagating—focusing on the relatively unstudied inference setup stage. They demonstrated a 26B Gemma model running across 15 smart TVs (~$55 each), achieving 0.39 tokens per second.  While replication is slow (days for a doubling time), the distributed nature and potential for adaptation—with models learning from previous attempts—present new cybersecurity challenges distinct from traditional malware. Their tests with Qwen3.5-9B show a 61-84% success rate in subsequent generations through inherited notes.</p></div>
     
   </div>
   
