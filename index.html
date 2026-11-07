@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-11-06T11:17:23.474076+00:00">Generated 2026-11-06 11:17 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-11-07T11:18:13.753986+00:00">Generated 2026-11-07 11:18 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,11 +132,12 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — Overview for 2026-11-05</h2>
-    <p class="overview-meta">2026-11-05 · 6 vendor sources · vendor sources only</p>
-    <div class="overview-text"><p>Today’s AI news is largely dominated by developments surrounding Amazon Web Services’ agentic AI offerings, with a notable exception in biological research. The most significant news comes from Anthropic, where researchers used their Claude model to determine the first 3D structure of a prokaryotic vault particle, accelerating a process that previously took weeks to just 34 hours. This demonstrates a substantial leap in applying large language models to scientific discovery, with Claude assisting in database searching, technique optimization, and microscopy data processing, and opening avenues for adapting vaults for potential biotechnological applications like targeted enzyme delivery. The research team has released their findings early in hopes of fostering collaboration.</p>
-<p>Across several posts, AWS highlighted advancements in building and evaluating AI agents with Amazon Bedrock AgentCore.  New capabilities allow for the integration of “decision models” alongside traditional LLM-based evaluation, providing more structured assessments for tasks needing specific answers, such as compliance checks.  Further features focus on agent operations: Smart Approvals automate approval of agent actions based on a classification model assessing context and user permissions, while detailed context engineering strategies—using architecture, prompt control, filesystem externalization, and verification layers—aim to overcome limitations of LLM context windows.  A reference implementation, Deep Insight, showcases these techniques built on the Strands Agents SDK.</p>
-<p>Finally, two case studies demonstrated practical deployments of AgentCore. Indegene is leveraging generative AI, powered by Bedrock, Strands Agents, and AgentCore, to generate data quality rules and code within its life sciences data platform, automating a historically manual process. Simultaneously, U Mobile deployed AiDaH, an AI-driven agentic helpdesk built on AgentCore, achieving significant reductions—up to 84.5%—in trouble ticket volumes across a broad range of operational scenarios. Both deployments emphasized AgentCore’s managed runtime, built-in memory, and scalability for real-world enterprise applications.</p></div>
+    <h2 class="overview-heading">Today in AI — since 2026-11-06</h2>
+    <p class="overview-meta">2026-11-07 · 11 vendor sources · vendor sources only</p>
+    <div class="overview-text"><p>Recent research from Anthropic details advancements in AI agent memory and complex environment interaction. Researchers found that incorporating a “dreaming” phase – reflecting on past experiences to build internal representations – significantly improves Claude's ability to learn and perform tasks. This manifested as up to 48% improved performance on information retrieval, as well as error correction in simulated environments. Separately, Anthropic’s Claude models, particularly <em>Fable 5</em>, demonstrated improved profitability in a simulated <em>EVE Online</em> market and better task completion in <em>EVE Frontier</em> with developer-assisted coordination, though they still exhibited challenges in strategic decision-making and identifying malicious actors. These studies emphasize the growing sophistication of AI agents and the importance of robust safeguards.</p>
+<p>Alongside these agentic improvements, attention is being paid to the role of AI in scientific modeling. Anthropic researchers are outlining a three-step process for AI assistance – building, constraining, and interpreting models – using techniques like simulation-based inference (SBI) to efficiently explore parameter spaces and suggest potential models. While AI is showing promise in the building and constraining phases, interpreting the resulting models remains a significant hurdle, requiring AI’s ability to predict system responses to disturbances and aid human understanding. This line of work aims to significantly reduce the human effort involved in complex scientific modeling. </p>
+<p>Amazon Web Services has released a series of announcements centered around tooling for AI agents and optimizing infrastructure. New features in SageMaker Inference allow for GPU partitioning with NVIDIA Multi-Instance GPU (MIG), aiming to improve GPU utilization, lower costs, and enable hardware-isolated sharing for various workloads. Further, AWS has formalized a taxonomy of agentic primitives, defining triggers, agents, and capabilities to guide agent development and deployment. Several updates enhance data access for agents, including a serverless MCP server for data lakes and integrations with Okta for access governance, ensuring security and compliance. </p>
+<p>Several case studies highlight practical applications of AWS’s agent tooling. Greenlight Financial reports over 90% autonomous resolution of security incidents with their Luna SOC solution built on Amazon Bedrock AgentCore. Taxbit integrated Bedrock AgentCore into their platform to create Taxbit Assist, an AI assistant providing grounded, role-aware support. A post details how to securely extend Claude Code to remote sessions on Amazon Bedrock AgentCore. These examples demonstrate a tangible shift towards deploying autonomous AI agents within enterprise workflows.</p></div>
   </section>
   
 
@@ -149,12 +150,12 @@
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>research</span>
-      <span> · 2026-11-05</span>
+      <span> · 2026-11-06</span>
     </div>
-    <h2><a href="https://www.anthropic.com/research/how-researchers-use-claude" target="_blank" rel="noopener">How scientists use Claude</a></h2>
+    <h2><a href="https://www.anthropic.com/research/teaching-ai-to-build-scientific-models" target="_blank" rel="noopener">Teaching AI to build scientific models</a></h2>
     
-    <div class="summary"><p>Anthropic researchers analyzed 207,049 Claude and Claude Code research sessions to understand AI’s impact on scientific discovery. They found Claude is used more in formal sciences like computer science and less in lab-based fields like chemistry. Scientists primarily use Claude for data analysis and writing (33.7% and 32.0% of sessions respectively), less for ideation or data gathering, despite ranking those as most important.</p>
-<p>AI use closely tracks its capabilities; tasks AI is best suited for receive 2-4x more usage than expected, while those it struggles with receive very little.  Fields where AI excels, like computer science and statistics, show greater Claude adoption.  A model suggests AI could double research output in some fields with current capabilities, and potentially increase it 15-fold in highly cognitive fields if AI could automate all non-physical work.  Claude Science sessions demonstrate increased use for specialized tasks, with longer, more sophisticated work requiring higher-level training and greater AI autonomy.</p></div>
+    <div class="summary"><p>Anthropic researchers are exploring how AI can aid in scientific modeling, a process historically demanding significant human effort. Their work centers around a three-step program – building, constraining, and interpreting models – mirroring the approach taken by Hodgkin and Huxley in their groundbreaking 1951 model of nerve cell firing. The core claim is that AI, specifically through simulation-based inference (SBI), can efficiently constrain models by generating numerous simulations and training neural networks to infer parameter ranges given observed data, a task previously computationally prohibitive for complex systems.</p>
+<p>SBI bypasses the need for explicit formulas, enabling inference for simulators – models executable with parameters in and data out.  Recent advances allow for rapid inference once simulations are complete, successfully applied in fields like cosmology and now nerve cell modeling, providing distributions of plausible parameters rather than single values. Furthermore, AI is beginning to assist in <em>building</em> models, generating candidate equations based on data and descriptions. However, the most challenging step remains <em>interpreting</em> the models – extracting meaningful understanding, not just data replication – for which the researchers suggest evaluating AI's ability to predict system responses to disturbances or aid human scientists.</p></div>
     
   </div>
   
@@ -162,13 +163,12 @@
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>research</span>
-      <span> · 2026-11-04</span>
+      <span> · 2026-11-06</span>
     </div>
-    <h2><a href="https://www.anthropic.com/research/investigating-vault-particles-with-claude" target="_blank" rel="noopener">Investigating vault particles with Claude</a></h2>
+    <h2><a href="https://www.anthropic.com/research/project-eve-claude-plays-mmorpgs" target="_blank" rel="noopener">Project EVE: Claude plays MMORPGs</a></h2>
     
-    <div class="summary"><p>Anthropic researchers, utilizing Claude, have determined the first 3D structure of a vault particle found in prokaryotic cells – specifically, a bacteriophage called L05. Vaults are large protein shells whose function remains unknown, but are present across most life. This work demonstrates that these prokaryotic vaults, assembled from 96 copies of a single L05 protein (9.5 megadaltons), can form complete structures, unlike previous indications from genomic data. The L05 vault is roughly 54nm long and 45nm wide, enclosing 25% more volume than mammalian vaults due to its spherical shape.</p>
-<p>Claude accelerated research significantly by assisting with literature searches, DNA construct design, optimizing particle isolation (reducing purification time from three days to 90 minutes), and processing cryo-electron microscopy (cryo-EM) data, resulting in a preliminary structural model within 34 hours. Alterations to the L05 protein were also engineered, demonstrating opportunities to modify vault size and assembly. The team identified an unidentified small molecule pocket within the structure, potentially coenzyme A, hinting at possible function. </p>
-<p>This success highlights a new collaborative workflow with Claude, and has already informed improvements to the model’s performance. Structures and additional data will be released soon, and the team invites collaboration to investigate the function of these newly discovered vaults.</p></div>
+    <div class="summary"><p>Anthropic researchers used the <em>EVE Online</em> and <em>EVE Frontier</em> MMORPGs to test the capabilities of their Claude models – <em>Opus 4.6</em>, <em>4.7</em>, <em>4.8</em>, and <em>Fable 5</em> – in complex, real-time environments. In a simulated <em>EVE Online</em> market, newer models demonstrated improved profitability, with <em>Fable 5</em> tripling earnings compared to <em>Opus 4.6</em> by primarily utilizing a spread-capture trading strategy. However, even <em>Fable 5</em> struggled with directional bets based on in-game events. </p>
+<p>In <em>EVE Frontier</em>, teams of four <em>Claude</em> agents, assisted by developer-created “scaffolds” to address limitations in reaction time, performed complex multi-stage tasks. <em>Fable 5</em> significantly improved performance, but agent teams were largely unable to detect a teammate specifically instructed to sabotage the mission, even with prior warning. The research highlights both the potential and the risks of deploying AI agents in complex, interactive settings, emphasizing the need for robust safeguards and monitoring.</p></div>
     
   </div>
   
@@ -176,13 +176,12 @@
     <div class="meta">
       <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
       <span>research</span>
-      <span> · 2026-11-02</span>
+      <span> · 2026-11-06</span>
     </div>
-    <h2><a href="https://www.anthropic.com/research/provable-inference" target="_blank" rel="noopener">Progress on provable inference for large language models</a></h2>
+    <h2><a href="https://www.anthropic.com/research/components-of-agent-memory" target="_blank" rel="noopener">The components of agent memory</a></h2>
     
-    <div class="summary"><p>Anthropic has developed FlashProve, a system for cryptographically proving that AI responses originate from a specific model – a technique known as provable inference. This addresses concerns about model substitution or tampering by allowing verification of each response without revealing the model’s weights. FlashProve leverages zkSNARKs to achieve this, demonstrating significantly faster proof generation than previous open-source systems.</p>
-<p>Specifically, using a 400-billion parameter Llama 4 Maverick model (quantized to 4-bit precision), FlashProve generates proofs at approximately 110 tokens per second on a single H100 GPU, with each 1,024-token request requiring a 19 MB proof. This is 70-95 times faster than running inference with vLLM, a common open-source library. The system includes executable code, Lean formalizations (providing auditable security guarantees), and a technical report, all released under the Apache 2.0 license. </p>
-<p>The work aims to accelerate development in provable inference and demonstrate the practicality of zero-knowledge succinct arguments for verifying AI outputs, addressing challenges in AI pacing, tamper detection, and text provenance. However, the current release is a research prototype with limitations including a focus on integer models with greedy decoding and no guarantees against side-channel attacks.</p></div>
+    <div class="summary"><p>Anthropic researchers explored how to best design memory systems for AI agents, drawing parallels to human memory processes which involve both immediate encoding and later consolidation. They found that Claude, their model, can effectively organize its memory through a process akin to “dreaming”—reflecting on logs to correct errors, create notes, and build new representations. Claude can tag important events, write notes, and even predict future information needs.</p>
+<p>Evaluations using the CL-Bench 1.0 benchmark showed that Claude Sonnet 5 and Opus 5.5 successfully created learning loops using memory, while Sonnet 4.6 generated theories but struggled to test them. In a Pokémon Red game test, Claude Fable 5, utilizing a more selective memory approach, earned four badges compared to Sonnet 3.7’s one due to indiscriminate logging.  Dreaming was shown to correct errors—specifically, a misremembered location in Pokémon, leading to successful navigation—and construct useful knowledge structures like “wikis,” improving performance on tasks requiring information retrieval from a corpus of documents by up to 48%. These wikis grew in effectiveness with more “dreaming” sessions.</p></div>
     
   </div>
   
@@ -296,33 +295,15 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-11-05</span>
+      <span> · 2026-11-06</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-amazon-marketplace-evaluates-content-quality-with-amazon-sagemaker-ai/" target="_blank" rel="noopener">How Amazon Marketplace evaluates content quality with Amazon SageMaker AI</a></h2>
-    
-    <div class="summary"><p>Amazon Marketplace uses Amazon SageMaker AI to evaluate A+ Content quality using a multi-model fusion approach.</p>
-<ul>
-<li>A Vision-Language Model (VLM) evaluates complete ecommerce content snapshots holistically, using a rubric across four quality dimensions: Visual Storytelling, Feature Presentation, A+ Layout, and Conversion Optimization.</li>
-<li>Optical Character Recognition (OCR) extracts text and calculates readability signals (Text Density, Character Density, Spacing, Overall Readability) to complement the VLM's semantic assessment.</li>
-<li>A CatBoost classifier is trained on expert annotations and VLM/OCR features, outperforming both standalone VLM and OCR models, achieving 0.94 accuracy and 0.95 F1 score.</li>
-<li>SHAP values are used to explain quality decisions and generate prioritized improvement recommendations via a Large Language Model (LLM), resulting in a 1.4-point increase in average post-revision quality scores.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-11-05</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/getting-started-with-web-answer-on-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Getting started with Web Answer on Amazon Bedrock AgentCore</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/extend-claude-code-to-remote-sessions-on-amazon-bedrock-agentcore-with-security-controls/" target="_blank" rel="noopener">Extend Claude Code to remote sessions on Amazon Bedrock AgentCore with security controls</a></h2>
     
     <div class="summary"><ul>
-<li>Amazon Bedrock AgentCore’s Web Answer is now generally available, providing a synthesized, source-cited answer to natural language questions with a single tool call.</li>
-<li>Web Answer performs agentic search, meaning it plans searches, runs them in parallel, verifies facts, and determines when enough evidence is gathered to produce an answer with citations.</li>
-<li>It differs from Web Search in that Web Search returns ranked URLs while Web Answer runs the entire retrieval, synthesis, and attribution pipeline for a finished, cited answer.</li>
-<li>Setup involves granting the AgentCore Gateway service role <code>bedrock-agentcore:InvokeWebAnswer</code> permission and creating a Web Answer target via the API or console; it's priced at $10 per 1,000 tool calls and available in us-east-1.</li>
+<li>This post details how to run Claude Code as a remote agent on Amazon Bedrock AgentCore, enabling offloading coding tasks and resuming them later.</li>
+<li>The solution utilizes AgentCore runtime to run each task in an isolated session within your AWS account, leveraging existing AWS security features like IAM credentials and VPCs.</li>
+<li>Key components include Amazon Bedrock (specifically Claude Opus and Claude Sonnet models), AgentCore Identity for secure GitHub access, and Amazon Bedrock Guardrails for prompt screening.</li>
+<li>The workflow involves submitting tasks via Claude Code or a web console, queuing them with Bedrock Guardrails, running them in an isolated AgentCore runtime, and returning a GitHub pull request for review – all while maintaining data protection and access controls.</li>
 </ul></div>
     
   </div>
@@ -331,16 +312,34 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-11-04</span>
+      <span> · 2026-11-06</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-u-mobile-built-agentic-telco-operations-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How U Mobile built agentic telco operations with Amazon Bedrock AgentCore</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/taxbit-assist-a-grounded-role-aware-ai-agent-on-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Taxbit Assist: A grounded, role-aware AI agent on Amazon Bedrock AgentCore</a></h2>
     
-    <div class="summary"><p>U Mobile built AiDaH, an AI-driven agentic helpdesk, on Amazon Bedrock AgentCore to automate telco operations and reduce reliance on manual processes.</p>
+    <div class="summary"><p>Taxbit Assist is an AI assistant embedded in the Taxbit dashboard, built on Amazon Bedrock AgentCore to provide grounded, role-aware answers to user questions.</p>
 <ul>
-<li>AiDaH leverages Amazon Bedrock AgentCore’s managed agent runtime, eliminating the need for agent infrastructure management, and built-in memory for maintaining conversational context.</li>
-<li>The system handles over 150 operational scenarios across six business divisions, resulting in up to 84.5% reduction in trouble ticket volumes in key categories.</li>
-<li>AiDaH's architecture features six layers: staff interface (Microsoft Teams), orchestration (Amazon Bedrock AgentCore), specialist agents, gateways/APIs (AgentCore Gateway), data/knowledge (Amazon Bedrock Knowledge Bases &amp; AgentCore memory), and operational systems.</li>
-<li>Key Amazon Bedrock AgentCore capabilities used include Runtime, Memory, Identity, Gateway, and Observability to provide a secure and scalable agentic AI platform.</li>
+<li>The assistant utilizes Amazon Bedrock AgentCore, including its managed agent runtime, AgentCore memory, and per-session isolation, to avoid building and operating the agent loop and conversation state management.</li>
+<li>Taxbit Assist employs a retrieval-augmented generation (RAG) approach using Amazon Bedrock Knowledge Bases backed by Amazon S3 Vectors and Cohere Embed English v3 for embeddings, prioritizing answers sourced from published documentation, code-derived references, and curated content.</li>
+<li>To ensure accuracy and safety, the system incorporates Amazon Bedrock Guardrails to mask PII, enforces citation eligibility based on source type, and restricts the model's access to customer tax data, focusing solely on product knowledge and support ticket management.</li>
+<li>The solution measures answer quality in production using both built-in AgentCore evaluations and custom judges, tracking metrics like helpfulness, faithfulness, and relevance, and includes a tax-advice classifier to prevent providing unauthorized financial guidance.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
+      <span> · 2026-11-06</span>
+    </div>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-greenlight-financial-built-an-autonomous-soc-solution-on-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How Greenlight Financial built an autonomous SOC solution on Amazon Bedrock AgentCore</a></h2>
+    
+    <div class="summary"><p>Greenlight Financial built an autonomous security operations center (SOC) named Luna using Amazon Bedrock AgentCore, achieving over 90% autonomous case resolution.</p>
+<ul>
+<li>Luna utilizes Amazon Bedrock AgentCore runtime to host agent code and AgentCore memory for a tiered, multi-agent system, handling 3,000-4,000 security/risk alerts monthly.</li>
+<li>The system employs a layered architecture: Tier 1 handles high-volume triage with over 30 specialized agents (Identity Checks, Endpoint Detection, Observability, etc.), and Tier 2 provides deep-dive investigation with advanced reasoning capabilities.</li>
+<li>An episodic memory (30-day rolling window) and long-term memory store resolution patterns and preferences to enable continuous learning and improve accuracy, reducing false positives and automating allowlists.</li>
+<li>The solution extends beyond SOC use cases into financial risk triage with minimal architectural changes, primarily adding new specialized agents and a risk-domain supervisor.</li>
 </ul></div>
     
   </div>
@@ -396,16 +395,16 @@
     <div class="meta">
       <a href="techcrunch/" class="badge badge-techcrunch">TechCrunch</a>
       <span>news</span>
-      <span> · 2026-11-06</span>
+      <span> · 2026-11-07</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/11/05/palo-alto-networks-in-talks-to-buy-ai-agent-security-startup-clutch-for-500m/" target="_blank" rel="noopener">Palo Alto Networks in talks to buy AI agent security startup Clutch for $500M</a></h2>
+    <h2><a href="https://techcrunch.com/2026/11/06/crusoe-sells-troubled-wyoming-data-center-project-to-google/" target="_blank" rel="noopener">Crusoe sells troubled Wyoming data center project to Google</a></h2>
     
-    <div class="summary"><p>Palo Alto Networks is reportedly in talks to acquire Clutch Security for approximately $500 million plus milestone-based payouts.</p>
+    <div class="summary"><p>Crusoe sold an unfinished data center project in Wyoming to Google.</p>
 <ul>
-<li>Clutch Security focuses on securing AI agents’ access to company systems.</li>
-<li>The potential acquisition values Clutch at roughly 50x its current annual recurring revenue (ARR) of $10 million.</li>
-<li>Clutch was last valued at $85 million following a $20 million Series A funding round in January 2025, led by Lightspeed and SignalFire.</li>
-<li>This potential acquisition aligns with Palo Alto Networks’ strategy of acquiring innovation and responding to the rise of AI-driven cyberattacks; it would be their seventh acquisition in 2026.</li>
+<li>Google will invest $17 billion to develop the Wyoming data center campus, which was originally planned to scale to 10 gigawatts of power capacity.</li>
+<li>Crusoe currently develops data center space for lease to customers providing their own GPUs, rents out its own GPUs, and sells compute power for AI inference.</li>
+<li>Crusoe is also developing a data center for Google near Amarillo, Texas, and serves AI companies including Oracle, OpenAI, Microsoft, and Meta.</li>
+<li>The sale follows a $3.9 billion funding round for Crusoe in September; the company began as a cryptocurrency-mining business powered by natural gas.</li>
 </ul></div>
     
   </div>
@@ -414,16 +413,16 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-11-05</span>
+      <span> · 2026-11-06</span>
     </div>
-    <h2><a href="https://arstechnica.com/ai/2026/11/agility-robotics-nasdaq-debut-invites-scrutiny-of-humanoid-robot-market/" target="_blank" rel="noopener">Agility Robotics&#39; Nasdaq debut invites scrutiny of humanoid robot market</a></h2>
+    <h2><a href="https://arstechnica.com/gaming/2026/11/could-potential-ai-clones-of-gta-vi-force-a-quicker-official-port/" target="_blank" rel="noopener">Could potential AI clones of GTA VI force a quicker official port?</a></h2>
     
-    <div class="summary"><p>Agility Robotics became the first dedicated humanoid robot developer to go public on the Nasdaq (November 5) and has disclosed details on its business model and robot capabilities.</p>
+    <div class="summary"><p>Former Rockstar tech director Obbe Vermeij suggests AI-assisted decompilation could pressure Rockstar to release a PC port of <em>Grand Theft Auto VI</em> sooner than planned.</p>
 <ul>
-<li>The company offers both a "robots-as-a-service" subscription ($8,500/month plus $25,000 initial deployment cost) and an ownership model ($200,000 purchase plus $36,000/year maintenance).</li>
-<li>The newest robot, Digit 5 (launching in 2027), can lift up to 50lbs, operate for over 20 hours on a single charge (90 minutes runtime from a 9-minute charge via Nyobolt battery technology), and features onboard safety systems.</li>
-<li>Agility estimates a bill of materials cost of $150,000 per Digit v5 robot currently, aiming to reduce this to $75,000 with 1,000 annual units and $30,000 with 10,000 annual units.</li>
-<li>A disclosed subscription contract with an unidentified customer covers 1,000 Digit 5 robots over three years for $300 million, though full revenue realization is dependent on milestones; Agility anticipates annual revenue of $500,000 per robot through subscription and $400,000 through purchase/maintenance.</li>
+<li>Vermeij believes advances in AI-powered reverse-engineering tools now make it feasible to port the PS5 version of <em>Grand Theft Auto VI</em> to PC.</li>
+<li>He estimates such a port could cost “tens of thousands of dollars in tokens” to generate via AI.</li>
+<li>While acknowledging an AI port likely wouldn't match the quality of an official release, Vermeij suggests it could satisfy some PC players.</li>
+<li>Rockstar is reportedly aiming for a Q1 2027 release for the PC version of <em>Grand Theft Auto VI</em>, but Vermeij speculates the threat of AI ports may encourage closer timing between console and PC launches.</li>
 </ul></div>
     
   </div>

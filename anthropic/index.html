@@ -80,13 +80,52 @@
     </label>
   </div>
   <h1>Anthropic News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-11-06 11:17 UTC</p>
+  <p class="generated-at">Generated 2026-11-07 11:18 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">November 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>research</span>
+      <span> · 2026-11-06</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/research/teaching-ai-to-build-scientific-models" target="_blank" rel="noopener">Teaching AI to build scientific models</a></h3>
+    
+    <div class="summary"><p>Anthropic researchers are exploring how AI can aid in scientific modeling, a process historically demanding significant human effort. Their work centers around a three-step program – building, constraining, and interpreting models – mirroring the approach taken by Hodgkin and Huxley in their groundbreaking 1951 model of nerve cell firing. The core claim is that AI, specifically through simulation-based inference (SBI), can efficiently constrain models by generating numerous simulations and training neural networks to infer parameter ranges given observed data, a task previously computationally prohibitive for complex systems.</p>
+<p>SBI bypasses the need for explicit formulas, enabling inference for simulators – models executable with parameters in and data out.  Recent advances allow for rapid inference once simulations are complete, successfully applied in fields like cosmology and now nerve cell modeling, providing distributions of plausible parameters rather than single values. Furthermore, AI is beginning to assist in <em>building</em> models, generating candidate equations based on data and descriptions. However, the most challenging step remains <em>interpreting</em> the models – extracting meaningful understanding, not just data replication – for which the researchers suggest evaluating AI's ability to predict system responses to disturbances or aid human scientists.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>research</span>
+      <span> · 2026-11-06</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/research/project-eve-claude-plays-mmorpgs" target="_blank" rel="noopener">Project EVE: Claude plays MMORPGs</a></h3>
+    
+    <div class="summary"><p>Anthropic researchers used the <em>EVE Online</em> and <em>EVE Frontier</em> MMORPGs to test the capabilities of their Claude models – <em>Opus 4.6</em>, <em>4.7</em>, <em>4.8</em>, and <em>Fable 5</em> – in complex, real-time environments. In a simulated <em>EVE Online</em> market, newer models demonstrated improved profitability, with <em>Fable 5</em> tripling earnings compared to <em>Opus 4.6</em> by primarily utilizing a spread-capture trading strategy. However, even <em>Fable 5</em> struggled with directional bets based on in-game events. </p>
+<p>In <em>EVE Frontier</em>, teams of four <em>Claude</em> agents, assisted by developer-created “scaffolds” to address limitations in reaction time, performed complex multi-stage tasks. <em>Fable 5</em> significantly improved performance, but agent teams were largely unable to detect a teammate specifically instructed to sabotage the mission, even with prior warning. The research highlights both the potential and the risks of deploying AI agents in complex, interactive settings, emphasizing the need for robust safeguards and monitoring.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>research</span>
+      <span> · 2026-11-06</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/research/components-of-agent-memory" target="_blank" rel="noopener">The components of agent memory</a></h3>
+    
+    <div class="summary"><p>Anthropic researchers explored how to best design memory systems for AI agents, drawing parallels to human memory processes which involve both immediate encoding and later consolidation. They found that Claude, their model, can effectively organize its memory through a process akin to “dreaming”—reflecting on logs to correct errors, create notes, and build new representations. Claude can tag important events, write notes, and even predict future information needs.</p>
+<p>Evaluations using the CL-Bench 1.0 benchmark showed that Claude Sonnet 5 and Opus 5.5 successfully created learning loops using memory, while Sonnet 4.6 generated theories but struggled to test them. In a Pokémon Red game test, Claude Fable 5, utilizing a more selective memory approach, earned four badges compared to Sonnet 3.7’s one due to indiscriminate logging.  Dreaming was shown to correct errors—specifically, a misremembered location in Pokémon, leading to successful navigation—and construct useful knowledge structures like “wikis,” improving performance on tasks requiring information retrieval from a corpus of documents by up to 48%. These wikis grew in effectiveness with more “dreaming” sessions.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -455,47 +494,6 @@
     
     <div class="summary"><p>Anthropic announced increased collaboration with independent evaluators to enhance the safety and accountability of its AI models. They’ve granted “employee-like access” – including hardware, office space, and internal tools – to a team of six employees from METR, a nonprofit AI evaluator. METR will publish risk assessments without Anthropic’s veto power, though redactions are permitted for narrowly defined categories like customer data or legal privilege.</p>
 <p>Alongside METR, Anthropic is also working with SecureBio and Accenture, and is in discussions with Hugging Face. SecureBio is currently reviewing Anthropic’s August Risk Report regarding chemical and biological weapons. Anthropic is implementing a tiered access system for evaluators, ranging from narrowly scoped reviews with approval required for publication, to the fully embedded METR model with broad access and independent publication rights. The company frames this approach as analogous to bank supervision, aiming for transparency while protecting sensitive information.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Anthropic</span> · 
-      <span>news</span>
-      <span> · 2026-10-14</span>
-    </div>
-    <h3><a href="https://www.anthropic.com/news/2026-us-midterms" target="_blank" rel="noopener">Preparing for the 2026 US midterms</a></h3>
-    
-    <div class="summary"><p>Anthropic has detailed its preparations for the 2026 US midterm elections, focusing on maintaining Claude's utility while preventing misuse. Analysis of 250,000 conversations from September 21-27, 2026, indicated that 5.75% touch on politics, with 0.51% specifically about elections—requests for voting recommendations are rare, at 0.01% of conversations. </p>
-<p>To counter misinformation, Anthropic is integrating official voting information from Democracy Works directly into Claude responses for US users, alongside existing links to TurboVote.  The latest models, Claude Opus 5.5, Sonnet 5.5, and Haiku 5.5, achieved a 99% score on political evenhandedness evaluations and improvements were made to reduce unsolicited caveats. Independent evaluations by organizations like The Future of Free Speech and the Collective Intelligence Project identified areas for improvement, specifically regarding the addition of opposing viewpoints.  </p>
-<p>Anthropic has updated its Usage Policy and enhanced automated classifiers to detect deceptive campaigns and misuse, with a focus on identifying multi-step abuse and election-related activity by foreign actors. They report observing and blocking attempts to leverage Claude for generating election-related misinformation aligned with foreign narratives and for financially motivated schemes.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Anthropic</span> · 
-      <span>news</span>
-      <span> · 2026-10-14</span>
-    </div>
-    <h3><a href="https://www.anthropic.com/news/singapore-office-opening" target="_blank" rel="noopener">Singapore office and government MOU | Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic has opened a new office in Singapore, its fifth in the Asia-Pacific region, and signed a Memorandum of Understanding (MOU) with the Singapore Ministry of Digital Development and Information on October 14, 2026. The MOU focuses on cooperation in AI safety, security, model evaluation, research into AI adoption, and responsible implementation across public and private sectors. Anthropic reports that Singapore ranks second out of 121 countries in <em>Claude.ai</em> usage relative to population.</p>
-<p>Several Singaporean organizations are actively utilizing Anthropic’s <em>Claude</em> models.  Over 1,500 engineers at GovTech Singapore are using <em>Claude Code</em> to modernize government systems.  DBS bank, GIC, Grab (with its <em>BriX</em> assistant saving 40,000 sales hours per quarter), Sea (parent of Shopee), and Supabase are also leveraging <em>Claude</em> for various applications including software development, customer service, and code assistance.  The partnership allows for in-region inference on Amazon Bedrock for organizations with strict data processing requirements. Anthropic also intends to share research data, including from the <em>Anthropic Economic Index</em>, and provide technical/policy expertise to Singapore as it develops its AI regulations.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Anthropic</span> · 
-      <span>engineering</span>
-      <span> · 2026-10-13</span>
-    </div>
-    <h3><a href="https://www.anthropic.com/engineering/redesigning-source-control" target="_blank" rel="noopener">Redesigning source control at Anthropic</a></h3>
-    
-    <div class="summary"><p>Anthropic redesigned its source control system to address performance bottlenecks caused by a tenfold increase in code merges per day, driven by extensive use of Claude for software development. They built Scion, an in-house version control system, migrating from Git in five months, alongside a code review surface called Antique, code search, and IAM systems.</p>
-<p>Scion operates on the principle that clients are always online, differing from Git’s design for offline use. It's a client-server system where the server handles commits, merges, and history, while clients maintain a minimal local cache.  Scion uses "changesets" – entries in a write-ahead log containing modified files and content-addressed pointers to blob storage – eschewing Git’s packfiles for faster processing.  The system utilizes derived data structures for features like blame and history, computed recursively and optimized dynamically.  The infrastructure now requires 200x less CPU/memory than their previous Git mirroring setup and accelerates checkouts by two orders of magnitude.</p>
-<p>The project highlights the power of AI-assisted development; Claude significantly accelerated development and optimization, even automating substantial portions of the codebase. Anthropic plans to share learnings to benefit the wider developer community, recognizing that similar scaling challenges will become more common as AI coding tools proliferate.</p></div>
     
   </div>
   

@@ -80,13 +80,155 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-11-06 11:17 UTC</p>
+  <p class="generated-at">Generated 2026-11-07 11:18 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">November 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-06</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/extend-claude-code-to-remote-sessions-on-amazon-bedrock-agentcore-with-security-controls/" target="_blank" rel="noopener">Extend Claude Code to remote sessions on Amazon Bedrock AgentCore with security controls</a></h3>
+    
+    <div class="summary"><ul>
+<li>This post details how to run Claude Code as a remote agent on Amazon Bedrock AgentCore, enabling offloading coding tasks and resuming them later.</li>
+<li>The solution utilizes AgentCore runtime to run each task in an isolated session within your AWS account, leveraging existing AWS security features like IAM credentials and VPCs.</li>
+<li>Key components include Amazon Bedrock (specifically Claude Opus and Claude Sonnet models), AgentCore Identity for secure GitHub access, and Amazon Bedrock Guardrails for prompt screening.</li>
+<li>The workflow involves submitting tasks via Claude Code or a web console, queuing them with Bedrock Guardrails, running them in an isolated AgentCore runtime, and returning a GitHub pull request for review – all while maintaining data protection and access controls.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-06</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/taxbit-assist-a-grounded-role-aware-ai-agent-on-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Taxbit Assist: A grounded, role-aware AI agent on Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><p>Taxbit Assist is an AI assistant embedded in the Taxbit dashboard, built on Amazon Bedrock AgentCore to provide grounded, role-aware answers to user questions.</p>
+<ul>
+<li>The assistant utilizes Amazon Bedrock AgentCore, including its managed agent runtime, AgentCore memory, and per-session isolation, to avoid building and operating the agent loop and conversation state management.</li>
+<li>Taxbit Assist employs a retrieval-augmented generation (RAG) approach using Amazon Bedrock Knowledge Bases backed by Amazon S3 Vectors and Cohere Embed English v3 for embeddings, prioritizing answers sourced from published documentation, code-derived references, and curated content.</li>
+<li>To ensure accuracy and safety, the system incorporates Amazon Bedrock Guardrails to mask PII, enforces citation eligibility based on source type, and restricts the model's access to customer tax data, focusing solely on product knowledge and support ticket management.</li>
+<li>The solution measures answer quality in production using both built-in AgentCore evaluations and custom judges, tracking metrics like helpfulness, faithfulness, and relevance, and includes a tax-advice classifier to prevent providing unauthorized financial guidance.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-06</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-greenlight-financial-built-an-autonomous-soc-solution-on-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How Greenlight Financial built an autonomous SOC solution on Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><p>Greenlight Financial built an autonomous security operations center (SOC) named Luna using Amazon Bedrock AgentCore, achieving over 90% autonomous case resolution.</p>
+<ul>
+<li>Luna utilizes Amazon Bedrock AgentCore runtime to host agent code and AgentCore memory for a tiered, multi-agent system, handling 3,000-4,000 security/risk alerts monthly.</li>
+<li>The system employs a layered architecture: Tier 1 handles high-volume triage with over 30 specialized agents (Identity Checks, Endpoint Detection, Observability, etc.), and Tier 2 provides deep-dive investigation with advanced reasoning capabilities.</li>
+<li>An episodic memory (30-day rolling window) and long-term memory store resolution patterns and preferences to enable continuous learning and improve accuracy, reducing false positives and automating allowlists.</li>
+<li>The solution extends beyond SOC use cases into financial risk triage with minimal architectural changes, primarily adding new specialized agents and a risk-domain supervisor.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-06</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/govern-ai-agent-access-with-okta-cross-app-access-and-amazon-bedrock-agentcore-part-1/" target="_blank" rel="noopener">Govern AI agent access with Okta Cross App Access and Amazon Bedrock AgentCore – Part 1</a></h3>
+    
+    <div class="summary"><p>Governs AI agent access using Okta Cross App Access and Amazon Bedrock AgentCore, ensuring agents act on behalf of users within defined application boundaries.</p>
+<ul>
+<li>Utilizes Okta Cross App Access (XAA) to manage which agents can act for which users in which applications, with revocation of access occurring within seconds and token expiration within 5 minutes.</li>
+<li>Employs Amazon Bedrock AgentCore runtime to validate Okta’s authorization grants and AgentCore Identity to redeem them for short-lived access tokens, adding approximately 0.6 seconds to a 30-second request.</li>
+<li>Architecture involves three tokens: an ID token (user identity), an ID-JAG (Okta’s decision), and an access token (resource accepted), with requests flowing through Okta for authorization and AgentCore for token management.</li>
+<li>Requires an AWS account with access to Amazon Bedrock AgentCore, an Okta organization with XAA configured, and prerequisite software like Python and the AgentCore CLI for a walkthrough taking approximately one hour.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-06</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/govern-ai-agent-access-with-okta-cross-app-access-and-amazon-bedrock-agentcore-part-2/" target="_blank" rel="noopener">Govern AI agent access with Okta Cross App Access and Amazon Bedrock AgentCore – Part 2</a></h3>
+    
+    <div class="summary"><p>Amazon Bedrock AgentCore Gateway centralizes access governance for AI agents built with Amazon Bedrock AgentCore.</p>
+<ul>
+<li>The AgentCore Gateway acts as a single front door, redeeming Okta grants for each tool call, replacing the previous per-server authorization checks.</li>
+<li>Cedar policies are used to bind tools to agents and enforce access control, evaluated by the Gateway before tool invocation.</li>
+<li>Integration with Amazon Bedrock AgentCore Observability and Amazon CloudWatch provides a centralized view of every authorization decision, including Okta events.</li>
+<li>A second example agent is demonstrated running on Amazon EKS, showcasing that the Gateway functions independently of the agent runtime environment.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-06</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/serverless-mcp-server-for-ai-agent-data-lake-access-on-amazon-ecs-fargate/" target="_blank" rel="noopener">Serverless MCP server for AI agent data lake access on Amazon ECS Fargate</a></h3>
+    
+    <div class="summary"><p>Serverless MCP server facilitates AI agent access to enterprise data lakes, reducing integration complexity and improving data governance.</p>
+<ul>
+<li>The system utilizes a Model Context Protocol (MCP) server built on Amazon ECS Fargate to provide a centralized, agent-agnostic gateway to a data lake.</li>
+<li>Adding new datasets requires only a JSON metadata file, automating schema discovery and eliminating per-dataset integration code.</li>
+<li>The architecture incorporates Amazon Bedrock Guardrails for responsible AI controls, enforcing content safety policies across all connected agents, and limits Athena queries to SELECT operations.</li>
+<li>The server leverages Amazon Bedrock Knowledge Bases for semantic search, Amazon Athena and Redshift for SQL queries, and Amazon DynamoDB for session state, scaling each layer independently based on workload.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-06</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/taxonomy-of-agentic-primitives-in-amazon-quick/" target="_blank" rel="noopener">Taxonomy of agentic primitives in Amazon Quick</a></h3>
+    
+    <div class="summary"><p>Amazon Quick introduces a taxonomy of agentic primitives based on four key questions: When, What, Who, and How.</p>
+<ul>
+<li><strong>Triggers</strong> initiate work and carry instructions, categorized as human-initiated (conversational), agent-delegated (composable), scheduled (deterministic), or event-driven.</li>
+<li><strong>Agents</strong> are defined as persistent, learning actors, comprised of Instructions (defining persona), Capabilities (tools, skills, workflows), and Learned Context (accumulated memory).</li>
+<li><strong>Capabilities</strong> define <em>how</em> an agent acts, ranging from atomic <strong>Tools</strong> (e.g., send email), to guided <strong>Skills</strong> (instructions &amp; resources), to deterministic <strong>Workflows</strong> (fixed execution order).</li>
+<li>Skills and workflows are designed to be durable beyond LLM improvements; Skills capture expertise, while Workflows provide auditability and deterministic coordination, with the ability to evolve between the two through continuous learning.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-06</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/sagemaker-inference-now-supports-multi-instance-gpu-to-maximize-gpu-utilization-for-model-endpoints/" target="_blank" rel="noopener">SageMaker Inference now supports Multi-Instance GPU to maximize GPU utilization for model endpoints</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon SageMaker Inference now supports GPU partitioning using NVIDIA Multi-Instance GPU (MIG), allowing a single physical GPU to be divided into independent partitions with dedicated compute and memory.</li>
+<li>GPU partitioning is implemented via new optional fields in existing API calls ("AcceleratorPartitionLayouts" and "AcceleratorPartitionType") and does not introduce new API operations or resource types.</li>
+<li>Supported MIG profiles vary by GPU (A100, H100, RTX PRO 4500, RTX PRO 6000) and instance type, offering different combinations of compute units and memory, detailed in NVIDIA's documentation.</li>
+<li>This feature aims to improve GPU utilization, reduce inference costs, and provide hardware-isolated GPU sharing for scenarios like hosting multiple small models, multi-tenant serving, and multi-stage pipelines.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -475,146 +617,6 @@
 <li>The model features a hybrid Mamba-Transformer MoE architecture with Mamba-2, attention, and expert layers, supporting context lengths up to 1M tokens and accepting text, image, document, and video inputs for text output.</li>
 <li>Nemotron 3.5 Super VL is designed for agentic AI workflows including coding, web research, document intelligence, cybersecurity, and video understanding and integrates with major open agent frameworks.</li>
 <li>Deployment on AWS utilizes Amazon EKS, EKS Auto Mode, and SageMaker HyperPod EKS, with validation using NVIDIA Collective Communications Library (NCCL) and performance measurement via the NVIDIA aiperf tool, supporting BF16 and NVFP4 checkpoints.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-29</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-moengage-turned-over-400-apis-into-agent-tools-with-agentcore-gateway/" target="_blank" rel="noopener">How MoEngage turned over 400 APIs into agent tools with AgentCore Gateway</a></h3>
-    
-    <div class="summary"><p>MoEngage leveraged Amazon Bedrock AgentCore Gateway to expose 400 internal APIs to AI agents without public exposure or extensive platform engineering.</p>
-<ul>
-<li>AgentCore Gateway, a managed MCP server, automatically generates MCP tools from OpenAPI specifications, eliminating the need for individual teams to implement MCP servers.</li>
-<li>Cedar policies are used for server-side authorization, controlling tool access based on the agent's IAM role, ensuring only permitted tools are visible in the agent’s tools list.</li>
-<li>Amazon VPC Lattice provides managed egress for private connectivity to internal services, avoiding the need for per-API networking configurations and simplifying regional deployments.</li>
-<li>Semantic search ( <code>x_amz_bedrock_agentcore_search</code> capability) allows agents to discover tools by describing the desired task, reducing reliance on exact tool names and improving usability while minimizing context window usage.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-29</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/lend-and-borrow-resources-across-teams-with-aws-batchs-quota-management-for-sagemaker-training-jobs/" target="_blank" rel="noopener">Lend and borrow resources across teams with AWS Batch’s quota management for SageMaker Training jobs</a></h3>
-    
-    <div class="summary"><p>AWS Batch now supports quota management for SageMaker Training jobs, enabling resource lending and borrowing between teams.</p>
-<ul>
-<li>Administrators can define quota shares – virtual queues – organized by team or project, with configurable resource-sharing strategies: <code>RESERVE</code>, <code>LEND</code>, or <code>LEND_AND_BORROW</code>.</li>
-<li><code>LEND_AND_BORROW</code> allows idle capacity to be automatically shared and reclaimed when needed, utilizing compute more efficiently.</li>
-<li>In-share preemption can be enabled to prioritize jobs within a quota share, preempting lower-priority jobs.</li>
-<li>The SageMaker Python SDK v3 has been extended to allow submission of training jobs to these quota-managed AWS Batch job queues (using <code>TrainingQueue</code>).</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-29</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-a-repeatable-php-to-java-migration-engine-with-kiro/" target="_blank" rel="noopener">Build a repeatable PHP-to-Java migration engine with Kiro</a></h3>
-    
-    <div class="summary"><ul>
-<li>AWS Kiro, an AI-integrated development environment (IDE), enables a repeatable PHP-to-Java migration process by pairing an AI agent with a codebase.</li>
-<li>The migration engine utilizes skill files (versioned Markdown capability packages) containing the migration methodology (php-to-java-migration) and discovery scanner workflow (php-model-discovery), and can be executed either interactively in Kiro or agentically via AWS Transform.</li>
-<li>A key component is a discovery scanner (discover-models.php) that analyzes PHP code (Laravel/Eloquent, Symfony/Doctrine) and emits a JSON manifest detailing models, fields, and relationships, prioritizing discovery <em>before</em> translation.</li>
-<li>The process is parity-first, building a ‘parity harness’ to verify the Java port behaves identically to the PHP original through an eight-phase workflow, with a focus on automating the translation and fixing the methodology rather than individual code patches.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-29</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/building-intent-driven-ui-testing-with-amazon-nova-act/" target="_blank" rel="noopener">Building intent-driven UI testing with Amazon Nova Act</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Nova Act is used with Amazon Bedrock AgentCore Browser to enable intent-driven UI testing, allowing test steps to be written in natural language rather than relying on brittle CSS selectors.</li>
-<li>The solution utilizes Amazon Bedrock AgentCore Browser Tool for managed, ephemeral browser sessions, eliminating the need to manage browser binaries and infrastructure.</li>
-<li>Epsilon integrated Nova Act into their existing agent platform, providing a multi-tenant service accessible via a standard API, using AWS IAM for authentication and cross-account provisioning via AWS STS AssumeRole.</li>
-<li>Benchmarks show 4-6x faster test authoring with Nova Act compared to Playwright, and 100% pass rates on replay of saved, successful test trajectories.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-29</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-the-uk-amazon-quick-user-group-grew-in-2026/" target="_blank" rel="noopener">How the UK Amazon Quick User Group grew in 2026</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Quick User Group – United Kingdom meetups demonstrated capabilities including building custom chat agents without code, connecting Amazon Quick Desktop to local files and Outlook via connectors, and generating web applications from plain-language descriptions using Amazon Quick Apps.</li>
-<li>Attendees utilized Amazon Quick Flows and Amazon Quick Automate to automate processes, and Amazon Quick Research to accelerate research tasks.</li>
-<li>Customer use cases highlighted included dynamic, role-based dashboards for real-time incident management (Arriva UK Trains), a governed data layer to eliminate dashboard sprawl and improve data consistency (Carsa), and automated support workflows handling 1 million tickets annually (Propulse Lab).</li>
-<li>The Amazon Quick chat agent was highlighted as a central assistant connecting to tools, data, and enabling automated actions.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-28</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/accelerating-software-delivery-with-agentic-qa-automation-using-amazon-nova-act-part-3/" target="_blank" rel="noopener">Accelerating software delivery with agentic QA automation using Amazon Nova Act – Part 3</a></h3>
-    
-    <div class="summary"><ul>
-<li>QA Studio, a reference solution built with Amazon Nova Act, now includes “applications” to organize tests and report health metrics, associating tests and suites with a specific system under test and owner.</li>
-<li>Application health is tracked using Amazon CloudWatch custom metrics (pass rate, executions, failures) displayed as a health score (0-100) that penalizes flaky tests, with filtering by environment available through a metrics tab.</li>
-<li>Team-based user management, leveraging Amazon Cognito, assigns five roles (Admin, Team Lead, Editor, Executor, Viewer) with cumulative permissions to control access to applications and tests.</li>
-<li>Cross-team sharing of applications is supported with a “ceiling rule” ensuring a user’s effective permission is limited by their role, even if granted broader access by the owning team.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-28</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/distributed-training-with-ray-train-dlcs-and-efa-on-eks/" target="_blank" rel="noopener">Distributed training with Ray Train DLCs and EFA on EKS</a></h3>
-    
-    <div class="summary"><ul>
-<li>The Ray Train Deep Learning Container (DLC) simplifies distributed PyTorch training on EKS by pre-packaging the necessary runtime dependencies (CUDA, PyTorch, NCCL, EFA libraries, and Ray) into a single, tested image (public.ecr.aws/deep-learning-containers/ray:train-ml-cuda-v1.1).</li>
-<li>KubeRay, an open-source Kubernetes operator, is used to deploy and manage Ray clusters on EKS from a single RayCluster manifest, abstracting away the complexities of pod creation and management.</li>
-<li>The sample code demonstrates fine-tuning Qwen2.5-1.5B with PyTorch Fully Sharded Data Parallel (FSDP) across eight NVIDIA L4 GPUs using the DLC, requiring minimal code changes – only a training function and a RayCluster manifest.</li>
-<li>The DLC’s pre-configured networking stack (EFA, libfabric, AWS OFI NCCL plugin) ensures high-performance inter-node communication and automatically handles NVIDIA driver compatibility, reducing configuration overhead.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-28</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/building-an-agentic-ai-platform-on-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Building an Agentic AI Platform on Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><h2>Building an Agentic AI Platform on Amazon Bedrock AgentCore</h2>
-<p>This post details an architecture and implementation blueprint for building a governed, scalable, and multi-account Agentic AI Platform using Amazon Bedrock and AgentCore, designed to address the organizational challenges of deploying agents at enterprise scale.</p>
-<ul>
-<li>The architecture centers around a “federated” operating model with a central Platform team providing shared, governed services, while Workstream teams (domain/product teams) own their agents, tools, and data.</li>
-<li>The blueprint utilizes Amazon Bedrock AgentCore’s modular services (Runtime, Gateway, Identity, Memory, Policy, Registry, and Evaluations) and extends them with infrastructure-as-code for enterprise-level contracts like ownership, account boundaries, and cost governance.</li>
-<li>Key components include a Platform control plane for versioned templates, governance, and shared resources, and repeatable Workstream cells providing isolated environments with team-owned components, ensuring failure isolation and independent deployments.</li>
-<li>The solution incorporates rigorous security controls, including governed model and tool access via secure gateways, restricted deployment through pipelines, and a comprehensive evaluation pipeline to gate agent releases and ensure adherence to organizational policies.</li>
 </ul></div>
     
   </div>
