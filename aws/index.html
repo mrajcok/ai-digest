@@ -80,13 +80,137 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-11-09 11:15 UTC</p>
+  <p class="generated-at">Generated 2026-11-10 11:18 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">November 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-10</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-skills-and-agents-work-in-aws-quick/" target="_blank" rel="noopener">How skills and agents work in AWS Quick</a></h3>
+    
+    <div class="summary"><p>AWS Quick introduces skills and agents for automating tasks and analyzing data using natural language.</p>
+<ul>
+<li>AWS Quick uses agents that follow instructions, load relevant skills, and access data through connectors (like Outlook, Slack, Jira) and data sources (spaces, knowledge bases, datasets, dashboards).</li>
+<li>Custom agents can be configured for specific jobs with tailored instructions and limited access to resources, while the default "Quick" agent has broad access.</li>
+<li>Skills are reusable instruction sets that teach agents how to perform specific tasks and follow the Agent Skills specification—a skill is a <code>.md</code> file with metadata and optional scripts.</li>
+<li>Skills can be built from chat interactions or files, published, and shared within an AWS Quick account, and best practices (testing, failure handling, versioning) are recommended for production use with resources available in the official AWS Quick catalog.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-09</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/professional-work-deserves-professional-tools-meet-aws-quick/" target="_blank" rel="noopener">Professional work deserves professional tools. Meet AWS Quick.</a></h3>
+    
+    <div class="summary"><p>AWS Quick is an AI workspace designed for professional use, built on AWS infrastructure with a focus on enterprise security and governance.</p>
+<ul>
+<li>Quick integrates with existing business applications and workflows, leveraging role-based access controls from tools like AWS IAM, Microsoft Active Directory, and Microsoft Purview.</li>
+<li>Users can build custom AI agents, knowledge bases, and automations using plain language without requiring IT support.</li>
+<li>Data security is a core focus: data remains within the user's environment, doesn't train other models, and is protected by features like sensitivity label recognition and audit trails via Amazon CloudWatch and AWS CloudTrail.</li>
+<li>Quick is now the official name, signaling its enterprise focus and includes compliance certifications such as HIPAA, FedRAMP, SOC 2, and ISO 27001.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-09</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-crossnokaye-grounds-physical-ai-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How CrossnoKaye grounds physical AI with Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><p>CrossnoKaye utilizes Amazon Bedrock AgentCore to ground AI in physical industrial operations via its ATLAS platform and AURA agentic intelligence system.</p>
+<ul>
+<li>ATLAS defines plant operations in software, managing control narratives, historian data, and optimization applications, while AURA provides AI-powered investigation and automation.</li>
+<li>AURA leverages the code interpreter capability within Amazon Bedrock AgentCore to execute Python workloads in isolated microVMs for verifiable numerical computations on plant data.</li>
+<li>The system employs warm conversational sandboxes (with 15-minute TTL in ElastiCache) for interactive Chats and clean, single-use sandboxes for repeatable Tasks and automated Routines.</li>
+<li>AURA supports three operational modes – Chats, Tasks, and Routines – and enforces data contracts with schema verification and automated self-correction to ensure output accuracy and reliability.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-09</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/pluggable-agentic-ai-framework-a-seven-layer-composable-enterprise-agentic-ai-reference-architecture-on-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Pluggable Agentic AI Framework: A seven-layer composable enterprise agentic AI reference architecture on Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><p>Pluggable Agentic AI Framework details a seven-layer reference architecture for building and scaling agentic AI applications on AWS.</p>
+<ul>
+<li>The framework utilizes Amazon Bedrock Knowledge Base, Vector Engine, S3 Vectors, and DynamoDB for the Data and Knowledge layer, focusing on retrieval and embedding of relevant information.</li>
+<li>A model routing layer, leveraging proxies like LiteLLM, decouples agents from specific model providers, allowing for model switching based on evaluation without code changes.</li>
+<li>Orchestration recommends decomposing complex tasks into specialist agents managed by a supervisor, utilizing centralized agent registries (AWS Agent Registry) and standardized protocols (MCP, A2A) for scalability and security.</li>
+<li>Security focuses on treating all external content as untrusted, utilizing Amazon Bedrock AgentCore Identity and Policy for authentication and access control, and continuous evaluation via Amazon Bedrock AgentCore Evaluations for quality monitoring.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-09</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-5-super-vl-is-now-available-in-amazon-sagemaker-jumpstart/" target="_blank" rel="noopener">NVIDIA Nemotron 3.5 Super VL is now available in Amazon SageMaker JumpStart</a></h3>
+    
+    <div class="summary"><p>NVIDIA Nemotron 3.5 Super VL, a 120B-parameter vision-language model (VLM), is now available in Amazon SageMaker JumpStart.</p>
+<ul>
+<li>The model combines a 120B-parameter hybrid Mixture-of-Experts (MoE) language backbone (with 12B active parameters) and a C-RADIO vision encoder.</li>
+<li>It supports context lengths up to 1 million tokens and utilizes a Multi-Token Prediction (MTP) head for speculative decoding.</li>
+<li>JumpStart offers two variants: NVFP4 (quantized for optimized inference) and BF16 (full-precision weights for customization).</li>
+<li>The model supports image, video, and text input and excels in document intelligence, GUI understanding, video question answering, and multimodal agentic applications; it is deployable via SageMaker Studio, the Python SDK, and Hugging Face.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-09</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-claude-fable-5-2-on-aws/" target="_blank" rel="noopener">Introducing Claude Fable 5.2 on AWS</a></h3>
+    
+    <div class="summary"><ul>
+<li>Claude Fable 5.2 and Claude Mythos 5.2 are now available on Amazon Bedrock and Claude Platform on AWS.</li>
+<li>Claude Fable 5.2 is Anthropic’s most capable model for technical tasks like coding, math, and science, demonstrating improved self-verification and long-running agent capabilities.</li>
+<li>Claude Mythos 5.2, available via Anthropic’s verification programs, is optimized for cybersecurity and life sciences with improved reliability and reduced hallucinations compared to previous models (Opus 5.5, Sonnet 5.5, and Mythos 5.1).</li>
+<li>Data retention for Fable 5.2 defaults to 30 days with human review on Bedrock, but zero data retention is available for eligible customers, alongside Enterprise Frontier Safeguards (EFS) for misuse detection.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-09</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/single-shot-and-agentic-retrieval-with-amazon-bedrock-managed-knowledge-base/" target="_blank" rel="noopener">Single-shot and agentic retrieval with Amazon Bedrock Managed Knowledge Base</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock Managed Knowledge Base now supports single-shot Retrieval Augmented Generation (RAG), retrieval-only requests, and existing agentic retrieval via the <code>AgenticRetrieveStream</code> API.</li>
+<li>The <code>maxAgentIteration</code> parameter controls the behavior: 0 retrieves passages only (no LLM calls), 1 enables single-shot RAG (one retrieval and answer generation), and 2-5 activates agentic retrieval with iterative searches.</li>
+<li>Single-shot RAG utilizes one foundation model call, potentially reducing latency and cost compared to agentic retrieval, while retrieval-only requests offer the fastest performance with no LLM calls.</li>
+<li>The service can balance speed and answer quality by adjusting <code>maxAgentIteration</code> for each request, eliminating the need for separate APIs or code paths for different query complexities.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -491,132 +615,6 @@
 <li>Amazon Nova Multimodal Embeddings are used for both multimodal retrieval (matching specs, paragraphs, or plots from engineering documents) and visual similarity scoring of part photos.</li>
 <li>Deterministic spec-fit evaluation is performed using Python code based on a requirements schema, ensuring reproducible results for engineering reviews.</li>
 <li>The solution utilizes Amazon Bedrock Managed Knowledge Bases and Amazon S3 Vectors for storing and querying embedded engineering data, including documents and images.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-02</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-efficient-agents-with-knowledge-distillation-on-amazon-sagemaker-ai/" target="_blank" rel="noopener">Build efficient agents with knowledge distillation on Amazon SageMaker AI</a></h3>
-    
-    <div class="summary"><ul>
-<li>This blog details how to use sequence-level knowledge distillation (SeqKD) on Amazon SageMaker AI to fine-tune a shopping agent, transferring behavior from a larger "teacher" model (GLM-5.3 on Amazon Bedrock) to a smaller "student" model (Qwen3.5-4B).</li>
-<li>SeqKD involves generating high-quality multi-step trajectories with the teacher model, filtering for successful task completion using a programmatic scorer (ShoppingBench), and then using these trajectories to train the student model with supervised fine-tuning.</li>
-<li>The process focuses on encoding trajectories as a series of chat turns, compressing tool observations to manage token limits, and leveraging SageMaker AI model customization for serverless fine-tuning and model versioning.</li>
-<li>Specific configurations for model customization are outlined, including hyperparameters like sequence length, LoRA rank, learning rate, and training epochs, with a focus on balancing performance and cost-effectiveness for agentic tasks.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-02</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/prepare-web-content-for-amazon-bedrock-knowledge-bases-with-crawl4ai/" target="_blank" rel="noopener">Prepare web content for Amazon Bedrock Knowledge Bases with Crawl4AI</a></h3>
-    
-    <div class="summary"><p>Amazon Bedrock now supports preparation of web content for Knowledge Bases using Crawl4AI, an open-source Python crawler.</p>
-<ul>
-<li>Crawl4AI allows for custom preparation of web content before ingestion into a Knowledge Base, enabling structured Markdown preparation, targeted extraction via CSS selectors, and the addition of custom metadata.</li>
-<li>The workflow uses Amazon EventBridge to schedule an Amazon ECS task on AWS Fargate to crawl websites, prepare Markdown and metadata, upload to Amazon S3, and initiate a Bedrock Knowledge Base ingestion job.</li>
-<li>Managed Knowledge Bases support several document formats for Amazon S3 data sources, including Markdown, and offer default, fixed-size, and no-chunking strategies, while customer-managed options offer more flexibility.</li>
-<li>The solution is available as a sample implementation in the <code>aws-samples</code> repository, requiring prerequisites such as an AWS account, a Bedrock Knowledge Base (managed or customer-managed), and a deployment workstation configured with necessary tools like Git, Python, and the AWS CLI.</li>
-</ul></div>
-    
-  </div>
-  
-  
-  <h2 class="month">October 2026</h2>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-30</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/configure-the-chatgpt-desktop-app-with-amazon-bedrock-in-aws-govcloud-us/" target="_blank" rel="noopener">Configure the ChatGPT desktop app with Amazon Bedrock in AWS GovCloud (US)</a></h3>
-    
-    <div class="summary"><p>The ChatGPT desktop app now supports configuration with Amazon Bedrock in AWS GovCloud (US), enabling access to OpenAI’s models within a governed environment.</p>
-<ul>
-<li>The solution utilizes the ChatGPT desktop app and Codex, routing model requests through Amazon Bedrock Mantle in the us-gov-west-1 region.</li>
-<li>Configuration relies on two key files: <code>requirements.toml</code> (admin-controlled security limits) and <code>config.toml</code> (application settings, including model provider and API key/profile details).</li>
-<li>Authentication supports both Amazon Bedrock API keys and the AWS SDK credential chain, including AWS SSO through AWS IAM Identity Center.</li>
-<li>Zero Data Retention (ZDR) is supported, processing prompts and responses without durable storage or sharing with model providers, aiding data governance and security.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-30</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-worldwide-express-automated-freight-exceptions-with-amazon-bedrock/" target="_blank" rel="noopener">How Worldwide Express automated freight exceptions with Amazon Bedrock</a></h3>
-    
-    <div class="summary"><ul>
-<li>Worldwide Express implemented a multi-agentic AI solution using <strong>Amazon Bedrock</strong> to automate the resolution of freight billing exceptions within their SpeedShip transportation management system (TMS).</li>
-<li>The solution employs three specialized AI agents – Invoice Matching, Pricing Variance, and Accessorial Validation – each responsible for a specific exception type and grounded in carrier-specific knowledge bases.</li>
-<li>Agents utilize APIs to interact with SpeedShip, replicating the view and actions of human reviewers, and leverage <strong>Amazon Bedrock</strong> for model inference via a single API, supporting open-source agent libraries.</li>
-<li>The implementation resulted in a 75% reduction in active exceptions, a four-week improvement in time-to-cash, $1M in annual savings, and a one-time $10M free cash flow infusion, achieving 60x first-year ROI.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-30</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/preview-web-apps-live-as-your-coding-agent-builds-them-with-amazon-bedrock-agentcore-runtime/" target="_blank" rel="noopener">Preview web apps live as your coding agent builds them with Amazon Bedrock AgentCore runtime</a></h3>
-    
-    <div class="summary"><p>Amazon Bedrock AgentCore runtime now allows for live web app previews as coding agents build them.</p>
-<ul>
-<li>AgentCore runtime utilizes isolated microVMs for each agent session, enabling access via Session Endpoints – authenticated URLs that forward requests to specified ports (8000-12000).</li>
-<li>Session Endpoints support HTTP/1.1, HTTP/2, WebSocket connections and require authentication via SigV4 (for IAM runtimes) or JWT (for authorizer runtimes).</li>
-<li>The example deploys a coding agent with a Vite website, demonstrating real-time updates in the browser as the agent modifies code, accessed via <code>http://localhost:8088</code>.</li>
-<li>The sample code utilizes ports 8090 (website) and 8081 (agent status), with requests to unauthorized ports or without credentials being refused by the runtime.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-30</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/managing-amazon-bedrock-costs-end-to-end-a-playbook-for-finops-and-platform-teams/" target="_blank" rel="noopener">Managing Amazon Bedrock costs end to end: A playbook for FinOps and platform teams</a></h3>
-    
-    <div class="summary"><p>Managing Amazon Bedrock costs requires a five-stage operating model built on AWS building blocks.</p>
-<ul>
-<li><strong>Attribute:</strong> Granular cost attribution is achieved using Amazon Bedrock’s automatic tracking of inference costs to IAM principals, accessible via the AWS Cost and Usage Report (CUR) 2.0. The shared-role problem can be addressed using per-user session management with <code>sts:AssumeRole</code> and session tags.</li>
-<li><strong>Observe:</strong>  Model invocation logging to Amazon CloudWatch Logs or Amazon S3 (with Athena for BI) provides detailed request metadata and enables workload-level cost analysis. Mandatory metadata should be injected centrally via SDK wrappers or gateways.</li>
-<li><strong>Enforce:</strong> Three enforcement tiers are available: monitoring and alerting (Tier 1), IAM tag enforcement with denial of access (Tier 2), and synchronous blocking via a gateway (Tier 3). Tier 3 is recommended when using the Claude apps gateway for AWS.</li>
-<li><strong>Optimize:</strong>  Platform-level optimizations, such as intelligent model routing (using cheaper models for routine tasks, reserving high-end models for complex reasoning) and caching, can significantly reduce waste.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-10-29</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/accelerate-agentic-ai-with-nvidia-nemotron-models-on-amazon-eks-and-sagemaker-hyperpod-eks/" target="_blank" rel="noopener">Accelerate agentic AI with NVIDIA Nemotron models on Amazon EKS and SageMaker HyperPod EKS</a></h3>
-    
-    <div class="summary"><ul>
-<li>NVIDIA Nemotron 3.5 Super VL, a 120B-parameter Mixture-of-Experts (MoE) model activating 12B parameters per token, is now available on Amazon EKS and SageMaker HyperPod EKS.</li>
-<li>The model features a hybrid Mamba-Transformer MoE architecture with Mamba-2, attention, and expert layers, supporting context lengths up to 1M tokens and accepting text, image, document, and video inputs for text output.</li>
-<li>Nemotron 3.5 Super VL is designed for agentic AI workflows including coding, web research, document intelligence, cybersecurity, and video understanding and integrates with major open agent frameworks.</li>
-<li>Deployment on AWS utilizes Amazon EKS, EKS Auto Mode, and SageMaker HyperPod EKS, with validation using NVIDIA Collective Communications Library (NCCL) and performance measurement via the NVIDIA aiperf tool, supporting BF16 and NVFP4 checkpoints.</li>
 </ul></div>
     
   </div>
