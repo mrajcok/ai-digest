@@ -80,13 +80,116 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-11-10 11:18 UTC</p>
+  <p class="generated-at">Generated 2026-11-11 11:18 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">November 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-11</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-kimi-k3-1-pro-on-amazon-bedrock/" target="_blank" rel="noopener">Introducing Kimi K3.1 Pro on Amazon Bedrock</a></h3>
+    
+    <div class="summary"><ul>
+<li>Kimi K3.1 Pro Highspeed, a new model from Moonshot AI, is available on Amazon Bedrock with a 1-million-token context window and 3T-class architecture.</li>
+<li>The model offers up to 3x faster output token generation speed compared to Kimi K3.1 Pro, targeting long-horizon agentic workflows and improved accuracy for professional tasks like financial modeling and code generation.</li>
+<li>It supports features like tool calling, structured output, configurable reasoning (low, high, max), image input, and streaming, and is accessible through existing Bedrock APIs (Chat Completions, Responses, Converse, Invoke).</li>
+<li>Cost optimization is possible via the Flex tier (half the Standard price with potentially longer response times) and explicit prompt caching to reuse stable prefixes, reducing latency and input costs.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-10</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-tokenomics-data-lake/" target="_blank" rel="noopener">Amazon Bedrock tokenomics data lake</a></h3>
+    
+    <div class="summary"><ul>
+<li>This solution builds a centralized observability data lake for Amazon Bedrock invocations, pulling raw logs from linked accounts into a central account via Amazon CloudWatch, Data Firehose, and Athena.</li>
+<li>The data lake captures details of each invocation including the prompt, model response, input/output token counts, model used, stop reason, account, timestamp, and IAM role.</li>
+<li>The architecture is deployed as Infrastructure as Code using two AWS CloudFormation templates and data is stored in Parquet format in Amazon S3, queryable via Amazon Athena.</li>
+<li>Integration with the AWS Cost and Usage Report (CUR) 2.0 using the IAM ARN as a join key enables cost attribution at the individual prompt level, supporting “tokenomics” practices.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-10</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-tcs-built-an-agentic-test-orchestrator-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How TCS built an agentic test orchestrator with Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><p>TCS built an agentic test orchestrator leveraging Amazon Bedrock AgentCore to automate testing for BFSI clients, significantly reducing manual effort.</p>
+<ul>
+<li>The platform uses Amazon Bedrock AgentCore to host specialized agents built with the Strands Agents SDK, enabling scalable and isolated execution of testing tasks.</li>
+<li>Amazon Bedrock's model choice allows each agent to utilize the most suitable model (e.g., for scenario design or code generation), with the flexibility to adopt new models as they become available.</li>
+<li>The solution integrates with tools like Jira, GitLab, and Amazon ECS, storing data in Amazon S3 and DynamoDB, with security enforced by AWS WAF, KMS, and Cognito.</li>
+<li>TCS achieved an 88% reduction in test scenario effort (from 2 hours to 14 minutes per scenario in a benchmark) by automating requirement interpretation, script generation, execution, and reporting.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-10</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/autonomous-treasury-agents-how-trovata-built-an-ai-native-solution-on-amazon-bedrock-and-agentcore/" target="_blank" rel="noopener">Autonomous treasury agents: How Trovata built an AI-native solution on Amazon Bedrock and AgentCore</a></h3>
+    
+    <div class="summary"><ul>
+<li>Trovata launched autonomous treasury agents built on <strong>Amazon Bedrock</strong> and <strong>Amazon Bedrock AgentCore</strong> to automate cash and liquidity management tasks.</li>
+<li>The solution utilizes <strong>Amazon Bedrock</strong> for LLM inference (natural language understanding and generation) and <strong>Amazon Bedrock AgentCore</strong> for agent orchestration, role-based access control (RBAC), and secure execution.</li>
+<li>Key use cases demonstrated include automated cash forecasting, natural language querying of bank data, anomaly detection, automated reconciliation, and persistent agentic workflows.</li>
+<li>Trovata reports $1M+ in annualized cost savings and a 77% reduction in annual TMS costs for customers deploying these agents, leveraging AgentCore’s capabilities like agent orchestration and enterprise RBAC.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-10</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/the-agent-evaluation-playbook-built-in-deepeval-and-autoeval-on-agentcore/" target="_blank" rel="noopener">The agent evaluation playbook: Built-in, DeepEval, and AutoEval on Amazon Bedrock AgentCore Evaluations</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock AgentCore Evaluations introduces a framework for evaluating agents beyond basic functionality, focusing on business outcomes through observable behaviors.</li>
+<li>The system leverages three tiers of evaluators: built-in evaluators (AWS authored and quality-tested, e.g., <code>Builtin.GoalSuccessRate</code>), third-party managed evaluators (DeepEval and AutoEval hosted and run by AgentCore), and custom evaluators based on existing ones.</li>
+<li>A “multi-dimension evaluator” allows for LLM-as-a-judge approaches that score multiple, independent criteria (e.g. accuracy, compliance, politeness) from a single trace, providing granular insights beyond a composite score.</li>
+<li>The service supports three evaluation modes: on-demand (development/debugging via API calls like <code>client.evaluate()</code>), online (real-time monitoring of live traffic), and batch (regression testing against pre-defined datasets).</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-10</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-a-daily-dependency-watcher-with-langgraph-and-amazon-bedrock-agentcore-web-search/" target="_blank" rel="noopener">Build a daily dependency watcher with LangGraph and Amazon Bedrock AgentCore web search</a></h3>
+    
+    <div class="summary"><ul>
+<li>The Amazon Bedrock AgentCore Web Search API is now available, providing agents and applications with current web results via a single API call authenticated with existing AWS credentials, ensuring queries remain within the AWS cloud environment.</li>
+<li>The API returns search results including page title, URL, publication date, and relevant extracts, with options to include/exclude domains and filter by publication date range.</li>
+<li>Integration with LangChain, specifically through the <code>langchain-aws</code> package and LangGraph, allows for building agents with cited search results and enforcing rules like date windows and source blocklists outside of the model’s control.</li>
+<li>A sample implementation demonstrates a daily dependency watch application using LangGraph, capable of parallel research across multiple package ecosystems, and can be deployed on AgentCore runtime or scaled with AgentCore Gateway.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -509,112 +612,6 @@
 <li>Cartesia's Ink model provides streaming speech-to-text with native turn detection and context-aware end pointing, enabling real-time response from downstream LLMs.</li>
 <li>Sonic is available as a model package on Amazon SageMaker AI through AWS Marketplace for deployment to a VPC endpoint, using instance types like ml.g6e.xlarge and ml.p5.48xlarge.</li>
 <li>Sonic can also be self-managed on EC2 GPU instances (G6, G6e, G5 families) utilizing container images obtained from Cartesia for full control over scaling and networking.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-03</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-with-edb-postgres-ai-and-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Build a semantic layer for agentic AI with EDB Postgres AI and Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><p>Build a semantic layer for agentic AI using EDB Postgres AI and Amazon Bedrock AgentCore introduces a method for building a semantic layer within a Postgres database using EDB Postgres AI (AIDB) and querying it with agents running on Amazon Bedrock AgentCore.</p>
-<ul>
-<li>EDB Postgres AI extends Postgres with an AIDB extension to create a semantic knowledge base (SemKB) using Postgres COMMENT statements for business meaning and foreign keys for join graphs.</li>
-<li>The system utilizes the Model Context Protocol (MCP) endpoint for governance, leveraging Postgres GRANT and row-level security to control access to data.</li>
-<li>The architecture integrates with Amazon Bedrock AgentCore, specifically Claude on Amazon Bedrock for the model layer and AgentCore runtime for execution, exposing the SemKB through an Application Load Balancer and AgentCore Gateway.</li>
-<li>AIDB captures OpenTelemetry traces of SQL executions, storing them in the <code>aidb_otel</code> schema for auditing and observability alongside CloudWatch transaction searches from AgentCore.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-03</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-gen-digital-built-norton-revamps-ai-curated-news-engine-with-amazon-bedrock-agentcore-web-search/" target="_blank" rel="noopener">How Gen Digital built Norton Revamp’s AI-curated News Engine with Amazon Bedrock AgentCore Web Search</a></h3>
-    
-    <div class="summary"><ul>
-<li>Norton Revamp, a professional reputation management platform, utilizes Amazon Bedrock AgentCore Web Search to provide real-time grounding for content suggestions and news feeds.</li>
-<li>AgentCore Web Search, accessed via the AgentCore Gateway, returns cited web snippets, URLs, titles, and publication dates to ground responses from Amazon Nova and Nova Lite LLMs.</li>
-<li>The platform employs an event-driven architecture where Amazon Nova generates search queries based on user goals, sending them to AgentCore Web Search, with results then ranked and used for content generation.</li>
-<li>The tech stack includes Amazon Bedrock (Nova, Nova Lite), AgentCore Web Search, Stability AI, Claude, React, TypeScript, and backend services like ECS, DynamoDB, and Lambda, managed with Terraform for zero-downtime deployments.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-03</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/servicenow-on-behalf-of-token-exchange-with-bedrock-agentcore-gateway/" target="_blank" rel="noopener">ServiceNow on-behalf-of token exchange with Bedrock AgentCore Gateway</a></h3>
-    
-    <div class="summary"><p>Amazon Bedrock AgentCore Gateway now supports on-behalf-of (OBO) token exchange with Microsoft Entra ID, enabling AI agents to call ServiceNow REST APIs while preserving user identity.</p>
-<ul>
-<li>The solution utilizes AgentCore Gateway to exchange tokens, ensuring API calls to ServiceNow are made in the context of the original user, maintaining audit trails and access controls.</li>
-<li>Configuration involves creating application registrations in Microsoft Entra ID for both the AI agent and the ServiceNow API connector, including defining a <code>user_impersonation</code> scope for the connector.</li>
-<li>ServiceNow requires configuration of an inbound OAuth integration tied to Microsoft Entra ID and mapping user claims (e.g., <code>preferred_username</code> to Email).</li>
-<li>AgentCore Gateway requires an outbound auth configuration referencing the agent’s application registration, and the target configuration needs to specify the ServiceNow scope and the <code>requested_token_use: on_behalf_of</code> parameter for proper token exchange.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-03</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/bring-structured-and-unstructured-data-together-with-amazon-quick/" target="_blank" rel="noopener">Bring structured and unstructured data together with Amazon Quick</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Quick now unifies querying of structured data (via enriched datasets with semantic descriptions and SQL translation) and unstructured data (from Amazon S3 knowledge bases) through a single conversational AI agent.</li>
-<li>The solution architecture includes a Data Layer (S3 for unstructured, SPICE for structured), a Workspace Layer (a “Space” combining data sources, dashboards, and actions), and an Agent Layer (the chat agent querying the Space).</li>
-<li>Users can connect to Amazon S3, create knowledge bases, build Spaces, and configure custom chat agents—requiring an Amazon Quick Enterprise subscription and appropriate permissions.</li>
-<li>Data enrichment involves correcting data types (e.g., String to Date, Integer, Decimal) and adding semantic context (descriptions, custom instructions, and tags) to structured datasets for improved SQL query generation.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-02</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-circle-k-accelerated-devops-incident-triage-to-under-15-minutes-with-amazon-bedrock/" target="_blank" rel="noopener">How Circle K accelerated DevOps incident triage to under 15 minutes with Amazon Bedrock</a></h3>
-    
-    <div class="summary"><p>Circle K reduced DevOps incident triage time to under 15 minutes using Amazon Bedrock, improving response times and consistency.</p>
-<ul>
-<li>The system utilizes an agentic AI architecture built on Amazon Bedrock to autonomously investigate incidents and deliver structured summaries to Slack.</li>
-<li>Initially built with Amazon Bedrock Flows, the solution was migrated to Amazon Bedrock AgentCore to handle increasing data volumes and longer analysis times, leveraging AgentCore Runtime for session persistence and scalability.</li>
-<li>Key components include agents querying AWS resources (ECS, ALB, CloudWatch), OpenSearch Service for logs, and GitHub for code/commits, with a final analysis prompt generating a root cause summary.</li>
-<li>The solution achieved a 67-75% reduction in mean triage time, providing consistent summaries for engineers and accelerating escalation and false alarm handling, and benefits from Amazon Bedrock’s data privacy features.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-02</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/agentic-engineering-intelligence-with-amazon-nova-multimodal-embeddings-and-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Agentic engineering intelligence with Amazon Nova Multimodal Embeddings and Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><p>Agentic engineering intelligence leverages Amazon Nova Multimodal Embeddings and Amazon Bedrock AgentCore to automate evidence gathering for part substitution evaluations.</p>
-<ul>
-<li>The system employs a multi-agent architecture with a planner (Claude Haiku 5.5), specialist agents (Claude Sonnet 5.5), and a supervisor (Claude Opus 5.5) orchestrated by Amazon Bedrock AgentCore.</li>
-<li>Amazon Nova Multimodal Embeddings are used for both multimodal retrieval (matching specs, paragraphs, or plots from engineering documents) and visual similarity scoring of part photos.</li>
-<li>Deterministic spec-fit evaluation is performed using Python code based on a requirements schema, ensuring reproducible results for engineering reviews.</li>
-<li>The solution utilizes Amazon Bedrock Managed Knowledge Bases and Amazon S3 Vectors for storing and querying embedded engineering data, including documents and images.</li>
 </ul></div>
     
   </div>
