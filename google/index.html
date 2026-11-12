@@ -80,13 +80,60 @@
     </label>
   </div>
   <h1>Google News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-11-11 11:18 UTC</p>
+  <p class="generated-at">Generated 2026-11-12 11:18 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">November 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">DeepMind Blog</span> · 
+      <span>research</span>
+      <span> · 2026-11-11</span>
+    </div>
+    <h3><a href="https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/" target="_blank" rel="noopener">AlphaGenome 2: Deciphering how cells read DNA to better understand disease</a></h3>
+    
+    <div class="summary"><p>AlphaGenome 2 predicts how DNA sequences and variations impact specific human cell types, offering a significant improvement in variant predictive performance over prior work.</p>
+<ul>
+<li>AlphaGenome 2 is a conditional model that predicts DNA effects for a single biological condition (tissue, cell type, or state) at a time, improving accuracy compared to the parallel approach of AlphaGenome 1.</li>
+<li>Trained on over 107 million individual cell profiles across 68 tissues, the model identifies nearly twice as many variants that change gene expression in cells compared to the original AlphaGenome.</li>
+<li>AlphaGenome 2 can generalize to new single-cell experiments without retraining, predicting effects in unseen cell states using only a small sample of cells.</li>
+<li>The model predicts core DNA function readouts (gene expression, histone modifications, chromatin accessibility) and newly includes DNA methylation, with precomputed predictions available for trait-associated variants across hundreds of cell/tissue conditions.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Google AI Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-11-11</span>
+    </div>
+    <h3><a href="https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop/" target="_blank" rel="noopener">Try Tabletop: Customizable, collaborative spaces for groups to plan, play and do more together.</a></h3>
+    
+    <div class="summary"><p>Tabletop is a new Google Labs experiment for real-time collaborative planning, utilizing prompts to generate interactive tools like trip itineraries and polls. Users can interact with Tabletop spaces simultaneously, similar to Google Docs, by adding links, files, and ideas and prompting "@tabletop" or using starter templates. Currently rolling out in the U.S. (18+) via waitlist, it is presented alongside the announcement of the Gemini Decisions API.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Google AI Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-11-11</span>
+    </div>
+    <h3><a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/" target="_blank" rel="noopener">Gemini Decisions API: Fast, calibrated multimodal decisions</a></h3>
+    
+    <div class="summary"><ul>
+<li>The Gemini Decisions API, powered by the Gemini Decision 1 model (gemini-decision-1), enables fast, probabilistic decisions across multiple modalities (text, images, audio, video, PDFs) with up to 1,000 questions per input.</li>
+<li>Gemini Decision 1 uses a single forward pass to score candidate options instead of token-by-token decoding, achieving 150-250ms end-to-end latency for inputs up to 256K tokens.</li>
+<li>The API supports three decision types: <em>noul</em> (yes/no with confidence scores), <em>choice</em> (multiple choice with probabilities), and <em>score</em> (rubric-based grading with weighted scores).</li>
+<li>Pricing is $0.10 per 1M input tokens with no charge for output tokens, significantly cheaper than the Interactions API for comparable tasks; an API no-cost tier is available via Google AI Studio.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -559,54 +606,6 @@
 <li>The model achieves an industry-leading 1 million token limit, significantly expanding its capacity for deep reasoning and multi-step problem solving compared to the previous 64K token limit.</li>
 <li>Gemini 4 Argon achieves state-of-the-art performance on benchmarks including DeepSWE v1.1 (77.9%), Vals Index, AutomationBench (51.3%), LVBench (91.7%), and CWE-bench v1 (68% tie).</li>
 <li>Pricing will initially be $2 per million input tokens and $10 per million output tokens, with cached input tokens at 95% off, before reverting to $4/$20 per million.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Google AI Blog</span> · 
-      <span>blog</span>
-      <span> · 2026-09-28</span>
-    </div>
-    <h3><a href="https://blog.google/innovation-and-ai/technology/ai/winner-future-vision-xprize/" target="_blank" rel="noopener">Watch the winning trailer from the Future Vision XPRIZE, The Gifted.</a></h3>
-    
-    <div class="summary"><p>Filmmaker Jeff Synthesized won the Future Vision XPRIZE for <em>The Gifted</em>, a film depicting an 11-year-old recreating his mother’s voice and essence using code. The project, selected from over 2,500 entries, highlights the potential of technology for empathy and community care, and will receive $100,000 and $2.5 million in production funding via Google’s 100 ZEROS initiative. The article does not detail specific technical implementations or AI models used in the film’s creation.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">DeepMind Blog</span> · 
-      <span>research</span>
-      <span> · 2026-09-24</span>
-    </div>
-    <h3><a href="https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/" target="_blank" rel="noopener">Introducing Gemini 3.8 Live with Live Avatar</a></h3>
-    
-    <div class="summary"><p>Gemini 3.8 Live with Live Avatar adds real-time visual presence to conversational AI for enterprise applications.</p>
-<ul>
-<li>The feature combines low-latency streaming video with live dialogue capabilities from the Gemini 3.8 Live model.</li>
-<li>Live Avatar supports asynchronous tool execution, allowing tool calls and data fetching in the background during active dialogue.</li>
-<li>It offers native multilingual speech-to-speech synchronization, adapting lip-sync and expressions across 97 languages without impacting video quality.</li>
-<li>Custom avatars can be generated from reference images, preserving likeness and brand styling, currently available through enterprise allowlisting; all generated content is watermarked with SynthID.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">DeepMind Blog</span> · 
-      <span>research</span>
-      <span> · 2026-09-23</span>
-    </div>
-    <h3><a href="https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/" target="_blank" rel="noopener">Gemini 3.8 text-to-speech says hello</a></h3>
-    
-    <div class="summary"><p>Gemini 3.8 Flash TTS and Gemini 3.8 Flash-Lite TTS are new text-to-speech models providing enhanced voice customization and expressive audio generation.</p>
-<ul>
-<li>Gemini 3.8 Flash TTS creates new voices from natural language prompts and allows line-by-line control over pacing, emotion, and dialect for applications like gaming and audiobooks.</li>
-<li>Gemini 3.8 Flash-Lite TTS is optimized for high-volume, cost-efficient applications like dubbing and voice agents, also with fine-grained control over speech characteristics.</li>
-<li>The models achieved #1 ranking on Hume AI’s Voice Design Benchmark (71.4) and Overall Quality Index, with improvements in long-form content and dual-speaker control compared to Gemini 3.1 Flash TTS.</li>
-<li>Safety features include consent verification for voice replication, SynthID watermarking, and C2PA credentials; the models support over 100 languages and are available via Gemini API, Google AI Studio, Gemini Enterprise, Gemini Notebook, and Google Vids.</li>
 </ul></div>
     
   </div>

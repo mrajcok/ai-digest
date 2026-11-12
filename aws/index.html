@@ -80,13 +80,245 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-11-11 11:18 UTC</p>
+  <p class="generated-at">Generated 2026-11-12 11:18 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">November 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-12</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-autonomous-ai-agents-with-amazon-bedrock-and-spring-ai/" target="_blank" rel="noopener">Build autonomous AI agents with Amazon Bedrock and Spring AI</a></h3>
+    
+    <div class="summary"><h2>Build autonomous AI agents with Amazon Bedrock and Spring AI</h2>
+<p>This post details building autonomous AI agents in Java using Spring AI and Amazon Bedrock, focusing on scalability, governance, and operational concerns.</p>
+<ul>
+<li>The solution leverages <strong>Amazon Bedrock AgentCore</strong> for building, deploying, and scaling agents, and <strong>Spring AI 2.0</strong> with <strong>spring-ai-agentcore 2.0</strong> to bring AI capabilities to the JVM using familiar Spring patterns.</li>
+<li>Agents are defined by three core capabilities: <strong>Planning</strong> (breaking down goals into steps), <strong>Tool Use</strong> (invoking external functions/APIs), and <strong>Memory</strong> (maintaining context across interactions).</li>
+<li>Two example systems are presented: a <strong>travel assistant</strong> demonstrating tool calling and memory, and a <strong>multi-agent intelligent document processing (IDP) system</strong> with specialist agents, rules, and alerting.</li>
+<li>The solution requires <strong>Java 21</strong>, <strong>Spring Boot 4.1</strong>, <strong>Maven 3.9+</strong>, <strong>Node.js 18+</strong>, <strong>Terraform 1.5+</strong>, <strong>Docker</strong>, and an <strong>AWS account</strong> and utilizes the <code>@AgentCoreInvocation</code> annotation for automatic endpoint wiring and handling of the AgentCore runtime contract.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-11</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-usage-based-pricing-for-amazon-sagemaker-ai-bidirectional-streaming/" target="_blank" rel="noopener">Introducing usage-based pricing for Amazon SageMaker AI bidirectional streaming</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon SageMaker AI now supports usage-based metering for bidirectional streaming inference, enabling model providers to charge customers based on actual consumption via AWS Marketplace.</li>
+<li>The system utilizes a companion WebSocket connection alongside the primary inference stream to transmit metering data as JSON frames, defining usage with the “inference.count” dimension and “ConsumedUnits” field.</li>
+<li>Model servers indicate support for this feature via the <code>X-Amzn-SageMaker-Metadata-Stream-Supported</code> header and can optionally halt inference if the metadata stream fails using <code>X-Amzn-SageMaker-Metadata-Stream-Required</code>.</li>
+<li>Deepgram is the initial launch partner, offering Speech-to-Text (STT) and Text-to-Speech (TTS) billing through this new metering capability, with a rate quota of one message per second per connection, and a maximum message size of 512 bytes.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-11</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/uaef-a-framework-agnostic-system-for-closed-loop-evaluation-of-ai-agents/" target="_blank" rel="noopener">UAEF: A framework-agnostic system for closed-loop evaluation of AI agents</a></h3>
+    
+    <div class="summary"><p>UAEF is a framework-agnostic system for evaluating AI agents, enabling consistent metric scoring across different frameworks like LangChain, LangGraph, and Amazon Bedrock AgentCore.</p>
+<ul>
+<li>It converts agent execution traces into a common “AgentTrace” format using adapters, allowing for framework-independent evaluation.</li>
+<li>UAEF includes 36 built-in metrics across 7 quality dimensions – Tool Calling, Response Quality, Responsible AI, Performance, Multi-turn, Multi-agent, and Reasoning – with scores normalized to a [0, 1] scale.</li>
+<li>Evaluation results are stored in Amazon DynamoDB (metadata) and Amazon S3 (full results) and include PII detection before storage.</li>
+<li>UAEF features experiment management &amp; comparison tools, identifying regressions and improvements between agent versions, and generates statistical reports &amp; LLM-generated insights to guide iteration.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-11</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/accelerating-product-development-with-ai-driven-lifecycle-management-ai-pdlc-in-aws-quick/" target="_blank" rel="noopener">Accelerating product development with AI-driven lifecycle management (AI-PDLC) in AWS Quick</a></h3>
+    
+    <div class="summary"><p>AWS Quick introduces the AI-Driven Product Development Lifecycle (AI-PDLC), a framework utilizing six specialized agents to accelerate the upstream product development process.</p>
+<ul>
+<li>AI-PDLC leverages AWS Quick agents – Discovery, Prioritize, Working Backwards, Spec Generator, Designer, and an Orchestrator – to process data from enterprise tools like Slack, Jira, Salesforce, and SharePoint.</li>
+<li>The framework outputs a “prototype_spec.md” containing acceptance criteria, personas, screens, and data models, traceable to original customer signals, designed for handoff to coding agents.</li>
+<li>AI-PDLC supports two modes: “Deep Discovery” for thorough exploration and “Fast Track” for rapid execution, and uses a human approval gate at each stage.</li>
+<li>The agents utilize the Agent Client Protocol (ACP), an open standard allowing integration with coding agents like Kiro or Claude Code, with a full suite of agents and setup instructions available on GitHub.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-11</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/accelerating-generative-ai-delivery-with-reusable-assets/" target="_blank" rel="noopener">Accelerating generative AI delivery with reusable assets</a></h3>
+    
+    <div class="summary"><ul>
+<li>AWS has released 23 production-ready, open-source generative AI assets from the AWS Generative AI Innovation Center (now part of AWS Frontier AI Engineering &amp; Services) to accelerate development.</li>
+<li>Assets cover areas like RAG pipelines, document processing (including a GenAI IDP Accelerator achieving a 7x throughput increase for Ricoh), agent scaffolding (with a Fullstack AgentCore Solution Template (FAST) and Agentic Chatbot Accelerator), and contact center solutions (like one used by DoorDash and Lyft achieving a 50x capacity increase).</li>
+<li>The Contact Center GenAI Agent asset integrates with Amazon Connect and utilizes Amazon Bedrock Knowledge Bases for RAG, offering features like automated question answering and security controls with Amazon Bedrock Guardrails.</li>
+<li>Deployment of assets is streamlined through infrastructure-as-code (AWS CDK, Terraform) and includes documentation, testing frameworks, and validation examples, potentially reducing development time from months to weeks.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-11</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-dxc-technology-built-a-multi-model-ai-substrate-on-amazon-bedrock/" target="_blank" rel="noopener">How DXC Technology built a multi-model AI substrate on Amazon Bedrock</a></h3>
+    
+    <div class="summary"><p>DXC Technology built a multi-model AI substrate, DXC OASIS, on Amazon Bedrock to govern and orchestrate AI agents for enterprise IT operations.</p>
+<ul>
+<li>DXC OASIS accesses foundation models – including Anthropic Claude, Amazon Nova, Meta Llama, and open-weight families – through a single Amazon Bedrock API.</li>
+<li>Amazon Bedrock Guardrails are used for uniform content filtering, PII redaction, and denied-topic policies across all models, combined with custom operational policy enforcement in the DXC harness.</li>
+<li>The architecture utilizes AWS PrivateLink to keep inference traffic within the customer’s VPC, and leverages serverless scaling with Amazon EKS, coupled with resilience controls like tenant isolation and multi-model access.</li>
+<li>DXC OASIS separates model access (Bedrock substrate) from orchestration and governance (DXC harness), achieving a 95% reduction in resolution time across 56 measured use cases since its general availability in March 2026.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-11</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/automating-aws-agent-registry-updates-with-push-based-architecture/" target="_blank" rel="noopener">Automating AWS Agent Registry updates with push-based architecture</a></h3>
+    
+    <div class="summary"><p>Automates updates to the AWS Agent Registry, ensuring consumers have access to current metadata for Model Context Protocol (MCP) servers.</p>
+<ul>
+<li>Uses AWS CloudTrail to capture <code>UpdateAgentRuntime</code> API calls, triggering the update process.</li>
+<li>Employs Amazon EventBridge to route events to an AWS Lambda function, supporting both single- and multi-account setups with cross-account forwarding.</li>
+<li>The Lambda function securely authenticates with the MCP server using AgentCore Identity, retrieves the latest tools information, and compares it to the existing registry record.</li>
+<li>Updates the Agent Registry record only if changes are detected in the schema, maintaining the registry as a source of truth.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-11</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/the-attendees-guide-to-the-aws-reinvent-2026-ai-ml-track/" target="_blank" rel="noopener">The attendee’s guide to the AWS re:Invent 2026 AI/ML track</a></h3>
+    
+    <div class="summary"><p>AWS re:Invent 2026 will feature over 140 AI/ML sessions covering the full AWS AI stack.</p>
+<ul>
+<li>AWS offers a tiered AI stack including infrastructure, AI chips (Trainium &amp; NVIDIA GPUs), data foundations (Context), models (Bedrock &amp; SageMaker), agent development (Bedrock AgentCore), and ready-to-use agentic solutions.</li>
+<li>Amazon Bedrock provides managed access to hundreds of models via a unified API, while Amazon SageMaker AI provides full control for custom model training and deployment.</li>
+<li>AWS Trainium, purpose-built for AI workloads, is highlighted alongside NVIDIA GPUs as compute options, with sessions detailing their use and comparison (e.g., AIM211, AIM310).</li>
+<li>Amazon SageMaker AI sessions focus on customization, deployment, and scaling of models, including workshops on fine-tuning LLMs and utilizing SageMaker HyperPod for large-scale training (e.g., AIM342, AIM402, AIM433).</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-11</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/icymi-what-landed-for-ai-builders-in-october-2026/" target="_blank" rel="noopener">ICYMI: What landed for AI builders in October 2026</a></h3>
+    
+    <div class="summary"><p>AWS released numerous updates to its AI services in October, focused on flexibility, reliability, and cost optimization.</p>
+<ul>
+<li><strong>Claude Haiku 5.5</strong> is now available on Amazon Bedrock, offering 75% cost reduction and effort controls for high-volume tasks.</li>
+<li><strong>OpenAI GPT-6.1 Terra</strong> is generally available on Bedrock, delivering performance on par with GPT-6 Astra but with 3x faster speed and 50% lower token prices, handling up to 1 million tokens. Ultrafast mode is also now available for <strong>GPT-6.1 Sol</strong>.</li>
+<li><strong>Amazon Nova 2.5 Sonic</strong> improves reasoning and latency for speech-to-speech applications, maintaining the same price as Amazon Nova 2 Sonic.</li>
+<li><strong>AgentCore</strong> updates include a v1.0 CLI, Gateway supporting model fallback and VPC access, and integration with AWS Step Functions for reliable workflow execution. Structured outputs are now available for all <strong>Claude</strong> models. <strong>Strands</strong> received updates including Bidi Agents being generally available, a developer preview of Strands Box (a local sandbox), and enhanced evaluation capabilities with Strands Evals.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-11</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-the-web-search-api-on-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Introducing the Web Search API on Amazon Bedrock AgentCore</a></h3>
+    
+    <div class="summary"><ul>
+<li>The Web Search API for Amazon Bedrock AgentCore allows direct web searches via API call, bypassing the need for AgentCore Gateway setup for simpler integrations.</li>
+<li>The API, <code>InvokeWebSearch</code>, supports domain filtering (include/exclude up to 100 domains) and date filtering (publishedAfter/Before using RFC 3339 format) to refine search results.</li>
+<li>Results return up to 25 ranked results including text extract, title, URL and publication time (when available), accessible through the AWS SDKs or CLI with standard AWS IAM credentials.</li>
+<li>The API utilizes AWS Signature Version 4 (SigV4) for authentication and integrates with existing enterprise controls like IAM policies, CloudTrail logging, and AWS PrivateLink for secure access.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-11</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/detecting-and-recovering-from-silent-data-corruption-on-amazon-sagemaker-hyperpod/" target="_blank" rel="noopener">Detecting and recovering from silent data corruption on Amazon SageMaker HyperPod</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon SageMaker HyperPod now includes three checks within a PyTorch DistributedDataParallel (DDP) training loop to detect silent data corruption (SDC), which occurs when hardware errors don't raise exceptions but introduce incorrect values into training.</li>
+<li>The first check identifies non-finite gradients (NaN, Inf, overflow) before and after the all-reduce step. The second, a “ring replay audit,” recomputes micro-batches from other nodes to compare loss bits and gradient fingerprints. The third compares weight fingerprints after the optimizer step.</li>
+<li>The solution utilizes Kubernetes and SageMaker HyperPod features to localize the issue to a specific node upon detection, cordon the node, and initiate replacement. This process leverages DCGM metrics and deep health checks for correlation and confirmation.</li>
+<li>The checks require a SageMaker HyperPod cluster with at least three GPU nodes, a PyTorch DDP training job with a rebuildable data pipeline, checkpoints on shared storage, and access to observability tools and AWS IAM permissions for node management.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-11</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/semantic-diffing-of-formal-policies-with-anti-unification/" target="_blank" rel="noopener">Semantic diffing of formal policies with anti-unification</a></h3>
+    
+    <div class="summary"><p>AWS introduces a semantic diffing engine for formal policies using anti-unification to identify meaningful changes beyond syntactic differences.</p>
+<ul>
+<li>The engine uses anti-unification to find the most specific common pattern between two policy expressions, revealing shared structure and pinpointing disagreements.</li>
+<li>It operates on an e-graph, leveraging algebraic laws and domain rules to equate expressions, enabling comparison of policies despite variations in syntax.</li>
+<li>A key use case is comparing formalizations generated by Large Language Models (LLMs) – running the model multiple times and using semantic diffing to review changes.</li>
+<li>The engine can process policies written in SMT-LIB, Cedar, Dogwood, OpenShell, and CEL formats, identifying semantic differences despite variations in language syntax; it requires S-expression syntax familiarity and provides a command-line interface for use with a pinned Rust toolchain.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-11</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/openai-codex-on-amazon-bedrock/" target="_blank" rel="noopener">OpenAI Codex on Amazon Bedrock</a></h3>
+    
+    <div class="summary"><h2>OpenAI Codex on Amazon Bedrock: Summary</h2>
+<p>This post details how to securely integrate OpenAI’s Codex with Amazon Bedrock, focusing on maintaining existing AWS identity, IAM, and observability practices.</p>
+<ul>
+<li>Codex inference can be run through Amazon Bedrock using models like <code>us.openai.gpt-5.6-sol</code>, <code>Sol</code>, <code>Terra</code>, and <code>Luna</code> – ensuring model availability in the desired AWS Region is checked beforehand.</li>
+<li>Three rollout paths are outlined: Native AWS Access (direct access using IAM Identity Center), AgentCore Gateway (AWS-managed routing and controls), or an LLM Gateway (for organizations with existing gateways or custom control needs).</li>
+<li>Native AWS Access utilizes existing workforce identity providers (like Okta with SAML/SCIM) to issue temporary AWS credentials to Codex users, requiring minimal operational overhead for a pilot program.</li>
+<li>Observability is achieved using Codex OpenTelemetry, Amazon Bedrock service records, and AWS identity/billing data.  A CloudWatch dashboard is provided for monitoring client activity, and establishing accountability is supported through correlating data sources.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -382,236 +614,6 @@
 <li>Employs Amazon Bedrock AgentCore runtime to validate Okta’s authorization grants and AgentCore Identity to redeem them for short-lived access tokens, adding approximately 0.6 seconds to a 30-second request.</li>
 <li>Architecture involves three tokens: an ID token (user identity), an ID-JAG (Okta’s decision), and an access token (resource accepted), with requests flowing through Okta for authorization and AgentCore for token management.</li>
 <li>Requires an AWS account with access to Amazon Bedrock AgentCore, an Okta organization with XAA configured, and prerequisite software like Python and the AgentCore CLI for a walkthrough taking approximately one hour.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-06</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/govern-ai-agent-access-with-okta-cross-app-access-and-amazon-bedrock-agentcore-part-2/" target="_blank" rel="noopener">Govern AI agent access with Okta Cross App Access and Amazon Bedrock AgentCore – Part 2</a></h3>
-    
-    <div class="summary"><p>Amazon Bedrock AgentCore Gateway centralizes access governance for AI agents built with Amazon Bedrock AgentCore.</p>
-<ul>
-<li>The AgentCore Gateway acts as a single front door, redeeming Okta grants for each tool call, replacing the previous per-server authorization checks.</li>
-<li>Cedar policies are used to bind tools to agents and enforce access control, evaluated by the Gateway before tool invocation.</li>
-<li>Integration with Amazon Bedrock AgentCore Observability and Amazon CloudWatch provides a centralized view of every authorization decision, including Okta events.</li>
-<li>A second example agent is demonstrated running on Amazon EKS, showcasing that the Gateway functions independently of the agent runtime environment.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-06</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/serverless-mcp-server-for-ai-agent-data-lake-access-on-amazon-ecs-fargate/" target="_blank" rel="noopener">Serverless MCP server for AI agent data lake access on Amazon ECS Fargate</a></h3>
-    
-    <div class="summary"><p>Serverless MCP server facilitates AI agent access to enterprise data lakes, reducing integration complexity and improving data governance.</p>
-<ul>
-<li>The system utilizes a Model Context Protocol (MCP) server built on Amazon ECS Fargate to provide a centralized, agent-agnostic gateway to a data lake.</li>
-<li>Adding new datasets requires only a JSON metadata file, automating schema discovery and eliminating per-dataset integration code.</li>
-<li>The architecture incorporates Amazon Bedrock Guardrails for responsible AI controls, enforcing content safety policies across all connected agents, and limits Athena queries to SELECT operations.</li>
-<li>The server leverages Amazon Bedrock Knowledge Bases for semantic search, Amazon Athena and Redshift for SQL queries, and Amazon DynamoDB for session state, scaling each layer independently based on workload.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-06</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/taxonomy-of-agentic-primitives-in-amazon-quick/" target="_blank" rel="noopener">Taxonomy of agentic primitives in Amazon Quick</a></h3>
-    
-    <div class="summary"><p>Amazon Quick introduces a taxonomy of agentic primitives based on four key questions: When, What, Who, and How.</p>
-<ul>
-<li><strong>Triggers</strong> initiate work and carry instructions, categorized as human-initiated (conversational), agent-delegated (composable), scheduled (deterministic), or event-driven.</li>
-<li><strong>Agents</strong> are defined as persistent, learning actors, comprised of Instructions (defining persona), Capabilities (tools, skills, workflows), and Learned Context (accumulated memory).</li>
-<li><strong>Capabilities</strong> define <em>how</em> an agent acts, ranging from atomic <strong>Tools</strong> (e.g., send email), to guided <strong>Skills</strong> (instructions &amp; resources), to deterministic <strong>Workflows</strong> (fixed execution order).</li>
-<li>Skills and workflows are designed to be durable beyond LLM improvements; Skills capture expertise, while Workflows provide auditability and deterministic coordination, with the ability to evolve between the two through continuous learning.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-06</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/sagemaker-inference-now-supports-multi-instance-gpu-to-maximize-gpu-utilization-for-model-endpoints/" target="_blank" rel="noopener">SageMaker Inference now supports Multi-Instance GPU to maximize GPU utilization for model endpoints</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon SageMaker Inference now supports GPU partitioning using NVIDIA Multi-Instance GPU (MIG), allowing a single physical GPU to be divided into independent partitions with dedicated compute and memory.</li>
-<li>GPU partitioning is implemented via new optional fields in existing API calls ("AcceleratorPartitionLayouts" and "AcceleratorPartitionType") and does not introduce new API operations or resource types.</li>
-<li>Supported MIG profiles vary by GPU (A100, H100, RTX PRO 4500, RTX PRO 6000) and instance type, offering different combinations of compute units and memory, detailed in NVIDIA's documentation.</li>
-<li>This feature aims to improve GPU utilization, reduce inference costs, and provide hardware-isolated GPU sharing for scenarios like hosting multiple small models, multi-tenant serving, and multi-stage pipelines.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-05</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-amazon-marketplace-evaluates-content-quality-with-amazon-sagemaker-ai/" target="_blank" rel="noopener">How Amazon Marketplace evaluates content quality with Amazon SageMaker AI</a></h3>
-    
-    <div class="summary"><p>Amazon Marketplace uses Amazon SageMaker AI to evaluate A+ Content quality using a multi-model fusion approach.</p>
-<ul>
-<li>A Vision-Language Model (VLM) evaluates complete ecommerce content snapshots holistically, using a rubric across four quality dimensions: Visual Storytelling, Feature Presentation, A+ Layout, and Conversion Optimization.</li>
-<li>Optical Character Recognition (OCR) extracts text and calculates readability signals (Text Density, Character Density, Spacing, Overall Readability) to complement the VLM's semantic assessment.</li>
-<li>A CatBoost classifier is trained on expert annotations and VLM/OCR features, outperforming both standalone VLM and OCR models, achieving 0.94 accuracy and 0.95 F1 score.</li>
-<li>SHAP values are used to explain quality decisions and generate prioritized improvement recommendations via a Large Language Model (LLM), resulting in a 1.4-point increase in average post-revision quality scores.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-05</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/getting-started-with-web-answer-on-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Getting started with Web Answer on Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock AgentCore’s Web Answer is now generally available, providing a synthesized, source-cited answer to natural language questions with a single tool call.</li>
-<li>Web Answer performs agentic search, meaning it plans searches, runs them in parallel, verifies facts, and determines when enough evidence is gathered to produce an answer with citations.</li>
-<li>It differs from Web Search in that Web Search returns ranked URLs while Web Answer runs the entire retrieval, synthesis, and attribution pipeline for a finished, cited answer.</li>
-<li>Setup involves granting the AgentCore Gateway service role <code>bedrock-agentcore:InvokeWebAnswer</code> permission and creating a Web Answer target via the API or console; it's priced at $10 per 1,000 tool calls and available in us-east-1.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-04</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-u-mobile-built-agentic-telco-operations-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How U Mobile built agentic telco operations with Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><p>U Mobile built AiDaH, an AI-driven agentic helpdesk, on Amazon Bedrock AgentCore to automate telco operations and reduce reliance on manual processes.</p>
-<ul>
-<li>AiDaH leverages Amazon Bedrock AgentCore’s managed agent runtime, eliminating the need for agent infrastructure management, and built-in memory for maintaining conversational context.</li>
-<li>The system handles over 150 operational scenarios across six business divisions, resulting in up to 84.5% reduction in trouble ticket volumes in key categories.</li>
-<li>AiDaH's architecture features six layers: staff interface (Microsoft Teams), orchestration (Amazon Bedrock AgentCore), specialist agents, gateways/APIs (AgentCore Gateway), data/knowledge (Amazon Bedrock Knowledge Bases &amp; AgentCore memory), and operational systems.</li>
-<li>Key Amazon Bedrock AgentCore capabilities used include Runtime, Memory, Identity, Gateway, and Observability to provide a secure and scalable agentic AI platform.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-04</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-indegene-is-modernizing-and-scaling-enterprise-data-quality-in-life-sciences/" target="_blank" rel="noopener">How Indegene is modernizing and scaling enterprise data quality in life sciences</a></h3>
-    
-    <div class="summary"><p>Indegene has built a Data Quality Agent within its NEXT Unified Data Platform (NEXT UDP) leveraging generative AI to modernize enterprise data quality in life sciences.</p>
-<ul>
-<li>The agent uses Amazon Bedrock, Strands Agents, and Amazon Bedrock AgentCore to generate context-aware data quality rules and produce SQL/Python code.</li>
-<li>It leverages two knowledge bases: an Internal Enterprise knowledge base (business glossaries, SOPs, historical anomalies) and an External Reference knowledge base (standardized data quality frameworks).</li>
-<li>The agent's workflow includes data profiling, anomaly detection, rule creation (Column Level, Table Level, or Custom Query), rule refinement, code generation, and validation.</li>
-<li>The solution integrates with AWS services like Amazon Redshift, Snowflake, AWS Glue Data Catalog, AWS Lambda, Amazon DynamoDB, and Amazon S3 for various functions from data sourcing to rule execution and monitoring.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-04</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/four-layers-of-context-engineering-for-production-ai-agents-how-deep-insight-applies-them-in-working-code/" target="_blank" rel="noopener">Four layers of context engineering for production AI agents: How Deep Insight applies them in working code</a></h3>
-    
-    <div class="summary"><h2>Four layers of context engineering for production AI agents: How Deep Insight applies them in working code</h2>
-<p>This post details a four-layer approach to context engineering for AI agents, addressing limitations of large language model (LLM) context windows, using the Deep Insight open-source solution as a reference implementation built on the Strands Agents SDK and Amazon Bedrock AgentCore.</p>
-<ul>
-<li><strong>Layer 1: Architecture - Isolate Context:</strong> Each agent operates with its own independent context, passing only compressed results to an orchestrator, minimizing shared information using a <code>shared_state</code> dictionary (messages, clues, full_plan, history).</li>
-<li><strong>Layer 2: Prompt Control - Limit Intake:</strong>  Prompts are used to limit each agent’s output through explicit token budgets (e.g., Coder: 1,000-1,500 tokens) and standardized response formats (Status, Completed Tasks, Key Insights, Generated Files). A "self-contained code" principle ensures scripts include all necessary imports, avoiding reliance on prior context.</li>
-<li><strong>Layer 3: Tools - Externalize to Filesystem:</strong> Heavy content is moved out of the context window and into the filesystem using tools like a <code>write_and_execute_tool</code> which writes code to a file and only returns a summary; common logic is reused as modules to avoid code duplication.</li>
-<li><strong>Layer 4: Verification - Independent Agents/Safeguards:</strong> This layer provides a final line of defense with independent verification and safeguards to catch errors and prevent context overflow, though details of this layer are not as thoroughly illustrated in this post.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-04</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/smart-approvals-in-amazon-quick-human-oversight-where-it-matters/" target="_blank" rel="noopener">Smart Approvals in Amazon Quick: Human oversight where it matters</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Quick introduces Smart Approvals, a feature designed to automate approval of eligible agent actions without altering existing permissions or human approval requirements.</li>
-<li>A new classification model evaluates proposed actions against the user’s request and conversation context, considering data destinations and affected parties, leveraging the user’s knowledge graph for relationship understanding.</li>
-<li>Smart Approvals is enabled by default but can be disabled by users, and relies on Custom Permissions for administrative control; it only approves actions where the user setting is "Ask each time" and no other control requires approval.</li>
-<li>Audit evidence of Smart Approvals actions, including permission updates and verdicts, is logged in AWS CloudTrail and Quick activity logs in Amazon CloudWatch Logs, allowing for investigation and correlation with other system logs.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-04</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/use-decision-models-with-amazon-bedrock-agentcore-evaluations/" target="_blank" rel="noopener">Use decision models with Amazon Bedrock AgentCore Evaluations</a></h3>
-    
-    <div class="summary"><p>Amazon Bedrock AgentCore Evaluations now supports incorporating “decision models” – smaller, specialized models – for agent evaluation, alongside existing LLM-as-a-judge and code-based evaluators.</p>
-<ul>
-<li>Decision models are trained to select from a fixed set of options and return calibrated confidence scores instead of generating free-form text, suitable for questions with predefined answers like policy compliance or context matching.</li>
-<li>The service supports integrating decision models via code-based evaluators, showcasing examples using Jev (TypeSafe) and Strands Decider 2B (open-source), with question types including yes/no (“noul”), multiple choice (“choice”), and scored levels.</li>
-<li>Two example evaluators—JevGroundedness/DeciderGroundedness, JevHelpfulness/DeciderHelpfulness, and JevGoalCompletion/DeciderGoalCompletion—are available at the trace and session levels, providing labels and numeric values for AgentCore evaluation.</li>
-<li>The post details a validation process for decision model evaluators, recommending comparison against human-labeled data to assess agreement, calibration, and identify areas for question refinement before deployment.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-03</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-india-based-inference-for-kimi-k3-on-amazon-bedrock/" target="_blank" rel="noopener">Introducing India-based inference for Kimi K3 on Amazon Bedrock</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock now supports in-country inference in India (Mumbai and Hyderabad Regions) for the Kimi K3 model (in.moonshotai.kimi-k3), addressing data residency requirements.</li>
-<li>Kimi K3 supports multi-modal input, including images and PDFs, and can perform OCR and understand Indic languages like Hindi, with the option to set image detail to "high" for improved accuracy.</li>
-<li>The service supports multiple APIs for invoking Kimi K3 (Chat Completions, Responses, Converse, InvokeModel) and offers explicit prompt caching to reduce cost and improve response speed.</li>
-<li>IAM policies can be configured to control access to the India-based inference profiles, and CloudWatch metrics provide visibility into usage, latency, and cache performance.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-03</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/building-ultra-low-latency-voice-ai-applications-on-aws/" target="_blank" rel="noopener">Building ultra-low-latency voice AI applications on AWS</a></h3>
-    
-    <div class="summary"><ul>
-<li>Cartesia’s Sonic model delivers sub-100ms text-to-speech with ultra-realistic voice quality in 44+ languages, achieving first audio byte in approximately 90ms.</li>
-<li>Cartesia's Ink model provides streaming speech-to-text with native turn detection and context-aware end pointing, enabling real-time response from downstream LLMs.</li>
-<li>Sonic is available as a model package on Amazon SageMaker AI through AWS Marketplace for deployment to a VPC endpoint, using instance types like ml.g6e.xlarge and ml.p5.48xlarge.</li>
-<li>Sonic can also be self-managed on EC2 GPU instances (G6, G6e, G5 families) utilizing container images obtained from Cartesia for full control over scaling and networking.</li>
 </ul></div>
     
   </div>

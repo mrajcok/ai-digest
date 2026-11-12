@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-11-11T11:18:15.845576+00:00">Generated 2026-11-11 11:18 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-11-12T11:18:23.785847+00:00">Generated 2026-11-12 11:18 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -133,11 +133,11 @@
   
   <section class="overview">
     <h2 class="overview-heading">Today in AI</h2>
-    <p class="overview-meta">2026-11-11 · 2 vendor sources · vendor sources only</p>
+    <p class="overview-meta">2026-11-12 · 1 vendor source · vendor sources only</p>
     <div class="overview-text"><h2>AI News Synthesis - November 16, 2023</h2>
-<p>The most significant development today centers on expanded model capabilities for complex tasks. Moonshot AI’s Kimi K3.1 Pro Highspeed is now available via Amazon Bedrock, distinguished by its exceptionally large 1-million-token context window and 3T-class architecture. Critically, it boasts up to 3x faster token generation speed than the standard Kimi K3.1 Pro, positioning it specifically for applications demanding sustained reasoning over large datasets – agentic workflows, financial modeling, and complex code generation are specifically cited. The model supports a comprehensive suite of features including tool calling, structured output, configurable reasoning levels, image input, and streaming, all accessible via familiar Bedrock APIs. Cost optimization options are also available through a Flex tier and prompt caching, making it a potentially valuable option for performance-sensitive or cost-constrained projects.</p>
-<p>Beyond raw capability increases, Google demonstrated one creative application of generative AI today with a retrospective dedicated to artist Dr. Esther Mahlangu. Leveraging their Veo video generation model and techniques from their synthetic memories initiative, Google Arts &amp; Culture generated imagery and video footage to supplement and recreate undocumented periods of Dr. Mahlangu’s early life, effectively filling gaps in archival records. This represents a departure from strictly functional AI applications, instead focusing on cultural preservation and historical reconstruction, offering an interesting case study for the potential of generative models to enhance accessibility and understanding of cultural heritage. </p>
-<p>It was a relatively quiet day overall with these two announcements representing the majority of notable updates. The Kimi K3.1 Pro Highspeed release is the most relevant for software engineers and architects actively working with large language models, particularly those needing extended context windows and higher throughput. The Google Arts &amp; Culture project, while compelling, has less direct application for a technical audience but illustrates the broadening scope of generative AI applications.</p></div>
+<p>The most significant development today centers on the growing accessibility of autonomous agent frameworks. Amazon Web Services announced a solution for building autonomous AI agents in Java, integrating Amazon Bedrock AgentCore with Spring AI 2.0 and its associated spring-ai-agentcore 2.0 library. This pairing aims to provide developers already familiar with the Spring ecosystem a pathway to build scalable, governed, and operationally sound AI agents within the Java Virtual Machine. The core of these agents hinges on three functions: planning complex tasks into sequential steps, utilizing external tools and APIs, and maintaining contextual memory across multiple interactions. </p>
+<p>Demonstrating the practical application of this approach, AWS outlined two example systems. A travel assistant showcases the agent’s ability to leverage tool calling and memory management to fulfill user requests, while a more complex intelligent document processing (IDP) system illustrates a multi-agent architecture employing specialized agents, predefined rules, and alert mechanisms.  This multi-agent system hints at more sophisticated workflows that leverage the strengths of individual agents for a more comprehensive solution. </p>
+<p>The implementation requires a specific technology stack, which may influence adoption. Developers will need Java 21, Spring Boot 4.1, Maven 3.9+, Node.js 18+, Terraform 1.5+, Docker, and an active AWS account to fully utilize this functionality. The use of the <code>@AgentCoreInvocation</code> annotation streamlines integration by automating endpoint wiring and handling the runtime contract required for AgentCore.</p></div>
   </section>
   
 
@@ -189,53 +189,46 @@
   <div class="card">
     <div class="meta">
       <a href="google/" class="badge badge-google">Google</a>
+      <span>research</span>
+      <span> · 2026-11-11</span>
+    </div>
+    <h2><a href="https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/" target="_blank" rel="noopener">AlphaGenome 2: Deciphering how cells read DNA to better understand disease</a></h2>
+    
+    <div class="summary"><p>AlphaGenome 2 predicts how DNA sequences and variations impact specific human cell types, offering a significant improvement in variant predictive performance over prior work.</p>
+<ul>
+<li>AlphaGenome 2 is a conditional model that predicts DNA effects for a single biological condition (tissue, cell type, or state) at a time, improving accuracy compared to the parallel approach of AlphaGenome 1.</li>
+<li>Trained on over 107 million individual cell profiles across 68 tissues, the model identifies nearly twice as many variants that change gene expression in cells compared to the original AlphaGenome.</li>
+<li>AlphaGenome 2 can generalize to new single-cell experiments without retraining, predicting effects in unseen cell states using only a small sample of cells.</li>
+<li>The model predicts core DNA function readouts (gene expression, histone modifications, chromatin accessibility) and newly includes DNA methylation, with precomputed predictions available for trait-associated variants across hundreds of cell/tissue conditions.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="google/" class="badge badge-google">Google</a>
       <span>blog</span>
       <span> · 2026-11-11</span>
     </div>
-    <h2><a href="https://blog.google/company-news/outreach-and-initiatives/arts-culture/esther-mahlangu/" target="_blank" rel="noopener">Experience the art and legacy of Dr. Esther Mahlangu</a></h2>
+    <h2><a href="https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop/" target="_blank" rel="noopener">Try Tabletop: Customizable, collaborative spaces for groups to plan, play and do more together.</a></h2>
     
-    <div class="summary"><p>Google Arts &amp; Culture has launched an online retrospective of artist Dr. Esther Mahlangu, utilizing AI to recreate undocumented memories from her early life.</p>
-<ul>
-<li>AI was used to generate still images and videos based on Dr. Mahlangu’s recollections of her childhood (ages 10-1980), filling gaps in archival records.</li>
-<li>The AI-generated materials were created using techniques from the synthetic memories initiative and the Veo video generation model.</li>
-<li>The retrospective includes over 45 stories, archival materials, and virtual tours focused on Dr. Mahlangu’s life and work.</li>
-<li>The project aimed to preserve Ndebele culture and Dr. Mahlangu’s legacy by combining historical research with new video technology.</li>
-</ul></div>
+    <div class="summary"><p>Tabletop is a new Google Labs experiment for real-time collaborative planning, utilizing prompts to generate interactive tools like trip itineraries and polls. Users can interact with Tabletop spaces simultaneously, similar to Google Docs, by adding links, files, and ideas and prompting "@tabletop" or using starter templates. Currently rolling out in the U.S. (18+) via waitlist, it is presented alongside the announcement of the Gemini Decisions API.</p></div>
     
   </div>
   
   <div class="card">
     <div class="meta">
       <a href="google/" class="badge badge-google">Google</a>
-      <span>research</span>
-      <span> · 2026-11-10</span>
+      <span>blog</span>
+      <span> · 2026-11-11</span>
     </div>
-    <h2><a href="https://deepmind.google/blog/introducing-alphaproof-code/" target="_blank" rel="noopener">Introducing AlphaProof Code: a breakthrough in verifying complex software at depth</a></h2>
+    <h2><a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/" target="_blank" rel="noopener">Gemini Decisions API: Fast, calibrated multimodal decisions</a></h2>
     
-    <div class="summary"><p>AlphaProof Code, a new agentic framework from Google DeepMind, formally verified the code of the Signal protocol.</p>
-<ul>
-<li>The system uses a multi-LLM agentic framework, powered by Gemini Carbon, to translate Signal’s security goals into formal mathematical specifications and then generate over six million lines of Lean code to prove the accuracy of the code.</li>
-<li>AlphaProof Code successfully verified key security properties of the Signal protocol implementation – including protection during temporary device compromise – a feat previously unattained for a widely deployed cryptographic protocol.</li>
-<li>The system identified and flagged approximately 1% of the codebase for human review, significantly reducing manual effort; it also correctly identified two reintroduced, previously fixed bugs.</li>
-<li>The verification process completed in four weeks, compared to years for traditional methods, and the formal verification artifacts are being open-sourced.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="google/" class="badge badge-google">Google</a>
-      <span>research</span>
-      <span> · 2026-11-10</span>
-    </div>
-    <h2><a href="https://deepmind.google/blog/gemini-4-carbon-is-now-available/" target="_blank" rel="noopener">Gemini 4 Carbon is now available</a></h2>
-    
-    <div class="summary"><p>Gemini 4 Carbon is now available, offering the strongest performance in cybersecurity and complex reasoning tasks.</p>
-<ul>
-<li>Gemini 4 Carbon surpasses Gemini 4 Argon in performance on complex tasks like coding, debugging, scientific research, and cybersecurity, utilizing more tokens for in-depth analysis.</li>
-<li>Carbon ranks #1 on CursorBench 4.0, Perplexity’s WANDR, and Zapier’s AutomationBench, achieving 2X lower cost per task than the next best model.</li>
-<li>The <code>/swarm</code> feature in Google Antigravity allows users to coordinate a team of Carbon agents for complex projects, like reconstructing 3D models from historical data.</li>
-<li>Carbon is available via API for developers and enterprises (priced at $2/million input tokens, $10/million output tokens) and to Google AI Ultra subscribers in Gemini app, AI Mode in Search, and Google Antigravity.</li>
+    <div class="summary"><ul>
+<li>The Gemini Decisions API, powered by the Gemini Decision 1 model (gemini-decision-1), enables fast, probabilistic decisions across multiple modalities (text, images, audio, video, PDFs) with up to 1,000 questions per input.</li>
+<li>Gemini Decision 1 uses a single forward pass to score candidate options instead of token-by-token decoding, achieving 150-250ms end-to-end latency for inputs up to 256K tokens.</li>
+<li>The API supports three decision types: <em>noul</em> (yes/no with confidence scores), <em>choice</em> (multiple choice with probabilities), and <em>score</em> (rubric-based grading with weighted scores).</li>
+<li>Pricing is $0.10 per 1M input tokens with no charge for output tokens, significantly cheaper than the Interactions API for comparable tasks; an API no-cost tier is available via Google AI Studio.</li>
 </ul></div>
     
   </div>
@@ -296,15 +289,34 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
+      <span> · 2026-11-12</span>
+    </div>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/build-autonomous-ai-agents-with-amazon-bedrock-and-spring-ai/" target="_blank" rel="noopener">Build autonomous AI agents with Amazon Bedrock and Spring AI</a></h2>
+    
+    <div class="summary"><h2>Build autonomous AI agents with Amazon Bedrock and Spring AI</h2>
+<p>This post details building autonomous AI agents in Java using Spring AI and Amazon Bedrock, focusing on scalability, governance, and operational concerns.</p>
+<ul>
+<li>The solution leverages <strong>Amazon Bedrock AgentCore</strong> for building, deploying, and scaling agents, and <strong>Spring AI 2.0</strong> with <strong>spring-ai-agentcore 2.0</strong> to bring AI capabilities to the JVM using familiar Spring patterns.</li>
+<li>Agents are defined by three core capabilities: <strong>Planning</strong> (breaking down goals into steps), <strong>Tool Use</strong> (invoking external functions/APIs), and <strong>Memory</strong> (maintaining context across interactions).</li>
+<li>Two example systems are presented: a <strong>travel assistant</strong> demonstrating tool calling and memory, and a <strong>multi-agent intelligent document processing (IDP) system</strong> with specialist agents, rules, and alerting.</li>
+<li>The solution requires <strong>Java 21</strong>, <strong>Spring Boot 4.1</strong>, <strong>Maven 3.9+</strong>, <strong>Node.js 18+</strong>, <strong>Terraform 1.5+</strong>, <strong>Docker</strong>, and an <strong>AWS account</strong> and utilizes the <code>@AgentCoreInvocation</code> annotation for automatic endpoint wiring and handling of the AgentCore runtime contract.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
       <span> · 2026-11-11</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/introducing-kimi-k3-1-pro-on-amazon-bedrock/" target="_blank" rel="noopener">Introducing Kimi K3.1 Pro on Amazon Bedrock</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/introducing-usage-based-pricing-for-amazon-sagemaker-ai-bidirectional-streaming/" target="_blank" rel="noopener">Introducing usage-based pricing for Amazon SageMaker AI bidirectional streaming</a></h2>
     
     <div class="summary"><ul>
-<li>Kimi K3.1 Pro Highspeed, a new model from Moonshot AI, is available on Amazon Bedrock with a 1-million-token context window and 3T-class architecture.</li>
-<li>The model offers up to 3x faster output token generation speed compared to Kimi K3.1 Pro, targeting long-horizon agentic workflows and improved accuracy for professional tasks like financial modeling and code generation.</li>
-<li>It supports features like tool calling, structured output, configurable reasoning (low, high, max), image input, and streaming, and is accessible through existing Bedrock APIs (Chat Completions, Responses, Converse, Invoke).</li>
-<li>Cost optimization is possible via the Flex tier (half the Standard price with potentially longer response times) and explicit prompt caching to reuse stable prefixes, reducing latency and input costs.</li>
+<li>Amazon SageMaker AI now supports usage-based metering for bidirectional streaming inference, enabling model providers to charge customers based on actual consumption via AWS Marketplace.</li>
+<li>The system utilizes a companion WebSocket connection alongside the primary inference stream to transmit metering data as JSON frames, defining usage with the “inference.count” dimension and “ConsumedUnits” field.</li>
+<li>Model servers indicate support for this feature via the <code>X-Amzn-SageMaker-Metadata-Stream-Supported</code> header and can optionally halt inference if the metadata stream fails using <code>X-Amzn-SageMaker-Metadata-Stream-Required</code>.</li>
+<li>Deepgram is the initial launch partner, offering Speech-to-Text (STT) and Text-to-Speech (TTS) billing through this new metering capability, with a rate quota of one message per second per connection, and a maximum message size of 512 bytes.</li>
 </ul></div>
     
   </div>
@@ -313,33 +325,16 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-11-10</span>
+      <span> · 2026-11-11</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-tokenomics-data-lake/" target="_blank" rel="noopener">Amazon Bedrock tokenomics data lake</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/uaef-a-framework-agnostic-system-for-closed-loop-evaluation-of-ai-agents/" target="_blank" rel="noopener">UAEF: A framework-agnostic system for closed-loop evaluation of AI agents</a></h2>
     
-    <div class="summary"><ul>
-<li>This solution builds a centralized observability data lake for Amazon Bedrock invocations, pulling raw logs from linked accounts into a central account via Amazon CloudWatch, Data Firehose, and Athena.</li>
-<li>The data lake captures details of each invocation including the prompt, model response, input/output token counts, model used, stop reason, account, timestamp, and IAM role.</li>
-<li>The architecture is deployed as Infrastructure as Code using two AWS CloudFormation templates and data is stored in Parquet format in Amazon S3, queryable via Amazon Athena.</li>
-<li>Integration with the AWS Cost and Usage Report (CUR) 2.0 using the IAM ARN as a join key enables cost attribution at the individual prompt level, supporting “tokenomics” practices.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-11-10</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-tcs-built-an-agentic-test-orchestrator-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How TCS built an agentic test orchestrator with Amazon Bedrock AgentCore</a></h2>
-    
-    <div class="summary"><p>TCS built an agentic test orchestrator leveraging Amazon Bedrock AgentCore to automate testing for BFSI clients, significantly reducing manual effort.</p>
+    <div class="summary"><p>UAEF is a framework-agnostic system for evaluating AI agents, enabling consistent metric scoring across different frameworks like LangChain, LangGraph, and Amazon Bedrock AgentCore.</p>
 <ul>
-<li>The platform uses Amazon Bedrock AgentCore to host specialized agents built with the Strands Agents SDK, enabling scalable and isolated execution of testing tasks.</li>
-<li>Amazon Bedrock's model choice allows each agent to utilize the most suitable model (e.g., for scenario design or code generation), with the flexibility to adopt new models as they become available.</li>
-<li>The solution integrates with tools like Jira, GitLab, and Amazon ECS, storing data in Amazon S3 and DynamoDB, with security enforced by AWS WAF, KMS, and Cognito.</li>
-<li>TCS achieved an 88% reduction in test scenario effort (from 2 hours to 14 minutes per scenario in a benchmark) by automating requirement interpretation, script generation, execution, and reporting.</li>
+<li>It converts agent execution traces into a common “AgentTrace” format using adapters, allowing for framework-independent evaluation.</li>
+<li>UAEF includes 36 built-in metrics across 7 quality dimensions – Tool Calling, Response Quality, Responsible AI, Performance, Multi-turn, Multi-agent, and Reasoning – with scores normalized to a [0, 1] scale.</li>
+<li>Evaluation results are stored in Amazon DynamoDB (metadata) and Amazon S3 (full results) and include PII detection before storage.</li>
+<li>UAEF features experiment management &amp; comparison tools, identifying regressions and improvements between agent versions, and generates statistical reports &amp; LLM-generated insights to guide iteration.</li>
 </ul></div>
     
   </div>
@@ -395,16 +390,16 @@
     <div class="meta">
       <a href="techcrunch/" class="badge badge-techcrunch">TechCrunch</a>
       <span>news</span>
-      <span> · 2026-11-11</span>
+      <span> · 2026-11-12</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/11/10/nvidias-crisis-has-corporate-governance-experts-reaching-for-the-popcorn/" target="_blank" rel="noopener">Nvidia’s crisis has corporate governance experts reaching for the popcorn</a></h2>
+    <h2><a href="https://techcrunch.com/2026/11/11/who-could-replace-jensen-huang-a-highly-unscientific-list-of-possible-successors/" target="_blank" rel="noopener">Who could replace Jensen Huang? A highly unscientific list of possible successors</a></h2>
     
-    <div class="summary"><p>Nvidia is facing a corporate governance crisis following reports of CEO Jensen Huang’s personal relationship and potential national security concerns.</p>
+    <div class="summary"><p>TechCrunch outlines potential successors to Nvidia CEO Jensen Huang amid personal and professional scrutiny.</p>
 <ul>
-<li>The Nvidia board has hired the law firm Wachtell, Lipton, Rosen &amp; Katz to conduct an internal investigation into the matter.</li>
-<li>Concerns center on whether Huang disclosed a relationship with Alice Huang, who U.S. intelligence agencies suspect of being a Chinese spy, and if any confidential information was compromised.</li>
-<li>Nvidia maintains it has “no reason to believe that either national security or NVIDIA secrets were compromised.”</li>
-<li>The situation has prompted discussion about Nvidia’s board structure, lack of a clear succession plan, and the employment of Huang’s children within the company.</li>
+<li>Lisa Su, CEO of AMD, was suggested as a candidate but may benefit from Nvidia’s current distractions.</li>
+<li>Eric Schmidt, former Google CEO, was proposed by a Yale School of Management dean, though baggage from past issues may hinder his candidacy.</li>
+<li>Lip-Bu Tan, CEO of Intel, might see a move to Nvidia as a strategic opportunity given Intel's recent financial challenges.</li>
+<li>Internal candidates including Ian Buck (VP and CUDA developer), Andrew Bell (SVP of hardware engineering), Colette Kress (CFO), and even Jensen Huang’s wife, Lori Huang, are also being considered.</li>
 </ul></div>
     
   </div>
@@ -413,16 +408,16 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-11-10</span>
+      <span> · 2026-11-11</span>
     </div>
-    <h2><a href="https://arstechnica.com/gadgets/2026/11/ukraines-fiber-optic-drones-get-squeezed-by-ai-data-center-demand/" target="_blank" rel="noopener">Ukraine’s fiber-optic drones get squeezed by AI data center demand</a></h2>
+    <h2><a href="https://arstechnica.com/ai/2026/11/signals-encryption-just-passed-an-ai-powered-mathematical-checkup/" target="_blank" rel="noopener">Google DeepMind just mathematically verified key parts of Signal</a></h2>
     
-    <div class="summary"><p>Ukraine’s fiber-optic drone production is facing challenges due to increased demand and supply chain issues.</p>
+    <div class="summary"><p>Google DeepMind mathematically verified key components of the Signal protocol using AI.</p>
 <ul>
-<li>Both Russia and Ukraine are utilizing fiber-optic drones, which are resistant to jamming, but require skilled pilots and are more costly than traditional radio-controlled drones.</li>
-<li>Demand for optical fiber has surged due to both drone warfare (estimated 50,000 drones/month between Russia and Ukraine) and the global AI data center buildout—TrendForce forecasts a 111 million mile shortfall in 2026.</li>
-<li>China is the primary supplier of fiber-optic cable, with Russia importing significantly more (328,000 miles in August 2025) than Ukraine (72 miles in August 2025).</li>
-<li>Ukrainian manufacturers like BlueBird Tech are adapting by bringing spooling processes in-house to improve quality control and reduce reliance on finished imports, despite rising costs (6-10x increases in 2025-2026).</li>
+<li>Researchers utilized a new AI framework, AlphaProof Code, to formally verify cryptographic guarantees within Signal.</li>
+<li>The verification process, conducted as a proof-of-concept, successfully identified known vulnerabilities in older versions of Signal.</li>
+<li>The project focused on specific parts of the Signal protocol, not the entire application, and took approximately four weeks to complete.</li>
+<li>DeepMind is releasing the specifications and proof developed during the analysis to encourage further formal verification efforts.</li>
 </ul></div>
     
   </div>
