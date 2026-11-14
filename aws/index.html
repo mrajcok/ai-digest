@@ -80,13 +80,137 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-11-13 11:18 UTC</p>
+  <p class="generated-at">Generated 2026-11-14 11:18 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">November 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-13</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-a-model-improvement-flywheel-with-amazon-sagemaker-hyperpod-data-capture/" target="_blank" rel="noopener">Build a model improvement flywheel with Amazon SageMaker HyperPod Data Capture</a></h3>
+    
+    <div class="summary"><p>Amazon SageMaker HyperPod now offers Data Capture, a built-in capability for recording live inference data to Amazon S3.</p>
+<ul>
+<li>Data Capture operates at three tiers – endpoint, load balancer, and model pod – allowing flexible configuration for compliance, monitoring, or training data collection.</li>
+<li>It captures full request/response payloads, ALB access logs, and event metadata with minimal latency impact and no downtime.</li>
+<li>Tier 3 allows capturing full payloads, which requires using sampling, AWS KMS encryption, S3 lifecycle rules, and PII redaction to protect sensitive data.</li>
+<li>A complete example demonstrates capturing data, analyzing it with Athena, labeling it with SQL, fine-tuning a Qwen2.5-3B-Instruct model using the captured data, and redeploying—all within a single HyperPod cluster.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-13</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/cost-attribution-and-controls-for-ai-developer-and-productivity-tools-on-amazon-bedrock/" target="_blank" rel="noopener">Cost attribution and controls for AI developer and productivity tools on Amazon Bedrock</a></h3>
+    
+    <div class="summary"><p>Amazon Bedrock now offers zero-instrumentation cost attribution, tracing inference calls to the IAM principal making them, with data flowing into AWS Cost and Usage Reports (CUR 2.0) and Cost Explorer.</p>
+<ul>
+<li>Attribution works for all tools invoking Bedrock via the <code>bedrock-runtime</code> or <code>bedrock-mantle</code> endpoints, including Claude Code, Claude Desktop, OpenAI Codex, ChatGPT Work, and OpenCode.</li>
+<li>Configuration involves setting up IAM Identity Center with an external identity provider for per-user attribution, enabling session tags, and configuring Athena queries for cost visibility.</li>
+<li>Multiple attribution mechanisms are available: IAM principal tracking, Application Inference Profiles, Projects/Workspaces, and per-request metadata tagging, which can be combined for different levels of granularity.</li>
+<li>Prerequisites include an AWS account, IAM Identity Center setup, an external IdP with SCIM provisioning, AWS CLI v2, CUR 2.0 with IAM principal data enabled, cost allocation tags activated, and an Athena table configured for querying CUR 2.0 data.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-13</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/cost-optimizing-assemblyai-speech-to-text-inference-on-aws-with-amazon-ec2-spot/" target="_blank" rel="noopener">Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot</a></h3>
+    
+    <div class="summary"><ul>
+<li>AssemblyAI optimized speech-to-text inference costs by 70% using a combination of Amazon ECS, EC2 Spot Instances, and Amazon SQS.</li>
+<li>The architecture leverages ECS capacity providers with a mix of On-Demand and Spot Instances, diversifying across NVIDIA GPU instance families (g4dn, g5, g6 – T4, A10G, and L4 GPUs respectively).</li>
+<li>Amazon SQS is used as a queue-based retry mechanism to recover from Spot Instance interruptions; incomplete jobs are returned to the queue for processing by healthy instances.</li>
+<li>Regional deployment in AWS Regions like US West (Oregon) and Europe (London) supports data residency requirements, running independent copies of the inference architecture in each region.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-13</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/openfold3-on-amazon-sagemaker-jumpstart-predict-biomolecular-structures/" target="_blank" rel="noopener">OpenFold3 on Amazon SageMaker JumpStart: Predict biomolecular structures</a></h3>
+    
+    <div class="summary"><p>OpenFold3, a biomolecular structure prediction model, is now available on Amazon SageMaker JumpStart.</p>
+<ul>
+<li>The OpenFold3 model (version 0.4.1, checkpoint of3-p2-155k) predicts 3D structures for proteins, DNA, RNA, ligands, and their complexes.</li>
+<li>It utilizes SageMaker Asynchronous Inference, accepting requests via S3 and providing results (mmCIF format structures and confidence metrics like pLDDT, PAE, and PDE) in S3 as well, with a maximum invocation timeout of 1 hour.</li>
+<li>The service supports instances ml.g6.2xlarge, ml.g6.4xlarge, and ml.g6.12xlarge and can be autoscaled, potentially scaling to zero when idle to reduce costs.</li>
+<li>Users can supply their own multiple sequence alignments (MSAs) for improved accuracy and maintain data privacy by using dedicated S3 buckets with KMS encryption.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-13</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/architecture-patterns-for-fast-session-startup-on-amazon-bedrock-agentcore-runtime/" target="_blank" rel="noopener">Architecture patterns for fast session startup on Amazon Bedrock AgentCore runtime</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock AgentCore runtime V2 improves session startup speed by preparing and snapshotting the container environment once, rather than initializing it for each session, reducing cold start times.</li>
+<li>V2 reclaims unused memory, optimizing resource billing to reflect actual agent usage.</li>
+<li>The platform measures session start time via CloudWatch metrics – <code>Latency</code> (total time) and <code>OverheadLatency</code> (platform overhead) – helping identify bottlenecks and optimize performance.</li>
+<li>Build hooks enable agents to pre-load large files (models, CLIs, browsers) during snapshot creation, reducing initial load times, configurable via <code>hooksConfiguration</code> when creating/updating runtimes.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-13</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/route-coding-agent-requests-to-the-right-model-on-amazon-bedrock-with-nvidia-nemo-switchyard/" target="_blank" rel="noopener">Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard</a></h3>
+    
+    <div class="summary"><p>Route coding agent requests to the right model on Amazon Bedrock using NVIDIA NeMo Switchyard, an open-source library for intelligent model selection.</p>
+<ul>
+<li>LiteLLM v1.102.0, integrated with NVIDIA NeMo Switchyard 0.3.0, enables routing coding agent requests between models to optimize cost per solved task.</li>
+<li>Two routing strategies are available: Stage routing, which chooses a model based on recent request history and results, and Random routing, allowing weighted traffic splitting for A/B testing.</li>
+<li>The solution utilizes Amazon Bedrock Converse/ConverseStream APIs via an Amazon VPC interface endpoint to keep inference traffic within the AWS network.</li>
+<li>Deployment is facilitated using AWS CDK, deploying LiteLLM and the Switchyard plugin to Amazon ECS on AWS Fargate in private subnets, secured by AWS WAF and an Application Load Balancer.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-13</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/production-mlops-at-gs-caltex-with-amazon-sagemaker-canvas-part-1/" target="_blank" rel="noopener">Production MLOps at GS Caltex with Amazon SageMaker Canvas, part 1</a></h3>
+    
+    <div class="summary"><p>Production MLOps at GS Caltex uses Amazon SageMaker Canvas and Pipelines to streamline model deployment and batch inference, reducing deployment time from a week to a few hours and lowering inference costs.</p>
+<ul>
+<li>SageMaker Canvas is used by process engineers for code-free model building and validation, with models registered in the SageMaker Model Registry.</li>
+<li>ML engineers automate the handoff from Canvas to Pipelines by reusing preprocessing flows (built with Data Wrangler) and models, managing data paths, model configuration, and jobs.</li>
+<li>The solution utilizes Amazon S3 for preprocessing flows and Model Registry for model versioning, triggered by Amazon EventBridge for scheduled batch inference (every 30 minutes in the example).</li>
+<li>A reference implementation, available on GitHub, demonstrates preprocessing reuse, model approval/deployment, pipeline construction, and scheduling, with specific code examples covering these connections.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -487,128 +611,6 @@
 <li>It operates on an e-graph, leveraging algebraic laws and domain rules to equate expressions, enabling comparison of policies despite variations in syntax.</li>
 <li>A key use case is comparing formalizations generated by Large Language Models (LLMs) – running the model multiple times and using semantic diffing to review changes.</li>
 <li>The engine can process policies written in SMT-LIB, Cedar, Dogwood, OpenShell, and CEL formats, identifying semantic differences despite variations in language syntax; it requires S-expression syntax familiarity and provides a command-line interface for use with a pinned Rust toolchain.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-11</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/openai-codex-on-amazon-bedrock/" target="_blank" rel="noopener">OpenAI Codex on Amazon Bedrock</a></h3>
-    
-    <div class="summary"><h2>OpenAI Codex on Amazon Bedrock: Summary</h2>
-<p>This post details how to securely integrate OpenAI’s Codex with Amazon Bedrock, focusing on maintaining existing AWS identity, IAM, and observability practices.</p>
-<ul>
-<li>Codex inference can be run through Amazon Bedrock using models like <code>us.openai.gpt-5.6-sol</code>, <code>Sol</code>, <code>Terra</code>, and <code>Luna</code> – ensuring model availability in the desired AWS Region is checked beforehand.</li>
-<li>Three rollout paths are outlined: Native AWS Access (direct access using IAM Identity Center), AgentCore Gateway (AWS-managed routing and controls), or an LLM Gateway (for organizations with existing gateways or custom control needs).</li>
-<li>Native AWS Access utilizes existing workforce identity providers (like Okta with SAML/SCIM) to issue temporary AWS credentials to Codex users, requiring minimal operational overhead for a pilot program.</li>
-<li>Observability is achieved using Codex OpenTelemetry, Amazon Bedrock service records, and AWS identity/billing data.  A CloudWatch dashboard is provided for monitoring client activity, and establishing accountability is supported through correlating data sources.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-11</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-kimi-k3-1-pro-on-amazon-bedrock/" target="_blank" rel="noopener">Introducing Kimi K3.1 Pro on Amazon Bedrock</a></h3>
-    
-    <div class="summary"><ul>
-<li>Kimi K3.1 Pro Highspeed, a new model from Moonshot AI, is available on Amazon Bedrock with a 1-million-token context window and 3T-class architecture.</li>
-<li>The model offers up to 3x faster output token generation speed compared to Kimi K3.1 Pro, targeting long-horizon agentic workflows and improved accuracy for professional tasks like financial modeling and code generation.</li>
-<li>It supports features like tool calling, structured output, configurable reasoning (low, high, max), image input, and streaming, and is accessible through existing Bedrock APIs (Chat Completions, Responses, Converse, Invoke).</li>
-<li>Cost optimization is possible via the Flex tier (half the Standard price with potentially longer response times) and explicit prompt caching to reuse stable prefixes, reducing latency and input costs.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-10</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-tokenomics-data-lake/" target="_blank" rel="noopener">Amazon Bedrock tokenomics data lake</a></h3>
-    
-    <div class="summary"><ul>
-<li>This solution builds a centralized observability data lake for Amazon Bedrock invocations, pulling raw logs from linked accounts into a central account via Amazon CloudWatch, Data Firehose, and Athena.</li>
-<li>The data lake captures details of each invocation including the prompt, model response, input/output token counts, model used, stop reason, account, timestamp, and IAM role.</li>
-<li>The architecture is deployed as Infrastructure as Code using two AWS CloudFormation templates and data is stored in Parquet format in Amazon S3, queryable via Amazon Athena.</li>
-<li>Integration with the AWS Cost and Usage Report (CUR) 2.0 using the IAM ARN as a join key enables cost attribution at the individual prompt level, supporting “tokenomics” practices.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-10</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-tcs-built-an-agentic-test-orchestrator-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How TCS built an agentic test orchestrator with Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><p>TCS built an agentic test orchestrator leveraging Amazon Bedrock AgentCore to automate testing for BFSI clients, significantly reducing manual effort.</p>
-<ul>
-<li>The platform uses Amazon Bedrock AgentCore to host specialized agents built with the Strands Agents SDK, enabling scalable and isolated execution of testing tasks.</li>
-<li>Amazon Bedrock's model choice allows each agent to utilize the most suitable model (e.g., for scenario design or code generation), with the flexibility to adopt new models as they become available.</li>
-<li>The solution integrates with tools like Jira, GitLab, and Amazon ECS, storing data in Amazon S3 and DynamoDB, with security enforced by AWS WAF, KMS, and Cognito.</li>
-<li>TCS achieved an 88% reduction in test scenario effort (from 2 hours to 14 minutes per scenario in a benchmark) by automating requirement interpretation, script generation, execution, and reporting.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-10</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/autonomous-treasury-agents-how-trovata-built-an-ai-native-solution-on-amazon-bedrock-and-agentcore/" target="_blank" rel="noopener">Autonomous treasury agents: How Trovata built an AI-native solution on Amazon Bedrock and AgentCore</a></h3>
-    
-    <div class="summary"><ul>
-<li>Trovata launched autonomous treasury agents built on <strong>Amazon Bedrock</strong> and <strong>Amazon Bedrock AgentCore</strong> to automate cash and liquidity management tasks.</li>
-<li>The solution utilizes <strong>Amazon Bedrock</strong> for LLM inference (natural language understanding and generation) and <strong>Amazon Bedrock AgentCore</strong> for agent orchestration, role-based access control (RBAC), and secure execution.</li>
-<li>Key use cases demonstrated include automated cash forecasting, natural language querying of bank data, anomaly detection, automated reconciliation, and persistent agentic workflows.</li>
-<li>Trovata reports $1M+ in annualized cost savings and a 77% reduction in annual TMS costs for customers deploying these agents, leveraging AgentCore’s capabilities like agent orchestration and enterprise RBAC.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-10</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/the-agent-evaluation-playbook-built-in-deepeval-and-autoeval-on-agentcore/" target="_blank" rel="noopener">The agent evaluation playbook: Built-in, DeepEval, and AutoEval on Amazon Bedrock AgentCore Evaluations</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock AgentCore Evaluations introduces a framework for evaluating agents beyond basic functionality, focusing on business outcomes through observable behaviors.</li>
-<li>The system leverages three tiers of evaluators: built-in evaluators (AWS authored and quality-tested, e.g., <code>Builtin.GoalSuccessRate</code>), third-party managed evaluators (DeepEval and AutoEval hosted and run by AgentCore), and custom evaluators based on existing ones.</li>
-<li>A “multi-dimension evaluator” allows for LLM-as-a-judge approaches that score multiple, independent criteria (e.g. accuracy, compliance, politeness) from a single trace, providing granular insights beyond a composite score.</li>
-<li>The service supports three evaluation modes: on-demand (development/debugging via API calls like <code>client.evaluate()</code>), online (real-time monitoring of live traffic), and batch (regression testing against pre-defined datasets).</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-10</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-a-daily-dependency-watcher-with-langgraph-and-amazon-bedrock-agentcore-web-search/" target="_blank" rel="noopener">Build a daily dependency watcher with LangGraph and Amazon Bedrock AgentCore web search</a></h3>
-    
-    <div class="summary"><ul>
-<li>The Amazon Bedrock AgentCore Web Search API is now available, providing agents and applications with current web results via a single API call authenticated with existing AWS credentials, ensuring queries remain within the AWS cloud environment.</li>
-<li>The API returns search results including page title, URL, publication date, and relevant extracts, with options to include/exclude domains and filter by publication date range.</li>
-<li>Integration with LangChain, specifically through the <code>langchain-aws</code> package and LangGraph, allows for building agents with cited search results and enforcing rules like date windows and source blocklists outside of the model’s control.</li>
-<li>A sample implementation demonstrates a daily dependency watch application using LangGraph, capable of parallel research across multiple package ecosystems, and can be deployed on AgentCore runtime or scaled with AgentCore Gateway.</li>
 </ul></div>
     
   </div>
