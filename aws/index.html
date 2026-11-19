@@ -80,13 +80,223 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-11-18 11:19 UTC</p>
+  <p class="generated-at">Generated 2026-11-19 11:18 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">November 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-19</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/full-fine-tuning-fft-on-sagemaker-ai-serverless-model-customization/" target="_blank" rel="noopener">Full Fine-Tuning (FFT) on SageMaker AI Serverless Model Customization</a></h3>
+    
+    <div class="summary"><p>Amazon SageMaker AI Serverless Model Customization now supports Full Fine-Tuning (FFT), enabling superior model quality by updating all model parameters simultaneously, overcoming limitations of methods like LoRA.</p>
+<ul>
+<li>FFT addresses the limitations of Low-Rank Adaptation (LoRA) by enabling full model parameter updates, improving performance on complex tasks with large datasets.</li>
+<li>Experiments on a Qwen3-4B base model using the Magicoder-Evol-Instruct-110K dataset showed FFT achieved 90.0% LLM-as-Judge semantic correctness, outperforming LoRA as dataset scale increased.</li>
+<li>Key hyperparameters for FFT include a learning rate of 2e-5 for large datasets, a maximum of 3 epochs to avoid catastrophic forgetting, and a global batch size optimized for noise reduction and sufficient optimization steps.</li>
+<li>The service offers serverless infrastructure, eliminating the need for GPU provisioning or distributed training configuration; switching between FFT and LoRA requires only changing <code>TrainingType.FULL</code> to <code>TrainingType.LORA</code> in the SageMaker Python SDK.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-18</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/from-reporting-to-reasoning-getting-enterprise-data-ready-for-ai-agents/" target="_blank" rel="noopener">From reporting to reasoning: Getting enterprise data ready for AI agents</a></h3>
+    
+    <div class="summary"><p>AWS Quick is evolving into a unified AI assistant for work, moving beyond traditional business intelligence.</p>
+<ul>
+<li><strong>AWS Quick Agents &amp; Skills</strong> enable turning natural language questions into reusable, multi-step actions for data-driven decision making.</li>
+<li><strong>Third-party connectors</strong> are built-in to AWS Quick, integrating with services like Salesforce, Slack, Google Drive, and Microsoft 365.</li>
+<li>The platform provides a <strong>unified workspace</strong> combining research, visual generation, and business artifact creation (presentations, documents, spreadsheets).</li>
+<li>The platform supports an <strong>AI analytics loop</strong> – Ask, Analyze, Automate, Act – and features centralized discovery with AI chat assistants organized by business area.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-18</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-stretto-built-an-ai-voice-agent-with-amazon-nova-2-sonic/" target="_blank" rel="noopener">How Stretto built an AI voice agent with Amazon Nova 2 Sonic</a></h3>
+    
+    <div class="summary"><ul>
+<li>Stretto built “Tara”, an AI voice agent powered by Amazon Nova 2 Sonic in Amazon Bedrock, to conduct bankruptcy intake interviews via phone, replacing a web form and reducing costs.</li>
+<li>Amazon Nova 2 Sonic's speech-to-speech functionality, processing both input and output in a single model, aimed to reduce latency and improve conversational flow compared to previous solutions.</li>
+<li>The architecture leverages Amazon Bedrock for access to both Amazon Nova 2 Sonic and Anthropic’s Claude 3 Haiku, alongside services like Amazon ECS, Aurora Serverless v2, and SQS, with a reported 95% reduction in per-minute voice cost.</li>
+<li>The team implemented a session continuation pattern to manage conversations exceeding the maximum duration of a single Amazon Nova 2 Sonic streaming session, and utilized a phased build approach with rigorous voice quality validation and adversarial testing.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-18</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/connect-amazon-bedrock-agentcore-gateway-to-private-apis-in-a-hub-and-spoke-network-with-centralized-inspection/" target="_blank" rel="noopener">Connect Amazon Bedrock AgentCore Gateway to private APIs in a hub-and-spoke network with centralized inspection</a></h3>
+    
+    <div class="summary"><p>Amazon Bedrock AgentCore Gateway can now connect to private APIs via a hub-and-spoke network with centralized inspection.</p>
+<ul>
+<li>The pattern utilizes Amazon VPC Lattice resource gateways, placed in a network account-owned VPC and routed through a transit gateway, to ensure all traffic passes a central firewall for inspection.</li>
+<li>A self-managed mode is used for the resource gateway, requiring the network team to own the gateway and its subnets, while application teams manage only their own resources via AWS RAM shares.</li>
+<li>The solution involves sharing one resource configuration per backend through AWS RAM, and the firewall requires specific stateful allow rules for traffic between resource gateways and tool VPCs, and from ALBs to identity providers.</li>
+<li>Token validation is performed on the internal ALB or private API to ensure only authorized requests from the Gateway reach the backend, utilizing JWT validation with client ID pinning and scope checks.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-18</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-social-department-built-culture-aware-video-discovery/" target="_blank" rel="noopener">How Social Department built culture-aware video discovery</a></h3>
+    
+    <div class="summary"><p>Social Department built QuickSearch, a system for video discovery in entertainment marketing using Amazon Bedrock and other AWS services.</p>
+<ul>
+<li>The system utilizes TwelveLabs’ Marengo 3.0 and Pegasus 1.2 models on Amazon Bedrock for scene-level video reasoning and scene description.</li>
+<li>Anthropic’s Claude models on Amazon Bedrock are used for character map extraction, concept generation, trend normalization, and query translation for the “Trend Align” feature.</li>
+<li>The architecture includes an ingest pipeline using AWS Step Functions and Lambda functions for processing video, performing shot detection with Amazon Rekognition, and indexing content into Amazon OpenSearch Serverless.</li>
+<li>Four single-action queries are provided: Shareable Scenes, Quotable Quotes, Memeable Moments, and Trend Align, each implemented with a distinct retrieval strategy and ranking model.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-18</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-salesforce-is-advancing-global-scale-model-serving-with-cross-region-inference-routing-in-amazon-sagemaker-ai/" target="_blank" rel="noopener">How Salesforce is advancing global-scale model serving with cross-Region inference routing in Amazon SageMaker AI</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon SageMaker AI introduces cross-Region inference routing via a new <code>Inference Router</code> resource, allowing a single invocation path for models deployed across multiple Regions and accounts.</li>
+<li>A <code>Routing Target</code> associates a logical model name with a list of endpoint ARNs (including those in other Regions/accounts), and the router directs traffic based on endpoint health and capacity.</li>
+<li>The router prioritizes local endpoints, performs health checks based on request outcomes (5xx errors, timeouts), and shifts traffic to healthy destinations, with a gradual return of traffic after recovery to prevent oscillation.</li>
+<li>Integration with Salesforce’s Internal Gateway involves intercepting requests, performing data residency checks, and routing eligible requests to the inference router, with telemetry (InvokedRoutedResourceArn, RoutingReason) logged for monitoring and debugging.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-18</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/private-certificate-authority-support-in-amazon-bedrock-agentcore-identity/" target="_blank" rel="noopener">Private certificate authority support in Amazon Bedrock AgentCore Identity</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Bedrock AgentCore Identity now supports connecting to private Identity Providers (IdPs) like Keycloak using private Certificate Authorities (CAs).</li>
+<li>The CA certificate (public key only, max 16KB, PEM-encoded) is stored in AWS Secrets Manager or Amazon S3 and referenced when creating a credential provider.</li>
+<li>VPC Lattice is required for private CA support—it can be managed by AWS or self-managed—establishing a secure connection into your VPC.</li>
+<li>AgentCore Identity validates the IdP’s server certificate against the trusted CA during OAuth 2.0 token requests, supporting machine-to-machine, on-behalf-of, and user-delegated flows.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-18</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/design-responsible-ai-controls-for-amazon-aurora-postgresql/" target="_blank" rel="noopener">Design responsible AI controls for Amazon Aurora PostgreSQL</a></h3>
+    
+    <div class="summary"><ul>
+<li>This post details a design pattern for building a responsible AI (RAI) powered customer support chatbot using Amazon Aurora PostgreSQL, mapping eight RAI dimensions to database capabilities.</li>
+<li>Key features include using Aurora ML to generate vector embeddings from SQL queries, enabling semantic search within the database without data movement, and leveraging <code>pgvector</code> for similarity searches.</li>
+<li>The design focuses on the "Explainability" dimension with a <code>chat_interactions</code> table to log queries, responses, retrieved chunks, similarity scores, citations, and guardrail assessments for full provenance.</li>
+<li>Implementation relies on AWS services like Amazon Bedrock (for embeddings and inference), Bedrock Guardrails (for content filtering and PII protection), and utilizes extensions such as <code>pgvector</code> and <code>aws_ml</code> within Aurora PostgreSQL.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-18</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-airbnb-uses-cost-per-task-to-operate-coding-agents-on-amazon-bedrock/" target="_blank" rel="noopener">How Airbnb uses cost per task to operate coding agents on Amazon Bedrock</a></h3>
+    
+    <div class="summary"><p>Airbnb evaluates and monitors coding agents on Amazon Bedrock using cost per task as a key metric.</p>
+<ul>
+<li>Airbnb uses Amazon Bedrock to run coding agents (AirChat) and evaluates models based on a "cost per task" metric – the total cost of tokens used to complete one task – alongside a quality score.</li>
+<li>They leverage CloudWatch metrics (InvocationLatency, TimeToFirstToken, OutputTokenCount, InvocationThrottles, EstimatedTPMQuotaUsage, Input/Cache/Output Token Counts) to monitor latency, throttling, and cost in production.</li>
+<li>Evals are run <em>before</em> rollout to determine model defaults and effort ceilings (reasoning effort level), and production data is compared to eval results to identify discrepancies and adjust configurations.</li>
+<li>The architecture involves AirChat running on AirDev workspaces, communicating with Bedrock through an LLM gateway, with evals and monitoring guiding model selection and ceiling adjustments; a key finding was that while a model may perform well on a task, actual usage patterns can significantly impact overall cost due to factors like prolonged, self-directed sessions.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-18</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-the-amazon-sagemaker-jumpstart-model-leaderboard/" target="_blank" rel="noopener">Introducing the Amazon SageMaker JumpStart Model Leaderboard</a></h3>
+    
+    <div class="summary"><ul>
+<li>The Amazon SageMaker JumpStart Model Leaderboard provides a unified view for comparing foundation models on quality (using benchmarks like BIG-Bench Hard, GPQA Diamond, and MMLU-Pro), speed (Time to First Token and Throughput), and cost.</li>
+<li>The Leaderboard covers over 70 models from providers like Meta, Google, and IBM, and allows filtering by license, provider, and modality, with performance metrics displayed based on selectable “Use Case Profiles” (e.g., Max Context) and “Optimization Goals” (Balanced, Cost Optimized, Latency Optimized, Throughput Optimized).</li>
+<li>Metrics include Time to First Token (TTFT), Throughput (tokens/s), and Instance Cost ($/hr), measured by deploying models to SageMaker endpoints with standardized test workloads to ensure comparable results.</li>
+<li>Users can customize the displayed columns and sort by specific metrics, and the tool features a heatmap visualization to quickly identify top-performing models, with a deployment pathway directly from the model page.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-18</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-workload-recovery-and-expanded-infrastructure-checks-on-amazon-sagemaker-hyperpod/" target="_blank" rel="noopener">Introducing workload recovery and expanded infrastructure checks on Amazon SageMaker HyperPod</a></h3>
+    
+    <div class="summary"><p>Amazon SageMaker HyperPod introduces new capabilities for workload recovery and infrastructure checks to improve training goodput.</p>
+<ul>
+<li><strong>MultiNodeTrainingValidation</strong> is a deep health check that trains a small model across instances to detect GPUs producing incorrect results (NaN or infinite loss) even after passing hardware tests.</li>
+<li><strong>HyperPod Kubernetes Resource Monitoring Agent</strong> monitors the Kubernetes layer of an EKS cluster for failures like crash-looping device plugins, missing DaemonSets, and tainted nodes, reporting issues as Kubernetes events and CloudWatch logs.</li>
+<li><strong>Hung job detection</strong> identifies Slurm jobs stalled due to timeouts or deadlocks by monitoring job output, GPU activity, or defined log patterns and can automatically cancel the job for requeuing.</li>
+<li>These capabilities target different sources of failure: MultiNodeTrainingValidation focuses on numerical faults, the Kubernetes Agent on cluster-level issues, and Hung job detection on stalled jobs, with testing performed during provisioning or on-demand via the SageMaker API.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-18</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/exa-boosts-embedding-throughput-by-50-to-index-billions-of-documents-on-aws-ai-chips/" target="_blank" rel="noopener">Exa boosts embedding throughput by 50% to index billions of documents on AWS AI chips</a></h3>
+    
+    <div class="summary"><ul>
+<li>Exa achieved a 50% increase in embedding throughput by optimizing their infrastructure on AWS Inferentia2 and Trainium2 hardware for semantic search, utilizing a multi-tower machine learning model and an in-house vector database.</li>
+<li>Optimizations included weight layout adjustments, enabling autocast (downcasting to lower precision), and implementing optimized Neuron Kernel Interface (NKI) kernels – specifically a drop-in attention kernel and a custom fused SwiGLU MLP kernel – to reduce memory spill and improve Tensor Engine utilization.</li>
+<li>Further performance gains (47% overall) were achieved by reducing FLOPS through attention kernel customization tailored to the model’s specific shapes, and folding operations into single matrix multiplications.</li>
+<li>An "agentic" development workflow, utilizing Flyte for automated correctness validation (0.999 cosine similarity target) and performance profiling, enabled iterative optimization and cost-effective kernel development, and the scheduler dynamically adjusts to utilize the cheapest available compute across multiple AWS Regions.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -400,219 +610,6 @@
 <li>Tabular search isolates code execution in a sandbox to perform calculations and lookups across entire tables, addressing limitations of traditional RAG with large or wide tables.</li>
 <li>The process involves retrieval of relevant table files, code execution over the table data, and integration of results with information from related documents to generate an answer with citations.</li>
 <li>Tabular search is integrated into the existing <code>AgenticRetrieveStream</code> request flow and works with existing connectors (S3, SharePoint, Confluence, etc.) without requiring schema definition; performance trade-offs exist due to added code execution.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-16</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/novo-nordisk-modernizes-manufacturing-process-documents-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">Novo Nordisk modernizes manufacturing process documents with Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><p>Novo Nordisk has developed an intelligent assistant, powered by agentic AI on AWS, to improve access to manufacturing knowledge and reduce documentation lead times.</p>
-<ul>
-<li>The solution utilizes a GraphRAG architecture, combining a knowledge graph in Amazon Neptune with a hybrid search index in Amazon OpenSearch Serverless, to retrieve accurate and contextual information.</li>
-<li>Amazon Bedrock AgentCore, powered by Anthropic Claude models on Amazon Bedrock, orchestrates the retrieval and response process, including a guided mode for clarifying ambiguous queries.</li>
-<li>A two-layer taxonomy—a process tree and domain entities—organizes the knowledge graph, improving both accuracy and auditability for a regulated pharmaceutical environment.</li>
-<li>The system employs a hybrid search strategy (vector search with Amazon Titan embeddings and BM25 matching) combined with graph expansion and reranking to surface relevant documents and relationships, along with explicit limitations when information is unavailable.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-16</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/modernizing-mainframe-assembler-to-java-using-amazon-bedrock-and-aws-transform/" target="_blank" rel="noopener">Modernizing mainframe Assembler to Java using Amazon Bedrock and AWS Transform</a></h3>
-    
-    <div class="summary"><p>AWS is introducing a methodology to modernize mainframe Assembler applications to Java using Amazon Bedrock and AWS Transform, employing COBOL as an intermediary step.</p>
-<ul>
-<li>Amazon Bedrock (with a focus on models with strong code reasoning and large context windows, temperature set to 0) and Kiro IDE are used for AI-assisted business rule extraction from Assembler code.</li>
-<li>Extracted business rules and functional specifications, validated by subject matter experts (SMEs), guide the Assembler-to-COBOL conversion.</li>
-<li>AWS Transform is utilized for automated COBOL-to-Java conversion, creating Spring Boot applications.</li>
-<li>The process involves five phases: business rules extraction, spec-driven data flow, Assembler-to-COBOL conversion, validation, and COBOL-to-Java transformation with validation checkpoints to preserve business logic.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-16</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-moengage-built-agentic-customer-engagement-on-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How MoEngage built agentic customer engagement on Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><p>MoEngage built agentic customer engagement capabilities using Amazon Bedrock and AgentCore, enabling marketing and product teams to manage campaigns conversationally.</p>
-<ul>
-<li>Merlin AI, MoEngage’s AI agent suite, leverages foundation models (Anthropic Claude Sonnet 4.6, 5, and 5.5) on Amazon Bedrock for reasoning, planning, and content generation, utilizing AgentCore runtime for hosting and the Model Context Protocol (MCP) for data access.</li>
-<li>MoEngage exposed existing APIs as MCP tools using the FastMCP framework, creating tools for campaigns, analytics, segmentation, content, and flows, maintaining synchronization with API updates.</li>
-<li>The architecture features a secure, multi-tenant design with JWT authentication via AgentCore runtime, isolated sessions, and protected context via request headers to prevent data leakage to the foundation models, alongside Amazon Bedrock Guardrails for content safety.</li>
-<li>AgentCore runtime provides scalability, isolation, authentication, and framework agnosticism while Amazon Bedrock offers pay-per-token inference and data privacy, resulting in a 50% reduction in AI infrastructure costs for MoEngage and a 38% uplift in push notification click-through rates for one customer (Glance).</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-16</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/taxonomy-of-multi-agent-design-patterns-anti-patterns-and-lessons-from-manufacturing/" target="_blank" rel="noopener">Taxonomy of multi-agent design patterns, anti-patterns, and lessons from manufacturing</a></h3>
-    
-    <div class="summary"><ul>
-<li>This post details design patterns and anti-patterns for building multi-agent systems, framing coordination as a distributed systems problem where complexity often exceeds understanding.</li>
-<li>Tier 1 patterns (Sequential Pipeline, Conditional Workflow, Conditional Router, Parallel Workflow) offer deterministic control flow, defined at build time, suitable for predictable tasks like ETL or document processing.</li>
-<li>Tier 2 patterns (Plan-based orchestration, Handoff, Conversation-driven, Debate/consensus) allow the LLM to determine control flow at runtime, offering flexibility for tasks with undefined subtasks, but at the cost of increased latency and debugging complexity.</li>
-<li>Common anti-patterns include “God agents” (too many tools per agent), unbounded iteration (no retry limits), natural-language contracts (lack of schema), premature multi-agent systems, and unguarded customer contact, all leading to increased costs and risks.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-16</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-duco-transforms-financial-data-automation-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How Duco transforms financial data automation with Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><p>Duco rebuilt its agentic AI stack using Amazon Bedrock and Amazon Bedrock AgentCore to automate financial data processing, addressing limitations of traditional machine learning models.</p>
-<ul>
-<li>Duco leverages Amazon Bedrock to access foundation models (Anthropic Claude Opus, Sonnet, Haiku, and Amazon Nova 2 Pro) via a single API, prioritizing security and compliance with features like VPC connectivity and data isolation.</li>
-<li>Amazon Bedrock AgentCore is used as the runtime environment, chosen for its compatibility with existing LangChain/LangGraph code, managed runtime, and suitability for regulated environments.</li>
-<li>A multi-tenant architecture with per-tenant Kubernetes namespaces, dedicated AWS services, and scoped authentication ensures data isolation and security across 200+ clients.</li>
-<li>Duco implemented a "skills architecture" using the Model Context Protocol (MCP) to reduce context window bloat by dynamically loading tool descriptions only when needed, resulting in a 90% context reduction and improved agent performance.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-16</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-memory-aware-ai-agents-with-agentic-retrieve-on-amazon-bedrock-managed-knowledge-base/" target="_blank" rel="noopener">Build memory-aware AI agents with Agentic Retrieve on Amazon Bedrock Managed Knowledge Base</a></h3>
-    
-    <div class="summary"><p>Build memory-aware AI agents with Agentic Retrieve on Amazon Bedrock Managed Knowledge Base.</p>
-<ul>
-<li>Amazon Bedrock AgentCore memory, integrated with Managed Knowledge Base, stores conversations, extracts facts, and retrieves relevant information to enhance search accuracy and personalization.</li>
-<li>The integration is enabled via a <code>memoryConfiguration</code> added to the <code>AgenticRetrieveStream</code> request, allowing AgentCore memory to act as a retrieval source alongside the knowledge base.</li>
-<li>User identity, derived from a Cognito ID token, is used for both ACL filtering of documents and memory isolation, ensuring users only access permitted information and private memory.</li>
-<li>The solution utilizes Amazon Cognito for authentication, passing user identity via <code>userContext</code> and <code>memoryConfiguration</code> to enforce per-user access control and memory separation, streamlining the development of multi-tenant agentic applications.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-13</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/build-a-model-improvement-flywheel-with-amazon-sagemaker-hyperpod-data-capture/" target="_blank" rel="noopener">Build a model improvement flywheel with Amazon SageMaker HyperPod Data Capture</a></h3>
-    
-    <div class="summary"><p>Amazon SageMaker HyperPod now offers Data Capture, a built-in capability for recording live inference data to Amazon S3.</p>
-<ul>
-<li>Data Capture operates at three tiers – endpoint, load balancer, and model pod – allowing flexible configuration for compliance, monitoring, or training data collection.</li>
-<li>It captures full request/response payloads, ALB access logs, and event metadata with minimal latency impact and no downtime.</li>
-<li>Tier 3 allows capturing full payloads, which requires using sampling, AWS KMS encryption, S3 lifecycle rules, and PII redaction to protect sensitive data.</li>
-<li>A complete example demonstrates capturing data, analyzing it with Athena, labeling it with SQL, fine-tuning a Qwen2.5-3B-Instruct model using the captured data, and redeploying—all within a single HyperPod cluster.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-13</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/cost-attribution-and-controls-for-ai-developer-and-productivity-tools-on-amazon-bedrock/" target="_blank" rel="noopener">Cost attribution and controls for AI developer and productivity tools on Amazon Bedrock</a></h3>
-    
-    <div class="summary"><p>Amazon Bedrock now offers zero-instrumentation cost attribution, tracing inference calls to the IAM principal making them, with data flowing into AWS Cost and Usage Reports (CUR 2.0) and Cost Explorer.</p>
-<ul>
-<li>Attribution works for all tools invoking Bedrock via the <code>bedrock-runtime</code> or <code>bedrock-mantle</code> endpoints, including Claude Code, Claude Desktop, OpenAI Codex, ChatGPT Work, and OpenCode.</li>
-<li>Configuration involves setting up IAM Identity Center with an external identity provider for per-user attribution, enabling session tags, and configuring Athena queries for cost visibility.</li>
-<li>Multiple attribution mechanisms are available: IAM principal tracking, Application Inference Profiles, Projects/Workspaces, and per-request metadata tagging, which can be combined for different levels of granularity.</li>
-<li>Prerequisites include an AWS account, IAM Identity Center setup, an external IdP with SCIM provisioning, AWS CLI v2, CUR 2.0 with IAM principal data enabled, cost allocation tags activated, and an Athena table configured for querying CUR 2.0 data.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-13</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/cost-optimizing-assemblyai-speech-to-text-inference-on-aws-with-amazon-ec2-spot/" target="_blank" rel="noopener">Cost-optimizing AssemblyAI speech-to-text inference on AWS with Amazon EC2 Spot</a></h3>
-    
-    <div class="summary"><ul>
-<li>AssemblyAI optimized speech-to-text inference costs by 70% using a combination of Amazon ECS, EC2 Spot Instances, and Amazon SQS.</li>
-<li>The architecture leverages ECS capacity providers with a mix of On-Demand and Spot Instances, diversifying across NVIDIA GPU instance families (g4dn, g5, g6 – T4, A10G, and L4 GPUs respectively).</li>
-<li>Amazon SQS is used as a queue-based retry mechanism to recover from Spot Instance interruptions; incomplete jobs are returned to the queue for processing by healthy instances.</li>
-<li>Regional deployment in AWS Regions like US West (Oregon) and Europe (London) supports data residency requirements, running independent copies of the inference architecture in each region.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-13</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/openfold3-on-amazon-sagemaker-jumpstart-predict-biomolecular-structures/" target="_blank" rel="noopener">OpenFold3 on Amazon SageMaker JumpStart: Predict biomolecular structures</a></h3>
-    
-    <div class="summary"><p>OpenFold3, a biomolecular structure prediction model, is now available on Amazon SageMaker JumpStart.</p>
-<ul>
-<li>The OpenFold3 model (version 0.4.1, checkpoint of3-p2-155k) predicts 3D structures for proteins, DNA, RNA, ligands, and their complexes.</li>
-<li>It utilizes SageMaker Asynchronous Inference, accepting requests via S3 and providing results (mmCIF format structures and confidence metrics like pLDDT, PAE, and PDE) in S3 as well, with a maximum invocation timeout of 1 hour.</li>
-<li>The service supports instances ml.g6.2xlarge, ml.g6.4xlarge, and ml.g6.12xlarge and can be autoscaled, potentially scaling to zero when idle to reduce costs.</li>
-<li>Users can supply their own multiple sequence alignments (MSAs) for improved accuracy and maintain data privacy by using dedicated S3 buckets with KMS encryption.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-13</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/architecture-patterns-for-fast-session-startup-on-amazon-bedrock-agentcore-runtime/" target="_blank" rel="noopener">Architecture patterns for fast session startup on Amazon Bedrock AgentCore runtime</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock AgentCore runtime V2 improves session startup speed by preparing and snapshotting the container environment once, rather than initializing it for each session, reducing cold start times.</li>
-<li>V2 reclaims unused memory, optimizing resource billing to reflect actual agent usage.</li>
-<li>The platform measures session start time via CloudWatch metrics – <code>Latency</code> (total time) and <code>OverheadLatency</code> (platform overhead) – helping identify bottlenecks and optimize performance.</li>
-<li>Build hooks enable agents to pre-load large files (models, CLIs, browsers) during snapshot creation, reducing initial load times, configurable via <code>hooksConfiguration</code> when creating/updating runtimes.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-13</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/route-coding-agent-requests-to-the-right-model-on-amazon-bedrock-with-nvidia-nemo-switchyard/" target="_blank" rel="noopener">Route coding agent requests to the right model on Amazon Bedrock with NVIDIA NeMo Switchyard</a></h3>
-    
-    <div class="summary"><p>Route coding agent requests to the right model on Amazon Bedrock using NVIDIA NeMo Switchyard, an open-source library for intelligent model selection.</p>
-<ul>
-<li>LiteLLM v1.102.0, integrated with NVIDIA NeMo Switchyard 0.3.0, enables routing coding agent requests between models to optimize cost per solved task.</li>
-<li>Two routing strategies are available: Stage routing, which chooses a model based on recent request history and results, and Random routing, allowing weighted traffic splitting for A/B testing.</li>
-<li>The solution utilizes Amazon Bedrock Converse/ConverseStream APIs via an Amazon VPC interface endpoint to keep inference traffic within the AWS network.</li>
-<li>Deployment is facilitated using AWS CDK, deploying LiteLLM and the Switchyard plugin to Amazon ECS on AWS Fargate in private subnets, secured by AWS WAF and an Application Load Balancer.</li>
 </ul></div>
     
   </div>

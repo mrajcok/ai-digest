@@ -80,13 +80,67 @@
     </label>
   </div>
   <h1>Anthropic News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-11-18 11:19 UTC</p>
+  <p class="generated-at">Generated 2026-11-19 11:18 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">November 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>news</span>
+      <span> · 2026-11-18</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/news/anthropic-prices-initial-public-offering" target="_blank" rel="noopener">Anthropic prices initial public offering</a></h3>
+    
+    <div class="summary"><p>Anthropic has priced its initial public offering at $83.00 per share, offering 980,000,000 shares of Class A common stock. 956,351,354 shares will be sold by Anthropic directly, while 23,648,646 shares come from existing stockholders; Anthropic will not receive proceeds from these latter sales. </p>
+<p>Trading is expected to begin on the Nasdaq Global Select Market under the symbol “ANT” on November 19, 2026, with final closing anticipated on November 20, 2026, pending standard closing conditions. Underwriters have an option to purchase up to an additional 147,000,000 shares. The SEC declared the registration statement effective on November 18, 2026.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>news</span>
+      <span> · 2026-11-18</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/news/announcements" target="_blank" rel="noopener">Announcements</a></h3>
+    
+    <div class="summary"><p>Anthropic has recently released several model updates, beginning with Claude Opus 5.5 on September 22, 2026, which Anthropic claims leads in agentic coding and knowledge work while being 40% cheaper to run than Opus 5. Shortly after, on September 28, 2026, Claude Sonnet 5.5 was released, offering a 30%+ speed increase and up to 30% cost reduction compared to Claude Sonnet 5.  On November 9, 2026, Anthropic introduced Claude Fable 5.2 and Claude Mythos 5.2, described as their most capable models to date for technical fields like coding, finance, and the sciences. </p>
+<p>Alongside model releases, Anthropic is expanding access to its technology. The Life Sciences Verification Program, launched September 17, 2026, provides access to Claude Mythos, Opus, and Sonnet for life science professionals with adapted safety protocols. The company is also investing $100 million through Claude Frontier Academy to train 10,000 engineers by the end of 2027. </p>
+<p>Finally, Anthropic announced on November 18, 2026, that it priced its initial public offering of Class A common stock and previously filed a registration statement (Form S-1) with the SEC on October 26, 2026, and launched a roadshow for the offering on November 10, 2026.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Claude Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-11-17</span>
+    </div>
+    <h3><a href="https://claude.dev/blog/chaos-loop-claude-docs-launch/" target="_blank" rel="noopener">Using a &#34;chaos loop&#34; to harden the Claude Docs launch: 60 server errors across billions of requests / claude.dev Blog</a></h3>
+    
+    <div class="summary"><p>Anthropic used a “chaos loop” powered by an internal Claude model (comparable to Claude Fable 5.2) to harden the launch of Claude Docs, a collaborative document editor.  Prior to release, the model was set to proactively break the service in a staging environment, simulating high load and failure scenarios – including creating millions of synthetic documents and simulating reconnection spikes. The loop involved Claude reading telemetry, proposing fixes, and deploying them to staging for retesting, iterating continuously for two weeks.</p>
+<p>Key to success was making the service “legible” to Claude: utilizing Rust to avoid unpredictable memory management inherent in garbage-collected runtimes, minimizing external dependencies, and generating detailed telemetry on every operation (database queries, memory usage).  This allowed Claude to accurately diagnose issues and implement targeted solutions.  The process resulted in only 60 server errors across 2 billion requests during the first week of launch despite estimates of millions of documents being created daily, and required roughly 50 memory-optimized pods. The total inference cost was approximately $125,000.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>research</span>
+      <span> · 2026-11-17</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/research/claude-black-hole-physics" target="_blank" rel="noopener">Claude Fable 5.2 solves two open problems in the physics of black holes</a></h3>
+    
+    <div class="summary"><p>Claude Fable 5.2 has solved two open problems in theoretical physics concerning black holes and quantum gravity. The first involved completing a calculation, begun over 20 years ago, demonstrating that the abrupt phase transition associated with black hole formation persists even when spacetime loses a definite shape. Using a research group of self-replicating agents, Claude verified the Hawking-Page transition, showing it remains abrupt across different regimes.</p>
+<p>Separately, Claude determined the precise limit for the simplest version of a technique called the modular bootstrap, used to test candidate quantum gravity theories in a two-dimensional universe. It identified a previously unnoticed pattern in numerical results and applied a spectral curve method borrowed from other areas of physics, proving the lightest black hole must be heavier than a specific threshold—effectively narrowing the search for consistent theories of quantum gravity. The precise limit is calculated as M₁ ≤ c/9.1266, where c represents the number of microscopic building blocks. </p>
+<p>These results, verified in a computerized proof checker, were achieved with minimal guidance and represent progress in understanding the relationship between quantum mechanics and general relativity.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -125,19 +179,6 @@
     
     <div class="summary"><p>Anthropic initiated a roadshow for a proposed initial public offering consisting of 825 million shares of Class A common stock. 801.35 million shares will be offered by Anthropic directly, while 23.65 million shares come from existing stockholders—proceeds from which will <em>not</em> go to Anthropic. </p>
 <p>Underwriters have an option to purchase up to 123.75 million additional shares. The expected price range is $70.00 to $78.00 per share, with a Nasdaq listing planned under the ticker symbol “ANT”. A preliminary prospectus is available through Goldman Sachs and Morgan Stanley.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Anthropic</span> · 
-      <span>news</span>
-      <span> · 2026-11-10</span>
-    </div>
-    <h3><a href="https://www.anthropic.com/news/announcements" target="_blank" rel="noopener">Announcements</a></h3>
-    
-    <div class="summary"><p>Anthropic has recently released several model updates and announced major company initiatives. The newest models, Claude Fable 5.2 and Claude Mythos 5.2, are positioned as the most capable yet for complex tasks in coding, finance, and scientific fields.  Claude Opus 5.5 is also now available, offering leading performance in coding and knowledge work at a 40% cost reduction compared to Opus 5.  Claude Sonnet 5.5 presents a 30%+ speed increase with up to a 30% cost reduction, while Claude Haiku 5.5 is the fastest and most efficient model for high-volume tasks.</p>
-<p>Beyond models, Anthropic is investing heavily in the AI ecosystem. A $100 million program, Claude Frontier Academy, aims to train 10,000 engineers by the end of 2027. They’ve launched the Life Sciences Verification Program offering access to Mythos, Opus, and Sonnet, and are providing free Claude access to 10,000 scientists.  Furthermore, Anthropic has filed an S-1 with the SEC for a public offering and begun a roadshow related to it.</p></div>
     
   </div>
   
@@ -451,47 +492,6 @@
     
     <div class="summary"><p>Anthropic announced that Christopher Stubbs, former Dean of Science at Harvard University and an experimental physicist, has joined its Long-Term Benefit Trust. Stubbs’ expertise lies in observational cosmology and precision measurement, including work on the accelerating expansion of the universe that earned his team the Breakthrough Prize in Fundamental Physics. He has also advised the US government on national security and arms control.</p>
 <p>The Trust, which currently includes chair Neil Buddy Shah, Richard Fontaine, and Ben Bernanke, is intended to ensure Anthropic balances commercial growth with its public benefit purpose as a Public Benefit Corporation. Trustees advise on critical decisions, with the authority to appoint a majority of Anthropic’s board. Anthropic recently published its first Public Benefit Report, measuring progress against five charter pillars defined with Trustee input. A new Anthropic Public Benefit Fund, intended to grow with the company, is also planned subject to stockholder approval.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Anthropic</span> · 
-      <span>research</span>
-      <span> · 2026-10-20</span>
-    </div>
-    <h3><a href="https://www.anthropic.com/research/claude-scorpion-toxin-binder-design" target="_blank" rel="noopener">How Claude designed protein binders against scorpion neurotoxins</a></h3>
-    
-    <div class="summary"><p>Anthropic’s internal research model, operating within Claude Science, successfully designed protein binders against five scorpion neurotoxins (Cn2, Ts1, AaH I, AaH II, and LqhIII) with minimal human intervention. Prompted with a modified version of a prior protein-binder study, Claude generated 318,484 designs, selecting 180 for experimental testing.  Partners at Adaptyv Bio and Twist Bioscience validated 17 of these designs as binders—proteins that tightly attach to their target toxins—using surface plasmon resonance to measure dissociation constants (KD).</p>
-<p>The campaign, consuming roughly 10,000 GPU hours, demonstrated Claude’s ability to design binders targeting both individual toxins and groups of toxins, though multi-toxin binders were less successful. Notably, the best binders, Cn2-B1 and Cn2-B2, targeting the <em>Centruroides noxius</em> toxin, showed single-digit nanomolar affinities (KD) and appear to bind to the same site as a known neutralizing antibody (LR).  While these results are promising, the designed binders haven’t been tested for neutralizing venom <em>in vitro</em> or <em>in vivo</em>, and further research is needed to develop a functional antivenom. All 211 designs and associated data have been publicly released.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Anthropic</span> · 
-      <span>research</span>
-      <span> · 2026-10-20</span>
-    </div>
-    <h3><a href="https://www.anthropic.com/research/attack-surface-reduction" target="_blank" rel="noopener">Using Claude to reduce the attack surface of code</a></h3>
-    
-    <div class="summary"><p>Anthropic researchers investigated using their Claude model to automatically reduce the “attack surface” of code – the amount of code accessible to potential attackers – as an alternative to solely focusing on identifying and patching individual vulnerabilities. They applied Claude to 25 open-source projects (over 5 million lines of code in C, C++, Java, PHP, and Python), identifying 493 issues across three methods: default configuration issues, problematic configuration interactions, and code reachable before essential security controls.</p>
-<p>Specifically, Claude found unnecessary pre-authentication code in 11 "gated" projects, 162 security-weakening configuration combinations, and cases where disabling security checks occurred silently. A notable case study involved OpenSSH, where Claude identified 4,500 lines of potentially reachable, experimental code for a new signature algorithm that should have been behind a configuration check; this was addressed in OpenSSH version 10.6. </p>
-<p>Anthropic is developing a reusable Claude skill leveraging these techniques for integration into OSS-Scanner to automate this attack surface reduction process, focusing on default configuration, pre-authentication reachability, and harmful configuration combinations, alongside verification via existing test suites.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Anthropic</span> · 
-      <span>news</span>
-      <span> · 2026-10-18</span>
-    </div>
-    <h3><a href="https://www.anthropic.com/news/public-benefit-fund" target="_blank" rel="noopener">Investing in the public benefit</a></h3>
-    
-    <div class="summary"><p>Anthropic announced the creation of the Anthropic Public Benefit Fund on October 18, 2026, initially committing 5% of its shares to the new entity, with potential for an additional 2% added for every 50% increase in company value above a yet-unspecified baseline. The Fund is structured as a wholly-owned LLC to allow flexibility in charitable giving, specifically excluding lobbying or political contributions. </p>
-<p>The Fund’s purpose is to extend Anthropic’s public benefit work—including AI safety research, biomedical research discounts for nonprofits—beyond the company’s direct operations. Anthropic has already committed $200 million to study and address potential labor market disruptions caused by AI, and the Fund will allow for potentially “bolder approaches” to this issue. Combined with pre-existing employee and co-founder equity pledges (including a co-founder pledge to donate 80% of holdings and an equity donation match program with roughly 50% employee participation), approximately 20% of Anthropic shares are now dedicated to public benefit.</p>
-<p>Further details regarding the Fund’s governance, valuation milestones, and progress will be shared in upcoming public benefit reports. Anthropic also announced continued improvements to election safeguards and the opening of a new office in Singapore alongside a memorandum of understanding (MOU) with the Singaporean government to promote responsible AI adoption.</p></div>
     
   </div>
   
