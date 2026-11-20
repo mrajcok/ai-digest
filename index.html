@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-11-19T11:18:47.728917+00:00">Generated 2026-11-19 11:18 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-11-20T11:21:46.374292+00:00">Generated 2026-11-20 11:21 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,12 +132,12 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — since 2026-11-18</h2>
-    <p class="overview-meta">2026-11-19 · 17 vendor sources · vendor sources only</p>
-    <div class="overview-text"><p>Recent advancements across several AI labs center on model capabilities, cost optimization, and infrastructure improvements. The most significant development is the release of Gemini 4 Neon, a new model from Google boasting frontier-level intelligence with a 1 million-token context window and strong performance in code generation and cybersecurity benchmarks. Priced at $3/M input and $15/M output tokens, it is rolling out across several Google platforms including the Gemini API and app.  Alongside this, Google has updated Genie 4, offering more responsive and interactive world generation with real-time editing and native audio, and improved Genie 3 with longer sessions and expanded functionality. The Gemini app itself is now available on lower-memory Android devices, significantly broadening access to Google’s AI assistant.</p>
-<p>Anthropic announced a series of model updates, with Claude Opus 5.5 launching in September 2026, positioning itself as a leader in coding and knowledge work with a 40% cost reduction compared to its predecessor.  Following this came Claude Sonnet 5.5, boasting a 30%+ speed increase and 30% cost reduction, and then Claude Fable 5.2 and Mythos 5.2, Anthropic’s most capable models yet for technical disciplines.  Expanding accessibility to these tools, Anthropic launched a Life Sciences Verification Program for specialized use and committed $100 million to engineer training through Claude Frontier Academy.  Notably, Anthropic also completed pricing its initial public offering at $83.00 per share, signaling a major milestone for the company. </p>
-<p>Amazon Web Services has focused heavily on optimizing performance and infrastructure. Exa achieved a 50% increase in embedding throughput on AWS Inferentia2 and Trainium2 hardware through infrastructure adjustments, benefiting semantic search applications. Improvements to Amazon SageMaker HyperPod include new workload recovery features and enhanced infrastructure checks for more reliable training.  To aid in model selection, AWS launched the SageMaker JumpStart Model Leaderboard, providing a comparative analysis of over 70 models based on quality, speed, and cost.  Further enhancements include full fine-tuning (FFT) on SageMaker AI Serverless, offering improvements over LoRA techniques, and solutions for connecting Bedrock AgentCore Gateway to private APIs via a hub-and-spoke network for centralized inspection. Several case studies detail AWS customers leveraging services like Nova 2 Sonic and Bedrock to build AI-powered applications.</p>
-<p>Finally, several announcements showcase the practical application of AI in specific industries. Airbnb is using Amazon Bedrock to evaluate coding agents based on a "cost per task" metric, while Social Department is leveraging Bedrock and other AWS services for video discovery. Stretto built an AI voice agent, “Tara,” using Amazon Nova 2 Sonic improving both cost and user experience for bankruptcy intake interviews. These demonstrate a trend towards using AI for data-driven applications and task automation.</p></div>
+    <h2 class="overview-heading">Today in AI</h2>
+    <p class="overview-meta">2026-11-20 · 2 vendor sources · vendor sources only</p>
+    <div class="overview-text"><p>Recent developments focus heavily on optimizing model inference and expanding access to foundation models. Amazon SageMaker Inference Recommendations is receiving a series of updates throughout 2026, starting with integration into AI Studio and the Python SDK v3.17.0, offering benchmark and optimization tools within existing development processes. Later this year, support for LoRA adapters will be added, allowing for the benchmarking of different adapter/model combinations. Perhaps most significantly, SLA-Based Concurrency Search—launching alongside the adapter support—will automate concurrency level optimization based on performance targets, leveraging AIPerf. Finally, managed NVIDIA Dynamo on HyperPod Inference is slated for November, aiming to simplify large model serving with multi-node capabilities and optimized routing using frameworks like vLLM and TensorRT-LLM.</p>
+<p>Alongside these infrastructure improvements, accessibility to specific models is also expanding. The Kimi Code CLI v2.7.0 now includes native support for Amazon Bedrock, streamlining authentication by utilizing existing AWS credentials instead of requiring separate API keys. This integration, facilitated by the <code>@aws/bedrock-token-generator</code>, simplifies setup via a <code>config.toml</code> file and grants access to models like the Kimi-3.1 Pro Highspeed model. </p>
+<p>The Kimi-3.1 Pro Highspeed model offers features such as streaming responses, configurable reasoning capabilities, and client-side tool calling, making it a potentially valuable asset for developers. However, utilizing this integration requires appropriate IAM permissions, specifically for <code>bedrock:CallWithBearerToken</code>, <code>bedrock:GetInferenceProfile</code>, and <code>bedrock:InvokeModel</code>, meaning existing infrastructure will need to be adapted.</p>
+<p>These announcements collectively suggest a focus on lowering the barrier to entry for deploying and optimizing large language models, particularly within the AWS ecosystem. Engineering teams invested in the AWS stack should pay close attention to the upcoming SageMaker Inference Recommendations features, as those have the potential to significantly reduce operational overhead. Likewise, the simplified access to Kimi models provides a direct path to experimentation with the capabilities of that provider without additional credential management.</p></div>
   </section>
   
 
@@ -189,6 +189,35 @@
   <div class="card">
     <div class="meta">
       <a href="google/" class="badge badge-google">Google</a>
+      <span>blog</span>
+      <span> · 2026-11-19</span>
+    </div>
+    <h2><a href="https://blog.google/innovation-and-ai/technology/ai/dialogues-walter-isaacson/" target="_blank" rel="noopener">Walter Isaacson on curiosity and creativity in the AI age.</a></h2>
+    
+    <div class="summary"><p>The Gemini API now features <strong>Tool Retrieval</strong>, enabling developers to connect Gemini models to external tools. This allows Gemini to utilize tools to accomplish tasks beyond its native capabilities, effectively extending its functionality. Additionally, the <strong>Gemini app</strong> is now accessible on lower-memory Android devices, broadening its user base.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="google/" class="badge badge-google">Google</a>
+      <span>blog</span>
+      <span> · 2026-11-19</span>
+    </div>
+    <h2><a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/" target="_blank" rel="noopener">Introducing Tool Retrieval in the Gemini API</a></h2>
+    
+    <div class="summary"><ul>
+<li>The Gemini API introduces Tool Retrieval in preview within the Interactions API, aimed at improving agent scalability with large tool libraries.</li>
+<li>Tool Retrieval reduces input token counts and latency by deferring the loading of tool parameter schemas until they are needed, activated by setting <code>defer_loading: true</code> for specific tools.</li>
+<li>The feature utilizes a <code>tool_search</code> tool type to identify necessary schemas on demand, without requiring upfront loading of all tool details, shown in example code using the <code>genai</code> library.</li>
+<li>Tool Retrieval is compatible with Gemini 3.6 and later models (including Gemini 4 variants) and does not incur separate charges, billed according to standard token usage rates; it also supports both server-side and client-side retrieval methods.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="google/" class="badge badge-google">Google</a>
       <span>research</span>
       <span> · 2026-11-18</span>
     </div>
@@ -201,36 +230,6 @@
 <li>A <strong>Project Genie agent</strong> assists in world building through natural language conversations, orchestrating multimodal models to create visuals and soundtracks.</li>
 <li>A new <strong>community gallery</strong> allows users to share, explore, and remix custom-built worlds, with examples like “Villa Giallo” and “The Life of Ants” showcasing Genie 4's capabilities.</li>
 </ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="google/" class="badge badge-google">Google</a>
-      <span>research</span>
-      <span> · 2026-11-18</span>
-    </div>
-    <h2><a href="https://deepmind.google/blog/introducing-gemini-4-neon/" target="_blank" rel="noopener">Introducing Gemini 4 Neon</a></h2>
-    
-    <div class="summary"><p>Gemini 4 Neon is a new model offering frontier-level intelligence with fast task completion for software engineering, knowledge work, and science.</p>
-<ul>
-<li>Gemini 4 Neon achieves a score of 61 on the Artificial Analysis Intelligence Index at its xhigh thinking level, ranking #3 overall.</li>
-<li>The model offers a 1 million-token context window and is priced at $3 per million input tokens ($0.15 cached) and $15 per million output tokens.</li>
-<li>Neon excels in code generation, achieving state-of-the-art results on benchmarks like Zapier’s AutomationBench (56.3%) and WebExploitBench v1.2 (51.26%), while also demonstrating improved cybersecurity performance.</li>
-<li>Gemini 4 Neon is rolling out now in Gemini API (Google AI Studio), Gemini for business, Google Antigravity, and the Gemini app for Pro and Ultra subscribers.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="google/" class="badge badge-google">Google</a>
-      <span>blog</span>
-      <span> · 2026-11-18</span>
-    </div>
-    <h2><a href="https://blog.google/innovation-and-ai/products/gemini-app/gemini-lower-memory-devices/" target="_blank" rel="noopener">The Gemini app is now available on lower-memory Android devices.</a></h2>
-    
-    <div class="summary"><p>The Gemini app is now available on Android (Go edition) devices, extending access to users with lower-memory phones. Google re-architected the app to run efficiently on devices with limited resources, enabling features like Gemini Live for voice interaction in 45+ languages and image generation with Nano Banana. This expands the reach of Google’s personal AI assistant to hundreds of millions more users globally.</p></div>
     
   </div>
   
@@ -291,16 +290,16 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-11-19</span>
+      <span> · 2026-11-20</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/full-fine-tuning-fft-on-sagemaker-ai-serverless-model-customization/" target="_blank" rel="noopener">Full Fine-Tuning (FFT) on SageMaker AI Serverless Model Customization</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/use-kimi-code-cli-with-models-on-amazon-bedrock/" target="_blank" rel="noopener">Use Kimi Code CLI with models on Amazon Bedrock</a></h2>
     
-    <div class="summary"><p>Amazon SageMaker AI Serverless Model Customization now supports Full Fine-Tuning (FFT), enabling superior model quality by updating all model parameters simultaneously, overcoming limitations of methods like LoRA.</p>
+    <div class="summary"><p>Kimi Code CLI v2.7.0 introduces a native provider for Amazon Bedrock, allowing authentication via existing AWS credentials.</p>
 <ul>
-<li>FFT addresses the limitations of Low-Rank Adaptation (LoRA) by enabling full model parameter updates, improving performance on complex tasks with large datasets.</li>
-<li>Experiments on a Qwen3-4B base model using the Magicoder-Evol-Instruct-110K dataset showed FFT achieved 90.0% LLM-as-Judge semantic correctness, outperforming LoRA as dataset scale increased.</li>
-<li>Key hyperparameters for FFT include a learning rate of 2e-5 for large datasets, a maximum of 3 epochs to avoid catastrophic forgetting, and a global batch size optimized for noise reduction and sufficient optimization steps.</li>
-<li>The service offers serverless infrastructure, eliminating the need for GPU provisioning or distributed training configuration; switching between FFT and LoRA requires only changing <code>TrainingType.FULL</code> to <code>TrainingType.LORA</code> in the SageMaker Python SDK.</li>
+<li>The new provider utilizes the standard AWS credential chain, including named profiles and SSO, eliminating the need for separate Bedrock API keys.</li>
+<li>The system uses <code>@aws/bedrock-token-generator</code> to create short-lived bearer tokens for authentication against Amazon Bedrock.</li>
+<li>Configuration is done via <code>config.toml</code>, specifying the <code>bedrock</code> provider type, AWS Region, and model ID (e.g., <code>global.moonshotai.kimi-k3.1</code>).</li>
+<li>Kimi K3.1 Pro Highspeed is used as an example, supporting features like streaming, configurable reasoning, and client-side tool calling, and requires appropriate IAM permissions for <code>bedrock:CallWithBearerToken</code>, <code>bedrock:GetInferenceProfile</code>, and <code>bedrock:InvokeModel</code>.</li>
 </ul></div>
     
   </div>
@@ -309,33 +308,33 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
-      <span> · 2026-11-18</span>
+      <span> · 2026-11-20</span>
     </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/from-reporting-to-reasoning-getting-enterprise-data-ready-for-ai-agents/" target="_blank" rel="noopener">From reporting to reasoning: Getting enterprise data ready for AI agents</a></h2>
-    
-    <div class="summary"><p>AWS Quick is evolving into a unified AI assistant for work, moving beyond traditional business intelligence.</p>
-<ul>
-<li><strong>AWS Quick Agents &amp; Skills</strong> enable turning natural language questions into reusable, multi-step actions for data-driven decision making.</li>
-<li><strong>Third-party connectors</strong> are built-in to AWS Quick, integrating with services like Salesforce, Slack, Google Drive, and Microsoft 365.</li>
-<li>The platform provides a <strong>unified workspace</strong> combining research, visual generation, and business artifact creation (presentations, documents, spreadsheets).</li>
-<li>The platform supports an <strong>AI analytics loop</strong> – Ask, Analyze, Automate, Act – and features centralized discovery with AI chat assistants organized by business area.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-11-18</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/how-stretto-built-an-ai-voice-agent-with-amazon-nova-2-sonic/" target="_blank" rel="noopener">How Stretto built an AI voice agent with Amazon Nova 2 Sonic</a></h2>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-inference-2026-launches-in-review-part-2/" target="_blank" rel="noopener">Amazon SageMaker Inference: 2026 launches in review, part 2</a></h2>
     
     <div class="summary"><ul>
-<li>Stretto built “Tara”, an AI voice agent powered by Amazon Nova 2 Sonic in Amazon Bedrock, to conduct bankruptcy intake interviews via phone, replacing a web form and reducing costs.</li>
-<li>Amazon Nova 2 Sonic's speech-to-speech functionality, processing both input and output in a single model, aimed to reduce latency and improve conversational flow compared to previous solutions.</li>
-<li>The architecture leverages Amazon Bedrock for access to both Amazon Nova 2 Sonic and Anthropic’s Claude 3 Haiku, alongside services like Amazon ECS, Aurora Serverless v2, and SQS, with a reported 95% reduction in per-minute voice cost.</li>
-<li>The team implemented a session continuation pattern to manage conversations exceeding the maximum duration of a single Amazon Nova 2 Sonic streaming session, and utilized a phased build approach with rigorous voice quality validation and adversarial testing.</li>
+<li><strong>SageMaker Inference Recommendations</strong> now integrates with AI Studio (July 2026) and the Python SDK v3 (v3.17.0 and later), allowing teams to benchmark and optimize configurations directly within their existing workflows, including notebooks and CI/CD pipelines.</li>
+<li><strong>LoRA Adapter Support</strong> has been added to Inference Recommendations (September 2026), enabling teams to benchmark combinations of adapters and concurrency to optimize endpoints serving multiple use cases with a single foundation model.</li>
+<li><strong>SLA-Based Concurrency Search</strong> (September 2026) automates the process of finding the optimal concurrency level for endpoints based on defined latency, error rate, and throughput targets, utilizing a new <code>search_recipe</code> and AIPerf benchmarking.</li>
+<li><strong>Managed NVIDIA Dynamo on HyperPod Inference</strong> (November 2026) provides a managed serving engine for large models on HyperPod, offering multi-node serving, disaggregated prefill/decode, and KV-aware routing, compatible with vLLM, SGLang, and TensorRT-LLM.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
+      <span> · 2026-11-19</span>
+    </div>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/using-nvidia-runai-gpu-fractioning-on-amazon-eks/" target="_blank" rel="noopener">Using NVIDIA Run:ai GPU Fractioning on Amazon EKS</a></h2>
+    
+    <div class="summary"><p>NVIDIA Run:ai GPU Fractioning on Amazon EKS enables sharing a single GPU between multiple Kubernetes Pods with enforced memory limits.</p>
+<ul>
+<li>It builds upon NVIDIA's Multi-Process Service (MPS) with Kubernetes scheduling integration and per-Pod memory contracts.</li>
+<li>The validated example uses an Amazon EC2 g5.xlarge instance with an NVIDIA A10G GPU and establishes 8 GiB memory contracts, allocating 6 GiB per Pod.</li>
+<li>It utilizes the open-source NVIDIA Run:ai (KAI Scheduler and GPU Fractioning Operator v0.1.7, released October 13, 2026) and custom Amazon Linux 2023 images with NVIDIA driver 615.71.10.</li>
+<li>GPU fractioning is suited for workloads like interactive notebooks, short evaluation jobs, and small inference services needing enforced per-Pod GPU-memory limits on GPUs lacking MIG capabilities.</li>
 </ul></div>
     
   </div>
@@ -391,16 +390,16 @@
     <div class="meta">
       <a href="techcrunch/" class="badge badge-techcrunch">TechCrunch</a>
       <span>news</span>
-      <span> · 2026-11-19</span>
+      <span> · 2026-11-20</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/11/18/microsoft-ceo-satya-nadella-explains-why-he-asked-60k-employees-to-quit/" target="_blank" rel="noopener">Microsoft CEO Satya Nadella explains why he asked 60K employees to quit</a></h2>
+    <h2><a href="https://techcrunch.com/2026/11/19/anthropics-7-founders-cashed-out-nearly-2b-in-record-breaking-ipo/" target="_blank" rel="noopener">Anthropic’s 7 founders cashed out nearly $2B in record-breaking IPO</a></h2>
     
-    <div class="summary"><p>Microsoft CEO Satya Nadella explained the rationale behind offering buyouts to 60,000 employees in October 2026.</p>
+    <div class="summary"><p>Anthropic completed its IPO on November 19, 2026, raising $81.3 billion, with potential to reach $117 billion.</p>
 <ul>
-<li>The company is reorganizing to prioritize employees managing AI tools, rather than performing tasks directly, shifting the focus of roles like software engineering.</li>
-<li>Nadella cited the example of the 11-developer team building features for Microsoft 365’s Copilot (referred to as “Cowork”), who focus on building a “software factory” <em>for</em> the product instead of the product itself.</li>
-<li>The buyouts were intended to give employees agency in adapting to the changes, as widespread anxiety exists regarding the impact of AI on job security.</li>
-<li>Microsoft aims for all employees to eventually manage AI agents, fundamentally changing the nature of work across the organization.</li>
+<li>Seven founders sold approximately 3.4 million shares each at $83 per share, netting roughly $280 million each before fees and taxes.</li>
+<li>Nvidia invested $10 billion in non-voting Class N stock, with Google also investing $10 billion, while AMD, Broadcom, Micron, Microsoft, and TSMC purchased the remainder.</li>
+<li>Amazon and Google collectively hold a 28% stake in Anthropic, with Amazon potentially able to increase its stake to nearly 24% through conversion of promissory notes.</li>
+<li>Anthropic anticipates needing $70.7 billion for compute and infrastructure spending in the next 12 months, and a total of $451.6 billion before the end of 2030, with overall infrastructure commitments potentially reaching $1.05 to $1.08 trillion.</li>
 </ul></div>
     
   </div>
@@ -409,16 +408,15 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-11-18</span>
+      <span> · 2026-11-19</span>
     </div>
-    <h2><a href="https://arstechnica.com/gaming/2026/11/will-wrights-next-simulation-will-use-ai-to-mine-content-from-your-memories/" target="_blank" rel="noopener">Will Wright&#39;s next simulation will use AI to mine content from your memories</a></h2>
+    <h2><a href="https://arstechnica.com/tech-policy/2026/11/traumatized-teens-sue-school-cops-after-doritos-bag-triggers-ai-gun-alert/" target="_blank" rel="noopener">Traumatized teens sue school, cops after Doritos bag triggers AI gun alert</a></h2>
     
-    <div class="summary"><p>Will Wright’s Gallium Studios is developing <em>MyMems</em>, a simulation game utilizing generative AI to create personalized experiences from player-provided memories, planned for release in 2026.</p>
-<ul>
-<li>The game aims to create digital characters based on real people from a player’s memories, who can then interact in puzzle-solving scenarios.</li>
-<li>Player memories will be categorized into themed “zones” such as sports, vacations or significant life events.</li>
-<li>Gallium Studios is partnering with Artificial Agency, which will provide AI tools to generate a “personal behavior model and knowledge graph” from the inputted memories.</li>
-<li>The project was initially started as <em>Proxi</em> in 2018 but faced funding issues in late 2024 before being revived through the partnership with Artificial Agency.</li>
+    <div class="summary"><ul>
+<li>Four Black high school students in Baltimore County, Maryland, are suing school officials and police after an Omnilert AI gun detection system falsely identified a Doritos bag as a weapon in October 2025.</li>
+<li>The system initially flagged a student with a Doritos bag, and while school officials canceled the alert within two minutes after reviewing camera footage, police were still dispatched to the scene.</li>
+<li>Police arrived with guns drawn, handcuffed and searched the students, despite the alert being canceled, allegedly causing emotional distress and physical harm to the students.</li>
+<li>The lawsuit alleges violations of constitutional rights, seeks an injunction to stop the use of Omnilert until proper protocols are established, and highlights concerns about overreliance on AI in public safety, with Omnilert defending its technology and attributing the incident to school authority delegation failures.</li>
 </ul></div>
     
   </div>

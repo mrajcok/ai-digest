@@ -80,13 +80,42 @@
     </label>
   </div>
   <h1>Google News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-11-19 11:18 UTC</p>
+  <p class="generated-at">Generated 2026-11-20 11:21 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">November 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Google AI Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-11-19</span>
+    </div>
+    <h3><a href="https://blog.google/innovation-and-ai/technology/ai/dialogues-walter-isaacson/" target="_blank" rel="noopener">Walter Isaacson on curiosity and creativity in the AI age.</a></h3>
+    
+    <div class="summary"><p>The Gemini API now features <strong>Tool Retrieval</strong>, enabling developers to connect Gemini models to external tools. This allows Gemini to utilize tools to accomplish tasks beyond its native capabilities, effectively extending its functionality. Additionally, the <strong>Gemini app</strong> is now accessible on lower-memory Android devices, broadening its user base.</p></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Google AI Blog</span> · 
+      <span>blog</span>
+      <span> · 2026-11-19</span>
+    </div>
+    <h3><a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/" target="_blank" rel="noopener">Introducing Tool Retrieval in the Gemini API</a></h3>
+    
+    <div class="summary"><ul>
+<li>The Gemini API introduces Tool Retrieval in preview within the Interactions API, aimed at improving agent scalability with large tool libraries.</li>
+<li>Tool Retrieval reduces input token counts and latency by deferring the loading of tool parameter schemas until they are needed, activated by setting <code>defer_loading: true</code> for specific tools.</li>
+<li>The feature utilizes a <code>tool_search</code> tool type to identify necessary schemas on demand, without requiring upfront loading of all tool details, shown in example code using the <code>genai</code> library.</li>
+<li>Tool Retrieval is compatible with Gemini 3.6 and later models (including Gemini 4 variants) and does not incur separate charges, billed according to standard token usage rates; it also supports both server-side and client-side retrieval methods.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -562,44 +591,6 @@
 <li>The fine-tuned Gemma model analyzes conversations locally on a user’s device to identify manipulative patterns and issues real-time warnings, unlike traditional cloud-based threat detection.</li>
 <li>The system employs a two-stage pipeline: a lightweight classifier for initial screening and the fine-tuned Gemma model for in-context analysis, optimizing for battery efficiency on smartphones.</li>
 <li>Training data was strictly governed, utilizing anonymized datasets within GovTech Singapore’s GCP environment, ensuring no private or personally identifiable information was used and the model was stress-tested against diverse scam scenarios.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">DeepMind Blog</span> · 
-      <span>research</span>
-      <span> · 2026-10-13</span>
-    </div>
-    <h3><a href="https://deepmind.google/blog/introducing-gemini-4-argon/" target="_blank" rel="noopener">Gemini 4 Argon: Built to solve your hardest problems</a></h3>
-    
-    <div class="summary"><h2>Gemini 4 Argon: New Frontier Model Now Available</h2>
-<p>Gemini 4 Argon, Google’s latest frontier model, is now broadly available, excelling at complex tasks across various domains.</p>
-<ul>
-<li>Argon is available via API in AI Studio and the Gemini platform, for Google AI Ultra subscribers in Google Antigravity, and Gemini and AI Mode in Search, at an introductory price of $2/million input tokens and $10/million output tokens.</li>
-<li>Argon achieves state-of-the-art results, ranking #1 on the Vals Index, and demonstrates improvements in coding (35%+ increase in agentic code submissions, 30% reduction in rollbacks), scientific workflows (up to 2.3x faster xTB quantum chemistry package), and cybersecurity (identifying and remediating security gaps).</li>
-<li>The model showcases advanced multimodal capabilities, including generating 3D visualizations, optimizing code, and autonomously solving complex problems, demonstrated through use cases like reconstructing Chaco Canyon from LiDAR scans and generating 3D printable sofa legs from sketches.</li>
-<li>Argon improves performance on benchmarks like Embodied Reasoning (ERQA) with 87%, RareBench (57% on rare-disease diagnosis) and LabBench (52.2% on wet-lab reasoning), and has been used to accelerate progress in quantum computing, nuclear fusion, and robotics, including a "Video-to-Sim-to-Real" pipeline for robotics training.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">DeepMind Blog</span> · 
-      <span>research</span>
-      <span> · 2026-10-13</span>
-    </div>
-    <h3><a href="https://deepmind.google/blog/gemini-4-argon-for-robotics/" target="_blank" rel="noopener">Gemini 4 Argon for Robotics</a></h3>
-    
-    <div class="summary"><h2>Gemini 4 Argon for Robotics</h2>
-<p>Gemini 4 Argon achieves state-of-the-art performance in physical reasoning and unlocks new capabilities across the robotics lifecycle.</p>
-<ul>
-<li>Argon scores 87% on the Embodied Reasoning (ERQA) benchmark, outperforming other frontier models in understanding and solving physical, spatial problems in 3D environments.</li>
-<li>The model demonstrates capabilities in robot control, including mobile manipulation with a Boston Dynamics Spot® quadruped (12-DoF legs + 6-DoF arm) using MuJoCo practice and zero-shot control of a robotic arm to reorient and place objects.</li>
-<li>Argon enables Real2Sim transfer by reconstructing physically calibrated simulation twins from real robot camera feeds, human videos, or sketches, leveraging MuJoCo for physics simulation.</li>
-<li>The model provides detailed multimodal hindsight labeling, including understanding dexterity and progress estimation, enabling automated quality control and reweighting of data from videos like an ALOHA 2 robot folding origami.</li>
 </ul></div>
     
   </div>
