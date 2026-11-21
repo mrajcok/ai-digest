@@ -80,13 +80,133 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-11-20 11:21 UTC</p>
+  <p class="generated-at">Generated 2026-11-21 11:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">November 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-21</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/cut-self-hosted-llm-cost-and-latency-with-the-distributed-kv-caching-agent-skill/" target="_blank" rel="noopener">Cut self-hosted LLM cost and latency with the distributed KV caching agent skill</a></h3>
+    
+    <div class="summary"><ul>
+<li>AWS has introduced distributed KV caching using Amazon ElastiCache to reduce costs and latency for self-hosted LLMs, potentially cutting inference costs by up to 40% and TTFT by up to 80%.</li>
+<li>An Agent Toolkit skill simplifies evaluation and setup, guiding coding agents through fit checks, sizing estimations using KVTrace (a no-charge tool for workload analysis), and configuration management for vLLM/SGLang engines.</li>
+<li>The skill supports coding agents like Kiro and Claude Code, and integrates with LMCache 0.5.8rc1+, vLLM 0.11.1+, and ElastiCache for Valkey 9.1+ on cache.i8ge.48xlarge nodes.</li>
+<li>The system utilizes best practices such as pre-deployment validation, configuration matching, and explicit approval for resource changes, focusing on scenarios where the benefits of caching outweigh the costs, determined by prompt length and repetition rate.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-21</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/new-in-aws-quick-more-capable-flows-an-updated-web-experience-and-agents-that-work-together/" target="_blank" rel="noopener">New in AWS Quick: More capable flows, an updated web experience, and agents that work together</a></h3>
+    
+    <div class="summary"><ul>
+<li>AWS Quick now supports building, running, and refining business process flows entirely within chat, utilizing agents, skills, and tools with access to structured data.</li>
+<li>Deterministic steps have been added to Quick Flows, supporting longer-running workflows and larger data volumes for consistent and verifiable results.</li>
+<li>A redesigned web application provides a home screen with prioritized tasks, a consolidated "Customize" section for managing agents and skills, and cross-platform synchronization.</li>
+<li>Multi-agent orchestration allows for complex requests to be handled by multiple specialized agents simultaneously, combining their outputs into a single response, and new connectors have been added for Meta ads and Amplitude.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-20</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-enhanced-observability-in-amazon-sagemaker-hyperpod-to-diagnose-gpu-training-issues/" target="_blank" rel="noopener">Introducing enhanced infrastructure observability in Amazon SageMaker HyperPod</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon SageMaker HyperPod now includes enhanced observability features for diagnosing GPU training issues, utilizing Amazon CloudWatch’s DetectGroupOutliers API to identify anomalous GPU behavior (utilization, memory, temperature, power, SM clock).</li>
+<li>Static diagnostic rules have been added to detect common failure patterns like GPU hardware faults (XID/ECC errors), EFA throughput drops, and thermal throttling.</li>
+<li>Telemetry is collected at two levels: default metrics (every 30 seconds, low overhead) and advanced metrics (optional, more detailed GPU/network/host data).</li>
+<li>Observability can be configured to use either Amazon CloudWatch (new default, lower pricing) or Amazon Managed Service for Prometheus as a metric store, with prebuilt dashboards available in both.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-20</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/announcing-amazon-textract-insights-verifiable-generative-ai-for-documents/" target="_blank" rel="noopener">Announcing Amazon Textract Insights: Verifiable generative AI for documents</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon Textract Insights is a generative AI feature within Amazon Textract, enabling users to extract data from documents by describing desired fields in natural language, without requiring model training.</li>
+<li>It handles mixed document packets (e.g., mortgage applications containing W-2s, payslips, and notes) by splitting them, matching content to defined blueprints, and extracting fields with associated confidence scores and page-level grounding.</li>
+<li>Blueprints are defined using JSON Schema, allowing users to leverage pre-built AWS blueprints (W-2, 1040, etc.) or create custom ones, and specifying whether fields should be read verbatim or inferred.</li>
+<li>The service provides both explicit (directly read) and inferred fields, each with confidence scores and grounding information aiding in auditable automation and enabling teams to focus manual review efforts.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-20</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-standard-bank-group-automates-ai-risk-assessment-for-generative-ai/" target="_blank" rel="noopener">How Standard Bank Group automates AI risk assessment for generative AI</a></h3>
+    
+    <div class="summary"><p>Standard Bank Group automated AI risk assessment for generative AI use cases using AWS services to accelerate governance and maintain compliance.</p>
+<ul>
+<li>The solution leverages the AWS Well-Architected Tool, AWS Step Functions, and Amazon Bedrock (using a foundation model via “LLM-as-a-judge”) to automate evidence gathering and testing against internal policies and international AI standards.</li>
+<li>The automated assessment pipeline incorporates four steps: evidence collection via a custom agent, pipeline examination of artifacts (documentation, code, live tests), LLM-based evaluation against controls, and report generation (executive presentation, mitigation checklist, technical report, CloudWatch dashboard).</li>
+<li>Amazon Bedrock Guardrails are used to protect AI model interactions, and evaluations are run multiple times to ensure consistency, with all judgments and evidence stored for review and auditing.</li>
+<li>A “question factory” allows internal policies to be translated into automated checks, enabling policy updates to automatically become test changes, reducing manual rework.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-20</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-amazon-sagemaker-hyperpod-global-inference-gateway-one-endpoint-across-regions-and-clusters/" target="_blank" rel="noopener">Introducing Amazon SageMaker HyperPod Global Inference Gateway: One endpoint across Regions and clusters</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon SageMaker HyperPod introduces a Global Inference Gateway, providing a single managed endpoint to route requests across registered HyperPod clusters, even across AWS Regions.</li>
+<li>The gateway uses four weighted signals – KV cache headroom, queue depth, region proximity, and error rate (with configurable weights) – to determine the best cluster for each request, and automatically fails over if a cluster becomes unavailable.</li>
+<li>Setting up the gateway involves publishing clusters (enabling <code>globalRouting</code> in the <code>InferenceGatewayConfig</code>), creating the gateway specifying the clusters to route across, and authentication/authorization using SigV4 and IAM.</li>
+<li>The gateway operates routing fleets, manages private connectivity via AWS PrivateLink, and handles certificate validation, health checks, and rate limiting, reducing operational overhead for cross-cluster and cross-Region inference.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-20</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-managed-cluster-extensions-for-observability-and-user-management-in-amazon-sagemaker-hyperpod-slurm/" target="_blank" rel="noopener">Introducing managed cluster extensions for observability and user management in Amazon SageMaker HyperPod Slurm</a></h3>
+    
+    <div class="summary"><ul>
+<li>Amazon SageMaker HyperPod now offers “cluster extensions” – managed software packages for running nodes, initially for observability and user management.</li>
+<li>Observability extension (sagemaker-observability) collects node, GPU, EFA, Slurm job, and cluster metrics and sends them to CloudWatch or Amazon Managed Service for Prometheus.</li>
+<li>User management extension (sagemaker-user-management) creates/manages users &amp; groups, controls SSH/sudo access, and integrates with directory services like AWS Directory Service for Microsoft Active Directory.</li>
+<li>Extensions are declared via API or console, validated upfront, consistently applied across nodes, and report status/health; they are intended to complement rather than replace custom AMIs and lifecycle scripts.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -484,129 +604,6 @@
 <li>Key features include using Aurora ML to generate vector embeddings from SQL queries, enabling semantic search within the database without data movement, and leveraging <code>pgvector</code> for similarity searches.</li>
 <li>The design focuses on the "Explainability" dimension with a <code>chat_interactions</code> table to log queries, responses, retrieved chunks, similarity scores, citations, and guardrail assessments for full provenance.</li>
 <li>Implementation relies on AWS services like Amazon Bedrock (for embeddings and inference), Bedrock Guardrails (for content filtering and PII protection), and utilizes extensions such as <code>pgvector</code> and <code>aws_ml</code> within Aurora PostgreSQL.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-18</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-airbnb-uses-cost-per-task-to-operate-coding-agents-on-amazon-bedrock/" target="_blank" rel="noopener">How Airbnb uses cost per task to operate coding agents on Amazon Bedrock</a></h3>
-    
-    <div class="summary"><p>Airbnb evaluates and monitors coding agents on Amazon Bedrock using cost per task as a key metric.</p>
-<ul>
-<li>Airbnb uses Amazon Bedrock to run coding agents (AirChat) and evaluates models based on a "cost per task" metric – the total cost of tokens used to complete one task – alongside a quality score.</li>
-<li>They leverage CloudWatch metrics (InvocationLatency, TimeToFirstToken, OutputTokenCount, InvocationThrottles, EstimatedTPMQuotaUsage, Input/Cache/Output Token Counts) to monitor latency, throttling, and cost in production.</li>
-<li>Evals are run <em>before</em> rollout to determine model defaults and effort ceilings (reasoning effort level), and production data is compared to eval results to identify discrepancies and adjust configurations.</li>
-<li>The architecture involves AirChat running on AirDev workspaces, communicating with Bedrock through an LLM gateway, with evals and monitoring guiding model selection and ceiling adjustments; a key finding was that while a model may perform well on a task, actual usage patterns can significantly impact overall cost due to factors like prolonged, self-directed sessions.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-18</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-the-amazon-sagemaker-jumpstart-model-leaderboard/" target="_blank" rel="noopener">Introducing the Amazon SageMaker JumpStart Model Leaderboard</a></h3>
-    
-    <div class="summary"><ul>
-<li>The Amazon SageMaker JumpStart Model Leaderboard provides a unified view for comparing foundation models on quality (using benchmarks like BIG-Bench Hard, GPQA Diamond, and MMLU-Pro), speed (Time to First Token and Throughput), and cost.</li>
-<li>The Leaderboard covers over 70 models from providers like Meta, Google, and IBM, and allows filtering by license, provider, and modality, with performance metrics displayed based on selectable “Use Case Profiles” (e.g., Max Context) and “Optimization Goals” (Balanced, Cost Optimized, Latency Optimized, Throughput Optimized).</li>
-<li>Metrics include Time to First Token (TTFT), Throughput (tokens/s), and Instance Cost ($/hr), measured by deploying models to SageMaker endpoints with standardized test workloads to ensure comparable results.</li>
-<li>Users can customize the displayed columns and sort by specific metrics, and the tool features a heatmap visualization to quickly identify top-performing models, with a deployment pathway directly from the model page.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-18</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-workload-recovery-and-expanded-infrastructure-checks-on-amazon-sagemaker-hyperpod/" target="_blank" rel="noopener">Introducing workload recovery and expanded infrastructure checks on Amazon SageMaker HyperPod</a></h3>
-    
-    <div class="summary"><p>Amazon SageMaker HyperPod introduces new capabilities for workload recovery and infrastructure checks to improve training goodput.</p>
-<ul>
-<li><strong>MultiNodeTrainingValidation</strong> is a deep health check that trains a small model across instances to detect GPUs producing incorrect results (NaN or infinite loss) even after passing hardware tests.</li>
-<li><strong>HyperPod Kubernetes Resource Monitoring Agent</strong> monitors the Kubernetes layer of an EKS cluster for failures like crash-looping device plugins, missing DaemonSets, and tainted nodes, reporting issues as Kubernetes events and CloudWatch logs.</li>
-<li><strong>Hung job detection</strong> identifies Slurm jobs stalled due to timeouts or deadlocks by monitoring job output, GPU activity, or defined log patterns and can automatically cancel the job for requeuing.</li>
-<li>These capabilities target different sources of failure: MultiNodeTrainingValidation focuses on numerical faults, the Kubernetes Agent on cluster-level issues, and Hung job detection on stalled jobs, with testing performed during provisioning or on-demand via the SageMaker API.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-18</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/exa-boosts-embedding-throughput-by-50-to-index-billions-of-documents-on-aws-ai-chips/" target="_blank" rel="noopener">Exa boosts embedding throughput by 50% to index billions of documents on AWS AI chips</a></h3>
-    
-    <div class="summary"><ul>
-<li>Exa achieved a 50% increase in embedding throughput by optimizing their infrastructure on AWS Inferentia2 and Trainium2 hardware for semantic search, utilizing a multi-tower machine learning model and an in-house vector database.</li>
-<li>Optimizations included weight layout adjustments, enabling autocast (downcasting to lower precision), and implementing optimized Neuron Kernel Interface (NKI) kernels – specifically a drop-in attention kernel and a custom fused SwiGLU MLP kernel – to reduce memory spill and improve Tensor Engine utilization.</li>
-<li>Further performance gains (47% overall) were achieved by reducing FLOPS through attention kernel customization tailored to the model’s specific shapes, and folding operations into single matrix multiplications.</li>
-<li>An "agentic" development workflow, utilizing Flyte for automated correctness validation (0.999 cosine similarity target) and performance profiling, enabled iterative optimization and cost-effective kernel development, and the scheduler dynamically adjusts to utilize the cheapest available compute across multiple AWS Regions.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-17</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-arisglobal-scaled-generative-ai-inference-on-amazon-bedrock/" target="_blank" rel="noopener">How ArisGlobal scaled generative AI inference on Amazon Bedrock</a></h3>
-    
-    <div class="summary"><p>ArisGlobal significantly reduced inference costs for their NavaX AI engine, built on Amazon Bedrock, by strategically utilizing prompt caching.</p>
-<ul>
-<li>ArisGlobal initially faced increased costs as their shared prompt prefix grew 150% over six months with increased tenant onboarding, leading to a 200% rise in per-case inference costs.</li>
-<li>They reversed the request order, caching the shared prompt prefix <em>before</em> the per-case document using Amazon Bedrock’s explicit cache checkpoints (using <code>cachePoint</code> with a default 5-minute TTL, or up to 1-hour TTL for select models like <code>anthropic.claude-sonnet-4-5-20250929-v1:0</code>).</li>
-<li>This strategy resulted in 65% of input tokens being served from the cache, achieving approximately 50% lower effective input cost and 40% lower overall monthly inference spend (at &gt;19 billion tokens/month) while onboarding 15% more tenants.</li>
-<li>The key takeaway is to prioritize caching content with high reuse potential (the shared prefix) over larger, case-specific content (the document) to maximize cost savings with Amazon Bedrock.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-17</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/responsible-ai-for-agentic-ai-a-phased-roadmap-for-platform-and-application-teams/" target="_blank" rel="noopener">Responsible AI for agentic AI: A phased roadmap for platform and application teams</a></h3>
-    
-    <div class="summary"><ul>
-<li>This post details a three-phase roadmap for implementing Responsible AI (RAI) practices for agentic AI platforms, encompassing governance foundations, pilot deployment, and evaluation/hardening.</li>
-<li>The framework addresses key challenges in agentic AI, including unpredictable runtime behavior, data exposure, regulatory velocity, and team collaboration, mapping AWS Responsible AI Lens pillars to prioritized phases.</li>
-<li>Phase 1 focuses on governance and security/privacy, requiring risk assessments and foundational infrastructure setup; Phase 2 emphasizes safety, veracity, robustness, and controllability through guardrails and knowledge grounding; Phase 3 centers on fairness, explainability, transparency, and continuous security evaluation.</li>
-<li>The post references AWS services like Amazon Bedrock AgentCore, AWS Control Tower, and tools like the Responsible AI Assessment Skill and scorecard, recommending periodic reassessment of RAI dimensions based on triggers like new use cases or regulatory changes.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-17</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/how-loanpro-built-an-agentic-ai-loan-servicing-assistant-with-amazon-bedrock-agentcore/" target="_blank" rel="noopener">How LoanPro built an agentic AI loan servicing assistant with Amazon Bedrock AgentCore</a></h3>
-    
-    <div class="summary"><p>LoanPro built an AI loan servicing assistant using Amazon Bedrock and AgentCore to synthesize borrower context and recommend actions to loan servicing agents.</p>
-<ul>
-<li>The assistant leverages Anthropic’s Claude Sonnet 5.5, Claude Haiku 5.5 and Claude Opus 5.5 foundation models accessed via Amazon Bedrock.</li>
-<li>It utilizes a multi-agent architecture built with the Strands Agents SDK and orchestrated with Amazon Bedrock AgentCore, employing specialized agents for data retrieval, summarization, and action selection.</li>
-<li>The system integrates with LoanPro’s APIs via an AgentCore Gateway and AWS Lambda functions for secure data access and tool use, including fetching ~1,400 account fields and triggering workflow actions.</li>
-<li>Early results indicate a reduction of up to 15% in customer call times and nearly 8% decrease in internal ticket volumes, with account summaries generated in under 15 seconds.</li>
 </ul></div>
     
   </div>
