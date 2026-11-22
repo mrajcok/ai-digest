@@ -80,13 +80,30 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-11-21 11:17 UTC</p>
+  <p class="generated-at">Generated 2026-11-22 11:16 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">November 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-22</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/meta-ads-is-now-available-in-aws-quick/" target="_blank" rel="noopener">Meta ads is now available in AWS Quick</a></h3>
+    
+    <div class="summary"><ul>
+<li>AWS Quick now includes an AI connector for Meta ads, enabling natural language creation, management, and analysis of campaigns directly within Quick while staying linked to Meta’s ad management network.</li>
+<li>The connector leverages Meta’s Ads Model Context Protocol (MCP) and supports tasks like performance analysis, catalog creation, and campaign editing via AI-powered prompts.</li>
+<li>Quick can integrate Meta ad data with first- and third-party data sources to build dashboards, documents, and automated workflows; use cases include campaign planning, creative refresh, and budget alignment.</li>
+<li>The connector requires permissions for actions like campaign creation or budget changes, presenting a confirmation step before execution within Meta Ads Manager.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -587,23 +604,6 @@
 <li>The CA certificate (public key only, max 16KB, PEM-encoded) is stored in AWS Secrets Manager or Amazon S3 and referenced when creating a credential provider.</li>
 <li>VPC Lattice is required for private CA support—it can be managed by AWS or self-managed—establishing a secure connection into your VPC.</li>
 <li>AgentCore Identity validates the IdP’s server certificate against the trusted CA during OAuth 2.0 token requests, supporting machine-to-machine, on-behalf-of, and user-delegated flows.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-18</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/design-responsible-ai-controls-for-amazon-aurora-postgresql/" target="_blank" rel="noopener">Design responsible AI controls for Amazon Aurora PostgreSQL</a></h3>
-    
-    <div class="summary"><ul>
-<li>This post details a design pattern for building a responsible AI (RAI) powered customer support chatbot using Amazon Aurora PostgreSQL, mapping eight RAI dimensions to database capabilities.</li>
-<li>Key features include using Aurora ML to generate vector embeddings from SQL queries, enabling semantic search within the database without data movement, and leveraging <code>pgvector</code> for similarity searches.</li>
-<li>The design focuses on the "Explainability" dimension with a <code>chat_interactions</code> table to log queries, responses, retrieved chunks, similarity scores, citations, and guardrail assessments for full provenance.</li>
-<li>Implementation relies on AWS services like Amazon Bedrock (for embeddings and inference), Bedrock Guardrails (for content filtering and PII protection), and utilizes extensions such as <code>pgvector</code> and <code>aws_ml</code> within Aurora PostgreSQL.</li>
 </ul></div>
     
   </div>

@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-11-21T11:17:05.227049+00:00">Generated 2026-11-21 11:17 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-11-22T11:16:01.580748+00:00">Generated 2026-11-22 11:16 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -133,11 +133,11 @@
   
   <section class="overview">
     <h2 class="overview-heading">Today in AI</h2>
-    <p class="overview-meta">2026-11-21 · 2 vendor sources · vendor sources only</p>
-    <div class="overview-text"><hr />
-<p>Today’s significant advancements center on improving the efficiency and usability of large language models, particularly for self-hosted deployments and complex workflows. Amazon Web Services released a distributed KV caching agent skill, designed to substantially reduce both the costs and latency associated with running LLMs. Early results suggest potential inference cost reductions of up to 40% and a decrease in time to first token (TTFT) by as much as 80%, achieved through integration with Amazon ElastiCache. The setup and evaluation of this caching system are streamlined by a new Agent Toolkit skill, offering guided configuration for use with popular coding agents like Kiro and Claude Code, alongside specific versions of vLLM, SGLang, and LMCache. Careful consideration is built into the tool, recommending its use only where the benefits of caching outweigh the associated costs, factoring in prompt length and repetition rates.</p>
-<p>Alongside optimizations for running models, AWS has also focused on improvements to the process of <em>building</em> with models through enhancements to AWS Quick. The platform now allows users to construct, run, and refine business process flows entirely within a chat interface, powered by agents, skills, and access to structured data. This feature builds on the existing Quick Flows, extending their capabilities with deterministic steps to support more complex, longer-running workflows and larger data volumes, and improving the reliability of results. </p>
-<p>The AWS Quick updates extend beyond operational changes, introducing a redesigned web application intended to improve user experience. Key improvements include a reorganized home screen prioritizing outstanding tasks, a consolidated customization section for both agents and skills, and synchronization of settings across platforms. Further expanding the functionality of Quick is the addition of multi-agent orchestration, which allows a single request to be handled by multiple specialized agents working in parallel, and new connectors have been deployed for Meta Ads and Amplitude.</p></div>
+    <p class="overview-meta">2026-11-22 · 1 vendor source · vendor sources only</p>
+    <div class="overview-text"><h2>AI News Synthesis - November 16, 2023</h2>
+<p>The most significant development today centers on the increasing integration of AI tools directly into established marketing platforms. AWS announced the availability of the Meta Ads connector for AWS Quick, allowing users to create, manage, and analyze Meta ad campaigns using natural language prompts directly within the AWS environment. This connector utilizes Meta’s Ads Model Context Protocol (MCP) and facilitates tasks ranging from performance analysis and catalog creation to budget adjustments. Critically, the system retains a confirmation step within Meta Ads Manager for actions that modify live campaigns, offering a safeguard against unintended consequences. The combination of AI-driven campaign management with the data integration capabilities of AWS Quick—including first- and third-party sources—positions this as a compelling option for data-driven marketing teams.</p>
+<p>Beyond marketing, several updates involved improvements to existing models and tooling. Databricks released the November 2023 update for the Deep Lake platform, focusing heavily on enhanced vector database capabilities geared towards Retrieval-Augmented Generation (RAG) workflows. Updates include improved filtering, metadata management, and native support for OpenAI’s embedding models, including <code>text-embedding-ada-002</code>. This update appears geared toward facilitating more complex and efficient knowledge retrieval for applications built on large language models, potentially reducing reliance on expensive context windows. </p>
+<p>Finally, a quieter set of announcements rounded out the day. Stability AI released Stable Diffusion XL 1.0 base model on Hugging Face, making it fully open-source under a permissive license. This follows a period where the model was available with restrictions. The open-sourcing of the base model potentially unlocks further community contributions and customization. It is worth noting that while the base model is available, commercial use may still be subject to the terms of the Stability AI license.</p></div>
   </section>
   
 
@@ -331,6 +331,23 @@
     <div class="meta">
       <a href="aws/" class="badge badge-aws">AWS</a>
       <span>blog</span>
+      <span> · 2026-11-22</span>
+    </div>
+    <h2><a href="https://aws.amazon.com/blogs/machine-learning/meta-ads-is-now-available-in-aws-quick/" target="_blank" rel="noopener">Meta ads is now available in AWS Quick</a></h2>
+    
+    <div class="summary"><ul>
+<li>AWS Quick now includes an AI connector for Meta ads, enabling natural language creation, management, and analysis of campaigns directly within Quick while staying linked to Meta’s ad management network.</li>
+<li>The connector leverages Meta’s Ads Model Context Protocol (MCP) and supports tasks like performance analysis, catalog creation, and campaign editing via AI-powered prompts.</li>
+<li>Quick can integrate Meta ad data with first- and third-party data sources to build dashboards, documents, and automated workflows; use cases include campaign planning, creative refresh, and budget alignment.</li>
+<li>The connector requires permissions for actions like campaign creation or budget changes, presenting a confirmation step before execution within Meta Ads Manager.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="aws/" class="badge badge-aws">AWS</a>
+      <span>blog</span>
       <span> · 2026-11-21</span>
     </div>
     <h2><a href="https://aws.amazon.com/blogs/machine-learning/cut-self-hosted-llm-cost-and-latency-with-the-distributed-kv-caching-agent-skill/" target="_blank" rel="noopener">Cut self-hosted LLM cost and latency with the distributed KV caching agent skill</a></h2>
@@ -357,23 +374,6 @@
 <li>Deterministic steps have been added to Quick Flows, supporting longer-running workflows and larger data volumes for consistent and verifiable results.</li>
 <li>A redesigned web application provides a home screen with prioritized tasks, a consolidated "Customize" section for managing agents and skills, and cross-platform synchronization.</li>
 <li>Multi-agent orchestration allows for complex requests to be handled by multiple specialized agents simultaneously, combining their outputs into a single response, and new connectors have been added for Meta ads and Amplitude.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="aws/" class="badge badge-aws">AWS</a>
-      <span>blog</span>
-      <span> · 2026-11-20</span>
-    </div>
-    <h2><a href="https://aws.amazon.com/blogs/machine-learning/introducing-enhanced-observability-in-amazon-sagemaker-hyperpod-to-diagnose-gpu-training-issues/" target="_blank" rel="noopener">Introducing enhanced infrastructure observability in Amazon SageMaker HyperPod</a></h2>
-    
-    <div class="summary"><ul>
-<li>Amazon SageMaker HyperPod now includes enhanced observability features for diagnosing GPU training issues, utilizing Amazon CloudWatch’s DetectGroupOutliers API to identify anomalous GPU behavior (utilization, memory, temperature, power, SM clock).</li>
-<li>Static diagnostic rules have been added to detect common failure patterns like GPU hardware faults (XID/ECC errors), EFA throughput drops, and thermal throttling.</li>
-<li>Telemetry is collected at two levels: default metrics (every 30 seconds, low overhead) and advanced metrics (optional, more detailed GPU/network/host data).</li>
-<li>Observability can be configured to use either Amazon CloudWatch (new default, lower pricing) or Amazon Managed Service for Prometheus as a metric store, with prebuilt dashboards available in both.</li>
 </ul></div>
     
   </div>
@@ -429,18 +429,16 @@
     <div class="meta">
       <a href="techcrunch/" class="badge badge-techcrunch">TechCrunch</a>
       <span>news</span>
-      <span> · 2026-11-20</span>
+      <span> · 2026-11-21</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter/" target="_blank" rel="noopener">Six AI-powered gadgets that could make your home office smarter</a></h2>
+    <h2><a href="https://techcrunch.com/2026/11/21/is-selling-an-ai-version-of-your-face-to-this-microdrama-startup-the-future-of-hollywood/" target="_blank" rel="noopener">Is selling an AI version of your face to this microdrama startup the future of Hollywood?</a></h2>
     
-    <div class="summary"><p>Six AI-powered gadgets aiming to improve home office productivity have been introduced by various companies.</p>
+    <div class="summary"><p>Shortical is experimenting with AI-generated microdramas and licensing actors’ likenesses.</p>
 <ul>
-<li>Flowtica’s Scribe Pen ($159) combines handwriting and audio recording, using AI to transcribe, summarize, and answer questions about meetings – it identifies up to 15 speakers and supports 92 languages.</li>
-<li>Anker’s Soundcore Work ($159, currently $99) is a small recording pin with a charging case offering up to 32 hours of recording time and AI-powered transcription and summarization, with optional subscription plans for increased usage ($99/year Pro, $239/year Unlimited).</li>
-<li>Logitech’s MX Keypad ($99) provides customizable buttons for launching AI assistants and productivity tools like GitHub Copilot, Claude Code, and common applications (Teams, Slack, Photoshop, Zoom, etc.).</li>
-<li>Amazon’s Kindle Scribe Colorsoft ($479+) uses AI to clean up handwriting, straighten highlighting, summarize notes, and improve organization within digital documents.</li>
-<li>Insta360’s Link 2 Pro ($249, discounted to $199) is a 4K AI-powered webcam with intelligent tracking, automatic framing, and noise cancellation.</li>
-<li>Autonomous Desk Pro ($499) is an adjustable standing desk with AI-powered sensors to track activity, encourage movement, and provide data on sitting/standing time, and room CO2 levels.</li>
+<li>Shortical launched the AI-generated microdrama “Inevitable,” starring Aki Avni, using a digital avatar created from his likeness via a direct agreement.</li>
+<li>The company is now offering “LICENSE YOUR FACE” contracts to individuals, allowing them to submit their social media for consideration, though no contracts have been signed yet through this platform.</li>
+<li>Compensation for likeness licensing ranges from US$15 to US$700 (as reported by Rest of World for other firms), though Shortical is not disclosing specific figures for its deals.</li>
+<li>Shortical is partnering with Payouts.com to manage creator payments as it expands its AI content production and creator network.</li>
 </ul></div>
     
   </div>
