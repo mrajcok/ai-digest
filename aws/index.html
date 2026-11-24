@@ -80,13 +80,31 @@
     </label>
   </div>
   <h1>AWS News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-11-23 11:16 UTC</p>
+  <p class="generated-at">Generated 2026-11-24 11:17 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">November 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      
+      <span>blog</span>
+      <span> · 2026-11-24</span>
+    </div>
+    <h3><a href="https://aws.amazon.com/blogs/machine-learning/introducing-the-amazon-bedrock-trusted-access-api-with-anthropics-enterprise-frontier-safeguards-and-enterprise-data-controls/" target="_blank" rel="noopener">Introducing the Amazon Bedrock Trusted Access API with Anthropic’s Enterprise Frontier Safeguards and Enterprise Data Controls</a></h3>
+    
+    <div class="summary"><p>Amazon Bedrock now offers the Trusted Access API, providing a central location to discover and enroll in model provider programs like Anthropic’s Enterprise Frontier Safeguards (EFS) and Enterprise Data Controls (EDC).</p>
+<ul>
+<li>EFS and EDC are generally available for Claude Fable, Claude Mythos, Claude Opus 5.5 and Sonnet 5.5 (via the Cyber Verification Program), allowing access to Anthropic’s most capable models with enhanced safety and data controls.</li>
+<li>EFS enables customers to retain data within their own AWS account (S3 bucket encrypted with their KMS key), ensuring neither Anthropic nor AWS accesses or uses it for training, with automated safety monitoring creating Safety Cases for review.</li>
+<li>EDC offers the same safety monitoring but stores retained data in Amazon-managed storage encrypted with AWS-managed keys, simplifying setup for customers without strict data residency requirements.</li>
+<li>The Trusted Access API allows administrators to control enrollment via IAM policies and SCPs, and supports checking eligibility and enrollment status across accounts, organizations, and projects.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -587,23 +605,6 @@
 <li>A <code>Routing Target</code> associates a logical model name with a list of endpoint ARNs (including those in other Regions/accounts), and the router directs traffic based on endpoint health and capacity.</li>
 <li>The router prioritizes local endpoints, performs health checks based on request outcomes (5xx errors, timeouts), and shifts traffic to healthy destinations, with a gradual return of traffic after recovery to prevent oscillation.</li>
 <li>Integration with Salesforce’s Internal Gateway involves intercepting requests, performing data residency checks, and routing eligible requests to the inference router, with telemetry (InvokedRoutedResourceArn, RoutingReason) logged for monitoring and debugging.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      
-      <span>blog</span>
-      <span> · 2026-11-18</span>
-    </div>
-    <h3><a href="https://aws.amazon.com/blogs/machine-learning/private-certificate-authority-support-in-amazon-bedrock-agentcore-identity/" target="_blank" rel="noopener">Private certificate authority support in Amazon Bedrock AgentCore Identity</a></h3>
-    
-    <div class="summary"><ul>
-<li>Amazon Bedrock AgentCore Identity now supports connecting to private Identity Providers (IdPs) like Keycloak using private Certificate Authorities (CAs).</li>
-<li>The CA certificate (public key only, max 16KB, PEM-encoded) is stored in AWS Secrets Manager or Amazon S3 and referenced when creating a credential provider.</li>
-<li>VPC Lattice is required for private CA support—it can be managed by AWS or self-managed—establishing a secure connection into your VPC.</li>
-<li>AgentCore Identity validates the IdP’s server certificate against the trusted CA during OAuth 2.0 token requests, supporting machine-to-machine, on-behalf-of, and user-delegated flows.</li>
 </ul></div>
     
   </div>
