@@ -80,13 +80,32 @@
     </label>
   </div>
   <h1>Google News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-11-25 11:21 UTC</p>
+  <p class="generated-at">Generated 2026-11-26 11:16 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">November 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">DeepMind Blog</span> · 
+      <span>research</span>
+      <span> · 2026-11-24</span>
+    </div>
+    <h3><a href="https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/" target="_blank" rel="noopener">From spectrum to structure: Identifying molecules with Mass Spec Skills for Google Antigravity</a></h3>
+    
+    <div class="summary"><h2>Mass Spec Skills for Google Antigravity</h2>
+<p>Google DeepMind has released “Mass Spec Skills” for Google Antigravity, a suite of tools integrating Gemini’s chemical reasoning with established mass spectrometry tools and public chemical databases to interpret tandem mass spectra and identify molecules.</p>
+<ul>
+<li>The system aims to address the "dark matter" of mass spectrometry, where standard spectral searches only annotate ~5-10% of measured spectra by automating a workflow including spectral reference searches, formula deduction, and candidate structure testing.</li>
+<li>Mass Spec Skills uses tools like matchms, SIRIUS, MAGMa, MetFrag, and RDKit to preprocess signals, predict formulas, assign fragments, and validate candidate structures.</li>
+<li>Evaluations on 100 compounds from the Enamine REAL MS/MS collection (MoNA) show &gt;97% identification accuracy across Gemini 3.8 Flash, Gemini 4 Argon, and Gemini 4 Carbon when using the Mass Spec Skills, a significant improvement over models without skills or internet access.</li>
+<li>The skills reduce token usage by up to four times (Gemini 3.8 Flash) compared to models improvising API queries and debugging scripts, enabling faster and more efficient workflows for tasks like natural product-based drug discovery.</li>
+</ul></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -570,24 +589,6 @@
 <li>Students engage in tasks like data cleaning and model testing, emphasizing the importance of human oversight in AI systems.</li>
 <li>“Polar Peaks” builds upon previous quests focused on flood forecasting and diabetic retinopathy detection, with over 400,000 quests completed to date.</li>
 <li>New teacher training modules are available through the Google AI Educator Series to support classroom integration of the AI Quests program.</li>
-</ul></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">DeepMind Blog</span> · 
-      <span>research</span>
-      <span> · 2026-10-22</span>
-    </div>
-    <h3><a href="https://deepmind.google/blog/beyond-tree-cover-mapping-the-worlds-forest-types/" target="_blank" rel="noopener">Beyond tree cover: mapping the world’s forest types</a></h3>
-    
-    <div class="summary"><p>Google DeepMind and Google Research released <strong>Forest Typology (ForTy) 2020</strong>, a 10-meter resolution global map categorizing land into six forest and land-use types, with a time series tracking changes from 2017-2025.</p>
-<ul>
-<li>The map classifies land as Primary forest, Naturally regenerating forest, Planted forest, Plantation forest, Tree crops/agroforestry, or Other land, using definitions from the UN FAO.</li>
-<li>The model was trained on 1.7 million labeled locations, using a custom architecture and <strong>AlphaEarth Foundations</strong> embeddings to identify subtle patterns in satellite imagery.</li>
-<li>ForTy achieved 90% accuracy in forest type classification and 95% accuracy in distinguishing forest from non-forest land, as validated against over 9,000 sites with expert review.</li>
-<li>The map and time series data are freely available on Google Earth Engine, providing probability scores for each class to allow adaptation to specific applications, like tracking EU Deforestation Regulation compliance.</li>
 </ul></div>
     
   </div>

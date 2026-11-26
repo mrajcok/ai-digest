@@ -80,13 +80,27 @@
     </label>
   </div>
   <h1>Anthropic News & Blog Posts</h1>
-  <p class="generated-at">Generated 2026-11-25 11:21 UTC</p>
+  <p class="generated-at">Generated 2026-11-26 11:16 UTC</p>
   
   <p class="index-hint">Showing the most recent 30 articles.</p>
   
 
   
   <h2 class="month">November 2026</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <span class="source">Anthropic</span> · 
+      <span>research</span>
+      <span> · 2026-11-25</span>
+    </div>
+    <h3><a href="https://www.anthropic.com/research/migrating-api-to-rust" target="_blank" rel="noopener">Migrating our Messages API to Rust</a></h3>
+    
+    <div class="summary"><p>Anthropic successfully migrated their Messages API from Python to Rust, achieving a 70% reduction in CPU usage and a 20% decrease in median time to first token without service interruption. This migration was enabled by using the existing production Messages API as a verifier—a system for comparing the behavior of the Python and Rust versions. The core challenge wasn’t code generation (which Claude handled effectively), but ensuring functional parity as the Python API continued to evolve. </p>
+<p>To address this, Anthropic developed a “shadowing” system that compared requests at various stages – input validation, prompt construction, model output, and post-processing – recording differences without accessing user data. A fingerprinting method was used to categorize bugs, enabling automated agent-driven fixes within sandboxed environments, reviewed by human engineers. This process involved iterative "loops" – a fast inner loop for testing, a slower outer loop for production validation, and a “memory loop” to encode lessons learned for future agents.</p>
+<p>The project demonstrates a new approach to large-scale system migrations, leveraging AI to write code and verify its correctness against a live system, highlighting the shift from generation to verification as the primary bottleneck in ambitious software projects.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -479,20 +493,6 @@
     <div class="summary"><p>Anthropic has been actively expanding the capabilities and accessibility of its Claude models throughout late 2025 and 2026. Key announcements include the release of specialized versions like Claude for Healthcare (HIPAA-ready), Claude for Financial Services (with Excel plugins and market connectors), Claude for Creative Work, and Claude for Life Sciences, each offering tailored connectors and skills. They’ve also launched Claude Design, a tool for visual collaboration, and Claude Tag for team workflows.</p>
 <p>Several infrastructure updates have been made, with Claude Sonnet 4.5, Haiku 4.5, and Opus 4.1 becoming available in Microsoft Foundry, and Claude receiving approval for use in highly secure government environments (FedRAMP High/DoD IL4/5) via Amazon Bedrock.  Furthermore, Anthropic donated “Agent Skills”, their open standard for specialized AI agent knowledge, to the Agentic AI Foundation, following integration into over 70 platforms.  Compute capacity was increased through a partnership with SpaceX, and usage limits have been raised. </p>
 <p>New features include a usage tracking and reflection tool for Claude, and the introduction of Claude Science, an AI workbench for researchers. Various programs offer access to Claude: verified US K-12 teachers receive free premium access, nonprofits receive discounted rates, and federal agencies can now purchase Claude through the GSA schedule.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <span class="source">Anthropic</span> · 
-      <span>news</span>
-      <span> · 2026-10-22</span>
-    </div>
-    <h3><a href="https://www.anthropic.com/news/open-call-guest-investigators-life-sciences" target="_blank" rel="noopener">Open call for guest investigators in the life sciences</a></h3>
-    
-    <div class="summary"><p>Anthropic has announced an open call for guest investigators in the life sciences, seeking proposals from principal investigators and research groups at academic, nonprofit, or government institutions. The program offers 8–12 weeks of collaboration with Anthropic researchers to investigate questions in fields including causal human biology, molecular biology, medicinal chemistry, and clinical science. Anthropic will provide model access and computing resources at no cost to participants.</p>
-<p>Investigators will work to produce analyses, artifacts, and tools collaboratively, intending to publish outputs and open-source associated data and code. Participants retain rights to their data and any independent follow-on research. Applications, which should detail clear benefits of collaboration and realistic outputs achievable within the timeframe, will be accepted for approximately 14 days, with notifications to selected participants expected within 14 days of the application deadline.</p>
-<p>Related initiatives include the Life Sciences Verification Program, offering direct access to Anthropic’s models, and the AI for Science initiative, providing Claude credits for research. The company stresses that applications should only contain publicly available information.</p></div>
     
   </div>
   

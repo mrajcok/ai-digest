@@ -115,7 +115,7 @@
 </head>
 <body>
   <h1>AI Digest</h1>
-  <p class="generated-at" id="generated-at" data-iso="2026-11-25T11:21:39.991524+00:00">Generated 2026-11-25 11:21 UTC</p>
+  <p class="generated-at" id="generated-at" data-iso="2026-11-26T11:16:24.976271+00:00">Generated 2026-11-26 11:16 UTC</p>
   <div class="top-bar">
     <p class="index-hint">Showing the 3 most recent from each vendor and the 1 most recent from each press source — see each company's page for more.</p>
     <label class="theme-toggle" title="Toggle light/dark theme">
@@ -132,12 +132,12 @@
 
   
   <section class="overview">
-    <h2 class="overview-heading">Today in AI — Overview for 2026-11-24</h2>
-    <p class="overview-meta">2026-11-24 · 7 vendor sources · vendor sources only</p>
-    <div class="overview-text"><p>Recent developments underscore a shift in AI adoption towards organizational integration and practical applications, rather than solely focusing on model capabilities. A new study by Anthropic, based on interviews with 66 companies, found that the most significant gains from AI implementation come from <em>increasing</em> output, with cost reduction as a secondary benefit. While large-scale layoffs directly attributable to AI remain uncommon, a substantial 66% of companies are slowing or halting new hiring, particularly of contracted offshore workers. The research highlights that successful AI deployments require more than just introducing tools; they demand significant organizational restructuring, enabling existing employees to leverage AI and focus on tasks requiring uniquely human skills, such as troubleshooting areas where AI struggles.</p>
-<p>Alongside this, a new level of personalization is coming to Google Search with the introduction of “Personal Intelligence” within AI Mode. Users can opt to connect Google Wallet for tailored financial insights and, soon, their Google Drive accounts enabling Search to provide responses informed by personal documents. Google plans further integration with the Gemini app, allowing shared context between the two services, and emphasizes user control over data sharing through new personalization settings and clear indicators of when personalized data is being used. This moves Google Search further from a general information retrieval service towards a more proactively helpful and contextually aware assistant.</p>
-<p>Significant progress was also made in specialized areas of AI research. Google researchers leveraged Gemini 4 agents and formal verification, utilizing the Lean library, to achieve notable improvements in quantum algorithms for complex scientific simulations – fusion energy, chemistry, and enzyme function – reducing computational costs and qubit requirements. Further, OpenAI and Cisco jointly released Shirudo, an open-source runtime security system utilizing eBPF technology and AI-generated shields to proactively protect Linux systems from vulnerabilities, aiming to minimize downtime during patching. These projects demonstrate a growing trend of applying AI to optimize complex infrastructure and security challenges.</p>
-<p>Finally, practical deployment of cutting-edge models is expanding. Richpanel reports automating 50% of customer support operations for its clients within 30 days utilizing OpenAI’s GPT-6 Astra, Sol, and Luna models, and distinguishing their success as hinging on automating the <em>workflows</em> supporting these models with their “Boss AI” tool. Simultaneously, Amazon Bedrock is rolling out the Trusted Access API, granting access to Anthropic’s Enterprise Frontier Safeguards and Enterprise Data Controls (EFS/EDC) for Claude Fable, Mythos, Opus 5.5 and Sonnet 5.5, providing robust safety and data security features for enterprise applications.</p></div>
+    <h2 class="overview-heading">Today in AI — since 2026-11-25</h2>
+    <p class="overview-meta">2026-11-26 · 1 vendor source · vendor sources only</p>
+    <div class="overview-text"><h2>AI News Synthesis - November 21, 2023</h2>
+<p>A significant achievement in AI infrastructure was announced today, as Anthropic detailed a successful migration of their Messages API from Python to Rust. The project resulted in a substantial 70% reduction in CPU usage and a 20% decrease in median time to first token, all without interrupting service. This wasn’t simply about translating code; Anthropic’s innovation lay in how they <em>verified</em> the Rust implementation, utilizing existing production traffic and Claude itself to ensure functional parity with the established Python API as it continued to undergo development. This suggests a growing focus on verification as the limiting factor in large-scale AI system work, shifting the emphasis from initial code generation to rigorous testing and maintenance.</p>
+<p>The core of Anthropic’s strategy involved a clever “shadowing” system. This setup meticulously compared aspects of the Python and Rust APIs—input validation, prompt construction, model output, and post-processing—recording discrepancies without compromising user data. A key next step was a bug fingerprinting method, which categorized issues to enable automated fixes within sandboxed environments, then submitted for human review. This iterates through fast testing loops, slower production validation loops, and a "memory loop" continuously improving the automated agents used across the process. </p>
+<p>This work has potential implications for software engineers and architects looking at long-term scalability and efficiency in AI applications. The strategy’s emphasis on AI-assisted validation, coupled with automated bug fixing in sandboxed environments, highlights a pathway towards more robust and maintainable AI systems. While Anthropic’s specific implementation is tailored to their stack, the principles of verification-led development and iterative refinement could be broadly applicable to complex software projects.</p></div>
   </section>
   
 
@@ -145,6 +145,20 @@
 
   
   <h2 class="section">Vendors</h2>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
+      <span>research</span>
+      <span> · 2026-11-25</span>
+    </div>
+    <h2><a href="https://www.anthropic.com/research/migrating-api-to-rust" target="_blank" rel="noopener">Migrating our Messages API to Rust</a></h2>
+    
+    <div class="summary"><p>Anthropic successfully migrated their Messages API from Python to Rust, achieving a 70% reduction in CPU usage and a 20% decrease in median time to first token without service interruption. This migration was enabled by using the existing production Messages API as a verifier—a system for comparing the behavior of the Python and Rust versions. The core challenge wasn’t code generation (which Claude handled effectively), but ensuring functional parity as the Python API continued to evolve. </p>
+<p>To address this, Anthropic developed a “shadowing” system that compared requests at various stages – input validation, prompt construction, model output, and post-processing – recording differences without accessing user data. A fingerprinting method was used to categorize bugs, enabling automated agent-driven fixes within sandboxed environments, reviewed by human engineers. This process involved iterative "loops" – a fast inner loop for testing, a slower outer loop for production validation, and a “memory loop” to encode lessons learned for future agents.</p>
+<p>The project demonstrates a new approach to large-scale system migrations, leveraging AI to write code and verify its correctness against a live system, highlighting the shift from generation to verification as the primary bottleneck in ambitious software projects.</p></div>
+    
+  </div>
   
   <div class="card">
     <div class="meta">
@@ -171,20 +185,6 @@
     <div class="summary"><p>Anthropic completed its initial public offering on November 19, 2026, selling 1,127,000,000 shares of Class A common stock at $83.00 per share. Underwriters fully exercised their option to purchase an additional 147,000,000 shares. The offering generated approximately $93.5 billion in gross proceeds for Anthropic, with $91.6 billion directly received by the company.</p>
 <p>Concurrently, Anthropic closed a private placement, selling 313,253,007 shares of Class N common stock to Advanced Micro Devices, Broadcom, Google, Micron Technology, Microsoft, NVIDIA, and TSMC for $26.0 billion – again, at $83.00 per share. The combined gross proceeds from both offerings totaled approximately $119.5 billion before deducting associated fees. </p>
 <p>Anthropic’s Class A common stock began trading on the Nasdaq Global Select Market under the ticker symbol “ANT.” Goldman Sachs &amp; Co. LLC and Morgan Stanley led the book-running for the offering.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="anthropic/" class="badge badge-anthropic">Anthropic</a>
-      <span>news</span>
-      <span> · 2026-11-20</span>
-    </div>
-    <h2><a href="https://www.anthropic.com/news/announcements" target="_blank" rel="noopener">Announcements</a></h2>
-    
-    <div class="summary"><p>Anthropic completed its initial public offering on November 20, 2026, with the sale of 1,127,000,000 shares of Class A common stock at $83.00 per share, including the underwriters’ option for an additional 147,000,000 shares. Concurrent with the IPO, the company launched a roadshow starting November 10, 2026, and filed a Form S-1 registration statement with the U.S. Securities and Exchange Commission on October 26, 2026.</p>
-<p>Recent model releases include Claude Opus 5.5, which Anthropic claims leads in agentic coding and knowledge work while costing 40% less than Opus 5, and Claude Sonnet 5.5, offering a 30%+ speed increase and up to 30% cost reduction.  Claude Fable 5.2 and Claude Mythos 5.2 were also released, touted as the most capable models for technically demanding tasks. Specialized programs like the Life Sciences Verification Program, offering access to Mythos, Opus, and Sonnet models with relaxed safeguards for biological work, and expansions of the AI for Science program to include 20 additional institutions were also announced.</p>
-<p>Furthermore, Anthropic committed $100 million to train 10,000 engineers through the Claude Frontier Academy and launched a $5 million grant program to study the impact of AI on wellbeing. They've also established an office in Singapore and are piloting the Model Hardware Standard for safe AI-device interaction.</p></div>
     
   </div>
   
@@ -232,6 +232,25 @@
   <div class="card">
     <div class="meta">
       <a href="google/" class="badge badge-google">Google</a>
+      <span>research</span>
+      <span> · 2026-11-24</span>
+    </div>
+    <h2><a href="https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/" target="_blank" rel="noopener">From spectrum to structure: Identifying molecules with Mass Spec Skills for Google Antigravity</a></h2>
+    
+    <div class="summary"><h2>Mass Spec Skills for Google Antigravity</h2>
+<p>Google DeepMind has released “Mass Spec Skills” for Google Antigravity, a suite of tools integrating Gemini’s chemical reasoning with established mass spectrometry tools and public chemical databases to interpret tandem mass spectra and identify molecules.</p>
+<ul>
+<li>The system aims to address the "dark matter" of mass spectrometry, where standard spectral searches only annotate ~5-10% of measured spectra by automating a workflow including spectral reference searches, formula deduction, and candidate structure testing.</li>
+<li>Mass Spec Skills uses tools like matchms, SIRIUS, MAGMa, MetFrag, and RDKit to preprocess signals, predict formulas, assign fragments, and validate candidate structures.</li>
+<li>Evaluations on 100 compounds from the Enamine REAL MS/MS collection (MoNA) show &gt;97% identification accuracy across Gemini 3.8 Flash, Gemini 4 Argon, and Gemini 4 Carbon when using the Mass Spec Skills, a significant improvement over models without skills or internet access.</li>
+<li>The skills reduce token usage by up to four times (Gemini 3.8 Flash) compared to models improvising API queries and debugging scripts, enabling faster and more efficient workflows for tasks like natural product-based drug discovery.</li>
+</ul></div>
+    
+  </div>
+  
+  <div class="card">
+    <div class="meta">
+      <a href="google/" class="badge badge-google">Google</a>
       <span>blog</span>
       <span> · 2026-11-24</span>
     </div>
@@ -257,24 +276,6 @@
 <li>A 2.57x speedup was achieved for a specific implementation of Grover's algorithm, and a 290x speedup for arcsin, a routine used in many quantum algorithms. </li>
 </ul>
 <p>The Lean library, problem specifications, and verified solutions are open-sourced on GitHub.</p></div>
-    
-  </div>
-  
-  <div class="card">
-    <div class="meta">
-      <a href="google/" class="badge badge-google">Google</a>
-      <span>blog</span>
-      <span> · 2026-11-23</span>
-    </div>
-    <h2><a href="https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/" target="_blank" rel="noopener">A more tailored Google Search that’s uniquely yours</a></h2>
-    
-    <div class="summary"><p>Google Search is gaining expanded personalization features through “Personal Intelligence” in AI Mode.</p>
-<ul>
-<li>Users can now opt-in to connect Google Wallet to Search, enabling AI-powered insights into spending habits and credit card reward optimization.</li>
-<li>Google Drive integration is forthcoming, allowing Search to utilize information from a user's documents (Docs, Sheets, PDFs) to provide contextually relevant responses, such as personalized preparation plans.</li>
-<li>Integration with the Gemini app is planned, allowing for shared context between the two services—information explored in Gemini will inform Search results, and vice versa.</li>
-<li>Users maintain full control over data sharing, managing connections and personalization settings within Search Personalization settings, and will soon see which context is being used for tailored responses via a new “Personalization” icon.</li>
-</ul></div>
     
   </div>
   
@@ -436,15 +437,9 @@
       <span>news</span>
       <span> · 2026-11-25</span>
     </div>
-    <h2><a href="https://techcrunch.com/2026/11/24/yales-sonnenfeld-nvidia-is-a-detriment-to-u-s-industrial-might-not-a-champion/" target="_blank" rel="noopener">Yale’s Sonnenfeld: Nvidia is a ‘detriment’ to US industrial might — not a champion</a></h2>
+    <h2><a href="https://techcrunch.com/2026/11/25/amazon-and-meta-reportedly-in-talks-to-lift-blockade-on-ai-agent-muse/" target="_blank" rel="noopener">Amazon and Meta reportedly in talks to lift blockade on AI agent Muse</a></h2>
     
-    <div class="summary"><p>Yale business academic Jeffrey Sonnenfeld argues Nvidia is detrimental to U.S. industrial might despite investor confidence in CEO Jensen Huang’s reinstatement.</p>
-<ul>
-<li>Despite U.S. export controls, Nvidia’s advanced chips are reportedly reaching China, potentially aiding their military development.</li>
-<li>The success of Chinese open-source AI models (Kimi, DeepSeek) is attributed to “distilling” technology from U.S. labs like Anthropic using Nvidia chips.</li>
-<li>Nvidia faces multiple legal challenges including class-action and derivative suits related to potential foreign intelligence targeting, and concerns over Huang’s conduct.</li>
-<li>The U.S. Department of Commerce is considering further tightening of chip export controls, and Nvidia is under investigation by the Justice Department, SEC, and FBI.</li>
-</ul></div>
+    <div class="summary"><p>Amazon and Meta are reportedly in discussions to resolve a recent blockade preventing Meta’s AI agent, Muse, from completing purchases on Amazon’s platform. According to a report by <em>Fortune</em> cited by TechCrunch, the two companies are negotiating how search results and advertising would be handled if Muse is granted access. Amazon previously expressed concerns that agents like Muse could negatively impact its advertising revenue and customer relationships, with CEO Andy Jassy stating in October that few customers were making purchases through such agents. A potential agreement would require approval from both Amazon and Meta CEOs.</p></div>
     
   </div>
   
@@ -452,16 +447,15 @@
     <div class="meta">
       <a href="arstechnica/" class="badge badge-arstechnica">Ars Technica</a>
       <span>news</span>
-      <span> · 2026-11-24</span>
+      <span> · 2026-11-25</span>
     </div>
-    <h2><a href="https://arstechnica.com/security/2026/11/amazon-says-hackers-ai-agents-found-and-exploited-0-day-with-little-human-input/" target="_blank" rel="noopener">Amazon says hackers&#39; AI agents found and exploited 0-day with little human input</a></h2>
+    <h2><a href="https://arstechnica.com/ai/2026/11/ai-can-do-the-calculations-physicists-are-figuring-out-what-comes-next/" target="_blank" rel="noopener">AI may soon change what it means to be a theoretical physicist</a></h2>
     
-    <div class="summary"><p>Amazon reports AI agents leveraging the Cairn framework discovered and exploited a zero-day vulnerability with limited human oversight.</p>
-<ul>
-<li>The agents, prompted in simplified Chinese, were tasked with obtaining shell access to servers within an East Asian university network.</li>
-<li>Cairn, an open-source AI penetration-testing framework, is model-agnostic and has been observed working with models including Claude Code, Codex, Pi, GLM 5.2, DeepSeek V4 Flash, and DeepSeek V4 Pro.</li>
-<li>Within 11 minutes, the agents identified and exploited a path traversal vulnerability in an open-source medical imaging AI application, achieving root access via a Python reverse shell.</li>
-<li>The zero-day vulnerability was unpatched and unknown to vulnerability databases at the time of exploitation, demonstrating the potential for rapid, autonomous exploitation by AI agents.</li>
+    <div class="summary"><ul>
+<li>Suvrat Raju developed the TheoPhysEval benchmark to assess AI capabilities in theoretical physics, using problems physicists had solved but not published.</li>
+<li>GPT-6 Astra correctly solved 49 out of 50 problems presented in the benchmark, identifying a subtle error in the remaining human-written solution. Calculations for each correct answer cost less than $3.</li>
+<li>Theoretical physicists are increasingly utilizing LLMs like Claude Opus 5.5 and OpenAI models for calculations, literature review, and even to check their own work for errors, leading to a significant increase in pre-print submissions to arXiv’s hep-th category (a 30% increase Jan-Oct compared to the prior year).</li>
+<li>AI has recently achieved a verified proof of a long-standing mathematical problem related to Yang-Mills theory, and is beginning to contribute to areas like black hole physics, potentially accelerating research but also raising questions about the future of physics education and career paths.</li>
 </ul></div>
     
   </div>
